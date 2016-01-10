@@ -2,6 +2,8 @@
 Character Creator
 Version 1.0 (released 2016-01-09)
 Direct all comments, suggestions, etc. at /u/the-nick-of-time
+Released under the GNU General Public License version 2, as detailed within
+the file LICENSE included in the same directory as this code.
 
 This code writes a .ini file for use by Character Manager.
 
