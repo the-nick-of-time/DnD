@@ -35,13 +35,16 @@ from tkUtility import *
 
 def modifier(score):
     return (score-10)//2
-
-def all_children (wid) :
-    _list = wid.winfo_children()
-    for item in _list :
-        if(item.winfo_children()):
-            _list.extend(item.winfo_children())
-    return _list
+	
+def all_children(frame):
+    return childrenrecursive(frame)
+	
+def childrenrecursive(current):
+    l=[]
+    for c in current.winfo_children():
+        l.extend(childrenrecursive(c))
+    l.append(current)
+    return l
 
 class monster:
     def __init__(self,name,HP,HD,init,AC,abilities):
@@ -264,7 +267,7 @@ class builder:
         for (i,n) in enumerate(abilities):
             self.entries.append(labeledEntry(self.abil,n,(i//3)*2,i%3,width=4))
 
-##        self.xp=labeledEntry(self.win,'Enter XP',7,0)
+        #self.xp=labeledEntry(self.win,'Enter XP',7,0)
 
         self.resolve=tk.Button(self.win,text='Finish',command=lambda: self.finish(self.master))
         self.resolve.grid(row=9,column=0)
@@ -278,7 +281,7 @@ class builder:
                 replaceEntry(self.name,prev.name)
                 replaceEntry(self.ac,prev.AC)
                 replaceEntry(self.hp,prev.HD)
-    ##            replaceEntry(self.xp,prev.XP)
+                #replaceEntry(self.xp,prev.XP)
                 for i in range(6):
                     replaceEntry(self.entries[i],prev.abilities[i])
 
@@ -312,9 +315,9 @@ class main:
             f.grid(i%3,i//3)
         self.buttons.grid(row=3,column=abs(len(self.frames)-1)//6,sticky='n')
         self.generalRoll.grid(len(self.frames)%3,len(self.frames)//3)
-##        self.makenew.grid(row=3,column=abs(len(self.frames)-1)//6)
-##        self.makechar.grid(row=4,column=abs(len(self.frames)-1)//6)
-##        self.qa.grid(row=5,column=abs(len(self.frames)-1)//6)
+        #self.makenew.grid(row=3,column=abs(len(self.frames)-1)//6)
+        #self.makechar.grid(row=4,column=abs(len(self.frames)-1)//6)
+        #self.qa.grid(row=5,column=abs(len(self.frames)-1)//6)
 
     def create(self):
         new=builder(self)

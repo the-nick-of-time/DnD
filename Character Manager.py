@@ -321,10 +321,8 @@ class hpsec:
             else:
                 h+=amount
                 h=m if h>m else h
-        self.temp.delete(0,"end")
-        self.current.delete(0,"end")
-        self.temp.insert(0,str(t))
-        self.current.insert(0,str(h))
+		util.replaceEntry(self.temp,str(t))
+		util.replaceEntry(self.current,str(h))
 
     def populateFromConfig(self,data):
         util.replaceEntry(self.max,data['max HP'])
