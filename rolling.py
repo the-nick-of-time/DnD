@@ -64,7 +64,14 @@ def call(s,modifiers=0,option='execute'):
     elif(option=='execute'):
         return (execute(tokens(s))+modifiers)
     elif(option=='max'):
-        T=[('*' if item=='d' else item) for item in tokens(s)]
+        #T=[('*' if item=='d' else item) for item in tokens(s)]
+        T=tokens(s)
+        for (i,item) in enumerate(T):
+            if(item == 'd'):
+                if(len(T) >= i+3 and (T[i+2] == 'h' or T[i+2] == 'l')):
+                    T[i-1:i+4] = [T[i+3],'*',T[i+1]]
+                else:
+                    T[i]='*'
         return execute(T)
     elif(option=='critical'):
         T=tokens(s)
