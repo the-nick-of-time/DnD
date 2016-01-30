@@ -2,7 +2,7 @@ D&D Tools
 
 Direct all comments, suggestions, and bug reports at /u/the-nick-of-time
 All tools in this package are released under the GNU General Public License version 2, as detailed within the file LICENSE. Refer to that document before doing anything except downloading for personal use.
-These were written in Python 3.4.0 on a Windows machine and I do not guarantee that they will work correctly on any other platform.
+These were written in Python 3.4.0 and I do not guarantee that they will work correctly on any other platform.
 
 ============================================================================================
 SECTION 1: GENERAL USE
@@ -10,7 +10,7 @@ SECTION 1: GENERAL USE
 The files "rolling.py", "DnDbasic.py", and "tkUtility.py" are helper modules used by the actual interactive programs and there is no case where you would need to run them.
 The remaining files are discussed below.
 
-	1.0.1: Rolling
+	1.1: Rolling
 	Any string that can be parsed by the "rolling" code is called throughout all my related code a "rollable string". These are similar to arithmetic expressions, just with the d, h, and l operators added.
 	The definitions of these operators are as follows:
 	xdy rolls x y-sided dice and returns a sorted list of these rolls. xd[a,b,c,...] rolls x dice with sides a,b,c....
@@ -35,14 +35,14 @@ The remaining files are discussed below.
 	1d100>11						(roll a d100 and check whether the roll is greater than 11; displays a 1 for true and 0 for false)
 	3d4%5								(roll 3d4, return the remainder after division by 5)
 
---------------------------------------------------------------------------------------------
-1.1: PLAYERS
+============================================================================================
+SECTION 2: PLAYERS
 First, you need to run "Character Creator.py" to create the file that defines your character. This only needs to be run once at the beginning, plus whenever you want to add a new attack to your repertoire.
 
 After that initial run, you are equipped to run "Character Manager.py" which is the main program for you.
 
 
-	1.1.1: Character Creator
+	2.1: Character Creator
 	This program will write a file called "*the name of your character*.ini" that contains all the information necessary to construct your character.
 	
 	Fill out the fields on the left and in the abilities section. These are largely self-explanatory. Class accepts the names of the classes in the Player's Handbook as well as "multiclass". This option is only used to determine the spell slots available to you, so if none of these options directly apply to you (Eldritch Knight maybe? I've never played one) use an equivalent class like Paladin.
@@ -80,7 +80,7 @@ After that initial run, you are equipped to run "Character Manager.py" which is 
 	
 	
 	
-	1.1.2: Character Manager
+	2.2: Character Manager
 	To use this program, enter the character's name in the relevant entry exactly as it appears in the title of the .ini file, then hit Enter or press the load button. This should set everything up for you.
 
 	HP SECTION:
@@ -104,11 +104,11 @@ After that initial run, you are equipped to run "Character Manager.py" which is 
     Saves and quits. This saves all HP-related numbers, your current level, and even all of your abilities (in case those change at all).
 
 		
---------------------------------------------------------------------------------------------
-1.2: DUNGEON MASTERS
+============================================================================================
+SECTION 3: DUNGEON MASTERS
 The file "Monster Manager.py" is written for you. It keeps track of monsters and allows you to roll any other dice you need while running a combat. There is no preparation needed to use this, so just run it as is.
 
-	1.2.1: Using the Monster Manager
+	3.1: Using the Monster Manager
 	The first thing you will likely want to do is press the "New Monster" button to open the dialog. This will create a popup window with a variety of fields that can be filled out. Fill them with relevant information and hit the "Finish" button.
 
 	The main window will now contain a section that contains relevant information about the monster. From here, you can make the monster take damage (by inserting a negative value in the "Change HP" entry and pressing the button), recover HP (same but positive), or perform attacks. This aspect perhaps bears explanation. To perform an attack, fill out the attack bonus and damage done and press the button. The attack bonus is **added to the d20 roll and should not include the d20**, and can be any valid rollable string, as defined in section 1.0.1. This includes simple integers as well as dice, arithmetic expressions, and even comparisons. Also ridiculous expressions like "1d4d4d4d4".
