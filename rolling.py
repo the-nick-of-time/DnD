@@ -177,7 +177,10 @@ def evaluate(nums,op,av=False):
 
     if(op=='d'):
         if(av):
-            return (1+nums[1])*nums[0]//2
+            if(type(nums[1]) is list):
+                return (sum(nums[1])*nums[0])//len(nums[1])
+            else:
+                return (1+nums[1])*nums[0]//2
         else:
             return rollBasic(nums[0],nums[1])
     elif(op=='h'):
