@@ -333,7 +333,7 @@ class main:
         self.draw()
 
     def placeCharacter(self,otherwin):
-        rv=character(otherwin.name.get(),int(otherwin.initiative.get()))
+        rv=character(otherwin.name.get(),otherwin.initiative.get())
         self.frames.append(charsub(self.master,rv))
         self.draw()
 
