@@ -40,12 +40,13 @@ Less applicable functionalities:
 
 import random
 
-def call(s,modifiers=0,option='execute'):
+
+def call(s, modifiers=0, option='execute'):
     #Merely a wrapper for the whole tokenization and parsing process
     #Defines or redefines the two reference strings so that everything will be
     #consistent
     global digits, operators, order
-    digits='0123456789'
+    digits = '0123456789'
     #It is easier to have all of the operators in a single iterable for use with
     #the 'in' operator but ideally it would be organized like so:
     #HIGH   d
@@ -56,245 +57,256 @@ def call(s,modifiers=0,option='execute'):
     #       + or -
     #LOW    > or < or = (boolean comparison operators)
     #Order is the number of inputs to the corresponding operator
-    operators='dhl^mp*/%+-><=&|('
-    order=[2,2,2,2,1,1,2,2,2,2,2,2,2,2,2,2]
+    operators = 'dhl^mp*/%+-><=&|('
+    order = [2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 
-    if(s==''):
-        return 0+modifiers
-    elif(option=='execute'):
-        return (execute(tokens(s))+modifiers)
-    elif(option=='max'):
+    if (s == ''):
+        return 0 + modifiers
+    elif (option == 'execute'):
+        return (execute(tokens(s)) + modifiers)
+    elif (option == 'max'):
         #T=[('*' if item=='d' else item) for item in tokens(s)]
-        T=tokens(s)
-        for (i,item) in enumerate(T):
-            if(item == 'd'):
-                if(len(T) >= i+3 and (T[i+2] == 'h' or T[i+2] == 'l')):
-                    T[i-1:i+4] = [T[i+3],'*',T[i+1]]
+        T = tokens(s)
+        for (i, item) in enumerate(T):
+            if (item == 'd'):
+                if (len(T) >= i + 3 and (T[i + 2] == 'h' or T[i + 2] == 'l')):
+                    T[i - 1:i + 4] = [T[i + 3], '*', T[i + 1]]
                 else:
-                    T[i]='*'
+                    T[i] = '*'
         return execute(T)
-    elif(option=='critical'):
-        T=tokens(s)
+    elif (option == 'critical'):
+        T = tokens(s)
         for i in range(len(T)):
-            if(T[i]=='d'):
-                T[i-1]*=2
-        return (execute(T)+modifiers)
-    elif(option=='average'):
-        return (execute(tokens(s),av=True)+modifiers)
-    elif(option=='zero'):
+            if (T[i] == 'd'):
+                T[i - 1] *= 2
+        return (execute(T) + modifiers)
+    elif (option == 'average'):
+        return (execute(tokens(s), av=True) + modifiers)
+    elif (option == 'zero'):
         return 0
-    elif(option=='multipass'):
-        return displayMultipass(multipass(tokens(s),modifiers))
-    elif(option=='tokenize'):
+    elif (option == 'multipass'):
+        return displayMultipass(multipass(tokens(s), modifiers))
+    elif (option == 'tokenize'):
         return tokens(s)
+
 
 def tokens(s):
     #Splits a string into a list of integers and operators
     #to be evaluated by execute()
     #The valid operators, in order of decreasing precedence, are defined in call()
-    number=''
-    out=[]
-    i=0
-    while(i<len(s)):
-        char=s[i]
-        if(char in digits):
-            number+=char
-        elif(char in operators or char==')'):
-            if(s[i]=='-' and (i==0 or s[i-1] in operators)):
+    number = ''
+    out = []
+    i = 0
+    while (i < len(s)):
+        char = s[i]
+        if (char in digits):
+            number += char
+        elif (char in operators or char == ')'):
+            if (s[i] == '-' and (i == 0 or s[i - 1] in operators)):
                 out.append('m')
-            elif(s[i]=='+' and (i==0 or s[i-1] in operators)):
+            elif (s[i] == '+' and (i == 0 or s[i - 1] in operators)):
                 out.append('p')
             else:
                 try:
                     #Turn the contents of the numbers string into an int
                     out.append(int(number))
-                    number=''
-                except(ValueError):
+                    number = ''
+                except (ValueError):
                     #often the numbers string is empty because of a leading (
                     pass
                 out.append(char)
-        elif(char=='['):
-            i+=1
-            ls=''
-            while(s[i]!=']'):
-                ls+=s[i]
-                i+=1
+        elif (char == '['):
+            i += 1
+            ls = ''
+            while (s[i] != ']'):
+                ls += s[i]
+                i += 1
             out.append(readList(ls))
-        elif(char=='F'):
-            out.append([-1,0,1])
-        i+=1
+        elif (char == 'F'):
+            out.append([-1, 0, 1])
+        i += 1
     try:
         #push out the last number
         out.append(int(number))
-    except(ValueError):
+    except (ValueError):
         pass
     return out
 
-def readList(s,mode='float'):
-	if(mode == 'float'):
-		return list(eval(s))
-	elif(mode == 'int'):
-		a = list(eval(s))
-		for (i, item) in enumerate(a):
-			a[i] = int(item)
-		return a
 
-def rollBasic(number,sides):
+def readList(s, mode='float'):
+    if (mode == 'float'):
+        return list(eval(s))
+    elif (mode == 'int'):
+        a = list(eval(s))
+        for (i, item) in enumerate(a):
+            a[i] = int(item)
+        return a
+
+
+def rollBasic(number, sides):
     #Returns a sorted (ascending) list of all the numbers rolled
-    result=[]
-    rollList=[]
-    if(type(sides) is int):
-        rollList=list(range(1,sides+1))
-    elif(type(sides) is list):
-        rollList=sides
+    result = []
+    rollList = []
+    if (type(sides) is int):
+        rollList = list(range(1, sides + 1))
+    elif (type(sides) is list):
+        rollList = sides
     for all in range(number):
-        result.append(rollList[random.randint(0,len(rollList)-1)])
+        result.append(rollList[random.randint(0, len(rollList) - 1)])
     result.sort()
     return result
 
-def evaluate(nums,op,av=False):
+
+def evaluate(nums, op, av=False):
     #Operator definitions (basically what 'nums' is allowed to be)
     #   d is defined for [int {d} int] or [int {d} [numeric list]]
     #   h and l are defined only for [[sorted numeric list] {h/l} int]
     #   the arithmetic operators can take anything, as they collapse any lists
-    if(op in 'd^*/%+-><='):
+    if (op in 'd^*/%+-><='):
         #collapse any lists in preparation for operation
         try:
-            nums[0]=sum(nums[0])
-        except(TypeError):
+            nums[0] = sum(nums[0])
+        except (TypeError):
             pass
 
-    if(op in 'hl^*/%+-><=&|'):
+    if (op in 'hl^*/%+-><=&|'):
         try:
-            nums[1]=sum(nums[1])
-        except(TypeError):
+            nums[1] = sum(nums[1])
+        except (TypeError):
             pass
 
-    if(op=='d'):
-        if(av):
-            if(type(nums[1]) is list):
-                return (sum(nums[1])*nums[0])//len(nums[1])
+    if (op == 'd'):
+        if (av):
+            if (type(nums[1]) is list):
+                return (sum(nums[1]) * nums[0]) // len(nums[1])
             else:
-                return (1+nums[1])*nums[0]//2
+                return (1 + nums[1]) * nums[0] // 2
         else:
-            return rollBasic(nums[0],nums[1])
-    elif(op=='h'):
+            return rollBasic(nums[0], nums[1])
+    elif (op == 'h'):
         return nums[0][-nums[1]:]
-    elif(op=='l'):
+    elif (op == 'l'):
         return nums[0][:nums[1]]
-    elif(op=='^'):
-        return nums[0]**nums[1]
-    elif(op=='*'):
-        return nums[0]*nums[1]
-    elif(op=='/'):
-        return nums[0]/nums[1]
-    elif(op=='%'):
-        return nums[0]%nums[1]
-    elif(op=='+'):
-        return nums[0]+nums[1]
-    elif(op=='-'):
-        return nums[0]-nums[1]
-    elif(op=='>'):
-        return nums[0]>nums[1]
-    elif(op=='<'):
-        return nums[0]<nums[1]
-    elif(op=='='):
-        return nums[0]==nums[1]
-    elif(op=='&'):
+    elif (op == '^'):
+        return nums[0] ** nums[1]
+    elif (op == '*'):
+        return nums[0] * nums[1]
+    elif (op == '/'):
+        return nums[0] / nums[1]
+    elif (op == '%'):
+        return nums[0] % nums[1]
+    elif (op == '+'):
+        return nums[0] + nums[1]
+    elif (op == '-'):
+        return nums[0] - nums[1]
+    elif (op == '>'):
+        return nums[0] > nums[1]
+    elif (op == '<'):
+        return nums[0] < nums[1]
+    elif (op == '='):
+        return nums[0] == nums[1]
+    elif (op == '&'):
         return nums[0] and nums[1]
-    elif(op=='|'):
+    elif (op == '|'):
         return nums[0] or nums[1]
 
-def unary(num,op):
+
+def unary(num, op):
     try:
-        num=sum(num)
-    except(TypeError):
+        num = sum(num)
+    except (TypeError):
         pass
-    if(op=='m'):
+    if (op == 'm'):
         return -num
-    elif(op=='p'):
+    elif (op == 'p'):
         return num
 
-def execute(T,av=False):
-    oper=[]
-    nums=[]
-##    for current in T:
-    while(len(T)>0):
-        current=T.pop(0)
-        if(type(current) is int or type(current) is list):
+
+def execute(T, av=False):
+    oper = []
+    nums = []
+    while (len(T) > 0):
+        current = T.pop(0)
+        if (type(current) is int or type(current) is list):
             nums.append(current)
-        elif(current=='('):
+        elif (current == '('):
             oper.append(current)
-        elif(current==')'):
-            while(oper[-1]!='('):
-        #Evaluate all extant expressions down to the open paren
-                if(order[operators.index(oper[-1])]==2):
-                    nums.append(evaluate([nums.pop(-2),nums.pop()],oper.pop(),av))
+        elif (current == ')'):
+            while (oper[-1] != '('):
+                #Evaluate all extant expressions down to the open paren
+                if (order[operators.index(oper[-1])] == 2):
+                    nums.append(evaluate(
+                        [nums.pop(-2), nums.pop()], oper.pop(), av))
                 else:
-                    nums.append(unary(nums.pop(),oper.pop()))
-            oper.pop()   #Get rid of that last open paren
-        elif(current in operators):
+                    nums.append(unary(nums.pop(), oper.pop()))
+            oper.pop()  #Get rid of that last open paren
+        elif (current in operators):
             try:
-                while(operators.index(oper[-1])<=operators.index(current)):
+                while (operators.index(oper[-1]) <= operators.index(current)):
                     #check precedence; lower index=higher precedence
                     #perform operation
-                    if(order[operators.index(oper[-1])]==2):
-                        nums.append(evaluate([nums.pop(-2),nums.pop()],oper.pop(),av))
+                    if (order[operators.index(oper[-1])] == 2):
+                        nums.append(evaluate(
+                            [nums.pop(-2), nums.pop()], oper.pop(), av))
                     else:
-                        nums.append(unary(nums.pop(),oper.pop()))
-            except(IndexError):
+                        nums.append(unary(nums.pop(), oper.pop()))
+            except (IndexError):
                 pass
             oper.append(current)
             #or add a higher-precedence operator to the stack
-    while(len(oper)>0):
+    while (len(oper) > 0):
         #empty the operator stack
-        op=oper[-1]
-        ind=operators.index(oper[-1])
-        orde=order[ind]
-        if(order[operators.index(oper[-1])]==2):
-            nums.append(evaluate([nums.pop(-2),nums.pop()],oper.pop(),av))
+        op = oper[-1]
+        ind = operators.index(oper[-1])
+        orde = order[ind]
+        if (order[operators.index(oper[-1])] == 2):
+            nums.append(evaluate([nums.pop(-2), nums.pop()], oper.pop(), av))
         else:
-            nums.append(unary(nums.pop(),oper.pop()))
+            nums.append(unary(nums.pop(), oper.pop()))
     try:
         #collapse list of rolls if able
-        nums[0]=sum(nums[0])
-    except(TypeError):
+        nums[0] = sum(nums[0])
+    except (TypeError):
         pass
     return sum(nums)
 
-def multipass(T,modifiers=0):
-    out=[]
+
+def multipass(T, modifiers=0):
+    out = []
     while True:
         try:
             #This rolls every d and overwrites the slot
-            loc=T.index('d')
-            T[loc]=rollBasic(T[loc-1],T[loc+1])
-            del T[loc+1]
-            del T[loc-1]
-        except(ValueError):
+            loc = T.index('d')
+            T[loc] = rollBasic(T[loc - 1], T[loc + 1])
+            del T[loc + 1]
+            del T[loc - 1]
+        except (ValueError):
             break
-    out.append([T,'+',modifiers])
+    out.append([T, '+', modifiers])
     while True:
         try:
-            loc=T.index('h')
-            T[loc]=T[loc-1][-T[loc+1]:]
-            del T[loc+1]
-            del T[loc-1]
-        except(ValueError):
+            loc = T.index('h')
+            T[loc] = T[loc - 1][-T[loc + 1]:]
+            del T[loc + 1]
+            del T[loc - 1]
+        except (ValueError):
             try:
-                loc=T.index('l')
-                T[loc]=T[loc-1][:T[loc+1]]
-                del T[loc+1]
-                del T[loc-1]
-            except(ValueError):
+                loc = T.index('l')
+                T[loc] = T[loc - 1][:T[loc + 1]]
+                del T[loc + 1]
+                del T[loc - 1]
+            except (ValueError):
                 break
-    T.append(['+',modifiers])
+    T.append(['+', modifiers])
     out.append(T)
 
     out.append(execute(T))
-    # out should be of the form [[rolls have been made],[selected rolls have been discarded],final result]
+    # out should be of the form 
+    # [[rolls have been made],
+    # [selected rolls have been discarded],
+    # final result]
     return out
 
 
 def displayMultipass(l):
-    return str(l[0])+'\n'+str(l[1])+'\n'+str(l[2])
+    return str(l[0]) + '\n' + str(l[1]) + '\n' + str(l[2])

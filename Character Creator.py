@@ -60,55 +60,64 @@ import rolling as r
 import tkUtility as util
 import configparser as cp
 
-class toplevel:
-    def __init__(self,win):
-        self.master=win
-        self.info=infosec(win,self)
-        self.info.grid(0,0)
-        self.abil=abilsec(win,self)
-        self.abil.grid(0,1)
-        self.weapon=weaponsec(win,self)
-        self.weapon.grid(0,2)
-        self.spell=spellsec(win,self)
-        self.spell.grid(0,3)
-        
-        buttons=tk.Frame(win)
-        buttons.grid(row=0,column=4)
-        self.read=tk.Button(buttons,text="Read",command=lambda: self.READ())
-        self.read.grid(row=0,column=0)
-        self.write=tk.Button(buttons,text="Write",command=lambda: self.WRITE(),fg="green")
-        self.write.grid(row=1,column=0)
-        self.quit=tk.Button(buttons,text="Quit",command=lambda: self.QUIT(),fg="red")
-        self.quit.grid(row=2,column=0)
 
-        self.main=cp.ConfigParser()
-        self.main['Character']={}
-        self.main['Spells']={}
-        self.main['Weapons']={}
-        self.main['HP']={}
-        self.main['Spell Slots']={}
+class toplevel:
+    def __init__(self, win):
+        self.master = win
+        self.info = infosec(win, self)
+        self.info.grid(0, 0)
+        self.abil = abilsec(win, self)
+        self.abil.grid(0, 1)
+        self.weapon = weaponsec(win, self)
+        self.weapon.grid(0, 2)
+        self.spell = spellsec(win, self)
+        self.spell.grid(0, 3)
+
+        buttons = tk.Frame(win)
+        buttons.grid(row=0, column=4)
+        self.read = tk.Button(buttons,
+                              text="Read",
+                              command=lambda: self.READ())
+        self.read.grid(row=0, column=0)
+        self.write = tk.Button(buttons,
+                               text="Write",
+                               command=lambda: self.WRITE(),
+                               fg="green")
+        self.write.grid(row=1, column=0)
+        self.quit = tk.Button(buttons,
+                              text="Quit",
+                              command=lambda: self.QUIT(),
+                              fg="red")
+        self.quit.grid(row=2, column=0)
+
+        self.main = cp.ConfigParser()
+        self.main['Character'] = {}
+        self.main['Spells'] = {}
+        self.main['Weapons'] = {}
+        self.main['HP'] = {}
+        self.main['Spell Slots'] = {}
 
     def READ(self):
         try:
-            self.main.read(self.info.name.get()+'.ini')
+            self.main.read(self.info.name.get() + '.ini')
         except:
             print("File not found.")
 
     def WRITE(self):
-        info=self.info.pull()
-        self.main['HP']['max hp']=info['max hp']
-        self.main['HP']['current hp']=info['max hp']
-        self.main['HP']['current temp hp']='0'
-        self.main['Character']['name']=info['name']
-        self.main['Character']['level']=info['level']
-        self.main['Character']['caster level']=info['caster level']
-        self.main['Character']['class']=info['class']
+        info = self.info.pull()
+        self.main['HP']['max hp'] = info['max hp']
+        self.main['HP']['current hp'] = info['max hp']
+        self.main['HP']['current temp hp'] = '0'
+        self.main['Character']['name'] = info['name']
+        self.main['Character']['level'] = info['level']
+        self.main['Character']['caster level'] = info['caster level']
+        self.main['Character']['class'] = info['class']
         self.main['Character'].update(self.abil.pull())
-        self.main['Spell Slots']['spell slots']=''
+        self.main['Spell Slots']['spell slots'] = ''
         self.weapon.build()
         self.spell.build()
-        ini_name=info['name']+'.ini'
-        with open(ini_name,'w') as file:
+        ini_name = info['name'] + '.ini'
+        with open(ini_name, 'w') as file:
             self.main.write(file)
 
     def QUIT(self):
@@ -117,128 +126,140 @@ class toplevel:
 
 
 class infosec:
-    def __init__(self,parent,app):
-        self.f=tk.Frame(parent)
-        self.name=util.labeledEntry(self.f,"Character Name",0,0)
-        self.level=util.labeledEntry(self.f,"Level",2,0)
-        self.casterlevel=util.labeledEntry(self.f,"Caster Level",4,0)
-        self.Class=util.labeledEntry(self.f,"Class",6,0)
-        self.maxhp=util.labeledEntry(self.f,"Maximum HP",8,0)
+    def __init__(self, parent, app):
+        self.f = tk.Frame(parent)
+        self.name = util.labeledEntry(self.f, "Character Name", 0, 0)
+        self.level = util.labeledEntry(self.f, "Level", 2, 0)
+        self.casterlevel = util.labeledEntry(self.f, "Caster Level", 4, 0)
+        self.Class = util.labeledEntry(self.f, "Class", 6, 0)
+        self.maxhp = util.labeledEntry(self.f, "Maximum HP", 8, 0)
 
     def pull(self):
-        data={}
-        data['name']=self.name.get()
-        data['level']=(self.level.get())
-        data['caster level']=(self.casterlevel.get())
-        data['class']=self.Class.get().lower()
-        data['max hp']=str(r.call(self.maxhp.get()))
+        data = {}
+        data['name'] = self.name.get()
+        data['level'] = (self.level.get())
+        data['caster level'] = (self.casterlevel.get())
+        data['class'] = self.Class.get().lower()
+        data['max hp'] = str(r.call(self.maxhp.get()))
         return data
 
-    def grid(self,row,column):
-        self.f.grid(row=row,column=column)
+    def grid(self, row, column):
+        self.f.grid(row=row, column=column)
 
-        
+
 class abilsec:
-    def __init__(self,parent,app):
-        self.f=tk.Frame(parent)
-        self.names=['STR','DEX','CON','INT','WIS','CHA']
-        self.entries=[]
-        for (i,n) in enumerate(self.names):
-            self.entries.append(util.labeledEntry(self.f,n,i*2,0,orient='h',width=4))
+    def __init__(self, parent, app):
+        self.f = tk.Frame(parent)
+        self.names = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']
+        self.entries = []
+        for (i, n) in enumerate(self.names):
+            self.entries.append(util.labeledEntry(self.f,
+                                                  n,
+                                                  i * 2,
+                                                  0,
+                                                  orient='h',
+                                                  width=4))
 
     def pull(self):
-        data={}
-        for (i,n) in enumerate(self.names):
-            data[n.lower()]=(self.entries[i].get())
+        data = {}
+        for (i, n) in enumerate(self.names):
+            data[n.lower()] = (self.entries[i].get())
         return data
 
-    def grid(self,row,column):
-        self.f.grid(row=row,column=column)
+    def grid(self, row, column):
+        self.f.grid(row=row, column=column)
 
-        
+
 class weaponsec:
-    def __init__(self,parent,app):
-        self.top=app
-        self.f=tk.Frame(parent)
-        self.name=util.labeledEntry(self.f,"Weapon Name",0,0)
-        self.dice=util.labeledEntry(self.f,"Damage Dice",2,0)
-        self.abil=util.labeledEntry(self.f,"Ability Used",4,0)
-        self.mult=util.labeledEntry(self.f,"Attacks per Action",6,0)
-        self.magi=util.labeledEntry(self.f,"Magic Bonus",8,0)
-        self.roll=util.labeledEntry(self.f,"Make Attack Roll?",10,0)
-        self.ammo=util.labeledEntry(self.f,"Ammunition",12,0)
-        self.effc=util.labeledEntry(self.f,"Additional Information",14,0)
-        self.make=tk.Button(self.f,text='Make',command=lambda:self.build())
-        self.make.grid(row=16,column=0)
+    def __init__(self, parent, app):
+        self.top = app
+        self.f = tk.Frame(parent)
+        self.name = util.labeledEntry(self.f, "Weapon Name", 0, 0)
+        self.dice = util.labeledEntry(self.f, "Damage Dice", 2, 0)
+        self.abil = util.labeledEntry(self.f, "Ability Used", 4, 0)
+        self.mult = util.labeledEntry(self.f, "Attacks per Action", 6, 0)
+        self.magi = util.labeledEntry(self.f, "Magic Bonus", 8, 0)
+        self.roll = util.labeledEntry(self.f, "Make Attack Roll?", 10, 0)
+        self.ammo = util.labeledEntry(self.f, "Ammunition", 12, 0)
+        self.effc = util.labeledEntry(self.f, "Additional Information", 14, 0)
+        self.make = tk.Button(self.f,
+                              text='Make',
+                              command=lambda: self.build())
+        self.make.grid(row=16, column=0)
 
     def build(self):
-        s=''
-        defaults=['0','str','1','0','1','-1','']
-        entries=[self.dice,self.abil,self.mult,self.magi,self.roll,self.ammo,self.effc]
-        for (i,entry) in enumerate(entries):
-            content=entry.get()
-            if(i == 4):
-                if(content.lower()=='no' or content.lower()=='false'):
-                    content='0'
+        s = ''
+        defaults = ['0', 'str', '1', '0', '1', '-1', '']
+        entries = [self.dice, self.abil, self.mult, self.magi, self.roll,
+                   self.ammo, self.effc]
+        for (i, entry) in enumerate(entries):
+            content = entry.get()
+            if (i == 4):
+                if (content.lower() == 'no' or content.lower() == 'false'):
+                    content = '0'
                 else:
-                    content='1'
-            if(i >= 2):
-                if(content==''):
-                    content=defaults[i]
-            if(i == len(entries)-1):
-                content=content.replace('\n','$')
-            s += content+','
-        s=s[:-1] #cut the trailing ','
-        new={self.name.get().lower():s}
+                    content = '1'
+            if (i >= 2):
+                if (content == ''):
+                    content = defaults[i]
+            if (i == len(entries) - 1):
+                content = content.replace('\n', '$')
+            s += content + ','
+        s = s[:-1]  #cut the trailing ','
+        new = {self.name.get().lower(): s}
         self.top.main['Weapons'].update(new)
 
-    def grid(self,row,column):
-        self.f.grid(row=row,column=column)
+    def grid(self, row, column):
+        self.f.grid(row=row, column=column)
 
 
 class spellsec:
-    def __init__(self,parent,app):
-        self.top=app
-        self.f=tk.Frame(parent)
-        self.name=util.labeledEntry(self.f,"Spell Name",0,0)
-        self.level=util.labeledEntry(self.f,"Spell Level",2,0)
-        self.abil=util.labeledEntry(self.f,"Ability Used",4,0)
-        self.dice=util.labeledEntry(self.f,"Damage Dice",6,0)
-        self.addabil=util.labeledEntry(self.f,"Add Ability Modifier\nto Damage?",8,0)
-        self.roll=util.labeledEntry(self.f,"Make Attack Roll?",10,0)
-        self.save=util.labeledEntry(self.f,"Saving Throw Type\n(If Applicable)",12,0)
-        self.mult=util.labeledEntry(self.f,"Attacks per Action",14,0)
-        self.effects=util.labeledEntry(self.f,"Additional Information",16,0)
-        self.make=tk.Button(self.f,text='Make',command=lambda:self.build())
-        self.make.grid(row=18,column=0)
+    def __init__(self, parent, app):
+        self.top = app
+        self.f = tk.Frame(parent)
+        self.name = util.labeledEntry(self.f, "Spell Name", 0, 0)
+        self.level = util.labeledEntry(self.f, "Spell Level", 2, 0)
+        self.abil = util.labeledEntry(self.f, "Ability Used", 4, 0)
+        self.dice = util.labeledEntry(self.f, "Damage Dice", 6, 0)
+        self.addabil = util.labeledEntry(
+            self.f, "Add Ability Modifier\nto Damage?", 8, 0)
+        self.roll = util.labeledEntry(self.f, "Make Attack Roll?", 10, 0)
+        self.save = util.labeledEntry(
+            self.f, "Saving Throw Type\n(If Applicable)", 12, 0)
+        self.mult = util.labeledEntry(self.f, "Attacks per Action", 14, 0)
+        self.effects = util.labeledEntry(self.f, "Additional Information", 16,
+                                         0)
+        self.make = tk.Button(self.f,
+                              text='Make',
+                              command=lambda: self.build())
+        self.make.grid(row=18, column=0)
 
     def build(self):
-        s=''
-        defaults=['-1','wis','0','0','0','','1','']
-        entries=[self.level,self.abil,self.dice,self.addabil,self.roll,self.save,self.mult,self.effects]
-        for (i,entry) in enumerate(entries):
-            content=entry.get()
-            if(i == 3 or i==4):
-                if(content.lower()=='no' or content.lower()=='false'):
-                    content='0'
+        s = ''
+        defaults = ['-1', 'wis', '0', '0', '0', '', '1', '']
+        entries = [self.level, self.abil, self.dice, self.addabil, self.roll,
+                   self.save, self.mult, self.effects]
+        for (i, entry) in enumerate(entries):
+            content = entry.get()
+            if (i == 3 or i == 4):
+                if (content.lower() == 'no' or content.lower() == 'false'):
+                    content = '0'
                 else:
-                    content='1'
-            if(i >= 3):
-                if(content == ''):
-                    content=defaults[i]
-            if(i == len(entries)-1):
-                content=content.replace('\n','$')
-            s += content+','
-        s=s[:-1] #cut the trailing ','
-        new={self.name.get().lower():s}
+                    content = '1'
+            if (i >= 3):
+                if (content == ''):
+                    content = defaults[i]
+            if (i == len(entries) - 1):
+                content = content.replace('\n', '$')
+            s += content + ','
+        s = s[:-1]  #cut the trailing ','
+        new = {self.name.get().lower(): s}
         self.top.main['Spells'].update(new)
 
-    def grid(self,row,column):
-        self.f.grid(row=row,column=column)
+    def grid(self, row, column):
+        self.f.grid(row=row, column=column)
 
 
-
-
-window=tk.Tk()
-app=toplevel(window)
+window = tk.Tk()
+app = toplevel(window)
 window.mainloop()
