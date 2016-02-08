@@ -35,14 +35,20 @@ The remaining files are discussed below.
 	1d100>11						(roll a d100 and check whether the roll is greater than 11; displays a 1 for true and 0 for false)
 	3d4%5								(roll 3d4, return the remainder after division by 5)
 
+
 ============================================================================================
-SECTION 2: PLAYERS
+SECTION 2: Dice
+This program uses the rolling code to power a minimal interface for rolling dice. All you need to do is run the program and type in the box. The button or the enter key will roll the dice that you specify in the entry.
+
+
+============================================================================================
+SECTION 3: PLAYERS
 First, you need to run "Character Creator.py" to create the file that defines your character. This only needs to be run once at the beginning, plus whenever you want to add a new attack to your repertoire.
 
 After that initial run, you are equipped to run "Character Manager.py" which is the main program for you.
 
 
-	2.1: Character Creator
+	3.1: Character Creator
 	This program will write a file called "*the name of your character*.ini" that contains all the information necessary to construct your character.
 	
 	Fill out the fields on the left and in the abilities section. These are largely self-explanatory. Class accepts the names of the classes in the Player's Handbook as well as "multiclass". This option is only used to determine the spell slots available to you, so if none of these options directly apply to you (Eldritch Knight maybe? I've never played one) use an equivalent class like Paladin.
@@ -80,7 +86,7 @@ After that initial run, you are equipped to run "Character Manager.py" which is 
 	
 	
 	
-	2.2: Character Manager
+	3.2: Character Manager
 	To use this program, enter the character's name in the relevant entry exactly as it appears in the title of the .ini file, then hit Enter or press the load button. This should set everything up for you.
 
 	HP SECTION:
@@ -105,10 +111,10 @@ After that initial run, you are equipped to run "Character Manager.py" which is 
 
 		
 ============================================================================================
-SECTION 3: DUNGEON MASTERS
+SECTION 4: DUNGEON MASTERS
 The file "Monster Manager.py" is written for you. It keeps track of monsters and allows you to roll any other dice you need while running a combat. There is no preparation needed to use this, so just run it as is.
 
-	3.1: Using the Monster Manager
+	4.1: Using the Monster Manager
 	The first thing you will likely want to do is press the "New Monster" button to open the dialog. This will create a popup window with a variety of fields that can be filled out. Fill them with relevant information and hit the "Finish" button.
 
 	The main window will now contain a section that contains relevant information about the monster. From here, you can make the monster take damage (by inserting a negative value in the "Change HP" entry and pressing the button), recover HP (same but positive), or perform attacks. This aspect perhaps bears explanation. To perform an attack, fill out the attack bonus and damage done and press the button. The attack bonus is **added to the d20 roll and should not include the d20**, and can be any valid rollable string, as defined in section 1.0.1. This includes simple integers as well as dice, arithmetic expressions, and even comparisons. Also ridiculous expressions like "1d4d4d4d4".
