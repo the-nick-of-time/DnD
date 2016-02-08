@@ -131,18 +131,13 @@ def tokens(s):
     return out
 
 def readList(s,mode='float'):
-    s=s.split(sep=',')
-    out=[]
-    for num in s:
-        num=num.replace('[','')
-        num=num.replace(']','')
-        if(num):
-            if(mode=='float'):
-                num=float(num)
-            elif(mode=='int'):
-                num=int(num)
-            out.append(num)
-    return out
+	if(mode == 'float'):
+		return list(eval(s))
+	elif(mode == 'int'):
+		a = list(eval(s))
+		for (i, item) in enumerate(a):
+			a[i] = int(item)
+		return a
 
 def rollBasic(number,sides):
     #Returns a sorted (ascending) list of all the numbers rolled
