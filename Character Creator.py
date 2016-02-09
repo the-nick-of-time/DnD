@@ -105,20 +105,21 @@ class toplevel:
 
     def WRITE(self):
         info = self.info.pull()
-        self.main['HP']['max hp'] = info['max hp']
-        self.main['HP']['current hp'] = info['max hp']
-        self.main['HP']['current temp hp'] = '0'
-        self.main['Character']['name'] = info['name']
-        self.main['Character']['level'] = info['level']
-        self.main['Character']['caster level'] = info['caster level']
-        self.main['Character']['class'] = info['class']
-        self.main['Character'].update(self.abil.pull())
-        self.main['Spell Slots']['spell slots'] = ''
-        self.weapon.build()
-        self.spell.build()
-        ini_name = info['name'] + '.ini'
-        with open(ini_name, 'w') as file:
-            self.main.write(file)
+        if(info['name']):
+            self.main['HP']['max hp'] = info['max hp']
+            self.main['HP']['current hp'] = info['max hp']
+            self.main['HP']['current temp hp'] = '0'
+            self.main['Character']['name'] = info['name']
+            self.main['Character']['level'] = info['level']
+            self.main['Character']['caster level'] = info['caster level']
+            self.main['Character']['class'] = info['class']
+            self.main['Character'].update(self.abil.pull())
+            self.main['Spell Slots']['spell slots'] = ''
+            self.weapon.build()
+            self.spell.build()
+            ini_name = info['name'] + '.ini'
+            with open(ini_name, 'w') as file:
+                self.main.write(file)
 
     def QUIT(self):
         self.WRITE()
@@ -206,8 +207,9 @@ class weaponsec:
                 content = content.replace('\n', '$')
             s += content + ','
         s = s[:-1]  #cut the trailing ','
-        new = {self.name.get().lower(): s}
-        self.top.main['Weapons'].update(new)
+        if(self.name.get()):
+            new = {self.name.get().lower(): s}
+            self.top.main['Weapons'].update(new)
 
     def grid(self, row, column):
         self.f.grid(row=row, column=column)
@@ -253,8 +255,9 @@ class spellsec:
                 content = content.replace('\n', '$')
             s += content + ','
         s = s[:-1]  #cut the trailing ','
-        new = {self.name.get().lower(): s}
-        self.top.main['Spells'].update(new)
+        if(self.name.get()):
+            new = {self.name.get().lower(): s}
+            self.top.main['Spells'].update(new)
 
     def grid(self, row, column):
         self.f.grid(row=row, column=column)

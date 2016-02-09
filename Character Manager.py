@@ -116,28 +116,6 @@ class toplevel:
         data = {'Attacks': {}}
         try:
             reader.read(ini_name)
-            for sp in reader['Spells']:
-                args = readConfig(reader['Spells'][sp])
-                args[-1] = args[-1].replace('$', '\n')
-                data['Attacks'][sp] = dnd.spell(*args)
-            for wep in reader['Weapons']:
-                args = readConfig(reader['Weapons'][wep])
-                args[-1] = args[-1].replace('$', '\n')
-                data['Attacks'][wep] = dnd.weapon(*args)
-            for ab in ['str', 'dex', 'con', 'int', 'wis', 'cha']:
-                data[ab] = reader['Character'][ab]
-            data['level'] = reader['Character']['level']
-            data['caster level'] = reader['Character']['caster level']
-            data['class'] = reader['Character']['class']
-            data['max HP'] = reader['HP']['max hp']
-            data['HP'] = reader['HP']['current hp']
-            data['temp HP'] = reader['HP']['current temp hp']
-            data['spell slots'] = reader['Spell Slots']['spell slots']
-            self.characterdata['Attacks'] = data['Attacks']
-            self.characterdata['spell slots'] = r.readList(data['spell slots'],
-                                                           mode='int')
-            return data
-
         except (KeyError):
             errorWindow = tk.Tk()
             tk.Label(
@@ -149,6 +127,33 @@ class toplevel:
                       command=errorWindow.destroy,
                       text="OK").pack()
             return None
+        
+        for sp in reader['Spells']:
+            args = readConfig(reader['Spells'][sp])
+            args[-1] = args[-1].replace('$', '\n')
+            data['Attacks'][sp] = dnd.spell(*args)
+        for wep in reader['Weapons']:
+            args = readConfig(reader['Weapons'][wep])
+            args[-1] = args[-1].replace('$', '\n')
+            data['Attacks'][wep] = dnd.weapon(*args)
+        for ab in ['str', 'dex', 'con', 'int', 'wis', 'cha']:
+            data[ab] = reader['Character'][ab]
+        data['level'] = reader['Character']['level']
+        data['caster level'] = reader['Character']['caster level']
+        data['class'] = reader['Character']['class']
+        data['max HP'] = reader['HP']['max hp']
+        data['HP'] = reader['HP']['current hp']
+        data['temp HP'] = reader['HP']['current temp hp']
+        data['spell slots'] = reader['Spell Slots']['spell slots']
+        self.characterdata['Attacks'] = data['Attacks']
+        try:
+            self.characterdata['spell slots'] = r.readList(data['spell slots'],
+                                                           mode='int')
+        except(SyntaxError):
+            self.characterdata['spell slots'] = [0]
+        return data
+
+        
 
     def pushConfigData(self):
         data = self.getConfigData()
@@ -173,22 +178,18 @@ class toplevel:
         data.update(self.pullHP())
         writer = cp.ConfigParser()
         writer.read(data['name'] + '.ini')
-        try:
-            writer['HP']['current hp'] = str(data['HP'])
-            writer['HP']['current temp hp'] = str(data['temp HP'])
-            writer['HP']['max hp'] = str(data['max HP'])
-            writer['Spell Slots']['spell slots'] = str(
-                self.activeCharacter.spellslots)
-            writer['Character']['level'] = str(self.activeCharacter.level)
-            writer['Character']['caster level'] = str(
-                self.activeCharacter.casterLevel)
-            for (i,
-                 n) in enumerate(['str', 'dex', 'con', 'int', 'wis', 'cha']):
-                writer['Character'][n] = self.activeCharacter.abilities[n]
-            with open(data['name'] + '.ini', 'w') as configfile:
-                writer.write(configfile)
-        except:
-            pass
+        writer['HP']['current hp'] = str(data['HP'])
+        writer['HP']['current temp hp'] = str(data['temp HP'])
+        writer['HP']['max hp'] = str(data['max HP'])
+        writer['Spell Slots']['spell slots'] = str(
+            self.activeCharacter.spellslots)
+        writer['Character']['level'] = str(self.activeCharacter.level)
+        writer['Character']['caster level'] = str(
+            self.activeCharacter.casterLevel)
+        for val in ['str', 'dex', 'con', 'int', 'wis', 'cha']:
+            writer['Character'][val] = str(self.activeCharacter.abilities[val])
+        with open(data['name'] + '.ini', 'w') as configfile:
+            writer.write(configfile)
         self.parent.destroy()
 
 
@@ -221,12 +222,16 @@ class infosec:
         self.top.initCharacter()
 
     def getall(self):
-        out = {}
-        out["name"] = self.name.get()
-        out["level"] = int(self.level.get())
-        out["caster level"] = int(self.casterLevel.get())
-        out["class"] = self.Class.get()
-        return out
+        try:
+            out = {}
+            out["name"] = self.name.get()
+            out["level"] = int(self.level.get())
+            out["caster level"] = int(self.casterLevel.get())
+            out["class"] = self.Class.get()
+            return out
+        except:
+            print("unable to pull info")
+            return {}
 
     def populateFromConfig(self, data):
         util.replaceEntry(self.level, data['level'])
@@ -242,9 +247,9 @@ class spellsec:
         self.parent = master
         self.top = app
         self.f = tk.Frame(master, width=193)
-        self.spellDisplays = [tk.Label(self.f) for x in range(9)]
-        self.spellInc = [tk.Button(self.f, text='+') for x in range(9)]
-        self.spellDec = [tk.Button(self.f, text='-') for x in range(9)]
+        self.spellDisplays = [tk.Label(self.f) for x in range(10)]
+        self.spellInc = [tk.Button(self.f, text='+') for x in range(10)]
+        self.spellDec = [tk.Button(self.f, text='-') for x in range(10)]
         self.reset = tk.Button(self.f,
                                text="Reset\nSpells",
                                command=lambda: self.RESET())
@@ -304,11 +309,15 @@ class abilsec:
             self.modlabels[i].grid(row=i, column=2)
 
     def getall(self):
-        out = {}
-        names = ['str', 'dex', 'con', 'int', 'wis', 'cha']
-        for (n, e) in zip(names, self.entries):
-            out[n] = int(e.get())
-        return out
+        try:
+            out = {}
+            names = ['str', 'dex', 'con', 'int', 'wis', 'cha']
+            for (n, e) in zip(names, self.entries):
+                out[n] = int(e.get())
+            return out
+        except:
+            print("unable to pull abilities")
+            return {}
 
     def populateFromConfig(self, data):
         names = ['str', 'dex', 'con', 'int', 'wis', 'cha']
@@ -331,6 +340,7 @@ class hpsec:
                                         0,
                                         width=10,
                                         orient='h')
+        self.amount.bind('<Return>', lambda event: self.changeHP(False))
         self.temp = util.labeledEntry(self.f, '+Temporary HP', 0, 2, width=5)
         buttons = tk.Frame(self.f, pady=15)
         buttons.grid(row=2, column=2)
@@ -361,8 +371,8 @@ class hpsec:
             else:
                 h += amount
                 h = m if h > m else h
-                util.replaceEntry(self.temp, str(t))
-                util.replaceEntry(self.current, str(h))
+        util.replaceEntry(self.temp, str(t))
+        util.replaceEntry(self.current, str(h))
 
     def populateFromConfig(self, data):
         util.replaceEntry(self.max, data['max HP'])
@@ -370,11 +380,15 @@ class hpsec:
         util.replaceEntry(self.temp, data['temp HP'])
 
     def getall(self):
-        data = {}
-        data['HP'] = int(self.current.get())
-        data['temp HP'] = int(self.temp.get())
-        data['max HP'] = int(self.max.get())
-        return data
+        try:
+            data = {}
+            data['HP'] = int(self.current.get())
+            data['temp HP'] = int(self.temp.get())
+            data['max HP'] = int(self.max.get())
+            return data
+        except:
+            print("unable to pull HP")
+            return {}
 
     def grid(self, row, column):
         self.f.grid(row=row, column=column)
