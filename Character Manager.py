@@ -56,10 +56,11 @@ QUIT:
 """
 
 import tkinter as tk
-import rolling as r
-import tkUtility as util
 import configparser as cp
-import DnDbasic as dnd
+
+import libraries.rolling as r
+import libraries.tkUtility as util
+import libraries.DnDbasic as dnd
 
 
 def readConfig(s):

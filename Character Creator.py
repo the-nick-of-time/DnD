@@ -56,9 +56,10 @@ How to use:
 """
 
 import tkinter as tk
-import rolling as r
-import tkUtility as util
 import configparser as cp
+
+import libraries.rolling as r
+import libraries.tkUtility as util
 
 
 class toplevel:

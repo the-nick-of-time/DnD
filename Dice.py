@@ -1,6 +1,7 @@
-import rolling as r
 import tkinter as tk
-import tkUtility as util
+
+import libraries.rolling as r
+import libraries.tkUtility as util
 
 
 class rollsec:

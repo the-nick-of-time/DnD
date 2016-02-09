@@ -30,8 +30,8 @@ if you add monsters after characters.
 """
 
 import tkinter as tk
-import rolling as r
-from tkUtility import *
+import libraries.rolling as r
+import libraries.tkUtility as util
 
 
 def modifier(score):
@@ -84,8 +84,8 @@ class charbuild:
         self.win = tk.Toplevel()
         self.master = master
 
-        self.name = labeledEntry(self.win, "Character Name", 0, 0)
-        self.initiative = labeledEntry(self.win, "Initiative Score", 2, 0)
+        self.name = util.labeledEntry(self.win, "Character Name", 0, 0)
+        self.initiative = util.labeledEntry(self.win, "Initiative Score", 2, 0)
 
         self.finish = tk.Button(self.win,
                                 text="Finish",
@@ -119,7 +119,7 @@ class rollsec:
     def __init__(self, master, app):
         self.parent = master
         self.f = tk.Frame(master)
-        self.generalRoll = labeledEntry(self.f, 'Dice to roll?', 0, 0)
+        self.generalRoll = util.labeledEntry(self.f, 'Dice to roll?', 0, 0)
         self.generalRoll.bind("<Return>", lambda event: self.doRoll())
         self.button = tk.Button(self.f,
                                 text="ROLL",
@@ -173,7 +173,7 @@ class sub:
         hpmain = tk.Frame(hpsec)
         hpmain.grid(row=1, column=0)
 
-        self.change = labeledEntry(hpmain, 'Change in HP', 0, 0)
+        self.change = util.labeledEntry(hpmain, 'Change in HP', 0, 0)
 
         hpdo = tk.Button(hpmain,
                          text='Change',
@@ -187,7 +187,7 @@ class sub:
         attacknotresult = tk.Frame(attacksec)
         attacknotresult.grid(row=0, column=0)
 
-        self.attackE = labeledEntry(attacknotresult,
+        self.attackE = util.labeledEntry(attacknotresult,
                                     'Attack Modifiers',
                                     0,
                                     0,
@@ -195,7 +195,7 @@ class sub:
                                     pos='w',
                                     width=15)
 
-        self.damageE = labeledEntry(attacknotresult,
+        self.damageE = util.labeledEntry(attacknotresult,
                                     'Damage',
                                     1,
                                     0,
@@ -293,11 +293,11 @@ class builder:
         self.master = master
         self.win = tk.Toplevel()
 
-        self.name = labeledEntry(self.win, 'Enter name', 0, 0)
+        self.name = util.labeledEntry(self.win, 'Enter name', 0, 0)
 
-        self.ac = labeledEntry(self.win, 'Enter AC', 2, 0)
+        self.ac = util.labeledEntry(self.win, 'Enter AC', 2, 0)
 
-        self.hp = labeledEntry(self.win, 'Enter HP as valid roll', 4, 0)
+        self.hp = util.labeledEntry(self.win, 'Enter HP as valid roll', 4, 0)
 
         self.av = tk.BooleanVar()
         self.average = tk.Checkbutton(self.win,
@@ -311,7 +311,7 @@ class builder:
         self.entries = []
         labels = []
         for (i, n) in enumerate(abilities):
-            self.entries.append(labeledEntry(self.abil,
+            self.entries.append(util.labeledEntry(self.abil,
                                              n,
                                              (i // 3) * 2,
                                              i % 3,
@@ -328,12 +328,12 @@ class builder:
         if (len(self.master.frames)):
             prev = self.master.frames[-1].creature
             if (type(prev) is monster):
-                replaceEntry(self.name, prev.name)
-                replaceEntry(self.ac, prev.AC)
-                replaceEntry(self.hp, prev.HD)
+                util.replaceEntry(self.name, prev.name)
+                util.replaceEntry(self.ac, prev.AC)
+                util.replaceEntry(self.hp, prev.HD)
                 #replaceEntry(self.xp,prev.XP)
                 for i in range(6):
-                    replaceEntry(self.entries[i], prev.abilities[i])
+                    util.replaceEntry(self.entries[i], prev.abilities[i])
 
     def finish(self, master):
         #tell main to take data out
@@ -374,9 +374,6 @@ class main:
                           column=abs(len(self.frames) - 1) // 6,
                           sticky='n')
         self.generalRoll.grid(len(self.frames) % 3, len(self.frames) // 3)
-        #self.makenew.grid(row=3,column=abs(len(self.frames)-1)//6)
-        #self.makechar.grid(row=4,column=abs(len(self.frames)-1)//6)
-        #self.qa.grid(row=5,column=abs(len(self.frames)-1)//6)
 
     def create(self):
         new = builder(self)
