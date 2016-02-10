@@ -272,41 +272,35 @@ def execute(T, av=False):
 
 
 def multipass(T, modifiers=0):
-    out = []
-    while True:
-        try:
-            #This rolls every d and overwrites the slot
-            loc = T.index('d')
-            T[loc] = rollBasic(T[loc - 1], T[loc + 1])
-            del T[loc + 1]
-            del T[loc - 1]
-        except (ValueError):
-            break
-    out.append([T, '+', modifiers])
-    while True:
-        try:
-            loc = T.index('h')
-            T[loc] = T[loc - 1][-T[loc + 1]:]
-            del T[loc + 1]
-            del T[loc - 1]
-        except (ValueError):
-            try:
-                loc = T.index('l')
-                T[loc] = T[loc - 1][:T[loc + 1]]
-                del T[loc + 1]
-                del T[loc - 1]
-            except (ValueError):
-                break
-    T.append(['+', modifiers])
-    out.append(T)
-
-    out.append(execute(T))
+    # note: this does not yet support parentheses
+    passes = ["d", "hl", "^mp*/%+-", "><=&|"]
+    for run in passes:
+        for op in run:
+            while (T.count(op)):
+                loc = T.index(op)
+                if (order[operators.index(op)] == 2):
+                    val = evaluate([T[loc - 1], T[loc + 1]], op)
+                    T[loc - 1:loc + 2] = [val]
+                    #this assignment only works when RHS is iterable
+                    T[loc - 1] = T[loc - 1][0]  #extract the number
+                else:
+                    val = unary(T[loc + 1], op)
+                    T[loc:loc + 2] = [val]
+                    T[loc] = T[loc][0]
+        out.append(T)
+    out.append(T[0])
     # out should be of the form 
     # [[rolls have been made],
     # [selected rolls have been discarded],
+    # [arithmetic but not boolean operators have been evaluated],
     # final result]
     return out
 
 
 def displayMultipass(l):
-    return str(l[0]) + '\n' + str(l[1]) + '\n' + str(l[2])
+    out = ['', '', '', '']
+    for (i, sec) in enumerate(l):
+        for token in sec:
+            out[i] += str(token)
+        out[i] += '\n'
+    return out 
