@@ -76,8 +76,9 @@ class character:
         self.level = level
         self.abilities = abilities
         self.attacks = attacks
-        if (Class == 'bard' or Class == 'cleric' or Class == 'druid' or Class
-                == 'sorcerer' or Class == 'wizard' or Class == 'multiclass'):
+        if (Class == 'bard' or Class == 'cleric' or Class == 'druid' or
+                Class == 'sorcerer' or Class == 'wizard' or
+                Class == 'multiclass'):
             self.casterType = 'full'
         elif (Class == 'paladin' or Class == 'ranger'):
             self.casterType = 'half'

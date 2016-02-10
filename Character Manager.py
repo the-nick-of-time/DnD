@@ -128,7 +128,7 @@ class toplevel:
                       command=errorWindow.destroy,
                       text="OK").pack()
             return None
-        
+
         for sp in reader['Spells']:
             args = readConfig(reader['Spells'][sp])
             args[-1] = args[-1].replace('$', '\n')
@@ -150,11 +150,9 @@ class toplevel:
         try:
             self.characterdata['spell slots'] = r.readList(data['spell slots'],
                                                            mode='int')
-        except(SyntaxError):
+        except (SyntaxError):
             self.characterdata['spell slots'] = [0]
         return data
-
-        
 
     def pushConfigData(self):
         data = self.getConfigData()

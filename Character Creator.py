@@ -106,7 +106,7 @@ class toplevel:
 
     def WRITE(self):
         info = self.info.pull()
-        if(info['name']):
+        if (info['name']):
             self.main['HP']['max hp'] = info['max hp']
             self.main['HP']['current hp'] = info['max hp']
             self.main['HP']['current temp hp'] = '0'
@@ -208,7 +208,7 @@ class weaponsec:
                 content = content.replace('\n', '$')
             s += content + ','
         s = s[:-1]  #cut the trailing ','
-        if(self.name.get()):
+        if (self.name.get()):
             new = {self.name.get().lower(): s}
             self.top.main['Weapons'].update(new)
 
@@ -256,7 +256,7 @@ class spellsec:
                 content = content.replace('\n', '$')
             s += content + ','
         s = s[:-1]  #cut the trailing ','
-        if(self.name.get()):
+        if (self.name.get()):
             new = {self.name.get().lower(): s}
             self.top.main['Spells'].update(new)
 

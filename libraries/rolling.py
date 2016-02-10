@@ -188,7 +188,7 @@ def evaluate(nums, op, av=False):
     elif (op == 'l'):
         return nums[0][:nums[1]]
     elif (op == '^'):
-        return nums[0] ** nums[1]
+        return nums[0]**nums[1]
     elif (op == '*'):
         return nums[0] * nums[1]
     elif (op == '/'):
