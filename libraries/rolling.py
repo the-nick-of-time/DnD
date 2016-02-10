@@ -282,11 +282,9 @@ def multipass(T, modifiers=0):
                     val = evaluate([T[loc - 1], T[loc + 1]], op)
                     T[loc - 1:loc + 2] = [val]
                     #this assignment only works when RHS is iterable
-                    T[loc - 1] = T[loc - 1][0]  #extract the number
                 else:
                     val = unary(T[loc + 1], op)
                     T[loc:loc + 2] = [val]
-                    T[loc] = T[loc][0]
         out.append(T)
     out.append(T[0])
     # out should be of the form 
@@ -303,4 +301,4 @@ def displayMultipass(l):
         for token in sec:
             out[i] += str(token)
         out[i] += '\n'
-    return out 
+    return out
