@@ -187,7 +187,7 @@ class toplevel:
             self.activeCharacter.casterLevel)
         for val in ['str', 'dex', 'con', 'int', 'wis', 'cha']:
             writer['Character'][val] = str(self.activeCharacter.abilities[val])
-        with open(data['name'] + '.ini', 'w') as configfile:
+        with open('./character/' + data['name'] + '.ini', 'w') as configfile:
             writer.write(configfile)
         self.parent.destroy()
 
