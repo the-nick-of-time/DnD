@@ -57,6 +57,7 @@ How to use:
 
 import tkinter as tk
 import configparser as cp
+import os
 
 import libraries.rolling as r
 import libraries.tkUtility as util
@@ -100,12 +101,16 @@ class toplevel:
 
     def READ(self):
         try:
-            self.main.read(self.info.name.get() + '.ini')
+            self.main.read('./character/' + self.info.name.get() + '.ini')
         except:
             print("File not found.")
 
     def WRITE(self):
         info = self.info.pull()
+        direc = "./character/"
+        if (not os.path.exists(direc)):
+            os.mkdir(direc)
+        
         if (info['name']):
             self.main['HP']['max hp'] = info['max hp']
             self.main['HP']['current hp'] = info['max hp']
@@ -118,8 +123,7 @@ class toplevel:
             self.main['Spell Slots']['spell slots'] = ''
             self.weapon.build()
             self.spell.build()
-            ini_name = info['name'] + '.ini'
-            with open(ini_name, 'w') as file:
+            with open(direc + info['name'] + '.ini', 'w') as file:
                 self.main.write(file)
 
     def QUIT(self):

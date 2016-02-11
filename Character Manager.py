@@ -113,16 +113,16 @@ class toplevel:
 
     def getConfigData(self):
         reader = cp.ConfigParser()
-        ini_name = self.info.name.get() + '.ini'
+        ini_name = './character/' + self.info.name.get() + '.ini'
         data = {'Attacks': {}}
         try:
             reader.read(ini_name)
         except (KeyError):
-            errorWindow = tk.Tk()
+            errorWindow = tk.Toplevel()
             tk.Label(
                 errorWindow,
                 text=
-                "There is no .ini file in the current directory\nwith name " +
+                "There is no .ini file in the character directory\nwith name " +
                 ini_name).pack()
             tk.Button(errorWindow,
                       command=errorWindow.destroy,
@@ -176,7 +176,7 @@ class toplevel:
         data.update(self.pullINFO())
         data.update(self.pullHP())
         writer = cp.ConfigParser()
-        writer.read(data['name'] + '.ini')
+        writer.read('./character/' + data['name'] + '.ini')
         writer['HP']['current hp'] = str(data['HP'])
         writer['HP']['current temp hp'] = str(data['temp HP'])
         writer['HP']['max hp'] = str(data['max HP'])

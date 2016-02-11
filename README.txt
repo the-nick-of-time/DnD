@@ -7,16 +7,13 @@ These were written in Python 3.4.0 and I do not guarantee that they will work co
 ============================================================================================
 SECTION 1: GENERAL USE
 
-The files "rolling.py", "DnDbasic.py", and "tkUtility.py" are helper modules used by the actual interactive programs and there is no case where you would need to run them.
-The remaining files are discussed below.
-
 	1.1: Rolling
 	Any string that can be parsed by the "rolling" code is called throughout all my related code a "rollable string". These are similar to arithmetic expressions, just with the d, h, and l operators added.
 	The definitions of these operators are as follows:
 	xdy rolls x y-sided dice and returns a sorted list of these rolls. xd[a,b,c,...] rolls x dice with sides a,b,c....
 	xdyhz rolls x y-sided dice and returns the z highest of these rolls. This enables the advantage mechanic.
 	xdylz rolls x y-sided dice and returns the z lowest of these rolls. This enables the disadvantage mechanic.
-	
+
 	Examples of rollable strings:
 	+4 									(positive four)
 	-2 									(negative two)
@@ -35,9 +32,8 @@ The remaining files are discussed below.
 	1d100>11						(roll a d100 and check whether the roll is greater than 11; displays a 1 for true and 0 for false)
 	3d4%5								(roll 3d4, return the remainder after division by 5)
 
-
 ============================================================================================
-SECTION 2: Dice
+SECTION 2: DICE
 This program uses the rolling code to power a minimal interface for rolling dice. All you need to do is run the program and type in the box. The button or the enter key will roll the dice that you specify in the entry.
 
 
