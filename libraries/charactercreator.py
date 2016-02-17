@@ -104,6 +104,7 @@ class main:
             self.main.read('./character/' + self.info.name.get() + '.ini')
         except:
             print("File not found.")
+        self.info.populateFromConfig(self.main)
 
     def WRITE(self):
         info = self.info.pull()
@@ -148,6 +149,13 @@ class infosec:
         data['class'] = self.Class.get().lower()
         data['max hp'] = str(r.call(self.maxhp.get()))
         return data
+
+    def populateFromConfig(self, data):
+        util.replaceEntry(self.name, data['Character']['name'])
+        util.replaceEntry(self.level, data['Character']['level'])
+        util.replaceEntry(self.casterlevel, data['Character']['caster level'])
+        util.replaceEntry(self.Class, data['Character']['class'])
+        util.replaceEntry(self.maxhp, data['HP']['max hp'])
 
     def grid(self, row, column):
         self.f.grid(row=row, column=column)

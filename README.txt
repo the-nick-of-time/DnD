@@ -1,6 +1,11 @@
- ____   ___   ____    _____           _
-|    \ (   ) |    \  |_   _|__   ___ | |___
-| 
+ ____       ____     ____        ______                ___             
+/\  _`\   /|  _ \   /\  _`\     /\__  _\              /\_ \            
+\ \ \/\ \ |/\   |   \ \ \/\ \   \/_/\ \/   ___     ___\//\ \     ____  
+ \ \ \ \ \ \// __`\/\\ \ \ \ \     \ \ \  / __`\  / __`\\ \ \   /',__\ 
+  \ \ \_\ \/|  \L>  <_\ \ \_\ \     \ \ \/\ \L\ \/\ \L\ \\_\ \_/\__, `\
+   \ \____/| \_____/\/ \ \____/      \ \_\ \____/\ \____//\____\/\____/
+    \/___/  \/____/\/   \/___/        \/_/\/___/  \/___/ \/____/\/___/ 
+		
 
 Direct all comments, suggestions, and bug reports at github.com/the-nick-of-time
 All tools in this package are released under the GNU General Public License version 2, as detailed within the file LICENSE. Refer to that document before doing anything except downloading for personal use.
@@ -37,14 +42,14 @@ SECTION 1: GENERAL USE
 
 ============================================================================================
 SECTION 2: DICE
-This program uses the rolling code to power a minimal interface for rolling dice. All you need to do is run the program and type in the box. The button or the enter key will roll the dice that you specify in the entry.
+This program uses the rolling code to power a minimal interface for rolling dice. All you need to do is start it up from the main program and type in the box. The button or the enter key will roll the dice that you specify in the entry.
 
 
 ============================================================================================
 SECTION 3: PLAYERS
-First, you need to run "Character Creator.py" to create the file that defines your character. This only needs to be run once at the beginning, plus whenever you want to add a new attack to your repertoire.
-
-After that initial run, you are equipped to run "Character Manager.py" which is the main program for you.
+Before getting to the fun part, you need to create your character file. This is done by starting up the character creator from the main program and filling it out as described below.
+After finishing that, run the main program again and you're ready to go!
+From here on out, you should not have to touch the character creator again until you gain a new attack.
 
 
 	3.1: Character Creator
