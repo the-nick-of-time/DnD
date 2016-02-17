@@ -1,6 +1,8 @@
-D&D Tools
+ ____   ___   ____    _____           _
+|    \ (   ) |    \  |_   _|__   ___ | |___
+| 
 
-Direct all comments, suggestions, and bug reports at /u/the-nick-of-time
+Direct all comments, suggestions, and bug reports at github.com/the-nick-of-time
 All tools in this package are released under the GNU General Public License version 2, as detailed within the file LICENSE. Refer to that document before doing anything except downloading for personal use.
 These were written in Python 3.4.0 and I do not guarantee that they will work correctly on any other platform.
 
@@ -29,6 +31,7 @@ SECTION 1: GENERAL USE
 	1d4d4d4							(roll a d4, roll that many d4s, sum them and roll that many d4s)
 	1d[0,0,0,1,1,2]			(roll a six-sided die with three sides being 0, two 1, and one 2)
 	1d[.5,.33,.25,.20]	(roll a four-sided die with sides 0.5, 0.33, 0.25, and 0.2)
+	2d[1/2,1/3,1/4,1/5]	(roll two of the above without rounding)
 	1d100>11						(roll a d100 and check whether the roll is greater than 11; displays a 1 for true and 0 for false)
 	3d4%5								(roll 3d4, return the remainder after division by 5)
 
@@ -108,12 +111,12 @@ After that initial run, you are equipped to run "Character Manager.py" which is 
 		
 ============================================================================================
 SECTION 4: DUNGEON MASTERS
-The file "Monster Manager.py" is written for you. It keeps track of monsters and allows you to roll any other dice you need while running a combat. There is no preparation needed to use this, so just run it as is.
+The Monster Manager is written for you. It keeps track of monsters and allows you to roll any other dice you need while running a combat. There is no preparation needed to use this, so just run it as is.
 
 	4.1: Using the Monster Manager
 	The first thing you will likely want to do is press the "New Monster" button to open the dialog. This will create a popup window with a variety of fields that can be filled out. Fill them with relevant information and hit the "Finish" button.
 
-	The main window will now contain a section that contains relevant information about the monster. From here, you can make the monster take damage (by inserting a negative value in the "Change HP" entry and pressing the button), recover HP (same but positive), or perform attacks. This aspect perhaps bears explanation. To perform an attack, fill out the attack bonus and damage done and press the button. The attack bonus is **added to the d20 roll and should not include the d20**, and can be any valid rollable string, as defined in section 1.0.1. This includes simple integers as well as dice, arithmetic expressions, and even comparisons. Also ridiculous expressions like "1d4d4d4d4".
+	The main window will now contain a section that contains relevant information about the monster. From here, you can make the monster take damage (by inserting a negative value in the "Change HP" entry and pressing the button), recover HP (same but positive), or perform attacks. This aspect perhaps bears explanation. To perform an attack, fill out the attack bonus and damage done and press the button. The attack bonus is **added to the d20 roll and should not include the d20**, and can be any valid rollable string, as defined in section 1.1. 
 
 	If you need to roll dice for any other reason, there is a section that has just an entry and a button.
 
