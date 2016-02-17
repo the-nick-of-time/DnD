@@ -1,5 +1,8 @@
 import tkinter as tk
-import libraries.Monster
+
+import libraries.monstermanager as mm
+import libraries.charactermanager as cm
+import libraries.charactercreator as cc
 
 class core:
     def __init__(window):
@@ -19,8 +22,22 @@ class core:
                 command = lambda:self.monstermanage())
         monster.grid(row = 1, column = 0)
 
+    def undisplay(self):
+        for widget in self.master.winfo_children:
+            widget.grid_forget()
+
     def monstermanage(self):
+        self.undisplay()
+        mm.main(self.master)
 
     def characterplay(self):
+        self.undisplay()
+        cm.main(self.master)
 
     def charactercreate(self):
+        self.undisplay()
+        cc.main(self.master)
+
+win = tk.Tk()
+app = core(win)
+win.mainloop()
