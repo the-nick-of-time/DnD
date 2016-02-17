@@ -110,7 +110,7 @@ class main:
         direc = "./character/"
         if (not os.path.exists(direc)):
             os.mkdir(direc)
-        
+
         if (info['name']):
             self.main['HP']['max hp'] = info['max hp']
             self.main['HP']['current hp'] = info['max hp']
@@ -266,7 +266,6 @@ class spellsec:
 
     def grid(self, row, column):
         self.f.grid(row=row, column=column)
-
 
 #window = tk.Tk()
 #app = toplevel(window)

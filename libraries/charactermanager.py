@@ -122,8 +122,8 @@ class main:
             tk.Label(
                 errorWindow,
                 text=
-                "There is no .ini file in the character directory\nwith name " +
-                ini_name).pack()
+                "There is no .ini file in the character directory\nwith name "
+                + ini_name).pack()
             tk.Button(errorWindow,
                       command=errorWindow.destroy,
                       text="OK").pack()
@@ -475,7 +475,6 @@ class rollsec:
 
     def grid(self, row, column):
         self.f.grid(row=row, column=column)
-
 
 #win = tk.Tk()
 #app = main(win)

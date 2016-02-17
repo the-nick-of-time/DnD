@@ -27,7 +27,7 @@ def abilMod(score):
 
 
 class character:
-    # yapf disable
+    # yapf: disable
     half = [[],
             [999999, 2],
             [999999, 3],
@@ -88,7 +88,7 @@ class character:
                [999999, 0, 0, 0, 0, 4],
                [999999, 0, 0, 0, 0, 4],
                [999999, 0, 0, 0, 0, 4]]
-    # yapf enable
+    # yapf: enable
     cantrips = [1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4]
     proficiency = [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6]
 
