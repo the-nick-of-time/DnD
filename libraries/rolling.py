@@ -285,6 +285,7 @@ def multipass(T, modifiers=0):
                 else:
                     val = unary(T[loc + 1], op)
                     T[loc:loc + 2] = [val]
+            out.extend(['+' if modifiers >= 0 else '', modifiers])
         out.append(T)
     out.append(T[0])
     # out should be of the form 

@@ -63,16 +63,6 @@ import libraries.tkUtility as util
 import libraries.DnDbasic as dnd
 
 
-def readConfig(s):
-    val = s.split(',')
-    for i in range(len(val)):
-        try:
-            val[i] = int(val[i])
-        except (ValueError):
-            pass
-    return val
-
-
 class main:
     def __init__(self, window):
         self.parent = window
@@ -130,11 +120,11 @@ class main:
             return None
 
         for sp in reader['Spells']:
-            args = readConfig(reader['Spells'][sp])
+            args = dnd.readConfig(reader['Spells'][sp])
             args[-1] = args[-1].replace('$', '\n')
             data['Attacks'][sp] = dnd.spell(*args)
         for wep in reader['Weapons']:
-            args = readConfig(reader['Weapons'][wep])
+            args = dnd.readConfig(reader['Weapons'][wep])
             args[-1] = args[-1].replace('$', '\n')
             data['Attacks'][wep] = dnd.weapon(*args)
         for ab in ['str', 'dex', 'con', 'int', 'wis', 'cha']:

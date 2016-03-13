@@ -24,6 +24,16 @@ import libraries.rolling as r
 
 def abilMod(score):
     return (score - 10) // 2
+    
+
+def readConfig(s):
+    val = s.split(',')
+    for i in range(len(val)):
+        try:
+            val[i] = int(val[i])
+        except (ValueError):
+            pass
+    return val
 
 
 class character:
@@ -170,6 +180,11 @@ class spell:
         self.effects = effects
 
     def attack(self, character, adv, dis, attackBonus, damageBonus):
+        #character: a character object that is performing the attack
+        #adv: boolean, whether you have advantage
+        #dis: boolean, whether you have disadvantage
+        #attackBonus: string, a rolled bonus to attack 
+        #damageBonus: string, a rolled bonus to damage
         modifier = abilMod(character.abilities[self.ability])
         result = [[], [], '']
         if (character.spellslots[self.level] == 0):
@@ -186,8 +201,8 @@ class spell:
                     attackstring = '2d20l1'
                 else:
                     attackstring = '1d20'
-                AB = r.call(
-                    attackBonus) + character.proficiencyBonus + modifier
+                AB = (r.call(attackBonus) + character.proficiencyBonus + 
+                      modifier)
                 attackresult = r.call(attackstring)
                 if (attackresult == 1):
                     result[0].append('Miss')
@@ -240,6 +255,11 @@ class weapon:
         self.magicbonus = magicBonus
 
     def attack(self, character, adv, dis, attackBonus, damageBonus):
+        #character: a character object that is performing the attack
+        #adv: boolean, whether you have advantage
+        #dis: boolean, whether you have disadvantage
+        #attackBonus: string, a rolled bonus to attack 
+        #damageBonus: string, a rolled bonus to damage
         result = [[], [], '']
         modifier = abilMod(character.abilities[self.ability])
         if (self.ammunition == 0):
@@ -256,8 +276,8 @@ class weapon:
                     attackstring = '2d20l1'
                 else:
                     attackstring = '1d20'
-                AB = r.call(
-                    attackBonus) + character.proficiencyBonus + modifier + self.magicbonus
+                AB = (r.call(attackBonus) + character.proficiencyBonus + 
+                      modifier + self.magicbonus)
                 attackresult = r.call(attackstring)
                 if (attackresult == 1):
                     result[0].append('Miss')

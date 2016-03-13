@@ -18,8 +18,8 @@ SECTION 1: GENERAL USE
 	Any string that can be parsed by the "rolling" code is called throughout all my related code a "rollable string". These are similar to arithmetic expressions, just with the d, h, and l operators added.
 	The definitions of these operators are as follows:
 	xdy rolls x y-sided dice and returns a sorted list of these rolls. xd[a,b,c,...] rolls x dice with sides a,b,c....
-	xdyhz rolls x y-sided dice and returns the z highest of these rolls. This enables the advantage mechanic.
-	xdylz rolls x y-sided dice and returns the z lowest of these rolls. This enables the disadvantage mechanic.
+	xdyhz rolls x y-sided dice and returns the z highest of these rolls. This allows you to have advantage on rolls.
+	xdylz rolls x y-sided dice and returns the z lowest of these rolls. This enables disadvantage.
 
 	Examples of rollable strings:
 	+4 									(positive four)
@@ -100,7 +100,7 @@ From here on out, you should not have to touch the character creator again until
 	ATTACK SECTION:
     To perform attacks, enter the name of the attack (not case-sensitive) into the box and then press the ATTACK button or the Enter key.
     The check boxes to the right of the main entry allow you to indicate whether you are making the attack with advantage or disadvantage. If both are checked, they cancel out.
-    The attack and damage bonus entries below the main one are there to indicate special bonuses, beyond what is expected. Normally, your attack bonus will be equal to your ability modifier + your proficiency bonus + magic bonus on your weapon (if any). Your normal damage bonus is your ability modifier (for a weapon or a spell with the addAbilityToDamage property) These two bonuses can be any rollable string. For instance, if you have a support-heavy group, you could have a +1 on attack rolls and a +1d6+1 on damage. These sort of temporary buffs are what these entries are for.
+    The attack and damage bonus entries below the main one are there to indicate special bonuses, beyond what is expected. Normally, your attack bonus will be equal to your ability modifier + your proficiency bonus + magic bonus on your weapon (if any). Your normal damage bonus is your ability modifier (for a weapon or a spell with the addAbilityToDamage property.) The two bonuses entered in these boxes can be any rollable string. For instance, if you have a support-heavy group, you could have a +1 on attack rolls and a +1d6+1 on damage. These sort of temporary buffs are what these entries are for.
 
 	SPELL SECTION:
     This shows what spell slots you have not yet spent.
