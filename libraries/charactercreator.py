@@ -63,7 +63,7 @@ import libraries.rolling as r
 import libraries.tkUtility as util
 
 
-class toplevel:
+class main:
     def __init__(self, win):
         self.master = win
         self.info = infosec(win, self)
@@ -104,13 +104,14 @@ class toplevel:
             self.main.read('./character/' + self.info.name.get() + '.ini')
         except:
             print("File not found.")
+        self.info.populateFromConfig(self.main)
 
     def WRITE(self):
         info = self.info.pull()
         direc = "./character/"
         if (not os.path.exists(direc)):
             os.mkdir(direc)
-        
+
         if (info['name']):
             self.main['HP']['max hp'] = info['max hp']
             self.main['HP']['current hp'] = info['max hp']
@@ -149,6 +150,13 @@ class infosec:
         data['max hp'] = str(r.call(self.maxhp.get()))
         return data
 
+    def populateFromConfig(self, data):
+        util.replaceEntry(self.name, data['Character']['name'])
+        util.replaceEntry(self.level, data['Character']['level'])
+        util.replaceEntry(self.casterlevel, data['Character']['caster level'])
+        util.replaceEntry(self.Class, data['Character']['class'])
+        util.replaceEntry(self.maxhp, data['HP']['max hp'])
+
     def grid(self, row, column):
         self.f.grid(row=row, column=column)
 
@@ -180,18 +188,23 @@ class weaponsec:
     def __init__(self, parent, app):
         self.top = app
         self.f = tk.Frame(parent)
-        self.name = util.labeledEntry(self.f, "Weapon Name", 0, 0)
-        self.dice = util.labeledEntry(self.f, "Damage Dice", 2, 0)
-        self.abil = util.labeledEntry(self.f, "Ability Used", 4, 0)
-        self.mult = util.labeledEntry(self.f, "Attacks per Action", 6, 0)
-        self.magi = util.labeledEntry(self.f, "Magic Bonus", 8, 0)
-        self.roll = util.labeledEntry(self.f, "Make Attack Roll?", 10, 0)
-        self.ammo = util.labeledEntry(self.f, "Ammunition", 12, 0)
-        self.effc = util.labeledEntry(self.f, "Additional Information", 14, 0)
+        self.name = util.labeledEntry(self.f, "Weapon Name", 2, 0)
+        self.dice = util.labeledEntry(self.f, "Damage Dice", 4, 0)
+        self.abil = util.labeledEntry(self.f, "Ability Used", 6, 0)
+        self.mult = util.labeledEntry(self.f, "Attacks per Action", 8, 0)
+        self.magi = util.labeledEntry(self.f, "Magic Bonus", 10, 0)
+        self.roll = util.labeledEntry(self.f, "Make Attack Roll?", 12, 0)
+        self.ammo = util.labeledEntry(self.f, "Ammunition", 14, 0)
+        self.effc = util.labeledEntry(self.f, "Additional Information", 16, 0)
         self.make = tk.Button(self.f,
                               text='Make',
                               command=lambda: self.build())
-        self.make.grid(row=16, column=0)
+        self.make.grid(row=18, column=0)
+##        self.menu = tk.OptionMenu(self.f, self.toEdit, 
+##                                  *self.top.main.options("Weapons"))
+##        self.menulabel = tk.Label(self.f, text="Entry to edit")
+##        self.menulabel.grid(row=0, column=1)
+##        self.menu.grid(row=1, column=0)
 
     def build(self):
         s = ''
@@ -224,22 +237,28 @@ class spellsec:
     def __init__(self, parent, app):
         self.top = app
         self.f = tk.Frame(parent)
-        self.name = util.labeledEntry(self.f, "Spell Name", 0, 0)
-        self.level = util.labeledEntry(self.f, "Spell Level", 2, 0)
-        self.abil = util.labeledEntry(self.f, "Ability Used", 4, 0)
-        self.dice = util.labeledEntry(self.f, "Damage Dice", 6, 0)
+        self.name = util.labeledEntry(self.f, "Spell Name", 2, 0)
+        self.level = util.labeledEntry(self.f, "Spell Level", 4, 0)
+        self.abil = util.labeledEntry(self.f, "Ability Used", 6, 0)
+        self.dice = util.labeledEntry(self.f, "Damage Dice", 8, 0)
         self.addabil = util.labeledEntry(
-            self.f, "Add Ability Modifier\nto Damage?", 8, 0)
-        self.roll = util.labeledEntry(self.f, "Make Attack Roll?", 10, 0)
+            self.f, "Add Ability Modifier\nto Damage?", 10, 0)
+        self.roll = util.labeledEntry(self.f, "Make Attack Roll?", 12, 0)
         self.save = util.labeledEntry(
-            self.f, "Saving Throw Type\n(If Applicable)", 12, 0)
-        self.mult = util.labeledEntry(self.f, "Attacks per Action", 14, 0)
-        self.effects = util.labeledEntry(self.f, "Additional Information", 16,
+            self.f, "Saving Throw Type\n(If Applicable)", 14, 0)
+        self.mult = util.labeledEntry(self.f, "Attacks per Action", 16, 0)
+        self.effects = util.labeledEntry(self.f, "Additional Information", 18,
                                          0)
         self.make = tk.Button(self.f,
                               text='Make',
                               command=lambda: self.build())
-        self.make.grid(row=18, column=0)
+        self.make.grid(row=20, column=0)
+##        self.toEdit = tk.StringVar()
+##        self.menu = tk.OptionMenu(self.f, self.toEdit, 
+##                                  *self.top.main.options("Spells"))
+##        self.menulabel = tk.Label(self.f, text="Entry to edit")
+##        self.menulabel.grid(row=0, column=1)
+##        self.menu.grid(row=1, column=0)
 
     def build(self):
         s = ''
@@ -266,8 +285,12 @@ class spellsec:
 
     def grid(self, row, column):
         self.f.grid(row=row, column=column)
+       
+##    def populateFromConfig(self):
+##        which = self.menu.get()
+##        #if
+        
 
-
-window = tk.Tk()
-app = toplevel(window)
-window.mainloop()
+#window = tk.Tk()
+#app = toplevel(window)
+#window.mainloop()

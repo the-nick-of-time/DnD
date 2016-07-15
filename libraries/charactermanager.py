@@ -63,17 +63,7 @@ import libraries.tkUtility as util
 import libraries.DnDbasic as dnd
 
 
-def readConfig(s):
-    val = s.split(',')
-    for i in range(len(val)):
-        try:
-            val[i] = int(val[i])
-        except (ValueError):
-            pass
-    return val
-
-
-class toplevel:
+class main:
     def __init__(self, window):
         self.parent = window
         self.activeCharacter = 0
@@ -122,19 +112,19 @@ class toplevel:
             tk.Label(
                 errorWindow,
                 text=
-                "There is no .ini file in the character directory\nwith name " +
-                ini_name).pack()
+                "There is no .ini file in the character directory\nwith name "
+                + ini_name).pack()
             tk.Button(errorWindow,
                       command=errorWindow.destroy,
                       text="OK").pack()
             return None
 
         for sp in reader['Spells']:
-            args = readConfig(reader['Spells'][sp])
+            args = dnd.readConfig(reader['Spells'][sp])
             args[-1] = args[-1].replace('$', '\n')
             data['Attacks'][sp] = dnd.spell(*args)
         for wep in reader['Weapons']:
-            args = readConfig(reader['Weapons'][wep])
+            args = dnd.readConfig(reader['Weapons'][wep])
             args[-1] = args[-1].replace('$', '\n')
             data['Attacks'][wep] = dnd.weapon(*args)
         for ab in ['str', 'dex', 'con', 'int', 'wis', 'cha']:
@@ -476,7 +466,6 @@ class rollsec:
     def grid(self, row, column):
         self.f.grid(row=row, column=column)
 
-
-win = tk.Tk()
-app = toplevel(win)
-win.mainloop()
+#win = tk.Tk()
+#app = main(win)
+#win.mainloop()

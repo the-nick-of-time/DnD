@@ -188,20 +188,20 @@ class sub:
         attacknotresult.grid(row=0, column=0)
 
         self.attackE = util.labeledEntry(attacknotresult,
-                                    'Attack Modifiers',
-                                    0,
-                                    0,
-                                    orient='h',
-                                    pos='w',
-                                    width=15)
+                                         'Attack Modifiers',
+                                         0,
+                                         0,
+                                         orient='h',
+                                         pos='w',
+                                         width=15)
 
         self.damageE = util.labeledEntry(attacknotresult,
-                                    'Damage',
-                                    1,
-                                    0,
-                                    orient='h',
-                                    pos='w',
-                                    width=15)
+                                         'Damage',
+                                         1,
+                                         0,
+                                         orient='h',
+                                         pos='w',
+                                         width=15)
 
         perform = tk.Button(attacknotresult,
                             text="Attack",
@@ -312,10 +312,10 @@ class builder:
         labels = []
         for (i, n) in enumerate(abilities):
             self.entries.append(util.labeledEntry(self.abil,
-                                             n,
-                                             (i // 3) * 2,
-                                             i % 3,
-                                             width=4))
+                                                  n,
+                                                  (i // 3) * 2,
+                                                  i % 3,
+                                                  width=4))
 
         self.resolve = tk.Button(self.win,
                                  text='Finish',
@@ -404,7 +404,6 @@ class main:
     def end(self):
         self.master.destroy()
 
-
-window = tk.Tk()
-app = main(window)
-window.mainloop()
+#window = tk.Tk()
+#app = main(window)
+#window.mainloop()

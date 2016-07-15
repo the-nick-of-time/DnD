@@ -1,6 +1,13 @@
-D&D Tools
+ ____       ____     ____        ______                ___             
+/\  _`\   /|  _ \   /\  _`\     /\__  _\              /\_ \            
+\ \ \/\ \ |/\   |   \ \ \/\ \   \/_/\ \/   ___     ___\//\ \     ____  
+ \ \ \ \ \ \// __`\/\\ \ \ \ \     \ \ \  / __`\  / __`\\ \ \   /',__\ 
+  \ \ \_\ \/|  \L>  <_\ \ \_\ \     \ \ \/\ \L\ \/\ \L\ \\_\ \_/\__, `\
+   \ \____/| \_____/\/ \ \____/      \ \_\ \____/\ \____//\____\/\____/
+    \/___/  \/____/\/   \/___/        \/_/\/___/  \/___/ \/____/\/___/ 
+		
 
-Direct all comments, suggestions, and bug reports at /u/the-nick-of-time
+Direct all comments, suggestions, and bug reports at github.com/the-nick-of-time
 All tools in this package are released under the GNU General Public License version 2, as detailed within the file LICENSE. Refer to that document before doing anything except downloading for personal use.
 These were written in Python 3.4.0 and I do not guarantee that they will work correctly on any other platform.
 
@@ -11,8 +18,8 @@ SECTION 1: GENERAL USE
 	Any string that can be parsed by the "rolling" code is called throughout all my related code a "rollable string". These are similar to arithmetic expressions, just with the d, h, and l operators added.
 	The definitions of these operators are as follows:
 	xdy rolls x y-sided dice and returns a sorted list of these rolls. xd[a,b,c,...] rolls x dice with sides a,b,c....
-	xdyhz rolls x y-sided dice and returns the z highest of these rolls. This enables the advantage mechanic.
-	xdylz rolls x y-sided dice and returns the z lowest of these rolls. This enables the disadvantage mechanic.
+	xdyhz rolls x y-sided dice and returns the z highest of these rolls. This allows you to have advantage on rolls.
+	xdylz rolls x y-sided dice and returns the z lowest of these rolls. This enables disadvantage.
 
 	Examples of rollable strings:
 	+4 									(positive four)
@@ -29,19 +36,20 @@ SECTION 1: GENERAL USE
 	1d4d4d4							(roll a d4, roll that many d4s, sum them and roll that many d4s)
 	1d[0,0,0,1,1,2]			(roll a six-sided die with three sides being 0, two 1, and one 2)
 	1d[.5,.33,.25,.20]	(roll a four-sided die with sides 0.5, 0.33, 0.25, and 0.2)
+	2d[1/2,1/3,1/4,1/5]	(roll two of the above without rounding)
 	1d100>11						(roll a d100 and check whether the roll is greater than 11; displays a 1 for true and 0 for false)
 	3d4%5								(roll 3d4, return the remainder after division by 5)
 
 ============================================================================================
 SECTION 2: DICE
-This program uses the rolling code to power a minimal interface for rolling dice. All you need to do is run the program and type in the box. The button or the enter key will roll the dice that you specify in the entry.
+This program uses the rolling code to power a minimal interface for rolling dice. All you need to do is start it up from the main program and type in the box. The button or the enter key will roll the dice that you specify in the entry.
 
 
 ============================================================================================
 SECTION 3: PLAYERS
-First, you need to run "Character Creator.py" to create the file that defines your character. This only needs to be run once at the beginning, plus whenever you want to add a new attack to your repertoire.
-
-After that initial run, you are equipped to run "Character Manager.py" which is the main program for you.
+Before getting to the fun part, you need to create your character file. This is done by starting up the character creator from the main program and filling it out as described below.
+After finishing that, run the main program again and you're ready to go!
+From here on out, you should not have to touch the character creator again until you gain a new attack.
 
 
 	3.1: Character Creator
@@ -92,7 +100,7 @@ After that initial run, you are equipped to run "Character Manager.py" which is 
 	ATTACK SECTION:
     To perform attacks, enter the name of the attack (not case-sensitive) into the box and then press the ATTACK button or the Enter key.
     The check boxes to the right of the main entry allow you to indicate whether you are making the attack with advantage or disadvantage. If both are checked, they cancel out.
-    The attack and damage bonus entries below the main one are there to indicate special bonuses, beyond what is expected. Normally, your attack bonus will be equal to your ability modifier + your proficiency bonus + magic bonus on your weapon (if any). Your normal damage bonus is your ability modifier (for a weapon or a spell with the addAbilityToDamage property) These two bonuses can be any rollable string. For instance, if you have a support-heavy group, you could have a +1 on attack rolls and a +1d6+1 on damage. These sort of temporary buffs are what these entries are for.
+    The attack and damage bonus entries below the main one are there to indicate special bonuses, beyond what is expected. Normally, your attack bonus will be equal to your ability modifier + your proficiency bonus + magic bonus on your weapon (if any). Your normal damage bonus is your ability modifier (for a weapon or a spell with the addAbilityToDamage property.) The two bonuses entered in these boxes can be any rollable string. For instance, if you have a support-heavy group, you could have a +1 on attack rolls and a +1d6+1 on damage. These sort of temporary buffs are what these entries are for.
 
 	SPELL SECTION:
     This shows what spell slots you have not yet spent.
@@ -108,12 +116,12 @@ After that initial run, you are equipped to run "Character Manager.py" which is 
 		
 ============================================================================================
 SECTION 4: DUNGEON MASTERS
-The file "Monster Manager.py" is written for you. It keeps track of monsters and allows you to roll any other dice you need while running a combat. There is no preparation needed to use this, so just run it as is.
+The Monster Manager is written for you. It keeps track of monsters and allows you to roll any other dice you need while running a combat. There is no preparation needed to use this, so just run it as is.
 
 	4.1: Using the Monster Manager
 	The first thing you will likely want to do is press the "New Monster" button to open the dialog. This will create a popup window with a variety of fields that can be filled out. Fill them with relevant information and hit the "Finish" button.
 
-	The main window will now contain a section that contains relevant information about the monster. From here, you can make the monster take damage (by inserting a negative value in the "Change HP" entry and pressing the button), recover HP (same but positive), or perform attacks. This aspect perhaps bears explanation. To perform an attack, fill out the attack bonus and damage done and press the button. The attack bonus is **added to the d20 roll and should not include the d20**, and can be any valid rollable string, as defined in section 1.0.1. This includes simple integers as well as dice, arithmetic expressions, and even comparisons. Also ridiculous expressions like "1d4d4d4d4".
+	The main window will now contain a section that contains relevant information about the monster. From here, you can make the monster take damage (by inserting a negative value in the "Change HP" entry and pressing the button), recover HP (same but positive), or perform attacks. This aspect perhaps bears explanation. To perform an attack, fill out the attack bonus and damage done and press the button. The attack bonus is **added to the d20 roll and should not include the d20**, and can be any valid rollable string, as defined in section 1.1. 
 
 	If you need to roll dice for any other reason, there is a section that has just an entry and a button.
 
