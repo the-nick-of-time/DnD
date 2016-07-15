@@ -4,6 +4,7 @@ import libraries.monstermanager as mm
 import libraries.charactermanager as cm
 import libraries.charactercreator as cc
 import libraries.dice as dc
+##import libraries.charactereditor as ce
 
 
 class core:
@@ -21,6 +22,10 @@ class core:
                            text="Create a New Character",
                            command=lambda: self.charactercreate())
         create.grid(row=2, column=0, pady=5)
+        edit = tk.Button(self.master,
+                         text="Edit an Existing Character",
+                         command=lambda: self.characteredit())
+        edit.grid(row=3, column=0, pady=5)
         monster = tk.Button(self.master,
                             text="Create New Encounter",
                             command=lambda: self.monstermanage())
@@ -34,7 +39,8 @@ class core:
 
     def undisplay(self):
         for widget in self.master.winfo_children():
-            widget.grid_forget()
+            #widget.grid_forget()
+            widget.destroy()
 
     def monstermanage(self):
         self.undisplay()
@@ -47,6 +53,10 @@ class core:
     def charactercreate(self):
         self.undisplay()
         cc.main(self.master)
+
+##    def characteredit(self):
+##        self.undisplay()
+##        ce.main(self.master)
 
     def dicesimulator(self):
         self.undisplay()

@@ -37,6 +37,19 @@ def readConfig(s):
 
 
 class character:
+    """Represents a player character or NPC.
+
+    Creation arguments
+    name: string; name of character
+    level: integer [1-20]; total level of your character
+    abilities: dict; string ABILNAME: int SCORE
+    attacks: dict; string NAME: spell or weapon ATTACK
+    casterType: string; half, full, or warlock
+    casterLevel: integer [1-20]; caster level of character
+    spellSlots: list length 10; ordered list of unused spell slots
+        of each level that the character has currently
+    
+    """
     # yapf: disable
     half = [[],
             [999999, 2],
@@ -110,13 +123,6 @@ class character:
                  Class='multiclass',
                  casterLevel=0,
                  spellSlots=[]):
-        #name: string
-        #level: integer [1-20], total level of your character
-        #abilities: dict, string ABILNAME: int SCORE
-        #attacks: dict, string NAME: spell or weapon ATTACK
-        #casterType: string, half, full, or warlock
-        #casterLevel: integer [1-20], caster level of character
-        #spellSlots: list length 10, ordered list of unused spell slots of each level
         self.name = name
         self.level = level
         self.abilities = abilities
@@ -164,7 +170,7 @@ class spell:
                  savingthrowtype='',
                  multipleAttack=1,
                  effects=''):
-        #level: int [1-9], spell level
+        #level: int [0-9], spell level
         #ability: string ['str','dex','con','int','wis','cha'], the ability used by the spell
         #damageDice: string, a rollable string that is the base damage done
         #addAbilToDamage: bool, whether to add the ability modifier to the damage done

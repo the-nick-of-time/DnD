@@ -200,11 +200,11 @@ class weaponsec:
                               text='Make',
                               command=lambda: self.build())
         self.make.grid(row=18, column=0)
-        self.menu = tk.OptionMenu(self.f, self.toEdit, 
-                                  *self.top.main.options("Weapons"))
-        self.menulabel = tk.Label(self.f, text="Entry to edit")
-        self.menulabel.grid(row=0, column=1)
-        self.menu.grid(row=1, column=0)
+##        self.menu = tk.OptionMenu(self.f, self.toEdit, 
+##                                  *self.top.main.options("Weapons"))
+##        self.menulabel = tk.Label(self.f, text="Entry to edit")
+##        self.menulabel.grid(row=0, column=1)
+##        self.menu.grid(row=1, column=0)
 
     def build(self):
         s = ''
@@ -253,12 +253,12 @@ class spellsec:
                               text='Make',
                               command=lambda: self.build())
         self.make.grid(row=20, column=0)
-        self.toEdit = tk.StringVar()
-        self.menu = tk.OptionMenu(self.f, self.toEdit, 
-                                  *self.top.main.options("Spells"))
-        self.menulabel = tk.Label(self.f, text="Entry to edit")
-        self.menulabel.grid(row=0, column=1)
-        self.menu.grid(row=1, column=0)
+##        self.toEdit = tk.StringVar()
+##        self.menu = tk.OptionMenu(self.f, self.toEdit, 
+##                                  *self.top.main.options("Spells"))
+##        self.menulabel = tk.Label(self.f, text="Entry to edit")
+##        self.menulabel.grid(row=0, column=1)
+##        self.menu.grid(row=1, column=0)
 
     def build(self):
         s = ''
@@ -286,9 +286,9 @@ class spellsec:
     def grid(self, row, column):
         self.f.grid(row=row, column=column)
        
-    def populateFromConfig(self):
-        which = self.menu.get()
-        if
+##    def populateFromConfig(self):
+##        which = self.menu.get()
+##        #if
         
 
 #window = tk.Tk()

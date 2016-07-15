@@ -6,7 +6,7 @@ Released under the GNU General Public License version 2, as detailed within
 the file LICENSE included in the same directory as this code.
 
 This module provides the framework for evaluating roll expressions. Basically,
-it adds the capability to parse the operators 'd', 'h', and 'l'.The important 
+it adds the capability to parse the operators 'd', 'h', and 'l'.The important
 thing to note is that these are simply new binary operators.
 The definitions of these operators are as follows:
 xdy rolls x y-sided dice and returns a sorted list of these rolls.
@@ -15,31 +15,48 @@ xdyhz rolls x y-sided dice and returns the z highest of these rolls. This
     enables the advantage mechanic.
 xdylz rolls x y-sided dice and returns the z lowest of these rolls. This
     enables the disadvantage mechanic.
-	
+
 Any string that can be parsed by this code is called throughout all my related
-code a "rollable string". These are similar to arithmetic expressions, just with the above operators added. 
+code a "rollable string". These are similar to arithmetic expressions, just with the above operators added.
 Examples of rollable strings:
-+4 					(positive four)
--2 					(negative two)
-1d6 				(roll a six-sided die with sides numbered one through six)
--1d6				(roll a d6 and take the negative)
-3d6+2				(roll 3d6 and add 2 to the sum)
-1d6+1d4+1			(roll a d6, add to it a d4, and add one to that)
-2d20h1+3+2			(roll 2d20, take the higher of the two rolls, add a total of five to it)
-3d6/2				(roll 3d6, divide the sum by 2; note that this returns an unrounded number)
++4                  (positive four)
+-2                  (negative two)
+1d6                 (roll a six-sided die with sides numbered one through six)
+-1d6                (roll a d6 and take the negative)
+3d6+2               (roll 3d6 and add 2 to the sum)
+1d6+1d4+1           (roll a d6, add to it a d4, and add one to that)
+2d20h1+3+2          (roll 2d20, take the higher of the two rolls, add a total of five to it)
+3d6/2               (roll 3d6, divide the sum by 2; note that this returns an unrounded number)
 Less applicable functionalities:
-1d6^2 				(roll a d6, square the result)
-1d6^1d4				(roll a d6, raise it to a random power between 1 and 4)
-1d4d4d4				(roll a d4, roll that many d4s, sum them and roll that many d4s)
-1d[0,0,0,1,1,2]		(roll a six-sided die with three sides being 0, two 1, and one 2)
-1d[.5,.33,.25,.20]	(roll a four-sided die with sides 0.5, 0.33, 0.25, and 0.2)
-1d100>11			(roll a d100 and check whether the roll is greater than 11; returns a 1 for true and 0 for false)
-3d4%5				(roll 3d4, return the remainder after division by 5)
+1d6^2               (roll a d6, square the result)
+1d6^1d4             (roll a d6, raise it to a random power between 1 and 4)
+1d4d4d4             (roll a d4, roll that many d4s, sum them and roll that many d4s)
+1d[0,0,0,1,1,2]     (roll a six-sided die with three sides being 0, two 1, and one 2)
+1d[.5,.33,.25,.20]  (roll a four-sided die with sides 0.5, 0.33, 0.25, and 0.2)
+1d100>11            (roll a d100 and check whether the roll is greater than 11; returns a 1 for true and 0 for false)
+3d4%5               (roll 3d4, return the remainder after division by 5)
 
 """
 
 import random
 
+__all__ = ['roll', 'call']
+
+
+class operator:
+    def __init__(self, op, precedence, order):
+        self.op = op
+        self.precedence = precedence
+        self.order = order
+        
+    def __gt__(self, other):
+        return self.precedence > other.precedence
+        
+    def __ge__(self, other):
+        return self.precedence >= other.precedence
+        
+    def __eq__(self, other):
+        return self.op == other
 
 def call(s, modifiers=0, option='execute'):
     #Merely a wrapper for the whole tokenization and parsing process
@@ -57,8 +74,20 @@ def call(s, modifiers=0, option='execute'):
     #       + or -
     #LOW    > or < or = (boolean comparison operators)
     #Order is the number of inputs to the corresponding operator
-    operators = 'dhl^mp*/%+-><=&|('
-    order = [2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+    operators = (operator('d', 7, 2),
+                 operator('h', 6, 2),
+                 operator('l', 6, 2),
+                 operator('^', 5, 2),
+                 operator('m', 4, 1),
+                 operator('p', 4, 1),
+                 operator('*', 3, 2),
+                 operator('/', 3, 2),
+                 operator('-', 2, 2),
+                 operator('+', 2, 2),
+                 operator('>', 1, 2),
+                 operator('<', 1, 2),
+                 operator('=', 1, 2)
+                 )
 
     if (s == ''):
         return 0 + modifiers
@@ -90,46 +119,54 @@ def call(s, modifiers=0, option='execute'):
         return tokens(s)
 
 
+roll = call  # A hacky workaround to make usage more intuitive
+
 def tokens(s):
     #Splits a string into a list of integers and operators
     #to be evaluated by execute()
     #The valid operators, in order of decreasing precedence, are defined in call()
-    number = ''
+    number = []
+    operator = []
+    sidelist = []
     out = []
     i = 0
+    numflag = s[0] in digits
+    opflag = s[0] in operators
     while (i < len(s)):
         char = s[i]
         if (char in digits):
-            number += char
-        elif (char in operators or char == ')'):
-            if (s[i] == '-' and (i == 0 or s[i - 1] in operators)):
-                out.append('m')
-            elif (s[i] == '+' and (i == 0 or s[i - 1] in operators)):
+            if (opflag):
+                out.extend(operator)
+                operator = []
+                numflag = not numflag
+                opflag = not opflag
+            number.append(char)
+        elif (char in operators or char == '(' or char == ')'):
+            if (numflag):
+                out.append(int(''.join(number)))
+                number = []
+                numflag = not numflag
+                opflag = not opflag
+            if(char == '+' and (i == 0 or s[i-1] in operators)):
                 out.append('p')
+            elif(char == '-' and (i == 0 or s[i-1] in operators)):
+                out.append('m')
             else:
-                try:
-                    #Turn the contents of the numbers string into an int
-                    out.append(int(number))
-                    number = ''
-                except (ValueError):
-                    #often the numbers string is empty because of a leading (
-                    pass
-                out.append(char)
+                operator.append(char)
         elif (char == '['):
-            i += 1
-            ls = ''
             while (s[i] != ']'):
-                ls += s[i]
+                sidelist.append(s[i])
                 i += 1
-            out.append(readList(ls))
+            i += 1
+            sidelist.append(s[i])
+            out.append(readList(''.join(sidelist)))
         elif (char == 'F'):
             out.append([-1, 0, 1])
         i += 1
-    try:
-        #push out the last number
-        out.append(int(number))
-    except (ValueError):
-        pass
+    if (numflag):
+        out.append(int(''.join(number)))
+    elif (opflag):
+        out.append(''.join(operator))
     return out
 
 
@@ -234,7 +271,7 @@ def execute(T, av=False):
         elif (current == ')'):
             while (oper[-1] != '('):
                 #Evaluate all extant expressions down to the open paren
-                if (order[operators.index(oper[-1])] == 2):
+                if (order(oper[-1]) == 2):
                     nums.append(evaluate(
                         [nums.pop(-2), nums.pop()], oper.pop(), av))
                 else:
@@ -242,10 +279,10 @@ def execute(T, av=False):
             oper.pop()  #Get rid of that last open paren
         elif (current in operators):
             try:
-                while (operators.index(oper[-1]) <= operators.index(current)):
+                while (oper[-1] >= current):
                     #check precedence; lower index=higher precedence
                     #perform operation
-                    if (order[operators.index(oper[-1])] == 2):
+                    if (order(oper[-1]) == 2):
                         nums.append(evaluate(
                             [nums.pop(-2), nums.pop()], oper.pop(), av))
                     else:
@@ -256,10 +293,7 @@ def execute(T, av=False):
             #or add a higher-precedence operator to the stack
     while (len(oper) > 0):
         #empty the operator stack
-        op = oper[-1]
-        ind = operators.index(oper[-1])
-        orde = order[ind]
-        if (order[operators.index(oper[-1])] == 2):
+        if (order(oper[-1]) == 2):
             nums.append(evaluate([nums.pop(-2), nums.pop()], oper.pop(), av))
         else:
             nums.append(unary(nums.pop(), oper.pop()))
@@ -270,6 +304,11 @@ def execute(T, av=False):
         pass
     return sum(nums)
 
+def order(op):
+    for this in operators:
+        if (this == op):
+            return this.order
+    raise NotFoundError('Operator not valid')
 
 def multipass(T, modifiers=0):
     # note: this does not yet support parentheses
@@ -288,7 +327,7 @@ def multipass(T, modifiers=0):
             out.extend(['+' if modifiers >= 0 else '', modifiers])
         out.append(T)
     out.append(T[0])
-    # out should be of the form 
+    # out should be of the form
     # [[rolls have been made],
     # [selected rolls have been discarded],
     # [arithmetic but not boolean operators have been evaluated],
@@ -303,3 +342,10 @@ def displayMultipass(l):
             out[i] += str(token)
         out[i] += '\n'
     return out
+
+    
+class NotFoundError(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+    def __str__(self):
+        return self.msg
