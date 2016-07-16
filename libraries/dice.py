@@ -29,6 +29,8 @@ class main():
         roll = rollsec(window, self)
         roll.grid(0, 0)
 
-#win = tk.Tk()
-#application = main(win)
-#win.mainloop()
+        
+if (__name__ == '__main__'):
+    win = tk.Tk()
+    application = main(win)
+    win.mainloop()

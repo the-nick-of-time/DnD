@@ -466,6 +466,8 @@ class rollsec:
     def grid(self, row, column):
         self.f.grid(row=row, column=column)
 
-#win = tk.Tk()
-#app = main(win)
-#win.mainloop()
+        
+if (__name__ == '__main__'):
+    win = tk.Tk()
+    app = main(win)
+    win.mainloop()

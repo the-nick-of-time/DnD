@@ -404,6 +404,7 @@ class main:
     def end(self):
         self.master.destroy()
 
-#window = tk.Tk()
-#app = main(window)
-#window.mainloop()
+if (__name__ == '__main__'):
+    window = tk.Tk()
+    app = main(window)
+    window.mainloop()

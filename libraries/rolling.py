@@ -58,22 +58,11 @@ class operator:
     def __eq__(self, other):
         return self.op == other
 
-def call(s, modifiers=0, option='execute'):
-    #Merely a wrapper for the whole tokenization and parsing process
-    #Defines or redefines the two reference strings so that everything will be
-    #consistent
-    global digits, operators, order
+def roll(s, modifiers=0, option='execute'):
+    """Roll dice and do arithmetic."""
+    global digits, operators
     digits = '0123456789'
-    #It is easier to have all of the operators in a single iterable for use with
-    #the 'in' operator but ideally it would be organized like so:
-    #HIGH   d
-    #       h or l
-    #       ^ (exponentiation)
-    #       - or + (negative or positive sign)
-    #       * or /
-    #       + or -
-    #LOW    > or < or = (boolean comparison operators)
-    #Order is the number of inputs to the corresponding operator
+
     operators = (operator('d', 7, 2),
                  operator('h', 6, 2),
                  operator('l', 6, 2),
@@ -86,10 +75,12 @@ def call(s, modifiers=0, option='execute'):
                  operator('+', 2, 2),
                  operator('>', 1, 2),
                  operator('<', 1, 2),
-                 operator('=', 1, 2)
-                 )
-
-    if (s == ''):
+                 operator('=', 1, 2))
+    if (not isinstance(s, str)):
+        # If you're naughty and pass a number in...
+        # it really doesn't matter.
+        return s + modifiers
+    elif (s == ''):
         return 0 + modifiers
     elif (option == 'execute'):
         return (execute(tokens(s)) + modifiers)
@@ -113,21 +104,18 @@ def call(s, modifiers=0, option='execute'):
         return (execute(tokens(s), av=True) + modifiers)
     elif (option == 'zero'):
         return 0
-    elif (option == 'multipass'):
-        return displayMultipass(multipass(tokens(s), modifiers))
+    #elif (option == 'multipass'):
+    #    return displayMultipass(multipass(tokens(s), modifiers))
     elif (option == 'tokenize'):
         return tokens(s)
 
 
-roll = call  # A hacky workaround to make usage more intuitive
+call = roll  # A hacky workaround for backwards compatibility
 
 def tokens(s):
-    #Splits a string into a list of integers and operators
-    #to be evaluated by execute()
-    #The valid operators, in order of decreasing precedence, are defined in call()
+    """Split a string into tokens for use with execute()"""
     number = []
     operator = []
-    sidelist = []
     out = []
     i = 0
     numflag = s[0] in digits
@@ -154,6 +142,7 @@ def tokens(s):
             else:
                 operator.append(char)
         elif (char == '['):
+            sidelist = []
             while (s[i] != ']'):
                 sidelist.append(s[i])
                 i += 1
@@ -171,6 +160,7 @@ def tokens(s):
 
 
 def readList(s, mode='float'):
+    """Read a list defined in a string."""
     if (mode == 'float'):
         return list(eval(s))
     elif (mode == 'int'):
@@ -181,6 +171,7 @@ def readList(s, mode='float'):
 
 
 def rollBasic(number, sides):
+    """Roll a single set of dice."""
     #Returns a sorted (ascending) list of all the numbers rolled
     result = []
     rollList = []
@@ -195,10 +186,7 @@ def rollBasic(number, sides):
 
 
 def evaluate(nums, op, av=False):
-    #Operator definitions (basically what 'nums' is allowed to be)
-    #   d is defined for [int {d} int] or [int {d} [numeric list]]
-    #   h and l are defined only for [[sorted numeric list] {h/l} int]
-    #   the arithmetic operators can take anything, as they collapse any lists
+    """Evaluate expressions."""
     if (op in 'd^*/%+-><='):
         #collapse any lists in preparation for operation
         try:
@@ -249,6 +237,7 @@ def evaluate(nums, op, av=False):
 
 
 def unary(num, op):
+    """Evaluate unary expressions."""
     try:
         num = sum(num)
     except (TypeError):
@@ -260,6 +249,7 @@ def unary(num, op):
 
 
 def execute(T, av=False):
+    """Calculate a result from a list of tokens."""
     oper = []
     nums = []
     while (len(T) > 0):
@@ -305,6 +295,7 @@ def execute(T, av=False):
     return sum(nums)
 
 def order(op):
+    """Determine the order of an operator."""
     for this in operators:
         if (this == op):
             return this.order

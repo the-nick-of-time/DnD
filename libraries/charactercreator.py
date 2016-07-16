@@ -291,6 +291,8 @@ class spellsec:
 ##        #if
         
 
-#window = tk.Tk()
-#app = toplevel(window)
-#window.mainloop()
+        
+if (__name__ == '__main__'):
+    window = tk.Tk()
+    app = toplevel(window)
+    window.mainloop()
