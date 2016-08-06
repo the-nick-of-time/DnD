@@ -1,0 +1,212 @@
+{
+  "cp": {
+    "value": 0.01,
+    "weight": 0.02
+  },
+  "ip": {
+    "value": 0.05,
+    "weight": 0.02
+  },
+  "sp": {
+    "value": 0.1,
+    "weight": 0.02
+  },
+  "ep": {
+    "value": 0.5,
+    "weight": 0.02
+  },
+  "gp": {
+    "value": 1,
+    "weight": 0.02
+  },
+  "pp": {
+    "value": 10,
+    "weight": 0.02
+  },
+  "azurite": {
+    "value": 10
+  },
+  "banded agate": {
+    "value": 10
+  },
+  "blue quartz": {
+    "value": 10
+  },
+  "eye agate": {
+    "value": 10
+  },
+  "hematite": {
+    "value": 10
+  },
+  "lapis lazuli": {
+    "value": 10
+  },
+  "malachite": {
+    "value": 10
+  },
+  "moss agate": {
+    "value": 10
+  },
+  "obsidian": {
+    "value": 10
+  },
+  "rhodochrosite": {
+    "value": 10
+  },
+  "tiger eye": {
+    "value": 10
+  },
+  "turquiose": {
+    "value": 10
+  },
+  "bloodstone": {
+    "value": 50
+  },
+  "carnelian": {
+    "value": 50
+  },
+  "chalcedony": {
+    "value": 50
+  },
+  "chrysoprase": {
+    "value": 50
+  },
+  "citrine": {
+    "value": 50
+  },
+  "jasper": {
+    "value": 50
+  },
+  "moonstone": {
+    "value": 50
+  },
+  "onyx": {
+    "value": 50
+  },
+  "quartz": {
+    "value": 50
+  },
+  "sardonyx": {
+    "value": 50
+  },
+  "star rose quartz": {
+    "value": 50
+  },
+  "zircon": {
+    "value": 50
+  },
+  "amber": {
+    "value": 100
+  },
+  "amethyst": {
+    "value": 100
+  },
+  "chrysoberyl": {
+    "value": 100
+  },
+  "coral": {
+    "value": 100
+  },
+  "garnet": {
+    "value": 100
+  },
+  "jade": {
+    "value": 100
+  },
+  "jet": {
+    "value": 100
+  },
+  "pearl": {
+    "value": 100
+  },
+  "spinel": {
+    "value": 100
+  },
+  "tourmaline": {
+    "value": 100
+  },
+  "alexandrite": {
+    "value": 500
+  },
+  "aquamarine": {
+    "value": 500
+  },
+  "black pearl": {
+    "value": 500
+  },
+  "blue spinel": {
+    "value": 500
+  },
+  "peridot": {
+    "value": 500
+  },
+  "topaz": {
+    "value": 500
+  },
+  "black opal": {
+    "value": 1000
+  },
+  "blue sapphire": {
+    "value": 1000
+  },
+  "emerald": {
+    "value": 1000
+  },
+  "fire opal": {
+    "value": 1000
+  },
+  "opal": {
+    "value": 1000
+  },
+  "star ruby": {
+    "value": 1000
+  },
+  "star sapphire": {
+    "value": 1000
+  },
+  "yellow sapphire": {
+    "value": 1000
+  },
+  "black sapphire": {
+    "value": 5000
+  },
+  "diamond": {
+    "value": 5000
+  },
+  "jacinth": {
+    "value": 5000
+  },
+  "ruby": {
+    "value": 5000
+  },
+  "silver ewer": {
+    "value": 25
+  },
+  "carved bone statuette": {
+    "value": 25
+  },
+  "small gold bracelet": {
+    "value": 25
+  },
+  "cloth-of-gold vestments": {
+    "value": 25
+  },
+  "black velvet mask stitched with silver thread": {
+    "value": 25
+  },
+  "copper chalice with silver filigree": {
+    "value": 25
+  },
+  "pair of engraved bone dice": {
+    "value": 25
+  },
+  "small mirror set in a painted wooden frame": {
+    "value": 25
+  },
+  "embroidered silk handkerchief": {
+    "value": 25
+  },
+  "gold locket with a painted portrait inside": {
+    "value": 25
+  }
+}

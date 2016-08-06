@@ -1,4 +1,6 @@
 {
-"name": "arrow",
-"consumable": true
+  "name": "arrow",
+  "consumable": true,
+  "value": 0.05,
+  "weight": 0.05
 }

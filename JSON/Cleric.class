@@ -1,6 +1,6 @@
 {
 "name": "Cleric",
-"superclass": ["ALL", "CASTER"]
+"superclass": ["ALL", "CASTER"],
 "hit_dice": "1d8",
 
 
@@ -24,10 +24,10 @@
 		  "always_prepared":[]
 		  },
 
-"features": {"Spellcasting": {1: "You get spellcasting abilities at level 1."}
-			 "Channel Divinity": {2: "You first get CD at level 2",
-								  6: "It gets improved at level 6",
-								  18: "And again at level 18"
+"features": {"Spellcasting": {"1": "You get spellcasting abilities at level 1."},
+			 "Channel Divinity": {"2": "You first get CD at level 2",
+								  "6": "It gets improved at level 6",
+								  "18": "And again at level 18"
 								  }
 
 			 }

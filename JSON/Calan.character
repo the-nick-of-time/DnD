@@ -1,39 +1,71 @@
 {
-"name": "Calan",
-"class": "Paladin 2, Cleric (Light) 11",
-"HP": 
-    {
+  "name": "Calan",
+  "class": "Paladin 2, Cleric (Light) 11",
+  "HP": {
     "max": 134,
     "current": 134,
     "temp": 0
-    },
-"abilities": 
-    {
+  },
+  "abilities": {
     "strength": 16,
     "dexterity": 9,
     "constitution": 16,
     "intelligence": 12,
     "wisdom": 18,
     "charisma": 16
-    },
-"skills":
-    [
-	"Survival",
+  },
+  "skills": [
+    "Survival",
     "Intimidate",
     "Medicine"
-    ],
-"equipment": 
-    [
-    {"name": "Longsword", "type": "weapon", "quantity": 1, "equipped": true},
-    {"name": "Dart", "type": "weapon", "quantity": 5, "equipped": true},
-    {"name": "Full Plate", "type": "armor", "quantity": 1, "equipped": true},
-    {"name": "Trail Rations", "type": "item", "quantity": 4, "equipped": true}
-    ],
-"spells_prepared": 
-    [
-    {"name": "Sacred Flame", "always_prepared": true},
-    {"name": "Burning Hands", "always_prepared": true},
-    {"name": "Protection From Evil", "always_prepared": false}
-    ],
-"spell_slots": [99999, 4, 3, 3, 3, 2, 1]
+  ],
+  "equipment": [
+    {
+      "name": "Longsword",
+      "type": "weapon",
+      "quantity": 1,
+      "equipped": true
+    },
+    {
+      "name": "Dart",
+      "type": "weapon",
+      "quantity": 5,
+      "equipped": true
+    },
+    {
+      "name": "Full Plate",
+      "type": "armor",
+      "quantity": 1,
+      "equipped": true
+    },
+    {
+      "name": "Trail Rations",
+      "type": "item",
+      "quantity": 4,
+      "equipped": true
+    }
+  ],
+  "spells_prepared": [
+    {
+      "name": "Sacred Flame",
+      "always_prepared": true
+    },
+    {
+      "name": "Burning Hands",
+      "always_prepared": true
+    },
+    {
+      "name": "Protection From Evil",
+      "always_prepared": false
+    }
+  ],
+  "spell_slots": [
+    99999,
+    4,
+    3,
+    3,
+    3,
+    2,
+    1
+  ]
 }

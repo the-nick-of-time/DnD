@@ -1,13 +1,16 @@
 {
-"name": "Shortbow",
-"damage": "1d6",
-"attacks": 1,
-"type": "Piercing",
-"hands": "two",
-"ability": ["Dexterity"]
-
-"ranged": true,
-"ammunition": "arrow",
-"range": 80,
-"thrown": false
+  "name": "Shortbow",
+  "damage": "1d6",
+  "attacks": 1,
+  "type": "Piercing",
+  "hands": "two",
+  "ability": [
+    "Dexterity"
+  ],
+  "value": 25,
+  "weight": 2,
+  "ranged": true,
+  "ammunition": "arrow",
+  "range": 80,
+  "thrown": false
 }

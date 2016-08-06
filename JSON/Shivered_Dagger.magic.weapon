@@ -1,12 +1,25 @@
 {
-"name": "Shivered Dagger"
-"damage": ["1d4", "Piercing"]
-"type": "Simple"
-"attacks": 1
-"hands": 1
-"ranged": false
-"ability": ["Strength", "Dexterity"]
-
-"magic_bonus": {"attack": 1, "damage": ["1d4", "cold"]}
-"effect": "This dagger sucks all the heat from anything it touches."
+  "name": "Shivered Dagger",
+  "damage": [
+    "1d4",
+    "Piercing"
+  ],
+  "type": "Simple",
+  "attacks": 1,
+  "hands": 1,
+  "ranged": false,
+  "ability": [
+    "Strength",
+    "Dexterity"
+  ],
+  "weight": 1,
+  "value": 200,
+  "magic_bonus": {
+    "attack": 1,
+    "damage": [
+      "1d4",
+      "cold"
+    ]
+  },
+  "effect": "This dagger sucks all the heat from anything it touches."
 }

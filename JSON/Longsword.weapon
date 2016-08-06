@@ -1,10 +1,22 @@
 {
-"name": "Longsword",
-"damage": {"one hand": ["1d8", "Slashing"], "two hands": ["1d10", "Slashing"]},
-"attacks": 1,
-"type": "Martial",
-"hands": "versatile",
-"ability": ["Strength"]
-
-"ranged": false
+  "name": "Longsword",
+  "damage": {
+    "one hand": [
+      "1d8",
+      "Slashing"
+    ],
+    "two hands": [
+      "1d10",
+      "Slashing"
+    ]
+  },
+  "attacks": 1,
+  "type": "Martial",
+  "hands": "versatile",
+  "ability": [
+    "Strength"
+  ],
+  "value": 15,
+  "weight": 3,
+  "ranged": false
 }

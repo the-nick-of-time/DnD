@@ -1,4 +1,6 @@
 {
-"name": "Trail Rations",
-"consumable": true
+  "name": "Trail Rations",
+  "consumable": true,
+  "weight": 2,
+  "value": 0.5
 }
