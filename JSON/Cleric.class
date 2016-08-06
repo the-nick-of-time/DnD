@@ -1,0 +1,34 @@
+{
+"name": "Cleric",
+"superclass": ["ALL", "CASTER"]
+"hit_dice": "1d8",
+
+
+"armors": {"types": ["Light", "Medium", "Shield"],
+		   "specific": []
+		   },
+"weapons": {"types": ["Simple"],
+			"specific": []
+			},
+"tools": [],
+"saves": ["Wisdom", "Charisma"]
+"skills": {"number": 2,
+		   "which": ["History", "Insight", "Medicine",
+					 "Persuasion","Religion"]
+		   },
+"spell": {"ability": "Wisdom",
+		  "slots": "full",
+		  "levels": "full",
+		  "known": "all",
+		  "prepare": ["Wisdom", "caster_level"],
+		  "always_prepared":[]
+		  },
+
+"features": {"Spellcasting": {1: "You get spellcasting abilities at level 1."}
+			 "Channel Divinity": {2: "You first get CD at level 2",
+								  6: "It gets improved at level 6",
+								  18: "And again at level 18"
+								  }
+
+			 }
+}

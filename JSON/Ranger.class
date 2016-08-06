@@ -1,0 +1,52 @@
+{
+"name": "Ranger",
+"parent": ["ALL", "CASTER"]
+"hit_dice": "1d10",
+
+
+"armors": {"types": ["Light", "Medium", "Shield"],
+		   "specific": []
+		   },
+"weapons": {"types": ["Simple", "Martial"],
+            "specific": []
+            },
+"tools": [],
+"skills": {"number": 3,
+		   "which": ["Animal Handling", "Athletics", "Insight", 
+					 "Investigation", "Nature", "Perception", 
+                     "Stealth", "Survival"]
+		   },
+"spell": {"ability": "Wisdom",
+		  "slots": "half",
+          "levels": "half",
+		  "known": [0, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11],
+          "prepare": [0, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11],
+          "always prepared":[]
+		  },
+
+"features": {"levels": [["Favored Enemy", "Natural Explorer"], 
+                        ["Fighting Style", "Spellcasting"],
+                        ["Ranger Archetype", "Primeval Awareness"],
+                        ["Ability Score Improvement"],
+                        ["Extra Attack"],
+                        [],
+                        [],
+                        ["Ability Score Improvement", "Land's Stride"],
+                        [],
+                        ["Hide in Plain Sight"],
+                        [],
+                        ["Ability Score Improvement"],
+                        [],
+                        ["Vanish"],
+                        [],
+                        ["Ability Score Improvement"],
+                        [],
+                        ["Feral Senses"],
+                        ["Ability Score Improvement"],
+                        ["Foe Slayer"]
+                        ]
+             "descriptions": {"Favored Enemy": "Goddamn long string."
+                              "Natural Explorer": "Another goddamn long string."
+                              }
+             }
+}

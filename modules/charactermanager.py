@@ -58,9 +58,9 @@ QUIT:
 import tkinter as tk
 import configparser as cp
 
-import libraries.rolling as r
-import libraries.tkUtility as util
-import libraries.DnDbasic as dnd
+from ..libraries import rolling as r
+from ..libraries import tkUtility as util
+from ..libraries import DnDbasic as dnd
 
 
 class main:

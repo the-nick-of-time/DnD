@@ -1,0 +1,13 @@
+{
+"name": "Throwing Knife",
+"damage": "1d4",
+"attacks": 1,
+"type": "Piercing",
+"hands": "one",
+"ability": ["Dexterity", "Strength"]
+
+"ranged": true,
+"ammunition": "Throwing Knife",
+"range": 30,
+"thrown": true
+}

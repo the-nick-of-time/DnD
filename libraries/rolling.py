@@ -39,44 +39,73 @@ Less applicable functionalities:
 """
 
 import random
+import string
 
 __all__ = ['roll', 'call']
 
 
 class operator:
-    def __init__(self, op, precedence, order):
+    def __init__(self, op, precedence, arity, operation=None, cajole='lr'):
         self.op = op
         self.precedence = precedence
-        self.order = order
-        
-    def __gt__(self, other):
-        return self.precedence > other.precedence
-        
+        self.arity = arity
+        self.operation = operation
+        self.cajole = cajole
+
     def __ge__(self, other):
+        if (isinstance(other, str)):
+            return True
         return self.precedence >= other.precedence
-        
+
+    def __le__(self, other):
+        if (isinstance(other, str)):
+            return False
+        return self.precedence >= other.precedence
+
     def __eq__(self, other):
-        return self.op == other
+        if (isinstance(other, operator)):
+            return self.op == other.op
+        if(isinstance(other, str)):
+            return self.op == other
+        return False
+
+    def __repr__(self):
+        return '{}:{} {}'.format(self.op, self.arity, self.precedence)
+
+    def op(self, nums):
+        operands = nums[-self.arity:]
+        del nums[-self.arity:]
+        l = 0 if self.arity == 2 else None
+        r = 1 if self.arity == 2 else 0
+        if ('l' in self.cajole):
+            operands[l] = sum(operands[l])
+        if ('r' in self.cajole):
+            operands[r] = sum(operands[r])
+        nums.append(self.operation(*operands))
+        return nums
+
 
 def roll(s, modifiers=0, option='execute'):
     """Roll dice and do arithmetic."""
-    global digits, operators
-    digits = '0123456789'
+    global operators
 
-    operators = (operator('d', 7, 2),
-                 operator('h', 6, 2),
-                 operator('l', 6, 2),
-                 operator('^', 5, 2),
-                 operator('m', 4, 1),
-                 operator('p', 4, 1),
-                 operator('*', 3, 2),
-                 operator('/', 3, 2),
-                 operator('-', 2, 2),
-                 operator('+', 2, 2),
-                 operator('>', 1, 2),
-                 operator('<', 1, 2),
-                 operator('=', 1, 2))
-    if (not isinstance(s, str)):
+    operators = (operator('d', 7, 2, rollBasic, 'l'),
+                 operator('dav', 7, 2, rollAverage, 'l'),
+                 operator('h', 6, 2, lambda x, y: x[-y:], 'r'),
+                 operator('l', 6, 2, lambda x, y: x[:y], 'r'),
+                 operator('^', 5, 2, lambda x, y: x**y, 'lr'),
+                 operator('m', 4, 1, lambda x: -x, 'r'),
+                 operator('p', 4, 1, lambda x: x, 'r'),
+                 operator('*', 3, 2, lambda x, y: x*y, 'lr'),
+                 operator('/', 3, 2, lambda x, y: x/y, 'lr'),
+                 operator('-', 2, 2, lambda x, y: x-y, 'lr'),
+                 operator('+', 2, 2, lambda x, y: x+y, 'lr'),
+                 operator('>', 1, 2, lambda x, y: x>y, 'lr'),
+                 operator('<', 1, 2, lambda x, y: x<y, 'lr'),
+                 operator('=', 1, 2, lambda x, y: x == y, 'lr'),
+                 )
+
+    if (isinstance(s, float) or isinstance(s, int)):
         # If you're naughty and pass a number in...
         # it really doesn't matter.
         return s + modifiers
@@ -85,7 +114,6 @@ def roll(s, modifiers=0, option='execute'):
     elif (option == 'execute'):
         return (execute(tokens(s)) + modifiers)
     elif (option == 'max'):
-        #T=[('*' if item=='d' else item) for item in tokens(s)]
         T = tokens(s)
         for (i, item) in enumerate(T):
             if (item == 'd'):
@@ -104,25 +132,25 @@ def roll(s, modifiers=0, option='execute'):
         return (execute(tokens(s), av=True) + modifiers)
     elif (option == 'zero'):
         return 0
-    #elif (option == 'multipass'):
-    #    return displayMultipass(multipass(tokens(s), modifiers))
+    # elif (option == 'multipass'):
+    #     return displayMultipass(multipass(tokens(s), modifiers))
     elif (option == 'tokenize'):
         return tokens(s)
 
 
 call = roll  # A hacky workaround for backwards compatibility
 
-def tokens(s):
+def tokens(s, av=False):
     """Split a string into tokens for use with execute()"""
     number = []
     operator = []
     out = []
     i = 0
-    numflag = s[0] in digits
+    numflag = s[0] in string.digits
     opflag = s[0] in operators
     while (i < len(s)):
         char = s[i]
-        if (char in digits):
+        if (char in string.digits):
             if (opflag):
                 out.extend(operator)
                 operator = []
@@ -136,11 +164,11 @@ def tokens(s):
                 numflag = not numflag
                 opflag = not opflag
             if(char == '+' and (i == 0 or s[i-1] in operators)):
-                out.append('p')
+                out.append(string_to_operator('p'))
             elif(char == '-' and (i == 0 or s[i-1] in operators)):
-                out.append('m')
+                out.append(string_to_operator('m'))
             else:
-                operator.append(char)
+                operator.append(string_to_operator(char, av))
         elif (char == '['):
             sidelist = []
             while (s[i] != ']'):
@@ -159,15 +187,22 @@ def tokens(s):
     return out
 
 
+def string_to_operator(s, av=False):
+    if (av and s == 'd'):
+        s = 'dav'
+    for op in operators:
+        if (op == s):
+            return op
+    return s
+
+
 def readList(s, mode='float'):
     """Read a list defined in a string."""
     if (mode == 'float'):
         return list(eval(s))
     elif (mode == 'int'):
         a = list(eval(s))
-        for (i, item) in enumerate(a):
-            a[i] = int(item)
-        return a
+        return [int(item) for item in a]
 
 
 def rollBasic(number, sides):
@@ -184,17 +219,34 @@ def rollBasic(number, sides):
     result.sort()
     return result
 
+    
+def rollAverage(number, sides):
+    if (isinstance(sides, list)):
+        return (sum(sides) * number) / len(sides)
+    else:
+        return (1 + sides) * number / 2
+
+
+def make_roll(lhs, rhs, average):
+    if (average):
+        if (isinstance(rhs, list)):
+            return (sum(rhs) * lhs) // len(rhs)
+        else:
+            return (1 + rhs) * lhs // 2
+    else:
+        return rollBasic(lhs, rhs)
+
 
 def evaluate(nums, op, av=False):
     """Evaluate expressions."""
-    if (op in 'd^*/%+-><='):
+    if (any(op == c for c in 'd^*/%+-><=')):
         #collapse any lists in preparation for operation
         try:
             nums[0] = sum(nums[0])
         except (TypeError):
             pass
 
-    if (op in 'hl^*/%+-><=&|'):
+    if (any(operators[3] == c for c in 'hl^*/%+-><=&|')):
         try:
             nums[1] = sum(nums[1])
         except (TypeError):
@@ -261,7 +313,7 @@ def execute(T, av=False):
         elif (current == ')'):
             while (oper[-1] != '('):
                 #Evaluate all extant expressions down to the open paren
-                if (order(oper[-1]) == 2):
+                if (arity(oper[-1]) == 2):
                     nums.append(evaluate(
                         [nums.pop(-2), nums.pop()], oper.pop(), av))
                 else:
@@ -270,9 +322,7 @@ def execute(T, av=False):
         elif (current in operators):
             try:
                 while (oper[-1] >= current):
-                    #check precedence; lower index=higher precedence
-                    #perform operation
-                    if (order(oper[-1]) == 2):
+                    if (arity(oper[-1]) == 2):
                         nums.append(evaluate(
                             [nums.pop(-2), nums.pop()], oper.pop(), av))
                     else:
@@ -283,7 +333,7 @@ def execute(T, av=False):
             #or add a higher-precedence operator to the stack
     while (len(oper) > 0):
         #empty the operator stack
-        if (order(oper[-1]) == 2):
+        if (arity(oper[-1]) == 2):
             nums.append(evaluate([nums.pop(-2), nums.pop()], oper.pop(), av))
         else:
             nums.append(unary(nums.pop(), oper.pop()))
@@ -294,11 +344,11 @@ def execute(T, av=False):
         pass
     return sum(nums)
 
-def order(op):
-    """Determine the order of an operator."""
+def arity(op):
+    """Determine the arity of an operator."""
     for this in operators:
         if (this == op):
-            return this.order
+            return this.arity
     raise NotFoundError('Operator not valid')
 
 def multipass(T, modifiers=0):
@@ -308,7 +358,7 @@ def multipass(T, modifiers=0):
         for op in run:
             while (T.count(op)):
                 loc = T.index(op)
-                if (order[operators.index(op)] == 2):
+                if (arity[operators.index(op)] == 2):
                     val = evaluate([T[loc - 1], T[loc + 1]], op)
                     T[loc - 1:loc + 2] = [val]
                     #this assignment only works when RHS is iterable
@@ -334,9 +384,12 @@ def displayMultipass(l):
         out[i] += '\n'
     return out
 
-    
+
 class NotFoundError(Exception):
-    def __init__(self, msg):
-        self.msg = msg
-    def __str__(self):
-        return self.msg
+    pass
+
+
+if __name__ == '__main__':
+    #print(roll('1d4+(4+3)*2'))
+    #print(roll('1d4+4+3*2'))
+    print(roll('1+3*2^1d4'))

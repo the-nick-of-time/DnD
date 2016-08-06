@@ -1,0 +1,11 @@
+{
+"name": "Dagger",
+"damage": "1d4",
+"attacks": 1,
+"type": "Piercing",
+"hands": "one",
+"ability": ["Dexterity", "Strength"],
+"effect": "",
+
+"ranged": false
+}

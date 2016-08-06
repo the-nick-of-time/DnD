@@ -30,8 +30,9 @@ if you add monsters after characters.
 """
 
 import tkinter as tk
-import libraries.rolling as r
-import libraries.tkUtility as util
+
+from ..libraries import rolling as r
+from ..libraries import tkUtility as util
 
 
 def modifier(score):

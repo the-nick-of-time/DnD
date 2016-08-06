@@ -59,8 +59,8 @@ import tkinter as tk
 import configparser as cp
 import os
 
-import libraries.rolling as r
-import libraries.tkUtility as util
+from ..libraries import rolling as r
+from ..libraries import tkUtility as util
 
 
 class main:

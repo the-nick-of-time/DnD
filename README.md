@@ -11,8 +11,8 @@ Direct all comments, suggestions, and bug reports at github.com/the-nick-of-time
 All tools in this package are released under the GNU General Public License version 2, as detailed within the file LICENSE. Refer to that document before doing anything except downloading for personal use.
 These were written in Python 3.4.0 and I do not guarantee that they will work correctly on any other platform.
 
-============================================================================================
-SECTION 1: GENERAL USE
+
+#GENERAL USE
 
 	1.1: Rolling
 	Any string that can be parsed by the "rolling" code is called throughout all my related code a "rollable string". These are similar to arithmetic expressions, just with the d, h, and l operators added.

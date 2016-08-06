@@ -1,7 +1,7 @@
 import tkinter as tk
 
-import libraries.rolling as r
-import libraries.tkUtility as util
+from ..libraries import rolling as r
+from ..libraries import tkUtility as util
 
 
 class rollsec:
@@ -18,7 +18,7 @@ class rollsec:
         self.result.grid(row=2, column=0)
 
     def doRoll(self):
-        self.result["text"] = r.call(self.generalRoll.get())
+        self.result["text"] = r.roll(self.generalRoll.get())
 
     def grid(self, row, column):
         self.f.grid(row=row, column=column)
@@ -29,7 +29,7 @@ class main():
         roll = rollsec(window, self)
         roll.grid(0, 0)
 
-        
+
 if (__name__ == '__main__'):
     win = tk.Tk()
     application = main(win)

@@ -1,0 +1,6 @@
+{
+"name": "Leather",
+"type": "Light",
+"AC": 12,
+"stealth disadvantage": true
+}
