@@ -1,0 +1,13 @@
+{
+  "name": "Dagger",
+  "damage": ["1d4", "Piercing"],
+  "attacks": 1,
+  "hands": "one",
+  "ability": [
+    "Dexterity",
+    "Strength"
+  ],
+  "type": "Simple",
+  "value": 2,
+  "weight": 1
+}

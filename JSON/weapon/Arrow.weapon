@@ -1,0 +1,14 @@
+{
+  "name": "arrow",
+  "damage": [
+    "1",
+    "Piercing"
+  ],
+  "ability": [
+    "Dexterity"
+  ],
+  "consumable": true,
+  "value": 0.05,
+  "weight": 0.05,
+  "effect": "You can use an arrow as ammunition for a bow or as a weapon on its own."
+}

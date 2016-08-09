@@ -1,6 +1,6 @@
 {
   "name": "Studded Leather",
-  "type": "Light",
+  "type": "light",
   "AC": 12,
   "stealth disadvantage": false,
   "value": 45,

@@ -1,5 +1,5 @@
 {
-  "name": "Dart",
+  "name": "Throwing Knife",
   "damage": "1d4",
   "attacks": 1,
   "type": "Piercing",
@@ -8,10 +8,9 @@
     "Dexterity",
     "Strength"
   ],
-  "value": 0.02,
-  "weight": 0.25,
-  "ranged": true,
-  "ammunition": "Dart",
+  "value": 1,
+  "weight": 1.5,
+  "ammunition": "Throwing Knife",
   "range": 30,
   "thrown": true
 }

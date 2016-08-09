@@ -1,0 +1,7 @@
+{
+  "name": "Oil",
+  "consumable": true,
+  "value": 0.1,
+  "weight": 1,
+  "effect": "In a lamp or lantern, this oil burns for 6 hours."
+}

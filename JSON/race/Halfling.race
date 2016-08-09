@@ -1,0 +1,12 @@
+{
+  "name": "Halfling",
+  "bonus": {
+    "Dexterity": 2
+  },
+  "size": "Small",
+  "features": {
+    "Lucky": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must take the new roll.",
+    "Brave": "You have advantage on saving throws against being frightened.",
+    "Halfling Nimbleness": "You can move through the space of any creature that is of a size larger than yours."
+  }
+}

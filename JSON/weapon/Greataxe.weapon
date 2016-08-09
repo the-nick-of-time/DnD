@@ -1,0 +1,10 @@
+{
+  "name": "Greataxe",
+  "value": 30,
+  "weight": 7,
+  "effect": "You attack with a mighty axe.",
+  "damage": ["1d12", "slashing"],
+  "ability": ["Strength"],
+  "type": "martial",
+  "hands": "two"
+}

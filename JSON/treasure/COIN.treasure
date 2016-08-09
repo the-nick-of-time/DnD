@@ -1,0 +1,26 @@
+{
+  "cp": {
+    "value": 0.01,
+    "weight": 0.02
+  },
+  "ip": {
+    "value": 0.05,
+    "weight": 0.02
+  },
+  "sp": {
+    "value": 0.1,
+    "weight": 0.02
+  },
+  "ep": {
+    "value": 0.5,
+    "weight": 0.02
+  },
+  "gp": {
+    "value": 1,
+    "weight": 0.02
+  },
+  "pp": {
+    "value": 10,
+    "weight": 0.02
+  }
+}

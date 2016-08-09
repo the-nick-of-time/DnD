@@ -1,6 +1,6 @@
 {
   "name": "Leather",
-  "type": "Light",
+  "type": "light",
   "AC": 11,
   "stealth disadvantage": false,
   "value": 10,

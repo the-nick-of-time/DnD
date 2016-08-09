@@ -1,0 +1,7 @@
+{
+  "name": "Woodcarver's tools",
+  "consumable": false,
+  "weight": 5,
+  "value": 1,
+  "effect": "You can carve sculptures out of wood using these tools."
+}

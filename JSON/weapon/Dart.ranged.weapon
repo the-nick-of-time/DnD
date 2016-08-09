@@ -1,5 +1,5 @@
 {
-  "name": "Dagger",
+  "name": "Dart",
   "damage": "1d4",
   "attacks": 1,
   "type": "Piercing",
@@ -8,8 +8,9 @@
     "Dexterity",
     "Strength"
   ],
-  "effect": "",
-  "value": 2,
-  "weight": 1,
-  "ranged": false
+  "value": 0.02,
+  "weight": 0.25,
+  "ammunition": "Dart",
+  "range": 30,
+  "thrown": true
 }

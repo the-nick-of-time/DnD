@@ -1,28 +1,4 @@
 {
-  "cp": {
-    "value": 0.01,
-    "weight": 0.02
-  },
-  "ip": {
-    "value": 0.05,
-    "weight": 0.02
-  },
-  "sp": {
-    "value": 0.1,
-    "weight": 0.02
-  },
-  "ep": {
-    "value": 0.5,
-    "weight": 0.02
-  },
-  "gp": {
-    "value": 1,
-    "weight": 0.02
-  },
-  "pp": {
-    "value": 10,
-    "weight": 0.02
-  },
   "azurite": {
     "value": 10
   },
@@ -178,35 +154,5 @@
   },
   "ruby": {
     "value": 5000
-  },
-  "silver ewer": {
-    "value": 25
-  },
-  "carved bone statuette": {
-    "value": 25
-  },
-  "small gold bracelet": {
-    "value": 25
-  },
-  "cloth-of-gold vestments": {
-    "value": 25
-  },
-  "black velvet mask stitched with silver thread": {
-    "value": 25
-  },
-  "copper chalice with silver filigree": {
-    "value": 25
-  },
-  "pair of engraved bone dice": {
-    "value": 25
-  },
-  "small mirror set in a painted wooden frame": {
-    "value": 25
-  },
-  "embroidered silk handkerchief": {
-    "value": 25
-  },
-  "gold locket with a painted portrait inside": {
-    "value": 25
   }
 }

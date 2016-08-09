@@ -1,0 +1,9 @@
+{
+  "name": "Scale armors",
+  "type": "medium",
+  "AC": 14,
+  "stealth disadvantage": true,
+  "value": 50,
+  "weight": 45,
+  "effects": ""
+}

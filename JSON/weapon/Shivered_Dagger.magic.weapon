@@ -7,7 +7,6 @@
   "type": "Simple",
   "attacks": 1,
   "hands": 1,
-  "ranged": false,
   "ability": [
     "Strength",
     "Dexterity"

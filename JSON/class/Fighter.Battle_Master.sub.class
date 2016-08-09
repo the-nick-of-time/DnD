@@ -1,0 +1,61 @@
+{
+  "features": {
+    "Combat Superiority": {
+      "3": {
+        "description": "You learn three maneuvers of your choice. Many maneuvers enhance an attack, and you can use only one maneuver on a single attack. These maneuvers are powered by superiority dice, which are recharged on a short or long rest. If a maneuver requires a saving throw, its save DC is 8 + proficiency + (Strength or Dexterity modifier).",
+        "resource": {
+          "name": "Superiority Dice",
+          "number": 4,
+          "value": "1d8"
+        }
+      },
+      "7": {
+        "description": "You learn an extra two maneuvers at 7th level. You may also replace one maneuver you know with another one.",
+        "resource": {
+          "name": "Superiority Dice",
+          "number": 5,
+          "value": "1d8"
+        }
+      },
+      "10": {
+        "description": "You learn an extra two maneuvers at 10th level. You may also replace one maneuver you know with another one.",
+        "resource": {
+          "name": "Superiority Dice",
+          "number": 5,
+          "value": "1d10"
+        }
+      },
+      "15": {
+        "description": "You learn an extra two maneuvers at 15th level. You may also replace one maneuver you know with another one.",
+        "resource": {
+          "name": "Superiority Dice",
+          "number": 6,
+          "value": "1d10"
+        }
+      },
+      "18": {
+        "description": "At 18th level, your superiority dice turn into d12s.",
+        "resource": {
+          "name": "Superiority Dice",
+          "number": 6,
+          "value": "1d12"
+        }
+      }
+    },
+    "Student of War": {
+      "3": {
+        "description": "Gain proficiency in one type of artisan's tools of your choice."
+      }
+    },
+    "Know Your Enemy": {
+      "7": {
+        "description": "If you spend at least 1 minute interacting with a creature outside of combat, you can learn certain information about its abilities compared to your own. The DM tells you if the creature is your equal, superior, or inferior in regard to two of the following characteristics of your choice: Strength, Dexterity, Constitution, AC, Current HP, Total class levels, or Fighter class levels."
+      }
+    },
+    "Relentless": {
+      "15": {
+        "description": "When you roll initiative and have no superiority dice remaining, regain 1 superiority die."
+      }
+    }
+  }
+}

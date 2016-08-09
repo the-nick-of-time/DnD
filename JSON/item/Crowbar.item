@@ -1,0 +1,7 @@
+{
+  "name": "Crowbar",
+  "value": 2,
+  "weight": 5,
+  "consumable": false,
+  "effect": "Using a crowbar grants advantage on Strength checks where the crowbar's leverage can be applied."
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Candle",
+  "consumable": true,
+  "weight": 2,
+  "value": 0.5,
+  "effect": "For 1 hour, a candle sheds bright light in a 5-foot radius and dim light for another 5 feet."
+}

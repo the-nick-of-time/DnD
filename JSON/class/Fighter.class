@@ -1,0 +1,109 @@
+{
+  "name": "Fighter",
+  "superclass": [
+    "ALL"
+  ],
+  "hit_dice": "1d10",
+  "armors": {
+    "types": [
+      "Light",
+      "Medium",
+      "Heavy",
+      "Shield"
+    ],
+    "specific": []
+  },
+  "weapons": {
+    "types": [
+      "Simple",
+      "Martial"
+    ],
+    "specific": []
+  },
+  "tools": [],
+  "saves": [
+    "Strength",
+    "Constitution"
+  ],
+  "skills": {
+    "number": 2,
+    "which": [
+      "Acrobatics",
+      "Animal Handling",
+      "Athletics",
+      "History",
+      "Insight",
+      "Intimidation",
+      "Perception",
+      "Survival"
+    ]
+  },
+  "spell": {},
+  "features": {
+    "Fighting Style": {
+      "1": {
+        "description": "Archery, Defense, Dueling, Great Weapon Fighting, Protection, Two-Weapon Fighting"
+      }
+    },
+    "Second Wind": {
+      "1": {
+        "description": "Use a bonus action to heal 1d10 + your fighter level. Recharges on short or long rest."
+      }
+    },
+    "Action Surge": {
+      "2": {
+        "description": "Take an extra action on your turn. Recharges on short or long rest."
+      }
+    },
+    "Martial Archetype": {
+      "3": {
+        "description": "At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques. Choose Champion, Battle Master, or Eldritch Knight, all detailed at the end of the c1ass description. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level."
+      }
+    },
+    "Ability Score Improvement": {
+      "4": {
+        "description": "Increase scores by a total of 2 points."
+      },
+      "6": {
+        "description": "Increase scores by a total of 2 points."
+      },
+      "8": {
+        "description": "Increase scores by a total of 2 points."
+      },
+      "12": {
+        "description": "Increase scores by a total of 2 points."
+      },
+      "14": {
+        "description": "Increase scores by a total of 2 points."
+      },
+      "16": {
+        "description": "Increase scores by a total of 2 points."
+      },
+      "19": {
+        "description": "Increase scores by a total of 2 points."
+      }
+    },
+    "Extra Attack": {
+      "5": {
+        "description": "Attack twice per attack action."
+      },
+      "11": {
+        "description": "Attack three times per attack action."
+      },
+      "20": {
+        "description": "Attack four times per attack action."
+      }
+    },
+    "Indomitable": {
+      "9": {
+        "description": "Reroll a saving throw that you failed. Usable once between long rests."
+      },
+      "13": {
+        "description": "Reroll a saving throw that you failed. Usable twice between long rests."
+      },
+      "17": {
+        "description": "Reroll a saving throw that you failed. Usable thrice between long rests."
+      }
+    }
+  }
+}

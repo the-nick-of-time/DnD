@@ -1,0 +1,74 @@
+{
+  "features": {
+    "Bonus Cantrip": {
+      "1": {
+        "spell": {
+          "cantrips": "Light"
+        }
+      }
+    },
+    "Domain Spells": {
+      "1": {
+        "spell": {
+          "always_prepared": [
+            "Burning Hands",
+            "Faerie Fire"
+          ]
+        }
+      },
+      "3": {
+        "spell": {
+          "always_prepared": [
+            "Burning Hands",
+            "Faerie Fire",
+            "Flaming Sphere",
+            "Scorching Ray",
+            "Daylight",
+            "Fireball"
+          ]
+        }
+      },
+      "7": {
+        "spell": {
+          "always_prepared": [
+            "Burning Hands",
+            "Faerie Fire",
+            "Flaming Sphere",
+            "Scorching Ray",
+            "Daylight",
+            "Fireball",
+            "Guardian of Faith",
+            "Wall of Fire"
+          ]
+        }
+      },
+      "9": {
+        "spell": {
+          "always_prepared": [
+            "Burning Hands",
+            "Faerie Fire",
+            "Flaming Sphere",
+            "Scorching Ray",
+            "Daylight",
+            "Fireball",
+            "Guardian of Faith",
+            "Wall of Fire",
+            "Flame Strike",
+            "Scrying"
+          ]
+        }
+      }
+    },
+    "Warding Flare": {
+      "1": {
+        "description": "You can interpose divine light between you and an enemy. When you are attacked by a creature within 30 feet that you can see, you can use your reaction to impose disadvantage on the attack roll. You can use this feature a number of times equal to your Wisdom modifier (minimum 1) between long rests."
+      }
+    },
+    "Radiance of the Dawn": {
+      "2": {
+        "description": "As an action, you extend light to a radius of 30 feet. Any magical darkness within the radius is dispelled, and all hostile creatures within the radius must make a Constitution saving throw or take 2d10 + your cleric level radiant damage on a failed save, or half that on a success.",
+        "resource": {"name": "Channel Divinity"}
+      }
+    }
+  }
+}
