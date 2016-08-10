@@ -58,9 +58,9 @@ QUIT:
 import tkinter as tk
 import configparser as cp
 
-from ..libraries import rolling as r
-from ..libraries import tkUtility as util
-from ..libraries import DnDbasic as dnd
+import tools.libraries.rolling as r
+import tools.libraries.tkUtility as util
+import tools.libraries.DnDbasic as dnd
 
 
 class main:
@@ -466,7 +466,7 @@ class rollsec:
     def grid(self, row, column):
         self.f.grid(row=row, column=column)
 
-        
+
 if (__name__ == '__main__'):
     win = tk.Tk()
     app = main(win)

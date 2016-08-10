@@ -2,8 +2,8 @@ import os.path
 import tkinter as tk
 import configparser as cp
 
-from ..libraries import rolling as r
-from ..libraries import tkUtility as util
+import tools.libraries.rolling as r
+import tools.libraries.tkUtility as util
 
 
 class main:
@@ -42,5 +42,5 @@ class popup:
             tk.Button(errorWindow,
                       command=errorWindow.destroy,
                       text="OK").pack()
-            
+
 class spellsec:

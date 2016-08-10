@@ -8,12 +8,12 @@
     "temp": 0
   },
   "abilities": {
-    "strength": 9,
-    "dexterity": 17,
-    "constitution": 16,
-    "intelligence": 10,
-    "wisdom": 14,
-    "charisma": 7
+    "Strength": 9,
+    "Dexterity": 17,
+    "Constitution": 16,
+    "Intelligence": 10,
+    "Wisdom": 14,
+    "Charisma": 7
   },
   "skills": [
     "Acrobatics",
@@ -25,73 +25,73 @@
   "inventory": [
     {
       "name": "Dagger",
-      "type": "weapon",
+      "type": ".weapon",
       "quantity": 1,
       "equipped": true
     },
     {
       "name": "Throwing Knife",
-      "type": "ranged weapon",
+      "type": ".ranged.weapon",
       "quantity": 4,
       "equipped": true
     },
     {
       "name": "Parrying Dagger",
-      "type": "weapon",
+      "type": ".weapon",
       "quantity": 1,
       "equipped": true
     },
     {
       "name": "Studded Leather",
-      "type": "armor",
+      "type": ".armor",
       "quantity": 1,
       "equipped": true
     },
     {
       "name": "cp",
-      "type": "coin treasure",
+      "type": "coin.treasure",
       "quantity": 30,
       "equipped": false
     },
     {
       "name": "sp",
-      "type": "coin treasure",
+      "type": "coin.treasure",
       "quantity": 60,
       "equipped": false
     },
     {
       "name": "gp",
-      "type": "coin treasure",
+      "type": "coin.treasure",
       "quantity": 4,
       "equipped": false
     },
     {
       "name": "topaz",
-      "type": "gem treasure",
+      "type": "gem.treasure",
       "quantity": 1,
       "equipped": false
     },
     {
       "name": "Chalk",
-      "type": "item",
+      "type": ".item",
       "quantity": 2,
       "equipped": false
     },
     {
       "name": "Candle",
-      "type": "item",
+      "type": ".item",
       "quantity": 6,
       "equipped": false
     },
     {
       "name": "Hooded Lantern",
-      "type": "item",
+      "type": ".item",
       "quantity": 1,
       "equipped": false
     },
     {
       "name": "Oil",
-      "type": "item",
+      "type": ".item",
       "quantity": 2,
       "equipped": false
     }

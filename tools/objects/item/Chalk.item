@@ -2,5 +2,6 @@
   "name": "Chalk",
   "value": 0.01,
   "weight": 0.01,
+  "consumable": false,
   "effect": "You make a small mark on a hard surface."
 }

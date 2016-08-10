@@ -14,7 +14,7 @@ How to use:
     determine the spell slots available to you, so if none of these options
     directly apply to you (Eldritch Knight maybe? I've never played one) use
     an equivalent class like Paladin.
-    
+
     Next, fill out weapon and spell creation sections. Leave sections blank to
         use default values.
     Name: is just that
@@ -23,7 +23,7 @@ How to use:
         this attack (often class-dependent, but you need to put it in)
     Attacks per Action: how many individual attacks are done with every attack
         action that you take. For instance, the spell Scorching Ray has a 3 for
-        this entry. For AoE spells, you probably just want to put as many 
+        this entry. For AoE spells, you probably just want to put as many
         targets as could reasonably be hit by it. You can always just roll extra
         to make up the difference.
     Magic Bonus (Weapon): A magic bonus to be added to attack and damage rolls.
@@ -59,8 +59,8 @@ import tkinter as tk
 import configparser as cp
 import os
 
-from ..libraries import rolling as r
-from ..libraries import tkUtility as util
+import tools.libraries.rolling as r
+import tools.libraries.tkUtility as util
 
 
 class main:
@@ -200,7 +200,7 @@ class weaponsec:
                               text='Make',
                               command=lambda: self.build())
         self.make.grid(row=18, column=0)
-##        self.menu = tk.OptionMenu(self.f, self.toEdit, 
+##        self.menu = tk.OptionMenu(self.f, self.toEdit,
 ##                                  *self.top.main.options("Weapons"))
 ##        self.menulabel = tk.Label(self.f, text="Entry to edit")
 ##        self.menulabel.grid(row=0, column=1)
@@ -254,7 +254,7 @@ class spellsec:
                               command=lambda: self.build())
         self.make.grid(row=20, column=0)
 ##        self.toEdit = tk.StringVar()
-##        self.menu = tk.OptionMenu(self.f, self.toEdit, 
+##        self.menu = tk.OptionMenu(self.f, self.toEdit,
 ##                                  *self.top.main.options("Spells"))
 ##        self.menulabel = tk.Label(self.f, text="Entry to edit")
 ##        self.menulabel.grid(row=0, column=1)
@@ -285,13 +285,13 @@ class spellsec:
 
     def grid(self, row, column):
         self.f.grid(row=row, column=column)
-       
+
 ##    def populateFromConfig(self):
 ##        which = self.menu.get()
 ##        #if
-        
 
-        
+
+
 if (__name__ == '__main__'):
     window = tk.Tk()
     app = toplevel(window)

@@ -219,7 +219,7 @@ def rollBasic(number, sides):
     result.sort()
     return result
 
-    
+
 def rollAverage(number, sides):
     if (isinstance(sides, list)):
         return (sum(sides) * number) / len(sides)

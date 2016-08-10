@@ -8,15 +8,6 @@ __all__ = ['Character', 'Weapon', 'Spell', 'SpellAttack', 'Class',
            'RangedWeapon', 'Armor', 'Item', 'MagicItem']
 
 
-def modifier(score):
-    return (score-10) // 2
-
-
-def shorten(effect):
-    """Takes an effects string and returns the first sentence."""
-    return re.match('^.*?\.', effect).group()
-
-
 class Class:
     """Nonspecific representation of a D&D class.
 
@@ -47,7 +38,7 @@ class Character:
     caster_level: The total caster level of the character.
     abilities: A dictionary mapping ability names (abbreviations) to
         scores.
-    equipment: A list of equipment, tagged with whether they are
+    inventory: A list of equipment, tagged with whether they are
         equipped. In the form [name, count, equipped]
     AC: The current AC of the character.
     proficiency: The proficiency bonus of the character. Allowed to
@@ -98,7 +89,7 @@ class Character:
             raise(OutOfSpells(self, spell))
 
     def item_consume(self, name):
-        for item, count in self.equipment:
+        for item, count in self.inventory:
             if (item.name == name):
                 count -= 1
                 return True
@@ -126,7 +117,7 @@ class Attack:
         attack_string = 'Attack rolls: ' + ', '.join(result[0])
         damage_string = 'Damage rolls: ' + ', '.join(result[1])
         effects = result[2]
-        panel = gui.AttackResult(path['display'], attack_string, 
+        panel = gui.AttackResult(path['display'], attack_string,
                                  damage_string, effects)
         panel.grid(3,1)
 
@@ -234,7 +225,7 @@ class Weapon(Attack, Item):
                           + r.roll(character.proficiency) \
                           + r.roll(self.magic_bonus['attack']) \
                           + character.abil_get_relevant(self, 'modifier')
-            
+
             if (attack_roll == 1):
                 # Crit fail
                 attack_roll = 'Crit fail.'

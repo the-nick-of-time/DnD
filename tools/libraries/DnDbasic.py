@@ -10,21 +10,21 @@ This module contains definitions of D&D-specific objects, for use in the Charact
 Character represents a standard D&D character. It encapsulates the basic numerical
 information about the person, as well as all attacks available to them.
 
-Weapon represents a physical weapon. 
+Weapon represents a physical weapon.
 
-Spell represents any damaging spell. 
+Spell represents any damaging spell.
 
-You should never have to hardcode one of these objects as all of this will be handled in 
+You should never have to hardcode one of these objects as all of this will be handled in
 the character creator.
 
 """
 
-import libraries.rolling as r
+import tools.libraries.rolling as r
 
 
 def abilMod(score):
     return (score - 10) // 2
-    
+
 
 def readConfig(s):
     val = s.split(',')
@@ -48,7 +48,7 @@ class character:
     casterLevel: integer [1-20]; caster level of character
     spellSlots: list length 10; ordered list of unused spell slots
         of each level that the character has currently
-    
+
     """
     # yapf: disable
     half = [[],
@@ -189,7 +189,7 @@ class spell:
         #character: a character object that is performing the attack
         #adv: boolean, whether you have advantage
         #dis: boolean, whether you have disadvantage
-        #attackBonus: string, a rolled bonus to attack 
+        #attackBonus: string, a rolled bonus to attack
         #damageBonus: string, a rolled bonus to damage
         modifier = abilMod(character.abilities[self.ability])
         result = [[], [], '']
@@ -207,7 +207,7 @@ class spell:
                     attackstring = '2d20l1'
                 else:
                     attackstring = '1d20'
-                AB = (r.call(attackBonus) + character.proficiencyBonus + 
+                AB = (r.call(attackBonus) + character.proficiencyBonus +
                       modifier)
                 attackresult = r.call(attackstring)
                 if (attackresult == 1):
@@ -264,7 +264,7 @@ class weapon:
         #character: a character object that is performing the attack
         #adv: boolean, whether you have advantage
         #dis: boolean, whether you have disadvantage
-        #attackBonus: string, a rolled bonus to attack 
+        #attackBonus: string, a rolled bonus to attack
         #damageBonus: string, a rolled bonus to damage
         result = [[], [], '']
         modifier = abilMod(character.abilities[self.ability])
@@ -282,7 +282,7 @@ class weapon:
                     attackstring = '2d20l1'
                 else:
                     attackstring = '1d20'
-                AB = (r.call(attackBonus) + character.proficiencyBonus + 
+                AB = (r.call(attackBonus) + character.proficiencyBonus +
                       modifier + self.magicbonus)
                 attackresult = r.call(attackstring)
                 if (attackresult == 1):

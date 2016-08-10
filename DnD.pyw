@@ -2,11 +2,12 @@
 
 import tkinter as tk
 
-from modules import monstermanager as mm
-from modules import charactermanager as cm
-from modules import charactercreator as cc
-from modules import dice as dc
-# from modules import charactereditor as ce
+import tools.modules.monstermanager as mm
+import tools.modules.charactermanager as cm
+import tools.modules.charactercreator as cc
+import tools.modules.dice as dc
+# import tools.modules.charactereditor as ce
+import tools.forge.inventory as iv
 
 
 class core:
@@ -25,9 +26,12 @@ class core:
                            command=lambda: self.charactercreate())
         create.grid(row=2, column=0, pady=5)
         # edit = tk.Button(self.master,
-                         # text="Edit an Existing Character",
-                         # command=lambda: self.characteredit())
+        #                  text="Edit an Existing Character",
+        #                  command=lambda: self.characteredit())
         # edit.grid(row=3, column=0, pady=5)
+        inventory = tk.Button(self.master, text="Manage Your Inventory",
+                              command=lambda: self.characterinventory())
+        inventory.grid(row=3, column=0, pady=5)
         monster = tk.Button(self.master,
                             text="Create New Encounter",
                             command=lambda: self.monstermanage())
@@ -41,7 +45,7 @@ class core:
 
     def undisplay(self):
         for widget in self.master.winfo_children():
-            #widget.grid_forget()
+            # widget.grid_forget()
             widget.destroy()
 
     def monstermanage(self):
@@ -55,6 +59,10 @@ class core:
     def charactercreate(self):
         self.undisplay()
         cc.main(self.master)
+
+    def characterinventory(self):
+        self.undisplay()
+        iv.main(self.master)
 
 #    def characteredit(self):
 #        self.undisplay()

@@ -1,6 +1,7 @@
 import tkinter as tk
 
-import helpers
+import tools.forge.helpers
+
 
 class Interface:
     """This presents a nested dictionary structure to the main program.
@@ -18,12 +19,12 @@ class Interface:
             return root
         (this, after) = path.split('/', 1)
         return retrieve(root[this], after)
-        
+
     def makestruct(name, obj, _struct):
         """
         Frames and user-created classes are 'directories'
         Widgets (other than frames) are 'files'
-        
+
         """
         if (isinstance(obj, tk.Frame)):
             _struct[name] = {}
@@ -36,25 +37,6 @@ class Interface:
             return _struct
         else:
             return _struct
-            
-
-
-
-class Element:
-    """An identifier superclass.
-    All classes in this module must inherit from this.
-    """
-    def __init__(self, name):
-        self._structure = {}
-        self.__name__ = name
-
-class Section:
-    def __init__(self, container):
-        self.container = container
-        self.f = tk.Frame(self.container)
-
-    def grid(self, row, column):
-        self.f.grid(row=row, column=column)
 
 
 class AttackResult(Section, Element):
@@ -77,24 +59,6 @@ class AttackResult(Section, Element):
         self.effect_display.grid(2, 0)
 
 
-
-class EffectPane(Section, Element):
-    def __init__(self, container, short, long):
-        super().__init__(self, container)
-
-        self.short = short
-        self.long = long
-
-        self.draw()
-
-    def draw(self):
-        self.short_display = tk.Label(self.f, text=self.short)
-        self.long_display = HelpButton(self.f, self.long)
-
-        self.short_display.grid(row=0, column=0)
-        self.long_display.grid(row=0, column=1)
-
-
 class FeaturePane(Section, Element):
     def __init__(self, container, name, description):
         super().__init__(self, container)
@@ -110,21 +74,3 @@ class FeaturePane(Section, Element):
 
         self.stub.grid(row=0, column=0)
         self.long_display.grid(row=0, column=1)
-
-
-class HelpButton(Element):
-    def __init__(self, container, poptext):
-        self.container = container
-        self.poptext = poptext
-
-        self.b = tk.Button(self.container, text='?', command=lambda: self.popup())
-
-    def popup(self):
-        win = tk.TopLevel()
-        disp = tk.Label(win, text=self.poptext)
-        disp.grid(row=0, column=0)
-        close = tk.Button(win, text='Close', command=lambda:win.destroy())
-        close.grid(row=1, column=0)
-
-    def grid(self, row, column):
-        self.b.grid(row=row, column=column)
