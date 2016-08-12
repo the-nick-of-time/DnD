@@ -19,46 +19,39 @@
     "Intimidate",
     "Medicine"
   ],
-  "equipment": [
-    {
-      "name": "Longsword",
+  "equipment": {
+    "Longsword":{
       "type": "weapon",
       "quantity": 1,
       "equipped": true
     },
-    {
-      "name": "Dart",
+    "Dart":{
       "type": "weapon",
       "quantity": 5,
       "equipped": true
     },
-    {
-      "name": "Full Plate",
+    "Full Plate":{
       "type": "armor",
       "quantity": 1,
       "equipped": true
     },
-    {
-      "name": "Trail Rations",
+    "Trail Rations":{
       "type": "item",
       "quantity": 4,
       "equipped": true
     }
-  ],
-  "spells_prepared": [
-    {
-      "name": "Sacred Flame",
+  },
+  "spells_prepared": {
+    "Sacred Flame":{
       "always_prepared": true
     },
-    {
-      "name": "Burning Hands",
+    "Burning Hands":{
       "always_prepared": true
     },
-    {
-      "name": "Protection From Evil",
+    "Protection From Evil":{
       "always_prepared": false
     }
-  ],
+  },
   "spell_slots": [
     99999,
     4,

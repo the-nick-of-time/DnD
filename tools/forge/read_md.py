@@ -9,11 +9,13 @@ def read_meta(contents):
     head = finder.match(contents).group()
     lineparser = re.compile()
 
+
 def read_list(s):
-    tokens = s.replace('[', '').replace(']','').split(sep=',')
+    tokens = s.replace('[', '').replace(']', '').split(sep=',')
     for i, t in enumerate(tokens):
         tokens[i] = cleanup(t)
     return tokens
+
 
 def pair_off(s, ls=False):
     tokens = s.split(sep=':')
@@ -22,8 +24,10 @@ def pair_off(s, ls=False):
     else:
         return {tokens[0]: tokens[1]}
 
+
 def cleanup(s):
     return s.replace('*', '').replace('"', '').strip()
+
 
 def read_markdown(filename):
     ignores = ('---', 'layout:', 'date:', 'source:')
@@ -45,9 +49,9 @@ def read_markdown(filename):
                 data.update(pair_off(line, True))
                 location += 1
                 continue
-            
+
             if(location == 7):
-                data.update({'type':cleanup(line)})
+                data.update({'type': cleanup(line)})
                 location += 1
                 continue
             if(8 <= location <= 11):
@@ -60,6 +64,7 @@ def read_markdown(filename):
         data.update({'effects': '\n'.join(effect)})
     return data
 
+
 def jsonify(filename):
     vals = read_markdown(filename)
-    print json.dumps(vals)
+    print(json.dumps(vals))

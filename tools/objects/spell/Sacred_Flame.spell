@@ -2,7 +2,7 @@
 "name": "Sacred Flame",
 "classes": ["cleric"],
 "level": 0,
-"damage": "1d8",
+"damage": ["1d8", "Radiant"],
 "save": "Dexterity",
 
 "casting time": "1 action",

@@ -1,0 +1,9 @@
+{
+  "name": "Good Clothes",
+  "type": "light",
+  "AC": 10,
+  "stealth disadvantage": false,
+  "value": 7,
+  "weight": 4,
+  "effect": "These clothes are fine without being opulent."
+}

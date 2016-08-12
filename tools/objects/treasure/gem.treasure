@@ -1,158 +1,158 @@
 {
-  "azurite": {
+  "Azurite": {
     "value": 10
   },
-  "banded agate": {
+  "Banded Agate": {
     "value": 10
   },
-  "blue quartz": {
+  "Blue Quartz": {
     "value": 10
   },
-  "eye agate": {
+  "Eye Agate": {
     "value": 10
   },
-  "hematite": {
+  "Hematite": {
     "value": 10
   },
-  "lapis lazuli": {
+  "Lapis Lazuli": {
     "value": 10
   },
-  "malachite": {
+  "Malachite": {
     "value": 10
   },
-  "moss agate": {
+  "Moss Agate": {
     "value": 10
   },
-  "obsidian": {
+  "Obsidian": {
     "value": 10
   },
-  "rhodochrosite": {
+  "Rhodochrosite": {
     "value": 10
   },
-  "tiger eye": {
+  "Tiger Eye": {
     "value": 10
   },
-  "turquiose": {
+  "Turquiose": {
     "value": 10
   },
-  "bloodstone": {
+  "Bloodstone": {
     "value": 50
   },
-  "carnelian": {
+  "Carnelian": {
     "value": 50
   },
-  "chalcedony": {
+  "Chalcedony": {
     "value": 50
   },
-  "chrysoprase": {
+  "Chrysoprase": {
     "value": 50
   },
-  "citrine": {
+  "Citrine": {
     "value": 50
   },
-  "jasper": {
+  "Jasper": {
     "value": 50
   },
-  "moonstone": {
+  "Moonstone": {
     "value": 50
   },
-  "onyx": {
+  "Onyx": {
     "value": 50
   },
-  "quartz": {
+  "Quartz": {
     "value": 50
   },
-  "sardonyx": {
+  "Sardonyx": {
     "value": 50
   },
-  "star rose quartz": {
+  "Star Rose Quartz": {
     "value": 50
   },
-  "zircon": {
+  "Zircon": {
     "value": 50
   },
-  "amber": {
+  "Amber": {
     "value": 100
   },
-  "amethyst": {
+  "Amethyst": {
     "value": 100
   },
-  "chrysoberyl": {
+  "Chrysoberyl": {
     "value": 100
   },
-  "coral": {
+  "Coral": {
     "value": 100
   },
-  "garnet": {
+  "Garnet": {
     "value": 100
   },
-  "jade": {
+  "Jade": {
     "value": 100
   },
-  "jet": {
+  "Jet": {
     "value": 100
   },
-  "pearl": {
+  "Pearl": {
     "value": 100
   },
-  "spinel": {
+  "Spinel": {
     "value": 100
   },
-  "tourmaline": {
+  "Tourmaline": {
     "value": 100
   },
-  "alexandrite": {
+  "Alexandrite": {
     "value": 500
   },
-  "aquamarine": {
+  "Aquamarine": {
     "value": 500
   },
-  "black pearl": {
+  "Black Pearl": {
     "value": 500
   },
-  "blue spinel": {
+  "Blue Spinel": {
     "value": 500
   },
-  "peridot": {
+  "Peridot": {
     "value": 500
   },
-  "topaz": {
+  "Topaz": {
     "value": 500
   },
-  "black opal": {
+  "Black Opal": {
     "value": 1000
   },
-  "blue sapphire": {
+  "Blue Sapphire": {
     "value": 1000
   },
-  "emerald": {
+  "Emerald": {
     "value": 1000
   },
-  "fire opal": {
+  "Fire Opal": {
     "value": 1000
   },
-  "opal": {
+  "Opal": {
     "value": 1000
   },
-  "star ruby": {
+  "Star Ruby": {
     "value": 1000
   },
-  "star sapphire": {
+  "Star Sapphire": {
     "value": 1000
   },
-  "yellow sapphire": {
+  "Yellow Sapphire": {
     "value": 1000
   },
-  "black sapphire": {
+  "Black Sapphire": {
     "value": 5000
   },
-  "diamond": {
+  "Diamond": {
     "value": 5000
   },
-  "jacinth": {
+  "Jacinth": {
     "value": 5000
   },
-  "ruby": {
+  "Ruby": {
     "value": 5000
   }
 }

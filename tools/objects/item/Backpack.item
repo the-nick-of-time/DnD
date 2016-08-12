@@ -1,0 +1,7 @@
+{
+  "name": "Backpack",
+  "value": 2,
+  "weight": 5,
+  "consumable": false,
+  "effect": "This backpack can hold up to 1 cubic foot or 30 pounds of gear."
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Silk Gloves",
+  "type": "glove",
+  "bonus": {
+    "AC": 0
+  },
+  "stealth disadvantage": false,
+  "value": 10,
+  "weight": 0.25,
+  "effect": "These black silk gloves brocaded with silver wire are Mai's arcane focus."
+}

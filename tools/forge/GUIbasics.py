@@ -32,7 +32,7 @@ class HelpButton(Element):
 
     def popup(self):
         win = tk.Toplevel()
-        disp = tk.Label(win, text=self.poptext)
+        disp = tk.Label(win, text=self.poptext, wraplength=250)
         disp.grid(row=0, column=0)
         close = tk.Button(win, text='Close', command=lambda: win.destroy())
         close.grid(row=1, column=0)

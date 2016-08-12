@@ -1,0 +1,7 @@
+{
+  "name": "Map",
+  "value": 1,
+  "weight": 0.01,
+  "consumable": false,
+  "effect": "This map shows the surrounding countryside."
+}

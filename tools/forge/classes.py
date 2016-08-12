@@ -1,7 +1,9 @@
 import re
+from collections import OrderedDict
 
-import rolling as r
-import gui
+import tools.libraries.rolling as r
+import tools.forge.helpers as h
+# import gui
 
 
 __all__ = ['Character', 'Weapon', 'Spell', 'SpellAttack', 'Class',
@@ -21,8 +23,11 @@ class Class:
 
     features: a dict mapping names to level: description dicts
 
+    resources: special class-specific resources like sorcerer points
+
 
     Contained methods:
+    useresource
     """
     pass
 
@@ -89,11 +94,103 @@ class Character:
             raise(OutOfSpells(self, spell))
 
     def item_consume(self, name):
-        for item, count in self.inventory:
-            if (item.name == name):
-                count -= 1
+        count = self.inventory.getq(name)
+        if (count > 0):
+            self.inventory.setq(name, count - 1)
+        else:
+            raise OutOfItems(self, name)
+
+
+class Inventory:
+    """Handles an inventory. Does not depend on a Character."""
+    def __init__(self, jf):
+        """
+        Parameters
+        ----------
+        jf: a JSONInterface to the character file
+        """
+        self.record = jf
+        self.data = jf.get('/inventory')
+
+    def setq(self, name, value):
+        """Sets the quantity of an object."""
+        self.data[name]['quantity'] = value
+        self.export(name=name)
+
+    def getq(self, name):
+        """Gets the quantity of an object.
+        Returns
+        -------
+        number if named item exists, else 0
+        """
+        try:
+            return self.data[name]['quantity']
+        except KeyError:
+            return 0
+
+    def newslot(self, name, quantity=1, type='.item', equipped=False):
+        """Creates a new item in the inventory."""
+        self.data[name] = OrderedDict(
+            (('quantity', quantity),
+             ('type', type),
+             ('equipped', equipped))
+        )
+
+    def export(self, name=None):
+        """
+        Parameters
+        ----------
+        [name]: If None (the default), updates all entries in the JSONInterface
+            with their current values. Otherwise only update the named field.
+
+        Returns
+        -------
+        True if the operation was successful else False.
+        """
+        from tools.forge.helpers import clean
+        if (name is None):
+            self.record.set('/inventory', self.data)
+            return True
+        else:
+            try:
+                self.record.set('/inventory/' + name, self.data[name])
                 return True
-        raise OutOfItems(self, name)
+            except KeyError:
+                return False
+
+    def hook(self, name):
+        directory = '{direc}/{name}'
+        item = self.data[name]
+        location = item['type'].split(sep='.')
+        if (location[0] == ''):
+            # Leading . indicates name of object is included in path
+            location[0] = h.clean(name)
+            deeper = False
+        else:
+            deeper = True
+        filename = directory.format(direc=location[-1],
+                                    name='.'.join(location))
+        try:
+            iface = JSONInterface(filename,
+                                  PREFIX=name if deeper else '')
+        except FileNotFoundError:
+            print(filename, ' not found')
+            iface = None
+        return Item(iface)
+
+
+class Damage:
+    def __init__(self, data):
+        self.data = data
+
+    def get1h(self):
+        return self.data['one hand']
+
+    def get2h(self):
+        return self.data['two hands']
+
+    def getlevel(self):
+        pass
 
 
 class Attack:
@@ -112,6 +209,9 @@ class Attack:
     attackwrap: This decorator ensures that the attack methods of all
         subclasses are handled correctly.
     """
+    def __init__(self, jf):
+        self.damage_dice = jf.get('/damage')
+
     @staticmethod
     def display_result(result):
         attack_string = 'Attack rolls: ' + ', '.join(result[0])
@@ -119,14 +219,15 @@ class Attack:
         effects = result[2]
         panel = gui.AttackResult(path['display'], attack_string,
                                  damage_string, effects)
-        panel.grid(3,1)
 
     def attackwrap(attack_function):
         def modified(self, character, adv, dis, attack_bonus, damage_bonus):
             # This decorator will be applied to all attack() methods of
             # subclasses of this class. Anything that should apply to
             # all attack actions should go here.
-            return Attack.display_result(attack_function(self, character, adv, dis, attack_bonus, damage_bonus))
+            return Attack.display_result(attack_function(self, character, adv,
+                                                         dis, attack_bonus,
+                                                         damage_bonus))
         return modified
 
 
@@ -147,6 +248,16 @@ class Spell:
     cast: Handles the casting of the spell, including whether you can
         cast it with the spell slots you have remaining.
     """
+    def __init__(self, jf):
+        self.name = jf.get('/name')
+        self.level = jf.get('/level')
+        self.effect = jf.get('/effect')
+        self.classes = jf.get('/classes')
+        self.casting_time = jf.get('/casting_time')
+        self.duration = jf.get('/duration')
+        self.range = jf.get('/range')
+        self.components = jf.get('/components')
+
     def cast(self):
         # Returns a string of the effect of the spell
         if(self.level > 0):
@@ -173,11 +284,11 @@ class SpellAttack(Spell, Attack):
 
     Contained methods:
     """
-    def __init__(self, level):
-        if (level == 0):
+    def __init__(self, jf):
+        super().__init__(jf)
+        if (self.level == 0):
             self.damage_dice = '+'.join([self.damage_dice]
                                         * self.owner.cantrip_scale)
-
 
     @Attack.attackwrap
     def attack(self, character, adv, dis, attack_bonus, damage_bonus):
@@ -187,18 +298,37 @@ class SpellAttack(Spell, Attack):
             return ('', '', str(error))
 
 
-
 class Item:
     """Represents any item that you could own.
 
     Contained data:
     name
     consumable: True if the item is consumed by being used.
-    count:
 
     Contained methods:
     use: Decrement count if consumable and return the effect.
     """
+    def __init__(self, jf, owner=None):
+        """jf is a JSONInterface to the item's file, owner is a Character"""
+        self.name = jf.get('/name')
+        self.value = jf.get('/value')
+        self.weight = jf.get('/weight')
+        self.consumable = jf.get('/consumable')
+        self.effect = jf.get('/effect')
+
+        self.owner = owner
+
+    def setowner(self, person):
+        if (isinstance(person, Character)):
+            self.owner = person
+            return True
+        return False
+
+    def use(self):
+        if (self.consumable and self.owner):
+            self.owner.item_consume(self.name)
+        return self.effect
+
 
 class Weapon(Attack, Item):
     """Represents a weapon.
@@ -208,6 +338,9 @@ class Weapon(Attack, Item):
 
     Contained methods:
     """
+    def __init__(self, jf):
+        self.name = jf.get('/name')
+
     @Attack.attackwrap
     def attack(self, character, adv, dis, attack_bonus, damage_bonus):
         if (adv and not dis):
@@ -219,7 +352,7 @@ class Weapon(Attack, Item):
 
         attack = []
         damage = []
-        for all in range(self.attack_multiple)
+        for all in range(self.attack_multiple):
             attack_roll = r.roll(dice)
             attack_mods = r.roll(attack_bonus) \
                           + r.roll(character.proficiency) \
@@ -235,7 +368,8 @@ class Weapon(Attack, Item):
                 attack_roll = 'Critical hit!'
                 damage_mods = character.abil_get_relevant(self, 'modifier') \
                               + r.roll(damage_bonus, mode='critical') \
-                              + r.roll(self.magic_bonus['damage'], mode='critical')
+                              + r.roll(self.magic_bonus['damage'],
+                                       mode='critical')
                 damage_roll = r.roll(self.damage_dice, mode='critical') \
                               + damage_mods
             else:
@@ -247,7 +381,6 @@ class Weapon(Attack, Item):
                 damage_roll = r.roll(self.damage_dice) + damage_mods
             attack.append(attack_roll)
             damage.append(damage_roll)
-
 
 
 class RangedWeapon(Weapon):
@@ -270,7 +403,6 @@ class RangedWeapon(Weapon):
         except OutOfItems:
             raise
 
-
     def attack(self, character, adv, dis, attack_bonus, damage_bonus):
         try:
             self.spend_ammo()
@@ -290,6 +422,7 @@ class Armor(Item):
     Contained methods:
     """
     pass
+
 
 class MagicItem(Item):
     """Represents an arbitrary magic item.
@@ -321,9 +454,9 @@ class MagicRangedWeapon(MagicItem, RangedWeapon):
     pass
 
 
-
 class MyError(Exception):
     pass
+
 
 class OutOfSpells(MyError):
     def __init__(self, character, spell):
@@ -334,6 +467,7 @@ class OutOfSpells(MyError):
         formatstr = '{char} has no spell slots of level {lv} remaining.'
         return formatstr.format(char=self.character.name, lv=self.spell.level)
 
+
 class OutOfItems(MyError):
     def __init__(self, character, item):
         self.character = character
@@ -343,6 +477,7 @@ class OutOfItems(MyError):
         formatstr = '{char} has no {item}s remaining.'
         return formatstr.format(char=self.character.name,
                                 item=self.item.name)
+
 
 class OverflowSpells(MyError):
     def __init__(self, character, spell):

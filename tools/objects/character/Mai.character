@@ -1,0 +1,89 @@
+{
+  "name": "Mai",
+  "class": "Sorcerer (Storm) 5",
+  "race": "Nephilim",
+  "HP": {
+    "max": 35,
+    "current": 35,
+    "temp": 0
+  },
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 14,
+    "Constitution": 15,
+    "Intelligence": 12,
+    "Wisdom": 8,
+    "Charisma": 17
+  },
+  "skills": [
+    "Persuasion",
+    "Investigation",
+    "Insight",
+    "Arcana",
+    "Religion"
+  ],
+  "spell_slots": [],
+  "spells_prepared": [],
+  "inventory": {
+    "Mirror": {
+      "quantity": 1,
+      "type": ".item",
+      "equipped": false
+    },
+    "Vial": {
+      "quantity": 3,
+      "type": ".item",
+      "equipped": false
+    },
+    "Antitoxin": {
+      "quantity": 1,
+      "type": ".item",
+      "equipped": false
+    },
+    "gp": {
+      "quantity": 4,
+      "type": "coin.treasure",
+      "equipped": false
+    },
+    "Silk Gloves": {
+      "quantity": 1,
+      "type": ".armor",
+      "equipped": false
+    },
+    "Backpack": {
+      "quantity": 1,
+      "type": ".item",
+      "equipped": false
+    },
+    "Good Clothes": {
+      "quantity": 3,
+      "type": ".armor",
+      "equipped": false
+    },
+    "Utility Knife": {
+      "quantity": 1,
+      "type": ".weapon",
+      "equipped": false
+    },
+    "Herbalism Kit": {
+      "quantity": 1,
+      "type": ".item",
+      "equipped": false
+    },
+    "Scroll Case": {
+      "quantity": 1,
+      "type": ".item",
+      "equipped": false
+    },
+    "Map": {
+      "quantity": 1,
+      "type": ".item",
+      "equipped": false
+    },
+    "sp": {
+      "quantity": 40,
+      "type": "coin.treasure",
+      "equipped": false
+    }
+  }
+}

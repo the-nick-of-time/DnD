@@ -2,7 +2,7 @@ import re
 
 
 def modifier(score):
-    return (score-10) // 2
+    return (score - 10) // 2
 
 
 def shorten(effect):
@@ -11,3 +11,7 @@ def shorten(effect):
         return re.match('^.*?\.', effect).group()
     else:
         return ""
+
+
+def clean(name):
+    return name.replace(' ', '_').replace('\'', '-')

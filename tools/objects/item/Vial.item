@@ -1,0 +1,7 @@
+{
+  "name": "Vial",
+  "value": 1,
+  "weight": 0.05,
+  "consumable": false,
+  "effect": "This vial can hold a few milliliters of liquid."
+}

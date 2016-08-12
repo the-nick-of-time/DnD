@@ -1,0 +1,10 @@
+{
+  "name": "Utility Knife",
+  "value": 2,
+  "weight": 1,
+  "effect": "This knife is equally good at cutting sticks and throats.",
+  "damage": ["1d4", "Piercing"],
+  "ability": ["Dexterity", "Strength"],
+  "type": "simple",
+  "hands": "one"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Mirror",
+  "value": 2,
+  "weight": 0.5,
+  "consumable": false,
+  "effect": "This mirror reflects light very well."
+}

@@ -1,6 +1,7 @@
 {
   "name": "Throwing Knife",
   "damage": "1d4",
+  "effect": "This knife is specially weighted for throwing.",
   "attacks": 1,
   "type": "Piercing",
   "hands": "one",

@@ -1,7 +1,7 @@
 {
   "name": "Berndus",
-  "race": "Halfling Stout",
   "class": "Fighter 2",
+  "race": "Halfling Stout",
   "HP": {
     "max": 17,
     "current": 17,
@@ -22,80 +22,78 @@
     "Insight",
     "Athletics"
   ],
-  "inventory": [
-    {
-      "name": "Dagger",
+  "spell_slots": [],
+  "spells_prepared": [],
+  "inventory": {
+    "Dagger": {
+      "quantity": 2,
       "type": ".weapon",
-      "quantity": 1,
       "equipped": true
     },
-    {
-      "name": "Throwing Knife",
+    "Throwing Knife": {
+      "quantity": 4,
       "type": ".ranged.weapon",
-      "quantity": 4,
       "equipped": true
     },
-    {
-      "name": "Parrying Dagger",
+    "Parrying Dagger": {
+      "quantity": 1,
       "type": ".weapon",
-      "quantity": 1,
       "equipped": true
     },
-    {
-      "name": "Studded Leather",
+    "Studded Leather": {
+      "quantity": 1,
       "type": ".armor",
-      "quantity": 1,
       "equipped": true
     },
-    {
-      "name": "cp",
+    "cp": {
+      "quantity": 35,
       "type": "coin.treasure",
-      "quantity": 30,
       "equipped": false
     },
-    {
-      "name": "sp",
-      "type": "coin.treasure",
+    "sp": {
       "quantity": 60,
-      "equipped": false
-    },
-    {
-      "name": "gp",
       "type": "coin.treasure",
+      "equipped": false
+    },
+    "gp": {
       "quantity": 4,
+      "type": "coin.treasure",
       "equipped": false
     },
-    {
-      "name": "topaz",
+    "Topaz": {
+      "quantity": 1,
       "type": "gem.treasure",
-      "quantity": 1,
       "equipped": false
     },
-    {
-      "name": "Chalk",
-      "type": ".item",
+    "Chalk": {
       "quantity": 2,
+      "type": ".item",
       "equipped": false
     },
-    {
-      "name": "Candle",
-      "type": ".item",
+    "Candle": {
       "quantity": 6,
+      "type": ".item",
       "equipped": false
     },
-    {
-      "name": "Hooded Lantern",
-      "type": ".item",
+    "Hooded Lantern": {
       "quantity": 1,
+      "type": ".item",
       "equipped": false
     },
-    {
-      "name": "Oil",
-      "type": ".item",
+    "Oil": {
       "quantity": 2,
+      "type": ".item",
+      "equipped": false
+    },
+    "Torch": {
+      "quantity": 0,
+      "type": ".item",
+      "equipped": false
+    },
+    "ep": {
+      "quantity": 0,
+      "type": "coin.treasure",
       "equipped": false
     }
-  ],
-  "spells_prepared": [],
-  "spell_slots": []
+  }
 }
