@@ -31,3 +31,7 @@ class ClassMap:
 
     def sum(self):
         return sum(self.levels)
+
+    def hook(self):
+        direc = '/'
+        for (C, S, L) in zip(self.classes, self.subclasses, self.levels):

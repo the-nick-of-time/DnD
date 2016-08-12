@@ -29,7 +29,17 @@ class Class:
     Contained methods:
     useresource
     """
-    pass
+    def __init__(self, jf):
+        self.name = jf.get('/name')
+        self.hit_dice = jf.get('/hit_dice')
+
+    def superclass_hook(self):
+        """Adds features from all superclasses of this one."""
+        pass
+
+    def get_features(self, character):
+        """Gets the current features of character based on their level."""
+        pass
 
 
 class Character:
@@ -111,6 +121,7 @@ class Inventory:
         """
         self.record = jf
         self.data = jf.get('/inventory')
+        self.cache = {}
 
     def setq(self, name, value):
         """Sets the quantity of an object."""
@@ -118,7 +129,7 @@ class Inventory:
         self.export(name=name)
 
     def getq(self, name):
-        """Gets the quantity of an object.
+        """Gets the number of an object you have.
         Returns
         -------
         number if named item exists, else 0

@@ -8,6 +8,7 @@ import tools.modules.charactercreator as cc
 import tools.modules.dice as dc
 # import tools.modules.charactereditor as ce
 import tools.forge.inventory as iv
+import tools.forge.hp as hp
 
 
 class core:
@@ -32,6 +33,9 @@ class core:
         inventory = tk.Button(self.master, text="Manage Your Inventory",
                               command=lambda: self.characterinventory())
         inventory.grid(row=3, column=0, pady=5)
+        hpmanage = tk.Button(self.master, text="Manage Your HP",
+                             command=lambda: self.characterhp())
+        hpmanage.grid(row=4, column=0, pady=5)
         monster = tk.Button(self.master,
                             text="Create New Encounter",
                             command=lambda: self.monstermanage())
@@ -63,6 +67,10 @@ class core:
     def characterinventory(self):
         self.undisplay()
         iv.main(self.master)
+
+    def characterhp(self):
+        self.undisplay()
+        hp.main(self.master)
 
 #    def characteredit(self):
 #        self.undisplay()

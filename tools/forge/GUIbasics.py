@@ -5,13 +5,13 @@ class Element:
     """An identifier superclass.
     All classes in this module must inherit from this.
     """
-    def __init__(self, name):
+    def __init__(self, name, **kwargs):
         self._structure = {}
         self.__name__ = name
 
 
 class Section:
-    def __init__(self, container):
+    def __init__(self, container, **kwargs):
         self.container = container
         self.f = tk.Frame(self.container)
 

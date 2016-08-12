@@ -343,7 +343,7 @@ class hpsec:
         self.addtemp.grid(row=0, column=1)
 
     def changeHP(self, totemp=False):
-        amount = r.call(self.amount.get())
+        amount = int(r.call(self.amount.get()))
         h = int(self.current.get())
         t = int(self.temp.get())
         m = int(self.max.get())

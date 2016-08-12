@@ -1,0 +1,64 @@
+{
+  "name": "Sorcerer",
+  "superclass": [
+    "ALL",
+    "CASTER"
+  ],
+  "hit_dice": "1d6",
+  "armors": {
+    "types": [],
+    "specific": []
+  },
+  "weapons": {
+    "types": [],
+    "specific": [
+      "Dagger",
+      "Dart",
+      "Sling",
+      "Quarterstaff",
+      "Light Crossbow"
+    ]
+  },
+  "tools": [],
+  "saves": [
+    "Wisdom",
+    "Charisma"
+  ],
+  "skills": {
+    "number": 2,
+    "which": [
+      "Arcana",
+      "Deception",
+      "Insight",
+      "Intimidation",
+      "Persuasion",
+      "Religion"
+    ]
+  },
+  "spell": {
+    "ability": "Charisma",
+    "slots": "full",
+    "levels": "full",
+    "known": [
+      "Gust",
+      "Thunderclap",
+      "Mending",
+      "Prestidigitation",
+      "Create Bonfire",
+      "Fog Cloud",
+      "Thunderwave"
+    ],
+    "prepare": "known",
+    "always_prepared": "known"
+  },
+  "features": {
+    "Spellcasting": {
+      "1": "You get spellcasting abilities at level 1."
+    },
+    "Channel Divinity": {
+      "2": "You first get CD at level 2",
+      "6": "It gets improved at level 6",
+      "18": "And again at level 18"
+    }
+  }
+}
