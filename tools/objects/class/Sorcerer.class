@@ -39,26 +39,31 @@
     "ability": "Charisma",
     "slots": "full",
     "levels": "full",
-    "known": [
-      "Gust",
-      "Thunderclap",
-      "Mending",
-      "Prestidigitation",
-      "Create Bonfire",
-      "Fog Cloud",
-      "Thunderwave"
-    ],
+    "cantrips": 4,
+    "known": 2,
     "prepare": "known",
     "always_prepared": "known"
   },
   "features": {
     "Spellcasting": {
-      "1": "You get spellcasting abilities at level 1."
+      "1": {
+        "description": "You get spellcasting abilities at level 1.",
+        "spell": {
+          "known": 2,
+          "cantrips": 4
+        }
+      }
     },
-    "Channel Divinity": {
-      "2": "You first get CD at level 2",
-      "6": "It gets improved at level 6",
-      "18": "And again at level 18"
+    "Font of Magic": {
+      "2": {
+        "description": "At second level, you get access to sorcery points.",
+        "resource": {
+          "name": "Sorcery Points",
+          "number": 2,
+          "value": 1,
+          "recharge": "long rest"
+        }
+      }
     }
   }
 }

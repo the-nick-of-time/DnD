@@ -37,9 +37,23 @@ class Class:
         """Adds features from all superclasses of this one."""
         pass
 
-    def get_features(self, character):
-        """Gets the current features of character based on their level."""
+    def get_features(self, level):
+        """Gets the current features given a certain class level."""
+        for name in self.features:
+            for lv in self.features[name]:
+                if (int(lv) <= level):
+                    # Add it to the set of enabled features
+                    pass
+
+    def use_resource(self, name, howmany):
         pass
+
+
+class Resource:
+    def __init__(self, jf):
+        self.name = jf.get('/name')
+        self.number = jf.get('/number')
+        self.value = jf.get('/value')
 
 
 class Character:

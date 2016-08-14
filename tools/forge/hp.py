@@ -95,18 +95,28 @@ class main(gui.Element, gui.Section):
 
 
 class HitDiceDisplay(gui.Section, gui.Element):
-    def __init__(self, name, container, character):
+    def __init__(self, name, container, dndclass, level):
         kwargs = {'name': 'hp', 'container': container}
         gui.Section.__init__(self, **kwargs)
         gui.Element.__init__(self, **kwargs)
-        self.character = character
+        self.dndclass = dndclass
+        self.level = level
 
     def create_widgets(self):
-        self.inc = tk.Button(self.f, text='+', command=lambda: self.change(1))
-        self.dec = tk.Button(self.f, text='-', command=lambda: self.change(-1))
-        self.reset = tk.Button(self.f, text='RESET',
-                               command=lambda: self.reset())
-        self.disp = tk.Label(self.f, text=self.character)
+        #self.value = tk.Label(self.f, text=self.)
+        #self.number = tk.Label(self.f, text=)
+        self.inc = tk.Button(self.f, text='+', command=self.spend)
+        self.dec = tk.Button(self.f, text='-', command=self.regain)
+        self.reset = tk.Button(self.f, text='RESET', command=self.reset)
+
+    def spend(self):
+        pass
+
+    def regain(self):
+        pass
+
+    def reset(self):
+        pass
 
 
 if __name__ == '__main__':

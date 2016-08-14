@@ -81,7 +81,7 @@ class main(gui.Element, gui.Section):
         for item in self.items:
             qpath = '/inventory/{}/quantity'.format(item.name)
             temp = item.details.get('/weight')
-            if (isinstance(temp, str)):
+            if (isinstance(temp, str) or temp is None):
                 weight_ += 0
             else:
                 weight_ += item.character.get(qpath) * temp
