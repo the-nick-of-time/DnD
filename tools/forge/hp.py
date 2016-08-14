@@ -6,6 +6,7 @@ import tools.forge.GUIbasics as gui
 import tools.libraries.tkUtility as util
 import tools.libraries.rolling as r
 import tools.forge.interface as iface
+from tools.forge.ClassMap import ClassMap
 
 
 class main(gui.Element, gui.Section):
@@ -17,7 +18,6 @@ class main(gui.Element, gui.Section):
         self.create_widgets()
 
     def create_widgets(self):
-        self.f.config(bd=2, relief='sunken')
         self.max = util.labeledEntry(self.f, 'Maximum HP', 0, 0, width=5)
         self.current = util.labeledEntry(self.f, 'Current HP', 0, 1, width=5)
         self.amount = util.labeledEntry(self.f,
@@ -40,11 +40,12 @@ class main(gui.Element, gui.Section):
         self.addtemp.grid(row=0, column=1)
         self.QUIT = tk.Button(self.f, text='QUIT',
                               command=lambda: self.writequit())
-        self.QUIT.grid(row=3, column=3)
+        self.QUIT.grid(row=4, column=3)
 
     def popup(self):
         def extract():
             loadCharacter(name.get())
+            self.classes = ClassMap(self.character.get('/class'))
             self.populate()
             self.draw()
             subwin.destroy()

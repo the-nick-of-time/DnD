@@ -32,6 +32,8 @@ class Class:
     def __init__(self, jf):
         self.name = jf.get('/name')
         self.hit_dice = jf.get('/hit_dice')
+        self.saves = jf.get('/saves')
+        self.features = jf.get('/features')
 
     def superclass_hook(self):
         """Adds features from all superclasses of this one."""

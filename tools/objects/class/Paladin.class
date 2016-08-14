@@ -1,0 +1,34 @@
+{
+  "name": "Fighter",
+  "superclass": [
+    "ALL"
+  ],
+  "hit_dice": "1d10",
+  "armors": {
+    "types": [
+      "Light",
+      "Medium",
+      "Heavy",
+      "Shield"
+    ],
+    "specific": []
+  },
+  "weapons": {
+    "types": [
+      "Simple",
+      "Martial"
+    ],
+    "specific": []
+  },
+  "tools": [],
+  "saves": [
+    "Strength",
+    "Constitution"
+  ],
+  "skills": {
+    "number": 2,
+    "which": []
+  },
+  "spell": {},
+  "features": {}
+}

@@ -1,4 +1,5 @@
 import tkinter as tk
+import tools.libraries.tkUtility as util
 
 
 class Element:
@@ -58,3 +59,19 @@ class EffectPane(Section, Element):
 
         self.short_display.grid(row=0, column=0)
         self.long_display.grid(row=0, column=1)
+
+
+class NameQuery:
+    def __init__(self):
+        self.draw()
+
+    def draw(self):
+        self.win = tk.Toplevel()
+        self.name = util.labeledEntry(subwin, 'Character name', 0, 0)
+        self.accept = tk.Button(subwin, text='Accept', command=self.finish)
+        self.accept.grid(row=1, column=1)
+
+    def finish(self):
+        name = self.name.get()
+        self.win.destroy()
+        return name

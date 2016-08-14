@@ -82,10 +82,14 @@ class JSONInterface:
         return self._set(path, value)
 
     def __add__(self, other):
-        return LinkedInterface(self, other)
+        if (isinstance(other, (JSONInterface, LinkedInterface))):
+            return LinkedInterface(self, other)
+        else:
+            raise TypeError('You can only add a JSONInterface or a '
+                            'LinkedInterface to a JSONInterface')
 
 
-class LinkedInterface(JSONInterface):
+class LinkedInterface:
     def __init__(self, *ifaces):
         self.searchpath = collections.OrderedDict(
             (str(iface), iface) for iface in ifaces)
@@ -93,6 +97,17 @@ class LinkedInterface(JSONInterface):
     def __add__(self, other):
         if (isinstance(other, LinkedInterface)):
             self.searchpath.update(other.searchpath)
+        elif (isinstance(other, JSONInterface)):
+            self.searchpath.update({str(other): other})
+        else:
+            raise TypeError('You can only add a JSONInterface or a '
+                            'LinkedInterface to a LinkedInterface')
+
+    def __str__(self):
+        return ', '.join(reversed(self.searchpath.keys()))
+
+    def __repr__(self):
+        return '<LinkedInterface to {}>'.format(', '.join(str(iface) for iface in reversed(self.searchpath.values())))
 
     def get(self, path):
         s = path.split('/')
@@ -100,10 +115,11 @@ class LinkedInterface(JSONInterface):
         if (filename in self.searchpath):
             return self.searchpath[filename]._get(path[len(filename):])
         else:
-            for name, iface in self.searchpath.items():
+            for name, iface in reversed(self.searchpath.items()):
                 rv = iface._get(path)
                 if (rv is not None):
                     return rv
+            return None
 
     def set(self, path, value):
         s = path.split('/')
@@ -111,7 +127,8 @@ class LinkedInterface(JSONInterface):
         if (filename in self.searchpath):
             return self.searchpath[filename]._set(path[len(filename):])
         else:
-            for name, iface in self.searchpath.items():
+            for name, iface in reversed(self.searchpath.items()):
                 rv = iface._set(path, value)
                 if (rv):
                     return rv
+            return False
