@@ -17,11 +17,11 @@ class ClassMap:
 
         L = s.split(',')
         for substr in L:
-            pattern = r'([a-zA-Z]+)\s*(\(([a-zA-Z\'\s]+)\))?\s*([0-9]+)'
+            pattern = r'\s*([a-zA-Z\']+)\s*(\(([a-zA-Z\'\s]+)\))?\s*([0-9]+)'
             desc_ = re.match(pattern, substr).groups()
-            desc = [item for item in desc_ if item is not None]
+            desc = [str(item) for item in desc_ if item is not None]
             if (len(desc) == 2):
-                self._classes.append(strdesc[0])
+                self._classes.append(desc[0])
                 self._subclasses.append('')
                 self.levels.append(int(desc[1]))
             else:
@@ -41,8 +41,17 @@ class ClassMap:
                         ', '))
         return ''.join(out[:-1])
 
+    def __iter__(self):
+        return (tup for tup in zip(self.classes, self.levels))
+
+    def __getitem__(self, key):
+        return self.classes[key]
+
     def sum(self):
         return sum(self.levels)
+
+    def names(self):
+        return self._classes
 
     def hook(self):
         main = 'class/{}.class'

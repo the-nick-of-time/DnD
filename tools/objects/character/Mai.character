@@ -1,11 +1,14 @@
 {
   "name": "Mai",
-  "class": "Sorcerer (Storm) 5",
+  "level": "Sorcerer (Storm) 2",
   "race": "Nephilim",
   "HP": {
-    "max": 35,
-    "current": 35,
-    "temp": 0
+    "max": 12,
+    "current": 12,
+    "temp": 0,
+    "HD": {
+      "1d6": 2
+    }
   },
   "abilities": {
     "Strength": 8,

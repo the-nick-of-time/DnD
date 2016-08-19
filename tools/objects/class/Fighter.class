@@ -47,7 +47,13 @@
     },
     "Second Wind": {
       "1": {
-        "description": "Use a bonus action to heal 1d10 + your fighter level. Recharges on short or long rest."
+        "description": "Use a bonus action to heal 1d10 + your fighter level. Recharges on short or long rest.",
+        "resource": {
+          "name": "Second Wind",
+          "number": 1,
+          "value": "1d10",
+          "recharge": "short_rest"
+        }
       }
     },
     "Action Surge": {

@@ -1,4 +1,5 @@
 import tkinter as tk
+import math
 
 import tools.forge.classes as c
 import tools.forge.helpers as h
@@ -7,6 +8,7 @@ import tools.libraries.tkUtility as util
 import tools.libraries.rolling as r
 import tools.forge.interface as iface
 from tools.forge.ClassMap import ClassMap
+import tools.forge.hd as hd
 
 
 class main(gui.Element, gui.Section):
@@ -38,6 +40,9 @@ class main(gui.Element, gui.Section):
                                  text='Add to\ntemp HP',
                                  command=lambda: self.changeHP(True))
         self.addtemp.grid(row=0, column=1)
+        HDf = tk.Frame(self.f)
+        HDf.grid(row=3, column=1)
+        self.HD = []
         self.QUIT = tk.Button(self.f, text='QUIT',
                               command=lambda: self.writequit())
         self.QUIT.grid(row=4, column=3)
@@ -45,7 +50,7 @@ class main(gui.Element, gui.Section):
     def popup(self):
         def extract():
             loadCharacter(name.get())
-            self.classes = ClassMap(self.character.get('/class'))
+            self.classes = ClassMap(self.character.get('/level'))
             self.populate()
             self.draw()
             subwin.destroy()
@@ -95,20 +100,22 @@ class main(gui.Element, gui.Section):
         self.container.destroy()
 
 
-class HitDiceDisplay(gui.Section, gui.Element):
-    def __init__(self, name, container, dndclass, level):
+class SingleHitDiceDisplay(gui.Section, gui.Element):
+    def __init__(self, name, container, handler):
         kwargs = {'name': 'hp', 'container': container}
         gui.Section.__init__(self, **kwargs)
         gui.Element.__init__(self, **kwargs)
-        self.dndclass = dndclass
-        self.level = level
+        self.manager = handler
 
     def create_widgets(self):
-        #self.value = tk.Label(self.f, text=self.)
-        #self.number = tk.Label(self.f, text=)
         self.inc = tk.Button(self.f, text='+', command=self.spend)
         self.dec = tk.Button(self.f, text='-', command=self.regain)
-        self.reset = tk.Button(self.f, text='RESET', command=self.reset)
+        self.name = tk.Label(self.f, text=self.handler.whichclass)
+        self.type_ = tk.Label(self.f, text=self.handler.hdtype)
+        self.number = tk.Label(self.f)
+
+    def draw(self, arg):
+        pass
 
     def spend(self):
         pass
@@ -116,8 +123,29 @@ class HitDiceDisplay(gui.Section, gui.Element):
     def regain(self):
         pass
 
-    def reset(self):
-        pass
+
+class MultiHitDiceDisplay(gui.Section, gui.Element):
+    def __init__(self, name, container, character):
+        kwargs = {'name': 'hp', 'container': container}
+        gui.Section.__init__(self, **kwargs)
+        gui.Element.__init__(self, **kwargs)
+        self.name = name
+        self.container = container
+        self.character = character
+        self.manager = hd.MultiHandler(character)
+        self.subdisplays = []
+
+    def create_widgets(self):
+        for handler in self.manager.hd.values():
+            self.subdisplays.append(SingleHitDiceDisplay(handler))
+        self.rest = tk.Button(self.f, text='Long Rest', command=self.manager.rest)
+        self.reset = tk.Button(self.f, text='Reset all', command=self.manager.reset)
+
+    def draw(self):
+        for i, sub in enumerate(self.subdisplays):
+            sub.grid(row=i, column=0)
+        self.rest.grid(row=len(self.subdisplays), column=0, sticky='e')
+        self.reset.grid(row=len(self.subdisplays) + 1, column=0, sticky='e')
 
 
 if __name__ == '__main__':

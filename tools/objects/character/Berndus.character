@@ -1,11 +1,14 @@
 {
   "name": "Berndus",
-  "class": "Fighter 2",
+  "level": "Fighter 2",
   "race": "Halfling Stout",
   "HP": {
     "max": 17,
     "current": 17,
-    "temp": 0
+    "temp": 0,
+    "HD": {
+      "1d10": 2
+    }
   },
   "abilities": {
     "Strength": 9,
@@ -93,6 +96,11 @@
     "ep": {
       "quantity": 0,
       "type": "coin.treasure",
+      "equipped": false
+    },
+    "Blanket": {
+      "quantity": 1,
+      "type": ".item",
       "equipped": false
     }
   }

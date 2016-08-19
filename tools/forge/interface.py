@@ -1,5 +1,6 @@
 import json
 import collections
+import re
 
 
 class JSONInterface:
@@ -7,7 +8,9 @@ class JSONInterface:
     # TODO: Add functionality to merge two objects or access them in parallel
 
     def __init__(self, filename, PREFIX=''):
-        self.shortfilename = filename.split('/')[-1].split('.')[0]
+        broken = filename.split('/')[-1].split('.')
+        self.shortfilename = ' '.join(reversed(broken[:len(broken) // 2]))
+        # TODO: Unclean filename?
         self.filename = self.OBJECTSPATH + filename
         with open(self.filename) as f:
             data = json.load(f, object_pairs_hook=collections.OrderedDict)
@@ -15,6 +18,33 @@ class JSONInterface:
                 self.info = data[PREFIX]
             else:
                 self.info = data
+
+    def __str__(self):
+        return self.shortfilename
+
+    def __repr__(self):
+        return "<JSONInterface to {}>".format(self.filename)
+
+    def __add__(self, other):
+        if (isinstance(other, (JSONInterface, LinkedInterface))):
+            return LinkedInterface(self, other)
+        else:
+            raise TypeError('You can only add a JSONInterface or a '
+                            'LinkedInterface to a JSONInterface')
+
+    def get(self, path):
+        if (not path.startswith('/')):
+            return self._get(path, self.info)
+        return self._get(path)
+
+    def set(self, path, value):
+        if (not path.startswith('/')):
+            return self._set(path, value, self.info)
+        return self._set(path, value)
+
+    def write(self):
+        with open(self.filename, 'w') as f:
+            json.dump(obj=self.info, fp=f, indent=2)
 
     def _get(self, path, root=None):
         try:
@@ -61,33 +91,6 @@ class JSONInterface:
         except (KeyError, IndexError):
             return False
 
-    def write(self):
-        with open(self.filename, 'w') as f:
-            json.dump(obj=self.info, fp=f, indent=2)
-
-    def __str__(self):
-        return self.shortfilename
-
-    def __repr__(self):
-        return "<JSONInterface to {}>".format(self.filename)
-
-    def get(self, path):
-        if (not path.startswith('/')):
-            return self._get(path, self.info)
-        return self._get(path)
-
-    def set(self, path, value):
-        if (not path.startswith('/')):
-            return self._set(path, value, self.info)
-        return self._set(path, value)
-
-    def __add__(self, other):
-        if (isinstance(other, (JSONInterface, LinkedInterface))):
-            return LinkedInterface(self, other)
-        else:
-            raise TypeError('You can only add a JSONInterface or a '
-                            'LinkedInterface to a JSONInterface')
-
 
 class LinkedInterface:
     def __init__(self, *ifaces):
@@ -107,7 +110,10 @@ class LinkedInterface:
         return ', '.join(reversed(self.searchpath.keys()))
 
     def __repr__(self):
-        return '<LinkedInterface to {}>'.format(', '.join(str(iface) for iface in reversed(self.searchpath.values())))
+        return '<LinkedInterface to {}>'.format(str(self))
+
+    def __iter__(self):
+        return (iface for iface in self.searchpath.values())
 
     def get(self, path):
         s = path.split('/')

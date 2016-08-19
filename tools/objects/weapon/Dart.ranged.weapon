@@ -1,8 +1,8 @@
 {
   "name": "Dart",
-  "damage": "1d4",
+  "damage": ["1d4", "Piercing"],
+  "type": "simple",
   "attacks": 1,
-  "type": "Piercing",
   "hands": "one",
   "ability": [
     "Dexterity",
@@ -11,6 +11,5 @@
   "value": 0.02,
   "weight": 0.25,
   "ammunition": "Dart",
-  "range": 30,
-  "thrown": true
+  "range": 30
 }

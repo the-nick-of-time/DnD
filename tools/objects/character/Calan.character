@@ -1,10 +1,11 @@
 {
   "name": "Calan",
-  "class": "Paladin 2, Cleric (Light) 11",
+  "level": "Paladin 2, Cleric (Light) 11",
   "HP": {
     "max": 134,
     "current": 134,
-    "temp": 0
+    "temp": 0,
+    "HD": {"1d10": 2, "1d8": 11}
   },
   "abilities": {
     "strength": 16,

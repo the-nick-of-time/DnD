@@ -13,12 +13,14 @@
   ],
   "weight": 1,
   "value": 200,
-  "magic_bonus": {
+  "bonus": {
     "attack": 1,
     "damage": [
       "1d4",
       "cold"
     ]
   },
-  "effect": "This dagger sucks all the heat from anything it touches."
+  "effect": "This dagger sucks all the heat from anything it touches.",
+  "charges": "inf",
+  "recharge": 0
 }

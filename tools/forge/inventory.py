@@ -138,6 +138,10 @@ class Adder:
                                           orient='h', width=5)
         self.type = util.labeledEntry(self.win, 'Input type', 2, 0,
                                       orient='h')
+        self.typeHelp = gui.HelpButton(self.win, 'Put the file extension here.'
+                                       ' For special cases like treasure, put '
+                                       'the full file name.')
+        self.typeHelp.grid(row=2, column=2)
         self.finalize = tk.Button(self.win, text='ADD',
                                   command=lambda: self.finish())
         self.finalize.grid(row=3, column=1)
@@ -153,6 +157,7 @@ class Adder:
 
 
 class ItemDisplay(gui.Element, gui.Section):
+    # TODO: allow this to function without a file
     def __init__(self, container, master, character, name):
         # character is the JSONInterface object
         gui.Element.__init__(self, name)

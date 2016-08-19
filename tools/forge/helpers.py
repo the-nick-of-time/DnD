@@ -15,3 +15,18 @@ def shorten(effect):
 
 def clean(name):
     return name.replace(' ', '_').replace('\'', '-')
+
+
+def unclean(name):
+    return name.replace('_', ' ').replace('-', '\'')
+
+
+def pull_from(*args):
+    """args is a tuple of tkinter widgets with .get() methods."""
+    data = tuple(widget.get() for widget in args)
+    def decorator(func):
+        def decorated():
+            return func(*data)
+        decorated.__name__ = func.__name__
+        return decorated
+    return decorator
