@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Programmed Illusion",
+  "class": [
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "Until dispelled",
+  "page": "phb 269",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "120 feet",
+  "components": "VSMgp",
+  "level": 6,
+  "ritual": false,
+  "school": "Illusion"
+}

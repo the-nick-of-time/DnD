@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Conjure Fey",
+  "class": [
+    "Warlock",
+    "Druid"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 226",
+  "casting_time": "1 minute",
+  "concentration": true,
+  "range": "90 feet",
+  "components": "VS",
+  "level": 6,
+  "ritual": false,
+  "school": "Conjuration"
+}

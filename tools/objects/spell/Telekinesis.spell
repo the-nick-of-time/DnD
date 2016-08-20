@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Telekinesis",
+  "class": [
+    "Sorcerer",
+    "Wizard"
+  ],
+  "duration": "up to 10 minutes",
+  "page": "phb 280",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "60 feet",
+  "components": "VS",
+  "level": 5,
+  "ritual": false,
+  "school": "Transmutation"
+}

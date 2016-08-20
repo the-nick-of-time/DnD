@@ -1,0 +1,20 @@
+{
+  "description": "",
+  "name": "Banishment",
+  "class": [
+    "Cleric",
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Paladin"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 217",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "60 feet",
+  "components": "VSM",
+  "level": 4,
+  "ritual": false,
+  "school": "Abjuration"
+}

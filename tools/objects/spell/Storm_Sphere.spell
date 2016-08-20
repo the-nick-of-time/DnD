@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Storm Sphere",
+  "class": [
+    "Sorcerer",
+    "Wizard"
+  ],
+  "duration": "1 minute",
+  "page": "ee 22",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "150 feet",
+  "components": "VS",
+  "level": 4,
+  "ritual": false,
+  "school": "Evocation"
+}

@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Antipathy/Sympathy",
+  "class": [
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "10 days",
+  "page": "phb 214",
+  "casting_time": "1 hour",
+  "concentration": false,
+  "range": "60 feet",
+  "components": "VSM",
+  "level": 8,
+  "ritual": false,
+  "school": "Enchantment"
+}

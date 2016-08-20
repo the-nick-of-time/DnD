@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Vampiric Touch",
+  "class": [
+    "Warlock",
+    "Wizard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 285",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VS",
+  "level": 3,
+  "ritual": false,
+  "school": "Necromancy"
+}

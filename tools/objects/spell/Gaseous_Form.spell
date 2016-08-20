@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Gaseous Form",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 244",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Touch",
+  "components": "VSM",
+  "level": 3,
+  "ritual": false,
+  "school": "Transmutation"
+}

@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Beast Bond",
+  "class": [
+    "Ranger",
+    "Druid"
+  ],
+  "duration": "10 minutes",
+  "page": "ee 15",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Touch",
+  "components": "VSM",
+  "level": 1,
+  "ritual": false,
+  "school": "Divination"
+}

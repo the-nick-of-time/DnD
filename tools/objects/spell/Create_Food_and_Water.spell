@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Create Food and Water",
+  "class": [
+    "Cleric",
+    "Paladin"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 229",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "30 feet",
+  "components": "VS",
+  "level": 3,
+  "ritual": false,
+  "school": "Conjuration"
+}

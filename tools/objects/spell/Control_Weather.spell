@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Control Weather",
+  "class": [
+    "Cleric",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "up to 8 hours",
+  "page": "phb 228",
+  "casting_time": "10 minutes",
+  "concentration": true,
+  "range": "Self",
+  "components": "VSM",
+  "level": 8,
+  "ritual": false,
+  "school": "Transmutation"
+}

@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Symbol",
+  "class": [
+    "Cleric",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "Until dispelled",
+  "page": "phb 280",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "Touch",
+  "components": "VSMgp",
+  "level": 7,
+  "ritual": false,
+  "school": "Abjuration"
+}

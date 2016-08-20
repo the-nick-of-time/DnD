@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Dominate Beast",
+  "class": [
+    "Sorcerer",
+    "Druid"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 234",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "60 feet",
+  "components": "VS",
+  "level": 4,
+  "ritual": false,
+  "school": "Enchantment"
+}

@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Crown of Madness",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 229",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "120 feet",
+  "components": "VS",
+  "level": 2,
+  "ritual": false,
+  "school": "Enchantment"
+}

@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Create Bonfire",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "1 minute",
+  "page": "ee 16",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "60 feet",
+  "components": "VS",
+  "level": 0,
+  "ritual": false,
+  "school": "Conjuration"
+}

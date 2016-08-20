@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Conjure Elemental",
+  "class": [
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 225",
+  "casting_time": "1 minute",
+  "concentration": true,
+  "range": "90 feet",
+  "components": "VSM",
+  "level": 5,
+  "ritual": false,
+  "school": "Conjuration"
+}

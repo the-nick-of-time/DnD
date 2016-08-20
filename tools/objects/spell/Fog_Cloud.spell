@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Fog Cloud",
+  "class": [
+    "Sorcerer",
+    "Ranger",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 243",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "120 feet",
+  "components": "VS",
+  "level": 1,
+  "ritual": false,
+  "school": "Conjuration"
+}

@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Forbiddance",
+  "class": [
+    "Cleric"
+  ],
+  "duration": "24 hours",
+  "page": "phb 243",
+  "casting_time": "10 minutes",
+  "concentration": false,
+  "range": "Touch",
+  "components": "VSMgp",
+  "level": 6,
+  "ritual": true,
+  "school": "Abjuration"
+}

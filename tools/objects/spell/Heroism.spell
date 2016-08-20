@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Heroism",
+  "class": [
+    "Paladin",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 250",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Touch",
+  "components": "VS",
+  "level": 1,
+  "ritual": false,
+  "school": "Enchantment"
+}

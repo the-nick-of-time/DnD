@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Confusion",
+  "class": [
+    "Sorcerer",
+    "Wizard",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 224",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "90 feet",
+  "components": "VSM",
+  "level": 4,
+  "ritual": false,
+  "school": "Enchantment"
+}

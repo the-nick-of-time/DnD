@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Wind Walk",
+  "class": [
+    "Druid"
+  ],
+  "duration": "8 hours",
+  "page": "phb 288",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "30 feet",
+  "components": "VSM",
+  "level": 6,
+  "ritual": false,
+  "school": "Transmutation"
+}

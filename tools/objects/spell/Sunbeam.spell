@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Sunbeam",
+  "class": [
+    "Sorcerer",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 279",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VSM",
+  "level": 6,
+  "ritual": false,
+  "school": "Evocation"
+}

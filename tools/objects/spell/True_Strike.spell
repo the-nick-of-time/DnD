@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "True Strike",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 1 round",
+  "page": "phb 284",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "30 feet",
+  "components": "S",
+  "level": 0,
+  "ritual": false,
+  "school": "Divination"
+}

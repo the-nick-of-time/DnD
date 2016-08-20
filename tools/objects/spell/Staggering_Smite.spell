@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Staggering Smite",
+  "class": [
+    "Paladin"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 278",
+  "casting_time": "1 bonus action",
+  "concentration": true,
+  "range": "Self",
+  "components": "V",
+  "level": 4,
+  "ritual": false,
+  "school": "Evocation"
+}

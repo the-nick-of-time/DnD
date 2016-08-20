@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Create Undead",
+  "class": [
+    "Cleric",
+    "Warlock",
+    "Wizard"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 229",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "10 feet",
+  "components": "VSMgp",
+  "level": 6,
+  "ritual": false,
+  "school": "Necromancy"
+}

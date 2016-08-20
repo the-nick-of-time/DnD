@@ -1,0 +1,16 @@
+{
+  "description": "You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs.",
+  "name": "Spare the Dying",
+  "class": [
+    "Cleric"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 277",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Touch",
+  "components": "V, S",
+  "level": 0,
+  "ritual": false,
+  "school": "Necromancy"
+}

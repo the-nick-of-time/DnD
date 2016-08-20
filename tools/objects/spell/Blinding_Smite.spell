@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Blinding Smite",
+  "class": [
+    "Paladin"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 219",
+  "casting_time": "1 bonus action",
+  "concentration": true,
+  "range": "Self",
+  "components": "V",
+  "level": 3,
+  "ritual": false,
+  "school": "Evocation"
+}

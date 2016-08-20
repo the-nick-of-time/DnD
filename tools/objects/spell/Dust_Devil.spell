@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Dust Devil",
+  "class": [
+    "Sorcerer",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "1 minute",
+  "page": "ee 17",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "60 feet",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Conjuration"
+}

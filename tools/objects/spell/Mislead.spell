@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Mislead",
+  "class": [
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 260",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "S",
+  "level": 5,
+  "ritual": false,
+  "school": "Illusion"
+}

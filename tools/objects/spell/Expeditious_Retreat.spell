@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Expeditious Retreat",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard"
+  ],
+  "duration": "up to 10 minutes",
+  "page": "phb 238",
+  "casting_time": "1 bonus action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VS",
+  "level": 1,
+  "ritual": false,
+  "school": "Transmutation"
+}

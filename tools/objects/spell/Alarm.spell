@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Alarm",
+  "class": [
+    "Ranger",
+    "Wizard"
+  ],
+  "duration": "8 hours",
+  "page": "phb 211",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "30 feet",
+  "components": "VSM",
+  "level": 1,
+  "ritual": true,
+  "school": "Abjuration"
+}

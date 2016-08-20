@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Skywrite",
+  "class": [
+    "Wizard",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "1 hour",
+  "page": "ee 22",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Sight",
+  "components": "VS",
+  "level": 2,
+  "ritual": true,
+  "school": "Transmutation"
+}

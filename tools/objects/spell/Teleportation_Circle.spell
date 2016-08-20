@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Teleportation Circle",
+  "class": [
+    "Sorcerer",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "1 round",
+  "page": "phb 282",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "10 feet",
+  "components": "VMgp",
+  "level": 5,
+  "ritual": false,
+  "school": "Conjuration"
+}

@@ -1,0 +1,19 @@
+{
+  "description": "You touch a willing creature and bestow a limited ability to see into the immediate future. For the duration, the target can\u00e2\u20ac\u2122t be surprised and has advantage on attack rolls, ability checks, and saving throws. Additionally, other creatures have disadvantage on attack rolls against the target for the duration. This spell immediately ends if you cast it again before its duration ends.",
+  "name": "Foresight",
+  "class": [
+    "Warlock",
+    "Wizard",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "8 hours",
+  "page": "phb 244",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "Touch",
+  "components": "V, S, M (a hummingbird feather)",
+  "level": 9,
+  "ritual": false,
+  "school": "Divination"
+}

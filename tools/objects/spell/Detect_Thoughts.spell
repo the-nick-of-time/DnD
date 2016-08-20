@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Detect Thoughts",
+  "class": [
+    "Sorcerer",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 231",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Divination"
+}

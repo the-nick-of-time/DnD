@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Grasping Vine",
+  "class": [
+    "Ranger",
+    "Druid"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 246",
+  "casting_time": "1 bonus action",
+  "concentration": true,
+  "range": "30 feet",
+  "components": "VS",
+  "level": 4,
+  "ritual": false,
+  "school": "Conjuration"
+}

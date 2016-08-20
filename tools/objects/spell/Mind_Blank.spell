@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Mind Blank",
+  "class": [
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "24 hours",
+  "page": "phb 259",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Touch",
+  "components": "VS",
+  "level": 8,
+  "ritual": false,
+  "school": "Abjuration"
+}

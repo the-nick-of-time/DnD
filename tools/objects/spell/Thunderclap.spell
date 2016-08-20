@@ -1,0 +1,20 @@
+{
+  "description": "",
+  "name": "Thunderclap",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "Instantaneous",
+  "page": "ee 22",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Self",
+  "components": "S",
+  "level": 0,
+  "ritual": false,
+  "school": "Evocation"
+}

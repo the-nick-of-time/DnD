@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Calm Emotions",
+  "class": [
+    "Cleric",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 221",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "60 feet",
+  "components": "VS",
+  "level": 2,
+  "ritual": false,
+  "school": "Enchantment"
+}

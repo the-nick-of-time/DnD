@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Hunger of Hadar",
+  "class": [
+    "Warlock"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 251",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "150 feet",
+  "components": "VSM",
+  "level": 3,
+  "ritual": false,
+  "school": "Conjuration"
+}

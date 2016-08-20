@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Bestow Curse",
+  "class": [
+    "Cleric",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 218",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Touch",
+  "components": "VS",
+  "level": 3,
+  "ritual": false,
+  "school": "Necromancy"
+}

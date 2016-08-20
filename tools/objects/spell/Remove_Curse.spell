@@ -1,0 +1,19 @@
+{
+  "description": "At your touch, all curses affecting one creature or object end. If the object is a cursed magic item, its curse remains, but the spell breaks its owner\u00e2\u20ac\u2122s attunement to the object so it can be removed or discarded.",
+  "name": "Remove Curse",
+  "class": [
+    "Cleric",
+    "Warlock",
+    "Wizard",
+    "Paladin"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 271",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Touch",
+  "components": "V, S",
+  "level": 3,
+  "ritual": false,
+  "school": "Abjuration"
+}

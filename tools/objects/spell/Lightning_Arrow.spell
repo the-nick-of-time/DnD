@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Lightning Arrow",
+  "class": [
+    "Ranger"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 255",
+  "casting_time": "1 bonus action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VS",
+  "level": 3,
+  "ritual": false,
+  "school": "Transmutation"
+}

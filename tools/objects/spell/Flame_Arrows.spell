@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Flame Arrows",
+  "class": [
+    "Sorcerer",
+    "Ranger",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "1 hour",
+  "page": "ee 18",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Touch",
+  "components": "VS",
+  "level": 3,
+  "ritual": false,
+  "school": "Transmutation"
+}

@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Transport via Plants",
+  "class": [
+    "Druid"
+  ],
+  "duration": "1 round",
+  "page": "phb 283",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "10 feet",
+  "components": "VS",
+  "level": 6,
+  "ritual": false,
+  "school": "Conjuration"
+}

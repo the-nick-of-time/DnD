@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Gust of Wind",
+  "class": [
+    "Sorcerer",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 248",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Evocation"
+}

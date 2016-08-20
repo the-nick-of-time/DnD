@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Animate Dead",
+  "class": [
+    "Cleric",
+    "Wizard"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 212",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "10 feet",
+  "components": "VSM",
+  "level": 3,
+  "ritual": false,
+  "school": "Necromancy"
+}

@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Shillelagh",
+  "class": [
+    "Druid"
+  ],
+  "duration": "1 minute",
+  "page": "phb 275",
+  "casting_time": "1 bonus action",
+  "concentration": false,
+  "range": "Touch",
+  "components": "VSM",
+  "level": 0,
+  "ritual": false,
+  "school": "Transmutation"
+}

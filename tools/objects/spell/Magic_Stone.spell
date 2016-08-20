@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Magic Stone",
+  "class": [
+    "Warlock",
+    "Druid"
+  ],
+  "duration": "1 minute",
+  "page": "ee 20",
+  "casting_time": "1 bonus action",
+  "concentration": false,
+  "range": "Touch",
+  "components": "VS",
+  "level": 0,
+  "ritual": false,
+  "school": "Transmutation"
+}

@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Project Image",
+  "class": [
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 24 hours",
+  "page": "phb 270",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "500 miles",
+  "components": "VSMgp",
+  "level": 7,
+  "ritual": false,
+  "school": "Illusion"
+}

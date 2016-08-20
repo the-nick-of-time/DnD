@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Circle of Power",
+  "class": [
+    "Paladin"
+  ],
+  "duration": "up to 10 minutes",
+  "page": "phb 221",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "V",
+  "level": 5,
+  "ritual": false,
+  "school": "Abjuration"
+}

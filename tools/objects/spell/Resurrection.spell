@@ -1,0 +1,17 @@
+{
+  "description": "You touch a dead creature that has been dead for no more than a century, that didn\u00e2\u20ac\u2122t die of old age, and that isn\u00e2\u20ac\u2122t undead. If its soul is free and willing, the target returns to life with all its hit points. This spell neutralizes any poisons and cures normal diseases afflicting the creature when it died. It doesn\u00e2\u20ac\u2122t, however, remove magical diseases, curses, and the like; if such effects aren\u00e2\u20ac\u2122t removed prior to casting the spell, they afflict the target on its return to life. This spell closes all mortal wounds and restores any missing body parts. Coming back from the dead is an ordeal. The target takes a \u00e2\u02c6\u20194 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears. Casting this spell to restore life to a creature that has been dead for one year or longer taxes you greatly. Until you finish a long rest, you can\u00e2\u20ac\u2122t cast spells again, and you have disadvantage on all attack rolls, ability checks, and saving throws.",
+  "name": "Resurrection",
+  "class": [
+    "Cleric",
+    "Bard"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 272",
+  "casting_time": "1 hour",
+  "concentration": false,
+  "range": "Touch",
+  "components": "V, S, M (a diamond worth at least 1,000 gp, which the spell consumes)",
+  "level": 7,
+  "ritual": false,
+  "school": "Necromancy"
+}

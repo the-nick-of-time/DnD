@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Nystul's Magic Aura",
+  "class": [
+    "Wizard"
+  ],
+  "srd_name": "Arcanist's Magic Aura",
+  "duration": "24 hours",
+  "page": "phb 263",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Touch",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Illusion"
+}

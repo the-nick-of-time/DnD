@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Planar Ally",
+  "class": [
+    "Cleric"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 265",
+  "casting_time": "10 minutes",
+  "concentration": false,
+  "range": "60 feet",
+  "components": "VS",
+  "level": 6,
+  "ritual": false,
+  "school": "Conjuration"
+}

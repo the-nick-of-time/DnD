@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Ensnaring Strike",
+  "class": [
+    "Ranger"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 237",
+  "casting_time": "1 bonus action",
+  "concentration": true,
+  "range": "Self",
+  "components": "V",
+  "level": 1,
+  "ritual": false,
+  "school": "Conjuration"
+}

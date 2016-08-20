@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Glyph of Warding",
+  "class": [
+    "Cleric",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "Until dispelled",
+  "page": "phb 245",
+  "casting_time": "1 hour",
+  "concentration": false,
+  "range": "Touch",
+  "components": "VSMgp",
+  "level": 3,
+  "ritual": false,
+  "school": "Abjuration"
+}

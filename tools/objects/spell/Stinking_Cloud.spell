@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Stinking Cloud",
+  "class": [
+    "Sorcerer",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 278",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "90 feet",
+  "components": "VSM",
+  "level": 3,
+  "ritual": false,
+  "school": "Conjuration"
+}

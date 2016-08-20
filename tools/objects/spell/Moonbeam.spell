@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Moonbeam",
+  "class": [
+    "Druid"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 261",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "120 feet",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Evocation"
+}

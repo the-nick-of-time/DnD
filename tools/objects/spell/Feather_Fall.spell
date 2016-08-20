@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Feather Fall",
+  "class": [
+    "Sorcerer",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "1 minute",
+  "page": "phb 239",
+  "casting_time": "1 reaction",
+  "concentration": false,
+  "range": "60 feet",
+  "components": "VM",
+  "level": 1,
+  "ritual": false,
+  "school": "Transmutation"
+}

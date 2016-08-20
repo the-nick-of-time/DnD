@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Mordenkainen's Private Sanctum",
+  "class": [
+    "Wizard"
+  ],
+  "srd_name": "Private Sanctum",
+  "duration": "24 hours",
+  "page": "phb 262",
+  "casting_time": "10 minutes",
+  "concentration": false,
+  "range": "120 feet",
+  "components": "VSM",
+  "level": 4,
+  "ritual": false,
+  "school": "Abjuration"
+}

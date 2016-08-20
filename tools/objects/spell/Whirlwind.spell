@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Whirlwind",
+  "class": [
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "1 minute",
+  "page": "ee 24",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "300 feet",
+  "components": "VM",
+  "level": 7,
+  "ritual": false,
+  "school": "Evocation"
+}

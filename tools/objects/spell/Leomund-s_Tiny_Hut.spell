@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Leomund's Tiny Hut",
+  "class": [
+    "Wizard",
+    "Bard"
+  ],
+  "srd_name": "Tiny Hut",
+  "duration": "8 hours",
+  "page": "phb 255",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "Self",
+  "components": "VSM",
+  "level": 3,
+  "ritual": true,
+  "school": "Evocation"
+}

@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Aura of Vitality",
+  "class": [
+    "Paladin"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 216",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "V",
+  "level": 3,
+  "ritual": false,
+  "school": "Evocation"
+}

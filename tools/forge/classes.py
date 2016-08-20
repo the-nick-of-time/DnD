@@ -83,9 +83,6 @@ class Resource:
                 return self.number
         return -1
 
-    def update(self, name=None):
-        if (name is None)
-
 
 class Character:
     """Represents a PC or NPC.
@@ -145,9 +142,11 @@ class Character:
     proficiencyDice = False
 
     def __init__(self, jf):
+        self.record = jf
         self.abilities = jf.get('/abilities')
         self.skills = jf.get('/skills')
         self.saves = jf.get('/saves')
+        self.spell_slots = jf.get('/spell_slots')
         self.bonuses = self.get_bonuses()
         self.death_save_fails = 0
 
@@ -164,16 +163,16 @@ class Character:
         else:
             raise OutOfItems(self, name)
 
-    def ability_check(self, type, skill=''):
+    def ability_check(self, which, skill=''):
         applyskill = skill in self.skills
-        ability = h.modifier(self.abilities[type])
+        ability = h.modifier(self.abilities[which])
         return (r.roll('1d20') + ability
                 + self.proficiency if applyskill else 0
-                + self.bonuses['check'][type] + self.bonuses['skill'][skill])
+                + self.bonuses['check'][which] + self.bonuses['skill'][skill])
 
-    def ability_save(self, type):
-        applyprof = type in self.saves
-        return (r.roll('1d20') + h.modifier(self.abilities[type])
+    def ability_save(self, which):
+        applyprof = which in self.saves
+        return (r.roll('1d20') + h.modifier(self.abilities[which])
                 + self.proficiency if applyprof else 0 + self.bonuses)
 
     def death_save(self):
@@ -199,6 +198,10 @@ class Character:
                 else:
                     bonuses[var] += amount
         return bonuses
+
+    def set_abilities(self, name, value):
+        self.abilities[name] = value
+        self.record.set('/abilities/' + name, self.abilities[name])
 
     @property
     def AC(self):
@@ -312,6 +315,7 @@ class Inventory:
                 self.record.set('/inventory/' + name, self.data[name])
                 return True
             except KeyError:
+                # FIXME: This may fail too silently
                 return False
 
     def hook(self, name):
@@ -343,33 +347,56 @@ class Inventory:
         return type_select(item['type'])(iface)
 
 
-def type_select(extension):
-    """Find the class corresponding to a file's extension."""
-    tree = {
-        "armor": {"magic": MagicArmor,
-                  "": Armor},
-        "character": {"": Character},
-        "class": {"": Class},
-        "item": {"magic": MagicItem,
-                 "": Item},
-        "race": {"": Race},
-        "skill": {"": Skill},
-        "spell": {"": Spell},
-        "treasure": {"": Item},
-        "weapon": {
-            "magic": {"ranged": MagicRangedWeapon,
-                      "": MagicWeapon},
-            "ranged": {"magic": MagicRangedWeapon,
-                       "": RangedWeapon},
-            "": Weapon
-        }
-    }
-    steps = extension.split('.')
-    steps[0] = ''  # We don't care about the initial name, even if given
-    location = tree
-    for step in reversed(steps):
-        location = location[step]
-    return location
+class HPhandler:
+    def __init__(self, jf):
+        self.record = jf
+
+    def change_HP(self, amount):
+        """Changes HP by any valid roll as the amount."""
+        delta = r.roll(amount)
+        if (delta == 0):
+            return 0
+        current = self.record.get('/HP/current')
+        if (delta < 0):
+            temp = self.record.get('/HP/temp')
+            if (abs(delta) > temp):
+                delta += temp
+                temp = 0
+                current += delta
+                self.record.set('/HP/temp', temp)
+                self.record.set('/HP/current', current)
+                return delta
+            else:
+                temp += delta
+                self.record.set('/HP/temp', temp)
+                return 0
+        else:
+            max_ = self.record.get('/HP/max')
+            delta = delta if (current + delta <= max_) else max_ - current
+            current += delta
+            self.record.set('/HP/current', current)
+            return delta
+
+    def temp_HP(self, amount):
+        """Adds a rollable amount to your temp HP"""
+        delta = r.roll(amount)
+        if (delta == 0):
+            return self.data
+        temp = self.record.get('/HP/temp')
+        if (delta > temp):
+            temp = delta
+        self.record.set('/HP/temp', temp)
+        return self.data
+
+    def use_HD(self, which):
+        """Use a specific one of your hit dice."""
+        num = self.record.get('/HP/HD/' + which)
+        conmod = h.modifier(self.record.get('/abilities/Constitution'))
+        if (num > 0):
+            self.record.set('/HP/HD/' + which, num - 1)
+            return self.change_HP(r.roll(which) + conmod)
+        else:
+            return None
 
 
 class Damage:
@@ -616,6 +643,10 @@ class RangedWeapon(Weapon):
         self.thrown = (self.ammunition == self.name)
         self.shortrange = jf.get('/range')
         self.longrange = self.shortrange * (3 if self.thrown else 4)
+        self.range = '{}/{}'.format(self.shortrange, self.longrange)
+
+    def setowner(self, character):
+        self.owner = character
 
     def spend_ammo(self):
         try:

@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Flesh to Stone",
+  "class": [
+    "Warlock",
+    "Wizard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 243",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "60 feet",
+  "components": "VSM",
+  "level": 6,
+  "ritual": false,
+  "school": "Transmutation"
+}

@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Shapechange",
+  "class": [
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 274",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VSMgp",
+  "level": 9,
+  "ritual": false,
+  "school": "Transmutation"
+}

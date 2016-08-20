@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Slow",
+  "class": [
+    "Sorcerer",
+    "Wizard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 277",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "120 feet",
+  "components": "VSM",
+  "level": 3,
+  "ritual": false,
+  "school": "Transmutation"
+}

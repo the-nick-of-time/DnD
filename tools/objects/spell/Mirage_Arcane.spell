@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Mirage Arcane",
+  "class": [
+    "Wizard",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "10 days",
+  "page": "phb 260",
+  "casting_time": "10 minutes",
+  "concentration": false,
+  "range": "Sight",
+  "components": "VS",
+  "level": 7,
+  "ritual": false,
+  "school": "Illusion"
+}

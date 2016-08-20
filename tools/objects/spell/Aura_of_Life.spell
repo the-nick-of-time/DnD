@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Aura of Life",
+  "class": [
+    "Paladin"
+  ],
+  "duration": "up to 10 minutes",
+  "page": "phb 216",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "V",
+  "level": 4,
+  "ritual": false,
+  "school": "Abjuration"
+}

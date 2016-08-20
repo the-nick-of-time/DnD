@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Commune with Nature",
+  "class": [
+    "Ranger",
+    "Druid"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 224",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "Self",
+  "components": "VS",
+  "level": 5,
+  "ritual": true,
+  "school": "Divination"
+}

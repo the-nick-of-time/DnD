@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Blindness/Deafness",
+  "class": [
+    "Cleric",
+    "Sorcerer",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "1 minute",
+  "page": "phb 219",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "30 feet",
+  "components": "V",
+  "level": 2,
+  "ritual": false,
+  "school": "Necromancy"
+}

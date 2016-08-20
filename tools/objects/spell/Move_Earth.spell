@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Move Earth",
+  "class": [
+    "Sorcerer",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "up to 2 hours",
+  "page": "phb 263",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "120 feet",
+  "components": "VSM",
+  "level": 6,
+  "ritual": false,
+  "school": "Transmutation"
+}

@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Maelstrom",
+  "class": [
+    "Druid"
+  ],
+  "duration": "1 minute",
+  "page": "ee 20",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "120 feet",
+  "components": "VSM",
+  "level": 5,
+  "ritual": false,
+  "school": "Evocation"
+}

@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Friends",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 244",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "SM",
+  "level": 0,
+  "ritual": false,
+  "school": "Enchantment"
+}

@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Hypnotic Pattern",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 252",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "120 feet",
+  "components": "SM",
+  "level": 3,
+  "ritual": false,
+  "school": "Illusion"
+}

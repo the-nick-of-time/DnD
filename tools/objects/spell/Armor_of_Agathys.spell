@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Armor of Agathys",
+  "class": [
+    "Warlock"
+  ],
+  "duration": "1 hour",
+  "page": "phb 215",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Self",
+  "components": "VSM",
+  "level": 1,
+  "ritual": false,
+  "school": "Abjuration"
+}

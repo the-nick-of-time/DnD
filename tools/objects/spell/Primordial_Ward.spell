@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Primordial Ward",
+  "class": [
+    "Druid"
+  ],
+  "duration": "1 minute",
+  "page": "ee 21",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VS",
+  "level": 6,
+  "ritual": false,
+  "school": "Abjuration"
+}

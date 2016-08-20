@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Melf's Acid Arrow",
+  "class": [
+    "Wizard"
+  ],
+  "srd_name": "Acid Arrow",
+  "duration": "Instantaneous",
+  "page": "phb 259",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "90 feet",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Evocation"
+}

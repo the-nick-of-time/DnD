@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Earthbind",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "1 minute",
+  "page": "ee 17",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "300 feet",
+  "components": "V",
+  "level": 2,
+  "ritual": false,
+  "school": "Transmutation"
+}

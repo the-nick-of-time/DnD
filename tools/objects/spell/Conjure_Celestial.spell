@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Conjure Celestial",
+  "class": [
+    "Cleric"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 225",
+  "casting_time": "1 minute",
+  "concentration": true,
+  "range": "90 feet",
+  "components": "VS",
+  "level": 7,
+  "ritual": false,
+  "school": "Conjuration"
+}

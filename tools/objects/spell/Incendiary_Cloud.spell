@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Incendiary Cloud",
+  "class": [
+    "Sorcerer",
+    "Wizard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 253",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "150 feet",
+  "components": "VS",
+  "level": 8,
+  "ritual": false,
+  "school": "Conjuration"
+}

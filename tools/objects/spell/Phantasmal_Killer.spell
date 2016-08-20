@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Phantasmal Killer",
+  "class": [
+    "Wizard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 265",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "120 feet",
+  "components": "VS",
+  "level": 4,
+  "ritual": false,
+  "school": "Illusion"
+}

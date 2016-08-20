@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Immolation",
+  "class": [
+    "Sorcerer",
+    "Wizard"
+  ],
+  "duration": "1 minute",
+  "page": "ee 19",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "90 feet",
+  "components": "V",
+  "level": 5,
+  "ritual": false,
+  "school": "Evocation"
+}

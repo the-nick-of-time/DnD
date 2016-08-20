@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Find Steed",
+  "class": [
+    "Paladin"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 240",
+  "casting_time": "10 minutes",
+  "concentration": false,
+  "range": "30 feet",
+  "components": "VS",
+  "level": 2,
+  "ritual": false,
+  "school": "Conjuration"
+}

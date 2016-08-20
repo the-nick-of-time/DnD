@@ -1,7 +1,8 @@
 import json
 import re
+from collections import OrderedDict
 
-import spell
+# import spell
 
 
 def read_meta(contents):
@@ -33,7 +34,7 @@ def read_markdown(filename):
     ignores = ('---', 'layout:', 'date:', 'source:')
     with open(filename, 'r') as f:
         location = 0
-        data = {}
+        data = OrderedDict()
         effect = []
         for line in f:
             if(line.startswith(ignores)):
@@ -67,4 +68,8 @@ def read_markdown(filename):
 
 def jsonify(filename):
     vals = read_markdown(filename)
-    print(json.dumps(vals))
+    print(json.dumps(vals, indent=2))
+
+
+if __name__ == '__main__':
+    jsonify(r'C:\Users\Nicholas\Documents\GitHub\grimoire\_posts\2014-08-24-blade-ward.markdown')

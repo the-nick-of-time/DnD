@@ -1,0 +1,17 @@
+{
+  "description": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
+  "name": "Guidance",
+  "class": [
+    "Cleric",
+    "Druid"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 248",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Touch",
+  "components": "V, S",
+  "level": 0,
+  "ritual": false,
+  "school": "Divination"
+}

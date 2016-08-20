@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Contingency",
+  "class": [
+    "Wizard"
+  ],
+  "duration": "10 days",
+  "page": "phb 227",
+  "casting_time": "10 minutes",
+  "concentration": false,
+  "range": "Self",
+  "components": "VSMgp",
+  "level": 6,
+  "ritual": false,
+  "school": "Evocation"
+}

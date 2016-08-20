@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Simulacrum",
+  "class": [
+    "Wizard"
+  ],
+  "duration": "Until dispelled",
+  "page": "phb 276",
+  "casting_time": "12 hours",
+  "concentration": false,
+  "range": "Touch",
+  "components": "VSMgp",
+  "level": 7,
+  "ritual": false,
+  "school": "Illusion"
+}

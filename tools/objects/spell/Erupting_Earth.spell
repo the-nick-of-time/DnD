@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Erupting Earth",
+  "class": [
+    "Sorcerer",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "Instantaneous",
+  "page": "ee 17",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "120 feet",
+  "components": "VSM",
+  "level": 3,
+  "ritual": false,
+  "school": "Transmutation"
+}

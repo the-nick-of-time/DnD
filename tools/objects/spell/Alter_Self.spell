@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Alter Self",
+  "class": [
+    "Sorcerer",
+    "Wizard"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 211",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VS",
+  "level": 2,
+  "ritual": false,
+  "school": "Transmutation"
+}

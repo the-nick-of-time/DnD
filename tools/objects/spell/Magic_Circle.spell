@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Magic Circle",
+  "class": [
+    "Cleric",
+    "Warlock",
+    "Wizard",
+    "Paladin"
+  ],
+  "duration": "1 hour",
+  "page": "phb 256",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "10 feet",
+  "components": "VSMgp",
+  "level": 3,
+  "ritual": false,
+  "school": "Abjuration"
+}

@@ -1,0 +1,19 @@
+{
+  "description": "This spell is a minor magical trick that novice spellcasters use for practice. You create one of the following magical effects within range: \u00e2\u20ac\u00a2   You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musi- cal notes, or an odd odor. \u00e2\u20ac\u00a2   You instantaneously light or snuff out a candle, a torch, or a small campfire. \u00e2\u20ac\u00a2   You instantaneously clean or soil an object no larger than 1 cubic foot. \u00e2\u20ac\u00a2   You chill, warm, or flavor up to 1 cubic foot of nonliv- ing material for 1 hour. \u00e2\u20ac\u00a2   You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour. \u00e2\u20ac\u00a2   You create a nonmagical trinket or an illusory image that can fit in your hand and that lasts until the end of your next turn. If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.",
+  "name": "Prestidigitation",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "1 hour",
+  "page": "phb 267",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "10 feet",
+  "components": "V, S",
+  "level": 0,
+  "ritual": false,
+  "school": "Transmutation"
+}

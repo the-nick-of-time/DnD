@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Clone",
+  "class": [
+    "Wizard"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 222",
+  "casting_time": "1 hour",
+  "concentration": false,
+  "range": "Touch",
+  "components": "VSMgp",
+  "level": 8,
+  "ritual": false,
+  "school": "Necromancy"
+}

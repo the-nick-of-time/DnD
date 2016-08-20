@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Animal Shapes",
+  "class": [
+    "Druid"
+  ],
+  "duration": "up to 24 hours",
+  "page": "phb 212",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "30 feet",
+  "components": "VS",
+  "level": 8,
+  "ritual": false,
+  "school": "Transmutation"
+}

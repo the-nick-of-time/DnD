@@ -1,0 +1,20 @@
+{
+  "description": "",
+  "name": "Geas",
+  "class": [
+    "Cleric",
+    "Wizard",
+    "Paladin",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "30 days",
+  "page": "phb 244",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "60 feet",
+  "components": "V",
+  "level": 5,
+  "ritual": false,
+  "school": "Enchantment"
+}

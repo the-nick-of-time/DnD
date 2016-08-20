@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Guards and Wards",
+  "class": [
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "24 hours",
+  "page": "phb 248",
+  "casting_time": "10 minutes",
+  "concentration": false,
+  "range": "Touch",
+  "components": "VSMgp",
+  "level": 6,
+  "ritual": false,
+  "school": "Abjuration"
+}

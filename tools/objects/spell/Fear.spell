@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Fear",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 239",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VSM",
+  "level": 3,
+  "ritual": false,
+  "school": "Illusion"
+}

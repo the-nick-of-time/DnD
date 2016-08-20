@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Creation",
+  "class": [
+    "Sorcerer",
+    "Wizard"
+  ],
+  "duration": "Special",
+  "page": "phb 229",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "30 feet",
+  "components": "VSM",
+  "level": 5,
+  "ritual": false,
+  "school": "Illusion"
+}

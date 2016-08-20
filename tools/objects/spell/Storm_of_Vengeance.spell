@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Storm of Vengeance",
+  "class": [
+    "Druid"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 279",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Sight",
+  "components": "VS",
+  "level": 9,
+  "ritual": false,
+  "school": "Conjuration"
+}

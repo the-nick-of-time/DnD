@@ -1,0 +1,20 @@
+{
+  "description": "",
+  "name": "Daylight",
+  "class": [
+    "Cleric",
+    "Sorcerer",
+    "Ranger",
+    "Paladin",
+    "Druid"
+  ],
+  "duration": "1 hour",
+  "page": "phb 230",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "60 feet",
+  "components": "VS",
+  "level": 3,
+  "ritual": false,
+  "school": "Evocation"
+}

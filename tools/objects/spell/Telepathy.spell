@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Telepathy",
+  "class": [
+    "Wizard"
+  ],
+  "duration": "24 hours",
+  "page": "phb 281",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Unlimited",
+  "components": "VSM",
+  "level": 8,
+  "ritual": false,
+  "school": "Evocation"
+}

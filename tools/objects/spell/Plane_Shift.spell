@@ -1,0 +1,20 @@
+{
+  "description": "",
+  "name": "Plane Shift",
+  "class": [
+    "Cleric",
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 266",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Touch",
+  "components": "VSMgp",
+  "level": 7,
+  "ritual": false,
+  "school": "Conjuration"
+}

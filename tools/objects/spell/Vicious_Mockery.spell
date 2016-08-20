@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Vicious Mockery",
+  "class": [
+    "Bard"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 285",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "60 feet",
+  "components": "V",
+  "level": 0,
+  "ritual": false,
+  "school": "Enchantment"
+}

@@ -25,6 +25,10 @@
     "Insight",
     "Athletics"
   ],
+  "saves": [
+    "Strength",
+    "Constitution"
+  ],
   "spell_slots": [],
   "spells_prepared": [],
   "inventory": {

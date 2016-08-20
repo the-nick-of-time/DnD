@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Ray of Enfeeblement",
+  "class": [
+    "Warlock",
+    "Wizard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 271",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "60 feet",
+  "components": "VS",
+  "level": 2,
+  "ritual": false,
+  "school": "Necromancy"
+}

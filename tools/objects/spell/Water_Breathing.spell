@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Water Breathing",
+  "class": [
+    "Sorcerer",
+    "Ranger",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "24 hours",
+  "page": "phb 287",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "30 feet",
+  "components": "VSM",
+  "level": 3,
+  "ritual": true,
+  "school": "Transmutation"
+}

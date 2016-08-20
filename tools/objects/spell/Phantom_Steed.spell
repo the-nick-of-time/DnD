@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Phantom Steed",
+  "class": [
+    "Wizard"
+  ],
+  "duration": "1 hour",
+  "page": "phb 265",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "30 feet",
+  "components": "VS",
+  "level": 3,
+  "ritual": true,
+  "school": "Illusion"
+}

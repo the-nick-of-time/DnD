@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Compulsion",
+  "class": [
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 224",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "30 feet",
+  "components": "VS",
+  "level": 4,
+  "ritual": false,
+  "school": "Enchantment"
+}

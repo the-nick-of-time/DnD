@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "True Polymorph",
+  "class": [
+    "Warlock",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 283",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "30 feet",
+  "components": "VSM",
+  "level": 9,
+  "ritual": false,
+  "school": "Transmutation"
+}

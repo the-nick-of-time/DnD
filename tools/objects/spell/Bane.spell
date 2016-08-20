@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Bane",
+  "class": [
+    "Cleric",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 216",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "30 feet",
+  "components": "VSM",
+  "level": 1,
+  "ritual": false,
+  "school": "Enchantment"
+}

@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Word of Recall",
+  "class": [
+    "Cleric"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 289",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "5 feet",
+  "components": "V",
+  "level": 6,
+  "ritual": false,
+  "school": "Conjuration"
+}

@@ -1,0 +1,18 @@
+{
+  "description": "You return a dead creature you touch to life, provided that it has been dead no longer than 10 days. If the creature\u00e2\u20ac\u2122s soul is both willing and at liberty to rejoin the body, the creature returns to life with 1 hit point. This spell also neutralizes any poisons and cures nonmagical diseases that affected the creature at the time it died. This spell doesn\u00e2\u20ac\u2122t, however, remove magical diseases, curses, or similar effects; if these aren\u00e2\u20ac\u2122t first removed prior to casting the spell, they take effect when the creature returns to life. The spell can\u00e2\u20ac\u2122t return an undead creature to life. This spell closes all mortal wounds, but it doesn\u00e2\u20ac\u2122t restore missing body parts. If the creature is lacking body parts or organs integral for its survival\u00e2\u20ac\u201dits head, for instance\u00e2\u20ac\u201dthe spell automatically fails. Coming back from the dead is an ordeal. The target takes a \u00e2\u02c6\u20194 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.",
+  "name": "Raise Dead",
+  "class": [
+    "Cleric",
+    "Paladin",
+    "Bard"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 270",
+  "casting_time": "1 hour",
+  "concentration": false,
+  "range": "Touch",
+  "components": "V, S, M (a diamond worth at least 500 gp, which the spell consumes)",
+  "level": 5,
+  "ritual": false,
+  "school": "Necromancy"
+}

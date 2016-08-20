@@ -1,0 +1,21 @@
+{
+  "description": "",
+  "name": "Locate Object",
+  "class": [
+    "Cleric",
+    "Ranger",
+    "Wizard",
+    "Paladin",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "up to 10 minutes",
+  "page": "phb 256",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Divination"
+}

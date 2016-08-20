@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Tsunami",
+  "class": [
+    "Druid"
+  ],
+  "duration": "up to 6 rounds",
+  "page": "phb 284",
+  "casting_time": "1 minute",
+  "concentration": true,
+  "range": "Sight",
+  "components": "VS",
+  "level": 8,
+  "ritual": false,
+  "school": "Conjuration"
+}

@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Forcecage",
+  "class": [
+    "Warlock",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "1 hour",
+  "page": "phb 243",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "100 feet",
+  "components": "VSMgp",
+  "level": 7,
+  "ritual": false,
+  "school": "Evocation"
+}

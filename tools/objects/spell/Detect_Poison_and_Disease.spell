@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Detect Poison and Disease",
+  "class": [
+    "Cleric",
+    "Ranger",
+    "Paladin",
+    "Druid"
+  ],
+  "duration": "up to 10 minutes",
+  "page": "phb 231",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VSM",
+  "level": 1,
+  "ritual": true,
+  "school": "Divination"
+}

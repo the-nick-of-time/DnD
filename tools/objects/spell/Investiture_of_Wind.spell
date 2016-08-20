@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Investiture of Wind",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "10 minutes",
+  "page": "ee 20",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VS",
+  "level": 6,
+  "ritual": false,
+  "school": "Transmutation"
+}

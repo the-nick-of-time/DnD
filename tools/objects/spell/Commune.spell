@@ -1,0 +1,16 @@
+{
+  "description": "You contact your deity or a divine proxy and ask up to three questions that can be answered with a yes or no. You must ask your questions before the spell ends. You receive a correct answer for each question. Divine beings aren\u00e2\u20ac\u2122t necessarily omniscient, so you might receive \"unclear\" as an answer if a question pertains to information that lies beyond the deity\u00e2\u20ac\u2122s knowledge. In a case where a one-word answer could be misleading or contrary to the deity\u00e2\u20ac\u2122s interests, the DM might offer a short phrase as an answer instead. If you cast the spell two or more times before finishing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get no answer. The DM makes this roll in secret.",
+  "name": "Commune",
+  "class": [
+    "Cleric"
+  ],
+  "duration": "1 minute",
+  "page": "phb 223",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "Self",
+  "components": "V, S, M (incense and a vial of holy or unholy water)",
+  "level": 5,
+  "ritual": true,
+  "school": "Divination"
+}

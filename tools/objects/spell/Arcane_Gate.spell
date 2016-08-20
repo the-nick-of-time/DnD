@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Arcane Gate",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard"
+  ],
+  "duration": "up to 10 minutes",
+  "page": "phb 214",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "500 feet",
+  "components": "VS",
+  "level": 6,
+  "ritual": false,
+  "school": "Conjuration"
+}

@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Enlarge/Reduce",
+  "class": [
+    "Sorcerer",
+    "Wizard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 237",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "30 feet",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Transmutation"
+}

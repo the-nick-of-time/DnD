@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Hellish Rebuke",
+  "class": [
+    "Warlock"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 250",
+  "casting_time": "1 reaction",
+  "concentration": false,
+  "range": "60 feet",
+  "components": "VS",
+  "level": 1,
+  "ritual": false,
+  "school": "Evocation"
+}

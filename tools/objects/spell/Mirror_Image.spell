@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Mirror Image",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard"
+  ],
+  "duration": "1 minute",
+  "page": "phb 260",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Self",
+  "components": "VS",
+  "level": 2,
+  "ritual": false,
+  "school": "Illusion"
+}

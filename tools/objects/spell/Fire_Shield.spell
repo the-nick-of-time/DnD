@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Fire Shield",
+  "class": [
+    "Wizard"
+  ],
+  "duration": "10 minutes",
+  "page": "phb 242",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Self",
+  "components": "VSM",
+  "level": 4,
+  "ritual": false,
+  "school": "Evocation"
+}

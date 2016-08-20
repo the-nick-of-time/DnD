@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Barkskin",
+  "class": [
+    "Ranger",
+    "Druid"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 217",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Touch",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Transmutation"
+}

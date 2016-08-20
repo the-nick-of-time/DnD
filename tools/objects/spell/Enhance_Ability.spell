@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Enhance Ability",
+  "class": [
+    "Cleric",
+    "Sorcerer",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 237",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Touch",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Transmutation"
+}

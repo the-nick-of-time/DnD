@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Contact Other Plane",
+  "class": [
+    "Warlock",
+    "Wizard"
+  ],
+  "duration": "1 minute",
+  "page": "phb 226",
+  "casting_time": "1 minute",
+  "concentration": false,
+  "range": "Self",
+  "components": "V",
+  "level": 5,
+  "ritual": true,
+  "school": "Divination"
+}

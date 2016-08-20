@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Warding Wind",
+  "class": [
+    "Sorcerer",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "10 minutes",
+  "page": "ee 23",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "V",
+  "level": 2,
+  "ritual": false,
+  "school": "Evocation"
+}

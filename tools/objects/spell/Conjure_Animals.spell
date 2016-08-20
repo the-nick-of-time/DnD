@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Conjure Animals",
+  "class": [
+    "Ranger",
+    "Druid"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 225",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "60 feet",
+  "components": "VS",
+  "level": 3,
+  "ritual": false,
+  "school": "Conjuration"
+}

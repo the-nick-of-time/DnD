@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Chromatic Orb",
+  "class": [
+    "Sorcerer",
+    "Wizard"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 221",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "90 feet",
+  "components": "VSMgp",
+  "level": 1,
+  "ritual": false,
+  "school": "Evocation"
+}

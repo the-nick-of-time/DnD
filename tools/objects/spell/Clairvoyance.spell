@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Clairvoyance",
+  "class": [
+    "Cleric",
+    "Sorcerer",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 10 minutes",
+  "page": "phb 222",
+  "casting_time": "10 minutes",
+  "concentration": true,
+  "range": "1 mile",
+  "components": "VSMgp",
+  "level": 3,
+  "ritual": false,
+  "school": "Divination"
+}

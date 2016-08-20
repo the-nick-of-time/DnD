@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Hunter's Mark",
+  "class": [
+    "Ranger"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 251",
+  "casting_time": "1 bonus action",
+  "concentration": true,
+  "range": "90 feet",
+  "components": "V",
+  "level": 1,
+  "ritual": false,
+  "school": "Divination"
+}

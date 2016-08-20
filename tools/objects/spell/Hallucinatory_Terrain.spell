@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Hallucinatory Terrain",
+  "class": [
+    "Warlock",
+    "Wizard",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "24 hours",
+  "page": "phb 249",
+  "casting_time": "10 minutes",
+  "concentration": false,
+  "range": "300 feet",
+  "components": "VSM",
+  "level": 4,
+  "ritual": false,
+  "school": "Illusion"
+}

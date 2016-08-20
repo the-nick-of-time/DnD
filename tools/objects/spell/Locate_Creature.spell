@@ -1,0 +1,21 @@
+{
+  "description": "Describe or name a creature that is familiar to you. You sense the direction to the creature\u00e2\u20ac\u2122s location, as long as that creature is within 1,000 feet of you. If the creature is moving, you know the direction of its movement. The spell can locate a specific creature known to you, or the nearest creature of a specific kind (such as a human or a unicorn), so long as you have seen such a creature up close\u00e2\u20ac\u201dwithin 30 feet\u00e2\u20ac\u201dat least once. If the creature you described or named is in a different form, such as being under the effects of a polymorph spell, this spell doesn\u00e2\u20ac\u2122t locate the creature. This spell can\u00e2\u20ac\u2122t locate a creature if running water at least 10 feet wide blocks a direct path between you and the creature.",
+  "name": "Locate Creature",
+  "class": [
+    "Cleric",
+    "Ranger",
+    "Wizard",
+    "Paladin",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 256",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "V, S, M (a bit of fur from a bloodhound)",
+  "level": 4,
+  "ritual": false,
+  "school": "Divination"
+}

@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Absorb Elements",
+  "class": [
+    "Ranger",
+    "Wizard",
+    "Druid"
+  ],
+  "duration": "1 round",
+  "page": "ee 15",
+  "casting_time": "1 reaction",
+  "concentration": false,
+  "range": "Self",
+  "components": "S",
+  "level": 1,
+  "ritual": false,
+  "school": "Abjuration"
+}

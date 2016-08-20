@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Heat Metal",
+  "class": [
+    "Druid",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 250",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "60 feet",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Transmutation"
+}

@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Eyebite",
+  "class": [
+    "Sorcerer",
+    "Warlock",
+    "Wizard",
+    "Bard"
+  ],
+  "duration": "up to 1 minute",
+  "page": "phb 238",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VS",
+  "level": 6,
+  "ritual": false,
+  "school": "Necromancy"
+}

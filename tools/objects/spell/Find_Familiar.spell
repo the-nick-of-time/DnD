@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Find Familiar",
+  "class": [
+    "Wizard"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 240",
+  "casting_time": "1 hour",
+  "concentration": false,
+  "range": "10 feet",
+  "components": "VSMgp",
+  "level": 1,
+  "ritual": true,
+  "school": "Conjuration"
+}

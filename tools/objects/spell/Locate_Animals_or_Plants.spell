@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Locate Animals or Plants",
+  "class": [
+    "Ranger",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "Instantaneous",
+  "page": "phb 256",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Self",
+  "components": "VSM",
+  "level": 2,
+  "ritual": true,
+  "school": "Divination"
+}

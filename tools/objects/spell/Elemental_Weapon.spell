@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Elemental Weapon",
+  "class": [
+    "Paladin"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 237",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Touch",
+  "components": "VS",
+  "level": 3,
+  "ritual": false,
+  "school": "Transmutation"
+}

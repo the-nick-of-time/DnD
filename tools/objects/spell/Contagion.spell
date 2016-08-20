@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Contagion",
+  "class": [
+    "Cleric",
+    "Druid"
+  ],
+  "duration": "7 days",
+  "page": "phb 227",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Touch",
+  "components": "VS",
+  "level": 5,
+  "ritual": false,
+  "school": "Necromancy"
+}

@@ -1,0 +1,19 @@
+{
+  "description": "",
+  "name": "Planar Binding",
+  "class": [
+    "Cleric",
+    "Wizard",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "24 hours",
+  "page": "phb 265",
+  "casting_time": "1 hour",
+  "concentration": false,
+  "range": "60 feet",
+  "components": "VSMgp",
+  "level": 5,
+  "ritual": false,
+  "school": "Abjuration"
+}

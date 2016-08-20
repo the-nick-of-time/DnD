@@ -1,0 +1,18 @@
+{
+  "description": "",
+  "name": "Speak with Animals",
+  "class": [
+    "Ranger",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "10 minutes",
+  "page": "phb 277",
+  "casting_time": "1 action",
+  "concentration": false,
+  "range": "Self",
+  "components": "VS",
+  "level": 1,
+  "ritual": true,
+  "school": "Divination"
+}

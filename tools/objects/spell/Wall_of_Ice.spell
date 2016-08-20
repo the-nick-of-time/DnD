@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Wall of Ice",
+  "class": [
+    "Wizard"
+  ],
+  "duration": "up to 10 minutes",
+  "page": "phb 285",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "120 feet",
+  "components": "VSM",
+  "level": 6,
+  "ritual": false,
+  "school": "Evocation"
+}

@@ -17,7 +17,8 @@ xdylz rolls x y-sided dice and returns the z lowest of these rolls. This
     enables the disadvantage mechanic.
 
 Any string that can be parsed by this code is called throughout all my related
-code a "rollable string". These are similar to arithmetic expressions, just with the above operators added.
+code a "rollable string". These are similar to arithmetic expressions, just
+with the above operators added.
 Examples of rollable strings:
 +4                  (positive four)
 -2                  (negative two)
@@ -25,15 +26,20 @@ Examples of rollable strings:
 -1d6                (roll a d6 and take the negative)
 3d6+2               (roll 3d6 and add 2 to the sum)
 1d6+1d4+1           (roll a d6, add to it a d4, and add one to that)
-2d20h1+3+2          (roll 2d20, take the higher of the two rolls, add a total of five to it)
-3d6/2               (roll 3d6, divide the sum by 2; note that this returns an unrounded number)
+2d20h1+3+2          (roll 2d20, take the higher of the two rolls, add a total
+                     of five to it)
+3d6/2               (roll 3d6, divide the sum by 2; note that this returns an
+                     unrounded number)
 Less applicable functionalities:
 1d6^2               (roll a d6, square the result)
 1d6^1d4             (roll a d6, raise it to a random power between 1 and 4)
-1d4d4d4             (roll a d4, roll that many d4s, sum them and roll that many d4s)
-1d[0,0,0,1,1,2]     (roll a six-sided die with three sides being 0, two 1, and one 2)
+1d4d4d4             (roll a d4, roll that many d4s, sum them and roll that many
+                     d4s)
+1d[0,0,0,1,1,2]     (roll a six-sided die with three sides being 0, two 1, and
+                     one 2)
 1d[.5,.33,.25,.20]  (roll a four-sided die with sides 0.5, 0.33, 0.25, and 0.2)
-1d100>11            (roll a d100 and check whether the roll is greater than 11; returns a 1 for true and 0 for false)
+1d100>11            (roll a d100 and check whether the roll is greater than 11;
+                     returns a 1 for true and 0 for false)
 3d4%5               (roll 3d4, return the remainder after division by 5)
 
 """
@@ -93,19 +99,19 @@ def roll(s, modifiers=0, option='execute'):
                  operator('dav', 7, 2, rollAverage, 'l'),
                  operator('h', 6, 2, lambda x, y: x[-y:], 'r'),
                  operator('l', 6, 2, lambda x, y: x[:y], 'r'),
-                 operator('^', 5, 2, lambda x, y: x**y, 'lr'),
+                 operator('^', 5, 2, lambda x, y: x ** y, 'lr'),
                  operator('m', 4, 1, lambda x: -x, 'r'),
                  operator('p', 4, 1, lambda x: x, 'r'),
-                 operator('*', 3, 2, lambda x, y: x*y, 'lr'),
-                 operator('/', 3, 2, lambda x, y: x/y, 'lr'),
-                 operator('-', 2, 2, lambda x, y: x-y, 'lr'),
-                 operator('+', 2, 2, lambda x, y: x+y, 'lr'),
-                 operator('>', 1, 2, lambda x, y: x>y, 'lr'),
-                 operator('<', 1, 2, lambda x, y: x<y, 'lr'),
+                 operator('*', 3, 2, lambda x, y: x * y, 'lr'),
+                 operator('/', 3, 2, lambda x, y: x / y, 'lr'),
+                 operator('-', 2, 2, lambda x, y: x - y, 'lr'),
+                 operator('+', 2, 2, lambda x, y: x + y, 'lr'),
+                 operator('>', 1, 2, lambda x, y: x > y, 'lr'),
+                 operator('<', 1, 2, lambda x, y: x < y, 'lr'),
                  operator('=', 1, 2, lambda x, y: x == y, 'lr'),
                  )
 
-    if (isinstance(s, float) or isinstance(s, int)):
+    if (isinstance(s, (float, int))):
         # If you're naughty and pass a number in...
         # it really doesn't matter.
         return s + modifiers
@@ -140,6 +146,7 @@ def roll(s, modifiers=0, option='execute'):
 
 call = roll  # A hacky workaround for backwards compatibility
 
+
 def tokens(s, av=False):
     """Split a string into tokens for use with execute()"""
     number = []
@@ -163,9 +170,9 @@ def tokens(s, av=False):
                 number = []
                 numflag = not numflag
                 opflag = not opflag
-            if(char == '+' and (i == 0 or s[i-1] in operators)):
+            if(char == '+' and (i == 0 or s[i - 1] in operators)):
                 out.append(string_to_operator('p'))
-            elif(char == '-' and (i == 0 or s[i-1] in operators)):
+            elif(char == '-' and (i == 0 or s[i - 1] in operators)):
                 out.append(string_to_operator('m'))
             else:
                 operator.append(string_to_operator(char, av))
@@ -207,7 +214,7 @@ def readList(s, mode='float'):
 
 def rollBasic(number, sides):
     """Roll a single set of dice."""
-    #Returns a sorted (ascending) list of all the numbers rolled
+    # Returns a sorted (ascending) list of all the numbers rolled
     result = []
     rollList = []
     if (type(sides) is int):
@@ -240,7 +247,7 @@ def make_roll(lhs, rhs, average):
 def evaluate(nums, op, av=False):
     """Evaluate expressions."""
     if (any(op == c for c in 'd^*/%+-><=')):
-        #collapse any lists in preparation for operation
+        # collapse any lists in preparation for operation
         try:
             nums[0] = sum(nums[0])
         except (TypeError):
@@ -312,13 +319,13 @@ def execute(T, av=False):
             oper.append(current)
         elif (current == ')'):
             while (oper[-1] != '('):
-                #Evaluate all extant expressions down to the open paren
+                # Evaluate all extant expressions down to the open paren
                 if (arity(oper[-1]) == 2):
                     nums.append(evaluate(
                         [nums.pop(-2), nums.pop()], oper.pop(), av))
                 else:
                     nums.append(unary(nums.pop(), oper.pop()))
-            oper.pop()  #Get rid of that last open paren
+            oper.pop()  # Get rid of that last open paren
         elif (current in operators):
             try:
                 while (oper[-1] >= current):
@@ -330,19 +337,20 @@ def execute(T, av=False):
             except (IndexError):
                 pass
             oper.append(current)
-            #or add a higher-precedence operator to the stack
+            # or add a higher-precedence operator to the stack
     while (len(oper) > 0):
-        #empty the operator stack
+        # empty the operator stack
         if (arity(oper[-1]) == 2):
             nums.append(evaluate([nums.pop(-2), nums.pop()], oper.pop(), av))
         else:
             nums.append(unary(nums.pop(), oper.pop()))
     try:
-        #collapse list of rolls if able
+        # collapse list of rolls if able
         nums[0] = sum(nums[0])
     except (TypeError):
         pass
     return sum(nums)
+
 
 def arity(op):
     """Determine the arity of an operator."""
@@ -350,6 +358,7 @@ def arity(op):
         if (this == op):
             return this.arity
     raise NotFoundError('Operator not valid')
+
 
 def multipass(T, modifiers=0):
     # note: this does not yet support parentheses
@@ -361,7 +370,7 @@ def multipass(T, modifiers=0):
                 if (arity[operators.index(op)] == 2):
                     val = evaluate([T[loc - 1], T[loc + 1]], op)
                     T[loc - 1:loc + 2] = [val]
-                    #this assignment only works when RHS is iterable
+                    # this assignment only works when RHS is iterable
                 else:
                     val = unary(T[loc + 1], op)
                     T[loc:loc + 2] = [val]
@@ -390,6 +399,6 @@ class NotFoundError(Exception):
 
 
 if __name__ == '__main__':
-    #print(roll('1d4+(4+3)*2'))
-    #print(roll('1d4+4+3*2'))
+    # print(roll('1d4+(4+3)*2'))
+    # print(roll('1d4+4+3*2'))
     print(roll('1+3*2^1d4'))

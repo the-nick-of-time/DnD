@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "name": "Pass without Trace",
+  "class": [
+    "Ranger",
+    "Druid"
+  ],
+  "duration": "up to 1 hour",
+  "page": "phb 264",
+  "casting_time": "1 action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Abjuration"
+}

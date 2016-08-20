@@ -1,0 +1,20 @@
+{
+  "description": "",
+  "name": "Scrying",
+  "class": [
+    "Cleric",
+    "Warlock",
+    "Wizard",
+    "Druid",
+    "Bard"
+  ],
+  "duration": "up to 10 minutes",
+  "page": "phb 273",
+  "casting_time": "10 minutes",
+  "concentration": true,
+  "range": "Self",
+  "components": "VSMgp",
+  "level": 5,
+  "ritual": false,
+  "school": "Divination"
+}

@@ -1,0 +1,16 @@
+{
+  "description": "",
+  "name": "Flame Blade",
+  "class": [
+    "Druid"
+  ],
+  "duration": "up to 10 minutes",
+  "page": "phb 242",
+  "casting_time": "1 bonus action",
+  "concentration": true,
+  "range": "Self",
+  "components": "VSM",
+  "level": 2,
+  "ritual": false,
+  "school": "Evocation"
+}
