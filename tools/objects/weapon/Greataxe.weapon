@@ -6,5 +6,7 @@
   "damage": ["1d12", "slashing"],
   "ability": ["Strength"],
   "type": "martial",
-  "hands": "two"
+  "hands": "two",
+  "description": "This is a large, long-bladed axe.",
+  "effect": "This axe deals massive damage."
 }

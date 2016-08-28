@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import tkinter as tk
+import os
 
 import tools.modules.monstermanager as mm
 import tools.modules.charactermanager as cm
@@ -8,6 +9,7 @@ import tools.modules.charactercreator as cc
 import tools.modules.dice as dc
 # import tools.modules.charactereditor as ce
 import tools.forge.inventory as iv
+import tools.forge.SpellGUI as sp
 import tools.forge.hp as hp
 
 
@@ -36,6 +38,9 @@ class core:
         hpmanage = tk.Button(self.master, text="Manage Your HP",
                              command=lambda: self.characterhp())
         hpmanage.grid(row=4, column=0, pady=5)
+        spellmanage = tk.Button(self.master, text="Manage Your Spells",
+                                command=lambda: self.characterspells())
+        spellmanage.grid(row=5, column=0, pady=5)
         monster = tk.Button(self.master,
                             text="Create New Encounter",
                             command=lambda: self.monstermanage())
@@ -72,6 +77,10 @@ class core:
         self.undisplay()
         hp.main(self.master)
 
+    def characterspells(self):
+        self.undisplay()
+        sp.main(self.master)
+
 #    def characteredit(self):
 #        self.undisplay()
 #        ce.main(self.master)
@@ -80,6 +89,8 @@ class core:
         self.undisplay()
         dc.main(self.master)
 
+
+os.chdir(os.path.dirname(__file__))
 
 win = tk.Tk()
 app = core(win)

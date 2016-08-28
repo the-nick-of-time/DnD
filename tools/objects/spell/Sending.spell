@@ -1,18 +1,18 @@
 {
-  "description": "",
-  "name": "Sending",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "You send a short message of twenty-five words or less to a creature with which you are familiar. The creature hears the message in its mind, recognizes you as the sender if it knows you, and can answer in a like manner immediately. The spell enables creatures with Intelligence scores of at least 1 to understand the meaning of your message.\n\nYou can send the message across any distance and even to other planes of existence, but if the target is on a different plane than you, there is a 5 percent chance that the message doesn't arrive.\n",
+  "range": "Unlimited",
+  "school": "Evocation",
   "class": [
     "Cleric",
     "Wizard",
     "Bard"
   ],
-  "duration": "1 round",
-  "page": "phb 274",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Unlimited",
-  "components": "VSM",
+  "page": "phb 274",
+  "duration": "1 round",
   "level": 3,
-  "ritual": false,
-  "school": "Evocation"
+  "name": "Sending",
+  "casting_time": "1 action"
 }

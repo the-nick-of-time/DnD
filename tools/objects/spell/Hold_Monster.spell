@@ -1,19 +1,19 @@
 {
-  "description": "",
-  "name": "Hold Monster",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "Choose a creature that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. This spell has no effect on undead. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target.\n\n**At Higher Levels.** When you cast this spell using a spell slot of 6th level or higher, you can target one additional creature for each slot level above 5th. The creatures must be within 30 feet of each other when you target them.\n",
+  "range": "90 feet",
+  "school": "Enchantment",
   "class": [
     "Sorcerer",
     "Warlock",
     "Wizard",
     "Bard"
   ],
-  "duration": "up to 1 minute",
-  "page": "phb 251",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "90 feet",
-  "components": "VSM",
+  "page": "phb 251",
+  "duration": "up to 1 minute",
   "level": 5,
-  "ritual": false,
-  "school": "Enchantment"
+  "name": "Hold Monster",
+  "casting_time": "1 action"
 }

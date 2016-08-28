@@ -1,17 +1,17 @@
 {
-  "description": "Choose a willing creature that you can see within range. Until the spell ends, the target\u00e2\u20ac\u2122s speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action. When the spell ends, the target can\u00e2\u20ac\u2122t move or take actions until after its next turn, as a wave of lethargy sweeps over it.",
-  "name": "Haste",
+  "components": "V, S, M (a shaving of licorice root)",
+  "ritual": false,
+  "effect": "Choose a willing creature that you can see within range. Until the spell ends, the target's speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action.\n\nWhen the spell ends, the target can't move or take actions until after its next turn, as a wave of lethargy sweeps over it.\n",
+  "range": "30 feet",
+  "school": "Transmutation",
   "class": [
     "Sorcerer",
     "Wizard"
   ],
-  "duration": "up to 1 minute",
-  "page": "phb 250",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "30 feet",
-  "components": "V, S, M (a shaving of licorice root)",
+  "page": "phb 250",
+  "duration": "up to 1 minute",
   "level": 3,
-  "ritual": false,
-  "school": "Transmutation"
+  "name": "Haste",
+  "casting_time": "1 action"
 }

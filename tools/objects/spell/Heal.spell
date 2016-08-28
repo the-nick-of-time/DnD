@@ -1,17 +1,17 @@
 {
-  "description": "Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 hit points. This spell also ends blindness, deafness, and any diseases affecting the target. This spell has no effect on constructs or undead. At Higher Levels. When you cast this spell using a spell slot of 7th level or higher, the amount of healing increases by 10 for each slot level above 6th.",
-  "name": "Heal",
+  "components": "V, S",
+  "ritual": false,
+  "effect": "Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 hit points. This spell also ends blindness, deafness, and any diseases affecting the target. This spell has no effect on constructs or undead.\n\n**At Higher Levels.** When you cast this spell using a spell slot of 7th level or higher, the amount of healing increases by 10 for each slot level above 6th.\n",
+  "range": "60 feet",
+  "school": "Evocation",
   "class": [
     "Cleric",
     "Druid"
   ],
-  "duration": "Instantaneous",
-  "page": "phb 250",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "60 feet",
-  "components": "V, S",
+  "page": "phb 250",
+  "duration": "Instantaneous",
   "level": 6,
-  "ritual": false,
-  "school": "Evocation"
+  "name": "Heal",
+  "casting_time": "1 action"
 }

@@ -1,18 +1,18 @@
 {
-  "description": "A storm made up of sheets of roaring flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes 7d10 fire damage on a failed save, or half as much damage on a successful one. The fire damages objects in the area and ignites flammable objects that aren\u00e2\u20ac\u2122t being worn or carried. If you choose, plant life in the area is unaffected by this spell.",
-  "name": "Fire Storm",
+  "components": "V, S",
+  "ritual": false,
+  "effect": "A storm made up of sheets of roaring flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot-cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes 7d10 fire damage on a failed save, or half as much damage on a successful one.\n\nThe fire damages objects in the area and ignites flammable objects that aren't being worn or carried. If you choose, plant life in the area is unaffected by this spell.\n",
+  "range": "150 feet",
+  "school": "Evocation",
   "class": [
     "Cleric",
     "Sorcerer",
     "Druid"
   ],
-  "duration": "Instantaneous",
-  "page": "phb 242",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "150 feet",
-  "components": "V, S",
+  "page": "phb 242",
+  "duration": "Instantaneous",
   "level": 7,
-  "ritual": false,
-  "school": "Evocation"
+  "name": "Fire Storm",
+  "casting_time": "1 action"
 }

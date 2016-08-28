@@ -42,7 +42,7 @@ class main(gui.Element, gui.Section):
         self.addtemp.grid(row=0, column=1)
         HDf = tk.Frame(self.f)
         HDf.grid(row=3, column=1)
-        self.HD = []
+        self.HD = [HitDiceDisplay(t, HDf, self.handler)]
         self.QUIT = tk.Button(self.f, text='QUIT',
                               command=lambda: self.writequit())
         self.QUIT.grid(row=4, column=3)
@@ -50,7 +50,7 @@ class main(gui.Element, gui.Section):
     def popup(self):
         def extract():
             loadCharacter(name.get())
-            self.classes = ClassMap(self.character.get('/level'))
+            self.classes = ClassMap(self.character.get('/classes'))
             self.populate()
             self.draw()
             subwin.destroy()
@@ -100,52 +100,49 @@ class main(gui.Element, gui.Section):
         self.container.destroy()
 
 
-class SingleHitDiceDisplay(gui.Section, gui.Element):
+class HitDiceDisplay(gui.Section, gui.Element):
     def __init__(self, name, container, handler):
         kwargs = {'name': 'hp', 'container': container}
         gui.Section.__init__(self, **kwargs)
         gui.Element.__init__(self, **kwargs)
         self.manager = handler
+        self.type = name
 
     def create_widgets(self):
-        self.inc = tk.Button(self.f, text='+', command=self.spend)
-        self.dec = tk.Button(self.f, text='-', command=self.regain)
-        self.name = tk.Label(self.f, text=self.handler.whichclass)
-        self.type_ = tk.Label(self.f, text=self.handler.hdtype)
+        # self.inc = tk.Button(self.f, text='+', command=self.regain)
+        self.use = tk.Button(self.f, text='Use',
+                             command=lambda: self.handler.use_HD(self.type))
+        self.typeL = tk.Label(self.f, text=self.handler.hdtype)
         self.number = tk.Label(self.f)
 
-    def draw(self, arg):
-        pass
-
-    def spend(self):
-        pass
-
-    def regain(self):
-        pass
-
-
-class MultiHitDiceDisplay(gui.Section, gui.Element):
-    def __init__(self, name, container, character):
-        kwargs = {'name': 'hp', 'container': container}
-        gui.Section.__init__(self, **kwargs)
-        gui.Element.__init__(self, **kwargs)
-        self.name = name
-        self.container = container
-        self.character = character
-        self.manager = hd.MultiHandler(character)
-        self.subdisplays = []
-
-    def create_widgets(self):
-        for handler in self.manager.hd.values():
-            self.subdisplays.append(SingleHitDiceDisplay(handler))
-        self.rest = tk.Button(self.f, text='Long Rest', command=self.manager.rest)
-        self.reset = tk.Button(self.f, text='Reset all', command=self.manager.reset)
-
     def draw(self):
-        for i, sub in enumerate(self.subdisplays):
-            sub.grid(row=i, column=0)
-        self.rest.grid(row=len(self.subdisplays), column=0, sticky='e')
-        self.reset.grid(row=len(self.subdisplays) + 1, column=0, sticky='e')
+        self.typeL.grid(row=0, column=0)
+        self.number.grid(row=0, column=1)
+        self.use.grid(row=0, column=2)
+
+
+# class MultiHitDiceDisplay(gui.Section, gui.Element):
+#     def __init__(self, name, container, character):
+#         kwargs = {'name': 'hp', 'container': container}
+#         gui.Section.__init__(self, **kwargs)
+#         gui.Element.__init__(self, **kwargs)
+#         self.name = name
+#         self.container = container
+#         self.character = character
+#         self.manager = hd.MultiHandler(character)
+#         self.subdisplays = []
+#
+#     def create_widgets(self):
+#         for handler in self.manager.hd.values():
+#             self.subdisplays.append(SingleHitDiceDisplay(handler))
+#         self.rest = tk.Button(self.f, text='Long Rest', command=self.manager.rest)
+#         self.reset = tk.Button(self.f, text='Reset all', command=self.manager.reset)
+#
+#     def draw(self):
+#         for i, sub in enumerate(self.subdisplays):
+#             sub.grid(row=i, column=0)
+#         self.rest.grid(row=len(self.subdisplays), column=0, sticky='e')
+#         self.reset.grid(row=len(self.subdisplays) + 1, column=0, sticky='e')
 
 
 if __name__ == '__main__':

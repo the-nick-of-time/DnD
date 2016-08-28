@@ -1,19 +1,19 @@
 {
-  "description": "You create a sound or an image of an object within range that lasts for the duration. The illusion also ends if you dismiss it as an action or cast this spell again. If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else\u00e2\u20ac\u2122s voice, a lion\u00e2\u20ac\u2122s roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends. If you create an image of an object\u00e2\u20ac\u201dsuch as a chair, muddy footprints, or a small chest\u00e2\u20ac\u201dit must be no larger than a 5-foot cube. The image can\u00e2\u20ac\u2122t create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, because things can pass through it. If a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.",
-  "name": "Minor Illusion",
+  "components": "S, M (a bit of fleece)",
+  "ritual": false,
+  "effect": "You create a sound or an image of an object within range that lasts for the duration. The illusion also ends if you dismiss it as an action or cast this spell again.\n\nIf you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else's voice, a lion's roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends. \n\nIf you create an image of an object\u00e2\u20ac\u201dsuch as a chair, muddy footprints, or a small chest\u00e2\u20ac\u201dit must be no larger than a 5-foot cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, because things can pass through it. \n\nIf a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.\n",
+  "range": "30 feet",
+  "school": "Illusion",
   "class": [
     "Sorcerer",
     "Warlock",
     "Wizard",
     "Bard"
   ],
-  "duration": "1 minute",
-  "page": "phb 260",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "30 feet",
-  "components": "S, M (a bit of fleece)",
+  "page": "phb 260",
+  "duration": "1 minute",
   "level": 0,
-  "ritual": false,
-  "school": "Illusion"
+  "name": "Minor Illusion",
+  "casting_time": "1 action"
 }

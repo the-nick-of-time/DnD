@@ -17,5 +17,7 @@
     "Strength"
   ],
   "value": 15,
-  "weight": 3
+  "weight": 3,
+  "description": "This sword has a hilt long enough to be wielded with one or two hands.",
+  "effect": "You slash out with your sword."
 }

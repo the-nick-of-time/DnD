@@ -1,19 +1,19 @@
 {
-  "description": "A creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target\u00e2\u20ac\u2122s person. The spell ends for a target that attacks or casts a spell. At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
-  "name": "Invisibility",
+  "components": "V, S, M (an eyelash encased in gum arabic)",
+  "ritual": false,
+  "effect": "A creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person. The spell ends for a target that attacks or casts a spell.\n\n**At Higher Levels.** When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.\n",
+  "range": "Touch",
+  "school": "Illusion",
   "class": [
     "Sorcerer",
     "Warlock",
     "Wizard",
     "Bard"
   ],
-  "duration": "up to 1 hour",
-  "page": "phb 254",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "Touch",
-  "components": "V, S, M (an eyelash encased in gum arabic)",
+  "page": "phb 254",
+  "duration": "up to 1 hour",
   "level": 2,
-  "ritual": false,
-  "school": "Illusion"
+  "name": "Invisibility",
+  "casting_time": "1 action"
 }

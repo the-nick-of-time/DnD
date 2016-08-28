@@ -150,6 +150,9 @@ class Character:
         self.bonuses = self.get_bonuses()
         self.death_save_fails = 0
 
+    def __str__(self):
+        return self.name
+
     def spell_spend(self, spell):
         if (self.spell_slots[spell.level] > 0):
             self.spell_slots[spell.level] -= 1
@@ -204,6 +207,14 @@ class Character:
         self.record.set('/abilities/' + name, self.abilities[name])
 
     @property
+    def weaponprof(self):
+        total = []
+        for c, lv in self.classes:
+            total.extend(c.weapons['types'])
+            total.extend(c.weapons['specific'])
+        return total
+
+    @property
     def AC(self):
         baseAC = 0
         bonusAC = self.bonuses['AC']
@@ -234,7 +245,7 @@ class Character:
 
     def save_DC(self, spell):
         return (8
-                + self.bonuses['save_DC']
+                + self.bonuses.get('save_DC', 0)
                 + h.modifier(self.relevant_abil(spell)))
 
     def relevant_abil(self, forwhat):
@@ -398,6 +409,16 @@ class HPhandler:
         else:
             return None
 
+    def long_rest(self):
+        mx = self.record.get('/HP/max')
+        self.record.set('/HP/current', mx)
+        for c, lv in self.record.classes:
+            type = c.get('/hit_dice')
+            curr = self.record.get('/HP/HD/' + type)
+            recover = int(lv / 2) + 1
+            self.record.set('/HP/HD/' + type,
+                            curr + recover if curr + recover < lv else lv)
+
 
 class Damage:
     def __init__(self, data):
@@ -482,6 +503,10 @@ class Spell:
         self.duration = jf.get('/duration')
         self.range = jf.get('/range')
         self.components = jf.get('/components')
+        self.owner = None
+
+    def __str__(self):
+        return self.name
 
     def cast(self):
         # Returns a string of the effect of the spell
@@ -497,6 +522,12 @@ class Spell:
             if c in self.classes:
                 return True
         return False
+
+    def setowner(self, character):
+        if (isinstance(character, Character)):
+            self.owner = character
+        else:
+            raise ValueError("You must give a Character.")
 
 
 class SpellAttack(Spell, Attack):
@@ -545,26 +576,31 @@ class Item:
     use: Decrement count if consumable and return the effect.
     """
 
-    def __init__(self, jf, owner=None):
+    def __init__(self, jf):
         """jf is a JSONInterface to the item's file, owner is a Character"""
         self.name = jf.get('/name')
         self.value = jf.get('/value')
         self.weight = jf.get('/weight')
         self.consumable = jf.get('/consumable')
         self.effect = jf.get('/effect')
+        self.owner = None
 
-        self.owner = owner
+    def __str__(self):
+        return self.name
 
     def setowner(self, person):
-        if (isinstance(person, Character)):
-            self.owner = person
-            return True
-        return False
+        if (isinstance(character, Character)):
+            self.owner = character
+        else:
+            raise ValueError("You must give a Character.")
 
     def use(self):
         if (self.consumable and self.owner):
             self.owner.item_consume(self.name)
         return self.effect
+
+    def describe(self):
+        return self.description
 
 
 class Weapon(Attack, Item):
@@ -644,9 +680,6 @@ class RangedWeapon(Weapon):
         self.shortrange = jf.get('/range')
         self.longrange = self.shortrange * (3 if self.thrown else 4)
         self.range = '{}/{}'.format(self.shortrange, self.longrange)
-
-    def setowner(self, character):
-        self.owner = character
 
     def spend_ammo(self):
         try:

@@ -33,7 +33,7 @@
   "spells_prepared": [],
   "inventory": {
     "Dagger": {
-      "quantity": 2,
+      "quantity": 1,
       "type": ".weapon",
       "equipped": true
     },

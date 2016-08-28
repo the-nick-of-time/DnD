@@ -3,5 +3,6 @@
   "value": 0.5,
   "weight": 3,
   "consumable": false,
-  "effect": "This blanket can keep you warm at night."
+  "effect": "This blanket can keep you warm at night.",
+  "description": "This blanket can keep you warm at night."
 }

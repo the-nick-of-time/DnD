@@ -11,5 +11,7 @@
   "value": 0.02,
   "weight": 0.25,
   "ammunition": "Dart",
-  "range": 30
+  "range": 30,
+  "description": "A dart has a wooden handle and an iron tip.",
+  "effect": "This dart can be thrown, though not very stably."
 }

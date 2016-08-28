@@ -62,7 +62,9 @@ def read_markdown(filename):
             if(location > 11):
                 effect.append(line)
                 continue
-        data.update({'effects': '\n'.join(effect)})
+        if (data['title'] == 'Sword Burst'):
+            print('\n'.join(effect))
+        data.update({'effect': '\n'.join(effect)})
     return data
 
 
@@ -72,4 +74,5 @@ def jsonify(filename):
 
 
 if __name__ == '__main__':
-    jsonify(r'C:\Users\Nicholas\Documents\GitHub\grimoire\_posts\2014-08-24-blade-ward.markdown')
+    jsonify(r'C:\Users\Nicholas\Documents\GitHub\grimoire\_posts\2014-08-24-prestidigitation.markdown')
+    jsonify(r'C:\Users\Nicholas\Documents\GitHub\grimoire\_posts\2015-01-12-teleport.markdown')

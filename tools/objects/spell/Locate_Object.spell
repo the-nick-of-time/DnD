@@ -1,6 +1,9 @@
 {
-  "description": "",
-  "name": "Locate Object",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "Describe or name an object that is familiar to you. You sense the direction to the object's location, as long as that object is within 1,000 feet of you. If the object is in motion, you know the direction of its movement.\n\nThe spell can locate a specific object known to you, as long as you have seen it up close-\u00e2\u20ac\u201dwithin 30 feet-\u00e2\u20ac\u201dat least once. Alternatively, the spell can locate the nearest object of a particular kind, such as a certain kind of apparel, jewelry, furniture, tool, or weapon.\n\nThis spell can't locate an object if any thickness of lead, even a thin sheet, blocks a direct path between you and the object.\n",
+  "range": "Self",
+  "school": "Divination",
   "class": [
     "Cleric",
     "Ranger",
@@ -9,13 +12,10 @@
     "Druid",
     "Bard"
   ],
-  "duration": "up to 10 minutes",
-  "page": "phb 256",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "Self",
-  "components": "VSM",
+  "page": "phb 256",
+  "duration": "up to 10 minutes",
   "level": 2,
-  "ritual": false,
-  "school": "Divination"
+  "name": "Locate Object",
+  "casting_time": "1 action"
 }

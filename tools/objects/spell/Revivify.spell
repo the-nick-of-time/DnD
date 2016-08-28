@@ -1,17 +1,17 @@
 {
-  "description": "You touch a creature that has died within the last minute. That creature returns to life with 1 hit point. This spell can\u00e2\u20ac\u2122t return to life a creature that has died of old age, nor can it restore any missing body parts.",
-  "name": "Revivify",
+  "components": "V, S, M (diamonds worth 300 gp, which the spell consumes)",
+  "ritual": false,
+  "effect": "You touch a creature that has died within the last minute. That creature returns to life with 1 hit point. This spell can't return to life a creature that has died of old age, nor can it restore any missing body parts.\n",
+  "range": "Touch",
+  "school": "Conjuration",
   "class": [
     "Cleric",
     "Paladin"
   ],
-  "duration": "Instantaneous",
-  "page": "phb 272",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Touch",
-  "components": "V, S, M (diamonds worth 300 gp, which the spell consumes)",
+  "page": "phb 272",
+  "duration": "Instantaneous",
   "level": 3,
-  "ritual": false,
-  "school": "Conjuration"
+  "name": "Revivify",
+  "casting_time": "1 action"
 }

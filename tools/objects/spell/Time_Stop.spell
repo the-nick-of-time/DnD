@@ -1,17 +1,17 @@
 {
-  "description": "You briefly stop the flow of time for everyone but yourself. No time passes for other creatures, while you take 1d4 + 1 turns in a row, during which you can use actions and move as normal. This spell ends if one of the actions you use during this period, or any effects that you create during this period, affects a creature other than you or an object being worn or carried by someone other than you. In addition, the spell ends if you move to a place more than 1,000 feet from the location where you cast it.",
-  "name": "Time Stop",
+  "components": "V",
+  "ritual": false,
+  "effect": "You briefly stop the flow of time for everyone but yourself. No time passes for other creatures, while you take 1d4 + 1 turns in a row, during which you can use actions and move as normal.\n\nThis spell ends if one of the actions you use during this period, or any effects that you create during this period, affects a creature other than you or an object being worn or carried by someone other than you. In addition, the spell ends if you move to a place more than 1,000 feet form the location where you cast it.\n",
+  "range": "Self",
+  "school": "Transmutation",
   "class": [
     "Sorcerer",
     "Wizard"
   ],
-  "duration": "Instantaneous",
-  "page": "phb 283",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Self",
-  "components": "V",
+  "page": "phb 283",
+  "duration": "Instantaneous",
   "level": 9,
-  "ritual": false,
-  "school": "Transmutation"
+  "name": "Time Stop",
+  "casting_time": "1 action"
 }

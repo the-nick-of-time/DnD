@@ -1,16 +1,16 @@
 {
-  "description": "",
-  "name": "Hunger of Hadar",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "You open a gateway to the dark between the stars, a region infested with unknown horrors. A 20-foot-radius sphere of blackness and bitter cold appears, centered on a point with range and lasting for the duration. This void is filled with a cacophony of soft whispers and slurping noises that can be heard up to 30 feet away. No light, magical or otherwise, can illuminate the area, and creatures fully within the area are blinded.\n\nThe void creates a warp in the fabric of space, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 cold damage. Any creature that ends its turn in the area must succeed on a Dexterity saving throw or take 2d6 acid damage as milky, otherworldly tentacles rub against it.\n",
+  "range": "150 feet",
+  "school": "Conjuration",
   "class": [
     "Warlock"
   ],
-  "duration": "up to 1 minute",
-  "page": "phb 251",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "150 feet",
-  "components": "VSM",
+  "page": "phb 251",
+  "duration": "up to 1 minute",
   "level": 3,
-  "ritual": false,
-  "school": "Conjuration"
+  "name": "Hunger of Hadar",
+  "casting_time": "1 action"
 }

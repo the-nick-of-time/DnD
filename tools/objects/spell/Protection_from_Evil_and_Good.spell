@@ -1,19 +1,19 @@
 {
-  "description": "",
-  "name": "Protection from Evil and Good",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "Until the spell ends, one willing creature you touch is protected against certain types of creatures: aberrations, celestials, elementals, fey, fiends, and undead.\n\nThe protection grants several benefits. Creatures of those types have disadvantage on attack rolls against the target. The target also can't be charmed, frightened, or possessed by them. If the target is already charmed, frightened, or possessed by such a creature, the target has advantage on any new saving throw against the relevant effect.",
+  "range": "Touch",
+  "school": "Abjuration",
   "class": [
     "Cleric",
     "Warlock",
     "Wizard",
     "Paladin"
   ],
-  "duration": "up to 10 minutes",
-  "page": "phb 270",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "Touch",
-  "components": "VSM",
+  "page": "phb 270",
+  "duration": "up to 10 minutes",
   "level": 1,
-  "ritual": false,
-  "school": "Abjuration"
+  "name": "Protection from Evil and Good",
+  "casting_time": "1 action"
 }

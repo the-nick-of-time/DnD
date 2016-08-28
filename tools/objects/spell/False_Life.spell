@@ -1,17 +1,17 @@
 {
-  "description": "",
-  "name": "False Life",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "Bolstering yourself with a necromantic facsimile of life, you gain 1d4 + 4 temporary hit points for the duration.\n\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, you gain 5 additional temporary hit points for each slot level above 1st.",
+  "range": "Self",
+  "school": "Necromancy",
   "class": [
     "Sorcerer",
     "Wizard"
   ],
-  "duration": "1 hour",
-  "page": "phb 239",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Self",
-  "components": "VSM",
+  "page": "phb 239",
+  "duration": "1 hour",
   "level": 1,
-  "ritual": false,
-  "school": "Necromancy"
+  "name": "False Life",
+  "casting_time": "1 action"
 }

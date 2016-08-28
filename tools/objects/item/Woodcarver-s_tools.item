@@ -3,5 +3,6 @@
   "consumable": false,
   "weight": 5,
   "value": 1,
+  "description": "This box contains a variety of knives, picks, and other such tools.",
   "effect": "You can carve sculptures out of wood using these tools."
 }

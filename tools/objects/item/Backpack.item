@@ -3,5 +3,6 @@
   "value": 2,
   "weight": 5,
   "consumable": false,
+  "description": "This backpack can hold up to 1 cubic foot or 30 pounds of gear.",
   "effect": "This backpack can hold up to 1 cubic foot or 30 pounds of gear."
 }

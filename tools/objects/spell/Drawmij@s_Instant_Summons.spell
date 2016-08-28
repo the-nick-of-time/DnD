@@ -1,0 +1,17 @@
+{
+  "components": "VSMgp",
+  "ritual": true,
+  "effect": "You touch an object weighing 10 pounds or less w hose longest dimension is 6 feet or less. The spell leaves an invisible mark on its surface and invisibly inscribes the name of the item on the sapphire you use as the material component. Each time you cast this spell, you must use a different sapphire.\n\nAt any time thereafter, you can use your action to speak the item's name and crush the sapphire. The item instantly appears in your hand regardless of physical or planar distances, and the spell ends.\n\nIf another creature is holding or carrying the item, crushing the sapphire doesn't transport the item to you, but instead you learn who the creature possessing the object is and roughly where that creature is located at that moment.\n\n*Dispel magic* or a similar effect successfully applied to the sapphire ends this spell's effect.\n",
+  "range": "Touch",
+  "srd_name": "Instant Summons",
+  "class": [
+    "Wizard"
+  ],
+  "school": "Conjuration",
+  "concentration": false,
+  "page": "phb 235",
+  "duration": "Until dispelled",
+  "level": 6,
+  "name": "Drawmij's Instant Summons",
+  "casting_time": "1 minute"
+}

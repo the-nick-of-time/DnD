@@ -1,6 +1,9 @@
 {
-  "description": "For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any. The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
-  "name": "Detect Magic",
+  "components": "V, S",
+  "ritual": true,
+  "effect": "For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.\n\nThe spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
+  "range": "Self",
+  "school": "Divination",
   "class": [
     "Cleric",
     "Sorcerer",
@@ -10,13 +13,10 @@
     "Druid",
     "Bard"
   ],
-  "duration": "up to 10 minutes",
-  "page": "phb 231",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "Self",
-  "components": "V, S",
+  "page": "phb 231",
+  "duration": "up to 10 minutes",
   "level": 1,
-  "ritual": true,
-  "school": "Divination"
+  "name": "Detect Magic",
+  "casting_time": "1 action"
 }

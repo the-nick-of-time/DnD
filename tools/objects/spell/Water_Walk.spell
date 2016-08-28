@@ -1,19 +1,19 @@
 {
-  "description": "",
-  "name": "Water Walk",
+  "components": "VSM",
+  "ritual": true,
+  "effect": "This spell grants the ability to move across any liquid surface--such as water, acid, mud, snow, quicksand, or lava--as if it were harmless solid ground (creatures crossing molten lava can still take damage from the heat). Up to ten willing creatures you can see within range gain this ability for the duration.\n\nIf you target a creature submerged in a liquid, the spell carries the target to the surface of the liquid at a rate of 60 feet per round.\n",
+  "range": "30 feet",
+  "school": "Transmutation",
   "class": [
     "Cleric",
     "Sorcerer",
     "Ranger",
     "Druid"
   ],
-  "duration": "1 hour",
-  "page": "phb 287",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "30 feet",
-  "components": "VSM",
+  "page": "phb 287",
+  "duration": "1 hour",
   "level": 3,
-  "ritual": true,
-  "school": "Transmutation"
+  "name": "Water Walk",
+  "casting_time": "1 action"
 }

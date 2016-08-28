@@ -1,18 +1,18 @@
 {
-  "description": "",
-  "name": "Gust of Wind",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "A line of strong wind 60 feet long and 10 feet wide blasts from you in a direction you choose for the spell's duration. Each creature that starts its turn in the line must succeed on a Strength saving throw or be pushed 15 feet away from you in a direction following the line.\n\nAny creature in the line must spend 2 feet of movement for every 1 foot it moves when moving closer to you.\n\nThe gust disperses gas or vapor, and it extinguishes candles, torches, and similar unprotected flames in the area. It causes protected flames, such as those of lanterns, to dance wildly and has a 50 percent chance to extinguish them.\n\nAs a bonus action on each of your turns before the spell ends, you can change the direction in which the line blasts from you.\n",
+  "range": "Self",
+  "school": "Evocation",
   "class": [
     "Sorcerer",
     "Wizard",
     "Druid"
   ],
-  "duration": "up to 1 minute",
-  "page": "phb 248",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "Self",
-  "components": "VSM",
+  "page": "phb 248",
+  "duration": "up to 1 minute",
   "level": 2,
-  "ritual": false,
-  "school": "Evocation"
+  "name": "Gust of Wind",
+  "casting_time": "1 action"
 }

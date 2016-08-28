@@ -20,7 +20,8 @@
       "cold"
     ]
   },
+  "description": "This wooden shard is forever rimed with frost.",
   "effect": "This dagger sucks all the heat from anything it touches.",
-  "charges": "inf",
+  "charges": -1,
   "recharge": 0
 }

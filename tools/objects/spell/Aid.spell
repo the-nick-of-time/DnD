@@ -1,17 +1,17 @@
 {
-  "description": "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target\u00e2\u20ac\u2122s hit point maximum and current hit points increase by 5 for the duration. At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, a target\u00e2\u20ac\u2122s hit points increase by an additional 5 for each slot level above 2nd.",
-  "name": "Aid",
+  "components": "V, S, M (a tiny strip of white cloth)",
+  "ritual": false,
+  "effect": "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.\n\n**At Higher Levels.** When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.",
+  "range": "30 feet",
+  "school": "Abjuration",
   "class": [
     "Cleric",
     "Paladin"
   ],
-  "duration": "8 hours",
-  "page": "phb 211",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "30 feet",
-  "components": "V, S, M (a tiny strip of white cloth)",
+  "page": "phb 211",
+  "duration": "8 hours",
   "level": 2,
-  "ritual": false,
-  "school": "Abjuration"
+  "name": "Aid",
+  "casting_time": "1 action"
 }

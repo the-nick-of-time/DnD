@@ -1,10 +1,12 @@
 import json
 import collections
 import re
+from os.path import abspath
 
 
 class JSONInterface:
     OBJECTSPATH = './tools/objects/'
+    # OBJECTSPATH = abspath('.') + '/tools/objects/'
     # TODO: Add functionality to merge two objects or access them in parallel
 
     def __init__(self, filename, PREFIX=''):
@@ -117,10 +119,30 @@ class LinkedInterface:
 
     def get(self, path):
         s = path.split('/')
-        filename = s[0] if s[0] else s[1]
+        filename, remaining = (s[0], s[1:]) if s[0] else (s[1], s[2:])
+        remaining = '/'.join(remaining)
         if (filename in self.searchpath):
-            return self.searchpath[filename]._get(path[len(filename):])
+            # find the result in the specified file
+            return self.searchpath[filename]._get(remaining)
+        elif (filename == '*'):
+            # Find all results in all files
+            # Search in more general files then override with more specific
+            first = True
+            for name, iface in self.searchpath.items():
+                found = iface._get(remaining)
+                if (found is not None):
+                    if (first):
+                        rv = found
+                        first = False
+                        if (isinstance(rv, list)):
+                            add = list.extend
+                        elif (isinstance(rv, dict)):
+                            add = dict.update
+                    else:
+                        add(rv, found)
+            return rv
         else:
+            # Find one result in the most specific file you can find it in
             for name, iface in reversed(self.searchpath.items()):
                 rv = iface._get(path)
                 if (rv is not None):
@@ -129,9 +151,10 @@ class LinkedInterface:
 
     def set(self, path, value):
         s = path.split('/')
-        filename = s[0] if s[0] else s[1]
+        filename, remaining = (s[0], s[1:]) if s[0] else (s[1], s[2:])
+        remaining = '/'.join(remaining)
         if (filename in self.searchpath):
-            return self.searchpath[filename]._set(path[len(filename):])
+            return self.searchpath[filename]._set(remaining, value)
         else:
             for name, iface in reversed(self.searchpath.items()):
                 rv = iface._set(path, value)

@@ -1,17 +1,17 @@
 {
-  "description": "",
-  "name": "Continual Flame",
+  "components": "VSMgp",
+  "ritual": false,
+  "effect": "A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn't use oxygen. A *continual flame* can be covered or hidden but not smothered or quenched.",
+  "range": "Touch",
+  "school": "Evocation",
   "class": [
     "Cleric",
     "Wizard"
   ],
-  "duration": "Until dispelled",
-  "page": "phb 227",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Touch",
-  "components": "VSMgp",
+  "page": "phb 227",
+  "duration": "Until dispelled",
   "level": 2,
-  "ritual": false,
-  "school": "Evocation"
+  "name": "Continual Flame",
+  "casting_time": "1 action"
 }

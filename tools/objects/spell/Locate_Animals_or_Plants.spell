@@ -1,18 +1,18 @@
 {
-  "description": "",
-  "name": "Locate Animals or Plants",
+  "components": "VSM",
+  "ritual": true,
+  "effect": "Describe or name a specific kind of beast or plant. Concentrating on the voice of nature in your surroundings, you learn the direction and distance to the closest creature or plant of that kind within 5 miles, if any are present.\n",
+  "range": "Self",
+  "school": "Divination",
   "class": [
     "Ranger",
     "Druid",
     "Bard"
   ],
-  "duration": "Instantaneous",
-  "page": "phb 256",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Self",
-  "components": "VSM",
+  "page": "phb 256",
+  "duration": "Instantaneous",
   "level": 2,
-  "ritual": true,
-  "school": "Divination"
+  "name": "Locate Animals or Plants",
+  "casting_time": "1 action"
 }

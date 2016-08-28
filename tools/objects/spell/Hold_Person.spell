@@ -1,6 +1,9 @@
 {
-  "description": "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target. At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, you can target one additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them.",
-  "name": "Hold Person",
+  "components": "V, S, M (a small, straight piece of iron)",
+  "ritual": false,
+  "effect": "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target. \n\n**At Higher Levels.** When you cast this spell using a spell slot of 3rd level or higher, you can target one additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them.\n",
+  "range": "60 feet",
+  "school": "Enchantment",
   "class": [
     "Cleric",
     "Sorcerer",
@@ -9,13 +12,10 @@
     "Druid",
     "Bard"
   ],
-  "duration": "up to 1 minute",
-  "page": "phb 251",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "60 feet",
-  "components": "V, S, M (a small, straight piece of iron)",
+  "page": "phb 251",
+  "duration": "up to 1 minute",
   "level": 2,
-  "ritual": false,
-  "school": "Enchantment"
+  "name": "Hold Person",
+  "casting_time": "1 action"
 }

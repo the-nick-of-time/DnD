@@ -3,5 +3,6 @@
   "value": 1,
   "weight": 1,
   "consumable": false,
+  "description": "This cylindrical case keeps papers safe and dry.",
   "effect": "This cylindrical case keeps papers safe and dry."
 }

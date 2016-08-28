@@ -1,18 +1,18 @@
 {
-  "description": "You or a creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target\u00e2\u20ac\u2122s person.",
-  "name": "Greater Invisibility",
+  "components": "V, S",
+  "ritual": false,
+  "effect": "You or a creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person.\n",
+  "range": "Touch",
+  "school": "Illusion",
   "class": [
     "Sorcerer",
     "Wizard",
     "Bard"
   ],
-  "duration": "up to 1 minute",
-  "page": "phb 246",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "Touch",
-  "components": "V, S",
+  "page": "phb 246",
+  "duration": "up to 1 minute",
   "level": 4,
-  "ritual": false,
-  "school": "Illusion"
+  "name": "Greater Invisibility",
+  "casting_time": "1 action"
 }

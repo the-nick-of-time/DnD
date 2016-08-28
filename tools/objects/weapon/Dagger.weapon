@@ -9,5 +9,7 @@
   ],
   "type": "Simple",
   "value": 2,
-  "weight": 1
+  "weight": 1,
+  "description": "This thin-bladed knife is meant to stab deeply.",
+  "effect": "You can cause a lot of damage with a well-placed dagger."
 }

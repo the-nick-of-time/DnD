@@ -3,5 +3,6 @@
   "value": 5,
   "weight": 3,
   "consumable": false,
-  "effect": "You can use this kit to craft potions of healing and antitoxin."
+  "description": "This bag contains measuring and mixing devices capable of creating potent mixtures.",
+  "effect": "You craft a potion of healing or a dose of antitoxin using materials worth half the base price."
 }

@@ -1,19 +1,19 @@
 {
-  "description": "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn\u00e2\u20ac\u2122t pushed. In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell\u00e2\u20ac\u2122s effect, and the spell emits a thunderous boom audible out to 300 feet. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
-  "name": "Thunderwave",
+  "components": "V, S",
+  "ritual": false,
+  "effect": "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed. In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet.\n\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+  "range": "Self (15-foot cube)",
+  "school": "Evocation",
   "class": [
     "Sorcerer",
     "Wizard",
     "Druid",
     "Bard"
   ],
-  "duration": "Instantaneous",
-  "page": "phb 282",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Self (15-foot cube)",
-  "components": "V, S",
+  "page": "phb 282",
+  "duration": "Instantaneous",
   "level": 1,
-  "ritual": false,
-  "school": "Evocation"
+  "name": "Thunderwave",
+  "casting_time": "1 action"
 }

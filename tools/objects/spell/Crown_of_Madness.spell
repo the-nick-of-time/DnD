@@ -1,19 +1,19 @@
 {
-  "description": "",
-  "name": "Crown of Madness",
+  "components": "VS",
+  "ritual": false,
+  "effect": "One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become charmed by you for the duration. While the target is charmed in this way, a twisted crown of jagged iron appears on its head, and a madness glows in its eyes. The charmed target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose.\n",
+  "range": "120 feet",
+  "school": "Enchantment",
   "class": [
     "Sorcerer",
     "Warlock",
     "Wizard",
     "Bard"
   ],
-  "duration": "up to 1 minute",
-  "page": "phb 229",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "120 feet",
-  "components": "VS",
+  "page": "phb 229",
+  "duration": "up to 1 minute",
   "level": 2,
-  "ritual": false,
-  "school": "Enchantment"
+  "name": "Crown of Madness",
+  "casting_time": "1 action"
 }

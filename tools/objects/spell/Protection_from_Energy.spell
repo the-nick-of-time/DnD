@@ -1,6 +1,9 @@
 {
-  "description": "For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or thunder.",
-  "name": "Protection from Energy",
+  "components": "V, S",
+  "ritual": false,
+  "effect": "For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or thunder.\n",
+  "range": "Touch",
+  "school": "Abjuration",
   "class": [
     "Cleric",
     "Sorcerer",
@@ -8,13 +11,10 @@
     "Wizard",
     "Druid"
   ],
-  "duration": "up to 1 hour",
-  "page": "phb 270",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "Touch",
-  "components": "V, S",
+  "page": "phb 270",
+  "duration": "up to 1 hour",
   "level": 3,
-  "ritual": false,
-  "school": "Abjuration"
+  "name": "Protection from Energy",
+  "casting_time": "1 action"
 }

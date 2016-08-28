@@ -1,18 +1,18 @@
 {
-  "description": "",
-  "name": "Nondetection",
+  "components": "VSMgp",
+  "ritual": false,
+  "effect": "For the duration, you hide a target that you touch from divination magic. The target can be a willing creature or a place or an object no larger than 10 feet in any dimension. The target can't be targeted by any divination magic or perceived through magical scrying sensors.\n",
+  "range": "Touch",
+  "school": "Abjuration",
   "class": [
     "Ranger",
     "Wizard",
     "Bard"
   ],
-  "duration": "8 hours",
-  "page": "phb 263",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Touch",
-  "components": "VSMgp",
+  "page": "phb 263",
+  "duration": "8 hours",
   "level": 3,
-  "ritual": false,
-  "school": "Abjuration"
+  "name": "Nondetection",
+  "casting_time": "1 action"
 }

@@ -1,19 +1,19 @@
 {
-  "description": "",
-  "name": "Create Bonfire",
+  "components": "VS",
+  "ritual": false,
+  "effect": "You create a bonfire on ground that you can see within range. Until the spell ends, the bonfire fills a 5-foot cube. Any creature in the bonfire's space when you cast the spell must succeed on a Dexterity saving throw or take 1d8 fire damage. A creature must also make the saving throw when it enters the bonfire's space for the first time on a turn or ends its turn there.\n\nThe spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).\n",
+  "range": "60 feet",
+  "school": "Conjuration",
   "class": [
     "Sorcerer",
     "Warlock",
     "Wizard",
     "Druid"
   ],
-  "duration": "1 minute",
-  "page": "ee 16",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "60 feet",
-  "components": "VS",
+  "page": "ee 16",
+  "duration": "1 minute",
   "level": 0,
-  "ritual": false,
-  "school": "Conjuration"
+  "name": "Create Bonfire",
+  "casting_time": "1 action"
 }

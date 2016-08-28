@@ -1,0 +1,18 @@
+{
+  "components": "VSMgp",
+  "ritual": false,
+  "effect": "You create a sword-shaped plane of force that hovers within range. It lasts for the duration.\n\nWhen the sword appears, you make a melee spell attack against a target of your choice within 5 feet of the sword. On a hit, the target takes 3d10 force damage. Until the spell ends, you can use a bonus action on each of your turns to move the sword up to 20 feet to a spot you can see and repeat this attack against the same target or a different one.\n",
+  "range": "60 feet",
+  "srd_name": "Arcane Sword",
+  "class": [
+    "Wizard",
+    "Bard"
+  ],
+  "school": "Evocation",
+  "concentration": true,
+  "page": "phb 262",
+  "duration": "up to 1 minute",
+  "level": 7,
+  "name": "Mordenkainen's Sword",
+  "casting_time": "1 action"
+}

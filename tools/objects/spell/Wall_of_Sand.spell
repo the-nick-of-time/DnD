@@ -1,16 +1,16 @@
 {
-  "description": "",
-  "name": "Wall of Sand",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "You conjure up a wall of swirling sand on the ground at a point you can see within range. You can make the wall up to 30 feet long, 10 feet high, and 10 feet thick, and it vanishes when the spell ends. It blocks line of sight but not movement. A creature is blinded while in the wall's space and must spend 3 feet of movement for every 1 foot it moves there.\n",
+  "range": "90 feet",
+  "school": "Evocation",
   "class": [
     "Wizard"
   ],
-  "duration": "10 minutes",
-  "page": "ee 23",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "90 feet",
-  "components": "VSM",
+  "page": "ee 23",
+  "duration": "10 minutes",
   "level": 3,
-  "ritual": false,
-  "school": "Evocation"
+  "name": "Wall of Sand",
+  "casting_time": "1 action"
 }

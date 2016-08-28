@@ -1,18 +1,18 @@
 {
-  "description": "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st.",
-  "name": "Healing Word",
+  "components": "V",
+  "ritual": false,
+  "effect": "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.\n\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st.",
+  "range": "60 feet",
+  "school": "Evocation",
   "class": [
     "Cleric",
     "Druid",
     "Bard"
   ],
-  "duration": "Instantaneous",
-  "page": "phb 250",
-  "casting_time": "1 bonus action",
   "concentration": false,
-  "range": "60 feet",
-  "components": "V",
+  "page": "phb 250",
+  "duration": "Instantaneous",
   "level": 1,
-  "ritual": false,
-  "school": "Evocation"
+  "name": "Healing Word",
+  "casting_time": "1 bonus action"
 }

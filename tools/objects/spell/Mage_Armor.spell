@@ -1,17 +1,17 @@
 {
-  "description": "You touch a willing creature who isn\u00e2\u20ac\u2122t wearing armor, and a protective magical force surrounds it until the spell ends. The target\u00e2\u20ac\u2122s base AC becomes 13 + its Dexterity modifier. The spell ends if the target dons armor or if you dismiss the spell as an action.",
-  "name": "Mage Armor",
+  "components": "V, S, M (a piece of cured leather)",
+  "ritual": false,
+  "effect": "You touch a willing creature who isn't wearing armor, and a protective magical force surrounds it until the spell ends. The target's base AC becomes 13 + its Dexterity modifier. The spell ends if the target dons armor or if you dismiss the spell as an action.",
+  "range": "Touch",
+  "school": "Abjuration",
   "class": [
     "Sorcerer",
     "Wizard"
   ],
-  "duration": "8 hours",
-  "page": "phb 256",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Touch",
-  "components": "V, S, M (a piece of cured leather)",
+  "page": "phb 256",
+  "duration": "8 hours",
   "level": 1,
-  "ritual": false,
-  "school": "Abjuration"
+  "name": "Mage Armor",
+  "casting_time": "1 action"
 }

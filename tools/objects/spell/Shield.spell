@@ -1,17 +1,17 @@
 {
-  "description": "An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.",
-  "name": "Shield",
+  "components": "V, S",
+  "ritual": false,
+  "effect": "An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.",
+  "range": "Self",
+  "school": "Abjuration",
   "class": [
     "Sorcerer",
     "Wizard"
   ],
-  "duration": "1 round",
-  "page": "phb 275",
-  "casting_time": "1 reaction",
   "concentration": false,
-  "range": "Self",
-  "components": "V, S",
+  "page": "phb 275",
+  "duration": "1 round",
   "level": 1,
-  "ritual": false,
-  "school": "Abjuration"
+  "name": "Shield",
+  "casting_time": "1 reaction"
 }

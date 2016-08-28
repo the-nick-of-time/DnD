@@ -1,18 +1,18 @@
 {
-  "description": "",
-  "name": "Feather Fall",
+  "components": "VM",
+  "ritual": false,
+  "effect": "Choose up to five falling creatures within range. A falling creature's rate of descent slows to 60 feet per round until the spell ends. If the creature lands before the spell ends, it takes no falling damage and can land on its feet, and the spell ends for that creature.",
+  "range": "60 feet",
+  "school": "Transmutation",
   "class": [
     "Sorcerer",
     "Wizard",
     "Bard"
   ],
-  "duration": "1 minute",
-  "page": "phb 239",
-  "casting_time": "1 reaction",
   "concentration": false,
-  "range": "60 feet",
-  "components": "VM",
+  "page": "phb 239",
+  "duration": "1 minute",
   "level": 1,
-  "ritual": false,
-  "school": "Transmutation"
+  "name": "Feather Fall",
+  "casting_time": "1 reaction"
 }

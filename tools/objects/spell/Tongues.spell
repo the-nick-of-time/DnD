@@ -1,6 +1,9 @@
 {
-  "description": "",
-  "name": "Tongues",
+  "components": "VM",
+  "ritual": false,
+  "effect": "This spell grants the creature you touch the ability to understand any spoken language it hears. Moreover, when the target speaks, any creature that knows at least one language and can hear the target understands what it says.\n",
+  "range": "Touch",
+  "school": "Divination",
   "class": [
     "Cleric",
     "Sorcerer",
@@ -8,13 +11,10 @@
     "Wizard",
     "Bard"
   ],
-  "duration": "1 hour",
-  "page": "phb 283",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Touch",
-  "components": "VM",
+  "page": "phb 283",
+  "duration": "1 hour",
   "level": 3,
-  "ritual": false,
-  "school": "Divination"
+  "name": "Tongues",
+  "casting_time": "1 action"
 }

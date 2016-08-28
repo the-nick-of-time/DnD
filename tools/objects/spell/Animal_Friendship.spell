@@ -1,18 +1,18 @@
 {
-  "description": "",
-  "name": "Animal Friendship",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the spell's duration. If you or one of your companions harms the target, the spell ends.\n\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional beast for each slot level above 1st.\n",
+  "range": "30 feet",
+  "school": "Enchantment",
   "class": [
     "Ranger",
     "Druid",
     "Bard"
   ],
-  "duration": "24 hours",
-  "page": "phb 212",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "30 feet",
-  "components": "VSM",
+  "page": "phb 212",
+  "duration": "24 hours",
   "level": 1,
-  "ritual": false,
-  "school": "Enchantment"
+  "name": "Animal Friendship",
+  "casting_time": "1 action"
 }

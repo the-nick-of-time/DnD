@@ -1,16 +1,16 @@
 {
-  "description": "",
-  "name": "Grease",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "Slick grease covers the ground in a 10-foot square centered on a point within range and turns it into difficult terrain for the duration.\n\nWhen the grease appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw or fall prone.",
+  "range": "60 feet",
+  "school": "Conjuration",
   "class": [
     "Wizard"
   ],
-  "duration": "1 minute",
-  "page": "phb 246",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "60 feet",
-  "components": "VSM",
+  "page": "phb 246",
+  "duration": "1 minute",
   "level": 1,
-  "ritual": false,
-  "school": "Conjuration"
+  "name": "Grease",
+  "casting_time": "1 action"
 }

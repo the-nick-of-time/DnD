@@ -1,19 +1,19 @@
 {
-  "description": "You touch a willing creature. For the duration, the target\u00e2\u20ac\u2122s movement is unaffected by difficult terrain, and spells and other magical effects can neither reduce the target\u00e2\u20ac\u2122s speed nor cause the target to be paralyzed or restrained. The target can also spend 5 feet of movement to automatically escape from nonmagical restraints, such as manacles or a creature that has it grappled. Finally, being underwater imposes no penalties on the target\u00e2\u20ac\u2122s movement or attacks.",
-  "name": "Freedom of Movement",
+  "components": "V, S, M (a leather strap, bound around the arm or a similar appendage)",
+  "ritual": false,
+  "effect": "You touch a willing creature. For the duration, the target's movement is unaffected by difficult terrain, and spells and other magical effects can neither reduce the target's speed nor cause the target to be paralyzed or restrained.\n\nThe target can also spend 5 feet of movement to automatically escape from nonmagical restraints, such as manacles or a creature that has it grappled. Finally, being underwater imposes no penalties on the target's movement or attacks.",
+  "range": "Touch",
+  "school": "Abjuration",
   "class": [
     "Cleric",
     "Ranger",
     "Druid",
     "Bard"
   ],
-  "duration": "1 hour",
-  "page": "phb 244",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Touch",
-  "components": "V, S, M (a leather strap, bound around the arm or a similar appendage)",
+  "page": "phb 244",
+  "duration": "1 hour",
   "level": 4,
-  "ritual": false,
-  "school": "Abjuration"
+  "name": "Freedom of Movement",
+  "casting_time": "1 action"
 }

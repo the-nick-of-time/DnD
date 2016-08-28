@@ -1,0 +1,17 @@
+{
+  "components": "VSM",
+  "ritual": true,
+  "effect": "You forge a telepathic link among up to eight willing creatures o f your choice within range, psychically linking each creature to all the others for the duration. Creatures with Intelligence scores o f 2 or less aren't affected by this spell.\n\nUntil the spell ends, the targets can communicate telepathically through the bond whether or not they have a common language. The communication is possible over any distance, though it can't extend to other planes of existence.\n",
+  "range": "30 feet",
+  "srd_name": "Telepathic Bond",
+  "class": [
+    "Wizard"
+  ],
+  "school": "Divination",
+  "concentration": false,
+  "page": "phb 270",
+  "duration": "1 hour",
+  "level": 5,
+  "name": "Rary's Telepathic Bond",
+  "casting_time": "1 action"
+}

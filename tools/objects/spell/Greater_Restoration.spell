@@ -1,18 +1,18 @@
 {
-  "description": "You imbue a creature you touch with positive energy to undo a debilitating effect. You can reduce the target\u00e2\u20ac\u2122s exhaustion level by one, or end one of the following effects on the target: \u00e2\u20ac\u00a2   One effect that charmed or petrified the target \u00e2\u20ac\u00a2   One curse, including the target\u00e2\u20ac\u2122s attunement to a cursed magic item \u00e2\u20ac\u00a2   Any reduction to one of the target\u00e2\u20ac\u2122s ability scores \u00e2\u20ac\u00a2   One effect reducing the target\u00e2\u20ac\u2122s hit point maximum",
-  "name": "Greater Restoration",
+  "components": "V, S, M (diamond dust worth at least 100 gp, which the spell consumes)",
+  "ritual": false,
+  "effect": "You imbue a creature you touch with positive energy to undo a debilitating effect. You can reduce the target's exhaustion level by one, or end one of the following effects on the target:\n\n* One effect that charmed or petrified the target\n\n* One curse, including the target's attunement to a cursed magic item\n\n* Any reduction to one of the target's ability scores\n\n* One effect reducing the target's hit point maximum\n",
+  "range": "Touch",
+  "school": "Abjuration",
   "class": [
     "Cleric",
     "Druid",
     "Bard"
   ],
-  "duration": "Instantaneous",
-  "page": "phb 246",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Touch",
-  "components": "V, S, M (diamond dust worth at least 100 gp, which the spell consumes)",
+  "page": "phb 246",
+  "duration": "Instantaneous",
   "level": 5,
-  "ritual": false,
-  "school": "Abjuration"
+  "name": "Greater Restoration",
+  "casting_time": "1 action"
 }

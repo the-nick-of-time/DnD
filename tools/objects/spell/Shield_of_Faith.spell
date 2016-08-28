@@ -1,17 +1,17 @@
 {
-  "description": "A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
-  "name": "Shield of Faith",
+  "components": "V, S, M (a small parchment with a bit of holy text written on it)",
+  "ritual": false,
+  "effect": "A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.\n",
+  "range": "60 feet",
+  "school": "Abjuration",
   "class": [
     "Cleric",
     "Paladin"
   ],
-  "duration": "up to 10 minutes",
-  "page": "phb 275",
-  "casting_time": "1 bonus action",
   "concentration": true,
-  "range": "60 feet",
-  "components": "V, S, M (a small parchment with a bit of holy text written on it)",
+  "page": "phb 275",
+  "duration": "up to 10 minutes",
   "level": 1,
-  "ritual": false,
-  "school": "Abjuration"
+  "name": "Shield of Faith",
+  "casting_time": "1 bonus action"
 }

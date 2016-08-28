@@ -1,19 +1,19 @@
 {
-  "description": "",
-  "name": "Feeblemind",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "You blast the mind of a creature that you can see within range, attempting to shatter its intellect and personality. The target takes 4d6 psychic damage and must make an Intelligence saving throw.\n\nOn a failed save, the creature's Intelligence and Charisma scores become 1. The creature can't cast spells, activate magic items, understand language, or communicate in any intelligible way. The creature can, however, identify its friends, follow them, and even protect them.\n\nAt the end of every 30 days, the creature can repeat its saving throw against this spell. If it succeeds on its saving throw, the spell ends.\n\nThe spell can also be ended by _[greater restoration](../greater-restoration/ \"greater restoration (lvl 5)\")_, _[heal](../heal/ \"heal (lvl 6)\")_, or _[wish](../wish/ \"wish (lvl 9)\")_.\n",
+  "range": "150 feet",
+  "school": "Enchantment",
   "class": [
     "Warlock",
     "Wizard",
     "Druid",
     "Bard"
   ],
-  "duration": "Instantaneous",
-  "page": "phb 239",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "150 feet",
-  "components": "VSM",
+  "page": "phb 239",
+  "duration": "Instantaneous",
   "level": 8,
-  "ritual": false,
-  "school": "Enchantment"
+  "name": "Feeblemind",
+  "casting_time": "1 action"
 }

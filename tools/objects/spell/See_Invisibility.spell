@@ -1,18 +1,18 @@
 {
-  "description": "",
-  "name": "See Invisibility",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "For the duration, you see invisible creatures and objects as if they were visible, and you can see into the Ethereal Plane. Ethereal creatures and objects appear ghostly and translucent.\n",
+  "range": "Self",
+  "school": "Divination",
   "class": [
     "Sorcerer",
     "Wizard",
     "Bard"
   ],
-  "duration": "1 hour",
-  "page": "phb 274",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Self",
-  "components": "VSM",
+  "page": "phb 274",
+  "duration": "1 hour",
   "level": 2,
-  "ritual": false,
-  "school": "Divination"
+  "name": "See Invisibility",
+  "casting_time": "1 action"
 }

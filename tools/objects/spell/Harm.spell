@@ -1,16 +1,16 @@
 {
-  "description": "You unleash a virulent disease on a creature that you can see within range. The target must make a Constitution saving throw. On a failed save, it takes 14d6 necrotic damage, or half as much damage on a successful save. The damage can\u00e2\u20ac\u2122t reduce the target\u00e2\u20ac\u2122s hit points below 1. If the target fails the saving throw, its hit point maximum is reduced for 1 hour by an amount equal to the necrotic damage it took. Any effect that removes a disease allows a creature\u00e2\u20ac\u2122s hit point maximum to return to normal before that time passes.",
-  "name": "Harm",
+  "components": "V, S",
+  "ritual": false,
+  "effect": "You unleash a virulent disease on a creature that you can see within range. The target must make a Constitution saving throw. On a failed save, it takes 14d6 necrotic damage, or half as much damage on a successful save. The damage can't reduce the target's hit points below 1. If the target fails the saving throw, its hit point maximum is reduced for 1 hour by an amount equal to the necrotic damage it took. Any effect that removes a disease allows a creature's hit point maximum to return to normal before that time passes.\n",
+  "range": "60 feet",
+  "school": "Necromancy",
   "class": [
     "Cleric"
   ],
-  "duration": "Instantaneous",
-  "page": "phb 249",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "60 feet",
-  "components": "V, S",
+  "page": "phb 249",
+  "duration": "Instantaneous",
   "level": 6,
-  "ritual": false,
-  "school": "Necromancy"
+  "name": "Harm",
+  "casting_time": "1 action"
 }

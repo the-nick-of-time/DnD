@@ -1,18 +1,18 @@
 {
-  "description": "This spell sends creatures into a magical slumber. Roll 5d8; the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures). Starting with the creature that has the lowest current hit points, each creature affected by this spell falls unconscious until the spell ends, the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake. Subtract each creature\u00e2\u20ac\u2122s hit points from the total before moving on to the creature with the next lowest hit points. A creature\u00e2\u20ac\u2122s hit points must be equal to or less than the remaining total for that creature to be affected. Undead and creatures immune to being charmed aren\u00e2\u20ac\u2122t affected by this spell. At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level above 1st.",
-  "name": "Sleep",
+  "components": "V, S, M (a pinch of fine sand, rose petals, or a cricket)",
+  "ritual": false,
+  "effect": "This spell sends creatures into a magical slumber. Roll 5d8; the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures).\n\nStarting with the creature that has the lowest current hit points, each creature affected by this spell falls unconscious until the spell ends, the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected.\n\nUndead and creatures immune to being charmed aren't affected by this spell.\n\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level above 1st.\n",
+  "range": "90 feet",
+  "school": "Enchantment",
   "class": [
     "Sorcerer",
     "Wizard",
     "Bard"
   ],
-  "duration": "1 minute",
-  "page": "phb 276",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "90 feet",
-  "components": "V, S, M (a pinch of fine sand, rose petals, or a cricket)",
+  "page": "phb 276",
+  "duration": "1 minute",
   "level": 1,
-  "ritual": false,
-  "school": "Enchantment"
+  "name": "Sleep",
+  "casting_time": "1 action"
 }

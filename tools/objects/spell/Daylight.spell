@@ -1,6 +1,9 @@
 {
-  "description": "",
-  "name": "Daylight",
+  "components": "VS",
+  "ritual": false,
+  "effect": "A 60-foot-radius sphere of light spreads out from a point you choose within range. The sphere is bright light and sheds dim light for an additional 60 feet.\n\nIf you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light.\n\nIf any of this spell's area overlaps with an area of darkness created by a spell of 3rd level or lower, the spell that created the darkness is dispelled.\n",
+  "range": "60 feet",
+  "school": "Evocation",
   "class": [
     "Cleric",
     "Sorcerer",
@@ -8,13 +11,10 @@
     "Paladin",
     "Druid"
   ],
-  "duration": "1 hour",
-  "page": "phb 230",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "60 feet",
-  "components": "VS",
+  "page": "phb 230",
+  "duration": "1 hour",
   "level": 3,
-  "ritual": false,
-  "school": "Evocation"
+  "name": "Daylight",
+  "casting_time": "1 action"
 }

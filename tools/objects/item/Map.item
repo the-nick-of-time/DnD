@@ -3,5 +3,6 @@
   "value": 1,
   "weight": 0.01,
   "consumable": false,
+  "description": "This map shows the surrounding countryside.",
   "effect": "This map shows the surrounding countryside."
 }

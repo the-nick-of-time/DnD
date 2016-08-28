@@ -3,5 +3,6 @@
   "consumable": true,
   "weight": 2,
   "value": 0.5,
+  "description": "These rations are enough food to sustain you for a hard day's work.",
   "effect": "These rations are enough food to sustain you for a hard day's work."
 }

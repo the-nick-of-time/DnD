@@ -1,17 +1,17 @@
 {
-  "description": "",
-  "name": "Barkskin",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "You touch a willing creature. Until the spell ends, the target's skin has a rough, bark-like appearance, and the target's AC can't be less than 16, regardless of what kind of armor it is wearing.\n",
+  "range": "Touch",
+  "school": "Transmutation",
   "class": [
     "Ranger",
     "Druid"
   ],
-  "duration": "up to 1 hour",
-  "page": "phb 217",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "Touch",
-  "components": "VSM",
+  "page": "phb 217",
+  "duration": "up to 1 hour",
   "level": 2,
-  "ritual": false,
-  "school": "Transmutation"
+  "name": "Barkskin",
+  "casting_time": "1 action"
 }

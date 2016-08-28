@@ -3,5 +3,6 @@
   "consumable": true,
   "value": 0.1,
   "weight": 1,
-  "effect": "In a lamp or lantern, this oil burns for 6 hours."
+  "description": "This simple clay flask is full of oil.",
+  "effect": "In a lamp or lantern, this oil burns for 6 hours. Alternately, it can be poured on the ground to create a 5-foot square of oil that can be lit to deal 5 fire damage to any creature that enters or starts its turn in the fire. Once lit, it burns for two rounds."
 }

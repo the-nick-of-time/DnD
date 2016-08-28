@@ -1,18 +1,18 @@
 {
-  "description": "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space that you can see.",
-  "name": "Misty Step",
+  "components": "V",
+  "ritual": false,
+  "effect": "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space that you can see.\n",
+  "range": "Self",
+  "school": "Conjuration",
   "class": [
     "Sorcerer",
     "Warlock",
     "Wizard"
   ],
-  "duration": "Instantaneous",
-  "page": "phb 260",
-  "casting_time": "1 bonus action",
   "concentration": false,
-  "range": "Self",
-  "components": "V",
+  "page": "phb 260",
+  "duration": "Instantaneous",
   "level": 2,
-  "ritual": false,
-  "school": "Conjuration"
+  "name": "Misty Step",
+  "casting_time": "1 bonus action"
 }

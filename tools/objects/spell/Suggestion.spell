@@ -1,19 +1,19 @@
 {
-  "description": "You suggest a course of activity (limited to a sentence or two) and magically influence a creature you can see within range that can hear and understand you. Creatures that can\u00e2\u20ac\u2122t be charmed are immune to this effect. The suggestion must be worded in such a manner as to make the course of action sound reasonable. Asking the creature to stab itself, throw itself onto a spear, immolate itself, or do some other obviously harmful act ends the spell. The target must make a Wisdom saving throw. On a failed save, it pursues the course of action you described to the best of its ability. The suggested course of action can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do. You can also specify conditions that will trigger a special activity during the duration. For example, you might suggest that a knight give her warhorse to the first beggar she meets. If the condition isn\u00e2\u20ac\u2122t met before the spell expires, the activity isn\u00e2\u20ac\u2122t performed. If you or any of your companions damage the target, the spell ends.",
-  "name": "Suggestion",
+  "components": "V, M (a snake\u00e2\u20ac\u2122s tongue and either a bit of honeycomb or a drop of sweet oil)",
+  "ritual": false,
+  "effect": "You suggest a course of activity (limited to a sentence or two) and magically influence a creature you can see within range that can hear and understand you. Creatures that can't be charmed are immune to this effect. The suggestion must be worded in such a manner as to make the course of action sound reasonable. Asking the creature to stab itself, throw itself onto a spear, immolate itself, or do some other obviously harmful act ends the spell.\n\nThe target must make a Wisdom saving throw. On a failed save, it pursues the course of action you described to the best of its ability. The suggested course of action can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do.\n\nYou can also specify conditions that will trigger a special activity during the duration. For example, you might suggest that a knight give her warhorse to the first beggar she meets. If the condition isn't met before the spell expires, the activity isn't performed.\n\nIf you or any of your companions damage the target, the spell ends.\n",
+  "range": "30 feet",
+  "school": "Enchantment",
   "class": [
     "Sorcerer",
     "Warlock",
     "Wizard",
     "Bard"
   ],
-  "duration": "up to 8 hours",
-  "page": "phb 279",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "30 feet",
-  "components": "V, M (a snake\u00e2\u20ac\u2122s tongue and either a bit of honeycomb or a drop of sweet oil)",
+  "page": "phb 279",
+  "duration": "up to 8 hours",
   "level": 2,
-  "ritual": false,
-  "school": "Enchantment"
+  "name": "Suggestion",
+  "casting_time": "1 action"
 }

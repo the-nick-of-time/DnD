@@ -1,7 +1,8 @@
 {
   "name": "Throwing Knife",
   "damage": "1d4",
-  "effect": "This knife is specially weighted for throwing.",
+  "effect": "The knife flies from your hand, spinning towards your target.",
+  "description": "This knife is specially weighted for throwing.",
   "attacks": 1,
   "type": "Piercing",
   "hands": "one",

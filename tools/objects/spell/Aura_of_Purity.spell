@@ -1,16 +1,16 @@
 {
-  "description": "",
-  "name": "Aura of Purity",
+  "components": "V",
+  "ritual": false,
+  "effect": "Purifying energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) can't become diseased, has resistance to poison damage, and has advantage on saving throws against affects that cause any of the following conditions: blinded, charmed, deafened, frightened, paralyzed, poisoned and stunned.\n",
+  "range": "Self",
+  "school": "Abjuration",
   "class": [
     "Paladin"
   ],
-  "duration": "up to 10 minutes",
-  "page": "phb 216",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "Self",
-  "components": "V",
+  "page": "phb 216",
+  "duration": "up to 10 minutes",
   "level": 4,
-  "ritual": false,
-  "school": "Abjuration"
+  "name": "Aura of Purity",
+  "casting_time": "1 action"
 }

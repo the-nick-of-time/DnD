@@ -8,17 +8,20 @@ def modifier(score):
 def shorten(effect):
     """Takes an effects string and returns the first sentence."""
     if (effect):
-        return re.match('^.*?\.', effect).group()
+        match = re.match('^.*?[\.\n]', effect)
+        if (match is not None):
+            return match.group()
+        return ""
     else:
         return ""
 
 
 def clean(name):
-    return name.replace(' ', '_').replace('\'', '-').replace('/', '&')
+    return name.replace(' ', '_').replace('\'', '@').replace('/', '&')
 
 
 def unclean(name):
-    return name.replace('_', ' ').replace('-', '\'')
+    return name.replace('_', ' ').replace('@', '\'').replace('&', '/')
 
 
 def pull_from(*args):

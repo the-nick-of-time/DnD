@@ -1,17 +1,17 @@
 {
-  "description": "",
-  "name": "Gentle Repose",
+  "components": "VSM",
+  "ritual": true,
+  "effect": "You touch a corpse or other remains. For the duration, the target is protected from decay and can't become undead.\n\nThe spell also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this spell don't count against the time limit of spells such as *[raise dead](../raise-dead/ \"raise dead (lvl 5)\")*.\n",
+  "range": "Touch",
+  "school": "Necromancy",
   "class": [
     "Cleric",
     "Wizard"
   ],
-  "duration": "10 days",
-  "page": "phb 245",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Touch",
-  "components": "VSM",
+  "page": "phb 245",
+  "duration": "10 days",
   "level": 2,
-  "ritual": true,
-  "school": "Necromancy"
+  "name": "Gentle Repose",
+  "casting_time": "1 action"
 }

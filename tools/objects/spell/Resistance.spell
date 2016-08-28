@@ -1,17 +1,17 @@
 {
-  "description": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after making the saving throw. The spell then ends.",
-  "name": "Resistance",
+  "components": "V, S, M (a miniature cloak)",
+  "ritual": false,
+  "effect": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after making the saving throw. The spell then ends.",
+  "range": "Touch",
+  "school": "Abjuration",
   "class": [
     "Cleric",
     "Druid"
   ],
-  "duration": "up to 1 minute",
-  "page": "phb 272",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "Touch",
-  "components": "V, S, M (a miniature cloak)",
+  "page": "phb 272",
+  "duration": "up to 1 minute",
   "level": 0,
-  "ritual": false,
-  "school": "Abjuration"
+  "name": "Resistance",
+  "casting_time": "1 action"
 }

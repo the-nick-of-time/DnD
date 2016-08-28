@@ -11,5 +11,7 @@
   "weight": 2,
   "ammunition": "arrow",
   "range": 80,
-  "thrown": false
+  "thrown": false,
+  "description": "This bow is about three feet tall when strung.",
+  "effect": "You fire an arrow from the bow."
 }

@@ -1,18 +1,18 @@
 {
-  "description": "This spell allows you to find the shortest, most direct physical route to a specific fixed location that you are familiar with on the same plane of existence. If you name a destination on another plane of existence, a destination that moves (such as a mobile fortress), or a destination that isn\u00e2\u20ac\u2122t specific (such as \"a green dragon\u00e2\u20ac\u2122s lair\"), the spell fails. For the duration, as long as you are on the same plane of existence as the destination, you know how far it is and in what direction it lies. While you are traveling there, whenever you are presented with a choice of paths along the way, you automatically determine which path is the shortest and most direct route (but not necessarily the safest route) to the destination. Faerie Fire 1st-level evocation Casting Time: 1 action Range: 60 feet Components: V Duration: Concentration, up to 1 minute Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius. Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can\u00e2\u20ac\u2122t benefit from being invisible.",
-  "name": "Find the Path",
+  "components": "V, S, M (a set of divinatory tools\u00e2\u20ac\u201dsuch as bones, ivory sticks, cards, teeth, or carved runes\u00e2\u20ac\u201d worth 100 gp and an object from the location you wish to find)",
+  "ritual": false,
+  "effect": "This spell allows you to find the shortest, most direct physical route to a specific fixed location that you are familiar with on the same plane of existence. If you name a destination on another plan of existence, a destination that moves (such as a mobile fortress), or a destination that isn't specific (such as \"a green dragon's lair\"), the spell fails.\n\nFor the duration, as long as you are on the same plane of existence as the destination, you know how far it is and in what direction it lies. While you are traveling there, whenever you are presented with a choice of paths along the way, you automatically determine which path is the shortest and most direct route (but not necessarily the safest route) to the destination.\n",
+  "range": "Self",
+  "school": "Divination",
   "class": [
     "Cleric",
     "Druid",
     "Bard"
   ],
-  "duration": "up to 24 hours",
-  "page": "phb 240",
-  "casting_time": "1 minute",
   "concentration": true,
-  "range": "Self",
-  "components": "V, S, M (a set of divinatory tools\u00e2\u20ac\u201dsuch as bones, ivory sticks, cards, teeth, or carved runes\u00e2\u20ac\u201d worth 100 gp and an object from the location you wish to find)",
+  "page": "phb 240",
+  "duration": "up to 24 hours",
   "level": 6,
-  "ritual": false,
-  "school": "Divination"
+  "name": "Find the Path",
+  "casting_time": "1 minute"
 }

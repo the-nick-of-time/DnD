@@ -1,16 +1,16 @@
 {
-  "description": "",
-  "name": "Reincarnate",
+  "components": "VSMgp",
+  "ritual": false,
+  "effect": "You touch a dead humanoid or a piece of a dead humanoid. Provided that the creature has been dead no longer than 10 days, the spell forms a new adult body for it and then calls the soul to enter that body. If the target's soul isn't free or willing to do so, the spell fails.\n\nThe magic fashions a new body for the creature to inhabit, which likely causes the creature's race to change. The DM rolls a d100 and consults the following table to determine what form the creature takes when restored to life, or the DM chooses a form.\n\n|d100|Race|\n\n|--------|---------|\n\n|01-04|Dragonborn|\n\n|05-13|Dwarf, hill|\n\n|14-21|Dwarf, mountain|\n\n|22-25|Elf, dark|\n\n|26-34|Elf, high|\n\n|35-42|Elf, wood|\n\n|43-46|Gnome, forest|\n\n|47-52|Gnome, rock|\n\n|53-56|Half-elf|\n\n|57-60|Half-orc|\n\n|61-68|Halfling, lightfoot|\n\n|69-76|Halfling, stout|\n\n|77-96|Human|\n\n|97-00|Tiefling|\n\nThe reincarnated creature recalls its former life and experiences. It retains the capabilities it had in its original form, except it exchanges its original race for the new one and changes its racial traits accordingly.\n",
+  "range": "Touch",
+  "school": "Transmutation",
   "class": [
     "Druid"
   ],
-  "duration": "Instantaneous",
-  "page": "phb 271",
-  "casting_time": "1 hour",
   "concentration": false,
-  "range": "Touch",
-  "components": "VSMgp",
+  "page": "phb 271",
+  "duration": "Instantaneous",
   "level": 5,
-  "ritual": false,
-  "school": "Transmutation"
+  "name": "Reincarnate",
+  "casting_time": "1 hour"
 }

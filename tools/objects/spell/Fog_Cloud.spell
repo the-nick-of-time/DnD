@@ -1,19 +1,19 @@
 {
-  "description": "",
-  "name": "Fog Cloud",
+  "components": "VS",
+  "ritual": false,
+  "effect": "You create a 20-foot-radius sphere of fog centered on a point within range. The sphere spreads around corners, and its area is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.\n\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, the radius of the fog increases by 20 feet for each slot level above 1st.",
+  "range": "120 feet",
+  "school": "Conjuration",
   "class": [
     "Sorcerer",
     "Ranger",
     "Wizard",
     "Druid"
   ],
-  "duration": "up to 1 hour",
-  "page": "phb 243",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "120 feet",
-  "components": "VS",
+  "page": "phb 243",
+  "duration": "up to 1 hour",
   "level": 1,
-  "ritual": false,
-  "school": "Conjuration"
+  "name": "Fog Cloud",
+  "casting_time": "1 action"
 }

@@ -1853,11 +1853,11 @@
       "Bard"
     ]
   },
-  "Meld into Stone": {
+  "Meld Into Stone": {
     "concentration": false,
     "page": "phb 259",
     "range": "Touch",
-    "name": "Meld into Stone",
+    "name": "Meld Into Stone",
     "components": "VS",
     "ritual": true,
     "duration": "8 hours",
@@ -6085,11 +6085,11 @@
       "Bard"
     ]
   },
-  "Pass without Trace": {
+  "Pass Without Trace": {
     "concentration": true,
     "page": "phb 264",
     "range": "Self",
-    "name": "Pass without Trace",
+    "name": "Pass Without Trace",
     "components": "VSM",
     "ritual": false,
     "duration": "up to 1 hour",

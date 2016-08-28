@@ -3,5 +3,6 @@
   "value": 1,
   "weight": 0.05,
   "consumable": false,
+  "description": "This vial can hold a few milliliters of liquid.",
   "effect": "This vial can hold a few milliliters of liquid."
 }

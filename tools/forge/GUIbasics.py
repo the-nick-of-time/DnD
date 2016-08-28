@@ -52,6 +52,9 @@ class EffectPane(Section, Element):
 
         self.draw()
 
+    def __bool__(self):
+        return bool(self.short or self.long)
+
     def draw(self):
         self.short_display = tk.Label(self.f, text=self.short, width=30,
                                       wraplength=200)

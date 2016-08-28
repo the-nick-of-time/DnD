@@ -1,19 +1,19 @@
 {
-  "description": "",
-  "name": "Darkvision",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "You touch a willing creature to grant it the ability to see in the dark. For the duration, that creature has darkvision out to a range of 60 feet.\n",
+  "range": "Touch",
+  "school": "Transmutation",
   "class": [
     "Sorcerer",
     "Ranger",
     "Wizard",
     "Druid"
   ],
-  "duration": "8 hours",
-  "page": "phb 230",
-  "casting_time": "1 action",
   "concentration": false,
-  "range": "Touch",
-  "components": "VSM",
+  "page": "phb 230",
+  "duration": "8 hours",
   "level": 2,
-  "ritual": false,
-  "school": "Transmutation"
+  "name": "Darkvision",
+  "casting_time": "1 action"
 }

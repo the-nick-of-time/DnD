@@ -3,5 +3,6 @@
   "consumable": true,
   "weight": 0,
   "value": 0.01,
+  "description": "This small tallow candle is about the simplest light source you can get.",
   "effect": "For 1 hour, a candle sheds bright light in a 5-foot radius and dim light for another 5 feet."
 }

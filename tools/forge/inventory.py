@@ -180,12 +180,15 @@ class ItemDisplay(gui.Element, gui.Section):
                                    command=lambda: self.num(1))
         self.decrement = tk.Button(self.numcontainer, text='-',
                                    command=lambda: self.num(-1))
+        self.useB = tk.Button(self.numcontainer, text='Use', command=self.use)
 
         self.make()
 
         if (self.isReal):
             e = self.details.get('/effect')
-            self.dispeffect = gui.EffectPane(self.f, h.shorten(e), e)
+            self.effect = gui.EffectPane(self.f, h.shorten(e), e)
+            d = self.details.get('/description')
+            self.description = gui.EffectPane(self.f, h.shorten(d), d)
             self.numbers = tk.Frame(self.f)
             self.weight = tk.Label(self.numbers,
                                    text=str(self.details.get('/weight'))
@@ -206,12 +209,16 @@ class ItemDisplay(gui.Element, gui.Section):
         self.namedisplay.grid(row=0, column=0)
         self.numcontainer.grid(row=1, column=0)
         self.numdisplay.grid(row=0, column=0)
-        self.increment.grid(row=0, column=1)
-        self.decrement.grid(row=0, column=2)
+        self.increment.grid(row=0, column=2)
+        self.decrement.grid(row=0, column=3)
+        self.useB.grid(row=0, column=1)
         path = '{}/quantity'.format(self.prefix)
         util.replaceEntry(self.numdisplay, self.character.get(path))
         if (self.isReal):
-            self.dispeffect.grid(row=3, column=0)
+            if (self.description):
+                self.description.grid(row=3, column=0)
+            if (self.effect):
+                self.effect.grid(row=4, column=0)
             self.numbers.grid(row=2, column=0)
             self.weight.grid(row=0, column=0)
             self.value.grid(row=0, column=1)
@@ -227,6 +234,12 @@ class ItemDisplay(gui.Element, gui.Section):
         path = '{}/quantity'.format(self.prefix)
         self.character.set(path, int(var.get()) if var.get() else 0)
         self.master.update()
+
+    def use(self):
+        cons = self.character.get('{}/consumable'.format(self.prefix))
+        if (cons):
+            self.num(-1)
+        self.effect.long_display.popup()
 
 
 def hook(item, name):

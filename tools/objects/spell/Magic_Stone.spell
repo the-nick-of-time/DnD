@@ -1,17 +1,17 @@
 {
-  "description": "",
-  "name": "Magic Stone",
+  "components": "VS",
+  "ritual": false,
+  "effect": "You touch one to three pebbles and imbue them with magic. You or someone else can make a ranged spell attack with one of the pebbles by throwing it or hurling it with a sling. If thrown, it has a range of 60 feet. If someone else attacks with the pebble, that attacker adds your spellcasting ability modifier, not the attacker's, to the attack roll. On a hit, the target takes bludgeoning damage equal to 1d6 + your spellcasting ability modifier. Hit or miss, the spell then ends on the stone.\n\nIf you cast this spell again, the spell ends early on any pebbles still affected by it.\n",
+  "range": "Touch",
+  "school": "Transmutation",
   "class": [
     "Warlock",
     "Druid"
   ],
-  "duration": "1 minute",
-  "page": "ee 20",
-  "casting_time": "1 bonus action",
   "concentration": false,
-  "range": "Touch",
-  "components": "VS",
+  "page": "ee 20",
+  "duration": "1 minute",
   "level": 0,
-  "ritual": false,
-  "school": "Transmutation"
+  "name": "Magic Stone",
+  "casting_time": "1 bonus action"
 }

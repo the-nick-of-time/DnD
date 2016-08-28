@@ -1,19 +1,19 @@
 {
-  "description": "",
-  "name": "Cloud of Daggers",
+  "components": "VSM",
+  "ritual": false,
+  "effect": "You fill the air with spinning daggers in a cube 5 feet on each side, centered on a point you choose within range. A creature takes 4d4 slashing damage when it enters the spell's area for the first time on a turn or starts its turn there. \n\n**At Higher Levels.** When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd. \n",
+  "range": "60 feet",
+  "school": "Conjuration",
   "class": [
     "Sorcerer",
     "Warlock",
     "Wizard",
     "Bard"
   ],
-  "duration": "up to 1 minute",
-  "page": "phb 222",
-  "casting_time": "1 action",
   "concentration": true,
-  "range": "60 feet",
-  "components": "VSM",
+  "page": "phb 222",
+  "duration": "up to 1 minute",
   "level": 2,
-  "ritual": false,
-  "school": "Conjuration"
+  "name": "Cloud of Daggers",
+  "casting_time": "1 action"
 }
