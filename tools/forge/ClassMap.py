@@ -45,7 +45,10 @@ class ClassMap:
         return (tup for tup in zip(self.classes, self.levels))
 
     def __getitem__(self, key):
-        return self.classes[key]
+        if (isinstance(key, str)):
+            return self.classes[key]
+        else:
+            return self.classes.items[key]
 
     def sum(self):
         return sum(self.levels)

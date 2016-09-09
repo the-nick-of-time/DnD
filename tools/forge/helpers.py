@@ -1,4 +1,8 @@
 import re
+import json
+
+with open('./tools/forge/conditions.json') as f:
+    condition_defs = json.load(f)
 
 
 def modifier(score):
@@ -62,3 +66,22 @@ def type_select(extension):
     for step in reversed(steps):
         location = location[step]
     return location
+
+
+def find_file(name, type_):
+    from .interface import JSONInterface
+    directory = '{direc}/{name}'
+    location = type_.split(sep='.')
+    if (location[0] == ''):
+        # Leading . indicates name of object is included in path
+        location[0] = clean(name)
+        deeper = False
+    else:
+        deeper = True
+    filename = directory.format(
+        direc=location[-1], name='.'.join(location))
+    try:
+        iface = JSONInterface(filename, PREFIX=name if deeper else '')
+        return iface
+    except FileNotFoundError:
+        raise
