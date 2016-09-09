@@ -58,17 +58,17 @@
       "equipped": false
     },
     "sp": {
-      "quantity": 60,
+      "quantity": 10,
       "type": "coin.treasure",
       "equipped": false
     },
     "gp": {
-      "quantity": 4,
+      "quantity": 517,
       "type": "coin.treasure",
       "equipped": false
     },
     "Topaz": {
-      "quantity": 1,
+      "quantity": 0,
       "type": "gem.treasure",
       "equipped": false
     },
@@ -105,6 +105,11 @@
     "Blanket": {
       "quantity": 1,
       "type": ".item",
+      "equipped": false
+    },
+    "sickle": {
+      "quantity": 1,
+      "type": "coin.treasure",
       "equipped": false
     }
   }

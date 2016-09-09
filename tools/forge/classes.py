@@ -149,9 +149,43 @@ class Character:
         self.spell_slots = jf.get('/spell_slots')
         self.bonuses = self.get_bonuses()
         self.death_save_fails = 0
+        self.conditions = set()
 
     def __str__(self):
         return self.name
+
+    def __getattribute__(self, key):
+        for name in self.conditions:
+            print(h.condition_defs[name])
+        return self.__getattr__(key)
+
+    def add_condition(self, name):
+        if (name == 'exhaustion'):
+            for i in range(6):
+                fmt = 'exhaustion{}'
+                if (fmt.format(i + 1) in self.conditions):
+                    self.conditions.remove(fmt.format(i + 1))
+                    self.conditions.add(fmt.format(i + 2))
+                    return True
+        else:
+            self.conditions.add(name)
+            return True
+
+    def remove_condition(self, name):
+        if (name == 'exhaustion'):
+            for i in range(6):
+                fmt = 'exhaustion{}'
+                if (fmt.format(i + 1) in self.conditions):
+                    self.conditions.remove(fmt.format(i + 1))
+                    if (i > 0):
+                        self.conditions.add(fmt.format(i))
+                    return True
+        else:
+            try:
+                self.conditions.remove(name)
+                return True
+            except KeyError:
+                return False
 
     def spell_spend(self, spell):
         if (self.spell_slots[spell.level] > 0):
@@ -188,18 +222,18 @@ class Character:
         elif (val < 10):
             self.death_save_fails += 1
         if (self.death_save_fails >= 3):
-            # Signal that you dead son
-            pass
+            self.conditions.add('dead')
 
     def get_bonuses(self):
         bonuses = {}
         for item in inventory:
             newbonus = item.get('/bonus')
-            for var, amount in newbonus.items():
-                if (var not in bonuses):
-                    bonuses.update((var, amount))
-                else:
-                    bonuses[var] += amount
+            if (newbonus is not None):
+                for var, amount in newbonus.items():
+                    if (var not in bonuses):
+                        bonuses.update((var, amount))
+                    else:
+                        bonuses[var] += amount
         return bonuses
 
     def set_abilities(self, name, value):
@@ -240,7 +274,7 @@ class Character:
 
     @property
     def proficiency(self):
-        c, lv = next(self.classes)
+        c, lv = self.classes[0]
         return c.get('/proficiency')[self.proficiencyDice][self.level - 1]
 
     def save_DC(self, spell):
@@ -285,6 +319,15 @@ class Inventory:
         self.data = jf.get('/inventory')
         self.cache = {}
 
+    def __getitem__(self, name):
+        try:
+            return self.cache[name]
+        except KeyError as e:
+            cache[name] = self.hook(name)
+
+    def __iter__(self):
+        return (name for name in self.data)
+
     def setq(self, name, value):
         """Sets the quantity of an object."""
         self.data[name]['quantity'] = value
@@ -305,6 +348,16 @@ class Inventory:
         """Creates a new item in the inventory."""
         self.data[name] = OrderedDict((('quantity', quantity), ('type', type),
                                        ('equipped', equipped)))
+        try:
+            if (type.startswith('.')):
+                filename = h.clean(name) + type
+            else:
+                filename = type
+            self.hook()
+        except FileNotFoundError:
+            # TODO: notify you that it failed
+            pass
+        self.export(name=name)
 
     def export(self, name=None):
         """
@@ -457,18 +510,24 @@ class Attack:
 
     @staticmethod
     def display_result(result):
+        # IMPLEMENTATION: result must be a 3-item iterable made of:
+        # an iterable of attack rolls
+        # an iterable of damage rolls
+        # a string of the effects of the attack
         attack_string = 'Attack rolls: ' + ', '.join(result[0])
         damage_string = 'Damage rolls: ' + ', '.join(result[1])
         effects = result[2]
         panel = gui.AttackResult(path['display'], attack_string, damage_string,
                                  effects)
 
+    @staticmethod
     def attackwrap(attack_function):
         @wraps(attack_function)
         def modified(self, character, adv, dis, attack_bonus, damage_bonus):
             # This decorator will be applied to all attack() methods of
             # subclasses of this class. Anything that should apply to
             # all attack actions should go here.
+
             return Attack.display_result(
                 attack_function(self, character, adv, dis, attack_bonus,
                                 damage_bonus))
@@ -536,7 +595,6 @@ class SpellAttack(Spell, Attack):
     These lists are "As Spell, plus..."
 
     Contained data:
-
     attack_roll: If True, make an attack roll when attacking with this
         spell. Otherwise targets make a saving throw.
     attack_save: The name of the ability that the target makes a save
@@ -628,7 +686,7 @@ class Weapon(Attack, Item):
 
         attack = []
         damage = []
-        for all in range(self.attack_multiple):
+        for all in range(self.num_targets):
             attack_roll = r.roll(dice)
             attack_mods = r.roll(attack_bonus) \
                           + r.roll(character.proficiency) \
@@ -686,6 +744,7 @@ class RangedWeapon(Weapon):
             self.owner.item_consume(self.ammunition)
         except OutOfItems:
             raise
+            # NOTE: This exception needs to be caught at the attack level
 
     def attack(self, character, adv, dis, attack_bonus, damage_bonus):
         try:

@@ -22,5 +22,9 @@
   "pp": {
     "value": 10,
     "weight": 0.02
+  },
+  "sickle": {
+    "value": 0.06,
+    "weight": 0.02
   }
 }
