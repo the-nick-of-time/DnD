@@ -1,10 +1,14 @@
 import json
 import os
+import re
 from read_md import read_markdown
 from helpers import clean
 
 dest = r'C:\Users\Nicholas\Documents\GitHub\DnD\tools\objects\spell\\'
 with open(r'C:\Users\Nicholas\Documents\GitHub\DnD\tools\objects\spell_data.json') as base, open(r'C:\Users\Nicholas\Documents\GitHub\DnD\tools\objects\spells.json') as det:
+    rollregex = re.compile('([0-9+]+d[0-9+]+)')
+    saveregex = re.compile('([DWCSI][a-z]+) saving throw')
+    damagetyperegex = re.compile('([a-z]+) damage')
     basedata = json.load(base)
     details = json.load(det)
     grimoire = {}

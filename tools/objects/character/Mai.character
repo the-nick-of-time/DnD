@@ -1,22 +1,22 @@
 {
   "name": "Mai",
-  "level": "Sorcerer (Storm) 2",
+  "level": "Sorcerer (Storm) 4",
   "race": "Nephilim",
   "HP": {
-    "max": 12,
-    "current": 12,
+    "max": 26,
+    "current": 26,
     "temp": 0,
     "HD": {
-      "1d6": 2
+      "1d6": 4
     }
   },
   "abilities": {
     "Strength": 8,
     "Dexterity": 14,
-    "Constitution": 15,
+    "Constitution": 16,
     "Intelligence": 12,
     "Wisdom": 8,
-    "Charisma": 17
+    "Charisma": 18
   },
   "skills": [
     "Persuasion",
@@ -27,7 +27,8 @@
   ],
   "spell_slots": [
     999999,
-    3
+    4,
+    2
   ],
   "spells_prepared": [
     "Gust",
@@ -35,10 +36,10 @@
     "Mending",
     "Prestidigitation",
     "Shocking Grasp",
-    "Fog Cloud",
+    "Shield",
     "Thunderwave",
-    "Mage Armor",
-    "Witch Bolt"
+    "Witch Bolt",
+    "Shatter"
   ],
   "spells_known": [
     "Gust",
@@ -46,10 +47,10 @@
     "Mending",
     "Prestidigitation",
     "Shocking Grasp",
-    "Fog Cloud",
+    "Shield",
     "Thunderwave",
-    "Mage Armor",
-    "Witch Bolt"
+    "Witch Bolt",
+    "Shatter"
   ],
   "inventory": {
     "Mirror": {

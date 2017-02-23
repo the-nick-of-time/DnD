@@ -775,7 +775,7 @@
   },
   "Power Word Kill": {
     "concentration": false,
-    "page": "phb 266",
+    "page": "phb 266",.,
     "range": "60 feet",
     "name": "Power Word Kill",
     "components": "V",

@@ -218,6 +218,7 @@ class Character:
             self.death_save_fails += 2
         elif (val == 20):
             self.death_save_fails = 0
+            self.remove_condition('dying')
             # Signal that you're better now
         elif (val < 10):
             self.death_save_fails += 1

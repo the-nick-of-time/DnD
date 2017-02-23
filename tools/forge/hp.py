@@ -121,6 +121,73 @@ class HitDiceDisplay(gui.Section, gui.Element):
         self.use.grid(row=0, column=2)
 
 
+class HP:
+    def __init__(self, jf):
+        self.iface = jf
+        self.current = jf.get('/current')
+        self.max = jf.get('/max')
+        self.temp = jf.get('/temp')
+        self.truemax = jf.get('/truemax')
+
+    def change(self, amount):
+        delta = r.roll(amount)
+        if (delta < 0):
+            delta = self.temp(delta)
+        self.HP += delta
+        if (self.HP > self.max):
+            self.HP = self.max
+        elif (self.HP < 0):
+            self.HP = 0
+
+    def changeMax(self, amount):
+        delta = r.roll(amount)
+        self.max += delta
+
+    def temp(self, amount):
+        # Returns the spillover
+        delta = r.roll(amount)
+        if (delta < 0):
+            if (-delta >= self.temp):
+                delta += self.temp
+                self.temp = 0
+                return delta
+            else:
+                self.temp += delta
+                delta = 0
+                return delta
+        else:
+            self.temp = delta if delta > self.temp else self.temp
+            delta = 0
+            return delta
+
+    def short_rest(self):
+        self.temp = 0
+
+    def long_rest(self):
+        self.max = self.truemax
+        self.current = self.max
+        self.temp = 0
+
+    def writequit(self):
+        self.iface.write()
+
+
+class HD:
+    def __init__(self, jf):
+        pass
+
+    def use(self):
+        pass
+
+    def short_rest(self):
+        pass
+
+    def long_rest(self):
+        pass
+
+    def writequit(self):
+        pass
+
 # class MultiHitDiceDisplay(gui.Section, gui.Element):
 #     def __init__(self, name, container, character):
 #         kwargs = {'name': 'hp', 'container': container}

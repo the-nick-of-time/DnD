@@ -1,13 +1,13 @@
 {
   "name": "Berndus",
-  "level": "Fighter 2",
+  "level": "Fighter (Battle Master) 4",
   "race": "Halfling Stout",
   "HP": {
-    "max": 17,
-    "current": 17,
+    "max": 37,
+    "current": 37,
     "temp": 0,
     "HD": {
-      "1d10": 2
+      "1d10": 4
     }
   },
   "abilities": {
@@ -33,7 +33,7 @@
   "spells_prepared": [],
   "inventory": {
     "Dagger": {
-      "quantity": 1,
+      "quantity": 3,
       "type": ".weapon",
       "equipped": true
     },
