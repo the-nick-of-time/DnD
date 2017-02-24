@@ -102,7 +102,7 @@ def roll(s, modifiers=0, option='execute'):
     elif (option == 'max'):
         T = tokens(s, operators)
         for (i, item) in enumerate(T):
-            if (item == 'd'):
+            if (item == 'd' or item == 'da'):
                 if (len(T) >= i + 3 and (T[i + 2] == 'h' or T[i + 2] == 'l')):
                     T[i - 1:i + 4] = [T[i + 3], '*', T[i + 1]]
                 else:
@@ -304,6 +304,7 @@ def reroll_once(original, target):
             modified.discards[i].append(modified[i])
             modified[i] = single_die(modified.die)
         i += 1
+    modified.sort()
     return modified
 
 
@@ -315,6 +316,7 @@ def reroll_unconditional(original, target):
             modified.discards[i].append(modified[i])
             modified[i] = single_die(modified.die)
         i += 1
+    modified.sort()
     return modified
 
 # def execute(T, av=False):
