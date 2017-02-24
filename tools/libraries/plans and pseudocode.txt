@@ -1,0 +1,88 @@
+Roll roll_basic(int number, [int or list of floats] sides):
+
+Roll roll_max(int number, [int or list of floats] sides)
+    if sides is int:
+		    return number * sides
+    if sides is list:
+        return number * max(sides)
+
+Roll roll_average(int number, [int or list of floats] sides):
+    if sides is int:
+        return number * (sides+1)/2
+    if sides is list:
+        return number * mean(sides)
+
+
+Roll select_high(Roll values, int num):
+		sort the values list
+		return the num lowest numbers from it
+		push all other numbers to values.discards
+
+Roll select_low(Roll values, int num):
+    sort the values list
+		return the num lowest numbers from it
+		push all other numbers to values.discards
+
+Roll reroll_on_once(Roll values, int threshold):
+		for item in values:
+				if item <= threshold
+						reroll, push the previous value to values.discards
+
+Roll reroll_on(Roll values, int threshold):
+		for item in values:
+				while item <= threshold
+						reroll, push the previous value to values.discards
+
+==== Less important ====
+Roll reroll_less_one(Roll values, int threshold):
+		for item in values:
+				if item <= threshold
+						reroll, push the previous value to values.discards
+
+Roll reroll_less(Roll values, int threshold):
+		for item in values:
+				while item <= threshold
+						reroll, push the previous value to values.discards
+
+Roll reroll_greater_one(Roll values, int threshold):
+		for item in values:
+				if item >= threshold
+						reroll, push the previous value to values.discards
+
+Roll reroll_greater(Roll values, int threshold):
+		for item in values:
+				while item >= threshold
+						reroll, push the previous value to values.discards
+==== Less important ====
+
+
+float plus(float val1, float val2): val1+val2
+
+float minus(float val1, float val2): val1-val2
+
+float times(float val1, float val2): val1*val2
+
+float divide(float val1, float val2): val1/val2
+
+float exponent(float base, float power): val1**val2
+
+float unary_plus(float num): num
+
+float unary_minus(float num): -num
+
+bool less(float val1, float val2): val1 < val2
+
+bool lessequal(float val1, float val2): val1 <= val2
+
+bool greater(float val1, float val2): val1 > val2
+
+bool greaterequal(float val1, float val2): val1 >= val2
+
+bool equal(float val1, float val2): val1 == val2
+
+list repeat(int repetition, list tokens):
+    for number of repetitions:
+		    execute the list of tokens and push the value to the returned list
+
+
+Roll.discards shall be a list the same length as the original list of rolls. Rolls that are rerolled shall be pushed from values to the corresponding entry of discards. Rolls that are ignored by means of the h or l operators are removed from the values and moved to the discards. In this case the discards shall be reshaped such that for every item in values, there exists its history in the entry of discards that has the same index.
