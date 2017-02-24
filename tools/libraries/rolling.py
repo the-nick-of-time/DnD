@@ -4,7 +4,7 @@ import string
 __all__ = ['roll', 'call']
 
 
-class operator:
+class Operator:
     def __init__(self, op, precedence, arity, operation=None, cajole='lr'):
         # op: string
         # precedence: integer
@@ -30,7 +30,7 @@ class operator:
         return self.precedence >= other.precedence
 
     def __eq__(self, other):
-        if (isinstance(other, operator)):
+        if (isinstance(other, Operator)):
             return self.op == other.op
         if(isinstance(other, str)):
             return self.op == other
@@ -73,20 +73,22 @@ def roll(s, modifiers=0, option='execute'):
     """Roll dice and do arithmetic."""
     # global operators
 
-    operators = (operator('d', 7, 2, rollBasic, 'l'),
-                 operator('dav', 7, 2, rollAverage, 'l'),
-                 operator('h', 6, 2, lambda x, y: x[-y:], 'r'),
-                 operator('l', 6, 2, lambda x, y: x[:y], 'r'),
-                 operator('^', 5, 2, lambda x, y: x ** y, 'lr'),
-                 operator('m', 4, 1, lambda x: -x, 'r'),
-                 operator('p', 4, 1, lambda x: x, 'r'),
-                 operator('*', 3, 2, lambda x, y: x * y, 'lr'),
-                 operator('/', 3, 2, lambda x, y: x / y, 'lr'),
-                 operator('-', 2, 2, lambda x, y: x - y, 'lr'),
-                 operator('+', 2, 2, lambda x, y: x + y, 'lr'),
-                 operator('>', 1, 2, lambda x, y: x > y, 'lr'),
-                 operator('<', 1, 2, lambda x, y: x < y, 'lr'),
-                 operator('=', 1, 2, lambda x, y: x == y, 'lr'),
+    operators = (Operator('d', 7, 2, roll_basic, 'l'),
+                 Operator('da', 7, 2, roll_average, 'l'),
+                 Operator('h', 6, 2, lambda x, y: x[-y:], 'r'),
+                 Operator('l', 6, 2, lambda x, y: x[:y], 'r'),
+                 Operator('r', 6, 2, reroll_once, 'r'),
+                 Operator('R', 6, 2, reroll_unconditional, 'r'),
+                 Operator('^', 5, 2, lambda x, y: x ** y, 'lr'),
+                 Operator('m', 4, 1, lambda x: -x, 'r'),
+                 Operator('p', 4, 1, lambda x: x, 'r'),
+                 Operator('*', 3, 2, lambda x, y: x * y, 'lr'),
+                 Operator('/', 3, 2, lambda x, y: x / y, 'lr'),
+                 Operator('-', 2, 2, lambda x, y: x - y, 'lr'),
+                 Operator('+', 2, 2, lambda x, y: x + y, 'lr'),
+                 Operator('>', 1, 2, lambda x, y: x > y, 'lr'),
+                 Operator('<', 1, 2, lambda x, y: x < y, 'lr'),
+                 Operator('=', 1, 2, lambda x, y: x == y, 'lr'),
                  )
 
     if (isinstance(s, (float, int))):
@@ -157,7 +159,9 @@ def tokens(s, operators):
                 numflag = not numflag
                 opflag = not opflag
             curr_num.append(char)
-        elif (char in operators or char == '(' or char == ')'):
+        elif (char in 'dahlrR^mp*/+-<>='):
+            # This should definitely be more refined; it should filter to just valid characters while being straight up
+            # elif (char in operators or char == '(' or char == ')'):
             if (numflag):
                 T.append(int(''.join(curr_num)))
                 curr_num = []
@@ -187,7 +191,7 @@ def tokens(s, operators):
                 i += 1
             i += 1
             sidelist.append(s[i])
-            T.append(readList(''.join(sidelist)))
+            T.append(read_list(''.join(sidelist)))
         elif (char == 'F'):
             # Fudge die
             T.append([-1, 0, 1])
@@ -229,7 +233,17 @@ def execute(T, operators):
         # Empty the operators stack
         oper[-1](nums)
         oper.pop()
-    return sum(nums)
+    return deep_sum(nums)
+
+
+def deep_sum(l):
+    s = 0
+    for item in l:
+        try:
+            s += sum(item)
+        except(TypeError):
+            s += item
+    return s
 
 
 def string_to_operator(s, operators):
@@ -239,7 +253,7 @@ def string_to_operator(s, operators):
     return s
 
 
-def readList(s, mode='float'):
+def read_list(s, mode='float'):
     """Read a list defined in a string."""
     if (mode == 'float'):
         return list(eval(s))
@@ -248,25 +262,31 @@ def readList(s, mode='float'):
         return [int(item) for item in a]
 
 
-def rollBasic(number, sides):
+def roll_basic(number, sides):
     """Roll a single set of dice."""
     # Returns a sorted (ascending) list of all the numbers rolled
     result = Roll()
     result.die = sides
+    result.discards = [[] for all in range(number)]
     rollList = []
-    if (type(sides) is int):
-        rollList = list(range(1, sides + 1))
-    elif (type(sides) is list):
-        rollList = sides
     for all in range(number):
-        result.append(rollList[random.randint(0, len(rollList) - 1)])
+        result.append(single_die(sides))
     result.sort()
     return result
 
 
-def rollAverage(number, sides):
+def single_die(sides):
+    """Roll a single die."""
+    if (type(sides) is int):
+        return random.randint(1, sides)
+    elif (type(sides) is list):
+        return sides[random.randint(0, len(rollList) - 1)]
+
+
+def roll_average(number, sides):
     val = Roll()
     val.die = sides
+    val.discards = [[] for all in range(number)]
     if (isinstance(sides, list)):
         val.extend([sum(sides)/len(sides)]*number)
         # return (sum(sides) * number) / len(sides)
@@ -275,6 +295,27 @@ def rollAverage(number, sides):
         # return (1 + sides) * number / 2
     return val
 
+
+def reroll_once(original, target):
+    modified = original
+    i = 0
+    while i < len(original):
+        if (modified[i] == target):
+            modified.discards[i].append(modified[i])
+            modified[i] = single_die(modified.die)
+        i += 1
+    return modified
+
+
+def reroll_unconditional(original, target):
+    modified = original
+    i = 0
+    while i < len(original):
+        while (modified[i] == target):
+            modified.discards[i].append(modified[i])
+            modified[i] = single_die(modified.die)
+        i += 1
+    return modified
 
 # def execute(T, av=False):
 #     """Calculate a result from a list of tokens."""
@@ -328,7 +369,7 @@ def rollAverage(number, sides):
 #         else:
 #             return (1 + rhs) * lhs // 2
 #     else:
-#         return rollBasic(lhs, rhs)
+#         return roll_basic(lhs, rhs)
 
 
 # def evaluate(nums, op, av=False):
@@ -353,7 +394,7 @@ def rollAverage(number, sides):
 #             else:
 #                 return (1 + nums[1]) * nums[0] // 2
 #         else:
-#             return rollBasic(nums[0], nums[1])
+#             return roll_basic(nums[0], nums[1])
 #     elif (op == 'h'):
 #         return nums[0][-nums[1]:]
 #     elif (op == 'l'):
@@ -486,6 +527,10 @@ def rollAverage(number, sides):
 
 
 if __name__ == '__main__':
-    # print(roll('1d4+(4+3)*2'))
-    # print(roll('1d4+4+3*2'))
+    print(roll('1d4+(4+3)*2'))
+    print(roll('1d4+4+3*2'))
     print(roll('1+3*2^1d4'))
+    print(roll('4d6'))
+    print(roll('1d2r1'))
+    print(roll('1d2R1'))
+    print(roll('2da6'))
