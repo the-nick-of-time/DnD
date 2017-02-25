@@ -87,7 +87,9 @@ def roll(s, modifiers=0, option='execute'):
                  Operator('-', 2, 2, lambda x, y: x - y, 'lr'),
                  Operator('+', 2, 2, lambda x, y: x + y, 'lr'),
                  Operator('>', 1, 2, lambda x, y: x > y, 'lr'),
+                 Operator('>=', 1, 2, lambda x, y: x >= y, 'lr'),
                  Operator('<', 1, 2, lambda x, y: x < y, 'lr'),
+                 Operator('<=', 1, 2, lambda x, y: x <= y, 'lr'),
                  Operator('=', 1, 2, lambda x, y: x == y, 'lr'),
                  )
 
@@ -114,30 +116,13 @@ def roll(s, modifiers=0, option='execute'):
             if (T[i] == 'd'):
                 T[i - 1] *= 2
         return (execute(T, operators) + modifiers)
-    # elif (option == 'average'):
-    #     return (execute(tokens(s, operators), av=True) + modifiers)
     elif (option == 'zero'):
         return 0
-    # elif (option == 'multipass'):
-    #     return displayMultipass(multipass(tokens(s), modifiers))
     elif (option == 'tokenize'):
         return tokens(s)
 
 
 call = roll  # A hacky workaround for backwards compatibility
-
-
-# def tokens(s, operators):
-#     """Splt a string into rolling tokens"""
-#     curr_num = []
-#     curr_op = []
-#     T = []
-#     i = 0
-#     numflag = s[0] in string.digits
-#     opflag = s[0] in operators
-#     while i < len(s):
-#         char = s[i]
-#
 
 
 def tokens(s, operators):
@@ -167,39 +152,48 @@ def tokens(s, operators):
                 curr_num = []
                 numflag = not numflag
                 opflag = not opflag
-            if(char == '+' and (i == 0 or s[i - 1] in operators)):
+            if(char == '+' and (i == 0 or s[i - 1] in 'dahlrR^mp*/+-<>=')):
                 T.append(string_to_operator('p', operators))
-            elif(char == '-' and (i == 0 or s[i - 1] in operators)):
+            elif(char == '-' and (i == 0 or s[i - 1] in 'dahlrR^mp*/+-<>=')):
                 T.append(string_to_operator('m', operators))
             else:
                 if (len(curr_op) == 0):
-                    # This is the first time you see an operator since last time the list was cleared
+                    # This is the first time you see an operator since last
+                    # time the list was cleared
                     curr_op.append(char)
                 elif (''.join(curr_op + [char]) in operators):
-                    # This means that the current char is part of a multicharacter operation like <=
+                    # This means that the current char is part of a
+                    # multicharacter operation like <=
                     curr_op.append(char)
                 else:
-                    # Two separate operators; push out the old one and start collecting the new one
+                    # Two separate operators; push out the old one and start
+                    # collecting the new one
                     op = string_to_operator(''.join(curr_op), operators)
                     T.append(op)
                     curr_op = [char]
         elif (char == '['):
+            T.append(string_to_operator(''.join(curr_op), operators))
+            numflag = not numflag
+            opflag = not opflag
             # Start a list of floats
             sidelist = []
             while (s[i] != ']'):
                 sidelist.append(s[i])
                 i += 1
-            i += 1
+            # i += 1
             sidelist.append(s[i])
             T.append(read_list(''.join(sidelist)))
         elif (char == 'F'):
+            T.append(string_to_operator(''.join(curr_op), operators))
+            numflag = not numflag
+            opflag = not opflag
             # Fudge die
             T.append([-1, 0, 1])
         i += 1
-    if (numflag):
+    if (numflag and curr_num):
         T.append(int(''.join(curr_num)))
     elif (opflag):
-        T.append(''.join(operator))
+        T.append(''.join(curr_op))
     return T
 
 
@@ -280,7 +274,7 @@ def single_die(sides):
     if (type(sides) is int):
         return random.randint(1, sides)
     elif (type(sides) is list):
-        return sides[random.randint(0, len(rollList) - 1)]
+        return sides[random.randint(0, len(sides) - 1)]
 
 
 def roll_average(number, sides):
@@ -319,220 +313,12 @@ def reroll_unconditional(original, target):
     modified.sort()
     return modified
 
-# def execute(T, av=False):
-#     """Calculate a result from a list of tokens."""
-#     oper = []
-#     nums = []
-#     while (len(T) > 0):
-#         current = T.pop(0)
-#         if (type(current) is int or type(current) is list):
-#             nums.append(current)
-#         elif (current == '('):
-#             oper.append(current)
-#         elif (current == ')'):
-#             while (oper[-1] != '('):
-#                 # Evaluate all extant expressions down to the open paren
-#                 if (arity(oper[-1]) == 2):
-#                     nums.append(evaluate(
-#                         [nums.pop(-2), nums.pop()], oper.pop(), av))
-#                 else:
-#                     nums.append(unary(nums.pop(), oper.pop()))
-#             oper.pop()  # Get rid of that last open paren
-#         elif (current in operators):
-#             try:
-#                 while (oper[-1] >= current):
-#                     if (arity(oper[-1]) == 2):
-#                         nums.append(evaluate(
-#                             [nums.pop(-2), nums.pop()], oper.pop(), av))
-#                     else:
-#                         nums.append(unary(nums.pop(), oper.pop()))
-#             except (IndexError):
-#                 pass
-#             oper.append(current)
-#             # or add a higher-precedence operator to the stack
-#     while (len(oper) > 0):
-#         # empty the operator stack
-#         if (arity(oper[-1]) == 2):
-#             nums.append(evaluate([nums.pop(-2), nums.pop()], oper.pop(), av))
-#         else:
-#             nums.append(unary(nums.pop(), oper.pop()))
-#     try:
-#         # collapse list of rolls if able
-#         nums[0] = sum(nums[0])
-#     except (TypeError):
-#         pass
-#     return sum(nums)
-
-
-# def make_roll(lhs, rhs, average):
-#     if (average):
-#         if (isinstance(rhs, list)):
-#             return (sum(rhs) * lhs) // len(rhs)
-#         else:
-#             return (1 + rhs) * lhs // 2
-#     else:
-#         return roll_basic(lhs, rhs)
-
-
-# def evaluate(nums, op, av=False):
-#     """Evaluate expressions."""
-#     if (any(op == c for c in 'd^*/%+-><=')):
-#         # collapse any lists in preparation for operation
-#         try:
-#             nums[0] = sum(nums[0])
-#         except (TypeError):
-#             pass
-#
-#     if (any(operators[3] == c for c in 'hl^*/%+-><=&|')):
-#         try:
-#             nums[1] = sum(nums[1])
-#         except (TypeError):
-#             pass
-#
-#     if (op == 'd'):
-#         if (av):
-#             if (type(nums[1]) is list):
-#                 return (sum(nums[1]) * nums[0]) // len(nums[1])
-#             else:
-#                 return (1 + nums[1]) * nums[0] // 2
-#         else:
-#             return roll_basic(nums[0], nums[1])
-#     elif (op == 'h'):
-#         return nums[0][-nums[1]:]
-#     elif (op == 'l'):
-#         return nums[0][:nums[1]]
-#     elif (op == '^'):
-#         return nums[0]**nums[1]
-#     elif (op == '*'):
-#         return nums[0] * nums[1]
-#     elif (op == '/'):
-#         return nums[0] / nums[1]
-#     elif (op == '%'):
-#         return nums[0] % nums[1]
-#     elif (op == '+'):
-#         return nums[0] + nums[1]
-#     elif (op == '-'):
-#         return nums[0] - nums[1]
-#     elif (op == '>'):
-#         return nums[0] > nums[1]
-#     elif (op == '<'):
-#         return nums[0] < nums[1]
-#     elif (op == '='):
-#         return nums[0] == nums[1]
-#     elif (op == '&'):
-#         return nums[0] and nums[1]
-#     elif (op == '|'):
-#         return nums[0] or nums[1]
-
-
-# def unary(num, op):
-#     """Evaluate unary expressions."""
-#     try:
-#         num = sum(num)
-#     except (TypeError):
-#         pass
-#     if (op == 'm'):
-#         return -num
-#     elif (op == 'p'):
-#         return num
-
-
-# def execute(T, av=False):
-#     """Calculate a result from a list of tokens."""
-#     oper = []
-#     nums = []
-#     while (len(T) > 0):
-#         current = T.pop(0)
-#         if (type(current) is int or type(current) is list):
-#             nums.append(current)
-#         elif (current == '('):
-#             oper.append(current)
-#         elif (current == ')'):
-#             while (oper[-1] != '('):
-#                 # Evaluate all extant expressions down to the open paren
-#                 if (arity(oper[-1]) == 2):
-#                     nums.append(evaluate(
-#                         [nums.pop(-2), nums.pop()], oper.pop(), av))
-#                 else:
-#                     nums.append(unary(nums.pop(), oper.pop()))
-#             oper.pop()  # Get rid of that last open paren
-#         elif (current in operators):
-#             try:
-#                 while (oper[-1] >= current):
-#                     if (arity(oper[-1]) == 2):
-#                         nums.append(evaluate(
-#                             [nums.pop(-2), nums.pop()], oper.pop(), av))
-#                     else:
-#                         nums.append(unary(nums.pop(), oper.pop()))
-#             except (IndexError):
-#                 pass
-#             oper.append(current)
-#             # or add a higher-precedence operator to the stack
-#     while (len(oper) > 0):
-#         # empty the operator stack
-#         if (arity(oper[-1]) == 2):
-#             nums.append(evaluate([nums.pop(-2), nums.pop()], oper.pop(), av))
-#         else:
-#             nums.append(unary(nums.pop(), oper.pop()))
-#     try:
-#         # collapse list of rolls if able
-#         nums[0] = sum(nums[0])
-#     except (TypeError):
-#         pass
-#     return sum(nums)
-
-
-# def arity(op):
-#     """Determine the arity of an operator."""
-#     for this in operators:
-#         if (this == op):
-#             return this.arity
-#     raise NotFoundError('Operator not valid')
-
-
-# def multipass(T, modifiers=0):
-#     # note: this does not yet support parentheses
-#     passes = ["d", "hl", "^mp*/%+-", "><=&|"]
-#     for run in passes:
-#         for op in run:
-#             while (T.count(op)):
-#                 loc = T.index(op)
-#                 if (arity[operators.index(op)] == 2):
-#                     val = evaluate([T[loc - 1], T[loc + 1]], op)
-#                     T[loc - 1:loc + 2] = [val]
-#                     # this assignment only works when RHS is iterable
-#                 else:
-#                     val = unary(T[loc + 1], op)
-#                     T[loc:loc + 2] = [val]
-#             out.extend(['+' if modifiers >= 0 else '', modifiers])
-#         out.append(T)
-#     out.append(T[0])
-#     # out should be of the form
-#     # [[rolls have been made],
-#     # [selected rolls have been discarded],
-#     # [arithmetic but not boolean operators have been evaluated],
-#     # final result]
-#     return out
-
-
-# def displayMultipass(l):
-#     out = ['', '', '', '']
-#     for (i, sec) in enumerate(l):
-#         for token in sec:
-#             out[i] += str(token)
-#         out[i] += '\n'
-#     return out
-
-
-# class NotFoundError(Exception):
-#     pass
-
-
 if __name__ == '__main__':
-    print(roll('1d4+(4+3)*2'))
-    print(roll('1d4+4+3*2'))
-    print(roll('1+3*2^1d4'))
-    print(roll('4d6'))
-    print(roll('1d2r1'))
-    print(roll('1d2R1'))
-    print(roll('2da6'))
+##    print(roll('1d4+(4+3)*2'))
+##    print(roll('1d4+4+3*2'))
+##    print(roll('1+3*2^1d4'))
+##    print(roll('4d6'))
+##    print(roll('1d2r1'))
+##    print(roll('1d2R1'))
+##    print(roll('2da6'))
+    print(roll('1d[1,1,1,1,1,6]'))
