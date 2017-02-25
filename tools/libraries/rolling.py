@@ -127,6 +127,8 @@ call = roll  # A hacky workaround for backwards compatibility
 
 def tokens(s, operators):
     """Split a string into tokens for use with execute()"""
+    # Every character that could be part of an operator
+    possibilities = ''.join([str(item) for item in operators])
     curr_num = []
     curr_op = []
     T = []
@@ -144,17 +146,17 @@ def tokens(s, operators):
                 numflag = not numflag
                 opflag = not opflag
             curr_num.append(char)
-        elif (char in 'dahlrR^mp*/+-<>='):
-            # This should definitely be more refined; it should filter to just valid characters while being straight up
+        elif (char in possibilities or char in '()'):
+            # Things that will end up on the operators stack
             # elif (char in operators or char == '(' or char == ')'):
             if (numflag):
                 T.append(int(''.join(curr_num)))
                 curr_num = []
                 numflag = not numflag
                 opflag = not opflag
-            if(char == '+' and (i == 0 or s[i - 1] in 'dahlrR^mp*/+-<>=')):
+            if(char == '+' and (i == 0 or s[i - 1] in possibilities + '(')):
                 T.append(string_to_operator('p', operators))
-            elif(char == '-' and (i == 0 or s[i - 1] in 'dahlrR^mp*/+-<>=')):
+            elif(char == '-' and (i == 0 or s[i - 1] in possibilities + '(')):
                 T.append(string_to_operator('m', operators))
             else:
                 if (len(curr_op) == 0):
@@ -180,7 +182,6 @@ def tokens(s, operators):
             while (s[i] != ']'):
                 sidelist.append(s[i])
                 i += 1
-            # i += 1
             sidelist.append(s[i])
             T.append(read_list(''.join(sidelist)))
         elif (char == 'F'):
@@ -314,11 +315,12 @@ def reroll_unconditional(original, target):
     return modified
 
 if __name__ == '__main__':
-##    print(roll('1d4+(4+3)*2'))
-##    print(roll('1d4+4+3*2'))
-##    print(roll('1+3*2^1d4'))
-##    print(roll('4d6'))
-##    print(roll('1d2r1'))
-##    print(roll('1d2R1'))
-##    print(roll('2da6'))
+    print(roll('1d4+(4+3)*2'))
+    print(roll('1d4+4+3*2'))
+    print(roll('1+3*2^1d4'))
+    print(roll('4d6'))
+    print(roll('1d2r1'))
+    print(roll('1d2R1'))
+    print(roll('2da6'))
     print(roll('1d[1,1,1,1,1,6]'))
+    print(roll('1da[1,1,1,1,1,6]'))
