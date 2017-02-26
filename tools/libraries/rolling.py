@@ -75,6 +75,8 @@ def roll(s, modifiers=0, option='execute'):
 
     operators = (Operator('d', 7, 2, roll_basic, 'l'),
                  Operator('da', 7, 2, roll_average, 'l'),
+                 Operator('dc', 7, 2, roll_critical, 'l'),
+                 Operator('dm', 7, 2, roll_max, 'l'),
                  Operator('h', 6, 2, lambda x, y: x[-y:], 'r'),
                  Operator('l', 6, 2, lambda x, y: x[:y], 'r'),
                  Operator('r', 6, 2, reroll_once, 'r'),
@@ -276,6 +278,30 @@ def single_die(sides):
         return random.randint(1, sides)
     elif (type(sides) is list):
         return sides[random.randint(0, len(sides) - 1)]
+
+
+def roll_critical(number, sides):
+    """Roll double the normal number of dice."""
+    # Returns a sorted (ascending) list of all the numbers rolled
+    result = Roll()
+    result.die = sides
+    result.discards = [[] for all in range(number)]
+    rollList = []
+    for all in range(2*number):
+        result.append(single_die(sides))
+    result.sort()
+    return result
+
+
+def roll_max(number, sides):
+    """Roll double the normal number of dice."""
+    # Returns a sorted (ascending) list of all the numbers rolled
+    result = Roll()
+    result.die = sides
+    result.discards = [[] for all in range(number)]
+    rollList = []
+    result.extend([sides for all in range(number)])
+    return result
 
 
 def roll_average(number, sides):
