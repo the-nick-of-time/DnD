@@ -21,20 +21,27 @@ These were written in Python 3.4.0-3.5.2 and I do not guarantee that they will w
 | :------------- | :------------- | :----- |
 | d       | *x*d*y*       | Take a *y*-sided die and roll *x* of them. *y* can be an integer, and works just as you would expect. It can also be a list of arbitrary numbers, in which case it works as a die with one side labeled with each number in the list.  |
 | da | *x*da*y* | Take a *y*-sided die and return the average as if *x* of them had been rolled. This returns an unrounded number. |
+| dc | *x*dc*y* | Roll a critical hit, where the number of dice rolled is doubled. |
+| dm | *x*dm*y* | Roll the maximum on every die rolled. |
 | h | *ROLL*h*n* | After making a roll, discard all but the highest *n* of the rolls. Hint: 2d20h1 is advantage. |
 | l | *ROLL*l*n* | After making a roll, discard all but the lowest *n* of the rolls. Hint: 2d20l1 is disadvantage. |
-| r | *ROLL*r*n* | After making a roll, look at all of them and reroll any that are equal to *n* and reroll those once. |
+| f | *ROLL*f*n* | After making a roll, treat any value that is less than *n* as *n*. |
+| c | *ROLL*c*n* | After making a roll, treat any value that is greater than *n* as *n*. |
+| r | *ROLL*r*n* | After making a roll, look at all of them and reroll any that are equal to *n*, reroll those, and take the result. |
 | R | *ROLL*R*n* | After making a roll, look at all of them and reroll any that are equal to *n* and reroll those. If that number comes up again, continue rerolling until you get something different. |
 | ^ | *x*^*y* | Raise *x* to the *y* power. |
 | \* | *x*\**y* | *x* times *y*. |
 | / | *x*/*y* | *x* divided by *y*. This returns an unrounded number. |
+| % | *x*%*y* | *x* modulo *y*. |
 | + | *x*+*y* | *x* plus *y*. |
 | - | *x*-*y* | *x* minus *y*. |
-| > | *x*>*y* | *x* greater than *y*. Returns a 1 for yes and 0 for no. |
-| >= | *x*>=*y* | *x* greater than or equal to *y*. Returns a 1 for yes and 0 for no. |
-| < | *x*<*y* | *x* less than *y*. Returns a 1 for yes and 0 for no. |
-| <= | *x*<=*y* | *x* less than or equal to *y*. Returns a 1 for yes and 0 for no. |
-| = | *x*==*y* | *x* equal to *y*. Returns a 1 for yes and 0 for no. |
+| > | *x*>*y* | Check if *x* is greater than *y*. Returns a 1 for yes and 0 for no. |
+| >= | *x*>=*y* | Check if *x* is greater than or equal to *y*. Returns a 1 for yes and 0 for no. |
+| < | *x*<*y* | Check if *x* is less than *y*. Returns a 1 for yes and 0 for no. |
+| <= | *x*<=*y* | Check if *x* is less than or equal to *y*. Returns a 1 for yes and 0 for no. |
+| = | *x*=*y* | Check if *x* is equal to *y*. Returns a 1 for yes and 0 for no. |
+| & | *x*&*y* | Check if *x* and *y* are both nonzero. |
+| &#124; | *x*&#124;*y* | Check if at least one of *x* or *y* is nonzero. |
 
 Any string that can be parsed by the "rolling" code is called throughout all my related code a "rollable string". These are similar to arithmetic expressions, just with some dice-specific operators added.
 

@@ -79,6 +79,8 @@ def roll(s, modifiers=0, option='execute'):
                  Operator('dm', 7, 2, roll_max, 'l'),
                  Operator('h', 6, 2, lambda x, y: x[-y:], 'r'),
                  Operator('l', 6, 2, lambda x, y: x[:y], 'r'),
+                 Operator('f', 6, 2, floor_val, 'r'),
+                 Operator('c', 6, 2, ceil_val, 'r'),
                  Operator('r', 6, 2, reroll_once, 'r'),
                  Operator('R', 6, 2, reroll_unconditional, 'r'),
                  Operator('^', 5, 2, lambda x, y: x ** y, 'lr'),
@@ -86,6 +88,7 @@ def roll(s, modifiers=0, option='execute'):
                  Operator('p', 4, 1, lambda x: x, 'r'),
                  Operator('*', 3, 2, lambda x, y: x * y, 'lr'),
                  Operator('/', 3, 2, lambda x, y: x / y, 'lr'),
+                 Operator('%', 3, 2, lambda x, y: x % y, 'lr'),
                  Operator('-', 2, 2, lambda x, y: x - y, 'lr'),
                  Operator('+', 2, 2, lambda x, y: x + y, 'lr'),
                  Operator('>', 1, 2, lambda x, y: x > y, 'lr'),
@@ -93,6 +96,8 @@ def roll(s, modifiers=0, option='execute'):
                  Operator('<', 1, 2, lambda x, y: x < y, 'lr'),
                  Operator('<=', 1, 2, lambda x, y: x <= y, 'lr'),
                  Operator('=', 1, 2, lambda x, y: x == y, 'lr'),
+                 Operator('|', 1, 2, lambda x, y: x or y, 'lr'),
+                 Operator('&', 1, 2, lambda x, y: x and y, 'lr'),
                  )
 
     if (isinstance(s, (float, int))):
@@ -102,22 +107,7 @@ def roll(s, modifiers=0, option='execute'):
     elif (s == ''):
         return 0 + modifiers
     elif (option == 'execute'):
-        return (execute(tokens(s, operators), operators) + modifiers)
-    elif (option == 'max'):
-        T = tokens(s, operators)
-        for (i, item) in enumerate(T):
-            if (item == 'd' or item == 'da'):
-                if (len(T) >= i + 3 and (T[i + 2] == 'h' or T[i + 2] == 'l')):
-                    T[i - 1:i + 4] = [T[i + 3], '*', T[i + 1]]
-                else:
-                    T[i] = '*'
-        return execute(T, operators)
-    elif (option == 'critical'):
-        T = tokens(s, operators)
-        for i in range(len(T)):
-            if (T[i] == 'd'):
-                T[i - 1] *= 2
-        return (execute(T, operators) + modifiers)
+        return execute(tokens(s, operators), operators) + modifiers
     elif (option == 'zero'):
         return 0
     elif (option == 'tokenize'):
@@ -300,7 +290,10 @@ def roll_max(number, sides):
     result.die = sides
     result.discards = [[] for all in range(number)]
     rollList = []
-    result.extend([sides for all in range(number)])
+    if (isinstance(sides, list)):
+        result.extend([max(sides) for all in range(number)])
+    else:
+        result.extend([sides for all in range(number)])
     return result
 
 
@@ -339,6 +332,31 @@ def reroll_unconditional(original, target):
         i += 1
     modified.sort()
     return modified
+
+
+def floor_val(original, bottom):
+    modified = original
+    i = 0
+    while i < len(original):
+        if (modified[i] < bottom):
+            modified.discards[i].append(modified[i])
+            modified[i] = bottom
+        i += 1
+    modified.sort()
+    return modified
+
+
+def ceil_val(original, top):
+    modified = original
+    i = 0
+    while i < len(original):
+        if (modified[i] > top):
+            modified.discards[i].append(modified[i])
+            modified[i] = top
+        i += 1
+    modified.sort()
+    return modified
+
 
 if __name__ == '__main__':
     print(roll('1d4+(4+3)*2'))
