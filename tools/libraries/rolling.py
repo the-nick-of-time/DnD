@@ -125,31 +125,26 @@ def tokens(s, operators):
     curr_op = []
     T = []
     i = 0
-    # booleans; whether a number or an operator is currently being processed
-    numflag = s[0] in string.digits
-    opflag = s[0] in operators
     while (i < len(s)):
         char = s[i]
         if (char in string.digits):
-            if (opflag):
+            if (curr_op):
                 op = string_to_operator(''.join(curr_op), operators)
                 T.append(op)
                 curr_op = []
-                numflag = not numflag
-                opflag = not opflag
             curr_num.append(char)
         elif (char in possibilities or char in '()'):
             # Things that will end up on the operators stack
             # elif (char in operators or char == '(' or char == ')'):
-            if (numflag):
+            if (curr_num):
                 T.append(int(''.join(curr_num)))
                 curr_num = []
-                numflag = not numflag
-                opflag = not opflag
             if(char == '+' and (i == 0 or s[i - 1] in possibilities + '(')):
                 T.append(string_to_operator('p', operators))
+                curr_op = []
             elif(char == '-' and (i == 0 or s[i - 1] in possibilities + '(')):
                 T.append(string_to_operator('m', operators))
+                curr_op = []
             else:
                 if (len(curr_op) == 0):
                     # This is the first time you see an operator since last
@@ -166,9 +161,9 @@ def tokens(s, operators):
                     T.append(op)
                     curr_op = [char]
         elif (char == '['):
-            T.append(string_to_operator(''.join(curr_op), operators))
-            numflag = not numflag
-            opflag = not opflag
+            if (curr_op):
+                T.append(string_to_operator(''.join(curr_op), operators))
+                curr_op = []
             # Start a list of floats
             sidelist = []
             while (s[i] != ']'):
@@ -177,15 +172,15 @@ def tokens(s, operators):
             sidelist.append(s[i])
             T.append(read_list(''.join(sidelist)))
         elif (char == 'F'):
-            T.append(string_to_operator(''.join(curr_op), operators))
-            numflag = not numflag
-            opflag = not opflag
+            if (curr_op):
+                T.append(string_to_operator(''.join(curr_op), operators))
+                curr_op = []
             # Fudge die
             T.append([-1, 0, 1])
         i += 1
-    if (numflag and curr_num):
+    if (curr_num):
         T.append(int(''.join(curr_num)))
-    elif (opflag):
+    elif (curr_op):
         T.append(''.join(curr_op))
     return T
 
@@ -368,3 +363,5 @@ if __name__ == '__main__':
     print(roll('2da6'))
     print(roll('1d[1,1,1,1,1,6]'))
     print(roll('1da[1,1,1,1,1,6]'))
+    print(roll('1da[2,2,3,4,5,6]-1da6'))
+    print(roll('-1d4'))
