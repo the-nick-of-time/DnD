@@ -12,9 +12,9 @@ def main():
         num = 1
     for s in args:
         for i in range(int(num)):
+            print(r.roll(s), end='  ')
             if (i%20 == 19):
                 print('')
-            print(r.roll(s), end='  ')
         print('')
 
 if (__name__ == '__main__'):
