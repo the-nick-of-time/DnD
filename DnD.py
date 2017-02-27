@@ -90,7 +90,8 @@ class core:
         dc.main(self.master)
 
 
-os.chdir(os.path.dirname(__file__))
+#os.chdir(os.path.dirname(__file__))
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 win = tk.Tk()
 app = core(win)
