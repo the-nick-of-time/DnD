@@ -81,8 +81,12 @@ def roll(s, modifiers=0, option='execute'):
                  Operator('l', 6, 2, lambda x, y: x[:y], 'r'),
                  Operator('f', 6, 2, floor_val, 'r'),
                  Operator('c', 6, 2, ceil_val, 'r'),
-                 Operator('r', 6, 2, reroll_once, 'r'),
-                 Operator('R', 6, 2, reroll_unconditional, 'r'),
+                 Operator('ro', 6, 2, reroll_once_on, 'r'),
+                 Operator('Ro', 6, 2, reroll_unconditional_on, 'r'),
+                 Operator('rl', 6, 2, reroll_once_lower, 'r'),
+                 Operator('Rl', 6, 2, reroll_unconditional_lower, 'r'),
+                 Operator('rh', 6, 2, reroll_once_higher, 'r'),
+                 Operator('Rh', 6, 2, reroll_unconditional_higher, 'r'),
                  Operator('^', 5, 2, lambda x, y: x ** y, 'lr'),
                  Operator('m', 4, 1, lambda x: -x, 'r'),
                  Operator('p', 4, 1, lambda x: x, 'r'),
@@ -305,11 +309,11 @@ def roll_average(number, sides):
     return val
 
 
-def reroll_once(original, target):
+def reroll_once(original, target, comp):
     modified = original
     i = 0
     while i < len(original):
-        if (modified[i] == target):
+        if (comp(modified[i], target)):
             modified.discards[i].append(modified[i])
             modified[i] = single_die(modified.die)
         i += 1
@@ -317,16 +321,32 @@ def reroll_once(original, target):
     return modified
 
 
-def reroll_unconditional(original, target):
+def reroll_unconditional(original, target, comp):
     modified = original
     i = 0
     while i < len(original):
-        while (modified[i] == target):
+        while (comp(modified[i], target)):
             modified.discards[i].append(modified[i])
             modified[i] = single_die(modified.die)
         i += 1
     modified.sort()
     return modified
+
+
+def reroll_once_on(original, target):
+    return reroll_once(original, target, lambda x, y: x == y)
+def reroll_once_higher(original, target):
+    return reroll_once(original, target, lambda x, y: x > y)
+def reroll_once_lower(original, target):
+    return reroll_once(original, target, lambda x, y: x < y)
+
+
+def reroll_unconditional_on(original, target):
+    return reroll_unconditional(original, target, lambda x, y: x == y)
+def reroll_unconditional_higher(original, target):
+    return reroll_unconditional(original, target, lambda x, y: x > y)
+def reroll_unconditional_lower(original, target):
+    return reroll_unconditional(original, target, lambda x, y: x < y)
 
 
 def floor_val(original, bottom):
@@ -358,8 +378,8 @@ if __name__ == '__main__':
     print(roll('1d4+4+3*2'))
     print(roll('1+3*2^1d4'))
     print(roll('4d6'))
-    print(roll('1d2r1'))
-    print(roll('1d2R1'))
+    print(roll('1d2ro1'))
+    print(roll('1d2Ro1'))
     print(roll('2da6'))
     print(roll('1d[1,1,1,1,1,6]'))
     print(roll('1da[1,1,1,1,1,6]'))

@@ -27,8 +27,12 @@ These were written in Python 3.4.0-3.5.2 and I do not guarantee that they will w
 | l | *ROLL*l*n* | After making a roll, discard all but the lowest *n* of the rolls. Hint: 2d20l1 is disadvantage. |
 | f | *ROLL*f*n* | After making a roll, treat any value that is less than *n* as *n*. |
 | c | *ROLL*c*n* | After making a roll, treat any value that is greater than *n* as *n*. |
-| r | *ROLL*r*n* | After making a roll, look at all of them and reroll any that are equal to *n*, reroll those, and take the result. |
-| R | *ROLL*R*n* | After making a roll, look at all of them and reroll any that are equal to *n* and reroll those. If that number comes up again, continue rerolling until you get something different. |
+| ro | *ROLL*ro*n* | After making a roll, look at all of them and reroll any that are equal to *n*, reroll those, and take the result. |
+| Ro | *ROLL*Ro*n* | After making a roll, look at all of them and reroll any that are equal to *n* and reroll those. If that number comes up again, continue rerolling until you get something different. |
+| rh | *ROLL*rh*n* | After making a roll, look at all of them and reroll any that are strictly greater than *n*, reroll those, and take the result. |
+| Rh | *ROLL*Rh*n* | After making a roll, look at all of them and reroll any that are greater than *n* and reroll those. If a number greater than *n* comes up again, continue rerolling until you get something different. |
+| rl | *ROLL*rl*n* | After making a roll, look at all of them and reroll any that are strictly less than *n*, reroll those, and take the result. |
+| Rl | *ROLL*Rl*n* | After making a roll, look at all of them and reroll any that are less than *n* and reroll those. If a number less than *n* comes up again, continue rerolling until you get something different. |
 | ^ | *x*^*y* | Raise *x* to the *y* power. |
 | \* | *x*\**y* | *x* times *y*. |
 | / | *x*/*y* | *x* divided by *y*. This returns an unrounded number. |
@@ -47,7 +51,9 @@ Any string that can be parsed by the "rolling" code is called throughout all my 
 
 -----
 
-SECTION 2: DICE
+# Using DnD.py
+
+## Dice
 This program uses the rolling code to power a minimal interface for rolling dice. All you need to do is start it up from the main program and type in the box. The button or the enter key will roll the dice that you specify in the entry.
 
 
