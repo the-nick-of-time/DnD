@@ -13,7 +13,7 @@ def main():
         num = 1
     for s in args:
         for i in range(int(num)):
-            print('{0:3}'.format(r.roll(s)), end=' ')
+            print('{0:2}'.format(r.roll(s)), end=' ')
             if (i%width == width-1):
                 print('')
         print('')
