@@ -40,7 +40,7 @@ class Operator:
         return '{}:{} {}'.format(self.op, self.arity, self.precedence)
 
     def __str__(self):
-        return '{}'.format(self.op)
+        return self.op
 
     def __call__(self, nums):
         operands = nums[-self.arity:]
@@ -68,6 +68,39 @@ class Roll(list):
         self.die = 0
         self.discards = []
 
+    def __str__(self):
+        return 'd{}: {}'.format(str(self.die), ', '.join([str(item) for item in self]))
+
+
+# class Result:
+#     def __init__(self, initial=0, rolls=[]):
+#         # self.tokens = tokens
+#         self.rolls = rolls
+#         self.value = initial
+#         # self.constants = 0
+#
+#     def __str__(self):
+#         rolls = ', '.join([str(item) for item in self.rolls])
+#         # mod = self.constants
+#         # return '{} + {}'.format(rolls, mod)
+#         return '{}\n{}'.format(rolls, self.value)
+#
+#     def __add__(self, other):
+#         if (isinstance(other, Roll)):
+#             self.rolls.append(other)
+#             self.value += sum(other)
+#         elif (isinstance(other, list)):
+#             self.value += sum(other)
+#         else:
+#             self.value += other
+#         return self
+#
+#     def __radd__(self, other):
+#         return self.__add__(other)
+#
+#     def __repr__(self):
+#         return self.__str__()
+
 
 def roll(s, modifiers=0, option='execute'):
     """Roll dice and do arithmetic."""
@@ -77,8 +110,8 @@ def roll(s, modifiers=0, option='execute'):
                  Operator('da', 7, 2, roll_average, 'l'),
                  Operator('dc', 7, 2, roll_critical, 'l'),
                  Operator('dm', 7, 2, roll_max, 'l'),
-                 Operator('h', 6, 2, lambda x, y: x[-y:], 'r'),
-                 Operator('l', 6, 2, lambda x, y: x[:y], 'r'),
+                 Operator('h', 6, 2, take_high, 'r'),
+                 Operator('l', 6, 2, take_low, 'r'),
                  Operator('f', 6, 2, floor_val, 'r'),
                  Operator('c', 6, 2, ceil_val, 'r'),
                  Operator('ro', 6, 2, reroll_once_on, 'r'),
@@ -248,6 +281,21 @@ def read_list(s, mode='float'):
         return [int(item) for item in a]
 
 
+#### Rolling functions ####
+
+
+def take_high(roll, number):
+    roll.discards.extend(roll[-number:])
+    del roll[-number:]
+    return roll
+
+
+def take_low(roll, number):
+    roll.discards.extend(roll[:number])
+    del roll[:number]
+    return roll
+
+
 def roll_basic(number, sides):
     """Roll a single set of dice."""
     # Returns a sorted (ascending) list of all the numbers rolled
@@ -335,16 +383,24 @@ def reroll_unconditional(original, target, comp):
 
 def reroll_once_on(original, target):
     return reroll_once(original, target, lambda x, y: x == y)
+
+
 def reroll_once_higher(original, target):
     return reroll_once(original, target, lambda x, y: x > y)
+
+
 def reroll_once_lower(original, target):
     return reroll_once(original, target, lambda x, y: x < y)
 
 
 def reroll_unconditional_on(original, target):
     return reroll_unconditional(original, target, lambda x, y: x == y)
+
+
 def reroll_unconditional_higher(original, target):
     return reroll_unconditional(original, target, lambda x, y: x > y)
+
+
 def reroll_unconditional_lower(original, target):
     return reroll_unconditional(original, target, lambda x, y: x < y)
 
@@ -374,6 +430,8 @@ def ceil_val(original, top):
 
 
 if __name__ == '__main__':
+    print(roll('1d4+2'))
+    print(roll('2d20h1+1'))
     print(roll('1d4+(4+3)*2'))
     print(roll('1d4+4+3*2'))
     print(roll('1+3*2^1d4'))
