@@ -18,7 +18,7 @@ class rollsec:
         self.result.grid(row=2, column=0)
 
     def doRoll(self):
-        self.result["text"] = str(r.roll(self.generalRoll.get()))
+        self.result["text"] = r.roll(self.generalRoll.get(), option='multipass')
 
     def grid(self, row, column):
         self.f.grid(row=row, column=column)

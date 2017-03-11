@@ -27,7 +27,12 @@ class Operator:
     def __le__(self, other):
         if (isinstance(other, str)):
             return False
-        return self.precedence >= other.precedence
+        return self.precedence <= other.precedence
+
+    def __lt__(self, other):
+        if (isinstance(other, str)):
+            return False
+        return self.precedence < other.precedence
 
     def __eq__(self, other):
         if (isinstance(other, Operator)):
@@ -69,7 +74,13 @@ class Roll(list):
         self.discards = []
 
     def __str__(self):
-        return 'd{}: {}'.format(str(self.die), ', '.join([str(item) for item in self]))
+        rolls = ', '.join([str(item) for item in self])
+        discards = ', '.join([str(item) for item in self.discards])
+        formatstr = '[d{die}: {rolls}; ({discards})]' if discards else '[d{die}: {rolls}]'
+        return formatstr.format(die=str(self.die), rolls=rolls, discards=discards)
+
+    def __repr__(self):
+        return self.__str__()
 
 
 # class Result:
@@ -145,6 +156,10 @@ def roll(s, modifiers=0, option='execute'):
         return 0 + modifiers
     elif (option == 'execute'):
         return execute(tokens(s, operators), operators) + modifiers
+    elif (option == 'multipass'):
+        # TODO: add modifiers into the passes
+        T = tokens(s, operators)
+        return display_multipass(tokens(s, operators), operators)
     elif (option == 'zero'):
         return 0
     elif (option == 'tokenize'):
@@ -255,13 +270,13 @@ def execute(T, operators):
     return deep_sum(nums)
 
 
-def deep_sum(l):
-    s = 0
+def deep_sum(l, starting=0):
+    s = starting
     for item in l:
         try:
-            s += sum(item)
-        except(TypeError):
             s += item
+        except (TypeError):
+            s += deep_sum(item, s)
     return s
 
 
@@ -284,15 +299,17 @@ def read_list(s, mode='float'):
 #### Rolling functions ####
 
 
-def take_high(roll, number):
-    roll.discards.extend(roll[-number:])
-    del roll[-number:]
+def take_low(roll, number):
+    if (len(roll) > number):
+        roll.discards.extend(roll[-number:])
+        del roll[-number:]
     return roll
 
 
-def take_low(roll, number):
-    roll.discards.extend(roll[:number])
-    del roll[:number]
+def take_high(roll, number):
+    if (len(roll) > number):
+        roll.discards.extend(roll[:number])
+        del roll[:number]
     return roll
 
 
@@ -301,7 +318,7 @@ def roll_basic(number, sides):
     # Returns a sorted (ascending) list of all the numbers rolled
     result = Roll()
     result.die = sides
-    result.discards = [[] for all in range(number)]
+    # result.discards = [[] for all in range(number)]
     rollList = []
     for all in range(number):
         result.append(single_die(sides))
@@ -322,7 +339,7 @@ def roll_critical(number, sides):
     # Returns a sorted (ascending) list of all the numbers rolled
     result = Roll()
     result.die = sides
-    result.discards = [[] for all in range(number)]
+    # result.discards = [[] for all in range(number)]
     rollList = []
     for all in range(2*number):
         result.append(single_die(sides))
@@ -335,7 +352,7 @@ def roll_max(number, sides):
     # Returns a sorted (ascending) list of all the numbers rolled
     result = Roll()
     result.die = sides
-    result.discards = [[] for all in range(number)]
+    # result.discards = [[] for all in range(number)]
     rollList = []
     if (isinstance(sides, list)):
         result.extend([max(sides) for all in range(number)])
@@ -347,7 +364,7 @@ def roll_max(number, sides):
 def roll_average(number, sides):
     val = Roll()
     val.die = sides
-    val.discards = [[] for all in range(number)]
+    # val.discards = [[] for all in range(number)]
     if (isinstance(sides, list)):
         val.extend([sum(sides)/len(sides)]*number)
         # return (sum(sides) * number) / len(sides)
@@ -362,7 +379,7 @@ def reroll_once(original, target, comp):
     i = 0
     while i < len(original):
         if (comp(modified[i], target)):
-            modified.discards[i].append(modified[i])
+            modified.discards.append(modified[i])
             modified[i] = single_die(modified.die)
         i += 1
     modified.sort()
@@ -374,7 +391,7 @@ def reroll_unconditional(original, target, comp):
     i = 0
     while i < len(original):
         while (comp(modified[i], target)):
-            modified.discards[i].append(modified[i])
+            modified.discards.append(modified[i])
             modified[i] = single_die(modified.die)
         i += 1
     modified.sort()
@@ -429,7 +446,52 @@ def ceil_val(original, top):
     return modified
 
 
+### Multipass ###
+
+def multipass(T, operators):
+    out = [T]
+    working = T.copy()
+    pmax = max(operators).precedence
+    pmin = min(operators).precedence
+    for p in range(max(operators).precedence, min(operators).precedence-1, -1):
+        i = 0
+        while (i < len(working)):
+            if (isinstance(working[i], Operator) and working[i].precedence == p):
+                # Take the operator and adjacent numbers according to the arity
+                if (working[i].arity == 1):
+                    # perform the operation
+                    # push back into the correct location within the token list
+                    working[i] = working[i]([working.pop(i+1)])
+                elif (working[i].arity == 2):
+                    # perform the operation
+                    # push back into the correct location within the token list
+                    op = working[i]
+                    nums = [working.pop(i-1), working.pop(i)]
+                    r = op(nums)
+                    working[i-1] = r[0]
+                    i -= 1
+            i += 1
+        out.append(working.copy())
+    out.append(deep_sum(out[-1], 0))
+    return out
+
+
+def display_multipass(T, operators):
+    result = multipass(T, operators)
+    selections = (1, -1)
+    out = []
+    for i in selections[:-1]:
+        out.append(''.join([str(item) for item in result[i]]))
+    out.append(str(result[selections[-1]]))
+    return '\n'.join(out)
+
+
+### Tests ###
+
 if __name__ == '__main__':
+    print(roll('3d4', option='multipass'))
+    print(roll('1d4+2', option='multipass'))
+    print(roll('8d4ro1+2', option='multipass'))
     print(roll('1d4+2'))
     print(roll('2d20h1+1'))
     print(roll('1d4+(4+3)*2'))
