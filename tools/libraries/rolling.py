@@ -125,12 +125,12 @@ def roll(s, modifiers=0, option='execute'):
                  Operator('l', 6, 2, take_low, 'r'),
                  Operator('f', 6, 2, floor_val, 'r'),
                  Operator('c', 6, 2, ceil_val, 'r'),
-                 Operator('ro', 6, 2, reroll_once_on, 'r'),
-                 Operator('Ro', 6, 2, reroll_unconditional_on, 'r'),
-                 Operator('rl', 6, 2, reroll_once_lower, 'r'),
-                 Operator('Rl', 6, 2, reroll_unconditional_lower, 'r'),
-                 Operator('rh', 6, 2, reroll_once_higher, 'r'),
-                 Operator('Rh', 6, 2, reroll_unconditional_higher, 'r'),
+                 Operator('r', 6, 2, reroll_once_on, 'r'),
+                 Operator('R', 6, 2, reroll_unconditional_on, 'r'),
+                 Operator('r<', 6, 2, reroll_once_lower, 'r'),
+                 Operator('R<', 6, 2, reroll_unconditional_lower, 'r'),
+                 Operator('r>', 6, 2, reroll_once_higher, 'r'),
+                 Operator('R>', 6, 2, reroll_unconditional_higher, 'r'),
                  Operator('^', 5, 2, lambda x, y: x ** y, 'lr'),
                  Operator('m', 4, 1, lambda x: -x, 'r'),
                  Operator('p', 4, 1, lambda x: x, 'r'),
@@ -478,7 +478,7 @@ def multipass(T, operators):
 
 def display_multipass(T, operators):
     result = multipass(T, operators)
-    selections = (1, -1)
+    selections = (2, -1)
     out = []
     for i in selections[:-1]:
         out.append(''.join([str(item) for item in result[i]]))
