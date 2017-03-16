@@ -158,12 +158,13 @@ def roll(s, modifiers=0, option='execute'):
         return execute(tokens(s, operators), operators) + modifiers
     elif (option == 'multipass'):
         # TODO: add modifiers into the passes
-        T = tokens(s, operators)
         return display_multipass(tokens(s, operators), operators)
-    elif (option == 'zero'):
-        return 0
     elif (option == 'tokenize'):
         return tokens(s)
+    elif (option == 'from_tokens'):
+        return execute(s)
+    elif (option == 'zero'):
+        return 0
 
 
 call = roll  # A hacky workaround for backwards compatibility
@@ -276,7 +277,7 @@ def deep_sum(l, starting=0):
         try:
             s += item
         except (TypeError):
-            s += deep_sum(item, s)
+            s += deep_sum(item)
     return s
 
 
