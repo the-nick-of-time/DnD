@@ -164,9 +164,18 @@ def roll(s, modifiers=0, option='execute'):
         return 0 + modifiers
     elif (option == 'execute'):
         return execute(tokens(s, operators), operators) + modifiers
+    elif (option == 'critical'):
+        T = tokens(s, operators)
+        T = critify(T, operators)
+        return execute(T, operators) + modifiers
     elif (option == 'multipass'):
         # TODO: add modifiers into the passes
         return display_multipass(tokens(s, operators), operators)
+    elif (option == 'multipass_critical'):
+        # TODO: add modifiers into the passes
+        T = tokens(s, operators)
+        T = critify(T, operators)
+        return display_multipass(T, operators)
     elif (option == 'tokenize'):
         return tokens(s)
     elif (option == 'from_tokens'):
@@ -303,6 +312,29 @@ def read_list(s, mode='float'):
     elif (mode == 'int'):
         a = list(eval(s))
         return [int(item) for item in a]
+
+
+def critify(T, operators):
+    # Note: crit is superseded by maximum
+    # Though why you're using roll_max anyway is a mystery
+    for (i, item) in enumerate(T):
+        if (item == 'd' or item == 'da'):
+            T[i] = string_to_operator('dc', operators)
+    return T
+
+def averageify(T, operators):
+    # Note: average is superseded by crit or max
+    for (i, item) in enumerate(T):
+        if (item == 'd'):
+            T[i] = string_to_operator('da', operators)
+    return T
+
+def maxify(T, operators):
+    # Max supersedes all
+    for (i, item) in enumerate(T):
+        if (item == 'd' or item == 'da' or item == 'dc'):
+            T[i] = string_to_operator('dm', operators)
+    return T
 
 
 #### Rolling functions ####
