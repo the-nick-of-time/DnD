@@ -342,15 +342,17 @@ def maxify(T, operators):
 
 def take_low(roll, number):
     if (len(roll) > number):
-        roll.discards.extend(roll[-number:])
-        del roll[-number:]
+        n = len(roll) - number
+        roll.discards.extend(roll[-n:])
+        del roll[-n:]
     return roll
 
 
 def take_high(roll, number):
     if (len(roll) > number):
-        roll.discards.extend(roll[:number])
-        del roll[:number]
+        n = len(roll) - number
+        roll.discards.extend(roll[:n])
+        del roll[:n]
     return roll
 
 
