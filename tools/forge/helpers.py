@@ -1,12 +1,13 @@
 import re
 import json
 
-with open('./tools/forge/conditions.json') as f:
+# with open('./tools/forge/conditions.json') as f:
+with open('./conditions.json') as f:
     condition_defs = json.load(f)
 
 
 def modifier(score):
-    return (score - 10) // 2
+    return (int(score) - 10) // 2
 
 
 def shorten(effect):

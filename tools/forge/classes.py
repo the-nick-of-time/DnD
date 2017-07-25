@@ -2,9 +2,10 @@ import re
 from collections import OrderedDict
 from functools import wraps
 
-import tools.libraries.rolling as r
-import tools.forge.helpers as h
-# import gui
+# import tools.libraries.rolling as r
+# import tools.forge.helpers as h
+import rolling as r
+import helpers as h
 
 __all__ = ['Character', 'Weapon', 'Spell', 'SpellAttack', 'Class',
            'RangedWeapon', 'Armor', 'Item', 'MagicItem']
@@ -57,6 +58,7 @@ class Resource:
         self.iface = jf
         self.name = jf.get('/name')
         self.number = jf.get('/number')
+        self.maxnumber = jf.get('/maxnumber')
         self.value = jf.get('/value')
         self.recharge = jf.get('/recharge')
 
@@ -154,10 +156,10 @@ class Character:
     def __str__(self):
         return self.name
 
-    def __getattribute__(self, key):
-        for name in self.conditions:
-            print(h.condition_defs[name])
-        return self.__getattr__(key)
+    # def __getattribute__(self, key):
+    #     # for name in self.__getattr__('conditions'):
+    #     #     print(h.condition_defs[name])
+    #     return self.__getattr__(key)
 
     def add_condition(self, name):
         if (name == 'exhaustion'):
@@ -227,14 +229,14 @@ class Character:
 
     def get_bonuses(self):
         bonuses = {}
-        for item in inventory:
-            newbonus = item.get('/bonus')
-            if (newbonus is not None):
-                for var, amount in newbonus.items():
-                    if (var not in bonuses):
-                        bonuses.update((var, amount))
-                    else:
-                        bonuses[var] += amount
+        # for item in inventory:
+        #     newbonus = item.get('/bonus')
+        #     if (newbonus is not None):
+        #         for var, amount in newbonus.items():
+        #             if (var not in bonuses):
+        #                 bonuses.update((var, amount))
+        #             else:
+        #                 bonuses[var] += amount
         return bonuses
 
     def set_abilities(self, name, value):
@@ -647,7 +649,7 @@ class Item:
     def __str__(self):
         return self.name
 
-    def setowner(self, person):
+    def setowner(self, character):
         if (isinstance(character, Character)):
             self.owner = character
         else:
