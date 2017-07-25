@@ -10,42 +10,50 @@
 
 Direct all comments, suggestions, and bug reports at github.com/the-nick-of-time
 All tools in this package are released under the GNU General Public License version 2, as detailed within the file LICENSE. Refer to that document before doing anything except downloading for personal use.
-These were written in Python 3.4.0 and I do not guarantee that they will work correctly on any other platform.
+These were written in Python 3.4.0-3.5.2 and I do not guarantee that they will work correctly on any other platform.
 
 
 # GENERAL USE
 
 ## Rolling
-Any string that can be parsed by the "rolling" code is called throughout all my related code a "rollable string". These are similar to arithmetic expressions, just with the d, h, and l operators added.
-The definitions of these operators are as follows:
-xdy rolls x y-sided dice and returns a sorted list of these rolls. xd[a,b,c,...] rolls x dice with sides a,b,c....
-xdyhz rolls x y-sided dice and returns the z highest of these rolls. This allows you to have advantage on rolls.
-xdylz rolls x y-sided dice and returns the z lowest of these rolls. This enables disadvantage.
 
-Examples of rollable strings:
+| Operator | Format | Meaning |
+| :------------- | :------------- | :----- |
+| d       | *x*d*y*       | Take a *y*-sided die and roll *x* of them. *y* can be an integer, and works just as you would expect. It can also be a list of arbitrary numbers, in which case it works as a die with one side labeled with each number in the list.  |
+| da | *x*da*y* | Take a *y*-sided die and return the average as if *x* of them had been rolled. This returns an unrounded number. |
+| dc | *x*dc*y* | Roll a critical hit, where the number of dice rolled is doubled. |
+| dm | *x*dm*y* | Roll the maximum on every die rolled. |
+| h | *ROLL*h*n* | After making a roll, discard all but the highest *n* of the rolls. Hint: 2d20h1 is advantage. |
+| l | *ROLL*l*n* | After making a roll, discard all but the lowest *n* of the rolls. Hint: 2d20l1 is disadvantage. |
+| f | *ROLL*f*n* | After making a roll, treat any value that is less than *n* as *n*. |
+| c | *ROLL*c*n* | After making a roll, treat any value that is greater than *n* as *n*. |
+| ro | *ROLL*ro*n* | After making a roll, look at all of them and reroll any that are equal to *n*, reroll those, and take the result. |
+| Ro | *ROLL*Ro*n* | After making a roll, look at all of them and reroll any that are equal to *n* and reroll those. If that number comes up again, continue rerolling until you get something different. |
+| rh | *ROLL*rh*n* | After making a roll, look at all of them and reroll any that are strictly greater than *n*, reroll those, and take the result. |
+| Rh | *ROLL*Rh*n* | After making a roll, look at all of them and reroll any that are greater than *n* and reroll those. If a number greater than *n* comes up again, continue rerolling until you get something different. |
+| rl | *ROLL*rl*n* | After making a roll, look at all of them and reroll any that are strictly less than *n*, reroll those, and take the result. |
+| Rl | *ROLL*Rl*n* | After making a roll, look at all of them and reroll any that are less than *n* and reroll those. If a number less than *n* comes up again, continue rerolling until you get something different. |
+| ^ | *x*^*y* | Raise *x* to the *y* power. |
+| \* | *x*\**y* | *x* times *y*. |
+| / | *x*/*y* | *x* divided by *y*. This returns an unrounded number. |
+| % | *x*%*y* | *x* modulo *y*. |
+| + | *x*+*y* | *x* plus *y*. |
+| - | *x*-*y* | *x* minus *y*. |
+| > | *x*>*y* | Check if *x* is greater than *y*. Returns a 1 for yes and 0 for no. |
+| >= | *x*>=*y* | Check if *x* is greater than or equal to *y*. Returns a 1 for yes and 0 for no. |
+| < | *x*<*y* | Check if *x* is less than *y*. Returns a 1 for yes and 0 for no. |
+| <= | *x*<=*y* | Check if *x* is less than or equal to *y*. Returns a 1 for yes and 0 for no. |
+| = | *x*=*y* | Check if *x* is equal to *y*. Returns a 1 for yes and 0 for no. |
+| & | *x*&*y* | Check if *x* and *y* are both nonzero. |
+| &#124; | *x*&#124;*y* | Check if at least one of *x* or *y* is nonzero. |
 
-+4: (positive four)  
--2: (negative two)  
-1d6: (roll a six-sided die with sides numbered one through six)  
--1d6: (roll a d6 and take the negative)  
-3d6+2: (roll 3d6 and add 2 to the sum)  
-1d6+1d4+1: (roll a d6, add to it a d4, and add one to that)  
-2d20h1+3+2: (roll 2d20, take the higher of the two rolls, add a total of five to it)  
-3d6/2: (roll 3d6, divide the sum by 2; note that this returns an unrounded number)
-
-Less applicable functionalities:  
-1d6^2: (roll a d6, square the result)  
-1d6^1d4: (roll a d6, raise it to a random power between 1 and 4)  
-1d4d4d4: (roll a d4, roll that many d4s, sum them and roll that many d4s)  
-1d[0,0,0,1,1,2]: (roll a six-sided die with three sides being 0, two 1, and one 2)  
-1d[.5, .33, .25, .20]	(roll a four-sided die with sides 0.5, 0.33, 0.25, and 0.2)  
-2d[1/2,1/3,1/4,1/5]	(roll two of the above without rounding)  
-1d100>11: (roll a d100 and check whether the roll is greater than 11; displays a 1 for true and 0 for false)  
-3d4%5: (roll 3d4, return the remainder after division by 5)
+Any string that can be parsed by the "rolling" code is called throughout all my related code a "rollable string". These are similar to arithmetic expressions, just with some dice-specific operators added.
 
 -----
 
-SECTION 2: DICE
+# Using DnD.py
+
+## Dice
 This program uses the rolling code to power a minimal interface for rolling dice. All you need to do is start it up from the main program and type in the box. The button or the enter key will roll the dice that you specify in the entry.
 
 
@@ -118,7 +126,7 @@ QUIT:
   Saves and quits. This saves all HP-related numbers, your current level, and even all of your abilities (in case those change at all).
 
 
-============================================================================================
+----------
 SECTION 4: DUNGEON MASTERS
 The Monster Manager is written for you. It keeps track of monsters and allows you to roll any other dice you need while running a combat. There is no preparation needed to use this, so just run it as is.
 

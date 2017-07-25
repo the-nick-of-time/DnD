@@ -1,57 +1,18 @@
-"""
-Rolling
-Version 1.0 (released 2016-01-09)
-Direct all comments, suggestions, etc. at /u/the-nick-of-time
-Released under the GNU General Public License version 2, as detailed within
-the file LICENSE included in the same directory as this code.
-
-This module provides the framework for evaluating roll expressions. Basically,
-it adds the capability to parse the operators 'd', 'h', and 'l'.The important
-thing to note is that these are simply new binary operators.
-The definitions of these operators are as follows:
-xdy rolls x y-sided dice and returns a sorted list of these rolls.
-    xd[a,b,c,...] rolls x dice with sides a,b,c....
-xdyhz rolls x y-sided dice and returns the z highest of these rolls. This
-    enables the advantage mechanic.
-xdylz rolls x y-sided dice and returns the z lowest of these rolls. This
-    enables the disadvantage mechanic.
-
-Any string that can be parsed by this code is called throughout all my related
-code a "rollable string". These are similar to arithmetic expressions, just
-with the above operators added.
-Examples of rollable strings:
-+4                  (positive four)
--2                  (negative two)
-1d6                 (roll a six-sided die with sides numbered one through six)
--1d6                (roll a d6 and take the negative)
-3d6+2               (roll 3d6 and add 2 to the sum)
-1d6+1d4+1           (roll a d6, add to it a d4, and add one to that)
-2d20h1+3+2          (roll 2d20, take the higher of the two rolls, add a total
-                     of five to it)
-3d6/2               (roll 3d6, divide the sum by 2; note that this returns an
-                     unrounded number)
-Less applicable functionalities:
-1d6^2               (roll a d6, square the result)
-1d6^1d4             (roll a d6, raise it to a random power between 1 and 4)
-1d4d4d4             (roll a d4, roll that many d4s, sum them and roll that many
-                     d4s)
-1d[0,0,0,1,1,2]     (roll a six-sided die with three sides being 0, two 1, and
-                     one 2)
-1d[.5,.33,.25,.20]  (roll a four-sided die with sides 0.5, 0.33, 0.25, and 0.2)
-1d100>11            (roll a d100 and check whether the roll is greater than 11;
-                     returns a 1 for true and 0 for false)
-3d4%5               (roll 3d4, return the remainder after division by 5)
-
-"""
-
 import random
 import string
 
 __all__ = ['roll', 'call']
 
 
-class operator:
+class Operator:
     def __init__(self, op, precedence, arity, operation=None, cajole='lr'):
+        # op: string
+        # precedence: integer
+        # arity: integer; 1 or 2 for unary/binary operators
+        #   unary are necessarily prefix and binary are necessarily infix
+        # operation: function
+        # cajole: string; contains 'l', 'r' to convert that argument to a
+        #   number
         self.op = op
         self.precedence = precedence
         self.arity = arity
@@ -66,10 +27,15 @@ class operator:
     def __le__(self, other):
         if (isinstance(other, str)):
             return False
-        return self.precedence >= other.precedence
+        return self.precedence <= other.precedence
+
+    def __lt__(self, other):
+        if (isinstance(other, str)):
+            return False
+        return self.precedence < other.precedence
 
     def __eq__(self, other):
-        if (isinstance(other, operator)):
+        if (isinstance(other, Operator)):
             return self.op == other.op
         if(isinstance(other, str)):
             return self.op == other
@@ -78,37 +44,116 @@ class operator:
     def __repr__(self):
         return '{}:{} {}'.format(self.op, self.arity, self.precedence)
 
-    def op(self, nums):
+    def __str__(self):
+        return self.op
+
+    def __call__(self, nums):
         operands = nums[-self.arity:]
         del nums[-self.arity:]
+        # index of the left and right arguments to the operator
         l = 0 if self.arity == 2 else None
         r = 1 if self.arity == 2 else 0
         if ('l' in self.cajole):
-            operands[l] = sum(operands[l])
+            try:
+                operands[l] = sum(operands[l])
+            except(TypeError):
+                pass
         if ('r' in self.cajole):
-            operands[r] = sum(operands[r])
+            try:
+                operands[r] = sum(operands[r])
+            except(TypeError):
+                pass
         nums.append(self.operation(*operands))
         return nums
 
 
+class Roll(list):
+    def __init__(self, *args, **kwargs):
+        list.__init__(self, *args, **kwargs)
+        self.die = 0
+        self.discards = []
+
+    def __str__(self):
+        rolls = ', '.join([str(item) for item in self])
+        discards = ', '.join([str(item) for item in self.discards])
+        formatstr = '[d{die}: {rolls}; ({discards})]' if discards else '[d{die}: {rolls}]'
+        return formatstr.format(die=str(self.die), rolls=rolls, discards=discards)
+
+    def __repr__(self):
+        return self.__str__()
+
+
+# class Result:
+#     def __init__(self, initial=0, rolls=[]):
+#         # self.tokens = tokens
+#         self.rolls = rolls
+#         self.value = initial
+#         # self.constants = 0
+#
+#     def __str__(self):
+#         rolls = ', '.join([str(item) for item in self.rolls])
+#         # mod = self.constants
+#         # return '{} + {}'.format(rolls, mod)
+#         return '{}\n{}'.format(rolls, self.value)
+#
+#     def __add__(self, other):
+#         if (isinstance(other, Roll)):
+#             self.rolls.append(other)
+#             self.value += sum(other)
+#         elif (isinstance(other, list)):
+#             self.value += sum(other)
+#         else:
+#             self.value += other
+#         return self
+#
+#     def __radd__(self, other):
+#         return self.__add__(other)
+#
+#     def __repr__(self):
+#         return self.__str__()
+
+
 def roll(s, modifiers=0, option='execute'):
     """Roll dice and do arithmetic."""
-    global operators
+    # global operators
 
-    operators = (operator('d', 7, 2, rollBasic, 'l'),
-                 operator('dav', 7, 2, rollAverage, 'l'),
-                 operator('h', 6, 2, lambda x, y: x[-y:], 'r'),
-                 operator('l', 6, 2, lambda x, y: x[:y], 'r'),
-                 operator('^', 5, 2, lambda x, y: x ** y, 'lr'),
-                 operator('m', 4, 1, lambda x: -x, 'r'),
-                 operator('p', 4, 1, lambda x: x, 'r'),
-                 operator('*', 3, 2, lambda x, y: x * y, 'lr'),
-                 operator('/', 3, 2, lambda x, y: x / y, 'lr'),
-                 operator('-', 2, 2, lambda x, y: x - y, 'lr'),
-                 operator('+', 2, 2, lambda x, y: x + y, 'lr'),
-                 operator('>', 1, 2, lambda x, y: x > y, 'lr'),
-                 operator('<', 1, 2, lambda x, y: x < y, 'lr'),
-                 operator('=', 1, 2, lambda x, y: x == y, 'lr'),
+    operators = (Operator('d', 7, 2, roll_basic, 'l'),
+                 Operator('da', 7, 2, roll_average, 'l'),
+                 Operator('dc', 7, 2, roll_critical, 'l'),
+                 Operator('dm', 7, 2, roll_max, 'l'),
+                 Operator('h', 6, 2, take_high, 'r'),
+                 Operator('l', 6, 2, take_low, 'r'),
+                 Operator('f', 6, 2, floor_val, 'r'),
+                 Operator('c', 6, 2, ceil_val, 'r'),
+                 Operator('r', 6, 2, reroll_once_on, 'r'),
+                 Operator('R', 6, 2, reroll_unconditional_on, 'r'),
+                 Operator('r<', 6, 2, reroll_once_lower, 'r'),
+                 Operator('R<', 6, 2, reroll_unconditional_lower, 'r'),
+                 Operator('rl', 6, 2, reroll_once_lower, 'r'),
+                 Operator('Rl', 6, 2, reroll_unconditional_lower, 'r'),
+                 Operator('r>', 6, 2, reroll_once_higher, 'r'),
+                 Operator('R>', 6, 2, reroll_unconditional_higher, 'r'),
+                 Operator('rh', 6, 2, reroll_once_higher, 'r'),
+                 Operator('Rh', 6, 2, reroll_unconditional_higher, 'r'),
+                 Operator('^', 5, 2, lambda x, y: x ** y, 'lr'),
+                 Operator('m', 4, 1, lambda x: -x, 'r'),
+                 Operator('p', 4, 1, lambda x: x, 'r'),
+                 Operator('*', 3, 2, lambda x, y: x * y, 'lr'),
+                 Operator('/', 3, 2, lambda x, y: x / y, 'lr'),
+                 Operator('%', 3, 2, lambda x, y: x % y, 'lr'),
+                 Operator('-', 2, 2, lambda x, y: x - y, 'lr'),
+                 Operator('+', 2, 2, lambda x, y: x + y, 'lr'),
+                 Operator('>', 1, 2, lambda x, y: x > y, 'lr'),
+                 Operator('gt', 1, 2, lambda x, y: x > y, 'lr'),
+                 Operator('>=', 1, 2, lambda x, y: x >= y, 'lr'),
+                 Operator('ge', 1, 2, lambda x, y: x >= y, 'lr'),
+                 Operator('<', 1, 2, lambda x, y: x < y, 'lr'),
+                 Operator('lt', 1, 2, lambda x, y: x < y, 'lr'),
+                 Operator('<=', 1, 2, lambda x, y: x <= y, 'lr'),
+                 Operator('le', 1, 2, lambda x, y: x <= y, 'lr'),
+                 Operator('=', 1, 2, lambda x, y: x == y, 'lr'),
+                 Operator('|', 1, 2, lambda x, y: x or y, 'lr'),
+                 Operator('&', 1, 2, lambda x, y: x and y, 'lr'),
                  )
 
     if (isinstance(s, (float, int))):
@@ -118,197 +163,99 @@ def roll(s, modifiers=0, option='execute'):
     elif (s == ''):
         return 0 + modifiers
     elif (option == 'execute'):
-        return (execute(tokens(s)) + modifiers)
-    elif (option == 'max'):
-        T = tokens(s)
-        for (i, item) in enumerate(T):
-            if (item == 'd'):
-                if (len(T) >= i + 3 and (T[i + 2] == 'h' or T[i + 2] == 'l')):
-                    T[i - 1:i + 4] = [T[i + 3], '*', T[i + 1]]
-                else:
-                    T[i] = '*'
-        return execute(T)
+        return execute(tokens(s, operators), operators) + modifiers
     elif (option == 'critical'):
-        T = tokens(s)
-        for i in range(len(T)):
-            if (T[i] == 'd'):
-                T[i - 1] *= 2
-        return (execute(T) + modifiers)
-    elif (option == 'average'):
-        return (execute(tokens(s), av=True) + modifiers)
-    elif (option == 'zero'):
-        return 0
-    # elif (option == 'multipass'):
-    #     return displayMultipass(multipass(tokens(s), modifiers))
+        T = tokens(s, operators)
+        T = critify(T, operators)
+        return execute(T, operators) + modifiers
+    elif (option == 'multipass'):
+        # TODO: add modifiers into the passes
+        return display_multipass(tokens(s, operators), operators)
+    elif (option == 'multipass_critical'):
+        # TODO: add modifiers into the passes
+        T = tokens(s, operators)
+        T = critify(T, operators)
+        return display_multipass(T, operators)
     elif (option == 'tokenize'):
         return tokens(s)
+    elif (option == 'from_tokens'):
+        return execute(s)
+    elif (option == 'zero'):
+        return 0
 
 
 call = roll  # A hacky workaround for backwards compatibility
 
 
-def tokens(s, av=False):
+def tokens(s, operators):
     """Split a string into tokens for use with execute()"""
-    number = []
-    operator = []
-    out = []
+    # Every character that could be part of an operator
+    possibilities = ''.join([str(item) for item in operators])
+    curr_num = []
+    curr_op = []
+    T = []
     i = 0
-    numflag = s[0] in string.digits
-    opflag = s[0] in operators
     while (i < len(s)):
         char = s[i]
         if (char in string.digits):
-            if (opflag):
-                out.extend(operator)
-                operator = []
-                numflag = not numflag
-                opflag = not opflag
-            number.append(char)
-        elif (char in operators or char == '(' or char == ')'):
-            if (numflag):
-                out.append(int(''.join(number)))
-                number = []
-                numflag = not numflag
-                opflag = not opflag
-            if(char == '+' and (i == 0 or s[i - 1] in operators)):
-                out.append(string_to_operator('p'))
-            elif(char == '-' and (i == 0 or s[i - 1] in operators)):
-                out.append(string_to_operator('m'))
+            if (curr_op):
+                op = string_to_operator(''.join(curr_op), operators)
+                T.append(op)
+                curr_op = []
+            curr_num.append(char)
+        elif (char in possibilities or char in '()'):
+            # Things that will end up on the operators stack
+            # elif (char in operators or char == '(' or char == ')'):
+            if (curr_num):
+                T.append(int(''.join(curr_num)))
+                curr_num = []
+            if(char == '+' and (i == 0 or s[i - 1] in possibilities + '(')):
+                T.append(string_to_operator('p', operators))
+                curr_op = []
+            elif(char == '-' and (i == 0 or s[i - 1] in possibilities + '(')):
+                T.append(string_to_operator('m', operators))
+                curr_op = []
             else:
-                operator.append(string_to_operator(char, av))
+                if (len(curr_op) == 0):
+                    # This is the first time you see an operator since last
+                    # time the list was cleared
+                    curr_op.append(char)
+                elif (''.join(curr_op + [char]) in operators):
+                    # This means that the current char is part of a
+                    # multicharacter operation like <=
+                    curr_op.append(char)
+                else:
+                    # Two separate operators; push out the old one and start
+                    # collecting the new one
+                    op = string_to_operator(''.join(curr_op), operators)
+                    T.append(op)
+                    curr_op = [char]
         elif (char == '['):
+            if (curr_op):
+                T.append(string_to_operator(''.join(curr_op), operators))
+                curr_op = []
+            # Start a list of floats
             sidelist = []
             while (s[i] != ']'):
                 sidelist.append(s[i])
                 i += 1
-            i += 1
             sidelist.append(s[i])
-            out.append(readList(''.join(sidelist)))
+            T.append(read_list(''.join(sidelist)))
         elif (char == 'F'):
-            out.append([-1, 0, 1])
+            if (curr_op):
+                T.append(string_to_operator(''.join(curr_op), operators))
+                curr_op = []
+            # Fudge die
+            T.append([-1, 0, 1])
         i += 1
-    if (numflag):
-        out.append(int(''.join(number)))
-    elif (opflag):
-        out.append(''.join(operator))
-    return out
+    if (curr_num):
+        T.append(int(''.join(curr_num)))
+    elif (curr_op):
+        T.append(''.join(curr_op))
+    return T
 
 
-def string_to_operator(s, av=False):
-    if (av and s == 'd'):
-        s = 'dav'
-    for op in operators:
-        if (op == s):
-            return op
-    return s
-
-
-def readList(s, mode='float'):
-    """Read a list defined in a string."""
-    if (mode == 'float'):
-        return list(eval(s))
-    elif (mode == 'int'):
-        a = list(eval(s))
-        return [int(item) for item in a]
-
-
-def rollBasic(number, sides):
-    """Roll a single set of dice."""
-    # Returns a sorted (ascending) list of all the numbers rolled
-    result = []
-    rollList = []
-    if (type(sides) is int):
-        rollList = list(range(1, sides + 1))
-    elif (type(sides) is list):
-        rollList = sides
-    for all in range(number):
-        result.append(rollList[random.randint(0, len(rollList) - 1)])
-    result.sort()
-    return result
-
-
-def rollAverage(number, sides):
-    if (isinstance(sides, list)):
-        return (sum(sides) * number) / len(sides)
-    else:
-        return (1 + sides) * number / 2
-
-
-def make_roll(lhs, rhs, average):
-    if (average):
-        if (isinstance(rhs, list)):
-            return (sum(rhs) * lhs) // len(rhs)
-        else:
-            return (1 + rhs) * lhs // 2
-    else:
-        return rollBasic(lhs, rhs)
-
-
-def evaluate(nums, op, av=False):
-    """Evaluate expressions."""
-    if (any(op == c for c in 'd^*/%+-><=')):
-        # collapse any lists in preparation for operation
-        try:
-            nums[0] = sum(nums[0])
-        except (TypeError):
-            pass
-
-    if (any(operators[3] == c for c in 'hl^*/%+-><=&|')):
-        try:
-            nums[1] = sum(nums[1])
-        except (TypeError):
-            pass
-
-    if (op == 'd'):
-        if (av):
-            if (type(nums[1]) is list):
-                return (sum(nums[1]) * nums[0]) // len(nums[1])
-            else:
-                return (1 + nums[1]) * nums[0] // 2
-        else:
-            return rollBasic(nums[0], nums[1])
-    elif (op == 'h'):
-        return nums[0][-nums[1]:]
-    elif (op == 'l'):
-        return nums[0][:nums[1]]
-    elif (op == '^'):
-        return nums[0]**nums[1]
-    elif (op == '*'):
-        return nums[0] * nums[1]
-    elif (op == '/'):
-        return nums[0] / nums[1]
-    elif (op == '%'):
-        return nums[0] % nums[1]
-    elif (op == '+'):
-        return nums[0] + nums[1]
-    elif (op == '-'):
-        return nums[0] - nums[1]
-    elif (op == '>'):
-        return nums[0] > nums[1]
-    elif (op == '<'):
-        return nums[0] < nums[1]
-    elif (op == '='):
-        return nums[0] == nums[1]
-    elif (op == '&'):
-        return nums[0] and nums[1]
-    elif (op == '|'):
-        return nums[0] or nums[1]
-
-
-def unary(num, op):
-    """Evaluate unary expressions."""
-    try:
-        num = sum(num)
-    except (TypeError):
-        pass
-    if (op == 'm'):
-        return -num
-    elif (op == 'p'):
-        return num
-
-
-def execute(T, av=False):
-    """Calculate a result from a list of tokens."""
+def execute(T, operators):
     oper = []
     nums = []
     while (len(T) > 0):
@@ -320,85 +267,282 @@ def execute(T, av=False):
         elif (current == ')'):
             while (oper[-1] != '('):
                 # Evaluate all extant expressions down to the open paren
-                if (arity(oper[-1]) == 2):
-                    nums.append(evaluate(
-                        [nums.pop(-2), nums.pop()], oper.pop(), av))
-                else:
-                    nums.append(unary(nums.pop(), oper.pop()))
+                oper[-1](nums)
+                oper.pop()
             oper.pop()  # Get rid of that last open paren
         elif (current in operators):
             try:
+                # Evaluate all higher-precedence operations first
                 while (oper[-1] >= current):
-                    if (arity(oper[-1]) == 2):
-                        nums.append(evaluate(
-                            [nums.pop(-2), nums.pop()], oper.pop(), av))
-                    else:
-                        nums.append(unary(nums.pop(), oper.pop()))
+                    oper[-1](nums)
+                    oper.pop()
             except (IndexError):
+                # Operators stack is empty
                 pass
+            # Then push the current operator to the stack
             oper.append(current)
-            # or add a higher-precedence operator to the stack
     while (len(oper) > 0):
-        # empty the operator stack
-        if (arity(oper[-1]) == 2):
-            nums.append(evaluate([nums.pop(-2), nums.pop()], oper.pop(), av))
-        else:
-            nums.append(unary(nums.pop(), oper.pop()))
-    try:
-        # collapse list of rolls if able
-        nums[0] = sum(nums[0])
-    except (TypeError):
-        pass
-    return sum(nums)
+        # Empty the operators stack
+        oper[-1](nums)
+        oper.pop()
+    return deep_sum(nums)
 
 
-def arity(op):
-    """Determine the arity of an operator."""
-    for this in operators:
-        if (this == op):
-            return this.arity
-    raise NotFoundError('Operator not valid')
+def deep_sum(l, starting=0):
+    s = starting
+    for item in l:
+        try:
+            s += item
+        except (TypeError):
+            s += deep_sum(item)
+    return s
 
 
-def multipass(T, modifiers=0):
-    # note: this does not yet support parentheses
-    passes = ["d", "hl", "^mp*/%+-", "><=&|"]
-    for run in passes:
-        for op in run:
-            while (T.count(op)):
-                loc = T.index(op)
-                if (arity[operators.index(op)] == 2):
-                    val = evaluate([T[loc - 1], T[loc + 1]], op)
-                    T[loc - 1:loc + 2] = [val]
-                    # this assignment only works when RHS is iterable
-                else:
-                    val = unary(T[loc + 1], op)
-                    T[loc:loc + 2] = [val]
-            out.extend(['+' if modifiers >= 0 else '', modifiers])
-        out.append(T)
-    out.append(T[0])
-    # out should be of the form
-    # [[rolls have been made],
-    # [selected rolls have been discarded],
-    # [arithmetic but not boolean operators have been evaluated],
-    # final result]
+def string_to_operator(s, operators):
+    for op in operators:
+        if (op == s):
+            return op
+    return s
+
+
+def read_list(s, mode='float'):
+    """Read a list defined in a string."""
+    if (mode == 'float'):
+        return list(eval(s))
+    elif (mode == 'int'):
+        a = list(eval(s))
+        return [int(item) for item in a]
+
+
+def critify(T, operators):
+    # Note: crit is superseded by maximum
+    # Though why you're using roll_max anyway is a mystery
+    for (i, item) in enumerate(T):
+        if (item == 'd' or item == 'da'):
+            T[i] = string_to_operator('dc', operators)
+    return T
+
+def averageify(T, operators):
+    # Note: average is superseded by crit or max
+    for (i, item) in enumerate(T):
+        if (item == 'd'):
+            T[i] = string_to_operator('da', operators)
+    return T
+
+def maxify(T, operators):
+    # Max supersedes all
+    for (i, item) in enumerate(T):
+        if (item == 'd' or item == 'da' or item == 'dc'):
+            T[i] = string_to_operator('dm', operators)
+    return T
+
+
+#### Rolling functions ####
+
+
+def take_low(roll, number):
+    if (len(roll) > number):
+        roll.discards.extend(roll[-number:])
+        del roll[-number:]
+    return roll
+
+
+def take_high(roll, number):
+    if (len(roll) > number):
+        roll.discards.extend(roll[:number])
+        del roll[:number]
+    return roll
+
+
+def roll_basic(number, sides):
+    """Roll a single set of dice."""
+    # Returns a sorted (ascending) list of all the numbers rolled
+    result = Roll()
+    result.die = sides
+    # result.discards = [[] for all in range(number)]
+    rollList = []
+    for all in range(number):
+        result.append(single_die(sides))
+    result.sort()
+    return result
+
+
+def single_die(sides):
+    """Roll a single die."""
+    if (type(sides) is int):
+        return random.randint(1, sides)
+    elif (type(sides) is list):
+        return sides[random.randint(0, len(sides) - 1)]
+
+
+def roll_critical(number, sides):
+    """Roll double the normal number of dice."""
+    # Returns a sorted (ascending) list of all the numbers rolled
+    result = Roll()
+    result.die = sides
+    # result.discards = [[] for all in range(number)]
+    rollList = []
+    for all in range(2*number):
+        result.append(single_die(sides))
+    result.sort()
+    return result
+
+
+def roll_max(number, sides):
+    """Roll double the normal number of dice."""
+    # Returns a sorted (ascending) list of all the numbers rolled
+    result = Roll()
+    result.die = sides
+    # result.discards = [[] for all in range(number)]
+    rollList = []
+    if (isinstance(sides, list)):
+        result.extend([max(sides) for all in range(number)])
+    else:
+        result.extend([sides for all in range(number)])
+    return result
+
+
+def roll_average(number, sides):
+    val = Roll()
+    val.die = sides
+    # val.discards = [[] for all in range(number)]
+    if (isinstance(sides, list)):
+        val.extend([sum(sides)/len(sides)]*number)
+        # return (sum(sides) * number) / len(sides)
+    else:
+        val.extend([(sides+1)/2]*number)
+        # return (1 + sides) * number / 2
+    return val
+
+
+def reroll_once(original, target, comp):
+    modified = original
+    i = 0
+    while i < len(original):
+        if (comp(modified[i], target)):
+            modified.discards.append(modified[i])
+            modified[i] = single_die(modified.die)
+        i += 1
+    modified.sort()
+    return modified
+
+
+def reroll_unconditional(original, target, comp):
+    modified = original
+    i = 0
+    while i < len(original):
+        while (comp(modified[i], target)):
+            modified.discards.append(modified[i])
+            modified[i] = single_die(modified.die)
+        i += 1
+    modified.sort()
+    return modified
+
+
+def reroll_once_on(original, target):
+    return reroll_once(original, target, lambda x, y: x == y)
+
+
+def reroll_once_higher(original, target):
+    return reroll_once(original, target, lambda x, y: x > y)
+
+
+def reroll_once_lower(original, target):
+    return reroll_once(original, target, lambda x, y: x < y)
+
+
+def reroll_unconditional_on(original, target):
+    return reroll_unconditional(original, target, lambda x, y: x == y)
+
+
+def reroll_unconditional_higher(original, target):
+    return reroll_unconditional(original, target, lambda x, y: x > y)
+
+
+def reroll_unconditional_lower(original, target):
+    return reroll_unconditional(original, target, lambda x, y: x < y)
+
+
+def floor_val(original, bottom):
+    modified = original
+    i = 0
+    while i < len(original):
+        if (modified[i] < bottom):
+            modified.discards[i].append(modified[i])
+            modified[i] = bottom
+        i += 1
+    modified.sort()
+    return modified
+
+
+def ceil_val(original, top):
+    modified = original
+    i = 0
+    while i < len(original):
+        if (modified[i] > top):
+            modified.discards[i].append(modified[i])
+            modified[i] = top
+        i += 1
+    modified.sort()
+    return modified
+
+
+### Multipass ###
+
+def multipass(T, operators):
+    out = [T]
+    working = T.copy()
+    pmax = max(operators).precedence
+    pmin = min(operators).precedence
+    for p in range(max(operators).precedence, min(operators).precedence-1, -1):
+        i = 0
+        while (i < len(working)):
+            if (isinstance(working[i], Operator) and working[i].precedence == p):
+                # Take the operator and adjacent numbers according to the arity
+                if (working[i].arity == 1):
+                    # perform the operation
+                    # push back into the correct location within the token list
+                    working[i] = working[i]([working.pop(i+1)])
+                elif (working[i].arity == 2):
+                    # perform the operation
+                    # push back into the correct location within the token list
+                    op = working[i]
+                    nums = [working.pop(i-1), working.pop(i)]
+                    r = op(nums)
+                    working[i-1] = r[0]
+                    i -= 1
+            i += 1
+        out.append(working.copy())
+    out.append(deep_sum(out[-1], 0))
     return out
 
 
-def displayMultipass(l):
-    out = ['', '', '', '']
-    for (i, sec) in enumerate(l):
-        for token in sec:
-            out[i] += str(token)
-        out[i] += '\n'
-    return out
+def display_multipass(T, operators):
+    result = multipass(T, operators)
+    selections = (2, -1)
+    out = []
+    for i in selections[:-1]:
+        out.append(''.join([str(item) for item in result[i]]))
+    out.append(str(result[selections[-1]]))
+    return '\n'.join(out)
 
 
-class NotFoundError(Exception):
-    pass
-
+### Tests ###
 
 if __name__ == '__main__':
-    # print(roll('1d4+(4+3)*2'))
-    # print(roll('1d4+4+3*2'))
+    print(roll('3d4', option='multipass'))
+    print(roll('1d4+2', option='multipass'))
+    print(roll('8d4ro1+2', option='multipass'))
+    print(roll('1d4+2'))
+    print(roll('2d20h1+1'))
+    print(roll('1d4+(4+3)*2'))
+    print(roll('1d4+4+3*2'))
     print(roll('1+3*2^1d4'))
+    print(roll('4d6'))
+    print(roll('1d2ro1'))
+    print(roll('1d2Ro1'))
+    print(roll('2da6'))
+    print(roll('1d[1,1,1,1,1,6]'))
+    print(roll('1da[1,1,1,1,1,6]'))
+    print(roll('1da[2,2,3,4,5,6]-1da6'))
+    print(roll('-1d4'))
