@@ -16,10 +16,7 @@ class JSONInterface:
         self.filename = self.OBJECTSPATH + filename
         with open(self.filename) as f:
             data = json.load(f, object_pairs_hook=collections.OrderedDict)
-            if (PREFIX):
-                self.info = data[PREFIX]
-            else:
-                self.info = data
+            self.info = data
 
     def __str__(self):
         return self.shortfilename
@@ -35,11 +32,15 @@ class JSONInterface:
                             'LinkedInterface to a JSONInterface')
 
     def get(self, path):
+        if (path == '/'):
+            return self.info
         if (not path.startswith('/')):
             return self._get(path, self.info)
         return self._get(path)
 
     def set(self, path, value):
+        if (path == '/'):
+            return False
         if (not path.startswith('/')):
             return self._set(path, value, self.info)
         return self._set(path, value)
