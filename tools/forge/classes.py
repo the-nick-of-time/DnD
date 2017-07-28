@@ -1,6 +1,7 @@
 import re
 from collections import OrderedDict
 from functools import wraps
+from math import ceil
 
 # import tools.libraries.rolling as r
 # import tools.forge.helpers as h
@@ -54,26 +55,46 @@ class Class:
 
 
 class Resource:
-    def __init__(self, jf):
-        self.iface = jf
-        self.name = jf.get('/name')
-        self.number = jf.get('/number')
-        self.maxnumber = jf.get('/maxnumber')
-        self.value = jf.get('/value')
-        self.recharge = jf.get('/recharge')
+    def __init__(self, jf, path):
+        self.record = jf
+        self.path = path
+        self.name = jf.get(path + '/name')
+        self.number = jf.get(path + '/number')
+        self.maxnumber = jf.get(path + '/maxnumber')
+        self.value = jf.get(path + '/value')
+        self.recharge = jf.get(path + '/recharge')
+
+    # @property
+    # def name(self):
+    #     self.record.get(self.path + '/name')
+    #
+    # @property
+    # def number(self):
+    #     self.record.get(self.path + '/number')
+    #
+    # @property
+    # def maxnumber(self):
+    #     self.record.get(self.path + '/maxnumber')
 
     def use(self, howmany):
         if (self.number < howmany):
-            return 0
+            raise LowOnResource()
         if (isinstance(self.value, str)):
-            return r.roll('+'.join([self.join] * howmany))
+            self.number -= howmany
+            self.setn()
+            return r.roll('+'.join([self.value] * howmany))
         return howmany * self.value
 
     def regain(self, howmany):
-        ...
+        if (self.number + howmany > self.maxnumber):
+            self.reset()
+        else:
+            self.number += howmany
+            self.setn()
 
     def reset(self):
-        ...
+        self.number = self.maxnumber
+        self.setn()
 
     def rest(self, what):
         if (what == 'long'):
@@ -84,6 +105,17 @@ class Resource:
                 self.reset()
                 return self.number
         return -1
+
+    def setn(self):
+        self.record.set(self.path + '/number', self.number)
+
+    def setmax(self):
+        self.record.set(self.path + '/maxnumber', self.maxnumber)
+
+    def write(self):
+        self.setn()
+        self.setmax()
+        self.record.write()
 
 
 class Character:
@@ -308,6 +340,10 @@ class Character:
         else:
             raise ValueError('This must be called with a spell or a weapon.')
 
+    def write(self):
+        self.record.set('/abilities', self.abilities)
+        self.record.write()
+
 
 class Inventory:
     """Handles an inventory. Does not depend on a Character."""
@@ -417,6 +453,25 @@ class Inventory:
 class HPhandler:
     def __init__(self, jf):
         self.record = jf
+        self.hd = {size: HDHandler(jf, size) for size in jf.get('/HP/HD')}
+
+    def get_HP(self):
+        return self.record.get('/HP/current')
+
+    def get_temp(self):
+        return self.record.get('/HP/temp')
+
+    def get_max(self):
+        return self.record.get('/HP/max')
+
+    def set_hp(self, value):
+        self.record.set('/HP/current', value)
+
+    def set_max(self, value):
+        self.record.set('/HP/max', value)
+
+    def set_temp(self, value):
+        self.record.set('/HP/temp', value)
 
     def change_HP(self, amount):
         """Changes HP by any valid roll as the amount."""
@@ -448,32 +503,57 @@ class HPhandler:
         """Adds a rollable amount to your temp HP"""
         delta = r.roll(amount)
         if (delta == 0):
-            return self.data
+            return 0
         temp = self.record.get('/HP/temp')
         if (delta > temp):
             temp = delta
         self.record.set('/HP/temp', temp)
-        return self.data
+        return 0
 
     def use_HD(self, which):
         """Use a specific one of your hit dice."""
-        num = self.record.get('/HP/HD/' + which)
-        conmod = h.modifier(self.record.get('/abilities/Constitution'))
-        if (num > 0):
-            self.record.set('/HP/HD/' + which, num - 1)
-            return self.change_HP(r.roll(which) + conmod)
-        else:
-            return None
+        # path = '/HP/HD/' + which + '/current'
+        # num = self.record.get(path)
+        # conmod = h.modifier(self.record.get('/abilities/constitution'))
+        # if (num > 0):
+        #     self.record.set(path, num - 1)
+        #     return self.change_HP(r.roll(which) + conmod)
+        # else:
+        #     return None
+        return self.change_HP(self.hd[which].use_HD())
 
-    def long_rest(self):
-        mx = self.record.get('/HP/max')
-        self.record.set('/HP/current', mx)
-        for c, lv in self.record.classes:
-            type = c.get('/hit_dice')
-            curr = self.record.get('/HP/HD/' + type)
-            recover = int(lv / 2) + 1
-            self.record.set('/HP/HD/' + type,
-                            curr + recover if curr + recover < lv else lv)
+    def rest(self, what):
+        if (what == 'long'):
+            mx = self.record.get('/HP/max')
+            self.record.set('/HP/current', mx)
+            for obj in self.hd.items():
+                obj.rest('long')
+
+    def write(self):
+        for item in self.hd.values():
+            item.write()
+        self.record.write()
+
+
+class HDHandler(Resource):
+    def __init__(self, jf, size):
+        Resource.__init__(self, jf, '/HP/HD/' + size)
+        self.name = 'Hit Die'
+        self.value = size
+        self.recharge = 'long'
+
+    def use_HD(self):
+        try:
+            roll = self.use(1)
+        except LowOnResource as e:
+            return 0
+
+        conmod = h.modifier(self.record.get('/abilities/constitution'))
+        return roll+conmod if (roll+conmod > 1) else 1
+
+    def rest(self, what):
+        if (what == 'long'):
+            self.regain(ceil(self.maxnumber / 2))
 
 
 class Damage:
@@ -664,6 +744,12 @@ class Item:
         return self.description
 
 
+class ItemEntry:
+    def __init__(self, item):
+        self.number = item.get('/quantity')
+        self.equipped = item.get('/equipped')
+
+
 class Weapon(Attack, Item):
     """Represents a weapon.
 
@@ -803,6 +889,15 @@ class MagicRangedWeapon(MagicItem, RangedWeapon):
 
 class MyError(Exception):
     pass
+
+
+class LowOnResource(MyError):
+    def __init__(self, resource):
+        self.resource = resource
+
+    def __str__(self):
+        formatstr = 'You have no {rs} remaining.'
+        return formatstr.format(rs=self.resource.name)
 
 
 class OutOfSpells(MyError):

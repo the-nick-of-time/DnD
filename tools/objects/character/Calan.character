@@ -5,7 +5,16 @@
     "max": 134,
     "current": 134,
     "temp": 0,
-    "HD": {"1d10": 2, "1d8": 11}
+    "HD": {
+      "1d10": {
+        "maxnumber": 2,
+        "number": 2
+      },
+      "1d8": {
+        "maxnumber": 11,
+        "number": 11
+      }
+    }
   },
   "abilities": {
     "strength": 16,
@@ -21,35 +30,35 @@
     "Medicine"
   ],
   "equipment": {
-    "Longsword":{
+    "Longsword": {
       "type": "weapon",
       "quantity": 1,
       "equipped": true
     },
-    "Dart":{
+    "Dart": {
       "type": "weapon",
       "quantity": 5,
       "equipped": true
     },
-    "Full Plate":{
+    "Full Plate": {
       "type": "armor",
       "quantity": 1,
       "equipped": true
     },
-    "Trail Rations":{
+    "Trail Rations": {
       "type": "item",
       "quantity": 4,
       "equipped": true
     }
   },
   "spells_prepared": {
-    "Sacred Flame":{
+    "Sacred Flame": {
       "always_prepared": true
     },
-    "Burning Hands":{
+    "Burning Hands": {
       "always_prepared": true
     },
-    "Protection From Evil":{
+    "Protection From Evil": {
       "always_prepared": false
     }
   },
