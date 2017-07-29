@@ -1,0 +1,7 @@
+{
+	"name": "Electrum Sev",
+	"value": 0.5,
+	"weight": 0.02,
+	"description": "A small rectangular coin made of electrum. It bears the city sigil of Tavin.",
+	"effect": "You can purchase a well-made leather pouch with this."
+}

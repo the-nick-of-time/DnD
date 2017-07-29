@@ -1,0 +1,7 @@
+{
+	"name": "Copper Sev",
+	"value": 0.01,
+	"weight": 0.02,
+	"description": "A small rectangular coin made of copper. It bears the city sigil of Trovth.",
+	"effect": "You can pay for a small trinket but little else."
+}

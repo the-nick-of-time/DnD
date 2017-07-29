@@ -1,158 +1,366 @@
 {
   "Azurite": {
-    "value": 10
+    "name": "Azurite",
+    "value": 10,
+    "weight": 0.01,
+    "description": "This minor gemstone could be sold for 10 gp or used as currency.",
+    "effect": "This minor gemstone could be sold for 10 gp or used as currency."
   },
   "Banded Agate": {
-    "value": 10
+    "name": "Banded Agate",
+    "value": 10,
+    "weight": 0.01,
+    "description": "This minor gemstone could be sold for 10 gp or used as currency.",
+    "effect": "This minor gemstone could be sold for 10 gp or used as currency."
   },
   "Blue Quartz": {
-    "value": 10
+    "name": "Blue Quartz",
+    "value": 10,
+    "weight": 0.01,
+    "description": "This minor gemstone could be sold for 10 gp or used as currency.",
+    "effect": "This minor gemstone could be sold for 10 gp or used as currency."
   },
   "Eye Agate": {
-    "value": 10
+    "name": "Eye Agate",
+    "value": 10,
+    "weight": 0.01,
+    "description": "This minor gemstone could be sold for 10 gp or used as currency.",
+    "effect": "This minor gemstone could be sold for 10 gp or used as currency."
   },
   "Hematite": {
-    "value": 10
+    "name": "Hematite",
+    "value": 10,
+    "weight": 0.01,
+    "description": "This minor gemstone could be sold for 10 gp or used as currency.",
+    "effect": "This minor gemstone could be sold for 10 gp or used as currency."
   },
   "Lapis Lazuli": {
-    "value": 10
+    "name": "Lapis Lazuli",
+    "value": 10,
+    "weight": 0.01,
+    "description": "This minor gemstone could be sold for 10 gp or used as currency.",
+    "effect": "This minor gemstone could be sold for 10 gp or used as currency."
   },
   "Malachite": {
-    "value": 10
+    "name": "Malachite",
+    "value": 10,
+    "weight": 0.01,
+    "description": "This minor gemstone could be sold for 10 gp or used as currency.",
+    "effect": "This minor gemstone could be sold for 10 gp or used as currency."
   },
   "Moss Agate": {
-    "value": 10
+    "name": "Moss Agate",
+    "value": 10,
+    "weight": 0.01,
+    "description": "This minor gemstone could be sold for 10 gp or used as currency.",
+    "effect": "This minor gemstone could be sold for 10 gp or used as currency."
   },
   "Obsidian": {
-    "value": 10
+    "name": "Obsidian",
+    "value": 10,
+    "weight": 0.01,
+    "description": "",
+    "effect": ""
   },
   "Rhodochrosite": {
-    "value": 10
+    "name": "Rhodochrosite",
+    "value": 10,
+    "weight": 0.01,
+    "description": "This minor gemstone could be sold for 10 gp or used as currency.",
+    "effect": "This minor gemstone could be sold for 10 gp or used as currency."
   },
   "Tiger Eye": {
-    "value": 10
+    "name": "Tiger Eye",
+    "value": 10,
+    "weight": 0.01,
+    "description": "This minor gemstone could be sold for 10 gp or used as currency.",
+    "effect": "This minor gemstone could be sold for 10 gp or used as currency."
   },
-  "Turquiose": {
-    "value": 10
+  "Turquoise": {
+    "name": "Turquoise",
+    "value": 10,
+    "weight": 0.01,
+    "description": "This minor gemstone could be sold for 10 gp or used as currency.",
+    "effect": "This minor gemstone could be sold for 10 gp or used as currency."
   },
   "Bloodstone": {
-    "value": 50
+    "name": "Bloodstone",
+    "value": 50,
+    "weight": 0.01,
+    "description": "These gemstones are often used to facilitate high-value transactions.",
+    "effect": "These gemstones are often used to facilitate high-value transactions."
   },
   "Carnelian": {
-    "value": 50
+    "name": "Carnelian",
+    "value": 50,
+    "weight": 0.01,
+    "description": "These gemstones are often used to facilitate high-value transactions.",
+    "effect": "These gemstones are often used to facilitate high-value transactions."
   },
   "Chalcedony": {
-    "value": 50
+    "name": "Chalcedony",
+    "value": 50,
+    "weight": 0.01,
+    "description": "These gemstones are often used to facilitate high-value transactions.",
+    "effect": "These gemstones are often used to facilitate high-value transactions."
   },
   "Chrysoprase": {
-    "value": 50
+    "name": "Chrysoprase",
+    "value": 50,
+    "weight": 0.01,
+    "description": "These gemstones are often used to facilitate high-value transactions.",
+    "effect": "These gemstones are often used to facilitate high-value transactions."
   },
   "Citrine": {
-    "value": 50
+    "name": "Citrine",
+    "value": 50,
+    "weight": 0.01,
+    "description": "These gemstones are often used to facilitate high-value transactions.",
+    "effect": "These gemstones are often used to facilitate high-value transactions."
   },
   "Jasper": {
-    "value": 50
+    "name": "Jasper",
+    "value": 50,
+    "weight": 0.01,
+    "description": "These gemstones are often used to facilitate high-value transactions.",
+    "effect": "These gemstones are often used to facilitate high-value transactions."
   },
   "Moonstone": {
-    "value": 50
+    "name": "Moonstone",
+    "value": 50,
+    "weight": 0.01,
+    "description": "These gemstones are often used to facilitate high-value transactions.",
+    "effect": "These gemstones are often used to facilitate high-value transactions."
   },
   "Onyx": {
-    "value": 50
+    "name": "Onyx",
+    "value": 50,
+    "weight": 0.01,
+    "description": "These gemstones are often used to facilitate high-value transactions.",
+    "effect": "These gemstones are often used to facilitate high-value transactions."
   },
   "Quartz": {
-    "value": 50
+    "name": "Quartz",
+    "value": 50,
+    "weight": 0.01,
+    "description": "These gemstones are often used to facilitate high-value transactions.",
+    "effect": "These gemstones are often used to facilitate high-value transactions."
   },
   "Sardonyx": {
-    "value": 50
+    "name": "Sardonyx",
+    "value": 50,
+    "weight": 0.01,
+    "description": "These gemstones are often used to facilitate high-value transactions.",
+    "effect": "These gemstones are often used to facilitate high-value transactions."
   },
   "Star Rose Quartz": {
-    "value": 50
+    "name": "Star Rose Quartz",
+    "value": 50,
+    "weight": 0.01,
+    "description": "These gemstones are often used to facilitate high-value transactions.",
+    "effect": "These gemstones are often used to facilitate high-value transactions."
   },
   "Zircon": {
-    "value": 50
+    "name": "Zircon",
+    "value": 50,
+    "weight": 0.01,
+    "description": "These gemstones are often used to facilitate high-value transactions.",
+    "effect": "These gemstones are often used to facilitate high-value transactions."
   },
   "Amber": {
-    "value": 100
+    "name": "Amber",
+    "value": 100,
+    "weight": 0.01,
+    "description": "These gemstones are used in jewelry.",
+    "effect": "These gemstones are used in jewelry."
   },
   "Amethyst": {
-    "value": 100
+    "name": "Amethyst",
+    "value": 100,
+    "weight": 0.01,
+    "description": "These gemstones are used in jewelry.",
+    "effect": "These gemstones are used in jewelry."
   },
   "Chrysoberyl": {
-    "value": 100
+    "name": "Chrysoberyl",
+    "value": 100,
+    "weight": 0.01,
+    "description": "These gemstones are used in jewelry.",
+    "effect": "These gemstones are used in jewelry."
   },
   "Coral": {
-    "value": 100
+    "name": "Coral",
+    "value": 100,
+    "weight": 0.01,
+    "description": "These gemstones are used in jewelry.",
+    "effect": "These gemstones are used in jewelry."
   },
   "Garnet": {
-    "value": 100
+    "name": "Garnet",
+    "value": 100,
+    "weight": 0.01,
+    "description": "These gemstones are used in jewelry.",
+    "effect": "These gemstones are used in jewelry."
   },
   "Jade": {
-    "value": 100
+    "name": "Jade",
+    "value": 100,
+    "weight": 0.01,
+    "description": "These gemstones are used in jewelry.",
+    "effect": "These gemstones are used in jewelry."
   },
   "Jet": {
-    "value": 100
+    "name": "Jet",
+    "value": 100,
+    "weight": 0.01,
+    "description": "These gemstones are used in jewelry.",
+    "effect": "These gemstones are used in jewelry."
   },
   "Pearl": {
-    "value": 100
+    "name": "Pearl",
+    "value": 100,
+    "weight": 0.01,
+    "description": "These gemstones are used in jewelry.",
+    "effect": "These gemstones are used in jewelry."
   },
   "Spinel": {
-    "value": 100
+    "name": "Spinel",
+    "value": 100,
+    "weight": 0.01,
+    "description": "These gemstones are used in jewelry.",
+    "effect": "These gemstones are used in jewelry."
   },
   "Tourmaline": {
-    "value": 100
+    "name": "Tourmaline",
+    "value": 100,
+    "weight": 0.01,
+    "description": "These gemstones are used in jewelry.",
+    "effect": "These gemstones are used in jewelry."
   },
   "Alexandrite": {
-    "value": 500
+    "name": "Alexandrite",
+    "value": 500,
+    "weight": 0.01,
+    "description": "These gems are rarely found outside the vaults of rich nobles.",
+    "effect": "These gems are rarely found outside the vaults of rich nobles."
   },
   "Aquamarine": {
-    "value": 500
+    "name": "Aquamarine",
+    "value": 500,
+    "weight": 0.01,
+    "description": "These gems are rarely found outside the vaults of rich nobles.",
+    "effect": "These gems are rarely found outside the vaults of rich nobles."
   },
   "Black Pearl": {
-    "value": 500
+    "name": "Black Pearl",
+    "value": 500,
+    "weight": 0.01,
+    "description": "These gems are rarely found outside the vaults of rich nobles.",
+    "effect": "These gems are rarely found outside the vaults of rich nobles."
   },
   "Blue Spinel": {
-    "value": 500
+    "name": "Blue Spinel",
+    "value": 500,
+    "weight": 0.01,
+    "description": "These gems are rarely found outside the vaults of rich nobles.",
+    "effect": "These gems are rarely found outside the vaults of rich nobles."
   },
   "Peridot": {
-    "value": 500
+    "name": "Peridot",
+    "value": 500,
+    "weight": 0.01,
+    "description": "These gems are rarely found outside the vaults of rich nobles.",
+    "effect": "These gems are rarely found outside the vaults of rich nobles."
   },
   "Topaz": {
-    "value": 500
+    "name": "Topaz",
+    "value": 500,
+    "weight": 0.01,
+    "description": "These gems are rarely found outside the vaults of rich nobles.",
+    "effect": "These gems are rarely found outside the vaults of rich nobles."
   },
   "Black Opal": {
-    "value": 1000
+    "name": "Black Opal",
+    "value": 1000,
+    "weight": 0.01,
+    "description": "Royalty may have jewelry displaying these gems.",
+    "effect": "Royalty may have jewelry displaying these gems."
   },
   "Blue Sapphire": {
-    "value": 1000
+    "name": "Blue Sapphire",
+    "value": 1000,
+    "weight": 0.01,
+    "description": "Royalty may have jewelry displaying these gems.",
+    "effect": "Royalty may have jewelry displaying these gems."
   },
   "Emerald": {
-    "value": 1000
+    "name": "Emerald",
+    "value": 1000,
+    "weight": 0.01,
+    "description": "Royalty may have jewelry displaying these gems.",
+    "effect": "Royalty may have jewelry displaying these gems."
   },
   "Fire Opal": {
-    "value": 1000
+    "name": "Fire Opal",
+    "value": 1000,
+    "weight": 0.01,
+    "description": "Royalty may have jewelry displaying these gems.",
+    "effect": "Royalty may have jewelry displaying these gems."
   },
   "Opal": {
-    "value": 1000
+    "name": "Opal",
+    "value": 1000,
+    "weight": 0.01,
+    "description": "Royalty may have jewelry displaying these gems.",
+    "effect": "Royalty may have jewelry displaying these gems."
   },
   "Star Ruby": {
-    "value": 1000
+    "name": "Star Ruby",
+    "value": 1000,
+    "weight": 0.01,
+    "description": "Royalty may have jewelry displaying these gems.",
+    "effect": "Royalty may have jewelry displaying these gems."
   },
   "Star Sapphire": {
-    "value": 1000
+    "name": "Star Sapphire",
+    "value": 1000,
+    "weight": 0.01,
+    "description": "Royalty may have jewelry displaying these gems.",
+    "effect": "Royalty may have jewelry displaying these gems."
   },
   "Yellow Sapphire": {
-    "value": 1000
+    "name": "Yellow Sapphire",
+    "value": 1000,
+    "weight": 0.01,
+    "description": "Royalty may have jewelry displaying these gems.",
+    "effect": "Royalty may have jewelry displaying these gems."
   },
   "Black Sapphire": {
-    "value": 5000
+    "name": "Black Sapphire",
+    "value": 5000,
+    "weight": 0.01,
+    "description": "These gems are worth more than the average person will ever see.",
+    "effect": "These gems are worth more than the average person will ever see."
   },
   "Diamond": {
-    "value": 5000
+    "name": "Diamond",
+    "value": 5000,
+    "weight": 0.01,
+    "description": "These gems are worth more than the average person will ever see.",
+    "effect": "These gems are worth more than the average person will ever see."
   },
   "Jacinth": {
-    "value": 5000
+    "name": "Jacinth",
+    "value": 5000,
+    "weight": 0.01,
+    "description": "These gems are worth more than the average person will ever see.",
+    "effect": "These gems are worth more than the average person will ever see."
   },
   "Ruby": {
-    "value": 5000
+    "name": "Ruby",
+    "value": 5000,
+    "weight": 0.01,
+    "description": "These gems are worth more than the average person will ever see.",
+    "effect": "These gems are worth more than the average person will ever see."
   }
 }

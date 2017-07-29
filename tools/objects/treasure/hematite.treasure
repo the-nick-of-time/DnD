@@ -1,0 +1,7 @@
+{
+  "description": "This minor gemstone could be sold for 10 gp or used as currency.",
+  "value": 10,
+  "effect": "This minor gemstone could be sold for 10 gp or used as currency.",
+  "name": "Hematite",
+  "weight": 0.01
+}

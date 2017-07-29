@@ -1,0 +1,7 @@
+{
+	"name": "Platinum Sev",
+	"value": 10,
+	"weight": 0.02,
+	"description": "A small rectangular coin made of platinum. It bears the city sigil of Aventalka.",
+	"effect": "You can pay for a shortsword with only this coin."
+}

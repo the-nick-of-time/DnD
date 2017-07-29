@@ -1,0 +1,7 @@
+{
+	"name": "Gold Sev",
+	"value": 1,
+	"weight": 0.02,
+	"description": "A small rectangular coin made of gold. It bears the city sigil of Cald.",
+	"effect": "You can pay for a set of arrows with this."
+}

@@ -1,146 +1,290 @@
 {
   "Silver Ewer": {
-    "Value": 25
+    "name": "Silver Ewer",
+    "weight": 2,
+    "value": 25,
+    "description": ""
   },
   "Carved Bone Statuette": {
-    "Value": 25
+    "name": "Carved Bone Statuette",
+    "weight": 0.5,
+    "value": 25,
+    "description": ""
   },
   "Small Gold Bracelet": {
-    "Value": 25
+    "name": "Small Gold Bracelet",
+    "weight": 0.2,
+    "value": 25,
+    "description": ""
   },
   "Cloth-of-gold Vestments": {
-    "Value": 25
+    "name": "Cloth-of-gold Vestments",
+    "weight": 6,
+    "value": 25,
+    "description": ""
   },
   "Black Velvet Mask Stitched With Silver Thread": {
-    "Value": 25
+    "name": "Black Velvet Mask Stitched With Silver Thread",
+    "weight": 1,
+    "value": 25,
+    "description": ""
   },
   "Copper Chalice With Silver Filigree": {
-    "Value": 25
+    "name": "Copper Chalice With Silver Filigree",
+    "weight": 1,
+    "value": 25,
+    "description": ""
   },
   "Pair Of Engraved Bone Dice": {
-    "Value": 25
+    "name": "Pair Of Engraved Bone Dice",
+    "weight": 0.05,
+    "value": 25,
+    "description": ""
   },
   "Small Mirror Set In A Painted Wooden Frame": {
-    "Value": 25
+    "name": "Small Mirror Set In A Painted Wooden Frame",
+    "weight": 0.3,
+    "value": 25,
+    "description": ""
   },
   "Embroidered Silk Handkerchief": {
-    "Value": 25
+    "name": "Embroidered Silk Handkerchief",
+    "weight": 0.1,
+    "value": 25,
+    "description": ""
   },
   "Gold Locket With A Painted Portrait Inside": {
-    "Value": 25
+    "name": "Gold Locket With A Painted Portrait Inside",
+    "weight": 0.05,
+    "value": 25,
+    "description": ""
   },
   "Gold Ring Set With Bloodstones": {
-    "Value": 250
+    "name": "Gold Ring Set With Bloodstones",
+    "weight": 0.05,
+    "value": 250,
+    "description": ""
   },
   "Carved Ivory Statuette": {
-    "Value": 250
+    "name": "Carved Ivory Statuette",
+    "weight": 1,
+    "value": 250,
+    "description": ""
   },
   "Large Gold Bracelet": {
-    "Value": 250
+    "name": "Large Gold Bracelet",
+    "weight": 0.4,
+    "value": 250,
+    "description": ""
   },
   "Silver Necklace With A Gemstone Pendant": {
-    "Value": 250
+    "name": "Silver Necklace With A Gemstone Pendant",
+    "weight": 0.2,
+    "value": 250,
+    "description": ""
   },
   "Bronze Crown": {
-    "Value": 250
+    "name": "Bronze Crown",
+    "weight": 3,
+    "value": 250,
+    "description": ""
   },
   "Silk Robe With Gold Embroidery": {
-    "Value": 250
+    "name": "Silk Robe With Gold Embroidery",
+    "weight": 4,
+    "value": 250,
+    "description": ""
   },
   "Large Well-made Tapestry": {
-    "Value": 250
+    "name": "Large Well-made Tapestry",
+    "weight": 25,
+    "value": 250,
+    "description": ""
   },
   "Brass Mug With Jade Inlay": {
-    "Value": 250
+    "name": "Brass Mug With Jade Inlay",
+    "weight": 0.7,
+    "value": 250,
+    "description": ""
   },
   "Box Of Turquoise Animal Figurines": {
-    "Value": 250
+    "name": "Box Of Turquoise Animal Figurines",
+    "weight": 2,
+    "value": 250,
+    "description": ""
   },
   "Gold Bird Cage With Electrum Filigree": {
-    "Value": 250
+    "name": "Gold Bird Cage With Electrum Filigree",
+    "weight": 4,
+    "value": 250,
+    "description": ""
   },
   "Silver Chalice Set With Moonstones": {
-    "Value": 750
+    "name": "Silver Chalice Set With Moonstones",
+    "weight": 1.5,
+    "value": 750,
+    "description": ""
   },
   "Silver-plated Steel Longsword With Jet Set In Hilt": {
-    "Value": 750
+    "name": "Silver-plated Steel Longsword With Jet Set In Hilt",
+    "weight": 3,
+    "value": 750,
+    "description": ""
   },
   "Carved Harp Of Exotic Wood With Ivory Inlay And Zircon Gems": {
-    "Value": 750
+    "name": "Carved Harp Of Exotic Wood With Ivory Inlay And Zircon Gems",
+    "weight": 80,
+    "value": 750,
+    "description": ""
   },
   "Small Gold Idol": {
-    "Value": 750
+    "name": "Small Gold Idol",
+    "weight": 2,
+    "value": 750,
+    "description": ""
   },
   "Gold Dragon Comb Set With Red Garnets As Eyes": {
-    "Value": 750
+    "name": "Gold Dragon Comb Set With Red Garnets As Eyes",
+    "weight": 0.2,
+    "value": 750,
+    "description": ""
   },
   "Bottle Stopper Cork Embossed With Gold Leaf And Set With Amethysts": {
-    "Value": 750
+    "name": "Bottle Stopper Cork Embossed With Gold Leaf And Set With Amethysts",
+    "weight": 0.1,
+    "value": 750,
+    "description": ""
   },
   "Ceremonial Electrum Dagger With A Black Pearl In The Pommel": {
-    "Value": 750
+    "name": "Ceremonial Electrum Dagger With A Black Pearl In The Pommel",
+    "weight": 2,
+    "value": 750,
+    "description": ""
   },
   "Silver And Gold Brooch": {
-    "Value": 750
+    "name": "Silver And Gold Brooch",
+    "weight": 0.3,
+    "value": 750,
+    "description": ""
   },
   "Obsidian Statuette With Gold Fittings And Inlay": {
-    "Value": 750
+    "name": "Obsidian Statuette With Gold Fittings And Inlay",
+    "weight": 0.8,
+    "value": 750,
+    "description": ""
   },
   "Painted Gold War Mask": {
-    "Value": 750
+    "name": "Painted Gold War Mask",
+    "weight": 3,
+    "value": 750,
+    "description": ""
   },
   "Fine Gold Chain Set With A Fire Opal": {
-    "Value": 2500
+    "name": "Fine Gold Chain Set With A Fire Opal",
+    "weight": 0.2,
+    "value": 2500,
+    "description": ""
   },
   "Old Masterpiece Painting": {
-    "Value": 2500
+    "name": "Old Masterpiece Painting",
+    "weight": 30,
+    "value": 2500,
+    "description": ""
   },
   "Embroidered Silk And Velvet Mantle Set With Numerous Moonstones": {
-    "Value": 2500
+    "name": "Embroidered Silk And Velvet Mantle Set With Numerous Moonstones",
+    "weight": 2,
+    "value": 2500,
+    "description": ""
   },
   "Platinum Bracelet Set With A Sapphire": {
-    "Value": 2500
+    "name": "Platinum Bracelet Set With A Sapphire",
+    "weight": 0.5,
+    "value": 2500,
+    "description": ""
   },
   "Embroidered Glove Set With Jewel Chips": {
-    "Value": 2500
+    "name": "Embroidered Glove Set With Jewel Chips",
+    "weight": 0.8,
+    "value": 2500,
+    "description": ""
   },
   "Jeweled Anklet": {
-    "Value": 2500
+    "name": "Jeweled Anklet",
+    "weight": 0.5,
+    "value": 2500,
+    "description": ""
   },
   "Gold Music Box": {
-    "Value": 2500
+    "name": "Gold Music Box",
+    "weight": 3,
+    "value": 2500,
+    "description": ""
   },
   "Gold Circlet Set With Four Aquamarines": {
-    "Value": 2500
+    "name": "Gold Circlet Set With Four Aquamarines",
+    "weight": 4,
+    "value": 2500,
+    "description": ""
   },
   "Eye Patch With A Mock Eye Set In Blue Sapphire And Moonstone": {
-    "Value": 2500
+    "name": "Eye Patch With A Mock Eye Set In Blue Sapphire And Moonstone",
+    "weight": 0.2,
+    "value": 2500,
+    "description": ""
   },
   "A Necklace String Of Small Pink Pearls": {
-    "Value": 2500
+    "name": "A Necklace String Of Small Pink Pearls",
+    "weight": 0.2,
+    "value": 2500,
+    "description": ""
   },
   "Jeweled Gold Crown": {
-    "Value": 7500
+    "name": "Jeweled Gold Crown",
+    "weight": 5,
+    "value": 7500,
+    "description": ""
   },
   "Jeweled Platinum Ring": {
-    "Value": 7500
+    "name": "Jeweled Platinum Ring",
+    "weight": 0.1,
+    "value": 7500,
+    "description": ""
   },
   "Small Gold Statuette Set With Rubies": {
-    "Value": 7500
+    "name": "Small Gold Statuette Set With Rubies",
+    "weight": 3,
+    "value": 7500,
+    "description": ""
   },
   "Gold Cup Set With Emeralds": {
-    "Value": 7500
+    "name": "Gold Cup Set With Emeralds",
+    "weight": 1,
+    "value": 7500,
+    "description": ""
   },
   "Gold Jewelry Box With Platinum Filigree": {
-    "Value": 7500
+    "name": "Gold Jewelry Box With Platinum Filigree",
+    "weight": 4,
+    "value": 7500,
+    "description": ""
   },
   "Painted Gold Child's Sarcophagus": {
-    "Value": 7500
+    "name": "Painted Gold Child's Sarcophagus",
+    "weight": 30,
+    "value": 7500,
+    "description": ""
   },
   "Jade Game Board With Solid Gold Playing Pieces": {
-    "Value": 7500
+    "name": "Jade Game Board With Solid Gold Playing Pieces",
+    "weight": 10,
+    "value": 7500,
+    "description": ""
   },
   "Bejeweled Ivory Drinking Horn With Gold Filigree": {
-    "Value": 7500
+    "name": "Bejeweled Ivory Drinking Horn With Gold Filigree",
+    "weight": 2,
+    "value": 7500,
+    "description": ""
   }
 }

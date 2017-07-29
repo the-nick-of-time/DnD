@@ -1,0 +1,7 @@
+{
+	"name": "Iron Sev",
+	"value": 0.05,
+	"weight": 0.02,
+	"description": "A small rectangular coin made of iron. It bears the city sigil of Torvin.",
+	"effect": "You can pay for a snack."
+}

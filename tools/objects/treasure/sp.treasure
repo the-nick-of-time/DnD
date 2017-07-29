@@ -1,0 +1,7 @@
+{
+	"name": "Silver Sev",
+	"value": 0.1,
+	"weight": 0.02,
+	"description": "A small rectangular coin made of silver. It bears the city sigil of Lómingad.",
+	"effect": "You can pay for a meal with this."
+}
