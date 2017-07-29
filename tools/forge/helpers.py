@@ -1,6 +1,8 @@
 import re
 import json
 
+from classes import *
+
 # with open('./tools/forge/conditions.json') as f:
 with open('./conditions.json') as f:
     condition_defs = json.load(f)
@@ -49,8 +51,8 @@ def type_select(extension):
         "class": {"": Class},
         "item": {"magic": MagicItem,
                  "": Item},
-        "race": {"": Race},
-        "skill": {"": Skill},
+        # "race": {"": Race},
+        # "skill": {"": Skill},
         "spell": {"": Spell},
         "treasure": {"": Item},
         "weapon": {

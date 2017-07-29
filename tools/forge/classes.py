@@ -1,4 +1,5 @@
 import re
+import os
 from collections import OrderedDict
 from functools import wraps
 from math import ceil
@@ -7,9 +8,10 @@ from math import ceil
 # import tools.forge.helpers as h
 import rolling as r
 import helpers as h
+import interface as iface
 
-__all__ = ['Character', 'Weapon', 'Spell', 'SpellAttack', 'Class',
-           'RangedWeapon', 'Armor', 'Item', 'MagicItem']
+# __all__ = ['Character', 'Weapon', 'Spell', 'SpellAttack', 'Class',
+#            'RangedWeapon', 'Armor', 'Item', 'MagicItem']
 
 
 class Class:
@@ -353,24 +355,27 @@ class Inventory:
         Parameters
         ----------
         jf: a JSONInterface to the character file
+        data: the equipment portion of said file
+        items: a dict of name: ItemEntry
         """
         self.record = jf
-        self.data = jf.get('/inventory')
-        self.cache = {}
+        self.items = {}
+        self.load_items()
 
     def __getitem__(self, name):
-        try:
-            return self.cache[name]
-        except KeyError as e:
-            cache[name] = self.hook(name)
+        return self.items[name]
 
     def __iter__(self):
-        return (name for name in self.data)
+        return ((name, entry) for (name, entry) in self.items.items())
+
+    def load_items(self):
+        for name in self.record.get('/equipment'):
+            path = '/equipment/' + name
+            self.items[name] = ItemEntry(self.record, path)
 
     def setq(self, name, value):
         """Sets the quantity of an object."""
-        self.data[name]['quantity'] = value
-        self.export(name=name)
+        self.items[name].number = value
 
     def getq(self, name):
         """Gets the number of an object you have.
@@ -378,76 +383,110 @@ class Inventory:
         -------
         number if named item exists, else 0
         """
-        try:
-            return self.data[name]['quantity']
-        except KeyError:
-            return 0
+        return self.items[name].number or 0
 
     def newslot(self, name, quantity=1, type='.item', equipped=False):
         """Creates a new item in the inventory."""
         self.data[name] = OrderedDict((('quantity', quantity), ('type', type),
                                        ('equipped', equipped)))
-        try:
-            if (type.startswith('.')):
-                filename = h.clean(name) + type
-            else:
-                filename = type
-            self.hook()
-        except FileNotFoundError:
-            # TODO: notify you that it failed
-            pass
-        self.export(name=name)
+        path = '/equipment/' + name
+        self.record.set(path + 'quantity', quantity)
+        self.record.set(path + 'type', type)
+        self.record.set(path + 'equipped', equipped)
+        self.load_items()
 
-    def export(self, name=None):
-        """
-        Parameters
-        ----------
-        [name]: If None (the default), updates all entries in the JSONInterface
-            with their current values. Otherwise only update the named field.
+    def write(self):
+        self.record.write()
 
-        Returns
-        -------
-        True if the operation was successful else False.
-        """
-        from tools.forge.helpers import clean
-        if (name is None):
-            self.record.set('/inventory', self.data)
-            return True
+
+class ItemEntry:
+    def __init__(self, jf, path, character=None):
+        self.record = jf
+        self.path = path
+        self.person = character
+        self.load_from_file()
+
+    def load_from_file(self):
+        itemtype = self.record.get(self.path + '/type')
+        itemclass = h.type_select('.' + itemtype)
+        filename = '{t}/{n}.{t}'.format(t=itemtype,
+                                        n=self.path.split(sep='/')[-1])
+        if (os.path.exists(iface.JSONInterface.OBJECTSPATH
+                           + filename)):
+            jf = iface.JSONInterface(filename)
+            self.obj = itemclass(jf)
         else:
+            self.obj = None
+
+    @property
+    def name(self):
+        if (self.obj is not None):
+            return self.obj.name
+        else:
+            return self.path.split(sep='/')[-1]
+
+    @property
+    def number(self):
+        return self.record.get(self.path + '/quantity')
+
+    @number.setter
+    def number(self, value):
+        if (not isinstance(value, int)):
             try:
-                self.record.set('/inventory/' + name, self.data[name])
-                return True
-            except KeyError:
-                # FIXME: This may fail too silently
-                return False
+                value = int(value)
+            except TypeError as e:
+                raise e
+        self.record.set(self.path + '/quantity', value)
 
-    def hook(self, name):
-        """Find the item's file and load it into an Item.
-        Parameters
-        ----------
-        name: The name of the item to be hooked
+    @property
+    def equipped(self):
+        return self.record.get(self.path + '/equipped')
 
-        Returns
-        -------
-        An object of a type depending on the item's extension.
-        """
-        directory = '{direc}/{name}'
-        item = self.data[name]
-        location = item['type'].split(sep='.')
-        if (location[0] == ''):
-            # Leading . indicates name of object is included in path
-            location[0] = h.clean(name)
-            deeper = False
+    @equipped.setter
+    def equipped(self, value):
+        if (isinstance(value, bool)):
+            self.record.set(self.path + '/equipped', value)
         else:
-            deeper = True
-        filename = directory.format(
-            direc=location[-1], name='.'.join(location))
-        try:
-            iface = JSONInterface(filename, PREFIX=name if deeper else '')
-        except FileNotFoundError:
-            print(filename, ' not found')
-            iface = None
-        return type_select(item['type'])(iface)
+            raise TypeError('The equipped value must be bool')
+
+    @property
+    def type(self):
+        return self.record.get(self.path + '/type')
+
+    @property
+    def weight(self):
+        if (self.obj is not None):
+            return self.obj.weight
+        else:
+            return 0
+
+    @property
+    def value(self):
+        if (self.obj is not None):
+            return self.obj.value
+        else:
+            return 0
+
+    @property
+    def consumable(self):
+        if (self.obj is not None):
+            return self.obj.value
+        else:
+            return False
+
+    def use(self):
+        if (self.consumable):
+            self.number -= 1
+        if (self.obj is not None):
+            return self.obj.use()
+        else:
+            return ''
+
+    def describe(self):
+        if (self.obj is not None):
+            return self.obj.describe()
+        else:
+            return ''
 
 
 class HPhandler:
@@ -724,6 +763,7 @@ class Item:
         self.weight = jf.get('/weight')
         self.consumable = jf.get('/consumable')
         self.effect = jf.get('/effect')
+        self.description = jf.get('/description')
         self.owner = None
 
     def __str__(self):
@@ -744,12 +784,6 @@ class Item:
         return self.description
 
 
-class ItemEntry:
-    def __init__(self, item):
-        self.number = item.get('/quantity')
-        self.equipped = item.get('/equipped')
-
-
 class Weapon(Attack, Item):
     """Represents a weapon.
 
@@ -760,6 +794,8 @@ class Weapon(Attack, Item):
     """
 
     def __init__(self, jf):
+        Attack.__init__(self, jf)
+        Item.__init__(self, jf)
         self.hands = jf.get('/hands')
         self.classification = jf.get('/type')
         self.ability = jf.get('/ability')
@@ -822,6 +858,7 @@ class RangedWeapon(Weapon):
     """
 
     def __init__(self, jf):
+        Weapon.__init__(self, jf)
         self.ammunition = jf.get('/ammunition')
         self.thrown = (self.ammunition == self.name)
         self.shortrange = jf.get('/range')
@@ -853,7 +890,8 @@ class Armor(Item):
 
     Contained methods:
     """
-    def __init__(self):
+    def __init__(self, jf):
+        Item.__init__(self, jf)
         pass
 
 

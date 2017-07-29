@@ -2,94 +2,161 @@ import tkinter as tk
 import re
 from collections import OrderedDict
 import sys
+import os
 
-import tools.forge.helpers as h
-import tools.forge.GUIbasics as gui
-from tools.forge.interface import JSONInterface
-from tools.forge.classes import Inventory
-import tools.libraries.tkUtility as util
-from tools.forge.helpers import clean
+import helpers as h
+import GUIbasics as gui
+from interface import JSONInterface
+import classes as c
+import tkUtility as util
+from helpers import clean
 
 
-class main(gui.Element, gui.Section):
-    def __init__(self, container):
-        gui.Element.__init__(self, 'inventory')
+class ItemDisplay(gui.Section):
+    def __init__(self, container, handler):
         gui.Section.__init__(self, container)
+        self.item = handler
+        ######
+        self.name = tk.Label(self.f, text=self.item.name)
+        ######
+        self.interact = tk.Frame(self.f)
+        self.numbervalue = tk.StringVar()
+        self.numbervalue.trace('w', callback=lambda a,b,c: self.set_number())
+        self.number = tk.Entry(self.interact, textvariable=self.numbervalue,
+                               width=5)
+        self.usebutton = tk.Button(self.interact, text='Use', command=self.use)
+        self.increment = tk.Button(self.interact, text='+', command=lambda: self.change(1))
+        self.decrement = tk.Button(self.interact, text='-', command=lambda: self.change(-1))
+        ######
+        self.numbers = tk.Frame(self.f)
+        self.weight = tk.Label(self.numbers)
+        self.value = tk.Label(self.numbers)
+        ######
+        self.draw_static()
+        self.draw_dynamic()
 
-        self.window = container
+    def draw_static(self):
+        self.name.grid(row=0, column=0)
+        ######
+        self.interact.grid(row=1, column=0)
+        self.number.grid(row=0, column=0)
+        self.usebutton.grid(row=0, column=1)
+        self.increment.grid(row=0, column=2)
+        self.decrement.grid(row=0, column=3)
+        ######
+        self.numbers.grid(row=2, column=0)
+        self.weight.grid(row=0, column=0)
+        self.value.grid(row=0, column=1)
+        ######
+        self.describe()
+        self.numbervalue.set(self.item.number)
 
-        self.mainframe = tk.Frame(self.f)
+    def draw_dynamic(self):
+        self.weight['text'] = '{w} lb'.format(w=self.total_weight())
+        self.value['text'] = '{v} gp'.format(v=self.total_value())
 
-        names_ = ['item', 'treasure', 'weapon', 'armor']
-        frames_ = [tk.LabelFrame(self.mainframe, text=pluralize(n).upper())
-                   for n in names_]
+    def total_weight(self):
+        return self.item.weight * self.item.number
 
-        self.frames = OrderedDict()
-        self.frames.update(zip(names_, frames_))
+    def total_value(self):
+        return self.item.value * self.item.number
 
-        self.ADDNEW = [tk.Button(self.frames[n], text='Add new',
-                                 command=lambda: Adder(self.frames[n], self,
-                                                       self.character))
-                       for n in names_]
+    def use(self):
+        effect = self.item.use()
+        if (effect):
+            self.effect = gui.EffectPane(self.f, h.shorten(effect), effect)
+            self.effect.grid(row=4, column=0)
 
-        self.bottom = tk.Frame(self.f)
-        self.carried = tk.Label(self.bottom)
-        self.encumbrance = tk.Label(self.bottom)
+    def describe(self):
+        desc = self.item.describe()
+        if (desc):
+            self.description = gui.EffectPane(self.f, h.shorten(desc), desc)
+            self.description.grid(row=3, column=0)
 
-        self.QUIT = tk.Button(self.f, text='QUIT',
-                              command=lambda: self.writequit())
+    def set_number(self):
+        num = self.numbervalue.get()
+        self.item.number = int(num or 0)
 
-        self.popup()
+    def change(self, amount):
+        current = int(self.numbervalue.get() or 0)
+        self.numbervalue.set(str(current + amount))
 
-    def loadCharacter(self, name):
-        filename = 'character/' + clean(name) + '.character'
-        self.character = JSONInterface(filename)
 
-    def loadItems(self):
-        allitems = self.character.get('/inventory')
-        self.items = []
-        for (name, item) in allitems.items():
-            t = item['type'].split('.')[-1]
-            self.items.append(ItemDisplay(self.frames[t], self,
-                                          self.character, name))
+class InventoryHandler(gui.Section):
+    def __init__(self, container):
+        gui.Section.__init__(self, container)
+        self.characterdata = {}
+        self.newitemdata = {}
+        self.frameframe = tk.Frame(self.f)
+        self.framenames = ['item', 'treasure', 'weapon', 'armor']
+        self.coreframes = {n: tk.LabelFrame(self.frameframe,
+                                            text=pluralize(n).upper(),
+                                            bd=2, relief='ridge')
+                           for n in self.framenames}
+        self.objectblocks = {n: [] for n in self.framenames}
+        self.totalinfo = tk.Frame(self.f)
+        self.totalweight = tk.Label(self.totalinfo)
+        self.encumbrance = tk.Label(self.totalinfo)
+        self.newitem = tk.Button(self.totalinfo, text='New Item',
+                                 command=self.new_item_start)
+        ######
+        self.load_character_start()
+        self.draw_static()
 
-    def draw(self):
-        self.grid(row=0, column=0)
-        self.mainframe.grid(row=0, column=0)
-        for i, (n, f) in enumerate(self.frames.items()):
-            f.grid(row=0, column=i, sticky='n')
-            self.ADDNEW[i].grid(row=len(self.items), column=0)
-        for i, item in enumerate(self.items):
-            item.grid(row=i, column=0)
-        self.bottom.grid(row=1, column=0)
-        self.carried.grid(row=1, column=0)
-        self.encumbrance.grid(row=1, column=1)
-        self.QUIT.grid(row=3, column=3)
+    def draw_static(self):
+        self.frameframe.grid(row=0, column=0)
+        for (i, name) in enumerate(self.framenames):
+            self.coreframes[name].grid(row=0, column=i)
+        ######
+        self.totalinfo.grid(row=1, column=0)
+        self.totalweight.grid(row=0, column=0)
+        self.encumbrance.grid(row=0, column=1)
+        self.newitem.grid(row=0, column=2)
 
-    def popup(self):
-        def extract():
-            self.loadCharacter(name.get())
-            self.update(level=3)
-            subwin.destroy()
-        subwin = tk.Toplevel()
-        name = util.labeledEntry(subwin, 'Character name', 0, 0)
-        accept = tk.Button(subwin, text='Accept', command=lambda: extract())
-        accept.grid(row=1, column=1)
+    def draw_dynamic(self):
+        for block in self.objectblocks.values():
+            print(block)
+            for (i, item) in enumerate(block):
+                item.grid(row=i, column=0)
+        self.encumbrance['text'] = self.strength_analysis()
+        self.totalweight['text'] = 'Current load: {}'.format(self.total_weight())
 
-    def totalWeight(self):
-        weight_ = 0
-        for item in self.items:
-            qpath = '/inventory/{}/quantity'.format(item.name)
-            temp = item.details.get('/weight')
-            if (isinstance(temp, str) or temp is None):
-                weight_ += 0
-            else:
-                weight_ += item.character.get(qpath) * temp
-        self.carryWeight = weight_
-        return weight_
+    def load_character_start(self):
+        popup = gui.Query(self.characterdata, self.load_character_end,
+                          'Character name?')
 
-    def strengthAnalysis(self):
-        strength = self.character.get('/abilities/Strength')
+    def load_character_end(self):
+        name = self.characterdata['Character name?']
+        path = JSONInterface.OBJECTSPATH + 'character/' + name + '.character'
+        print(path)
+        if (os.path.exists(path)):
+            self.character = JSONInterface(path)
+        else:
+            raise FileNotFoundError
+        self.handler = c.Inventory(self.character)
+        for (name, item) in self.handler:
+            t = item.type.split()[-1]
+            self.objectblocks[t].append(ItemDisplay(self.coreframes[t], item))
+        self.draw_dynamic()
+
+    def new_item_start(self):
+        gui.Query(self.newitemdata, self.new_item_end, 'Name?', 'Quantity?', 'Type?', 'Equipped?')
+
+    def new_item_end(self):
+        i = self.newitemdata
+        self.handler.newslot(i['Name?'], int(i['Quantity?']), i['Type?'],
+                             bool(i['Equipped?']))
+        self.draw_dynamic()
+
+    def total_weight(self):
+        s = 0
+        for block in self.objectblocks.values():
+            for item in block:
+                s += item.total_weight()
+        return s
+
+    def strength_analysis(self):
+        strength = self.character.get('/abilities/strength')
         stages = ["No penalty.",
                   "Your speed drops by 10 feet.",
                   "Your speed drops by 20 feet and you have disadvantage on "
@@ -101,163 +168,26 @@ class main(gui.Element, gui.Section):
                       strength * 15,
                       strength * 30,
                       sys.maxsize]
+        carryWeight = self.total_weight()
         for s, t in zip(stages, thresholds):
-            if (self.carryWeight <= t):
+            if (carryWeight <= t):
                 return s
 
-    def writequit(self):
-        self.character.write()
-        self.window.destroy()
-
-    def update(self, level=2):
-        """1: draw; 2: calculate carry weight; 3: reload items;
-        4: load character"""
-        if (level >= 4):
-            # self.loadCharacter(name.get())
-            pass
-        if (level >= 3):
-            self.loadItems()
-        if (level >= 2):
-            weight_ = self.totalWeight()
-            self.carried['text'] = 'Current load: {0:0.1f}'.format(weight_)
-            self.encumbrance['text'] = self.strengthAnalysis()
-        if (level >= 1):
-            self.draw()
+    def write(self):
+        self.handler.write()
 
 
-class Adder:
-    def __init__(self, container, master, character):
-        self.place = container
-        self.master = master
-        self.character = character
-
-        self.win = tk.Toplevel()
-        self.name = util.labeledEntry(self.win, 'Input item name', 0, 0,
-                                      orient='h')
-        self.quantity = util.labeledEntry(self.win, 'Input quantity', 1, 0,
-                                          orient='h', width=5)
-        self.type = util.labeledEntry(self.win, 'Input type', 2, 0,
-                                      orient='h')
-        self.typeHelp = gui.HelpButton(self.win, 'Put the file extension here.'
-                                       ' For special cases like treasure, put '
-                                       'the full file name.')
-        self.typeHelp.grid(row=2, column=2)
-        self.finalize = tk.Button(self.win, text='ADD',
-                                  command=lambda: self.finish())
-        self.finalize.grid(row=3, column=1)
-
-    def finish(self):
-        _inv = self.character.get('/inventory')
-        _inv[self.name.get()] = OrderedDict(
-            (('quantity', int(self.quantity.get())),
-             ('type', self.type.get()),
-             ('equipped', False)))
-        self.master.update(level=3)
-        self.win.destroy()
-
-
-class ItemDisplay(gui.Element, gui.Section):
-    # TODO: allow this to function without a file
-    def __init__(self, container, master, character, name):
-        # character is the JSONInterface object
-        gui.Element.__init__(self, name)
+class main(gui.Section):
+    def __init__(self, container):
         gui.Section.__init__(self, container)
+        self.inv = InventoryHandler(self.f)
+        self.inv.grid(0, 0)
+        self.QUIT = tk.Button(self.f, text='QUIT', command=self.quit)
+        self.QUIT.grid(row=1, column=1)
 
-        self.master = master
-        self.character = character
-        self.prefix = '/inventory/{}'.format(name)
-        self.name = name
-
-        self.namedisplay = tk.Label(self.f, text=self.name)
-
-        self.numcontainer = tk.Frame(self.f)
-        self.sv = tk.StringVar()
-        self.sv.trace('w', callback=lambda name, index, mode:
-                      self.callbacknum(self.sv))
-        self.numdisplay = tk.Entry(self.numcontainer, width=5,
-                                   textvariable=self.sv)
-        self.increment = tk.Button(self.numcontainer, text='+',
-                                   command=lambda: self.num(1))
-        self.decrement = tk.Button(self.numcontainer, text='-',
-                                   command=lambda: self.num(-1))
-        self.useB = tk.Button(self.numcontainer, text='Use', command=self.use)
-
-        self.make()
-
-        if (self.isReal):
-            e = self.details.get('/effect')
-            self.effect = gui.EffectPane(self.f, h.shorten(e), e)
-            d = self.details.get('/description')
-            self.description = gui.EffectPane(self.f, h.shorten(d), d)
-            self.numbers = tk.Frame(self.f)
-            self.weight = tk.Label(self.numbers,
-                                   text=str(self.details.get('/weight'))
-                                   + ' lb')
-            self.value = tk.Label(self.numbers,
-                                  text=str(self.details.get('/value')) + ' gp')
-        if (self.character.get('{}/quantity'.format(self.prefix)) > 0):
-            self.draw()
-
-    def __str__(self):
-        return self.name
-
-    def make(self):
-        self.details = hook(self.character.get(self.prefix), self.name)
-        self.isReal = self.details is not None
-
-    def draw(self):
-        self.namedisplay.grid(row=0, column=0)
-        self.numcontainer.grid(row=1, column=0)
-        self.numdisplay.grid(row=0, column=0)
-        self.increment.grid(row=0, column=2)
-        self.decrement.grid(row=0, column=3)
-        self.useB.grid(row=0, column=1)
-        path = '{}/quantity'.format(self.prefix)
-        util.replaceEntry(self.numdisplay, self.character.get(path))
-        if (self.isReal):
-            if (self.description):
-                self.description.grid(row=3, column=0)
-            if (self.effect):
-                self.effect.grid(row=4, column=0)
-            self.numbers.grid(row=2, column=0)
-            self.weight.grid(row=0, column=0)
-            self.value.grid(row=0, column=1)
-
-    def num(self, change):
-        path = '{}/quantity'.format(self.prefix)
-        current = self.character.get(path)
-        self.character.set(path, current + change)
-        self.draw()
-        self.master.update()
-
-    def callbacknum(self, var):
-        path = '{}/quantity'.format(self.prefix)
-        self.character.set(path, int(var.get()) if var.get() else 0)
-        self.master.update()
-
-    def use(self):
-        cons = self.character.get('{}/consumable'.format(self.prefix))
-        if (cons):
-            self.num(-1)
-        self.effect.long_display.popup()
-
-
-def hook(item, name):
-    directory = '{direc}/{name}'
-    location = item['type'].split(sep='.')
-    if (location[0] == ''):
-        # Leading . indicates name of object is included in path
-        location[0] = clean(name)
-        deeper = False
-    else:
-        deeper = True
-    filename = directory.format(direc=location[-1], name='.'.join(location))
-    try:
-        out = JSONInterface(filename, PREFIX=name if deeper else '')
-    except FileNotFoundError:
-        print(filename, ' not found')
-        out = None
-    return out
+    def quit(self):
+        self.inv.write()
+        self.container.destroy()
 
 
 def pluralize(name):
@@ -269,5 +199,7 @@ def pluralize(name):
 
 if __name__ == '__main__':
     window = tk.Tk()
-    app = Main(window)
+    JSONInterface.OBJECTSPATH = '../objects/'
+    app = main(window)
+    app.pack()
     window.mainloop()

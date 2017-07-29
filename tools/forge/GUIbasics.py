@@ -75,24 +75,26 @@ class EffectPane(Section):
 
 
 class Query:
-    def __init__(self, data, *questions):
+    def __init__(self, data, callbackfun, *questions):
         """questions is made of strings that will label the entries and identify outputs
         data is an empty dictionary"""
         self.data = data
+        self.callback = callbackfun
         self.questions = questions
         self.answers = {}
         self.win = tk.Toplevel()
-        self.accept = tk.Button(subwin, text='Accept', command=self.finish)
+        self.accept = tk.Button(self.win, text='Accept', command=self.finish)
         self.draw()
 
     def draw(self):
         for (i, q) in enumerate(self.questions):
-            self.answers[q] = util.labeledEntry(subwin, q, 2*i, 0)
+            self.answers[q] = util.labeledEntry(self.win, q, 2*i, 0)
         self.accept.grid(row=2*i+1, column=1)
 
     def finish(self):
         for q in self.questions:
             self.data.update({q: self.answers[q].get()})
+        self.callback()
         self.win.destroy()
 
 
