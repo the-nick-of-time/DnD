@@ -7,16 +7,19 @@
     "current": 37,
     "temp": 0,
     "HD": {
-      "1d10": 4
+      "1d10": {
+        "number": 4,
+        "maxnumber": 4
+      }
     }
   },
   "abilities": {
-    "Strength": 9,
-    "Dexterity": 17,
-    "Constitution": 16,
-    "Intelligence": 10,
-    "Wisdom": 14,
-    "Charisma": 7
+    "strength": 9,
+    "dexterity": 17,
+    "constitution": 16,
+    "intelligence": 10,
+    "wisdom": 14,
+    "charisma": 7
   },
   "skills": [
     "Acrobatics",
@@ -31,85 +34,85 @@
   ],
   "spell_slots": [],
   "spells_prepared": [],
-  "inventory": {
+  "equipment": {
     "Dagger": {
       "quantity": 3,
-      "type": ".weapon",
+      "type": "weapon",
       "equipped": true
     },
     "Throwing Knife": {
       "quantity": 4,
-      "type": ".ranged.weapon",
+      "type": "weapon",
       "equipped": true
     },
     "Parrying Dagger": {
       "quantity": 1,
-      "type": ".weapon",
+      "type": "weapon",
       "equipped": true
     },
     "Studded Leather": {
       "quantity": 1,
-      "type": ".armor",
+      "type": "armor",
       "equipped": true
     },
     "cp": {
       "quantity": 35,
-      "type": "coin.treasure",
+      "type": "treasure",
       "equipped": false
     },
     "sp": {
       "quantity": 10,
-      "type": "coin.treasure",
+      "type": "treasure",
       "equipped": false
     },
     "gp": {
       "quantity": 517,
-      "type": "coin.treasure",
+      "type": "treasure",
       "equipped": false
     },
     "Topaz": {
       "quantity": 0,
-      "type": "gem.treasure",
+      "type": "treasure",
       "equipped": false
     },
     "Chalk": {
       "quantity": 2,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "Candle": {
       "quantity": 6,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "Hooded Lantern": {
       "quantity": 1,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "Oil": {
       "quantity": 2,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "Torch": {
       "quantity": 0,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "ep": {
       "quantity": 0,
-      "type": "coin.treasure",
+      "type": "treasure",
       "equipped": false
     },
     "Blanket": {
       "quantity": 1,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "sickle": {
       "quantity": 1,
-      "type": "coin.treasure",
+      "type": "treasure",
       "equipped": false
     }
   }
