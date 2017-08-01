@@ -13,9 +13,10 @@ from helpers import clean
 
 
 class ItemDisplay(gui.Section):
-    def __init__(self, container, handler):
+    def __init__(self, container, handler, reporter):
         gui.Section.__init__(self, container)
         self.item = handler
+        self.reporter = reporter
         ######
         self.name = tk.Label(self.f, text=self.item.name)
         ######
@@ -52,8 +53,9 @@ class ItemDisplay(gui.Section):
         self.numbervalue.set(self.item.number)
 
     def draw_dynamic(self):
-        self.weight['text'] = '{w} lb'.format(w=self.total_weight())
-        self.value['text'] = '{v} gp'.format(v=self.total_value())
+        self.weight['text'] = '{w:0.2f} lb'.format(w=self.total_weight())
+        self.value['text'] = '{v:0.2f} gp'.format(v=self.total_value())
+        self.reporter()
 
     def total_weight(self):
         return self.item.weight * self.item.number
@@ -66,6 +68,7 @@ class ItemDisplay(gui.Section):
         if (effect):
             self.effect = gui.EffectPane(self.f, h.shorten(effect), effect)
             self.effect.grid(row=4, column=0)
+        self.numbervalue.set(self.item.number)
 
     def describe(self):
         desc = self.item.describe()
@@ -76,16 +79,22 @@ class ItemDisplay(gui.Section):
     def set_number(self):
         num = self.numbervalue.get()
         self.item.number = int(num or 0)
+        self.draw_dynamic()
+
+    def get_number(self):
+        return self.item.number
 
     def change(self, amount):
         current = int(self.numbervalue.get() or 0)
         self.numbervalue.set(str(current + amount))
+        self.draw_dynamic()
 
 
 class InventoryHandler(gui.Section):
-    def __init__(self, container):
+    def __init__(self, container, handler, character):
         gui.Section.__init__(self, container)
-        self.characterdata = {}
+        self.handler = handler
+        self.character = character
         self.newitemdata = {}
         self.frameframe = tk.Frame(self.f)
         self.framenames = ['item', 'treasure', 'weapon', 'armor']
@@ -100,8 +109,11 @@ class InventoryHandler(gui.Section):
         self.newitem = tk.Button(self.totalinfo, text='New Item',
                                  command=self.new_item_start)
         ######
-        self.load_character_start()
+        for (name, item) in self.handler:
+            t = item.type.split()[-1]
+            self.objectblocks[t].append(ItemDisplay(self.coreframes[t], item, self.update_encumbrance))
         self.draw_static()
+        self.draw_dynamic()
 
     def draw_static(self):
         self.frameframe.grid(row=0, column=0)
@@ -115,37 +127,28 @@ class InventoryHandler(gui.Section):
 
     def draw_dynamic(self):
         for block in self.objectblocks.values():
-            print(block)
-            for (i, item) in enumerate(block):
-                item.grid(row=i, column=0)
+            i = 0
+            for item in block:
+                if (item.get_number() > 0):
+                    item.grid(row=i, column=0)
+                    i += 1
+        self.update_encumbrance()
+
+    def update_encumbrance(self):
+        # TODO: somehow needs to get called from the
         self.encumbrance['text'] = self.strength_analysis()
-        self.totalweight['text'] = 'Current load: {}'.format(self.total_weight())
-
-    def load_character_start(self):
-        popup = gui.Query(self.characterdata, self.load_character_end,
-                          'Character name?')
-
-    def load_character_end(self):
-        name = self.characterdata['Character name?']
-        path = JSONInterface.OBJECTSPATH + 'character/' + name + '.character'
-        print(path)
-        if (os.path.exists(path)):
-            self.character = JSONInterface(path)
-        else:
-            raise FileNotFoundError
-        self.handler = c.Inventory(self.character)
-        for (name, item) in self.handler:
-            t = item.type.split()[-1]
-            self.objectblocks[t].append(ItemDisplay(self.coreframes[t], item))
-        self.draw_dynamic()
+        self.totalweight['text'] = 'Current load: {0:0.2f}'.format(self.total_weight())
 
     def new_item_start(self):
         gui.Query(self.newitemdata, self.new_item_end, 'Name?', 'Quantity?', 'Type?', 'Equipped?')
 
     def new_item_end(self):
         i = self.newitemdata
-        self.handler.newslot(i['Name?'], int(i['Quantity?']), i['Type?'],
-                             bool(i['Equipped?']))
+        eq = i['Equipped?'].lower() not in ['false', 'no', 'n']
+        self.handler.newslot(i['Name?'], int(i['Quantity?']), i['Type?'], eq)
+        item = self.handler[i['Name?']]
+        t = i['Type?'].split()[-1]
+        self.objectblocks[t].append(ItemDisplay(self.coreframes[t], item, self.update_encumbrance))
         self.draw_dynamic()
 
     def total_weight(self):
@@ -180,10 +183,33 @@ class InventoryHandler(gui.Section):
 class main(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
-        self.inv = InventoryHandler(self.f)
-        self.inv.grid(0, 0)
+        self.characterdata = {}
+        # self.inv = InventoryHandler(self.f)
+        # self.inv.grid(0, 0)
         self.QUIT = tk.Button(self.f, text='QUIT', command=self.quit)
         self.QUIT.grid(row=1, column=1)
+        self.load_character_start()
+
+    def load_character_start(self):
+        popup = gui.Query(self.characterdata, self.load_character_end,
+                          'Character name?')
+        self.container.withdraw()
+
+    def load_character_end(self):
+        name = self.characterdata['Character name?']
+        path = JSONInterface.OBJECTSPATH + 'character/' + name + '.character'
+        if (os.path.exists(path)):
+            character = JSONInterface('character/' + name + '.character')
+        else:
+            raise FileNotFoundError
+        handler = c.Inventory(character)
+        self.inv = InventoryHandler(self.f, handler, character)
+        self.inv.grid(row=0, column=0)
+        # for (name, item) in self.handler:
+        #     t = item.type.split()[-1]
+        #     self.objectblocks[t].append(ItemDisplay(self.coreframes[t], item, self.update_encumbrance))
+        self.container.deiconify()
+        # self.draw_dynamic()
 
     def quit(self):
         self.inv.write()

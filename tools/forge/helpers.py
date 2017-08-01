@@ -45,20 +45,20 @@ def pull_from(*args):
 def type_select(extension):
     """Find the class corresponding to a file's extension."""
     tree = {
-        "armor": {"magic": MagicArmor,
+        "armor": {"magic": {"": MagicArmor},
                   "": Armor},
         "character": {"": Character},
         "class": {"": Class},
-        "item": {"magic": MagicItem,
+        "item": {"magic": {"": MagicItem},
                  "": Item},
         # "race": {"": Race},
         # "skill": {"": Skill},
         "spell": {"": Spell},
         "treasure": {"": Item},
         "weapon": {
-            "magic": {"ranged": MagicRangedWeapon,
+            "magic": {"ranged": {"": MagicRangedWeapon},
                       "": MagicWeapon},
-            "ranged": {"magic": MagicRangedWeapon,
+            "ranged": {"magic": {"": MagicRangedWeapon},
                        "": RangedWeapon},
             "": Weapon
         }

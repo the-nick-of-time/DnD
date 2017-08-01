@@ -1,0 +1,9 @@
+{
+  "name": "Plate Armor",
+  "value": 1500,
+  "weight": 65,
+  "consumable": false,
+  "description": "This armor is composed of overlapping plates of steel, backed with flexible chain and padding.\n",
+  "effect": "Donning this armor takes 10 minutes. Doffing takes 5.\n",
+  "AC": 18
+}
