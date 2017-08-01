@@ -36,9 +36,16 @@ class InfoButton:
     def popup(self):
         win = tk.Toplevel()
         disp = tk.Label(win, text=self.poptext, wraplength=250)
+        # if (isinstance(self.poptext, tk.StringVar)):
+        #     disp['textvariable'] = self.poptext
+        # elif (isinstance(self.poptext, str)):
+        #     disp['text'] = self.poptext
         disp.grid(row=0, column=0)
         close = tk.Button(win, text='Close', command=win.destroy)
         close.grid(row=1, column=0)
+
+    def update(self, poptext):
+        self.poptext = poptext
 
     def grid(self, row, column):
         self.b.grid(row=row, column=column)
@@ -59,19 +66,34 @@ class EffectPane(Section):
 
         self.short = short
         self.long = long
+        # self.short = tk.StringVar(value=short)
+        # self.long = tk.StringVar(value=long)
 
-        self.draw()
-
-    def __bool__(self):
-        return bool(self.short or self.long)
-
-    def draw(self):
         self.short_display = tk.Label(self.f, text=self.short, width=30,
                                       wraplength=200)
         self.long_display = InfoButton(self.f, self.long)
 
+        self.draw_static()
+        self.draw_dynamic()
+
+    def __bool__(self):
+        return bool(self.short or self.long)
+
+    def draw_static(self):
         self.short_display.grid(row=0, column=0)
         self.long_display.grid(row=0, column=1)
+
+    def draw_dynamic(self):
+        self.short_display['text'] = self.short
+        self.long_display.update(self.long)
+
+    def update(self, short, long):
+        self.short = short
+        self.long = long
+        # self.long_display.poptext = long
+        # self.short = tk.StringVar(value=short)
+        # self.long = tk.StringVar(value=long)
+        self.draw_dynamic()
 
 
 class Query:
@@ -136,7 +158,6 @@ class ResourceDisplay(Section):
         self.resetbutton.grid(row=0, column=2)
 
     def draw_dynamic(self):
-        # might need string conversion
         self.mxvalue.set(str(self.resource.maxnumber))
         self.currentvalue.set(str(self.resource.number))
 
@@ -157,46 +178,3 @@ class ResourceDisplay(Section):
     def reset(self):
         self.resource.reset()
         self.draw_dynamic()
-
-
-# class ItemDisplay(Section):
-#     def __init__(self, container, item):
-#         Section.__init__(self, container)
-#         self.item = item
-#         self.name = tk.Label(self.f, text=self.item.name)
-#         self.numbers = tk.Label(self.f)
-#         self.buttonframe = tk.Frame(self.f)
-#         self.use = tk.Button(self.buttonframe, text='+',
-#                              command=lambda: )
-#         self.dec = tk.Button(self.buttonframe, text='-',
-#                              command=lambda: )
-#         self.resetbutton = tk.Button(self.buttonframe, text='-',
-#                                command=lambda: self.resource.reset())
-#         self.draw_static()
-#         self.draw_dynamic()
-#
-#     def draw_static(self):
-#         self.name.grid(row=0, column=0)
-#         self.numbers.grid(row=1, column=0)
-#         self.buttonframe.grid(row=2, column=0)
-#         self.inc.grid(row=0, column=0)
-#         self.dec.grid(row=0, column=1)
-#         self.resetbutton.grid(row=0, column=2)
-#
-#     def draw_dynamic(self):
-#         if (isinstance(self.resource.value, str)):
-#             numbers['text'] = '{num}/{max} ({val})'.format(
-#                 num=self.resource.number, max=self.resource.maxnumber,
-#                 val=self.resource.value)
-#         else:
-#             numbers['text'] = '{num}/{max}'.format(
-#                 num=self.resource.number, max=self.resource.maxnumber)
-#         # self.numbers.grid(row=1, column=0)  # not sure if this is necessary
-#
-#     def increment(self):
-#         self.resource.regain(1)
-#         self.draw_dynamic()
-#
-#     def decrement(self):
-#         self.resource.use(1)
-#         self.draw_dynamic()

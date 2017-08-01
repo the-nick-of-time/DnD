@@ -1,10 +1,12 @@
 import tkinter as tk
+import os
 
 from classes import Character
 import helpers as h
 import GUIbasics as gui
 import rolling as r
 import tkUtility as util
+import interface as iface
 
 class AbilityDisplay(gui.Section):
     abilnames = ['strength', 'dexterity', 'constitution',
@@ -12,7 +14,8 @@ class AbilityDisplay(gui.Section):
     def __init__(self, master, character):
         gui.Section.__init__(self, master)
         self.person = character
-        self.subf = tk.Frame(self.f)
+        self.thisf = tk.Frame(self.f)
+        self.subf = tk.Frame(self.thisf)
         #############
         self.abilchecks = [tk.Button(self.subf, text=a[:3].upper(), command=lambda x=a: self.roll_check(x), width=4) for (i, a) in enumerate(self.abilnames)]
         self.abiltexts = [tk.StringVar() for a in self.abilnames]
@@ -23,10 +26,16 @@ class AbilityDisplay(gui.Section):
         self.dis = tk.BooleanVar()
         self.disbutton = tk.Checkbutton(self.f, text='Disadvantage?', variable=self.dis)
         self.rolldisplay = tk.Label(self.f)
+        ######
+        self.skills = SkillDisplay(self.thisf, self.person, self.rolldisplay,
+                                   self.adv, self.dis)
+        ######
         self.draw_static()
         self.draw_dynamic()
 
     def draw_static(self):
+        self.thisf.grid(row=0, column=0)
+        self.skills.grid(row=0, column=1)
         self.subf.grid(row=0, column=0)
         for (i, a) in enumerate(self.abilnames):
             self.abilchecks[i].grid(row=i, column=0)
@@ -43,28 +52,83 @@ class AbilityDisplay(gui.Section):
             self.mods[i]['text'] = h.modifier(self.scores[i].get())
 
     def roll_check(self, abil):
-        i = self.abilnames.index(abil)
-        mod = h.modifier(self.scores[i].get())
+        # i = self.abilnames.index(abil)
+        # mod = h.modifier(self.scores[i].get())
         advantage = self.adv.get()
         disadvantage = self.dis.get()
-        roll = '2d20h1' if (advantage and not disadvantage) else '2d20l1' if (disadvantage and not advantage) else '1d20'
-        result = r.roll(roll)
-        self.rolldisplay['text'] = '{}+{}={}'.format(result, mod, result+mod)
+        # roll = '2d20h1' if (advantage and not disadvantage) else '2d20l1' if (disadvantage and not advantage) else '1d20'
+        # result = r.roll(roll)
+        result = self.person.ability_check(abil, adv=advantage, dis=disadvantage)
+        self.rolldisplay['text'] = '{}+{}={}'.format(*reversed(result))
 
     def update_character(self):
         for (i, a) in enumerate(self.abilnames):
             self.person.abilities[a] = int(self.scores[i].get() if self.scores[i].get() else 0)
 
+
+class SkillDisplay(gui.Section):
+    def __init__(self, container, character, output, adv, dis):
+        gui.Section.__init__(self, container)
+        self.person = character
+        self.display = output
+        self.adv = adv
+        self.dis = dis
+        sk = iface.JSONInterface('skill/SKILLS.skill')
+        self.skillmap = sk.get('/')
+        self.buttons = [tk.Button(self.f, text=n, command=lambda x=n: self.roll_check(x)) for n in sorted(self.skillmap)]
+        self.draw_static()
+
+    def draw_static(self):
+        for (i, obj) in enumerate(self.buttons):
+            obj.grid(row=i, column=0)
+
+    def roll_check(self, name):
+        abil = self.skillmap[name]
+        # mod = h.modifier(self.person.)
+        advantage = self.adv.get()
+        disadvantage = self.dis.get()
+        result = self.person.ability_check(abil, skill=name, adv=advantage,
+                                           dis=disadvantage)
+        self.display['text'] = '{}+{}={}'.format(*reversed(result))
+
+
+class main(gui.Section):
+    def __init__(self, window):
+        gui.Section.__init__(self, window)
+        self.charactername = {}
+        self.QUIT = tk.Button(self.f, text='QUIT', command=self.quit)
+        self.startup_begin()
+
+    def startup_begin(self):
+        gui.Query(self.charactername, self.startup_end, 'Character Name?')
+        self.container.withdraw()
+
+    def startup_end(self):
+        name = self.charactername['Character Name?']
+        path = iface.JSONInterface.OBJECTSPATH + 'character/' + name + '.character'
+        if (os.path.exists(path)):
+            jf = iface.JSONInterface('character/' + name + '.character')
+        else:
+            raise FileNotFoundError
+        character = Character(jf)
+        self.block = AbilityDisplay(self.f, character)
+        self.draw_static()
+        self.container.deiconify()
+
+    def draw_static(self):
+        self.block.grid(row=0, column=0)
+        self.QUIT.grid(row=1, column=0)
+
+    def quit(self):
+        self.block.person.write()
+        self.container.destroy()
+
+
 if __name__ == '__main__':
     win = tk.Tk()
-    from interface import JSONInterface
-    JSONInterface.OBJECTSPATH = '../objects/'
-    jf = JSONInterface('character/Calan.character')
-    app = AbilityDisplay(win, Character(jf))
+    iface.JSONInterface.OBJECTSPATH = '../objects/'
+    # jf = iface.JSONInterface('character/Calan.character')
+    # app = AbilityDisplay(win, Character(jf))
+    app = main(win)
     app.pack()
-    def quit(app, win):
-        app.person.write()
-        win.destroy()
-    WQ = tk.Button(win, text='QUIT', command=lambda: quit(app, win))
-    WQ.pack()
     win.mainloop()

@@ -244,12 +244,17 @@ class Character:
     def ability_check(self, which, skill='', adv=False, dis=False):
         applyskill = skill in self.skills
         ability = h.modifier(self.abilities[which])
-        roll = '2d20h1' if (adv and not dis) else '2d20l1' if (dis and not adv) else '1d20'
-        return (r.roll(roll) + ability
-                + self.proficiency if applyskill else 0
-                + self.bonuses['check'][which] + self.bonuses['skill'][skill])
+        rollstr = '2d20h1' if (adv and not dis) else '2d20l1' if (dis and not adv) else '1d20'
+        roll = r.roll(rollstr)
+        if (applyskill):
+            prof = self.proficiency
+        else:
+            prof = 0
 
-    def ability_save(self, which):
+        return (roll + prof + ability, prof + ability, roll)
+                # + self.bonuses['check'][which] + self.bonuses['skill'][skill])
+
+    def ability_save(self, which, adv=False, dis=False):
         applyprof = which in self.saves
         return (r.roll('1d20') + h.modifier(self.abilities[which])
                 + self.proficiency if applyprof else 0 + self.bonuses)
