@@ -168,6 +168,10 @@ def roll(s, modifiers=0, option='execute'):
         T = tokens(s, operators)
         T = critify(T, operators)
         return execute(T, operators) + modifiers
+    elif (option == 'average'):
+        T = tokens(s, operators)
+        T = averageify(T, operators)
+        return execute(T, operators) + modifiers
     elif (option == 'multipass'):
         # TODO: add modifiers into the passes
         return display_multipass(tokens(s, operators), operators)
