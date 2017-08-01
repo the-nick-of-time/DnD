@@ -9,7 +9,7 @@ class JSONInterface:
     # OBJECTSPATH = abspath('.') + '/tools/objects/'
     # TODO: Add functionality to merge two objects or access them in parallel
 
-    def __init__(self, filename, PREFIX=''):
+    def __init__(self, filename):
         broken = filename.split('/')[-1].split('.')
         self.shortfilename = ' '.join(reversed(broken[:len(broken) // 2]))
         # TODO: Unclean filename?
@@ -37,6 +37,14 @@ class JSONInterface:
         if (not path.startswith('/')):
             return self._get(path, self.info)
         return self._get(path)
+
+    def delete(self, path):
+        if (path == '/'):
+            del self.info
+            return True
+        if (not path.startswith('/')):
+            return self._delete(path, self.info)
+        return self._delete(path)
 
     def set(self, path, value):
         if (path == '/'):
@@ -79,7 +87,13 @@ class JSONInterface:
             if (len(comp) == 1):
                 # Terminal
                 if (isinstance(root, list)):
-                    root[int(comp[0])] = value
+                    i = int(comp[0])
+                    if (i >= len(root)):
+                        # Writing beyond end of list, pad with None
+                        root = root + [None for each in range(len(root), i)] + [value]
+                    else:
+                        # Valid
+                        root[i] = value
                 else:
                     root[comp[0]] = value
                 return True
@@ -94,17 +108,43 @@ class JSONInterface:
         except (KeyError, IndexError):
             return False
 
+    def _delete(self, path, root=None):
+        try:
+            if (root is None):
+                return self.delete(path, self.info)
+            comp = path.split(sep='/', maxsplit=1)
+            if (len(comp) == 1):
+                # Terminal
+                if (isinstance(root, list)):
+                    del root[int(comp[0])]
+                else:
+                    del root[comp[0]]
+                return True
+            if (comp[0] == ''):
+                # Intitial
+                return self._delete(comp[1], self.info)
+            # Recurse
+            if(isinstance(root, list)):
+                return self._delete(comp[1], root[int(comp[0])])
+            else:
+                return self._delete(comp[1], root[comp[0]])
+        except (KeyError, IndexError):
+            return False
+
+
 
 class LinkedInterface:
     def __init__(self, *ifaces):
         self.searchpath = collections.OrderedDict(
-            (str(iface), iface) for iface in ifaces)
+            ((str(iface), iface) for iface in ifaces))
 
     def __add__(self, other):
         if (isinstance(other, LinkedInterface)):
             self.searchpath.update(other.searchpath)
+            return self
         elif (isinstance(other, JSONInterface)):
             self.searchpath.update({str(other): other})
+            return self
         else:
             raise TypeError('You can only add a JSONInterface or a '
                             'LinkedInterface to a LinkedInterface')
@@ -130,7 +170,7 @@ class LinkedInterface:
             # Search in more general files then override with more specific
             first = True
             for name, iface in self.searchpath.items():
-                found = iface._get(remaining)
+                found = iface.get(remaining)
                 if (found is not None):
                     if (first):
                         rv = found
@@ -145,7 +185,7 @@ class LinkedInterface:
         else:
             # Find one result in the most specific file you can find it in
             for name, iface in reversed(self.searchpath.items()):
-                rv = iface._get(path)
+                rv = iface.get(path)
                 if (rv is not None):
                     return rv
             return None
