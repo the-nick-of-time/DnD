@@ -1,9 +1,9 @@
 import re
 import collections
 
-import tools.forge.classes as c
-import tools.forge.helpers as h
-import tools.forge.interface as iface
+import classes as c
+import helpers as h
+import interface as iface
 
 
 class ClassMap:
@@ -42,13 +42,18 @@ class ClassMap:
         return ''.join(out[:-1])
 
     def __iter__(self):
-        return (tup for tup in zip(self.classes, self.levels))
+        return (tup for tup in zip(self.classes.keys(), self.classes.values(),
+                                   self.levels))
 
     def __getitem__(self, key):
         if (isinstance(key, str)):
             return self.classes[key]
-        else:
-            return self.classes.items[key]
+        elif (isinstance(key, int)):
+            for i, v in enumerate(self.classes.values()):
+                if (i == key):
+                    return v
+            raise IndexError
+        raise TypeError
 
     def sum(self):
         return sum(self.levels)

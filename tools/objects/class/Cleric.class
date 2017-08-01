@@ -5,36 +5,7 @@
     "CASTER"
   ],
   "hit_dice": "1d8",
-  "armors": {
-    "types": [
-      "Light",
-      "Medium",
-      "Shield"
-    ],
-    "specific": []
-  },
-  "weapons": {
-    "types": [
-      "Simple"
-    ],
-    "specific": []
-  },
-  "tools": [],
-  "saves": [
-    "Wisdom",
-    "Charisma"
-  ],
-  "skills": {
-    "number": 2,
-    "which": [
-      "History",
-      "Insight",
-      "Medicine",
-      "Persuasion",
-      "Religion"
-    ]
-  },
-  "spell": {
+  "spellcasting": {
     "ability": "Wisdom",
     "slots": "full",
     "levels": "full",
@@ -44,6 +15,37 @@
       "caster_level"
     ],
     "always_prepared": []
+  },
+  "proficiencies": {
+    "armors": {
+      "types": [
+        "Light",
+        "Medium",
+        "Shield"
+      ],
+      "specific": []
+    },
+    "weapons": {
+      "types": [
+        "Simple"
+      ],
+      "specific": []
+    },
+    "tools": [],
+    "saves": [
+      "Wisdom",
+      "Charisma"
+    ],
+    "skills": {
+      "number": 2,
+      "which": [
+        "History",
+        "Insight",
+        "Medicine",
+        "Persuasion",
+        "Religion"
+      ]
+    }
   },
   "features": {
     "Spellcasting": {

@@ -7,7 +7,10 @@
     "current": 26,
     "temp": 0,
     "HD": {
-      "1d6": 4
+      "1d6": {
+        "number": 4,
+        "maxnumber": 4
+      }
     }
   },
   "abilities": {

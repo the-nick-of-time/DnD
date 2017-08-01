@@ -9,6 +9,7 @@ from math import ceil
 import rolling as r
 import helpers as h
 import interface as iface
+import ClassMap as cm
 
 # __all__ = ['Character', 'Weapon', 'Spell', 'SpellAttack', 'Class',
 #            'RangedWeapon', 'Armor', 'Item', 'MagicItem']
@@ -66,24 +67,28 @@ class Resource:
         self.value = jf.get(path + '/value')
         self.recharge = jf.get(path + '/recharge')
 
-    # @property
-    # def name(self):
-    #     self.record.get(self.path + '/name')
-    #
-    # @property
-    # def number(self):
-    #     self.record.get(self.path + '/number')
-    #
-    # @property
-    # def maxnumber(self):
-    #     self.record.get(self.path + '/maxnumber')
+    @property
+    def number(self):
+        return self.record.get(self.path + '/number')
+
+    @number.setter
+    def number(self, value):
+        self.record.set(self.path + '/number', value)
+
+    @property
+    def maxnumber(self):
+        return self.record.get(self.path + '/maxnumber')
+
+    @maxnumber.setter
+    def maxnumber(self, value):
+        self.record.set(self.path + '/maxnumber', value)
 
     def use(self, howmany):
         if (self.number < howmany):
             raise LowOnResource()
         if (isinstance(self.value, str)):
             self.number -= howmany
-            self.setn()
+            # self.setn()
             return r.roll('+'.join([self.value] * howmany))
         return howmany * self.value
 
@@ -92,11 +97,11 @@ class Resource:
             self.reset()
         else:
             self.number += howmany
-            self.setn()
+            # self.setn()
 
     def reset(self):
         self.number = self.maxnumber
-        self.setn()
+        # self.setn()
 
     def rest(self, what):
         if (what == 'long'):
@@ -108,15 +113,15 @@ class Resource:
                 return self.number
         return -1
 
-    def setn(self):
-        self.record.set(self.path + '/number', self.number)
-
-    def setmax(self):
-        self.record.set(self.path + '/maxnumber', self.maxnumber)
+    # def setn(self):
+    #     self.record.set(self.path + '/number', self.number)
+    #
+    # def setmax(self):
+    #     self.record.set(self.path + '/maxnumber', self.maxnumber)
 
     def write(self):
-        self.setn()
-        self.setmax()
+        # self.setn()
+        # self.setmax()
         self.record.write()
 
 
@@ -179,21 +184,21 @@ class Character:
 
     def __init__(self, jf):
         self.record = jf
+        self.name = jf.get('/name')
         self.abilities = jf.get('/abilities')
         self.skills = jf.get('/skills')
         self.saves = jf.get('/saves')
-        self.spell_slots = jf.get('/spell_slots')
+        # self.spell_slots = jf.get('/spell_slots')
+        lv = jf.get('/level')
+        self.classes = cm.ClassMap(lv)
+        self.hp = HPhandler(self.record)
         self.bonuses = self.get_bonuses()
         self.death_save_fails = 0
         self.conditions = set()
+        self.proficiencyDice = False
 
     def __str__(self):
         return self.name
-
-    # def __getattribute__(self, key):
-    #     # for name in self.__getattr__('conditions'):
-    #     #     print(h.condition_defs[name])
-    #     return self.__getattr__(key)
 
     def add_condition(self, name):
         if (name == 'exhaustion'):
@@ -203,6 +208,8 @@ class Character:
                     self.conditions.remove(fmt.format(i + 1))
                     self.conditions.add(fmt.format(i + 2))
                     return True
+            self.conditions.add('exhaustion1')
+            return True
         else:
             self.conditions.add(name)
             return True
@@ -224,22 +231,21 @@ class Character:
                 return False
 
     def spell_spend(self, spell):
-        if (self.spell_slots[spell.level] > 0):
-            self.spell_slots[spell.level] -= 1
+        if (isinstance(spell, int)):
+            path = '/spell_slots/' + str(spell)
+        else:
+            path = '/spell_slots/' + str(spell.level)
+        num = self.record.get(path)
+        if (num > 0):
+            self.record.set(path, num-1)
         else:
             raise (OutOfSpells(self, spell))
 
-    def item_consume(self, name):
-        count = self.inventory.getq(name)
-        if (count > 0):
-            self.inventory.setq(name, count - 1)
-        else:
-            raise OutOfItems(self, name)
-
-    def ability_check(self, which, skill=''):
+    def ability_check(self, which, skill='', adv=False, dis=False):
         applyskill = skill in self.skills
         ability = h.modifier(self.abilities[which])
-        return (r.roll('1d20') + ability
+        roll = '2d20h1' if (adv and not dis) else '2d20l1' if (dis and not adv) else '1d20'
+        return (r.roll(roll) + ability
                 + self.proficiency if applyskill else 0
                 + self.bonuses['check'][which] + self.bonuses['skill'][skill])
 
@@ -302,17 +308,49 @@ class Character:
     @property
     def caster_level(self):
         _level = 0
-        for c, lv in self.classes:
-            if (c.caster_type == 'full' or c.caster_type == 'warlock'):
+        for n, c, lv in self.classes:
+            caster_type = c.get('/spellcasting/levels')
+            if (caster_type is None):
+                continue
+            elif (caster_type == 'full' or caster_type == 'warlock'):
                 _level += lv
-            elif (c.caster_type == 'half'):
+            elif (caster_type == 'half'):
                 _level += int(lv / 2)
+            elif (caster_type == 'third'):
+                _level += int(lv / 3)
         return _level
 
     @property
+    def spell_slots(self):
+        return self.record.get('/spell_slots')
+
+    def spell_slots_get(self, level):
+        block = self.record.get('/spell_slots')
+        if (level == '*'):
+            return block
+        return block[level]
+
+    def spell_slots_set(self, level, value):
+        if (level == '*'):
+            self.record.set('/spell_slots', value)
+        elif (isinstance(level, int)):
+            self.record.set('/spell_slots/' + str(level), value)
+
+    @property
+    def max_spell_slots(self):
+        # This will fuck up on warlock multiclasses, I think I need to treat those spell slots as a Resource instead
+        cl = self.classes[0]
+        if (len(self.classes) == 1):
+            t = cl.get('/spellcasting/slots')
+        else:
+            t = 'full'
+        path = '/slots/{}/{}'.format(t, self.caster_level)
+        return cl.get(path)
+
+    @property
     def proficiency(self):
-        c, lv = self.classes[0]
-        return c.get('/proficiency')[self.proficiencyDice][self.level - 1]
+        c = self.classes[0]
+        return c.get('/proficiency')[int(self.proficiencyDice)][self.level - 1]
 
     def save_DC(self, spell):
         return (8
@@ -342,8 +380,16 @@ class Character:
         else:
             raise ValueError('This must be called with a spell or a weapon.')
 
+    def rest(self, what):
+        self.hp.rest(what)
+        if (what == 'long'):
+            self.record.set('/spell_slots', self.max_spell_slots[:])
+        elif (what == 'short'):
+            pass
+
     def write(self):
         self.record.set('/abilities', self.abilities)
+        # self.record.set('/spell_slots', self.spell_slots)
         self.record.write()
 
 
@@ -385,14 +431,13 @@ class Inventory:
         """
         return self.items[name].number or 0
 
-    def newslot(self, name, quantity=1, type='.item', equipped=False):
+    def newslot(self, name, quantity=1, type='item', equipped=False):
         """Creates a new item in the inventory."""
-        self.data[name] = OrderedDict((('quantity', quantity), ('type', type),
-                                       ('equipped', equipped)))
         path = '/equipment/' + name
-        self.record.set(path + 'quantity', quantity)
-        self.record.set(path + 'type', type)
-        self.record.set(path + 'equipped', equipped)
+        self.record.set(path, OrderedDict())
+        self.record.set(path + '/type', type)
+        self.record.set(path + '/quantity', quantity)
+        self.record.set(path + '/equipped', equipped)
         self.load_items()
 
     def write(self):
@@ -407,10 +452,11 @@ class ItemEntry:
         self.load_from_file()
 
     def load_from_file(self):
-        itemtype = self.record.get(self.path + '/type')
+        itemtype = self.record.get(self.path + '/type').replace(' ', '.')
+        basetype = itemtype.split(sep='.')[-1]
         itemclass = h.type_select('.' + itemtype)
-        filename = '{t}/{n}.{t}'.format(t=itemtype,
-                                        n=self.path.split(sep='/')[-1])
+        name = h.clean(self.path.split(sep='/')[-1])
+        filename = '{b}/{n}.{t}'.format(b=basetype, t=itemtype, n=name)
         if (os.path.exists(iface.JSONInterface.OBJECTSPATH
                            + filename)):
             jf = iface.JSONInterface(filename)
@@ -470,7 +516,7 @@ class ItemEntry:
     @property
     def consumable(self):
         if (self.obj is not None):
-            return self.obj.value
+            return self.obj.consumable
         else:
             return False
 
@@ -565,7 +611,7 @@ class HPhandler:
         if (what == 'long'):
             mx = self.record.get('/HP/max')
             self.record.set('/HP/current', mx)
-            for obj in self.hd.items():
+            for obj in self.hd.values():
                 obj.rest('long')
 
     def write(self):
@@ -684,6 +730,7 @@ class Spell:
         self.duration = jf.get('/duration')
         self.range = jf.get('/range')
         self.components = jf.get('/components')
+        self.school = jf.get('/school')
         self.owner = None
 
     def __str__(self):
@@ -693,10 +740,10 @@ class Spell:
         # Returns a string of the effect of the spell
         if (self.level > 0):
             try:
-                self.owner.spell_spend(self.level)
-            except OutOfSpells:
-                raise
-        return self.effects
+                self.owner.spell_spend(self)
+            except OutOfSpells as e:
+                return str(e)
+        return self.effect
 
     def is_available(self, character):
         for c in character.classes:
@@ -709,6 +756,45 @@ class Spell:
             self.owner = character
         else:
             raise ValueError("You must give a Character.")
+
+
+class SpellsPrepared:
+    def __init__(self, jf, character):
+        self.record = jf
+        self.char = character
+        self.spells = {}
+        for name in self.prepared:
+            self.spells[name] = self.load_from_file(name)
+
+    @property
+    def prepared(self):
+        return set(self.record.get('/spells_prepared'))
+
+    def objects(self):
+        return self.spells.values()
+
+    def load_from_file(self, name):
+        d = 'spell/'
+        n = h.clean(name) + '.spell'
+        jf = iface.JSONInterface(d + n)
+        obj = Spell(jf)
+        obj.setowner(self.char)
+        return obj
+
+    def unprepare(self, name):
+        if (name in self.prepared):
+            formatstr = '/spells_prepared/{}'.format(name)
+            if (not self.record.get(path + '/always_prepared')):
+                self.record.delete(path)
+
+    def prepare(self, name):
+        obj = self.load_from_file(name)
+        if (obj.is_available(self.char)):
+            self.record.set('/spells_prepared/' + name, {"always_prepared": False})
+            self.spells[name] = obj
+            return True
+        else:
+            return False
 
 
 class SpellAttack(Spell, Attack):
@@ -776,8 +862,6 @@ class Item:
             raise ValueError("You must give a Character.")
 
     def use(self):
-        if (self.consumable and self.owner):
-            self.owner.item_consume(self.name)
         return self.effect
 
     def describe(self):
@@ -945,7 +1029,7 @@ class OutOfSpells(MyError):
 
     def __str__(self):
         formatstr = '{char} has no spell slots of level {lv} remaining.'
-        return formatstr.format(char=self.character.name, lv=self.spell.level)
+        return formatstr.format(char=self.character.name, lv=(self.spell if isinstance(self.spell, int) else self.spell.level))
 
 
 class OutOfItems(MyError):

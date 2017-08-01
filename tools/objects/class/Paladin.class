@@ -1,7 +1,8 @@
 {
-  "name": "Fighter",
+  "name": "Paladin",
   "superclass": [
-    "ALL"
+    "ALL",
+    "CASTER"
   ],
   "hit_dice": "1d10",
   "armors": {
@@ -29,6 +30,16 @@
     "number": 2,
     "which": []
   },
-  "spell": {},
+  "spellcasting": {
+    "ability": "Charisma",
+    "slots": "half",
+    "levels": "half",
+    "known": "all",
+    "prepare": [
+      "Charisma",
+      "caster_level"
+    ],
+    "always_prepared": []
+  },
   "features": {}
 }

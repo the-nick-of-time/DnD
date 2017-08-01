@@ -36,11 +36,11 @@
       "equipped": true
     },
     "Dart": {
-      "type": "weapon",
+      "type": "ranged weapon",
       "quantity": 5,
       "equipped": true
     },
-    "Full Plate": {
+    "Plate Armor": {
       "type": "armor",
       "quantity": 1,
       "equipped": true
@@ -48,6 +48,21 @@
     "Trail Rations": {
       "type": "item",
       "quantity": 4,
+      "equipped": true
+    },
+    "Mirror": {
+      "type": "item",
+      "quantity": 1,
+      "equipped": true
+    },
+    "Oil": {
+      "type": "item",
+      "quantity": 3,
+      "equipped": true
+    },
+    "Animated Shield": {
+      "type": "magic armor",
+      "quantity": 1,
       "equipped": true
     }
   },
@@ -58,12 +73,15 @@
     "Burning Hands": {
       "always_prepared": true
     },
-    "Protection From Evil": {
+    "Protection from Evil and Good": {
       "always_prepared": false
+    },
+    "Fireball": {
+      "always_prepared": true
     }
   },
   "spell_slots": [
-    99999,
+    999999,
     4,
     3,
     3,
