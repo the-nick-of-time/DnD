@@ -24,6 +24,10 @@
     "wisdom": 18,
     "charisma": 16
   },
+  "saves": [
+    "wisdom",
+    "charisma"
+  ],
   "skills": [
     "Survival",
     "Intimidation",
@@ -63,22 +67,48 @@
     "Animated Shield": {
       "type": "magic armor",
       "quantity": 1,
-      "equipped": true
+      "equipped": true,
+      "charge": {
+        "number": 1,
+        "path": "armor/Animated_Shield.magic.armor/charges"
+      }
     }
   },
   "spells_prepared": {
-    "Sacred Flame": {
-      "always_prepared": true
-    },
-    "Burning Hands": {
-      "always_prepared": true
-    },
-    "Protection from Evil and Good": {
-      "always_prepared": false
-    },
-    "Fireball": {
-      "always_prepared": true
-    }
+    "prepared_today": [
+      "Protection from Evil and Good",
+      "Shield of Faith",
+      "Cure Wounds",
+      "Bless",
+      "Guiding Bolt",
+      "Enhance Ability",
+      "Beacon of Hope",
+      "Mass Healing Word",
+      "Remove Curse",
+      "Protection from Energy",
+      "Spirit Guardians",
+      "Freedom of Movement",
+      "Death Ward",
+      "Mass Cure Wounds",
+      "Heal"
+    ],
+    "always_prepared": [
+      "Sacred Flame",
+      "Light",
+      "Guidance",
+      "Thaumaturgy",
+      "Spare the Dying",
+      "Burning Hands",
+      "Faerie Fire",
+      "Flaming Sphere",
+      "Scorching Ray",
+      "Fireball",
+      "Daylight",
+      "Guardian of Faith",
+      "Wall of Fire",
+      "Flame Strike",
+      "Scrying"
+    ]
   },
   "spell_slots": [
     999999,
@@ -88,5 +118,11 @@
     3,
     2,
     1
-  ]
+  ],
+  "features": {
+    "Channel Divinity": "class/Cleric.class/features/6/Channel Divinity",
+    "Divine Intervention": "class/Cleric.class/features/10/Divine Intervention",
+    "Destroy Undead": "class/Cleric.class/features/11/Destroy Undead",
+    "Ability Score Improvement": "class/Cleric.class/features/8/Ability Score Improvement"
+  }
 }

@@ -11,50 +11,143 @@
     "levels": "full",
     "known": "all",
     "prepare": [
-      "Wisdom",
-      "caster_level"
+      "$wis_mod",
+      "$caster_level"
     ],
     "always_prepared": []
   },
-  "proficiencies": {
-    "armors": {
-      "types": [
-        "Light",
-        "Medium",
-        "Shield"
+  "features": [
+    {},
+    {
+      "Skill Proficiencies": {
+        "number": 2,
+        "which": [
+          "History",
+          "Insight",
+          "Medicine",
+          "Persuasion",
+          "Religion"
+        ]
+      },
+      "Ability Save Proficiencies": [
+        "wisdom",
+        "charisma"
       ],
-      "specific": []
+      "Armor Proficiencies": {
+        "types": [
+          "Light",
+          "Medium",
+          "Shield"
+        ],
+        "specific": []
+      },
+      "Weapon Proficiencies": {
+        "types": [
+          "Simple"
+        ],
+        "specific": []
+      },
+      "Spellcasting": {
+        "description": "You get spellcasting abilities at level 1. Your spellcasting ability is Wisdom, so your spell save DC = 8 + your proficiency bonus + your Wisdom modifier and your spell attack modifier = your proficiency bonus + your Wisdom modifier. You can prepare a number of spells equal to your cleric level plus your Wisdom modifier. You can also cast spells that you have prepared as rituals if it has the ritual tag."
+      },
+      "Divine Domain": {
+        "description": "Choose one domain related to your deity: Knowledge, Life, Light, Nature, Tempest, Trickery, or War. Each domain is detailed at the end of the class description, and each one provides examples of gods associated with it. Your choice grants you domain spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd level, and additional benefits at 6th, 8th, and 17th levels. Each domain has a list of spells-its domain spells-that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you."
+      }
     },
-    "weapons": {
-      "types": [
-        "Simple"
-      ],
-      "specific": []
+    {
+      "Channel Divinity": {
+        "description": "At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description. When you use your Channel Divinity. you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again. Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.\nCHANNEL DIVINITY: TURN UNDEAD As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage. A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.",
+        "resource": {
+          "name": "Channel Divinity",
+          "maxnumber": 1,
+          "recharge": "short rest"
+        }
+      }
     },
-    "tools": [],
-    "saves": [
-      "Wisdom",
-      "Charisma"
-    ],
-    "skills": {
-      "number": 2,
-      "which": [
-        "History",
-        "Insight",
-        "Medicine",
-        "Persuasion",
-        "Religion"
-      ]
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Destroy Undead": {
+        "description": "At 5th level, when an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is less than or equal to 1/2."
+      }
+    },
+    {
+      "Channel Divinity": {
+        "description": "At 6th level, you can use Channel Divinity twice between rests. You may also get an additional upgrade from your domain.",
+        "resource": {
+          "name": "Channel Divinity",
+          "maxnumber": 2,
+          "recharge": "short rest"
+        }
+      }
+    },
+    {},
+    {
+      "Destroy Undead": {
+        "description": "At 8th level, when an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is less than or equal to 1."
+      },
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {},
+    {
+      "Divine Intervention": {
+        "description": "Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great. Imploring your deity's aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The DM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate. If your deity intervenes, you can't use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.",
+        "resource": {
+          "name": "Divine Intervention",
+          "maxnumber": 1,
+          "recharge": "long rest"
+        }
+      }
+    },
+    {
+      "Destroy Undead": {
+        "description": "At 11th level, when an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is less than or equal to 2."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {},
+    {
+      "Channel Divinity": {
+        "description": "At 18th level, you can use Channel Divinity three times between rests. You may also get an additional upgrade from your domain.",
+        "resource": {
+          "name": "Channel Divinity",
+          "maxnumber": 3,
+          "recharge": "short rest"
+        }
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Divine Intervention": {
+        "description": "At 20th level, the call for intervention succeeds automatically.",
+        "resource": {
+          "name": "Divine Intervention",
+          "maxnumber": 1,
+          "recharge": "long rest"
+        }
+      }
     }
-  },
-  "features": {
-    "Spellcasting": {
-      "1": "You get spellcasting abilities at level 1."
-    },
-    "Channel Divinity": {
-      "2": "You first get CD at level 2",
-      "6": "It gets improved at level 6",
-      "18": "And again at level 18"
-    }
-  }
+  ]
 }

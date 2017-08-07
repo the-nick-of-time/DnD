@@ -1,0 +1,204 @@
+{
+  "name": "Barbarian",
+  "superclass": [
+    "ALL"
+  ],
+  "hit_dice": "1d12",
+  "proficiencies": {
+    "armors": {
+      "types": [
+        "Light",
+        "Medium",
+        "Shield"
+      ],
+      "specific": []
+    },
+    "weapons": {
+      "types": [
+        "Simple",
+        "Martial"
+      ],
+      "specific": []
+    },
+    "tools": [],
+    "saves": [
+      "strength",
+      "constitution"
+    ],
+    "skills": {
+      "number": 2,
+      "which": [
+        "Animal Handling",
+        "Athletics",
+        "Intimidation",
+        "Nature",
+        "Perception",
+        "Survival"
+      ]
+    }
+  },
+  "features": [
+    {},
+    {
+      "Rage": {
+        "description": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:\n You have advantage on Strength checks and Strength saving throws.\n When you make a melee weapon attack using Strength, you gain a +2 bonus to the damage roll.\n You have resistance to bludgeoning, piercing, and slashing damage.\n If you are able to cast spells, you ean't cast them or concentrate on tbem while raging.\n Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. You can rage two times between long rests.",
+        "resource": {
+          "name": "Rage",
+          "maxnumber": 2,
+          "recharge": "long rest"
+        }
+      },
+      "Unarmored Defense": {
+        "description": "While you are not wearing any armor, your Armor Class equals 10+your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit.",
+        "base_AC": [
+          10,
+          "$dex_mod",
+          "$con_mod"
+        ]
+      }
+    },
+    {
+      "Reckless Attack": {
+        "description": "You can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn."
+      },
+      "Danger Sense": {
+        "description": "You gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger. You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated."
+      }
+    },
+    {
+      "Rage": {
+        "description": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:\n You have advantage on Strength checks and Strength saving throws.\n When you make a melee weapon attack using Strength, you gain a +2 bonus to the damage roll.\n You have resistance to bludgeoning, piercing, and slashing damage.\n If you are able to cast spells, you ean't cast them or concentrate on tbem while raging.\n Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. You can rage three times between long rests.",
+        "resource": {
+          "name": "Rage",
+          "maxnumber": 3,
+          "recharge": "long rest"
+        }
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Fast Movement": {
+        "description": "When not wearing heavy armor, your speed increases by 10 feet."
+      },
+      "Extra Attack": {
+        "description": "When you take the Attack action on your turn, you can attack twice instead of once."
+      }
+    },
+    {
+      "Rage": {
+        "description": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:\n You have advantage on Strength checks and Strength saving throws.\n When you make a melee weapon attack using Strength, you gain a +2 bonus to the damage roll.\n You have resistance to bludgeoning, piercing, and slashing damage.\n If you are able to cast spells, you ean't cast them or concentrate on tbem while raging.\n Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. You can rage four times between long rests.",
+        "resource": {
+          "name": "Rage",
+          "maxnumber": 4,
+          "recharge": "long rest"
+        }
+      }
+    },
+    {
+      "Feral Instincts": {
+        "description": "Your instincts are so honed that you have advantage on initiative rolls. Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else that turn."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Rage": {
+        "description": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:\n You have advantage on Strength checks and Strength saving throws.\n When you make a melee weapon attack using Strength, you gain a +3 bonus to the damage roll.\n You have resistance to bludgeoning, piercing, and slashing damage.\n If you are able to cast spells, you ean't cast them or concentrate on tbem while raging.\n Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. You can rage three times between long rests.",
+        "resource": {
+          "name": "Rage",
+          "maxnumber": 3,
+          "recharge": "long rest"
+        }
+      },
+      "Brutal Critical": {
+        "description": "You can roll one additional weapon damage die when determining extra damage for a critical hit with a melee attack."
+      }
+    },
+    {},
+    {
+      "Relentless Rage": {
+        "description": "Your rage can keep you fighting despite grievous wounds. lf you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead.\nEach time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10."
+      }
+    },
+    {
+      "Rage": {
+        "description": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:\n You have advantage on Strength checks and Strength saving throws.\n When you make a melee weapon attack using Strength, you gain a +3 bonus to the damage roll.\n You have resistance to bludgeoning, piercing, and slashing damage.\n If you are able to cast spells, you ean't cast them or concentrate on tbem while raging.\n Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. You can rage five times between long rests.",
+        "resource": {
+          "name": "Rage",
+          "maxnumber": 5,
+          "recharge": "long rest"
+        }
+      },
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Brutal Critical": {
+        "description": "You can roll two additional weapon damage dice when determining extra damage for a critical hit with a melee attack."
+      }
+    },
+    {},
+    {
+      "Persistent Rage": {
+        "description": "Your rage is so fierce that it ends early only if you fall unconscious or if you choose to end it."
+      }
+    },
+    {
+      "Rage": {
+        "description": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:\n You have advantage on Strength checks and Strength saving throws.\n When you make a melee weapon attack using Strength, you gain a +4 bonus to the damage roll.\n You have resistance to bludgeoning, piercing, and slashing damage.\n If you are able to cast spells, you ean't cast them or concentrate on tbem while raging.\n Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. You can rage five times between long rests.",
+        "resource": {
+          "name": "Rage",
+          "maxnumber": 5,
+          "recharge": "long rest"
+        }
+      },
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Rage": {
+        "description": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:\n You have advantage on Strength checks and Strength saving throws.\n When you make a melee weapon attack using Strength, you gain a +4 bonus to the damage roll.\n You have resistance to bludgeoning, piercing, and slashing damage.\n If you are able to cast spells, you ean't cast them or concentrate on tbem while raging.\n Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. You can rage six times between long rests.",
+        "resource": {
+          "name": "Rage",
+          "maxnumber": 6,
+          "recharge": "long rest"
+        }
+      },
+      "Brutal Critical": {
+        "description": "You can roll three additional weapon damage dice when determining extra damage for a critical hit with a melee attack."
+      }
+    },
+    {
+      "Indomitable Might": {
+        "description": "If your total for a Strength check is less than your Strength score, you can use that score in place of the total."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Rage": {
+        "description": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:\n You have advantage on Strength checks and Strength saving throws.\n When you make a melee weapon attack using Strength, you gain a +4 bonus to the damage roll.\n You have resistance to bludgeoning, piercing, and slashing damage.\n If you are able to cast spells, you ean't cast them or concentrate on tbem while raging.\n Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. You can rage as much as you want between long rests.",
+        "resource": {
+          "name": "Rage",
+          "maxnumber": 999999,
+          "recharge": "long rest"
+        }
+      },
+      "Primal Champion": {
+        "description": "You embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24."
+      }
+    }
+  ]
+}

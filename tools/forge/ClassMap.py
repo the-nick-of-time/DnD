@@ -65,7 +65,7 @@ class ClassMap:
         main = 'class/{}.class'
         sub = 'class/{}.{}.sub.class'
         super_ = 'class/{}.super.class'
-        for (C, S) in zip(self._classes, self._subclasses):
+        for (C, S, L) in zip(self._classes, self._subclasses, self.levels):
             C = h.clean(C)
             S = h.clean(S)
             file_ = main.format(C)
@@ -79,11 +79,15 @@ class ClassMap:
             superclasses = [iface.JSONInterface(super_.format(name))
                             for name in mainclass.get('/superclass')]
             if (subclassfound):
-                self.classes.update(
-                    {str(mainclass): iface.LinkedInterface(*superclasses,
-                                                           mainclass,
-                                                           subclass)})
+                jf = iface.LinkedInterface(*superclasses, mainclass,
+                                           subclass)
+                # self.classes.update(
+                #     {str(mainclass): iface.LinkedInterface(*superclasses,
+                #                                            mainclass,
+                #                                            subclass)})
             else:
-                self.classes.update(
-                    {str(mainclass): iface.LinkedInterface(*superclasses,
-                                                           mainclass)})
+                jf = iface.LinkedInterface(*superclasses, mainclass)
+                # self.classes.update(
+                #     {str(mainclass): iface.LinkedInterface(*superclasses,
+                #                                            mainclass)})
+            self.classes.update({str(mainclass): c.Class(jf, L)})

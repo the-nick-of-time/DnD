@@ -1,6 +1,8 @@
 import re
 import os
-from collections import OrderedDict
+from collections import OrderedDict, defaultdict
+# SO I'm seriously considering not using a defaultdict as such, as it inserts its default values into the dict itself
+# If these are ever actually written to a file, it will be cluttered
 from functools import wraps
 from math import ceil
 
@@ -35,37 +37,38 @@ class Class:
     useresource
     """
 
-    def __init__(self, jf):
+    def __init__(self, jf, classlevel):
+        self.record = jf
         self.name = jf.get('/name')
-        self.hit_dice = jf.get('/hit_dice')
-        self.saves = jf.get('/saves')
-        self.features = jf.get('/features')
+        self.level = classlevel
+        # self.hit_dice = jf.get('/hit_dice')
+        # self.saves = jf.get('/saves')
+        self._features = jf.get('*/features')
+        self.features = set()
+        self.get_features()
 
-    def superclass_hook(self):
-        """Adds features from all superclasses of this one."""
-        pass
+    def get(self, key):
+        return self.record.get(key)
 
-    def get_features(self, level):
+    def get_features(self):
         """Gets the current features given a certain class level."""
-        for name in self.features:
-            for lv in self.features[name]:
-                if (int(lv) <= level):
-                    # Add it to the set of enabled features
-                    pass
-
-    def use_resource(self, name, howmany):
         pass
+        # for name in self._features:
+        #     for lv in self._features[name]:
+        #         if (int(lv) <= self.level):
+        #             # Add it to the set of enabled features
+        #             self.features.add(self._features[name][lv])
 
 
 class Resource:
-    def __init__(self, jf, path):
+    def __init__(self, jf, path, defjf=None, defpath=None):
         self.record = jf
+        self.definition = defjf if (defjf is not None) else jf
         self.path = path
-        self.name = jf.get(path + '/name')
-        self.number = jf.get(path + '/number')
-        self.maxnumber = jf.get(path + '/maxnumber')
-        self.value = jf.get(path + '/value')
-        self.recharge = jf.get(path + '/recharge')
+        self.defpath = defpath if (defpath is not None) else path
+        self.name = self.definition.get(self.defpath + '/name')
+        self.value = self.definition.get(self.defpath + '/value')
+        self.recharge = self.definition.get(self.defpath + '/recharge')
 
     @property
     def number(self):
@@ -77,7 +80,10 @@ class Resource:
 
     @property
     def maxnumber(self):
-        return self.record.get(self.path + '/maxnumber')
+        val = self.record.get(self.path + '/maxnumber')
+        if (val is not None):
+            return val
+        return self.definition.get(self.defpath + '/maxnumber')
 
     @maxnumber.setter
     def maxnumber(self, value):
@@ -85,10 +91,9 @@ class Resource:
 
     def use(self, howmany):
         if (self.number < howmany):
-            raise LowOnResource()
+            raise LowOnResource(self)
         if (isinstance(self.value, str)):
             self.number -= howmany
-            # self.setn()
             return r.roll('+'.join([self.value] * howmany))
         return howmany * self.value
 
@@ -97,11 +102,9 @@ class Resource:
             self.reset()
         else:
             self.number += howmany
-            # self.setn()
 
     def reset(self):
         self.number = self.maxnumber
-        # self.setn()
 
     def rest(self, what):
         if (what == 'long'):
@@ -113,15 +116,7 @@ class Resource:
                 return self.number
         return -1
 
-    # def setn(self):
-    #     self.record.set(self.path + '/number', self.number)
-    #
-    # def setmax(self):
-    #     self.record.set(self.path + '/maxnumber', self.maxnumber)
-
     def write(self):
-        # self.setn()
-        # self.setmax()
         self.record.write()
 
 
@@ -188,17 +183,42 @@ class Character:
         self.abilities = jf.get('/abilities')
         self.skills = jf.get('/skills')
         self.saves = jf.get('/saves')
-        # self.spell_slots = jf.get('/spell_slots')
         lv = jf.get('/level')
         self.classes = cm.ClassMap(lv)
         self.hp = HPhandler(self.record)
+        self.inventory = Inventory(self.record)
+        self.attacks = {}
+        self.register_attacks()
         self.bonuses = self.get_bonuses()
         self.death_save_fails = 0
         self.conditions = set()
         self.proficiencyDice = False
+        self.lucky = False  # except that halflings get it
+        # self.spells = SpellsPrepared(jf, self)
 
     def __str__(self):
         return self.name
+
+    def __getattr__(self, key):
+        if (key.lower() == 'str_mod'):
+            return h.modifier(self.abilities['strength'])
+        if (key.lower() == 'dex_mod'):
+            return h.modifier(self.abilities['dexterity'])
+        if (key.lower() == 'con_mod'):
+            return h.modifier(self.abilities['constitution'])
+        if (key.lower() == 'int_mod'):
+            return h.modifier(self.abilities['intelligence'])
+        if (key.lower() == 'wis_mod'):
+            return h.modifier(self.abilities['wisdom'])
+        if (key.lower() == 'cha_mod'):
+            return h.modifier(self.abilities['charisma'])
+        if (key.endswith('_level')):
+            head, _, _ = key.partition('_')
+            try:
+                cl = self.classes[head]
+            except KeyError:
+                return 0
+            return cl.level
 
     def add_condition(self, name):
         if (name == 'exhaustion'):
@@ -230,6 +250,12 @@ class Character:
             except KeyError:
                 return False
 
+    def register_attacks(self):
+        for item in self.inventory:
+            if (isinstance(item, Attack)):
+                self.attacks[item.name] = item
+        # TODO: Work out spells as well; needs classification of spells as attacks
+
     def spell_spend(self, spell):
         if (isinstance(spell, int)):
             path = '/spell_slots/' + str(spell)
@@ -250,14 +276,20 @@ class Character:
             prof = self.proficiency
         else:
             prof = 0
-
-        return (roll + prof + ability, prof + ability, roll)
-                # + self.bonuses['check'][which] + self.bonuses['skill'][skill])
+        bon = self.bonuses['check'][which] + self.bonuses['skill'][skill]
+        return (roll + prof + ability + bon, prof + ability + bon, roll)
 
     def ability_save(self, which, adv=False, dis=False):
         applyprof = which in self.saves
-        return (r.roll('1d20') + h.modifier(self.abilities[which])
-                + self.proficiency if applyprof else 0 + self.bonuses)
+        if (applyprof):
+            prof = self.proficiency
+        else:
+            prof = 0
+        ability = h.modifier(self.abilities[which])
+        rollstr = '2d20h1' if (adv and not dis) else '2d20l1' if (dis and not adv) else '1d20'
+        roll = r.roll(rollstr)
+        bon = self.bonuses['save'][which]
+        return (roll + prof + ability + bon, prof + ability + bon, roll)
 
     def death_save(self):
         val = r.roll('1d20')
@@ -273,20 +305,32 @@ class Character:
             self.conditions.add('dead')
 
     def get_bonuses(self):
-        bonuses = {}
-        # for item in inventory:
-        #     newbonus = item.get('/bonus')
-        #     if (newbonus is not None):
-        #         for var, amount in newbonus.items():
-        #             if (var not in bonuses):
-        #                 bonuses.update((var, amount))
-        #             else:
-        #                 bonuses[var] += amount
+        bonuses = defaultdict(lambda: 0)
+        for item in self.inventory:
+            newbonus = item.get('/bonus')
+            if (newbonus is not None):
+                for var, amount in newbonus.items():
+                    if (var not in bonuses):
+                        bonuses.update({var: amount})
+                    else:
+                        bonuses[var] += amount
         return bonuses
 
     def set_abilities(self, name, value):
         self.abilities[name] = value
         self.record.set('/abilities/' + name, self.abilities[name])
+
+    @property
+    def cantrip_scale(self):
+        for n, cl, lv in self.classes:
+            caster_type = cl.get('/spellcasting/levels')
+            if (caster_type is None):
+                continue
+            else:
+                # path = '/cantrip_damage/{}'.format(self.caster_level - 1)
+                path = '/cantrip_damage/{}'.format(self.level - 1)  # Which is it?
+                return cl.get(path)
+        return 1
 
     @property
     def weaponprof(self):
@@ -319,10 +363,13 @@ class Character:
                 continue
             elif (caster_type == 'full' or caster_type == 'warlock'):
                 _level += lv
+                continue
             elif (caster_type == 'half'):
                 _level += int(lv / 2)
+                continue
             elif (caster_type == 'third'):
                 _level += int(lv / 3)
+                continue
         return _level
 
     @property
@@ -359,7 +406,7 @@ class Character:
 
     def save_DC(self, spell):
         return (8
-                + self.bonuses.get('save_DC', 0)
+                + self.bonuses['save_DC']
                 + h.modifier(self.relevant_abil(spell)))
 
     def relevant_abil(self, forwhat):
@@ -368,9 +415,9 @@ class Character:
             if (sharedclasses):
                 candidate = 0
                 for name in sharedclasses:
-                    abilname = self.classes[name].get('/spell/ability')
+                    abilname = self.classes[name].get('/spellcasting/ability')
                     score = self.abilities[abilname]
-                    if score > candidate:
+                    if (score > candidate):
                         candidate = score
                 return candidate
             else:
@@ -383,7 +430,7 @@ class Character:
                     candidate = score
             return candidate
         else:
-            raise ValueError('This must be called with a spell or a weapon.')
+            raise TypeError('This must be called with a spell or a weapon.')
 
     def rest(self, what):
         self.hp.rest(what)
@@ -417,7 +464,7 @@ class Inventory:
         return self.items[name]
 
     def __iter__(self):
-        return ((name, entry) for (name, entry) in self.items.items())
+        return (entry for entry in self.items.values())
 
     def load_items(self):
         for name in self.record.get('/equipment'):
@@ -525,6 +572,11 @@ class ItemEntry:
         else:
             return False
 
+    def get(self, key):
+        if (self.obj is not None):
+            return self.obj.get(key)
+        return None
+
     def use(self):
         if (self.consumable):
             self.number -= 1
@@ -545,48 +597,61 @@ class HPhandler:
         self.record = jf
         self.hd = {size: HDHandler(jf, size) for size in jf.get('/HP/HD')}
 
-    def get_HP(self):
+    @property
+    def current(self):
         return self.record.get('/HP/current')
 
-    def get_temp(self):
-        return self.record.get('/HP/temp')
+    @current.setter
+    def current(self, value):
+        return self.record.set('/HP/current', value)
 
-    def get_max(self):
+    @property
+    def max(self):
         return self.record.get('/HP/max')
 
-    def set_hp(self, value):
-        self.record.set('/HP/current', value)
+    @max.setter
+    def max(self, value):
+        return self.record.set('/HP/max', value)
 
-    def set_max(self, value):
-        self.record.set('/HP/max', value)
+    @property
+    def temp(self):
+        return self.record.get('/HP/temp')
 
-    def set_temp(self, value):
-        self.record.set('/HP/temp', value)
+    @temp.setter
+    def temp(self, value):
+        return self.record.set('/HP/temp', value)
 
     def change_HP(self, amount):
         """Changes HP by any valid roll as the amount."""
         delta = r.roll(amount)
         if (delta == 0):
             return 0
-        current = self.record.get('/HP/current')
+        # current = self.record.get('/HP/current')
+        current = self.current
         if (delta < 0):
-            temp = self.record.get('/HP/temp')
+            # temp = self.record.get('/HP/temp')
+            temp = self.temp
             if (abs(delta) > temp):
                 delta += temp
                 temp = 0
                 current += delta
-                self.record.set('/HP/temp', temp)
-                self.record.set('/HP/current', current)
+                # self.record.set('/HP/temp', temp)
+                self.temp = temp
+                # self.record.set('/HP/current', current)
+                self.current = current
                 return delta
             else:
                 temp += delta
-                self.record.set('/HP/temp', temp)
+                # self.record.set('/HP/temp', temp)
+                self.temp = temp
                 return 0
         else:
-            max_ = self.record.get('/HP/max')
+            # max_ = self.record.get('/HP/max')
+            max_ = self.max
             delta = delta if (current + delta <= max_) else max_ - current
             current += delta
-            self.record.set('/HP/current', current)
+            # self.record.set('/HP/current', current)
+            self.current = current
             return delta
 
     def temp_HP(self, amount):
@@ -602,20 +667,13 @@ class HPhandler:
 
     def use_HD(self, which):
         """Use a specific one of your hit dice."""
-        # path = '/HP/HD/' + which + '/current'
-        # num = self.record.get(path)
-        # conmod = h.modifier(self.record.get('/abilities/constitution'))
-        # if (num > 0):
-        #     self.record.set(path, num - 1)
-        #     return self.change_HP(r.roll(which) + conmod)
-        # else:
-        #     return None
         return self.change_HP(self.hd[which].use_HD())
 
     def rest(self, what):
         if (what == 'long'):
-            mx = self.record.get('/HP/max')
-            self.record.set('/HP/current', mx)
+            # mx = self.record.get('/HP/max')
+            # self.record.set('/HP/current', mx)
+            self.current = self.max
             for obj in self.hd.values():
                 obj.rest('long')
 
@@ -730,12 +788,14 @@ class Spell:
         self.name = jf.get('/name')
         self.level = jf.get('/level')
         self.effect = jf.get('/effect')
-        self.classes = jf.get('/classes')
+        self.classes = jf.get('/class')
         self.casting_time = jf.get('/casting_time')
         self.duration = jf.get('/duration')
         self.range = jf.get('/range')
         self.components = jf.get('/components')
         self.school = jf.get('/school')
+        self.isritual = jf.get('/ritual')
+        self.isconcentration = jf.get('/concentration')
         self.owner = None
 
     def __str__(self):
@@ -773,7 +833,22 @@ class SpellsPrepared:
 
     @property
     def prepared(self):
-        return set(self.record.get('/spells_prepared'))
+        today = set(self.record.get('/spells_prepared/prepared_today'))
+        always = set(self.record.get('/spells_prepared/always_prepared'))
+        return today | always
+
+    @property
+    def prepared_today(self):
+        return set(self.record.get('/spells_prepared/prepared_today'))
+
+    @prepared_today.setter
+    def prepared_today(self, value):
+        # value is expected to be a set
+        self.record.set('/spells_prepared/prepared_today', list(value))
+
+    @property
+    def always_prepared(self):
+        return set(self.record.get('/spells_prepared/always_prepared'))
 
     def objects(self):
         return self.spells.values()
@@ -782,20 +857,26 @@ class SpellsPrepared:
         d = 'spell/'
         n = h.clean(name) + '.spell'
         jf = iface.JSONInterface(d + n)
-        obj = Spell(jf)
+        if (jf.get('/damage')):
+            tp = SpellAttack
+        else:
+            tp = Spell
+        obj = tp(jf)
         obj.setowner(self.char)
         return obj
 
     def unprepare(self, name):
-        if (name in self.prepared):
-            formatstr = '/spells_prepared/{}'.format(name)
-            if (not self.record.get(path + '/always_prepared')):
-                self.record.delete(path)
+        # if (name in self.prepared):
+        #     path = '/spells_prepared/{}'.format(name)
+        #     if (not self.record.get(path + '/always_prepared')):
+        #         self.record.delete(path)
+        self.prepared_today -= {name}
 
     def prepare(self, name):
         obj = self.load_from_file(name)
         if (obj.is_available(self.char)):
-            self.record.set('/spells_prepared/' + name, {"always_prepared": False})
+            # self.record.set('/spells_prepared/' + name, {"always_prepared": False})
+            self.prepared_today |= {name}
             self.spells[name] = obj
             return True
         else:
@@ -819,14 +900,18 @@ class SpellAttack(Spell, Attack):
     """
 
     def __init__(self, jf):
-        super().__init__(jf)
+        Spell.__init__(self, jf)
+        Attack.__init__(self, jf)
+        self.attack_roll = jf.get('/attack_roll')
+        if (not self.attack_roll):
+            self.save = jf.get('/save')
+        self.add_abil = jf.get('/add_abil')
+
+    def setowner(self, character):
+        Spell.setowner(self, character)
         if (self.level == 0):
             self.damage_dice = '+'.join([self.damage_dice] *
                                         self.owner.cantrip_scale)
-        self.attack_roll = bool(jf.get('/attack_roll'))
-        if (not self.attack_roll):
-            self.attack_save = jf.get('/save')
-        self.abil_add = jf.get('/add_abil')
 
     @Attack.attackwrap
     def attack(self, character, adv, dis, attack_bonus, damage_bonus):
@@ -834,6 +919,48 @@ class SpellAttack(Spell, Attack):
             self.cast()
         except OutOfSpells as error:
             return ('', '', str(error))
+        attacks = []
+        damages = []
+        if (self.add_abil):
+            abil = h.modifier(character.relevant_abil(self))
+        else:
+            abil = 0
+        if (self.attack_roll):
+            if (adv and not dis):
+                dice = h.ADV if not character.lucky else h.ADV_LUCK
+            elif (dis and not adv):
+                dice = h.DIS if not character.lucky else h.DIS_LUCK
+            else:
+                dice = h.D20 if not character.lucky else h.D20_LUCK
+            for each in range(self.num_targets):
+                attack_roll = r.roll(dice)
+                attack_mods = r.roll(attack_bonus) \
+                              + r.roll(character.proficiency) \
+                              + h.modifier(character.relevant_abil(self))
+                if (attack_roll == 1):
+                    # Crit fail
+                    attack_roll = 'Crit fail.'
+                    damage_roll = 0
+                elif (attack_roll == 20):
+                    # Critical hit
+                    attack_roll = 'Critical hit!'
+                    damage_mods = r.roll(damage_bonus, mode='critical') \
+                                  + abil
+                    damage_roll = r.roll(self.damage_dice, mode='critical') \
+                                  + damage_mods
+                else:
+                    # Normal attack
+                    attack_roll += attack_mods
+                    damage_mods = r.roll(damage_bonus) + abil
+                    damage_roll = r.roll(self.damage_dice) + damage_mods
+                attack.append(attack_roll)
+                damage.append(damage_roll)
+        else:
+            formatstr = 'Targets make a DC {n} {t} save.'
+            attacks.append(formatstr.format(character.save_DC, self.save))
+            damage_mods = r.roll(damage_bonus) + abil
+            damage = r.roll(self.damage_dice) + damage_mods
+            damages.append(damage)
 
 
 class Item:
@@ -849,6 +976,7 @@ class Item:
 
     def __init__(self, jf):
         """jf is a JSONInterface to the item's file, owner is a Character"""
+        self.record = jf
         self.name = jf.get('/name')
         self.value = jf.get('/value')
         self.weight = jf.get('/weight')
@@ -859,6 +987,12 @@ class Item:
 
     def __str__(self):
         return self.name
+
+    def __getattr__(self, key):
+        return self.record.get(key)
+
+    def get(self, key):
+        return self.__getattr__(key)
 
     def setowner(self, character):
         if (isinstance(character, Character)):
@@ -888,6 +1022,7 @@ class Weapon(Attack, Item):
         self.hands = jf.get('/hands')
         self.classification = jf.get('/type')
         self.ability = jf.get('/ability')
+        self.magic_bonus = defaultdict(lambda: 0)
 
     @Attack.attackwrap
     def attack(self, character, adv, dis, attack_bonus, damage_bonus):
@@ -981,7 +1116,8 @@ class Armor(Item):
     """
     def __init__(self, jf):
         Item.__init__(self, jf)
-        pass
+        self.base_AC = self.record.get('/AC') or 0
+        self.bonus_AC = self.record.get('/bonus/AC') or 0
 
 
 class MagicItem(Item):
@@ -999,7 +1135,29 @@ class MagicItem(Item):
     activate: Builds on Item.use() and returns a description of the
         effects of the magic item.
     """
-    pass
+    def __init__(self, jf):
+        Item.__init__(self, jf)
+
+    def setowner(self, character):
+        pass
+
+
+class MagicCharge(Resource):
+    def __init__(self, jf, path, defjf=None, defpath=None):
+        Resource.__init__(self, jf, path, defjf, defpath)
+        self.regains = self.definition.get(self.defpath + '/regains')
+
+    def rest(self, what):
+        # Overrides the base method because that assumes it will fully
+        #   recharge on a long rest, which is usually reasonable but not here
+        if (what == 'long'):
+            if (self.recharge == 'long rest' or self.recharge == 'short rest'):
+                self.regain(r.roll(self.regains))
+                return self.number
+        if (what == 'short'):
+            if (self.recharge == 'short rest'):
+                self.regain(r.roll(self.regains))
+                return self.number
 
 
 class MagicArmor(MagicItem, Armor):
