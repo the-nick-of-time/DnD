@@ -102,21 +102,24 @@ class HitPointDisplay(gui.Section):
         self.longrest.grid(row=0, column=1)
 
     def draw_dynamic(self):
-        self.currentvalue.set(self.handler.get_HP())
-        self.mxvalue.set(self.handler.get_max())
-        self.tempvalue.set(self.handler.get_temp())
+        self.currentvalue.set(self.handler.current)
+        self.mxvalue.set(self.handler.max)
+        self.tempvalue.set(self.handler.temp)
 
     def update_maxhp(self):
-        self.handler.set_max(int(self.mxvalue.get() or 0))
+        self.handler.max = int(self.mxvalue.get() or 0)
 
     def update_hp(self):
-        self.handler.set_hp(int(self.currentvalue.get() or 0))
+        self.handler.current = int(self.currentvalue.get() or 0)
 
     def update_temp(self):
-        self.handler.set_temp(int(self.tempvalue.get() or 0))
+        self.handler.temp = int(self.tempvalue.get() or 0)
 
     def long_rest(self):
         self.handler.rest('long')
+        for item in self.hddisplays:
+            item.draw_dynamic()
+        self.draw_dynamic()
 
 
 class main(gui.Section):
@@ -124,6 +127,11 @@ class main(gui.Section):
         gui.Section.__init__(self, container)
         self.charactername = {}
         self.QUIT = tk.Button(self.f, command=self.writequit, text='QUIT')
+        self.buttons = tk.Frame(self.f)
+        self.longrest = tk.Button(self.buttons, text='Long Rest',
+                                  command=self.long_rest)
+        # Does nothing on purpose
+        self.shortrest = tk.Button(self.buttons, text='Short Rest')
         self.startup_begin()
 
     def startup_begin(self):
@@ -144,7 +152,13 @@ class main(gui.Section):
 
     def draw_static(self):
         self.hpdisplay.grid(row=0, column=0)
-        self.QUIT.grid(row=1, column=0)
+        self.buttons.grid(row=1, column=0)
+        self.shortrest.grid(row=0, column=0)
+        self.longrest.grid(row=0, column=1)
+        self.QUIT.grid(row=1, column=1)
+
+    def long_rest(self):
+        self.hpdisplay.long_rest()
 
     def writequit(self):
         self.corehandler.write()
