@@ -240,7 +240,8 @@ class Builder:
         self.mainframe.destroy()
         self.choosefile.destroy()
         self.filequery = util.labeledEntry(self.win, 'Monster Name', 0, 0)
-        self.average = tk.Checkbutton(self.win, text="Take average?",
+        self.average = tk.Checkbutton(self.win,
+                                      text="Take average\nvalue of HP?",
                                       variable=self.av)
         self.average.grid(row=1, column=1)
         self.confirm = tk.Button(self.win, text='Load', command=self.load_file)
@@ -295,7 +296,7 @@ class CharacterBuilder:
 
 class main(gui.Section):
     def __init__(self, window):
-        gui.Section.__init__(self, window)
+        gui.Section.__init__(self, window, height=755, width=965)
         self.monsterdata = {}
         self.prevmonster = {}
         self.characterdata = {}

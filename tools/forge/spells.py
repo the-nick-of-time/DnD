@@ -1,4 +1,5 @@
 import tkinter as tk
+# import tkinter.tix as tk
 
 import helpers as h
 import GUIbasics as gui
@@ -65,9 +66,17 @@ class SpellDisplay(gui.Section):
         self.leveltype = tk.Label(self.namelevel, text=lev)
         self.castingtime = tk.Label(self.f, text=self.handler.casting_time)
         self.range = tk.Label(self.f, text=self.handler.range)
+        d = self.handler.duration.capitalize() + (' (C)' if
+                                                  self.handler.isconcentration
+                                                  else '')
+        self.duration = tk.Label(self.f, text=d)
         self.CAST = tk.Button(self.f, text='Cast', command=self.cast)
         ######
         self.draw_static()
+
+    def __lt__(self, other):
+        # Expects other to be a SpellDisplay, it's only used for sorting
+        return self.handler.level < other.handler.level
 
     def draw_static(self):
         self.namelevel.grid(row=0, column=0)
@@ -76,7 +85,8 @@ class SpellDisplay(gui.Section):
         #######
         self.castingtime.grid(row=1, column=0)
         self.range.grid(row=2, column=0)
-        self.CAST.grid(row=3, column=0)
+        self.duration.grid(row=3, column=0)
+        self.CAST.grid(row=4, column=0)
 
     def cast(self):
         try:
@@ -88,12 +98,13 @@ class SpellDisplay(gui.Section):
 
 
 class SpellSection(gui.Section):
-    def __init__(self, container, jf, character):
-        gui.Section.__init__(self, container)
+    def __init__(self, container, jf, character, numbers):
+        gui.Section.__init__(self, container, width=500, height=500)
         self.thisf = tk.Frame(self.f)
         self.character = character
         self.displays = {}
-        self.numbers = NumberDisplay(self.f, self.character)
+        self.numbers = numbers
+        # self.numbers = NumberDisplay(self.f, self.character)
         self.effectvalue = tk.StringVar()
         self.effects = gui.EffectPane(self.thisf, '', '')
         self.handler = c.SpellsPrepared(jf, character)
@@ -107,8 +118,8 @@ class SpellSection(gui.Section):
         self.numbers.grid(row=0, column=1)
 
     def draw_dynamic(self):
-        s = 5
-        for (i, d) in enumerate(self.displays.values()):
+        s = 8
+        for (i, d) in enumerate(sorted(self.displays.values())):
             d.grid(row=i%s, column=i//s)
         i = len(self.displays)
         self.effects.grid(row=i%s, column=i//s)
@@ -123,6 +134,7 @@ class main(gui.Section):
 
     def draw_static(self):
         self.handler.grid(row=0, column=0)
+        self.numbers.grid(row=0, column=1)
         self.QUIT.grid(row=1, column=2)
 
     def begin_start(self):
@@ -134,7 +146,8 @@ class main(gui.Section):
         filename = 'character/{}.character'.format(h.clean(name))
         self.record = iface.JSONInterface(filename)
         self.character = c.Character(self.record)
-        self.handler = SpellSection(self.f, self.record, self.character)
+        self.numbers = NumberDisplay(self.f, self.character)
+        self.handler = SpellSection(self.f, self.record, self.character, self.numbers)
         self.container.deiconify()
         self.draw_static()
 
@@ -145,6 +158,8 @@ class main(gui.Section):
 
 if (__name__ == '__main__'):
     win = tk.Tk()
+    # scroller = tk.ScrolledWindow(win)
+    # scroller.pack()
     iface.JSONInterface.OBJECTSPATH = '../objects/'
     app = main(win)
     app.pack()

@@ -14,16 +14,41 @@ class Element:
 class Section:
     def __init__(self, container, **kwargs):
         self.container = container
-        self.f = tk.Frame(self.container, **kwargs)
+        if ('height' in kwargs or 'width' in kwargs):
+            # only intended for use with both arguments currently
+            # might separate into defined height -> vertical scroll, defined width -> horizontal scroll
+            self.wrapper = tk.Frame(self.container, **kwargs)
+            self.canvas = tk.Canvas(self.wrapper, bd=0, height=kwargs['height'], width=kwargs['width'])
+            self.vscroll = tk.Scrollbar(self.wrapper, orient='vertical', command=self.canvas.yview)
+            self.canvas.configure(yscrollcommand=self.vscroll.set)
+            self.hscroll = tk.Scrollbar(self.wrapper, orient='horizontal', command=self.canvas.xview)
+            self.canvas.configure(xscrollcommand=self.hscroll.set)
+            # Probably use self.canvas.create_window() to place f
+            self.f = tk.Frame(self.canvas, **kwargs)
+        else:
+            self.f = tk.Frame(self.container, **kwargs)
 
     def grid(self, row, column, **kwargs):
-        self.f.grid(row=row, column=column, **kwargs)
+        try:
+            self.wrapper.grid(row=row, column=column, **kwargs)
+            self.canvas.grid(row=0, column=0)
+            self.vscroll.grid(row=0, column=1, sticky='ns')
+            self.hscroll.grid(row=1, column=0, sticky='ew')
+            self.canvas.create_window((0, 0), window=self.f, anchor='nw')
+            self.f.bind("<Configure>", lambda event: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
+        except AttributeError:
+            self.f.grid(row=row, column=column, **kwargs)
 
     def pack(self):
-        self.f.pack()
-
-    # def data_dump(self):
-    #     raise NotImplementedError
+        try:
+            self.wrapper.pack()
+            self.canvas.grid(row=0, column=0)
+            self.vscroll.grid(row=0, column=1, sticky='ns')
+            self.hscroll.grid(row=1, column=0, sticky='ew')
+            self.canvas.create_window((0, 0), window=self.f, anchor='nw')
+            self.f.bind("<Configure>", lambda event: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
+        except AttributeError as e:
+            self.f.pack()
 
 
 class InfoButton:
