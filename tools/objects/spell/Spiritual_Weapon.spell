@@ -12,5 +12,7 @@
   "duration": "1 minute",
   "level": 2,
   "name": "Spiritual Weapon",
-  "casting_time": "1 bonus action"
+  "casting_time": "1 bonus action",
+  "attack_roll": true,
+  "damage": "1d8"
 }

@@ -14,5 +14,8 @@
   "duration": "Instantaneous",
   "level": 7,
   "name": "Fire Storm",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "7d10",
+  "damage_type": "fire"
 }

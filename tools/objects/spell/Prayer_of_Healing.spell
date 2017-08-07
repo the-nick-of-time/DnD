@@ -12,5 +12,6 @@
   "duration": "Instantaneous",
   "level": 2,
   "name": "Prayer of Healing",
-  "casting_time": "10 minutes"
+  "casting_time": "10 minutes",
+  "damage": "2d8"
 }

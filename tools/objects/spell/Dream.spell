@@ -14,5 +14,8 @@
   "duration": "8 hours",
   "level": 5,
   "name": "Dream",
-  "casting_time": "1 minute"
+  "casting_time": "1 minute",
+  "save": "Wisdom",
+  "damage": "3d6",
+  "damage_type": "psychic"
 }

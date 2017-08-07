@@ -15,5 +15,8 @@
   "duration": "10 minutes",
   "level": 6,
   "name": "Investiture of Ice",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "4d6",
+  "damage_type": "cold"
 }

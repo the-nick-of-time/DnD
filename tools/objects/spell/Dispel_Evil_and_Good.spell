@@ -13,5 +13,6 @@
   "duration": "up to 1 minute",
   "level": 5,
   "name": "Dispel Evil and Good",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true
 }

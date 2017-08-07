@@ -13,5 +13,8 @@
   "duration": "1 minute",
   "level": 7,
   "name": "Whirlwind",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "10d6",
+  "damage_type": "bludgeoning"
 }

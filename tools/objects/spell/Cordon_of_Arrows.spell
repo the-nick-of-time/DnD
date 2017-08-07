@@ -12,5 +12,8 @@
   "duration": "8 hours",
   "level": 2,
   "name": "Cordon of Arrows",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "1d6",
+  "damage_type": "piercing"
 }

@@ -14,5 +14,8 @@
   "duration": "up to 1 minute",
   "level": 1,
   "name": "Witch Bolt",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "1d12",
+  "damage_type": "lightning"
 }

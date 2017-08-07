@@ -15,5 +15,7 @@
   "duration": "1 hour",
   "level": 3,
   "name": "Flame Arrows",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "damage": "1d6",
+  "damage_type": "fire"
 }

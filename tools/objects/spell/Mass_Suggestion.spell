@@ -15,5 +15,6 @@
   "duration": "24 hours",
   "level": 6,
   "name": "Mass Suggestion",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Wisdom"
 }

@@ -12,5 +12,8 @@
   "duration": "up to 1 minute",
   "level": 3,
   "name": "Hunger of Hadar",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "2d6",
+  "damage_type": "cold"
 }

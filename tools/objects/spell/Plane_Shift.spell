@@ -16,5 +16,6 @@
   "duration": "Instantaneous",
   "level": 7,
   "name": "Plane Shift",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true
 }

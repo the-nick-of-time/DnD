@@ -13,5 +13,8 @@
   "duration": "Instantaneous",
   "level": 9,
   "name": "Meteor Swarm",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "20d6",
+  "damage_type": "fire"
 }

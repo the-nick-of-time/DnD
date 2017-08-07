@@ -12,5 +12,6 @@
   "duration": "Until dispelled",
   "level": 6,
   "name": "Magic Jar",
-  "casting_time": "1 minute"
+  "casting_time": "1 minute",
+  "save": "Charisma"
 }

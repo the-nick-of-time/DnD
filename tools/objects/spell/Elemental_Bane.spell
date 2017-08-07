@@ -14,5 +14,7 @@
   "duration": "1 minute",
   "level": 4,
   "name": "Elemental Bane",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "2d6"
 }

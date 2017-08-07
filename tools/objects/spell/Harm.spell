@@ -12,5 +12,8 @@
   "duration": "Instantaneous",
   "level": 6,
   "name": "Harm",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "14d6",
+  "damage_type": "necrotic"
 }

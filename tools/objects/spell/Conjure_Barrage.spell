@@ -12,5 +12,7 @@
   "duration": "Instantaneous",
   "level": 3,
   "name": "Conjure Barrage",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "3d8"
 }

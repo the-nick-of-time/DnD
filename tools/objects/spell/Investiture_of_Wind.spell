@@ -15,5 +15,8 @@
   "duration": "10 minutes",
   "level": 6,
   "name": "Investiture of Wind",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "2d10",
+  "damage_type": "bludgeoning"
 }

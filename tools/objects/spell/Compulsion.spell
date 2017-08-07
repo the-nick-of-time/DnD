@@ -12,5 +12,6 @@
   "duration": "up to 1 minute",
   "level": 4,
   "name": "Compulsion",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Wisdom"
 }

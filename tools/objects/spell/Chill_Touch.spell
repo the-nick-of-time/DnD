@@ -14,5 +14,8 @@
   "duration": "1 round",
   "level": 0,
   "name": "Chill Touch",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "1d8",
+  "damage_type": "necrotic"
 }

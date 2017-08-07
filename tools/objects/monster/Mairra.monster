@@ -1,0 +1,20 @@
+{
+	"name": "Mairra",
+	"AC": 12,
+	"HP": 9,
+	"abilities": {
+		"strength": 8,
+		"dexterity": 12,
+		"constitution": 12,
+		"intelligence": 14,
+		"wisdom": 13,
+		"charisma": 16
+	},
+	"skills": {
+		"Arcana": 4,
+		"History": 4,
+		"Nature": 4,
+		"Insight": 3,
+		"Performance": 5
+	}
+}

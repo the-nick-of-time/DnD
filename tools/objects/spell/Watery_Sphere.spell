@@ -14,5 +14,6 @@
   "duration": "1 minute",
   "level": 4,
   "name": "Watery Sphere",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Strength"
 }

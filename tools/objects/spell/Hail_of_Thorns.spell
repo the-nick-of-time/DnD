@@ -12,5 +12,8 @@
   "duration": "up to 1 minute",
   "level": 1,
   "name": "Hail of Thorns",
-  "casting_time": "1 bonus action"
+  "casting_time": "1 bonus action",
+  "save": "Dexterity",
+  "damage": "1d10",
+  "damage_type": "piercing"
 }

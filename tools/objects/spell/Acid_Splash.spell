@@ -13,5 +13,8 @@
   "duration": "Instantaneous",
   "level": 0,
   "name": "Acid Splash",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "1d6",
+  "damage_type": "acid"
 }

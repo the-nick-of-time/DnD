@@ -13,5 +13,8 @@
   "duration": "1 minute",
   "level": 2,
   "name": "Maximilian's Earthen Grasp",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Strength",
+  "damage": "2d6",
+  "damage_type": "bludgeoning"
 }

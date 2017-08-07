@@ -12,5 +12,8 @@
   "duration": "Instantaneous",
   "level": 5,
   "name": "Flame Strike",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "4d6",
+  "damage_type": "fire"
 }

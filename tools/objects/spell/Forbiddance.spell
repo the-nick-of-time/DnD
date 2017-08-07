@@ -12,5 +12,6 @@
   "duration": "24 hours",
   "level": 6,
   "name": "Forbiddance",
-  "casting_time": "10 minutes"
+  "casting_time": "10 minutes",
+  "damage": "5d10"
 }

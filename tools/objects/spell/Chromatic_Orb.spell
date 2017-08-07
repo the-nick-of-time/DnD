@@ -13,5 +13,7 @@
   "duration": "Instantaneous",
   "level": 1,
   "name": "Chromatic Orb",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "3d8"
 }

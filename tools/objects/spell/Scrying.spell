@@ -16,5 +16,6 @@
   "duration": "up to 10 minutes",
   "level": 5,
   "name": "Scrying",
-  "casting_time": "10 minutes"
+  "casting_time": "10 minutes",
+  "save": "Wisdom"
 }

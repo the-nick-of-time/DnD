@@ -13,5 +13,6 @@
   "duration": "1 minute",
   "level": 2,
   "name": "Enthrall",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Wisdom"
 }

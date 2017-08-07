@@ -12,5 +12,6 @@
   "duration": "Instantaneous",
   "level": 7,
   "name": "Divine Word",
-  "casting_time": "1 bonus action"
+  "casting_time": "1 bonus action",
+  "save": "Charisma"
 }

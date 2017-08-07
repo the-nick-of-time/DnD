@@ -14,5 +14,8 @@
   "duration": "Instantaneous",
   "level": 6,
   "name": "Circle of Death",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "8d6",
+  "damage_type": "necrotic"
 }

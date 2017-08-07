@@ -12,5 +12,8 @@
   "duration": "Instantaneous",
   "level": 5,
   "name": "Destructive Smite",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "5d6",
+  "damage_type": "thunder"
 }

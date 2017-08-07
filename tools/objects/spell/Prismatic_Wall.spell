@@ -12,5 +12,8 @@
   "duration": "10 minutes",
   "level": 9,
   "name": "Prismatic Wall",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "10d6",
+  "damage_type": "fire"
 }

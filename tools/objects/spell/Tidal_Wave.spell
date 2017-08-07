@@ -13,5 +13,8 @@
   "duration": "Instantaneous",
   "level": 3,
   "name": "Tidal Wave",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "4d8",
+  "damage_type": "bludgeoning"
 }

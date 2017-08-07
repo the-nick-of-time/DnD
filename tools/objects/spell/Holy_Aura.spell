@@ -12,5 +12,6 @@
   "duration": "up to 1 minute",
   "level": 8,
   "name": "Holy Aura",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution"
 }

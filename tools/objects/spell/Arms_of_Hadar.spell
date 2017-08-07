@@ -12,5 +12,8 @@
   "duration": "Instantaneous",
   "level": 1,
   "name": "Arms of Hadar",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Strength",
+  "damage": "2d6",
+  "damage_type": "necrotic"
 }

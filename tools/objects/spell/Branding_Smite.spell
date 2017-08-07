@@ -12,5 +12,7 @@
   "duration": "up to 1 minute",
   "level": 2,
   "name": "Branding Smite",
-  "casting_time": "1 bonus action"
+  "casting_time": "1 bonus action",
+  "damage": "2d6",
+  "damage_type": "radiant"
 }

@@ -13,5 +13,6 @@
   "duration": "up to 1 hour",
   "level": 2,
   "name": "Alter Self",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "damage": "1d6"
 }

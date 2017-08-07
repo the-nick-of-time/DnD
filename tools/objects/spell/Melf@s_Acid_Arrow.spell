@@ -13,5 +13,8 @@
   "duration": "Instantaneous",
   "level": 2,
   "name": "Melf's Acid Arrow",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "4d4",
+  "damage_type": "acid"
 }

@@ -14,5 +14,7 @@
   "duration": "Until dispelled",
   "level": 3,
   "name": "Glyph of Warding",
-  "casting_time": "1 hour"
+  "casting_time": "1 hour",
+  "save": "Dexterity",
+  "damage": "5d8"
 }

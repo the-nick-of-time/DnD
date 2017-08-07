@@ -12,5 +12,8 @@
   "duration": "up to 10 minutes",
   "level": 2,
   "name": "Flame Blade",
-  "casting_time": "1 bonus action"
+  "casting_time": "1 bonus action",
+  "attack_roll": true,
+  "damage": "3d6",
+  "damage_type": "fire"
 }

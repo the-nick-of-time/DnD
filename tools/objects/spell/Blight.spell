@@ -15,5 +15,8 @@
   "duration": "Instantaneous",
   "level": 4,
   "name": "Blight",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "8d8",
+  "damage_type": "necrotic"
 }

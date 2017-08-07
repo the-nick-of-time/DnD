@@ -13,5 +13,6 @@
   "duration": "1 hour",
   "level": 1,
   "name": "False Life",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "damage": "1d4"
 }

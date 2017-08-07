@@ -12,5 +12,8 @@
   "duration": "Instantaneous",
   "level": 0,
   "name": "Thorn Whip",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "1d6",
+  "damage_type": "piercing"
 }

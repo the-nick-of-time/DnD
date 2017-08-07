@@ -15,5 +15,8 @@
   "duration": "1 minute",
   "level": 0,
   "name": "Create Bonfire",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "1d8",
+  "damage_type": "fire"
 }

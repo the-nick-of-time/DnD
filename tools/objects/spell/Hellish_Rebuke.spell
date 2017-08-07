@@ -12,5 +12,8 @@
   "duration": "Instantaneous",
   "level": 1,
   "name": "Hellish Rebuke",
-  "casting_time": "1 reaction"
+  "casting_time": "1 reaction",
+  "save": "Dexterity",
+  "damage": "2d10",
+  "damage_type": "fire"
 }

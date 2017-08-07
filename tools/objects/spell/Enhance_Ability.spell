@@ -15,5 +15,6 @@
   "duration": "up to 1 hour",
   "level": 2,
   "name": "Enhance Ability",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "damage": "2d6"
 }

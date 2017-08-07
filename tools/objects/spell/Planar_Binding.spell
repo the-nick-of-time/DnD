@@ -15,5 +15,6 @@
   "duration": "24 hours",
   "level": 5,
   "name": "Planar Binding",
-  "casting_time": "1 hour"
+  "casting_time": "1 hour",
+  "save": "Charisma"
 }

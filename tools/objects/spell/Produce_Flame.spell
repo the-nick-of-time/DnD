@@ -12,5 +12,8 @@
   "duration": "10 minutes",
   "level": 0,
   "name": "Produce Flame",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "1d8",
+  "damage_type": "fire"
 }

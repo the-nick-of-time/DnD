@@ -12,5 +12,8 @@
   "duration": "up to 10 minutes",
   "level": 3,
   "name": "Call Lightning",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "3d10",
+  "damage_type": "lightning"
 }

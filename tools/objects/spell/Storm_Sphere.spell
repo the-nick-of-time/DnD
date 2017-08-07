@@ -13,5 +13,8 @@
   "duration": "1 minute",
   "level": 4,
   "name": "Storm Sphere",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "2d6",
+  "damage_type": "bludgeoning"
 }

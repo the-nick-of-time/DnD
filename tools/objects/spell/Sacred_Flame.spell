@@ -12,5 +12,8 @@
   "duration": "Instantaneous",
   "level": 0,
   "name": "Sacred Flame",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "1d8",
+  "damage_type": "radiant"
 }

@@ -12,5 +12,8 @@
   "duration": "1 round",
   "level": 1,
   "name": "Guiding Bolt",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "4d6",
+  "damage_type": "radiant"
 }

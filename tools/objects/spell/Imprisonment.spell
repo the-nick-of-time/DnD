@@ -13,5 +13,6 @@
   "duration": "Until dispelled",
   "level": 9,
   "name": "Imprisonment",
-  "casting_time": "1 minute"
+  "casting_time": "1 minute",
+  "save": "Wisdom"
 }

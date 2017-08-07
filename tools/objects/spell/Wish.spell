@@ -13,5 +13,7 @@
   "duration": "Instantaneous",
   "level": 9,
   "name": "Wish",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "damage": "1d10",
+  "damage_type": "necrotic"
 }

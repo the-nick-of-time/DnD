@@ -14,5 +14,8 @@
   "duration": "up to 1 minute",
   "level": 4,
   "name": "Wall of Fire",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "5d8",
+  "damage_type": "fire"
 }

@@ -13,5 +13,6 @@
   "duration": "10 days",
   "level": 8,
   "name": "Antipathy/Sympathy",
-  "casting_time": "1 hour"
+  "casting_time": "1 hour",
+  "save": "Wisdom"
 }

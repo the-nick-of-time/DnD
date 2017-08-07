@@ -13,5 +13,8 @@
   "duration": "Instantaneous",
   "level": 2,
   "name": "Aganazzar's Scorcher",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "3d8",
+  "damage_type": "fire"
 }

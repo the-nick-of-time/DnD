@@ -15,5 +15,6 @@
   "duration": "1 hour",
   "level": 3,
   "name": "Magic Circle",
-  "casting_time": "1 minute"
+  "casting_time": "1 minute",
+  "save": "Charisma"
 }

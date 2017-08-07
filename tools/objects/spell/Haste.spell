@@ -13,5 +13,6 @@
   "duration": "up to 1 minute",
   "level": 3,
   "name": "Haste",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity"
 }

@@ -12,5 +12,7 @@
   "duration": "Instantaneous",
   "level": 5,
   "name": "Conjure Volley",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "8d8"
 }

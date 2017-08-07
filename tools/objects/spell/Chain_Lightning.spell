@@ -13,5 +13,8 @@
   "duration": "Instantaneous",
   "level": 6,
   "name": "Chain Lightning",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "10d8",
+  "damage_type": "lightning"
 }

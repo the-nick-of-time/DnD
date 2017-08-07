@@ -12,5 +12,6 @@
   "duration": "1 minute",
   "level": 1,
   "name": "Sanctuary",
-  "casting_time": "1 bonus action"
+  "casting_time": "1 bonus action",
+  "save": "Wisdom"
 }

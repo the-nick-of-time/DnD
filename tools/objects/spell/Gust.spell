@@ -14,5 +14,6 @@
   "duration": "Instantaneous",
   "level": 0,
   "name": "Gust",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Strength"
 }

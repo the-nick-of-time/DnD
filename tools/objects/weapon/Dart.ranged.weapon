@@ -1,6 +1,7 @@
 {
   "name": "Dart",
-  "damage": ["1d4", "Piercing"],
+  "damage": "1d4",
+  "damage_type": "Piercing",
   "type": "simple",
   "attacks": 1,
   "hands": "one",

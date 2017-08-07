@@ -12,5 +12,6 @@
   "duration": "Until dispelled",
   "level": 5,
   "name": "Hallow",
-  "casting_time": "24 hours"
+  "casting_time": "24 hours",
+  "save": "Charisma"
 }

@@ -16,5 +16,8 @@
   "duration": "30 days",
   "level": 5,
   "name": "Geas",
-  "casting_time": "1 minute"
+  "casting_time": "1 minute",
+  "save": "Wisdom",
+  "damage": "5d10",
+  "damage_type": "psychic"
 }

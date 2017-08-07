@@ -13,5 +13,8 @@
   "duration": "Instantaneous",
   "level": 4,
   "name": "Vitriolic Sphere",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "10d4",
+  "damage_type": "acid"
 }

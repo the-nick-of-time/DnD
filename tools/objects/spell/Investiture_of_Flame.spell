@@ -15,5 +15,8 @@
   "duration": "10 minutes",
   "level": 6,
   "name": "Investiture of Flame",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "1d10",
+  "damage_type": "fire"
 }

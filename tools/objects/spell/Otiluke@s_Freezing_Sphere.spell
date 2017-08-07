@@ -13,5 +13,8 @@
   "duration": "Instantaneous",
   "level": 6,
   "name": "Otiluke's Freezing Sphere",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "10d6",
+  "damage_type": "cold"
 }

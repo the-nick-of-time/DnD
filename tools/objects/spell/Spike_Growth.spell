@@ -13,5 +13,7 @@
   "duration": "up to 10 minutes",
   "level": 2,
   "name": "Spike Growth",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "damage": "2d4",
+  "damage_type": "piercing"
 }

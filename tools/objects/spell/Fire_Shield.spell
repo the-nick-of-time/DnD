@@ -12,5 +12,7 @@
   "duration": "10 minutes",
   "level": 4,
   "name": "Fire Shield",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "damage": "2d8",
+  "damage_type": "fire"
 }

@@ -15,5 +15,7 @@
   "duration": "Instantaneous",
   "level": 4,
   "name": "Dimension Door",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "damage": "4d6",
+  "damage_type": "force"
 }

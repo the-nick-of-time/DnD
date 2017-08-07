@@ -14,5 +14,8 @@
   "duration": "Instantaneous",
   "level": 3,
   "name": "Erupting Earth",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "3d12",
+  "damage_type": "bludgeoning"
 }

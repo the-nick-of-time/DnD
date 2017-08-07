@@ -15,5 +15,8 @@
   "duration": "Instantaneous",
   "level": 8,
   "name": "Feeblemind",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Intelligence",
+  "damage": "4d6",
+  "damage_type": "psychic"
 }

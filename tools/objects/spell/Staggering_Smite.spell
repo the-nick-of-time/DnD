@@ -12,5 +12,8 @@
   "duration": "up to 1 minute",
   "level": 4,
   "name": "Staggering Smite",
-  "casting_time": "1 bonus action"
+  "casting_time": "1 bonus action",
+  "save": "Wisdom",
+  "damage": "4d6",
+  "damage_type": "psychic"
 }

@@ -14,5 +14,6 @@
   "duration": "up to 1 minute",
   "level": 5,
   "name": "Dominate Person",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Wisdom"
 }

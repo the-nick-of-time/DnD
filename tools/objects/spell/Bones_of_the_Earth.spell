@@ -12,5 +12,8 @@
   "duration": "Instantaneous",
   "level": 6,
   "name": "Bones of the Earth",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "6d6",
+  "damage_type": "bludgeoning"
 }

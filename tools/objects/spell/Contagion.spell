@@ -13,5 +13,6 @@
   "duration": "7 days",
   "level": 5,
   "name": "Contagion",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true
 }

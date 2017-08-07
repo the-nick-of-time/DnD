@@ -14,5 +14,8 @@
   "duration": "up to 1 minute",
   "level": 7,
   "name": "Mordenkainen's Sword",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "3d10",
+  "damage_type": "force"
 }

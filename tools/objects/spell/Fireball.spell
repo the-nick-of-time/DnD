@@ -13,5 +13,8 @@
   "duration": "Instantaneous",
   "level": 3,
   "name": "Fireball",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "8d6",
+  "damage_type": "fire"
 }

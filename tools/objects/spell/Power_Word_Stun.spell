@@ -15,5 +15,6 @@
   "duration": "Instantaneous",
   "level": 8,
   "name": "Power Word Stun",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution"
 }

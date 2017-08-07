@@ -16,5 +16,8 @@
   "duration": "Instantaneous",
   "level": 0,
   "name": "Thunderclap",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "1d6",
+  "damage_type": "thunder"
 }

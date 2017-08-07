@@ -14,5 +14,8 @@
   "duration": "Until dispelled",
   "level": 7,
   "name": "Symbol",
-  "casting_time": "1 minute"
+  "casting_time": "1 minute",
+  "save": "Constitution",
+  "damage": "10d10",
+  "damage_type": "necrotic"
 }

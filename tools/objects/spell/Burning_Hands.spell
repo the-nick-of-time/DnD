@@ -13,5 +13,8 @@
   "duration": "Instantaneous",
   "level": 1,
   "name": "Burning Hands",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "3d6",
+  "damage_type": "fire"
 }

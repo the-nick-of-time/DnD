@@ -14,5 +14,8 @@
   "duration": "Instantaneous",
   "level": 1,
   "name": "Ice Knife",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "1d10",
+  "damage_type": "piercing"
 }

@@ -13,5 +13,8 @@
   "duration": "Instantaneous",
   "level": 5,
   "name": "Cone of Cold",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "8d8",
+  "damage_type": "cold"
 }

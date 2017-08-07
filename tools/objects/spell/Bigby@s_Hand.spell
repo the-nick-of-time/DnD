@@ -13,5 +13,8 @@
   "duration": "up to 1 minute",
   "level": 5,
   "name": "Bigby's Hand",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "4d8",
+  "damage_type": "force"
 }

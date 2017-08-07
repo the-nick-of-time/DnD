@@ -12,5 +12,8 @@
   "duration": "1 minute",
   "level": 5,
   "name": "Maelstrom",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Strength",
+  "damage": "6d6",
+  "damage_type": "bludgeoning"
 }

@@ -13,5 +13,8 @@
   "duration": "10 minutes",
   "level": 3,
   "name": "Melf's Minute Meteors",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "2d6",
+  "damage_type": "fire"
 }

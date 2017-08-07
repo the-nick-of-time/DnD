@@ -15,5 +15,6 @@
   "duration": "up to 1 hour",
   "level": 8,
   "name": "Dominate Monster",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Wisdom"
 }

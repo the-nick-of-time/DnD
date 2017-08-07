@@ -13,5 +13,7 @@
   "duration": "8 hours",
   "level": 3,
   "name": "Meld Into Stone",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "damage": "6d6",
+  "damage_type": "bludgeoning"
 }

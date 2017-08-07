@@ -13,5 +13,6 @@
   "duration": "up to 1 minute",
   "level": 4,
   "name": "Grasping Vine",
-  "casting_time": "1 bonus action"
+  "casting_time": "1 bonus action",
+  "save": "Dexterity"
 }

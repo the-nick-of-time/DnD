@@ -15,5 +15,6 @@
   "duration": "1 hour",
   "level": 0,
   "name": "Light",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity"
 }

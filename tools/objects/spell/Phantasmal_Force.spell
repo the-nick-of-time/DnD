@@ -14,5 +14,8 @@
   "duration": "up to 1 minute",
   "level": 2,
   "name": "Phantasmal Force",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Intelligence",
+  "damage": "1d6",
+  "damage_type": "psychic"
 }

@@ -13,5 +13,7 @@
   "duration": "Instantaneous",
   "level": 6,
   "name": "Heroes' Feast",
-  "casting_time": "10 minutes"
+  "casting_time": "10 minutes",
+  "save": "Wisdom",
+  "damage": "2d10"
 }

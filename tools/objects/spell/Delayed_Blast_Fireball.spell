@@ -13,5 +13,7 @@
   "duration": "up to 1 minute",
   "level": 7,
   "name": "Delayed Blast Fireball",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "12d6"
 }

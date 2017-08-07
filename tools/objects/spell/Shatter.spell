@@ -15,5 +15,8 @@
   "duration": "Instantaneous",
   "level": 2,
   "name": "Shatter",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "3d8",
+  "damage_type": "thunder"
 }

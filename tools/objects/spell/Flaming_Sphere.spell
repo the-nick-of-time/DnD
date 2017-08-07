@@ -13,5 +13,8 @@
   "duration": "up to 1 minute",
   "level": 2,
   "name": "Flaming Sphere",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity",
+  "damage": "2d6",
+  "damage_type": "fire"
 }

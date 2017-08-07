@@ -22,6 +22,11 @@
   },
   "description": "This wooden shard is forever rimed with frost.",
   "effect": "This dagger sucks all the heat from anything it touches.",
-  "charges": -1,
+  "charges": {
+    "name": "Shivered Dagger charges",
+    "maxnumber": 999999,
+    "recharge": "long rest",
+    "regains": 999999
+  },
   "recharge": 0
 }

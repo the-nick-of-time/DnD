@@ -13,5 +13,7 @@
   "duration": "1 minute",
   "level": 0,
   "name": "Magic Stone",
-  "casting_time": "1 bonus action"
+  "casting_time": "1 bonus action",
+  "attack_roll": true,
+  "damage": "1d6"
 }

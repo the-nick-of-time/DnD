@@ -12,5 +12,8 @@
   "duration": "Instantaneous",
   "level": 0,
   "name": "Vicious Mockery",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Wisdom",
+  "damage": "1d4",
+  "damage_type": "psychic"
 }

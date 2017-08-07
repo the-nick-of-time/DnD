@@ -13,5 +13,8 @@
   "duration": "Instantaneous",
   "level": 0,
   "name": "Ray of Frost",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "1d8",
+  "damage_type": "cold"
 }

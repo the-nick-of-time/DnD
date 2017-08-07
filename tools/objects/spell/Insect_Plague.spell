@@ -14,5 +14,8 @@
   "duration": "up to 10 minutes",
   "level": 5,
   "name": "Insect Plague",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Constitution",
+  "damage": "4d10",
+  "damage_type": "piercing"
 }

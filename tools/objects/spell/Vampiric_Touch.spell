@@ -13,5 +13,8 @@
   "duration": "up to 1 minute",
   "level": 3,
   "name": "Vampiric Touch",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "attack_roll": true,
+  "damage": "3d6",
+  "damage_type": "necrotic"
 }

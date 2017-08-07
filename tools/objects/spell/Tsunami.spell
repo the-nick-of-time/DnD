@@ -12,5 +12,8 @@
   "duration": "up to 6 rounds",
   "level": 8,
   "name": "Tsunami",
-  "casting_time": "1 minute"
+  "casting_time": "1 minute",
+  "save": "Strength",
+  "damage": "6d10",
+  "damage_type": "bludgeoning"
 }

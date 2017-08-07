@@ -12,5 +12,6 @@
   "duration": "1 minute",
   "level": 1,
   "name": "Grease",
-  "casting_time": "1 action"
+  "casting_time": "1 action",
+  "save": "Dexterity"
 }
