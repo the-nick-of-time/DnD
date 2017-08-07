@@ -18,7 +18,9 @@ class Section:
             # only intended for use with both arguments currently
             # might separate into defined height -> vertical scroll, defined width -> horizontal scroll
             self.wrapper = tk.Frame(self.container, **kwargs)
-            self.canvas = tk.Canvas(self.wrapper, bd=0, height=kwargs['height'], width=kwargs['width'])
+            self.canvas = tk.Canvas(self.wrapper, bd=0,
+                                    height=kwargs.get('height', 0),
+                                    width=kwargs.get('width', 0))
             self.vscroll = tk.Scrollbar(self.wrapper, orient='vertical', command=self.canvas.yview)
             self.canvas.configure(yscrollcommand=self.vscroll.set)
             self.hscroll = tk.Scrollbar(self.wrapper, orient='horizontal', command=self.canvas.xview)
