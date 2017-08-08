@@ -1,51 +1,46 @@
 {
-  "features": {
-    "Stormborn": {
-      "1": {
-        "description": "The arcane magic you command is infused with elemental air. You can speak, read, and write Primordial. In addition, you gain the following spells at the listed sorcerer level. These spells do not count against the number of sorcerer spells you know.",
-        "spells_prepared": ["Thunderwave"]
-      },
-      "3": {
-        "description": "The arcane magic you command is infused with elemental air. You can speak, read, and write Primordial. In addition, you gain the following spells at the listed sorcerer level. These spells do not count against the number of sorcerer spells you know.",
-        "spells_prepared": ["Thunderwave", "Levitate"]
-      },
-      "5": {
-        "description": "The arcane magic you command is infused with elemental air. You can speak, read, and write Primordial. In addition, you gain the following spells at the listed sorcerer level. These spells do not count against the number of sorcerer spells you know.",
-        "spells_prepared": ["Thunderwave", "Levitate", "Call Lightning"]
-      },
-      "7": {
-        "description": "The arcane magic you command is infused with elemental air. You can speak, read, and write Primordial. In addition, you gain the following spells at the listed sorcerer level. These spells do not count against the number of sorcerer spells you know.",
-        "spells_prepared": ["Thunderwave", "Levitate", "Call Lightning", "Conjure Minor Elementals"]
-      },
-      "9": {
-        "description": "The arcane magic you command is infused with elemental air. You can speak, read, and write Primordial. In addition, you gain the following spells at the listed sorcerer level. These spells do not count against the number of sorcerer spells you know.",
-        "spells_prepared": ["Thunderwave", "Levitate", "Call Lightning", "Conjure Minor Elementals", "Conjure Elemental"]
-      }
-    },
-    "Tempestuous Magic": {
-      "1": {
-        "description": "Whenever you cast a spell other than a cantrip during your turn, you can use a bonus action to fly 10 feet without provoking opportunity attacks."
-      }
-    },
-    "Heart of the Storm": {
-      "6": {
-        "description": "You gain resistance to lightning and thunder damage. Whenever you cas a spell other than a cantrip that deals lightning or thunder damage, a stormy aura surrounds you. In addition to the spell's effects, creatures of your choice within 10 feet of you take lightning or thunder damage (choose each time this ability activates) equal to half your sorcerer level."
-      }
-    },
-    "Storm Guide": {
-      "6": {
-        "description": "You gain the ability to subtly control the weather around you. If f it is raining, you can use an action to cause the rain to stop falling in a 20‐foot radius centered on you. You can end this effect as a bonus action. If it is windy, you can use a bonus action each round to choose the direction that the wind a 100‐foot radius around you. The wind blows in that direction until the end of your next turn. You have no ability to alter the speed of the wind."
-      }
-    },
-    "Storm's Fury": {
-      "14": {
-        "description": "The storm energy you channel through your magic seethes within your soul. When you are hit by a melee attack, you can use your reaction to deal lightning damage to the equal to your sorcerer level. The attacker must also make a Strength saving throw, with a DC equal to 8 + your Charisma bonus + your proficiency bonus. On a failed save, the attacker is pushed in a straight line 20 feet away from you."
-      }
-    },
-    "Wind Soul": {
-      "18": {
-        "description": "You gain a flying speed of 60 feet and immunity to lightning and thunder damage. As an action, you can reduce your flying speed to 30 feet for one hour and choose a number of creatures within 30 feet of you equal to 3 + your Charisma modifier. The chosen creatures gain a flying speed of 30 feet for 1 hour."
-      }
-    }
-  }
+	"features": [
+		{},
+		{
+			"Wind Speaker": {"description": "The arcane magic you command is infused with elemental air. You can speak, read, and write Primordial. In addition, you gain the following spells at the listed sorcerer level. These spells do not count against the number of sorcerer spells you know.",
+			"always_prepared": [
+				"Thunderwave"
+			]},
+			"Tempestuous Magic": {
+				"description": "You can use a bonus action on your turn to cause whirling gusts of elemental air to briefly surround you, immediately before or after you cast a spell of 1st level or higher. Doing so allows you to fly up to 10 feet without provoking opportunity attacks."
+			}
+		},
+		{},
+		{},
+		{},
+		{},
+		{
+			"Heart of the Storm": {"description": "You gain resistance to lightning and thunder damage. In addition, whenever you start casting a spell of 1st level or higher that deals lightning or thunder damage, stormy magic erupts from you. This eruption causes creatures of your choice that you can see within 10 feet of you to take lightning or thunder damage (choose each time this ability activates) equal to half your sorcerer level."},
+			"Storm Guide": {
+				"description": "You gain the ability to subtly control the weather around you. If it is raining, you can use an action to cause the rain to stop falling in a 20-foot-radius sphere centered on you. You can end this effect as a bonus action. If it is windy, you can use a bonus action each round to choose the direction that the wind blows in a 100-foot radius sphere centered on you. The wind blows in that direction until the end of your next turn. This feature doesn't alter the speed of the wind."
+			}
+		},
+		{},
+		{},
+		{},
+		{},
+		{},
+		{},
+		{},
+		{
+			"Storm's Fury": {
+				"description": "Starting at 14th level, when you are hit by a melee attack, you can use your reaction to deal lightning damage to the attacker. The damage equals your sorcerer level. The attacker must also make a Strength saving throw against your sorcerer spell save DC. On a failed save, the attacker is pushed in a straight line up to 20 feet away from you."
+			}
+		},
+		{},
+		{},
+		{},
+		{
+			"Wind Soul": {
+				"description": "You gain immunity to lightning and thunder damage. You also gain a magical flying speed of 60 feet. As an action, you can reduce your flying speed to 30 feet for 1 hour and choose a number of creatures within 30 feet of you equal to 3 + your Charisma modifier. The chosen creatures gain a magical flying speed of 30 feet for 1 hour. Once you reduce your flying speed in this way, you can't do so again until you finish a short or long rest."
+			}
+		},
+		{},
+		{}
+	]
 }

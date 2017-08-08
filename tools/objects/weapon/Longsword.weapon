@@ -6,7 +6,7 @@
   "type": "Martial",
   "hands": "versatile",
   "ability": [
-    "Strength"
+    "strength"
   ],
   "value": 15,
   "weight": 3,

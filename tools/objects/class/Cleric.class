@@ -6,7 +6,7 @@
   ],
   "hit_dice": "1d8",
   "spellcasting": {
-    "ability": "Wisdom",
+    "ability": "wisdom",
     "slots": "full",
     "levels": "full",
     "known": "all",

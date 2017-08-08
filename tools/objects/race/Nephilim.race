@@ -6,9 +6,17 @@
   },
   "size": "Medium",
   "features": {
-    "Darkvision": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of grey.",
-    "Celestial Blessing": "You have resistance to necrotic damage and radiant damage.",
-    "Languages": "You can speak, read, and write Common and the language of your non-angelic half.",
-    "God's Blessing": "You know one cantrip of your choice that is related to your god's domain."
+    "Darkvision": {
+      "description": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of grey."
+    },
+    "Celestial Blessing": {
+      "description": "You have resistance to necrotic damage and radiant damage."
+    },
+    "Languages": {
+      "description": "You can speak, read, and write Common and the language of your non-angelic half."
+    },
+    "God's Blessing": {
+      "description": "You know one cantrip of your choice that is related to your god's domain."
+    }
   }
 }

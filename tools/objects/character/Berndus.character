@@ -29,11 +29,14 @@
     "Athletics"
   ],
   "saves": [
-    "Strength",
-    "Constitution"
+    "strength",
+    "constitution"
   ],
   "spell_slots": [],
-  "spells_prepared": [],
+  "spells_prepared": {
+    "always_prepared": [],
+    "prepared_today": []
+  },
   "equipment": {
     "Dagger": {
       "quantity": 3,

@@ -6,8 +6,8 @@
   "attacks": 1,
   "hands": "one",
   "ability": [
-    "Dexterity",
-    "Strength"
+    "dexterity",
+    "strength"
   ],
   "value": 0.02,
   "weight": 0.25,

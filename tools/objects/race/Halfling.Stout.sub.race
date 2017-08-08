@@ -4,6 +4,8 @@
     "Constitution": 1
   },
   "features": {
-    "Stout Resilience": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+    "Stout Resilience": {
+      "description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+    }
   }
 }

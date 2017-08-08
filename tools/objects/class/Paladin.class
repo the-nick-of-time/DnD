@@ -31,13 +31,13 @@
     "which": []
   },
   "spellcasting": {
-    "ability": "Charisma",
+    "ability": "charisma",
     "slots": "half",
     "levels": "half",
     "known": "all",
     "prepare": [
-      "Charisma",
-      "caster_level"
+      "$cha_mod",
+      "$caster_level"
     ],
     "always_prepared": []
   },

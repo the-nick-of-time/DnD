@@ -14,12 +14,12 @@
     }
   },
   "abilities": {
-    "Strength": 8,
-    "Dexterity": 14,
-    "Constitution": 16,
-    "Intelligence": 12,
-    "Wisdom": 8,
-    "Charisma": 18
+    "strength": 8,
+    "dexterity": 14,
+    "constitution": 16,
+    "intelligence": 12,
+    "wisdom": 8,
+    "charisma": 18
   },
   "skills": [
     "Persuasion",
@@ -28,22 +28,29 @@
     "Arcana",
     "Religion"
   ],
+  "saves": [
+    "constitution",
+    "charisma"
+  ],
   "spell_slots": [
     999999,
     4,
     2
   ],
-  "spells_prepared": [
-    "Gust",
-    "Thunderclap",
-    "Mending",
-    "Prestidigitation",
-    "Shocking Grasp",
-    "Shield",
-    "Thunderwave",
-    "Witch Bolt",
-    "Shatter"
-  ],
+  "spells_prepared": {
+    "always_prepared": [
+      "Gust",
+      "Thunderclap",
+      "Mending",
+      "Prestidigitation",
+      "Shocking Grasp",
+      "Shield",
+      "Thunderwave",
+      "Witch Bolt",
+      "Shatter"
+    ],
+    "prepared_today": []
+  },
   "spells_known": [
     "Gust",
     "Thunderclap",
@@ -55,65 +62,65 @@
     "Witch Bolt",
     "Shatter"
   ],
-  "inventory": {
+  "equipment": {
     "Mirror": {
       "quantity": 1,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "Vial": {
       "quantity": 3,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "Antitoxin": {
       "quantity": 1,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "gp": {
       "quantity": 4,
-      "type": "coin.treasure",
+      "type": "treasure",
       "equipped": false
     },
     "Silk Gloves": {
       "quantity": 1,
-      "type": ".armor",
+      "type": "armor",
       "equipped": false
     },
     "Backpack": {
       "quantity": 1,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "Good Clothes": {
       "quantity": 3,
-      "type": ".armor",
+      "type": "armor",
       "equipped": false
     },
     "Utility Knife": {
       "quantity": 1,
-      "type": ".weapon",
+      "type": "weapon",
       "equipped": false
     },
     "Herbalism Kit": {
       "quantity": 1,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "Scroll Case": {
       "quantity": 1,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "Map": {
       "quantity": 1,
-      "type": ".item",
+      "type": "item",
       "equipped": false
     },
     "sp": {
       "quantity": 40,
-      "type": "coin.treasure",
+      "type": "treasure",
       "equipped": false
     }
   }
