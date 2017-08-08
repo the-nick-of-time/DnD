@@ -17,10 +17,17 @@ class AbilityDisplay(gui.Section):
         self.thisf = tk.Frame(self.f)
         self.subf = tk.Frame(self.thisf)
         #############
-        self.abilchecks = [tk.Button(self.subf, text=a[:3].upper(), command=lambda x=a: self.roll_check(x), width=4) for (i, a) in enumerate(self.abilnames)]
+        self.abilchecks = [tk.Button(self.subf, text=a[:3].upper(),
+                                     command=lambda x=a: self.roll_check(x),
+                                     width=4)
+                           for a in self.abilnames]
         self.abiltexts = [tk.StringVar() for a in self.abilnames]
-        self.scores = [tk.Entry(self.subf, width=4, textvariable=self.abiltexts[i]) for (i, a) in enumerate(self.abilnames)]
+        self.scores = [tk.Entry(self.subf, width=4,
+                                textvariable=self.abiltexts[i])
+                       for (i, a) in enumerate(self.abilnames)]
         self.mods = [tk.Label(self.subf, width=2) for a in self.abilnames]
+        self.saves = [tk.Button(self.subf, text='SAVE', width=4, command=lambda x=a: self.roll_save(x)) for a in self.abilnames]
+        ######
         self.adv = tk.BooleanVar()
         self.advbutton = tk.Checkbutton(self.f, text='Advantage?', variable=self.adv)
         self.dis = tk.BooleanVar()
@@ -39,10 +46,15 @@ class AbilityDisplay(gui.Section):
         self.subf.grid(row=0, column=0)
         for (i, a) in enumerate(self.abilnames):
             self.abilchecks[i].grid(row=i, column=0)
-            util.replaceEntry(self.scores[i], self.person.abilities[a])
+            # util.replaceEntry(self.scores[i], self.person.abilities[a])
+            self.abiltexts[i].set(self.person.abilities[a])
             self.scores[i].grid(row=i, column=1)
             self.mods[i].grid(row=i, column=2)
-            self.abiltexts[i].trace('w', lambda a, b, c: self.update_character())
+            self.saves[i].grid(row=i, column=3)
+            if (a in self.person.saves):
+                self.saves[i].config(bg='green', fg='white')
+            self.abiltexts[i].trace('w',
+                                    lambda a, b, c: self.update_character())
         self.advbutton.grid(row=1, column=0)
         self.disbutton.grid(row=2, column=0)
         self.rolldisplay.grid(row=3, column=0)
@@ -59,6 +71,12 @@ class AbilityDisplay(gui.Section):
         # roll = '2d20h1' if (advantage and not disadvantage) else '2d20l1' if (disadvantage and not advantage) else '1d20'
         # result = r.roll(roll)
         result = self.person.ability_check(abil, adv=advantage, dis=disadvantage)
+        self.rolldisplay['text'] = '{}+{}={}'.format(*reversed(result))
+
+    def roll_save(self, abil):
+        advantage = self.adv.get()
+        disadvantage = self.dis.get()
+        result = self.person.ability_save(abil, adv=advantage, dis=disadvantage)
         self.rolldisplay['text'] = '{}+{}={}'.format(*reversed(result))
 
     def update_character(self):
@@ -80,7 +98,9 @@ class SkillDisplay(gui.Section):
 
     def draw_static(self):
         for (i, obj) in enumerate(self.buttons):
-            obj.grid(row=i, column=0)
+            obj.grid(row=i//3, column=i%3)
+            if (obj['text'] in self.person.skills):
+                obj.config(bg='green', fg='white')
 
     def roll_check(self, name):
         abil = self.skillmap[name]

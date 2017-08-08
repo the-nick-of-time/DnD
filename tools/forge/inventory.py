@@ -109,7 +109,7 @@ class InventoryHandler(gui.Section):
         self.newitem = tk.Button(self.totalinfo, text='New Item',
                                  command=self.new_item_start)
         ######
-        for (name, item) in self.handler:
+        for item in self.handler:
             t = item.type.split()[-1]
             self.objectblocks[t].append(ItemDisplay(self.coreframes[t], item, self.update_encumbrance))
         self.draw_static()
@@ -126,11 +126,12 @@ class InventoryHandler(gui.Section):
         self.newitem.grid(row=0, column=2)
 
     def draw_dynamic(self):
+        s = 4
         for block in self.objectblocks.values():
             i = 0
             for item in block:
                 if (item.get_number() > 0):
-                    item.grid(row=i, column=0)
+                    item.grid(row=i%s, column=i//s)
                     i += 1
         self.update_encumbrance()
 
