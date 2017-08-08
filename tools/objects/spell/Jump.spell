@@ -1,5 +1,5 @@
 {
-  "components": "VSM",
+  "components": "V, S, M (a grasshopper's hind leg)",
   "ritual": false,
   "effect": "You touch a creature. The creature's jump distance is tripled until the spell ends.",
   "range": "Touch",

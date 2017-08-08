@@ -1,5 +1,5 @@
 {
-  "components": "VS",
+  "components": "V, S",
   "ritual": true,
   "effect": "All nonmagical food and drink within a 5-foot radius sphere centered on a point of your choice within range is purified and rendered free of poison and disease.\n",
   "range": "10 feet",
