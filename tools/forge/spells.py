@@ -1,11 +1,34 @@
 import tkinter as tk
-# import tkinter.tix as tk
+from math import sqrt
 
 import helpers as h
 import GUIbasics as gui
 import interface as iface
 import tkUtility as util
 import classes as c
+import dice
+
+longdescription = """{name}
+{lvschool}
+Casting time: {cast}
+Range: {range}
+Components: {comp}
+Duration: {dur}
+{desc}
+"""
+
+
+class LongEffectDisplay(gui.Section):
+    def __init__(self, container, text):
+        gui.Section.__init__(self, container)
+        self.l = tk.Label(self.f, text=text, width=30, wraplength=200)
+        self.draw_static()
+
+    def draw_static(self):
+        self.l.grid(row=0, column=0)
+
+    def update(self, dummy, text):
+        self.l['text'] = text
 
 
 class NumberDisplay(gui.Section):
@@ -64,7 +87,17 @@ class SpellDisplay(gui.Section):
         args = (levelnamemap[self.handler.level], self.handler.school)
         lev = '{} {}'.format(*(reversed(args) if self.handler.level == 0 else args))
         self.leveltype = tk.Label(self.namelevel, text=lev)
-        self.castingtime = tk.Label(self.f, text=self.handler.casting_time)
+        self.timeanddisplay = tk.Frame(self.f)
+        self.castingtime = tk.Label(self.timeanddisplay,
+                                    text=self.handler.casting_time)
+        info = longdescription.format(name=self.handler.name,
+                                      lvschool=lev,
+                                      cast=self.handler.casting_time,
+                                      range=self.handler.range,
+                                      comp=self.handler.components,
+                                      dur=self.handler.duration,
+                                      desc=self.handler.effect)
+        self.moreinfo = gui.InfoButton(self.timeanddisplay, info)
         self.range = tk.Label(self.f, text=self.handler.range)
         d = self.handler.duration.capitalize() + (' (C)' if
                                                   self.handler.isconcentration
@@ -83,7 +116,10 @@ class SpellDisplay(gui.Section):
         self.nameL.grid(row=0, column=0)
         self.leveltype.grid(row=0, column=1)
         #######
-        self.castingtime.grid(row=1, column=0)
+        self.timeanddisplay.grid(row=1, column=0)
+        self.castingtime.grid(row=0, column=0)
+        self.moreinfo.grid(row=0, column=1)
+        #######
         self.range.grid(row=2, column=0)
         self.duration.grid(row=3, column=0)
         self.CAST.grid(row=4, column=0)
@@ -98,15 +134,14 @@ class SpellDisplay(gui.Section):
 
 
 class SpellSection(gui.Section):
-    def __init__(self, container, jf, character, numbers):
+    def __init__(self, container, jf, character, numbers, output):
         gui.Section.__init__(self, container, width=500, height=500)
         self.thisf = tk.Frame(self.f)
         self.character = character
         self.displays = {}
         self.numbers = numbers
+        self.effects = output
         # self.numbers = NumberDisplay(self.f, self.character)
-        self.effectvalue = tk.StringVar()
-        self.effects = gui.EffectPane(self.thisf, '', '')
         self.handler = c.SpellsPrepared(jf, character)
         for obj in self.handler.objects():
             self.displays[obj.name] = SpellDisplay(self.thisf, obj, self.effects, self.numbers)
@@ -118,24 +153,34 @@ class SpellSection(gui.Section):
         self.numbers.grid(row=0, column=1)
 
     def draw_dynamic(self):
-        s = 8
-        for (i, d) in enumerate(sorted(self.displays.values())):
-            d.grid(row=i%s, column=i//s)
-        i = len(self.displays)
-        self.effects.grid(row=i%s, column=i//s)
+        s = int(sqrt(len(self.displays)))
+        if (s):
+            for (i, d) in enumerate(sorted(self.displays.values())):
+                d.grid(row=i%s, column=i//s)
+            i = len(self.displays)
+            self.effects.grid(row=i%s, column=i//s)
 
 
 class main(gui.Section):
     def __init__(self, window):
         gui.Section.__init__(self, window)
         self.charactername = {}
-        self.QUIT = tk.Button(self.f, text='QUIT', command=self.writequit)
+        self.excessblock = tk.Frame(self.f)
+        # self.effects = gui.EffectPane(self.f, '', '')
+        self.effects = LongEffectDisplay(self.excessblock, '')
+        self.roll = dice.DiceRoll(self.excessblock)
+        self.QUIT = tk.Button(self.f, text='QUIT', command=self.writequit,
+                              fg='red')
         self.begin_start()
 
     def draw_static(self):
         self.handler.grid(row=0, column=0)
-        self.numbers.grid(row=0, column=1)
-        self.QUIT.grid(row=1, column=2)
+        # self.effects.grid(row=0, column=1)
+        self.excessblock.grid(row=0, column=1)
+        self.effects.grid(row=0, column=0)
+        self.roll.grid(row=1, column=0)
+        self.numbers.grid(row=0, column=2)
+        self.QUIT.grid(row=1, column=3)
 
     def begin_start(self):
         gui.Query(self.charactername, self.begin_end, 'Character name?')
@@ -147,7 +192,7 @@ class main(gui.Section):
         self.record = iface.JSONInterface(filename)
         self.character = c.Character(self.record)
         self.numbers = NumberDisplay(self.f, self.character)
-        self.handler = SpellSection(self.f, self.record, self.character, self.numbers)
+        self.handler = SpellSection(self.f, self.record, self.character, self.numbers, self.effects)
         self.container.deiconify()
         self.draw_static()
 
