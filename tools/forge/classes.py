@@ -13,9 +13,6 @@ import helpers as h
 import interface as iface
 import ClassMap as cm
 
-# __all__ = ['Character', 'Weapon', 'Spell', 'SpellAttack', 'Class',
-#            'RangedWeapon', 'Armor', 'Item', 'MagicItem']
-
 
 class Class:
     """Nonspecific representation of a D&D class.
@@ -187,6 +184,7 @@ class Character:
         self.classes = cm.ClassMap(lv)
         self.hp = HPhandler(self.record)
         self.inventory = Inventory(self.record)
+        self.spells = SpellsPrepared(jf, self)
         self.attacks = {}
         self.register_attacks()
         self.bonuses = self.get_bonuses()
@@ -194,7 +192,6 @@ class Character:
         self.conditions = set()
         self.proficiencyDice = False
         self.lucky = False  # except that halflings get it
-        # self.spells = SpellsPrepared(jf, self)
 
     def __str__(self):
         return self.name
@@ -219,6 +216,7 @@ class Character:
             except KeyError:
                 return 0
             return cl.level
+        raise AttributeError
 
     def add_condition(self, name):
         if (name == 'exhaustion'):
@@ -252,9 +250,12 @@ class Character:
 
     def register_attacks(self):
         for item in self.inventory:
-            if (isinstance(item, Attack)):
+            if (isinstance(item.obj, Attack)):
                 self.attacks[item.name] = item
         # TODO: Work out spells as well; needs classification of spells as attacks
+        for sp in self.spells:
+            if (isinstance(sp, Attack)):
+                self.attacks[sp.name] = sp
 
     def spell_spend(self, spell):
         if (isinstance(spell, int)):
@@ -276,7 +277,8 @@ class Character:
             prof = self.proficiency
         else:
             prof = 0
-        bon = self.bonuses['check'][which] + self.bonuses['skill'][skill]
+        bon = (self.bonuses['check'] or {}).get(which, 0) \
+              + (self.bonuses['skill'] or {}).get(skill, 0)
         return (roll + prof + ability + bon, prof + ability + bon, roll)
 
     def ability_save(self, which, adv=False, dis=False):
@@ -288,7 +290,7 @@ class Character:
         ability = h.modifier(self.abilities[which])
         rollstr = '2d20h1' if (adv and not dis) else '2d20l1' if (dis and not adv) else '1d20'
         roll = r.roll(rollstr)
-        bon = self.bonuses['save'][which]
+        bon = (self.bonuses['save'] or {}).get(which, 0)
         return (roll + prof + ability + bon, prof + ability + bon, roll)
 
     def death_save(self):
@@ -306,14 +308,14 @@ class Character:
 
     def get_bonuses(self):
         bonuses = defaultdict(lambda: 0)
-        for item in self.inventory:
-            newbonus = item.get('/bonus')
-            if (newbonus is not None):
-                for var, amount in newbonus.items():
-                    if (var not in bonuses):
-                        bonuses.update({var: amount})
-                    else:
-                        bonuses[var] += amount
+        # for item in self.inventory:
+        #     newbonus = item.get('/bonus')
+        #     if (newbonus is not None):
+        #         for var, amount in newbonus.items():
+        #             if (var not in bonuses):
+        #                 bonuses.update({var: amount})
+        #             else:
+        #                 bonuses[var] += amount
         return bonuses
 
     def set_abilities(self, name, value):
@@ -503,6 +505,11 @@ class ItemEntry:
         self.person = character
         self.load_from_file()
 
+    def __getattr__(self, key):
+        if (self.obj):
+            return self.obj.__getattribute__(key)
+        raise AttributeError
+
     def load_from_file(self):
         itemtype = self.record.get(self.path + '/type').replace(' ', '.')
         basetype = itemtype.split(sep='.')[-1]
@@ -542,6 +549,7 @@ class ItemEntry:
 
     @equipped.setter
     def equipped(self, value):
+        # Make it a str instead for slot name occupied
         if (isinstance(value, bool)):
             self.record.set(self.path + '/equipped', value)
         else:
@@ -725,7 +733,6 @@ class Attack:
     damage_dice
     num_targets: How many targets can be hit by this attack. If the
         attack is AOE, just use a reasonable upper bound.
-    path: a gui.Interface path to the attack section.
 
     Contained methods:
     @staticmethod
@@ -745,11 +752,10 @@ class Attack:
         # an iterable of attack rolls
         # an iterable of damage rolls
         # a string of the effects of the attack
-        attack_string = 'Attack rolls: ' + ', '.join(result[0])
-        damage_string = 'Damage rolls: ' + ', '.join(result[1])
+        attack_string = 'Attack rolls: ' + ', '.join(str(a) for a in result[0])
+        damage_string = 'Damage rolls: ' + ', '.join(str(a) for a in result[1])
         effects = result[2]
-        panel = gui.AttackResult(path['display'], attack_string, damage_string,
-                                 effects)
+        return (attack_string, damage_string, effects)
 
     @staticmethod
     def attackwrap(attack_function):
@@ -830,6 +836,9 @@ class SpellsPrepared:
         self.spells = {}
         for name in self.prepared:
             self.spells[name] = self.load_from_file(name)
+
+    def __iter__(self):
+        return (obj for obj in self.spells.values())
 
     @property
     def prepared(self):
@@ -944,23 +953,24 @@ class SpellAttack(Spell, Attack):
                 elif (attack_roll == 20):
                     # Critical hit
                     attack_roll = 'Critical hit!'
-                    damage_mods = r.roll(damage_bonus, mode='critical') \
+                    damage_mods = r.roll(damage_bonus, option='critical') \
                                   + abil
-                    damage_roll = r.roll(self.damage_dice, mode='critical') \
+                    damage_roll = r.roll(self.damage_dice, option='critical') \
                                   + damage_mods
                 else:
                     # Normal attack
                     attack_roll += attack_mods
                     damage_mods = r.roll(damage_bonus) + abil
                     damage_roll = r.roll(self.damage_dice) + damage_mods
-                attack.append(attack_roll)
-                damage.append(damage_roll)
+                attacks.append(attack_roll)
+                damages.append(damage_roll)
         else:
             formatstr = 'Targets make a DC {n} {t} save.'
-            attacks.append(formatstr.format(character.save_DC, self.save))
+            attacks.append(formatstr.format(n=character.save_DC(self), t=self.save))
             damage_mods = r.roll(damage_bonus) + abil
             damage = r.roll(self.damage_dice) + damage_mods
             damages.append(damage)
+        return (attacks, damages, self.effect)
 
 
 class Item:
@@ -1027,20 +1037,21 @@ class Weapon(Attack, Item):
     @Attack.attackwrap
     def attack(self, character, adv, dis, attack_bonus, damage_bonus):
         if (adv and not dis):
-            dice = '1d20h1'
+            dice = h.ADV
         elif (dis and not adv):
-            dice = '1d20l1'
+            dice = h.DIS
         else:
-            dice = '1d20'
+            dice = h.D20
 
         attack = []
         damage = []
+        abil = h.modifier(character.relevant_abil(self))
         for all in range(self.num_targets):
             attack_roll = r.roll(dice)
             attack_mods = r.roll(attack_bonus) \
                           + r.roll(character.proficiency) \
-                          + r.roll(self.magic_bonus['attack']) \
-                          + character.abil_get_relevant(self, 'modifier')
+                          + abil #\
+                        #   + r.roll(self.magic_bonus['attack'])
 
             if (attack_roll == 1):
                 # Crit fail
@@ -1049,21 +1060,22 @@ class Weapon(Attack, Item):
             elif (attack_roll == 20):
                 # Critical hit
                 attack_roll = 'Critical hit!'
-                damage_mods = character.abil_get_relevant(self, 'modifier') \
-                              + r.roll(damage_bonus, mode='critical') \
-                              + r.roll(self.magic_bonus['damage'],
-                                       mode='critical')
-                damage_roll = r.roll(self.damage_dice, mode='critical') \
+                damage_mods = abil \
+                              + r.roll(damage_bonus, option='critical') #\
+                            #   + r.roll(self.magic_bonus['damage'],
+                            #            option='critical')
+                damage_roll = r.roll(self.damage_dice, option='critical') \
                               + damage_mods
             else:
                 # Normal attack
                 attack_roll += attack_mods
-                damage_mods = character.abil_get_relevant(self, 'modifier') \
-                              + r.roll(damage_bonus) \
-                              + r.roll(self.magic_bonus['damage'])
+                damage_mods = abil \
+                              + r.roll(damage_bonus) #\
+                            #   + r.roll(self.magic_bonus['damage'])
                 damage_roll = r.roll(self.damage_dice) + damage_mods
             attack.append(attack_roll)
             damage.append(damage_roll)
+        return (attack, damage, self.effect)
 
 
 class RangedWeapon(Weapon):
@@ -1161,15 +1173,21 @@ class MagicCharge(Resource):
 
 
 class MagicArmor(MagicItem, Armor):
-    pass
+    def __init__(self, jf):
+        MagicItem.__init__(self, jf)
+        Armor.__init__(self, jf)
 
 
 class MagicWeapon(MagicItem, Weapon):
-    pass
+    def __init__(self, jf):
+        MagicItem.__init__(self, jf)
+        Weapon.__init__(self, jf)
 
 
 class MagicRangedWeapon(MagicItem, RangedWeapon):
-    pass
+    def __init__(self, jf):
+        MagicItem.__init__(self, jf)
+        RangedWeapon.__init__(self, jf)
 
 
 class MyError(Exception):

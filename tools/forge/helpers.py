@@ -1,7 +1,7 @@
 import re
 import json
 
-from classes import *
+import classes as c
 
 # with open('./tools/forge/conditions.json') as f:
 with open('./conditions.json') as f:
@@ -52,22 +52,22 @@ def pull_from(*args):
 def type_select(extension):
     """Find the class corresponding to a file's extension."""
     tree = {
-        "armor": {"magic": {"": MagicArmor},
-                  "": Armor},
-        "character": {"": Character},
-        "class": {"": Class},
-        "item": {"magic": {"": MagicItem},
-                 "": Item},
+        "armor": {"magic": {"": c.MagicArmor},
+                  "": c.Armor},
+        "character": {"": c.Character},
+        "class": {"": c.Class},
+        "item": {"magic": {"": c.MagicItem},
+                 "": c.Item},
         # "race": {"": Race},
         # "skill": {"": Skill},
-        "spell": {"": Spell},
-        "treasure": {"": Item},
+        "spell": {"": c.Spell},
+        "treasure": {"": c.Item},
         "weapon": {
-            "magic": {"ranged": {"": MagicRangedWeapon},
-                      "": MagicWeapon},
-            "ranged": {"magic": {"": MagicRangedWeapon},
-                       "": RangedWeapon},
-            "": Weapon
+            "magic": {"ranged": {"": c.MagicRangedWeapon},
+                      "": c.MagicWeapon},
+            "ranged": {"magic": {"": c.MagicRangedWeapon},
+                       "": c.RangedWeapon},
+            "": c.Weapon
         }
     }
     steps = extension.split('.')
@@ -97,17 +97,23 @@ def find_file(name, type_):
         raise
 
 
-def path_follower(path):
+def path_follower(path, alltheway=False):
     from interface import JSONInterface
     match = re.match('/*(\w*.*\.[a-z]*)(.*)', path)
     try:
         tofile = match.group(0)
         infile = match.group(1)
     except IndexError:
-        raise
-    # if (os.path.isfile(JSONInterface.OBJECTSPATH + tofile)):
-    try:
+        raise ValueError('Needs to be given as a path to a file then within'
+                         'the file to the desired data')
+    if (os.path.isfile(JSONInterface.OBJECTSPATH + tofile)):
         jf = JSONInterface(tofile)
-        return (jf, infile)
-    except FileNotFoundError:
-        raise
+        if (alltheway):
+            # The data within the sought file
+            return jf.get(infile)
+        else:
+            # The file and path within the file seperately, to work with
+            #   classes.Resource
+            return (jf, infile)
+    else:
+        raise FileNotFoundError
