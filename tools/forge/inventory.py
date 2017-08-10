@@ -97,7 +97,7 @@ class InventoryHandler(gui.Section):
         self.character = character
         self.newitemdata = {}
         self.frameframe = tk.Frame(self.f)
-        self.framenames = ['item', 'treasure', 'weapon', 'armor']
+        self.framenames = ['item', 'treasure', 'weapon', 'apparel']
         self.coreframes = {n: tk.LabelFrame(self.frameframe,
                                             text=pluralize(n).upper(),
                                             bd=2, relief='ridge')

@@ -1,10 +1,10 @@
 {
   "name": "Throwing Knife",
   "damage": "1d4",
+  "damage_type": "Piercing",
   "effect": "The knife flies from your hand, spinning towards your target.",
   "description": "This knife is specially weighted for throwing.",
   "attacks": 1,
-  "type": "Piercing",
   "hands": "one",
   "ability": [
     "Dexterity",
@@ -12,7 +12,7 @@
   ],
   "value": 1,
   "weight": 1.5,
-  "ammunition": "Throwing Knife",
+  "consumes": "Throwing Knife",
   "range": 30,
   "thrown": true
 }

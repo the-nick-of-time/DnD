@@ -1,6 +1,5 @@
 {
   "name": "Woodcarver's tools",
-  "consumable": false,
   "weight": 5,
   "value": 1,
   "description": "This box contains a variety of knives, picks, and other such tools.",

@@ -1,6 +1,7 @@
 {
   "name": "Calan",
   "level": "Paladin 2, Cleric (Light) 11",
+  "race": "Human",
   "HP": {
     "max": 134,
     "current": 134,
@@ -17,23 +18,23 @@
     }
   },
   "abilities": {
-    "strength": 16,
-    "dexterity": 9,
-    "constitution": 16,
-    "intelligence": 12,
-    "wisdom": 18,
-    "charisma": 16
+    "Strength": 16,
+    "Dexterity": 9,
+    "Constitution": 16,
+    "Intelligence": 12,
+    "Wisdom": 18,
+    "Charisma": 16
   },
   "saves": [
-    "wisdom",
-    "charisma"
+    "Wisdom",
+    "Charisma"
   ],
   "skills": [
     "Survival",
     "Intimidation",
     "Medicine"
   ],
-  "equipment": {
+  "inventory": {
     "Longsword": {
       "type": "weapon",
       "quantity": 1,
@@ -45,7 +46,7 @@
       "equipped": true
     },
     "Plate Armor": {
-      "type": "armor",
+      "type": "apparel",
       "quantity": 1,
       "equipped": true
     },
@@ -65,12 +66,12 @@
       "equipped": true
     },
     "Animated Shield": {
-      "type": "magic armor",
+      "type": "magic apparel",
       "quantity": 1,
       "equipped": true,
       "charge": {
         "number": 1,
-        "path": "armor/Animated_Shield.magic.armor/charges"
+        "path": "armor/Animated_Shield.magic.apparel/charges"
       }
     }
   },
@@ -123,6 +124,15 @@
     "Channel Divinity": "class/Cleric.class/features/6/Channel Divinity",
     "Divine Intervention": "class/Cleric.class/features/10/Divine Intervention",
     "Destroy Undead": "class/Cleric.class/features/11/Destroy Undead",
-    "Ability Score Improvement": "class/Cleric.class/features/8/Ability Score Improvement"
+    "Ability Score Improvement": "class/Cleric.class/features/8/Ability Score Improvement",
+    "Fighting Style: PROTECTION": "class/Paladin.class/features/2/choose_one/Fighting Style: PROTECTION",
+    "Divine Smite": "class/Paladin.class/features/2/Divine Smite",
+    "Lay on Hands": "class/Paladin.class/features/1/Lay on Hands",
+    "Divine Sense": "class/Paladin.class/features/1/Divine Sense",
+    "Bonus Cantrip": "class/Cleric.Light.sub.class/features/1/Bonus Cantrip",
+    "Warding Flare": "class/Cleric.Light.sub.class/features/6/Warding Flare",
+    "Channel Divinity: Radiance of the Dawn": "class/Cleric.Light.sub.class/features/2/Channel Divinity: Radiance of the Dawn",
+    "Potent Spellcasting": "class/Cleric.Light.sub.class/features/8/Potent Spellcasting",
+    "Domain Spells": "class/Cleric.Light.sub.class/features/9/Domain Spells"
   }
 }

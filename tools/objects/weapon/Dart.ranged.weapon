@@ -2,16 +2,17 @@
   "name": "Dart",
   "damage": "1d4",
   "damage_type": "Piercing",
-  "type": "simple",
+  "type": "Simple",
   "attacks": 1,
   "hands": "one",
   "ability": [
-    "dexterity",
-    "strength"
+    "Dexterity",
+    "Strength"
   ],
   "value": 0.02,
   "weight": 0.25,
-  "ammunition": "Dart",
+  "consumes": "Dart",
+  "thrown": true,
   "range": 30,
   "description": "A dart has a wooden handle and an iron tip.",
   "effect": "This dart can be thrown, though not very stably."

@@ -13,6 +13,5 @@
   "duration": "Instantaneous",
   "level": 9,
   "name": "Time Stop",
-  "casting_time": "1 action",
-  "damage": "1d4"
+  "casting_time": "1 action"
 }

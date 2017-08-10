@@ -1,6 +1,6 @@
 {
   "name": "Torch",
-  "consumable": true,
+  "consumes": "Torch",
   "weight": 1,
   "value": 0.01,
   "description": "This torch is a simple stick with one end wrapped in pitch-soaked cloth.",

@@ -1,6 +1,6 @@
 {
   "name": "Silk Gloves",
-  "type": "glove",
+  "type": "Glove",
   "bonus": {
     "AC": 0
   },

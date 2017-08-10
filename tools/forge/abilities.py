@@ -9,8 +9,8 @@ import tkUtility as util
 import interface as iface
 
 class AbilityDisplay(gui.Section):
-    abilnames = ['strength', 'dexterity', 'constitution',
-                 'intelligence', 'wisdom', 'charisma']
+    abilnames = ['Strength', 'Dexterity', 'Constitution',
+                 'Intelligence', 'Wisdom', 'Charisma']
     def __init__(self, master, character):
         gui.Section.__init__(self, master)
         self.person = character

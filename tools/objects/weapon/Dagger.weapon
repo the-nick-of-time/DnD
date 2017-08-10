@@ -1,7 +1,7 @@
 {
   "name": "Dagger",
-  "damage": ["1d4", "Piercing"],
-  "attacks": 1,
+  "damage": "1d4",
+  "damage_type": "Piercing",
   "hands": "one",
   "ability": [
     "Dexterity",

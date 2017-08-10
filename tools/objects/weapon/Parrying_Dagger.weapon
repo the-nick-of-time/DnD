@@ -2,10 +2,11 @@
   "name": "Parrying Dagger",
   "value": 8,
   "weight": 1,
-  "description": "Any turn you are wielding this dagger and do not attack with it, you get a +2 bonus to AC.",
-  "damage": ["1d4", "Piercing"],
+  "description": "Any turn you are wielding this dagger and do not attack with it, you get a +2 bonus to AC. You do not get this bonus if you are not proficient with the dagger's use.",
+  "damage": "1d4",
+  "damage_type": "Piercing",
   "ability": ["Dexterity", "Strength"],
-  "type": "simple",
+  "type": "Martial",
   "hands": "one",
   "effect": "Attacking with this dagger removes your defensive bonus."
 }

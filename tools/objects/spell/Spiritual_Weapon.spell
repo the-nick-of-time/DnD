@@ -14,5 +14,5 @@
   "name": "Spiritual Weapon",
   "casting_time": "1 bonus action",
   "attack_roll": true,
-  "damage": "1d8"
+  "damage": "1d8+$casting_mod"
 }

@@ -1,13 +1,11 @@
 {
-  "name": "arrow",
-  "damage": [
-    "1",
-    "Piercing"
-  ],
+  "name": "Arrow",
+  "damage": "1",
+  "damage_type": "Piercing",
   "ability": [
     "Dexterity"
   ],
-  "consumable": true,
+  "consumes": "Arrow",
   "value": 0.05,
   "weight": 0.05,
   "description": "This arrow may be tipped with flint or iron.",

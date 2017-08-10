@@ -2,7 +2,6 @@
   "name": "Crowbar",
   "value": 2,
   "weight": 5,
-  "consumable": false,
   "description": "This crowbar is a simple stick of iron with a flattened end.",
   "effect": "Using a crowbar grants advantage on Strength checks where the crowbar's leverage can be applied."
 }

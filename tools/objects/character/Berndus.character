@@ -1,7 +1,7 @@
 {
   "name": "Berndus",
   "level": "Fighter (Battle Master) 4",
-  "race": "Halfling Stout",
+  "race": "Halfling (Stout)",
   "HP": {
     "max": 37,
     "current": 37,
@@ -14,12 +14,12 @@
     }
   },
   "abilities": {
-    "strength": 9,
-    "dexterity": 17,
-    "constitution": 16,
-    "intelligence": 10,
-    "wisdom": 14,
-    "charisma": 7
+    "Strength": 9,
+    "Dexterity": 17,
+    "Constitution": 16,
+    "Intelligence": 10,
+    "Wisdom": 14,
+    "Charisma": 7
   },
   "skills": [
     "Acrobatics",
@@ -29,15 +29,18 @@
     "Athletics"
   ],
   "saves": [
-    "strength",
-    "constitution"
+    "Strength",
+    "Constitution"
+  ],
+  "tools": [
+    "Leatherworking Tools"
   ],
   "spell_slots": [],
   "spells_prepared": {
     "always_prepared": [],
     "prepared_today": []
   },
-  "equipment": {
+  "inventory": {
     "Dagger": {
       "quantity": 3,
       "type": "weapon",
@@ -55,7 +58,7 @@
     },
     "Studded Leather": {
       "quantity": 1,
-      "type": "armor",
+      "type": "apparel",
       "equipped": true
     },
     "cp": {
@@ -118,5 +121,20 @@
       "type": "treasure",
       "equipped": false
     }
+  },
+  "features": {
+    "Lucky": "race/Halfling.race/features/Lucky",
+    "Brave": "race/Halfling.race/features/Brave",
+    "Halfling Nimbleness": "race/Halfling.race/features/Halfling Nimbleness",
+    "Stout Resilience": "race/Halfling.Stout.sub.race/features/Stout Resilience",
+    "Fighting Style: TWO-WEAPON FIGHTING": "class/Fighter.class/features/1/choose/Fighting Style: TWO-WEAPON FIGHTING",
+    "Second Wind": "class/Fighter.class/features/1/Second Wind",
+    "Action Surge": "class/Fighter.class/features/2/Action Surge",
+    "Martial Archetype: Battle Master": "class/Fighter.class/features/3/Martial Archetype: Battle Master",
+    "Combat Superiority": "class/Fighter.Battle_Master.sub.class/features/3/Combat Superiority",
+    "Student of War": "class/Fighter.Battle_Master.sub.class/features/3/Student of War",
+    "Disarming Attack": "class/Fighter.Battle_Master.sub.class/features/3/choose/Disarming Attack",
+    "Parry": "class/Fighter.Battle_Master.sub.class/features/3/choose/Parry",
+    "Trip Attack": "class/Fighter.Battle_Master.sub.class/features/3/choose/Trip Attack"
   }
 }

@@ -91,3 +91,29 @@ class ClassMap:
                 #     {str(mainclass): iface.LinkedInterface(*superclasses,
                 #                                            mainclass)})
             self.classes.update({str(mainclass): c.Class(jf, L)})
+
+
+class RaceMap:
+    def __init__(self, s):
+        pattern = '\s*(\w+)\s*\(?(\w+)?\)?\s*'
+        res = re.match(pattern, s).groups()
+        self.race = res[0]
+        self.subrace = res[1] or ''
+
+    def __getattr__(self, key):
+        return self.core.__getattribute__(key)
+
+    def __str__(self):
+        return self.race + (' ({})'.format(self.subrace)
+                            if self.subrace else '')
+
+    def hook(self):
+        main = 'race/{}.race'.format(self.race)
+        sub = 'race/{}.{}.sub.race'.format(self.race, self.subrace)
+        mainjf = iface.JSONInterface(main)
+        if (self.subrace):
+            subjf = iface.JSONInterface(sub)
+            self.core = c.Race(iface.LinkedInterface(mainjf, subjf), str(self))
+        else:
+            # For the sake of having a consistent API it needs to be a LinkedInterface
+            self.core = c.Race(iface.LinkedInterface(mainjf), str(self))

@@ -2,11 +2,13 @@
   "name": "Greataxe",
   "value": 30,
   "weight": 7,
-  "effect": "You attack with a mighty axe.",
-  "damage": ["1d12", "slashing"],
-  "ability": ["Strength"],
+  "effect": "This axe deals massive damage.",
+  "damage": "1d12",
+  "damage_type": "Slashing",
+  "ability": [
+    "Strength"
+  ],
   "type": "martial",
   "hands": "two",
-  "description": "This is a large, long-bladed axe.",
-  "effect": "This axe deals massive damage."
+  "description": "This is a large, long-bladed axe."
 }

@@ -52,8 +52,8 @@ def pull_from(*args):
 def type_select(extension):
     """Find the class corresponding to a file's extension."""
     tree = {
-        "armor": {"magic": {"": c.MagicArmor},
-                  "": c.Armor},
+        "apparel": {"magic": {"": c.MagicArmor},
+                    "": c.Armor},
         "character": {"": c.Character},
         "class": {"": c.Class},
         "item": {"magic": {"": c.MagicItem},
@@ -99,10 +99,10 @@ def find_file(name, type_):
 
 def path_follower(path, alltheway=False):
     from interface import JSONInterface
-    match = re.match('/*(\w*.*\.[a-z]*)(.*)', path)
+    match = re.match('/*(\w*.*\.[a-z]*)(/.*)', path)
     try:
-        tofile = match.group(0)
-        infile = match.group(1)
+        tofile = match.group(1)
+        infile = match.group(2)
     except IndexError:
         raise ValueError('Needs to be given as a path to a file then within'
                          'the file to the desired data')
@@ -112,7 +112,7 @@ def path_follower(path, alltheway=False):
             # The data within the sought file
             return jf.get(infile)
         else:
-            # The file and path within the file seperately, to work with
+            # The file and path within the file separately, to work with
             #   classes.Resource
             return (jf, infile)
     else:

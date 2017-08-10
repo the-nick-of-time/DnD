@@ -6,14 +6,11 @@
   ],
   "hit_dice": "1d8",
   "spellcasting": {
-    "ability": "wisdom",
+    "ability": "Wisdom",
     "slots": "full",
     "levels": "full",
     "known": "all",
-    "prepare": [
-      "$wis_mod",
-      "$caster_level"
-    ],
+    "prepare": "$wis_mod+$caster_level",
     "always_prepared": []
   },
   "features": [
@@ -29,10 +26,12 @@
           "Religion"
         ]
       },
-      "Ability Save Proficiencies": [
-        "wisdom",
-        "charisma"
-      ],
+      "Ability Save Proficiencies": {
+        "types": [
+          "Wisdom",
+          "Charisma"
+        ]
+      },
       "Armor Proficiencies": {
         "types": [
           "Light",
@@ -52,6 +51,12 @@
       },
       "Divine Domain": {
         "description": "Choose one domain related to your deity: Knowledge, Life, Light, Nature, Tempest, Trickery, or War. Each domain is detailed at the end of the class description, and each one provides examples of gods associated with it. Your choice grants you domain spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd level, and additional benefits at 6th, 8th, and 17th levels. Each domain has a list of spells-its domain spells-that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you."
+      },
+      "choose": {
+        "number": 1,
+        "Divine Domain: Knowledge": {
+          "description": "Each domain has a list of spells-its domain spells-that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.           The gods of knowledge-including Oghma, Boccob, Gilean, Aureon, and Thoth-value learning and understanding above ali. Some teach that knowledge is to be gathered and shared in libraries and universities, or promote the practical knowledge of craft and invention. Some deities hoard knowledge and keep its secrets to themselves. And some promise their followers that they will gain tremendous power if they unlock the secrets of the multiverse. Followers of these gods study esoteric lore, collect old tomes, delve into the secret places of the earth, and learn ali they cano Some gods of knowledge pro mote the practical knowledge of craft and invention, including smith deities like Gond, Reorx, Onatar, Moradin, Hephaestus, and Goibhniu.\nKNOWLEDGE DOMAIN SPELLS\nCleric Level | Spells\n     1st     | Command, Identify\n     3rd     | Augury, Suggestion\n     5th     | Nondetection, Speak with Dead\n     7th     | Arcane Eye, Confusion\n     9th     | Legend Lore, Scrying"
+        }
       }
     },
     {

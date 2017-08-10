@@ -1,15 +1,15 @@
 {
   "name": "Shortbow",
   "damage": "1d6",
-  "attacks": 1,
-  "type": "Piercing",
+  "damage_type": "Piercing",
+  "type": "Simple",
   "hands": "two",
   "ability": [
     "Dexterity"
   ],
   "value": 25,
   "weight": 2,
-  "ammunition": "arrow",
+  "consumes": "Arrow",
   "range": 80,
   "thrown": false,
   "description": "This bow is about three feet tall when strung.",

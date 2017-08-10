@@ -4,8 +4,9 @@
   "weight": 1,
   "effect": "You slash or stab your opponent with this knife.",
   "description": "This knife is equally good at cutting sticks and throats.",
-  "damage": ["1d4", "Piercing"],
+  "damage": "1d4",
+  "damage_type": "Piercing",
   "ability": ["Dexterity", "Strength"],
-  "type": "simple",
+  "type": "Simple",
   "hands": "one"
 }

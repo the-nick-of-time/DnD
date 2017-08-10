@@ -40,8 +40,8 @@ class Class:
         self.level = classlevel
         # self.hit_dice = jf.get('/hit_dice')
         # self.saves = jf.get('/saves')
-        self._features = jf.get('*/features')
-        self.features = set()
+        # self._features = jf.get('*/features')
+        self.features = {}
         self.get_features()
 
     def get(self, key):
@@ -49,12 +49,24 @@ class Class:
 
     def get_features(self):
         """Gets the current features given a certain class level."""
-        pass
-        # for name in self._features:
-        #     for lv in self._features[name]:
-        #         if (int(lv) <= self.level):
-        #             # Add it to the set of enabled features
-        #             self.features.add(self._features[name][lv])
+        featurelist = self.record.get('*/features')
+        for lv in range(self.level, 0, -1):
+            for name in featurelist[lv]:
+                if (name not in self.features):
+                    self.features.update(featurelist[lv][name])
+
+
+class Race:
+    def __init__(self, jf, name):
+        self.record = jf
+        self.name = name
+        self.features = {}
+        self.get_features()
+
+    def get_features(self):
+        featuredict = self.record.get('*/features')
+        for name in featuredict:
+            self.features.update(featuredict[name])
 
 
 class Resource:
@@ -182,33 +194,35 @@ class Character:
         self.saves = jf.get('/saves')
         lv = jf.get('/level')
         self.classes = cm.ClassMap(lv)
+        self.race = cm.RaceMap(jf.get('/race'))
         self.hp = HPhandler(self.record)
         self.inventory = Inventory(self.record)
         self.spells = SpellsPrepared(jf, self)
         self.attacks = {}
         self.register_attacks()
+        self.features = self.get_features()
         self.bonuses = self.get_bonuses()
         self.death_save_fails = 0
         self.conditions = set()
-        self.proficiencyDice = False
         self.lucky = False  # except that halflings get it
 
     def __str__(self):
         return self.name
 
     def __getattr__(self, key):
+        key = key.lstrip('$')
         if (key.lower() == 'str_mod'):
-            return h.modifier(self.abilities['strength'])
+            return h.modifier(self.abilities['Strength'])
         if (key.lower() == 'dex_mod'):
-            return h.modifier(self.abilities['dexterity'])
+            return h.modifier(self.abilities['Dexterity'])
         if (key.lower() == 'con_mod'):
-            return h.modifier(self.abilities['constitution'])
+            return h.modifier(self.abilities['Constitution'])
         if (key.lower() == 'int_mod'):
-            return h.modifier(self.abilities['intelligence'])
+            return h.modifier(self.abilities['Intelligence'])
         if (key.lower() == 'wis_mod'):
-            return h.modifier(self.abilities['wisdom'])
+            return h.modifier(self.abilities['Wisdom'])
         if (key.lower() == 'cha_mod'):
-            return h.modifier(self.abilities['charisma'])
+            return h.modifier(self.abilities['Charisma'])
         if (key.endswith('_level')):
             head, _, _ = key.partition('_')
             try:
@@ -268,6 +282,16 @@ class Character:
         else:
             raise (OutOfSpells(self, spell))
 
+    def item_consume(self, name):
+        try:
+            obj = self.inventory[name]
+        except KeyError:
+            raise OutOfItems(self, name)
+        if (obj.number > 0):
+            obj.number -= 1
+        else:
+            raise OutOfItems(self, name)
+
     def ability_check(self, which, skill='', adv=False, dis=False):
         applyskill = skill in self.skills
         ability = h.modifier(self.abilities[which])
@@ -308,6 +332,7 @@ class Character:
 
     def get_bonuses(self):
         bonuses = defaultdict(lambda: 0)
+        # bonuses = {}
         # for item in self.inventory:
         #     newbonus = item.get('/bonus')
         #     if (newbonus is not None):
@@ -317,6 +342,22 @@ class Character:
         #             else:
         #                 bonuses[var] += amount
         return bonuses
+
+    def get_features(self):
+        features = {}
+        # features.update(self.race.features)
+        # for n, c, l in self.classes:
+        #     features.update(c.features)
+        return features
+
+    def get_resources(self):
+        resources = []
+        # for item in self.inventory:
+        #
+        # for n in self.features:
+        #     if ('resource' in self.features[n]):
+        #         resources.append(self.features[n]['resource'])
+        return resources
 
     def set_abilities(self, name, value):
         self.abilities[name] = value
@@ -441,6 +482,18 @@ class Character:
         elif (what == 'short'):
             pass
 
+    def parse_vars(self, s):
+        if (isinstance(s, str)):
+            pattern = '\$[a-zA-Z_]+'
+            rep = lambda m: str(self.__getattr__(m.group(0)))
+            new = re.sub(pattern, rep, s)
+            return r.roll(new)
+        elif (isinstance(s, int) or s is None):
+            return s
+        else:
+            raise TypeError('This should work on anything directly grabbed '
+                            'from an object file')
+
     def write(self):
         self.record.set('/abilities', self.abilities)
         # self.record.set('/spell_slots', self.spell_slots)
@@ -469,8 +522,8 @@ class Inventory:
         return (entry for entry in self.items.values())
 
     def load_items(self):
-        for name in self.record.get('/equipment'):
-            path = '/equipment/' + name
+        for name in self.record.get('/inventory'):
+            path = '/inventory/' + name
             self.items[name] = ItemEntry(self.record, path)
 
     def setq(self, name, value):
@@ -487,7 +540,7 @@ class Inventory:
 
     def newslot(self, name, quantity=1, type='item', equipped=False):
         """Creates a new item in the inventory."""
-        path = '/equipment/' + name
+        path = '/inventory/' + name
         self.record.set(path, OrderedDict())
         self.record.set(path + '/type', type)
         self.record.set(path + '/quantity', quantity)
@@ -1214,13 +1267,13 @@ class OutOfSpells(MyError):
 
 
 class OutOfItems(MyError):
-    def __init__(self, character, item):
+    def __init__(self, character, name):
         self.character = character
-        self.item = item
+        self.name = name
 
     def __str__(self):
         formatstr = '{char} has no {item}s remaining.'
-        return formatstr.format(char=self.character.name, item=self.item.name)
+        return formatstr.format(char=self.character.name, item=self.name)
 
 
 class OverflowSpells(MyError):

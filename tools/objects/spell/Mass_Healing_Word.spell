@@ -12,6 +12,5 @@
   "duration": "Instantaneous",
   "level": 3,
   "name": "Mass Healing Word",
-  "casting_time": "1 bonus action",
-  "damage": "1d4"
+  "casting_time": "1 bonus action"
 }

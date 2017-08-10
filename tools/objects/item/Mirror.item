@@ -2,7 +2,6 @@
   "name": "Mirror",
   "value": 2,
   "weight": 0.5,
-  "consumable": false,
   "description": "This mirror reflects light very well.",
   "effect": "You can look around corners, make signals, or just examine yourself with this mirror."
 }

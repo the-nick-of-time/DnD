@@ -1,0 +1,17 @@
+{
+  "name": "Human",
+  "bonus": {
+    "Strength": 1,
+		"Dexterity": 1,
+		"Constitution": 1,
+		"Intelligence": 1,
+		"Wisdom": 1,
+		"Charisma": 1
+  },
+  "size": "Medium",
+  "features": {
+		"Skill Proficiency": {
+		  "description": "You get one extra skill proficiency"
+		}
+	}
+}

@@ -1,6 +1,6 @@
 {
   "name": "Candle",
-  "consumable": true,
+  "consumes": "Candle",
   "weight": 0,
   "value": 0.01,
   "description": "This small tallow candle is about the simplest light source you can get.",

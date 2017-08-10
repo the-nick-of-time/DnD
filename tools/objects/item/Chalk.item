@@ -2,7 +2,6 @@
   "name": "Chalk",
   "value": 0.01,
   "weight": 0.01,
-  "consumable": false,
   "description": "This stick of chalk is meant to draw on slates.",
   "effect": "You make a small mark on a hard surface."
 }

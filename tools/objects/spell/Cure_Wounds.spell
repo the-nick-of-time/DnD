@@ -16,6 +16,5 @@
   "duration": "Instantaneous",
   "level": 1,
   "name": "Cure Wounds",
-  "casting_time": "1 action",
-  "damage": "1d8"
+  "casting_time": "1 action"
 }

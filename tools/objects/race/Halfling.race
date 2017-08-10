@@ -7,7 +7,9 @@
   "features": {
     "Lucky": {
       "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must take the new roll.",
-      "d20_suffix": "r1"
+      "bonus": {
+        "lucky": true
+      }
     },
     "Brave": {
       "description": "You have advantage on saving throws against being frightened."

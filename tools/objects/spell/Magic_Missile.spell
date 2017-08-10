@@ -14,6 +14,6 @@
   "level": 1,
   "name": "Magic Missile",
   "casting_time": "1 action",
-  "damage": "1d4",
+  "damage": "1d4+1+1d4+1+1d4+1",
   "damage_type": "force"
 }

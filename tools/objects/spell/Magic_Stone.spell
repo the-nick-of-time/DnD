@@ -15,5 +15,6 @@
   "name": "Magic Stone",
   "casting_time": "1 bonus action",
   "attack_roll": true,
-  "damage": "1d6"
+  "damage": "1d6",
+  "damage_type": "bludgeoning"
 }

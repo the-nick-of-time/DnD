@@ -14,6 +14,5 @@
   "duration": "Instantaneous",
   "level": 5,
   "name": "Mass Cure Wounds",
-  "casting_time": "1 action",
-  "damage": "3d8"
+  "casting_time": "1 action"
 }

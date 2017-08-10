@@ -1,8 +1,10 @@
 {
   "name": "Maul",
+  "damage": "2d6",
+  "damage_type": "Bludgeoning",
+  "ability": ["Strength"],
   "value": 10,
   "weight": 10,
-  "consumable": false,
   "description": "A large hammer head on the end of a sturdy shaft.\n",
   "effect": "You swing the sledgehammer, bringing its destructive force to bear on your enemies.\n"
 }

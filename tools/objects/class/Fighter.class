@@ -1,4 +1,4 @@
-{
+ur{
   "name": "Fighter",
   "superclass": [
     "ALL"
@@ -39,77 +39,162 @@
     ]
   },
   "spell": {},
-  "features": {
-    "Fighting Style": {
-      "1": {
-        "description": "Archery, Defense, Dueling, Great Weapon Fighting, Protection, Two-Weapon Fighting"
-      }
-    },
-    "Second Wind": {
-      "1": {
-        "description": "Use a bonus action to heal 1d10 + your fighter level. Recharges on short or long rest.",
+  "features": [{},
+    {
+      "choose": {
+        "number": 1,
+        "Fighting Style: DEFENSE": {
+          "description": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\nDEFENSE\nWhile you are wearing armor, you gain a +1 bonus to AC."
+        },
+        "Fighting Style: DUELING": {
+          "description": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\nDUELING\nWhen you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon."
+        },
+        "Fighting Style: GREAT WEAPON FIGHTING": {
+          "description": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\nGREAT WEAPON FIGHTING\nWhen you roll a 1or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll. The weapon must have the two-handed or versatile property for you to gain this benefit."
+        },
+        "Fighting Style: PROTECTION": {
+          "description": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\nPROTECTION\nWhen a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield."
+        },
+        "Fighting Style: TWO-WEAPON FIGHTING": {
+          "description": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\nTWO-WEAPON FIGHTING\nWhen you engage in two-weapon fighting, you can add your ability modifier to the damage of lhe second attack."
+        },
+        "Fighting Style: ARCHERY": {
+          "description": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\nARCHERY\nYou gain a +2 bonus to attack rolls you make with ranged weapons."
+        },
+        "Fighting Style: DEFENSE": {
+          "description": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\nDEFENSE\nWhile you are wearing armor, you gain a +1 bonus to AC."
+        }
+      },
+      "Second Wind": {
+        "description": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again.",
         "resource": {
           "name": "Second Wind",
           "number": 1,
-          "value": "1d10",
-          "recharge": "short_rest"
+          "value": "1d10+$Fighter_level",
+          "recharge": "short rest"
         }
       }
     },
-    "Action Surge": {
-      "2": {
-        "description": "Take an extra action on your turn. Recharges on short or long rest."
+    {
+      "Action Surge": {
+        "description": "You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again.",
+        "resource": {
+          "name": "Action Surge",
+          "number": 1,
+          "value": 0,
+          "recharge": "short rest"
+        }
       }
     },
-    "Martial Archetype": {
-      "3": {
-        "description": "At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques. Choose Champion, Battle Master, or Eldritch Knight, all detailed at the end of the c1ass description. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level."
+    {
+      "choose": {
+        "number": 1,
+        "Martial Archetype: Champion": {
+          "description": "You choose an archetype that you strive to emulate in your combat styles and techniques. The archetypal Champion focuses on the development of raw physical power honed to deadly perfection. Those who model themselves on this archetype combine rigorous traioing with physical excellence to deal devastating blows."
+        },
+        "Martial Archetype: Battle Master": {
+          "description": "You choose an archetype that you strive to emulate in your combat styles and techniques. Those who emulate the archetypal Battle Master employ martial techniques passed down through generations. To a Battle Master, combat is an academic field, sometimes including subjects beyond battle such as weaponsmithing and calligraphy. Not every fighter absorbs the lessons of history, theory, and artistry that are reflected in the Battle Master archetype, but those who do are well-rounded fighters of great skill and knowledge."
+        },
+        "Martial Archetype: Eldritch Knight": {
+          "description": "You choose an archetype that you strive to emulate in your combat styles and techniques. The archetypal Eldritch Knight combines the martial mastery common to ali fighters with a careful study of magic. Eldritch Knights use magical techniques similar to those practiced by wizards, They focus their study on two of the eight schools of magic: abjuration and evocation. Abjuration spells grant an Eldritch Knight additional protection in battle, and evocation spells deal damage to many foes at once, extending the fighter's reach in combat. These knights learn a comparatively small number of spells, committing them to memory instead of keeping them in a spellbook."
+        }
       }
     },
-    "Ability Score Improvement": {
-      "4": {
-        "description": "Increase scores by a total of 2 points."
-      },
-      "6": {
-        "description": "Increase scores by a total of 2 points."
-      },
-      "8": {
-        "description": "Increase scores by a total of 2 points."
-      },
-      "12": {
-        "description": "Increase scores by a total of 2 points."
-      },
-      "14": {
-        "description": "Increase scores by a total of 2 points."
-      },
-      "16": {
-        "description": "Increase scores by a total of 2 points."
-      },
-      "19": {
-        "description": "Increase scores by a total of 2 points."
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
       }
     },
-    "Extra Attack": {
-      "5": {
-        "description": "Attack twice per attack action."
-      },
-      "11": {
-        "description": "Attack three times per attack action."
-      },
-      "20": {
-        "description": "Attack four times per attack action."
+    {
+      "Extra Attack": {
+        "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn."
       }
     },
-    "Indomitable": {
-      "9": {
-        "description": "Reroll a saving throw that you failed. Usable once between long rests."
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Indomitable": {
+        "description": "You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest.",
+        "resource": {
+          "name": "Indomitable save reroll",
+          "number": 1,
+          "value": 0,
+          "recharge": "long rest"
+        }
+      }
+    },
+    {},
+    {
+      "Extra Attack": {
+        "description": "You can attack three times, instead of once, whenever you take the Attack action on your turn."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Indomitable": {
+        "description": "You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest.",
+        "resource": {
+          "name": "Indomitable save reroll",
+          "number": 2,
+          "value": 0,
+          "recharge": "long rest"
+        }
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Action Surge": {
+        "description": "You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn.",
+        "resource": {
+          "name": "Action Surge",
+          "number": 2,
+          "value": 0,
+          "recharge": "short rest"
+        }
       },
-      "13": {
-        "description": "Reroll a saving throw that you failed. Usable twice between long rests."
-      },
-      "17": {
-        "description": "Reroll a saving throw that you failed. Usable thrice between long rests."
+      "Indomitable": {
+        "description": "You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest.",
+        "resource": {
+          "name": "Indomitable save reroll",
+          "number": 3,
+          "value": 0,
+          "recharge": "long rest"
+        }
+      }
+    },
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Extra Attack": {
+        "description": "You can attack four times, instead of once, whenever you take the Attack action on your turn."
       }
     }
-  }
+  ]
 }

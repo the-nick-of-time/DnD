@@ -14,6 +14,5 @@
   "duration": "up to 8 hours",
   "level": 8,
   "name": "Control Weather",
-  "casting_time": "10 minutes",
-  "damage": "1d4"
+  "casting_time": "10 minutes"
 }

@@ -14,7 +14,5 @@
   "level": 2,
   "name": "Enlarge/Reduce",
   "casting_time": "1 action",
-  "save": "Constitution",
-  "damage": "1d4",
-  "damage_type": "extra"
+  "save": "Constitution"
 }

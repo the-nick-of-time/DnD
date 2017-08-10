@@ -14,12 +14,12 @@
     }
   },
   "abilities": {
-    "strength": 8,
-    "dexterity": 14,
-    "constitution": 16,
-    "intelligence": 12,
-    "wisdom": 8,
-    "charisma": 18
+    "Strength": 8,
+    "Dexterity": 14,
+    "Constitution": 16,
+    "Intelligence": 12,
+    "Wisdom": 8,
+    "Charisma": 18
   },
   "skills": [
     "Persuasion",
@@ -29,8 +29,8 @@
     "Religion"
   ],
   "saves": [
-    "constitution",
-    "charisma"
+    "Constitution",
+    "Charisma"
   ],
   "spell_slots": [
     999999,
@@ -62,7 +62,7 @@
     "Witch Bolt",
     "Shatter"
   ],
-  "equipment": {
+  "inventory": {
     "Mirror": {
       "quantity": 1,
       "type": "item",
@@ -85,7 +85,7 @@
     },
     "Silk Gloves": {
       "quantity": 1,
-      "type": "armor",
+      "type": "apparel",
       "equipped": false
     },
     "Backpack": {
@@ -95,7 +95,7 @@
     },
     "Good Clothes": {
       "quantity": 3,
-      "type": "armor",
+      "type": "apparel",
       "equipped": false
     },
     "Utility Knife": {
