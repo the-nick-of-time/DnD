@@ -6,8 +6,17 @@ from os.path import abspath
 
 class JSONInterface:
     OBJECTSPATH = './tools/objects/'
+    EXTANT = {}
     # OBJECTSPATH = abspath('.') + '/tools/objects/'
-    # TODO: Add functionality to merge two objects or access them in parallel
+
+    def __new__(cls, filename):
+        # If there is already an interface to the file open, return that
+        #   instead of opening a new one
+        if (JSONInterface.OBJECTSPATH + filename in JSONInterface.EXTANT):
+            return JSONInterface.EXTANT[JSONInterface.OBJECTSPATH + filename]
+        else:
+            obj = super().__new__(cls)
+            return obj
 
     def __init__(self, filename):
         broken = filename.split('/')[-1].split('.')
@@ -17,6 +26,7 @@ class JSONInterface:
         with open(self.filename) as f:
             data = json.load(f, object_pairs_hook=collections.OrderedDict)
             self.info = data
+        JSONInterface.EXTANT.update({self.filename: self})
 
     def __str__(self):
         return self.shortfilename
@@ -25,8 +35,11 @@ class JSONInterface:
         return "<JSONInterface to {}>".format(self.filename)
 
     def __add__(self, other):
-        if (isinstance(other, (JSONInterface, LinkedInterface))):
+        if (isinstance(other, JSONInterface)):
             return LinkedInterface(self, other)
+        if (isinstance(other, LinkedInterface)):
+            # Use LinkedInterface's add method
+            return other + self
         else:
             raise TypeError('You can only add a JSONInterface or a '
                             'LinkedInterface to a JSONInterface')
