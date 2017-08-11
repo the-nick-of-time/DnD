@@ -1,0 +1,13 @@
+{
+  "AC": "14 (hide)",
+  "HP": "11d8+22",
+  "name": "Elizar Dryflagon",
+  "abilities": {
+    "Intelligence": 11,
+    "Charisma": 10,
+    "Constitution": 14,
+    "Dexterity": 15,
+    "Strength": 13,
+    "Wisdom": 18
+  }
+}

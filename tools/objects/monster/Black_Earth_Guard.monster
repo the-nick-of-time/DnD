@@ -1,0 +1,13 @@
+{
+  "AC": "18 (plate)",
+  "HP": "6d8+12",
+  "name": "Black Earth Guard",
+  "abilities": {
+    "Intelligence": 10,
+    "Charisma": 9,
+    "Constitution": 14,
+    "Dexterity": 11,
+    "Strength": 17,
+    "Wisdom": 10
+  }
+}

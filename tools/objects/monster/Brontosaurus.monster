@@ -1,0 +1,13 @@
+{
+  "HP": "9d20+27",
+  "AC": "15 (natural armor)",
+  "name": "Brontosaurus",
+  "abilities": {
+    "Dexterity": 9,
+    "Constitution": 17,
+    "Charisma": 7,
+    "Wisdom": 10,
+    "Intelligence": 2,
+    "Strength": 21
+  }
+}

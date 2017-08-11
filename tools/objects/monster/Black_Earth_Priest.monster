@@ -1,0 +1,13 @@
+{
+  "AC": "17 (splint)",
+  "HP": "7d8+14",
+  "name": "Black Earth Priest",
+  "abilities": {
+    "Intelligence": 12,
+    "Charisma": 16,
+    "Constitution": 14,
+    "Dexterity": 11,
+    "Strength": 15,
+    "Wisdom": 10
+  }
+}

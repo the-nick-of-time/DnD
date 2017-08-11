@@ -1,0 +1,13 @@
+{
+  "AC": "12",
+  "name": "Evil Mage",
+  "abilities": {
+    "Intelligence": 17,
+    "Wisdom": 12,
+    "Constitution": 11,
+    "Charisma": 11,
+    "Strength": 9,
+    "Dexterity": 14
+  },
+  "HP": "5d8"
+}

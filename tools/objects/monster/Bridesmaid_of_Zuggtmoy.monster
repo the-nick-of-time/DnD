@@ -1,0 +1,13 @@
+{
+  "AC": "13 (natural armor)",
+  "HP": "5d8",
+  "name": "Bridesmaid of Zuggtmoy",
+  "abilities": {
+    "Strength": 14,
+    "Constitution": 11,
+    "Dexterity": 11,
+    "Wisdom": 8,
+    "Intelligence": 14,
+    "Charisma": 18
+  }
+}

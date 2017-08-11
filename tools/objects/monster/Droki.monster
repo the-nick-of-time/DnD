@@ -1,0 +1,13 @@
+{
+  "AC": "15 (studded leather)",
+  "HP": "7d6+7",
+  "name": "Droki",
+  "abilities": {
+    "Strength": 11,
+    "Constitution": 13,
+    "Dexterity": 16,
+    "Wisdom": 5,
+    "Intelligence": 10,
+    "Charisma": 16
+  }
+}

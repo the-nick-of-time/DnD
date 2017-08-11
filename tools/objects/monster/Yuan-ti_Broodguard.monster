@@ -1,0 +1,13 @@
+{
+  "HP": "7d8+14",
+  "AC": "14 (natural armor)",
+  "name": "Yuan-ti Broodguard",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Charisma": 4,
+    "Wisdom": 11,
+    "Intelligence": 6,
+    "Strength": 15
+  }
+}

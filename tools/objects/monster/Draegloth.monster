@@ -1,0 +1,13 @@
+{
+  "HP": "13d10+52",
+  "AC": "15 (natural armor)",
+  "name": "Draegloth",
+  "abilities": {
+    "Dexterity": 15,
+    "Constitution": 18,
+    "Charisma": 11,
+    "Wisdom": 11,
+    "Intelligence": 13,
+    "Strength": 20
+  }
+}

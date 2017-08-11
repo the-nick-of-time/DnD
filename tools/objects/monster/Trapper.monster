@@ -1,0 +1,13 @@
+{
+  "HP": "10d10+30",
+  "AC": "13 (natural armor)",
+  "name": "Trapper",
+  "abilities": {
+    "Dexterity": 10,
+    "Constitution": 17,
+    "Charisma": 4,
+    "Wisdom": 13,
+    "Intelligence": 2,
+    "Strength": 17
+  }
+}

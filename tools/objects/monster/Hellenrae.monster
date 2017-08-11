@@ -1,0 +1,13 @@
+{
+  "AC": "16",
+  "HP": "12d8+24",
+  "name": "Hellenrae",
+  "abilities": {
+    "Intelligence": 10,
+    "Charisma": 13,
+    "Constitution": 14,
+    "Dexterity": 18,
+    "Strength": 13,
+    "Wisdom": 15
+  }
+}

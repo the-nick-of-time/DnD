@@ -1,0 +1,13 @@
+{
+  "AC": "11",
+  "name": "Thorn Slinger",
+  "HP": "5d10+5",
+  "abilities": {
+    "Dexterity": 12,
+    "Charisma": 1,
+    "Constitution": 12,
+    "Intelligence": 1,
+    "Strength": 13,
+    "Wisdom": 10
+  }
+}

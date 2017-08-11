@@ -1,0 +1,13 @@
+{
+  "HP": "5d8+5",
+  "AC": "14 (natural armor)",
+  "name": "Thorny",
+  "abilities": {
+    "Dexterity": 12,
+    "Constitution": 13,
+    "Charisma": 6,
+    "Wisdom": 10,
+    "Intelligence": 2,
+    "Strength": 13
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "HP": "11d8+11",
+  "AC": "16",
+  "name": "Martial Arts Adept",
+  "abilities": {
+    "Dexterity": 17,
+    "Constitution": 13,
+    "Charisma": 10,
+    "Wisdom": 16,
+    "Intelligence": 11,
+    "Strength": 11
+  }
+}

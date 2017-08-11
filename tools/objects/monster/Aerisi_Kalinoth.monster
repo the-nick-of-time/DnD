@@ -1,0 +1,13 @@
+{
+  "AC": "13 (16 with mage armor)",
+  "HP": "12d8+12",
+  "name": "Aerisi Kalinoth",
+  "abilities": {
+    "Intelligence": 17,
+    "Charisma": 16,
+    "Constitution": 12,
+    "Dexterity": 16,
+    "Strength": 8,
+    "Wisdom": 10
+  }
+}

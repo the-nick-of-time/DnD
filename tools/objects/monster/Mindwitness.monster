@@ -1,0 +1,13 @@
+{
+  "HP": "10d10+20",
+  "AC": "15 (natural armor)",
+  "name": "Mindwitness",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Charisma": 10,
+    "Wisdom": 15,
+    "Intelligence": 15,
+    "Strength": 10
+  }
+}

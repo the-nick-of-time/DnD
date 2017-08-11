@@ -1,0 +1,13 @@
+{
+  "AC": "15 (natural armor)",
+  "name": "Animated Table",
+  "HP": "6d10+6",
+  "abilities": {
+    "Dexterity": 8,
+    "Charisma": 1,
+    "Constitution": 13,
+    "Intelligence": 1,
+    "Strength": 18,
+    "Wisdom": 3
+  }
+}

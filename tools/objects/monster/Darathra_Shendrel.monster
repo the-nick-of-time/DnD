@@ -1,0 +1,13 @@
+{
+  "AC": "14 (breastplate)",
+  "HP": "8d8+16",
+  "name": "Darathra Shendrel",
+  "abilities": {
+    "Dexterity": 11,
+    "Wisdom": 11,
+    "Charisma": 15,
+    "Strength": 16,
+    "Constitution": 14,
+    "Intelligence": 11
+  }
+}

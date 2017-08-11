@@ -1,0 +1,13 @@
+{
+  "AC": "9 (natural armor)",
+  "name": "Ooze Master",
+  "HP": "12d12+60",
+  "abilities": {
+    "Dexterity": 1,
+    "Charisma": 16,
+    "Constitution": 20,
+    "Intelligence": 17,
+    "Strength": 16,
+    "Wisdom": 10
+  }
+}

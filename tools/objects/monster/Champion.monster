@@ -1,0 +1,13 @@
+{
+  "HP": "22d8+44",
+  "AC": "18 (plate)",
+  "name": "Champion",
+  "abilities": {
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Charisma": 12,
+    "Wisdom": 14,
+    "Intelligence": 10,
+    "Strength": 20
+  }
+}

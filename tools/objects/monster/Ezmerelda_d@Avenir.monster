@@ -1,0 +1,13 @@
+{
+  "name": "Ezmerelda d'Avenir",
+  "abilities": {
+    "Constitution": 16,
+    "Intelligence": 16,
+    "Charisma": 17,
+    "Wisdom": 11,
+    "Dexterity": 19,
+    "Strength": 14
+  },
+  "HP": "11d8+33",
+  "AC": "17 (studded leather armor +1)"
+}

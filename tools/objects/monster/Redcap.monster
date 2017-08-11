@@ -1,0 +1,13 @@
+{
+  "HP": "6d6+24",
+  "AC": "13 (natural armor)",
+  "name": "Redcap",
+  "abilities": {
+    "Dexterity": 13,
+    "Constitution": 18,
+    "Charisma": 9,
+    "Wisdom": 12,
+    "Intelligence": 10,
+    "Strength": 18
+  }
+}

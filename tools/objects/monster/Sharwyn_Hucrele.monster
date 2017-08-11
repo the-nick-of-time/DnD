@@ -1,0 +1,13 @@
+{
+  "AC": "16 (Barkskin trait)",
+  "name": "Sharwyn Hucrele",
+  "HP": "2d8+4",
+  "abilities": {
+    "Dexterity": 13,
+    "Charisma": 9,
+    "Constitution": 14,
+    "Intelligence": 16,
+    "Strength": 11,
+    "Wisdom": 14
+  }
+}

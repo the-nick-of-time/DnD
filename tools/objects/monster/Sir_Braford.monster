@@ -1,0 +1,13 @@
+{
+  "AC": "18 (chain mail, shield)",
+  "name": "Sir Braford",
+  "HP": "3d8+6",
+  "abilities": {
+    "Dexterity": 9,
+    "Charisma": 14,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Strength": 16,
+    "Wisdom": 13
+  }
+}

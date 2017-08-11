@@ -1,0 +1,13 @@
+{
+  "AC": "15 (natural armor)",
+  "name": "Kalka-Kylla",
+  "HP": "10d10+30",
+  "abilities": {
+    "Dexterity": 12,
+    "Charisma": 12,
+    "Constitution": 16,
+    "Intelligence": 15,
+    "Strength": 17,
+    "Wisdom": 16
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "AC": "16 (natural armor)",
+  "HP": "11d10+33",
+  "name": "Chuul Spore Servant",
+  "abilities": {
+    "Strength": 19,
+    "Constitution": 16,
+    "Dexterity": 10,
+    "Wisdom": 6,
+    "Intelligence": 2,
+    "Charisma": 1
+  }
+}

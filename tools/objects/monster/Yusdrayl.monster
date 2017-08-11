@@ -1,0 +1,13 @@
+{
+  "AC": "12 (15 with mage armor)",
+  "name": "Yusdrayl",
+  "HP": "3d6+6",
+  "abilities": {
+    "Dexterity": 15,
+    "Charisma": 16,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Strength": 8,
+    "Wisdom": 10
+  }
+}

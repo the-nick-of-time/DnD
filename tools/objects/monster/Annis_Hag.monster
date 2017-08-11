@@ -1,0 +1,13 @@
+{
+  "HP": "10d10+20",
+  "AC": "17 (natural armor)",
+  "name": "Annis Hag",
+  "abilities": {
+    "Dexterity": 12,
+    "Constitution": 14,
+    "Charisma": 15,
+    "Wisdom": 14,
+    "Intelligence": 13,
+    "Strength": 21
+  }
+}

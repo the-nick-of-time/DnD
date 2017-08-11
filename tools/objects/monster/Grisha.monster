@@ -1,0 +1,13 @@
+{
+  "AC": "18 (chain mail, shield)",
+  "HP": "6d8+6",
+  "name": "Grisha",
+  "abilities": {
+    "Strength": 14,
+    "Constitution": 12,
+    "Dexterity": 12,
+    "Wisdom": 14,
+    "Intelligence": 11,
+    "Charisma": 16
+  }
+}

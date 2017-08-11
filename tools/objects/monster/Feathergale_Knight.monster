@@ -1,0 +1,13 @@
+{
+  "AC": "16 (scale)",
+  "HP": "6d8+6",
+  "name": "Feathergale Knight",
+  "abilities": {
+    "Intelligence": 11,
+    "Charisma": 14,
+    "Constitution": 12,
+    "Dexterity": 14,
+    "Strength": 14,
+    "Wisdom": 10
+  }
+}

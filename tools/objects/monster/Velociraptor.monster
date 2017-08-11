@@ -1,0 +1,13 @@
+{
+  "HP": "3d4+3",
+  "AC": "13 (natural armor)",
+  "name": "Velociraptor",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 13,
+    "Charisma": 6,
+    "Wisdom": 12,
+    "Intelligence": 4,
+    "Strength": 6
+  }
+}

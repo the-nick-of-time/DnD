@@ -1,0 +1,13 @@
+{
+  "AC": "15 (natural armor)",
+  "HP": "10d10+10",
+  "name": "Hook Horror Spore Servant",
+  "abilities": {
+    "Strength": 18,
+    "Constitution": 15,
+    "Dexterity": 10,
+    "Wisdom": 6,
+    "Intelligence": 2,
+    "Charisma": 1
+  }
+}

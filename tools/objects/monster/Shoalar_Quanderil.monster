@@ -1,0 +1,13 @@
+{
+  "AC": "10 (13 with mage armor)",
+  "HP": "8d8+24",
+  "name": "Shoalar Quanderil",
+  "abilities": {
+    "Intelligence": 14,
+    "Charisma": 17,
+    "Constitution": 16,
+    "Dexterity": 12,
+    "Strength": 11,
+    "Wisdom": 10
+  }
+}

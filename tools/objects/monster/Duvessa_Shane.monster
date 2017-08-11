@@ -1,0 +1,13 @@
+{
+  "AC": "10",
+  "HP": "2d8",
+  "name": "Duvessa Shane",
+  "abilities": {
+    "Dexterity": 11,
+    "Wisdom": 14,
+    "Charisma": 16,
+    "Strength": 10,
+    "Constitution": 10,
+    "Intelligence": 16
+  }
+}

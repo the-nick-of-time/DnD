@@ -1,0 +1,13 @@
+{
+  "AC": "18 (plate)",
+  "HP": "18d8+36",
+  "name": "Air Elemental Myrmidon",
+  "abilities": {
+    "Intelligence": 9,
+    "Charisma": 10,
+    "Constitution": 14,
+    "Dexterity": 14,
+    "Strength": 18,
+    "Wisdom": 10
+  }
+}

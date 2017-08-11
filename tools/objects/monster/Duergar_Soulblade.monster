@@ -1,0 +1,13 @@
+{
+  "AC": "14 (leather armor)",
+  "HP": "4d8",
+  "name": "Duergar Soulblade",
+  "abilities": {
+    "Strength": 11,
+    "Constitution": 10,
+    "Dexterity": 16,
+    "Wisdom": 10,
+    "Intelligence": 11,
+    "Charisma": 12
+  }
+}

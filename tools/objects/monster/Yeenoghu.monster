@@ -1,0 +1,13 @@
+{
+  "AC": "22 (natural armor)",
+  "HP": "24d12+192",
+  "name": "Yeenoghu",
+  "abilities": {
+    "Strength": 29,
+    "Constitution": 23,
+    "Dexterity": 16,
+    "Wisdom": 24,
+    "Intelligence": 15,
+    "Charisma": 15
+  }
+}

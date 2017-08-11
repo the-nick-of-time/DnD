@@ -1,0 +1,13 @@
+{
+  "AC": "15 (studded leather)",
+  "HP": "15d8+45",
+  "name": "Vanifer",
+  "abilities": {
+    "Intelligence": 12,
+    "Charisma": 19,
+    "Constitution": 17,
+    "Dexterity": 16,
+    "Strength": 11,
+    "Wisdom": 13
+  }
+}

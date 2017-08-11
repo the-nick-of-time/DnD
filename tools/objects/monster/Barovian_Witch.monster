@@ -1,0 +1,13 @@
+{
+  "name": "Barovian Witch",
+  "abilities": {
+    "Constitution": 13,
+    "Intelligence": 14,
+    "Charisma": 12,
+    "Wisdom": 11,
+    "Dexterity": 11,
+    "Strength": 7
+  },
+  "HP": "3d8+3",
+  "AC": "10"
+}

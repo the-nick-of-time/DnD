@@ -1,0 +1,13 @@
+{
+  "HP": "9d8+18",
+  "name": "Talis the White",
+  "AC": "18 (scale mail +1, shield)",
+  "abilities": {
+    "Wisdom": 16,
+    "Charisma": 16,
+    "Dexterity": 12,
+    "Intelligence": 10,
+    "Strength": 14,
+    "Constitution": 14
+  }
+}

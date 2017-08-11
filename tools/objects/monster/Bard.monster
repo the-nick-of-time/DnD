@@ -1,0 +1,13 @@
+{
+  "HP": "8d8+8",
+  "AC": "15 (chain shirt)",
+  "name": "Bard",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Charisma": 14,
+    "Wisdom": 13,
+    "Intelligence": 10,
+    "Strength": 11
+  }
+}

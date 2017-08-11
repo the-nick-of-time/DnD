@@ -1,0 +1,13 @@
+{
+  "AC": "12 (15 with mage armor)",
+  "HP": "12d8+24",
+  "name": "Bastian Thermandar",
+  "abilities": {
+    "Intelligence": 11,
+    "Charisma": 18,
+    "Constitution": 15,
+    "Dexterity": 14,
+    "Strength": 12,
+    "Wisdom": 9
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "AC": "17 (splint)",
+  "HP": "9d8+18",
+  "name": "Markham Southwell",
+  "abilities": {
+    "Dexterity": 13,
+    "Wisdom": 16,
+    "Charisma": 14,
+    "Strength": 15,
+    "Constitution": 14,
+    "Intelligence": 11
+  }
+}

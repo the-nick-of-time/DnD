@@ -1,0 +1,13 @@
+{
+  "AC": "22 (natural armor)",
+  "HP": "21d12+147",
+  "name": "Yan-C-Bin",
+  "abilities": {
+    "Intelligence": 16,
+    "Charisma": 23,
+    "Constitution": 24,
+    "Dexterity": 24,
+    "Strength": 18,
+    "Wisdom": 21
+  }
+}

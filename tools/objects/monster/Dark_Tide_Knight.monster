@@ -1,0 +1,13 @@
+{
+  "AC": "13",
+  "HP": "9d8+18",
+  "name": "Dark Tide Knight",
+  "abilities": {
+    "Intelligence": 10,
+    "Charisma": 11,
+    "Constitution": 14,
+    "Dexterity": 16,
+    "Strength": 17,
+    "Wisdom": 11
+  }
+}

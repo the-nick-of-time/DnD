@@ -1,0 +1,13 @@
+{
+  "name": "Tree Blight",
+  "abilities": {
+    "Constitution": 20,
+    "Intelligence": 6,
+    "Charisma": 3,
+    "Wisdom": 10,
+    "Dexterity": 10,
+    "Strength": 23
+  },
+  "HP": "13d12+65",
+  "AC": "15 (natural armor)"
+}

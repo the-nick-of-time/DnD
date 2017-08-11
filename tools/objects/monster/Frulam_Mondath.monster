@@ -1,0 +1,13 @@
+{
+  "HP": "8d8+8",
+  "name": "Frulam Mondath",
+  "AC": "16 (chain mail)",
+  "abilities": {
+    "Wisdom": 18,
+    "Charisma": 15,
+    "Dexterity": 10,
+    "Intelligence": 11,
+    "Strength": 14,
+    "Constitution": 13
+  }
+}

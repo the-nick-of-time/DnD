@@ -1,0 +1,13 @@
+{
+  "AC": "18 (plate)",
+  "HP": "11d8+44",
+  "name": "Drannin Splithelm",
+  "abilities": {
+    "Intelligence": 11,
+    "Charisma": 12,
+    "Constitution": 18,
+    "Dexterity": 10,
+    "Strength": 19,
+    "Wisdom": 8
+  }
+}

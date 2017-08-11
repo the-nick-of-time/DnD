@@ -1,0 +1,13 @@
+{
+  "AC": "12",
+  "HP": "2d4",
+  "name": "Tressym",
+  "abilities": {
+    "Dexterity": 15,
+    "Wisdom": 12,
+    "Charisma": 12,
+    "Strength": 3,
+    "Constitution": 10,
+    "Intelligence": 11
+  }
+}

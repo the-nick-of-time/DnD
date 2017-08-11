@@ -1,0 +1,13 @@
+{
+  "AC": "16 (chain mail)",
+  "name": "Sildar Hallwinter",
+  "abilities": {
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Constitution": 12,
+    "Charisma": 10,
+    "Strength": 13,
+    "Dexterity": 10
+  },
+  "HP": "5d8+5"
+}

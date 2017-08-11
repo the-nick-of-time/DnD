@@ -1,0 +1,13 @@
+{
+  "AC": "18 (plate)",
+  "HP": "17d8+51",
+  "name": "Water Elemental Myrmidon",
+  "abilities": {
+    "Intelligence": 8,
+    "Charisma": 10,
+    "Constitution": 15,
+    "Dexterity": 14,
+    "Strength": 18,
+    "Wisdom": 10
+  }
+}

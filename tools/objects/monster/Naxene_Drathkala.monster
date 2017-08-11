@@ -1,0 +1,13 @@
+{
+  "AC": "10 (13 with mage armor)",
+  "HP": "6d8",
+  "name": "Naxene Drathkala",
+  "abilities": {
+    "Dexterity": 11,
+    "Wisdom": 12,
+    "Charisma": 11,
+    "Strength": 8,
+    "Constitution": 11,
+    "Intelligence": 17
+  }
+}

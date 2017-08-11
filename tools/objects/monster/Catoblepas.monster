@@ -1,0 +1,13 @@
+{
+  "HP": "8d10+40",
+  "AC": "14 (natural armor)",
+  "name": "Catoblepas",
+  "abilities": {
+    "Dexterity": 12,
+    "Constitution": 21,
+    "Charisma": 8,
+    "Wisdom": 14,
+    "Intelligence": 3,
+    "Strength": 19
+  }
+}

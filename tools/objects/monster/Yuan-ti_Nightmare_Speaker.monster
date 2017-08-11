@@ -1,0 +1,13 @@
+{
+  "HP": "13d8+13",
+  "AC": "14 (natural armor)",
+  "name": "Yuan-ti Nightmare Speaker",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 13,
+    "Charisma": 16,
+    "Wisdom": 12,
+    "Intelligence": 14,
+    "Strength": 16
+  }
+}

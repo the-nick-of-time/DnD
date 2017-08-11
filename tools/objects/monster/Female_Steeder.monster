@@ -1,0 +1,13 @@
+{
+  "AC": "14 (natural armor)",
+  "HP": "4d10+8",
+  "name": "Female Steeder",
+  "abilities": {
+    "Strength": 15,
+    "Constitution": 14,
+    "Dexterity": 16,
+    "Wisdom": 10,
+    "Intelligence": 2,
+    "Charisma": 3
+  }
+}

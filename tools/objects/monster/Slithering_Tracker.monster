@@ -1,0 +1,13 @@
+{
+  "HP": "5d8+10",
+  "AC": "14",
+  "name": "Slithering Tracker",
+  "abilities": {
+    "Dexterity": 19,
+    "Constitution": 15,
+    "Charisma": 11,
+    "Wisdom": 14,
+    "Intelligence": 10,
+    "Strength": 16
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "AC": "15 (natural armor)",
+  "HP": "16d8+64",
+  "name": "Marlos Urnrayle",
+  "abilities": {
+    "Intelligence": 12,
+    "Charisma": 17,
+    "Constitution": 18,
+    "Dexterity": 11,
+    "Strength": 17,
+    "Wisdom": 13
+  }
+}

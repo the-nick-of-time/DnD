@@ -1,0 +1,13 @@
+{
+  "AC": "15",
+  "HP": "5d8",
+  "name": "Zi Liang",
+  "abilities": {
+    "Dexterity": 15,
+    "Wisdom": 16,
+    "Charisma": 11,
+    "Strength": 12,
+    "Constitution": 11,
+    "Intelligence": 14
+  }
+}

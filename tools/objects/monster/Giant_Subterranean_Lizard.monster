@@ -1,0 +1,13 @@
+{
+  "AC": "14 (natural armor)",
+  "name": "Giant Subterranean Lizard",
+  "HP": "7d12+21",
+  "abilities": {
+    "Dexterity": 9,
+    "Charisma": 7,
+    "Constitution": 17,
+    "Intelligence": 2,
+    "Strength": 21,
+    "Wisdom": 10
+  }
+}

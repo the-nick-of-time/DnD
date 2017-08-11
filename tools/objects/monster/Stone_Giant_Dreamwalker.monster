@@ -1,0 +1,13 @@
+{
+  "HP": "14d12+70",
+  "AC": "18 (natural armor)",
+  "name": "Stone Giant Dreamwalker",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 21,
+    "Charisma": 12,
+    "Wisdom": 8,
+    "Intelligence": 10,
+    "Strength": 23
+  }
+}

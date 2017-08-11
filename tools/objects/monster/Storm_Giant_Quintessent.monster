@@ -1,0 +1,13 @@
+{
+  "HP": "20d12+100",
+  "AC": "12",
+  "name": "Storm Giant Quintessent",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 20,
+    "Charisma": 19,
+    "Wisdom": 30,
+    "Intelligence": 17,
+    "Strength": 29
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "HP": "9d10+18",
+  "AC": "14 (natural armor)",
+  "name": "Leucrotta",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 15,
+    "Charisma": 6,
+    "Wisdom": 12,
+    "Intelligence": 9,
+    "Strength": 18
+  }
+}

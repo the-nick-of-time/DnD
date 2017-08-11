@@ -1,0 +1,13 @@
+{
+  "HP": "27d8+108",
+  "AC": "18 (plate)",
+  "name": "Warlord",
+  "abilities": {
+    "Dexterity": 16,
+    "Constitution": 18,
+    "Charisma": 18,
+    "Wisdom": 12,
+    "Intelligence": 12,
+    "Strength": 20
+  }
+}

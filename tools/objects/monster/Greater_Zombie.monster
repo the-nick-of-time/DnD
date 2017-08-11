@@ -1,0 +1,13 @@
+{
+  "AC": "15 (natural armor)",
+  "name": "Greater Zombie",
+  "HP": "13d8+39",
+  "abilities": {
+    "Dexterity": 10,
+    "Charisma": 6,
+    "Constitution": 17,
+    "Intelligence": 4,
+    "Strength": 18,
+    "Wisdom": 6
+  }
+}

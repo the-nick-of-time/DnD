@@ -1,0 +1,13 @@
+{
+  "HP": "6d8+6",
+  "AC": "12",
+  "name": "Shadow Mastiff",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 13,
+    "Charisma": 5,
+    "Wisdom": 12,
+    "Intelligence": 5,
+    "Strength": 16
+  }
+}

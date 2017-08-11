@@ -1,0 +1,13 @@
+{
+  "AC": "18 (plate)",
+  "HP": "17d8+51",
+  "name": "Earth Elemental Myrmidon",
+  "abilities": {
+    "Intelligence": 8,
+    "Charisma": 10,
+    "Constitution": 17,
+    "Dexterity": 10,
+    "Strength": 18,
+    "Wisdom": 10
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "AC": "12 (natural armor)",
+  "HP": "2d8+4",
+  "name": "Male Steeder",
+  "abilities": {
+    "Strength": 15,
+    "Constitution": 14,
+    "Dexterity": 12,
+    "Wisdom": 10,
+    "Intelligence": 2,
+    "Charisma": 3
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "HP": "2d6",
+  "AC": "13 (leather armor)",
+  "name": "Nilbog",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 10,
+    "Charisma": 15,
+    "Wisdom": 8,
+    "Intelligence": 10,
+    "Strength": 8
+  }
+}

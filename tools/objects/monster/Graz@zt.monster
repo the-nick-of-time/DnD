@@ -1,0 +1,13 @@
+{
+  "AC": "20 (natural armor)",
+  "HP": "36d10+180",
+  "name": "Graz'zt",
+  "abilities": {
+    "Strength": 22,
+    "Constitution": 21,
+    "Dexterity": 15,
+    "Wisdom": 21,
+    "Intelligence": 23,
+    "Charisma": 26
+  }
+}

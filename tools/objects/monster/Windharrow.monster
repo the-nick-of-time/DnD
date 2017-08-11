@@ -1,0 +1,13 @@
+{
+  "AC": "15 (studded leather)",
+  "HP": "10d8+10",
+  "name": "Windharrow",
+  "abilities": {
+    "Intelligence": 14,
+    "Charisma": 17,
+    "Constitution": 12,
+    "Dexterity": 16,
+    "Strength": 10,
+    "Wisdom": 10
+  }
+}

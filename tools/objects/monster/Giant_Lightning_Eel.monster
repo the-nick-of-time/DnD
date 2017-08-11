@@ -1,0 +1,13 @@
+{
+  "AC": "13",
+  "name": "Giant Lightning Eel",
+  "HP": "5d10+15",
+  "abilities": {
+    "Dexterity": 17,
+    "Charisma": 3,
+    "Constitution": 16,
+    "Intelligence": 2,
+    "Strength": 11,
+    "Wisdom": 12
+  }
+}

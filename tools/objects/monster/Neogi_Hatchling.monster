@@ -1,0 +1,13 @@
+{
+  "HP": "3d4",
+  "AC": "11",
+  "name": "Neogi Hatchling",
+  "abilities": {
+    "Dexterity": 13,
+    "Constitution": 10,
+    "Charisma": 9,
+    "Wisdom": 10,
+    "Intelligence": 6,
+    "Strength": 3
+  }
+}

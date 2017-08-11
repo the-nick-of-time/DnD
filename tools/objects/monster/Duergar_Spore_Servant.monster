@@ -1,0 +1,13 @@
+{
+  "AC": "16 (scale armor, shield)",
+  "HP": "4d8+8",
+  "name": "Duergar Spore Servant",
+  "abilities": {
+    "Strength": 14,
+    "Constitution": 14,
+    "Dexterity": 11,
+    "Wisdom": 6,
+    "Intelligence": 2,
+    "Charisma": 1
+  }
+}

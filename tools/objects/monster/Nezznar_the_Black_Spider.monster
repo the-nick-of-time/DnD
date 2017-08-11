@@ -1,0 +1,13 @@
+{
+  "AC": "11 (14 with mage armor)",
+  "name": "Nezznar the Black Spider",
+  "abilities": {
+    "Intelligence": 16,
+    "Wisdom": 14,
+    "Constitution": 10,
+    "Charisma": 13,
+    "Strength": 9,
+    "Dexterity": 13
+  },
+  "HP": "6d8"
+}

@@ -1,0 +1,13 @@
+{
+  "AC": "14 (leather)",
+  "HP": "5d8",
+  "name": "Sirac of Suzail",
+  "abilities": {
+    "Dexterity": 17,
+    "Wisdom": 13,
+    "Charisma": 16,
+    "Strength": 14,
+    "Constitution": 11,
+    "Intelligence": 12
+  }
+}

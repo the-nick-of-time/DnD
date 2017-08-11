@@ -1,0 +1,13 @@
+{
+  "HP": "7d10+14",
+  "name": "Dralmorrer Borngray",
+  "AC": "16 (studded leather, shield)",
+  "abilities": {
+    "Wisdom": 10,
+    "Charisma": 8,
+    "Dexterity": 14,
+    "Intelligence": 16,
+    "Strength": 18,
+    "Constitution": 14
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "AC": "22 (natural armor)",
+  "HP": "23d12+184",
+  "name": "Baphomet",
+  "abilities": {
+    "Strength": 30,
+    "Constitution": 26,
+    "Dexterity": 14,
+    "Wisdom": 24,
+    "Intelligence": 18,
+    "Charisma": 16
+  }
+}

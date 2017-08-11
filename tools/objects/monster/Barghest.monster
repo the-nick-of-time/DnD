@@ -1,0 +1,13 @@
+{
+  "HP": "12d10+24",
+  "AC": "17 (natural armor)",
+  "name": "Barghest",
+  "abilities": {
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Charisma": 14,
+    "Wisdom": 12,
+    "Intelligence": 13,
+    "Strength": 19
+  }
+}

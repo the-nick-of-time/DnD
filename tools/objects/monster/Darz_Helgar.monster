@@ -1,0 +1,13 @@
+{
+  "AC": "12",
+  "HP": "5d8+5",
+  "name": "Darz Helgar",
+  "abilities": {
+    "Dexterity": 15,
+    "Wisdom": 11,
+    "Charisma": 11,
+    "Strength": 15,
+    "Constitution": 12,
+    "Intelligence": 10
+  }
+}

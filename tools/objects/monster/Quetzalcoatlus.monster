@@ -1,0 +1,13 @@
+{
+  "HP": "4d12+4",
+  "AC": "13 (natural armor)",
+  "name": "Quetzalcoatlus",
+  "abilities": {
+    "Dexterity": 13,
+    "Constitution": 13,
+    "Charisma": 5,
+    "Wisdom": 10,
+    "Intelligence": 2,
+    "Strength": 15
+  }
+}

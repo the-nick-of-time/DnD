@@ -1,0 +1,13 @@
+{
+  "HP": "2d8+2",
+  "AC": "12 (natural armor)",
+  "name": "Dolphin",
+  "abilities": {
+    "Dexterity": 13,
+    "Constitution": 13,
+    "Charisma": 7,
+    "Wisdom": 12,
+    "Intelligence": 6,
+    "Strength": 14
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "AC": "13 (natural armor)",
+  "HP": "7d12+14",
+  "name": "Awakened Zurkhwood",
+  "abilities": {
+    "Strength": 19,
+    "Constitution": 15,
+    "Dexterity": 6,
+    "Wisdom": 10,
+    "Intelligence": 10,
+    "Charisma": 7
+  }
+}

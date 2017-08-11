@@ -1,0 +1,13 @@
+{
+  "HP": "8d10+40",
+  "AC": "15 (natural armor)",
+  "name": "Banderhobb",
+  "abilities": {
+    "Dexterity": 12,
+    "Constitution": 20,
+    "Charisma": 8,
+    "Wisdom": 14,
+    "Intelligence": 11,
+    "Strength": 20
+  }
+}

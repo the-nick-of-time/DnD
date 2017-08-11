@@ -1,0 +1,13 @@
+{
+  "HP": "2d8",
+  "AC": "10",
+  "name": "Apprentice Wizard",
+  "abilities": {
+    "Dexterity": 10,
+    "Constitution": 10,
+    "Charisma": 11,
+    "Wisdom": 10,
+    "Intelligence": 14,
+    "Strength": 10
+  }
+}

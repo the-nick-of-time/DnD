@@ -1,0 +1,13 @@
+{
+  "AC": "13 (leather)",
+  "HP": "2d8",
+  "name": "Howling Hatred Initiate",
+  "abilities": {
+    "Intelligence": 10,
+    "Charisma": 11,
+    "Constitution": 10,
+    "Dexterity": 15,
+    "Strength": 10,
+    "Wisdom": 9
+  }
+}

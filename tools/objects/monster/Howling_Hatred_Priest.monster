@@ -1,0 +1,13 @@
+{
+  "AC": "15 (studded leather)",
+  "HP": "10d8",
+  "name": "Howling Hatred Priest",
+  "abilities": {
+    "Intelligence": 14,
+    "Charisma": 14,
+    "Constitution": 10,
+    "Dexterity": 16,
+    "Strength": 12,
+    "Wisdom": 10
+  }
+}

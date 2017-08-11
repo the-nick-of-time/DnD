@@ -1,0 +1,13 @@
+{
+  "AC": "18 (natural armor)",
+  "HP": "32d10+128",
+  "name": "Zuggtmoy",
+  "abilities": {
+    "Strength": 22,
+    "Constitution": 18,
+    "Dexterity": 15,
+    "Wisdom": 19,
+    "Intelligence": 20,
+    "Charisma": 24
+  }
+}

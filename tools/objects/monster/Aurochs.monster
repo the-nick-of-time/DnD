@@ -1,0 +1,13 @@
+{
+  "HP": "4d10+16",
+  "AC": "11 (natural armor)",
+  "name": "Aurochs",
+  "abilities": {
+    "Dexterity": 10,
+    "Constitution": 19,
+    "Charisma": 5,
+    "Wisdom": 12,
+    "Intelligence": 2,
+    "Strength": 20
+  }
+}

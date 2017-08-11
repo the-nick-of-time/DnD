@@ -1,0 +1,13 @@
+{
+  "AC": "17 (natural armor)",
+  "name": "Malformed Kraken",
+  "HP": "15d12+75",
+  "abilities": {
+    "Dexterity": 11,
+    "Charisma": 15,
+    "Constitution": 20,
+    "Intelligence": 11,
+    "Strength": 25,
+    "Wisdom": 15
+  }
+}

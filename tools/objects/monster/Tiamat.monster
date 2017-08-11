@@ -1,0 +1,13 @@
+{
+  "HP": "30d20+300",
+  "abilities": {
+    "Dexterity": 10,
+    "Wisdom": 26,
+    "Strength": 30,
+    "Charisma": 28,
+    "Constitution": 30,
+    "Intelligence": 26
+  },
+  "name": "Tiamat",
+  "AC": "25 (natural armor)"
+}

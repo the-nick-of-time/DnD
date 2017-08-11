@@ -1,0 +1,13 @@
+{
+  "AC": "14 (shield)",
+  "HP": "4d8+4",
+  "name": "Crushing Wave Reaver",
+  "abilities": {
+    "Intelligence": 10,
+    "Charisma": 8,
+    "Constitution": 13,
+    "Dexterity": 14,
+    "Strength": 15,
+    "Wisdom": 11
+  }
+}

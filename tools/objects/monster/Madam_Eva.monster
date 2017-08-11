@@ -1,0 +1,13 @@
+{
+  "name": "Madam Eva",
+  "abilities": {
+    "Constitution": 12,
+    "Intelligence": 17,
+    "Charisma": 18,
+    "Wisdom": 20,
+    "Dexterity": 11,
+    "Strength": 8
+  },
+  "HP": "16d8+16",
+  "AC": "10"
+}

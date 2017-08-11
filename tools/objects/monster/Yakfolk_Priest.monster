@@ -1,0 +1,13 @@
+{
+  "AC": "12 (hide armor)",
+  "HP": "7d10+14",
+  "name": "Yakfolk Priest",
+  "abilities": {
+    "Dexterity": 11,
+    "Wisdom": 18,
+    "Charisma": 14,
+    "Strength": 16,
+    "Constitution": 15,
+    "Intelligence": 14
+  }
+}

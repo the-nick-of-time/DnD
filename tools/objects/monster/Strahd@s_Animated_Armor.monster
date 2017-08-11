@@ -1,0 +1,13 @@
+{
+  "name": "Strahd's Animated Armor",
+  "abilities": {
+    "Constitution": 16,
+    "Intelligence": 9,
+    "Charisma": 9,
+    "Wisdom": 10,
+    "Dexterity": 13,
+    "Strength": 17
+  },
+  "HP": "15d8+45",
+  "AC": "21 (natural armor)"
+}

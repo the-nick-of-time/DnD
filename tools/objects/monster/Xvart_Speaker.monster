@@ -1,0 +1,13 @@
+{
+  "HP": "2d6",
+  "AC": "13 (leather armor)",
+  "name": "Xvart Speaker",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 10,
+    "Charisma": 7,
+    "Wisdom": 7,
+    "Intelligence": 11,
+    "Strength": 8
+  }
+}

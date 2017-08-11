@@ -1,0 +1,13 @@
+{
+  "HP": "2d8+2",
+  "AC": "12 (natural armor)",
+  "name": "Gnoll Witherling",
+  "abilities": {
+    "Dexterity": 8,
+    "Constitution": 12,
+    "Charisma": 5,
+    "Wisdom": 5,
+    "Intelligence": 5,
+    "Strength": 14
+  }
+}

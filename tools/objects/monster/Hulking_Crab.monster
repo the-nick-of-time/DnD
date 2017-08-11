@@ -1,0 +1,13 @@
+{
+  "AC": "17 (natural armor)",
+  "HP": "8d12+24",
+  "name": "Hulking Crab",
+  "abilities": {
+    "Dexterity": 8,
+    "Wisdom": 11,
+    "Charisma": 3,
+    "Strength": 19,
+    "Constitution": 16,
+    "Intelligence": 3
+  }
+}

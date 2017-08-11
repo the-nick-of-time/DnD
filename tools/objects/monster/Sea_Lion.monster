@@ -1,0 +1,13 @@
+{
+  "AC": "15 (natural armor)",
+  "name": "Sea Lion",
+  "HP": "12d10+24",
+  "abilities": {
+    "Dexterity": 15,
+    "Charisma": 8,
+    "Constitution": 15,
+    "Intelligence": 3,
+    "Strength": 17,
+    "Wisdom": 12
+  }
+}

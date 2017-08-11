@@ -1,0 +1,13 @@
+{
+  "AC": "14",
+  "HP": "4d8+4",
+  "name": "Sacred Stone Monk",
+  "abilities": {
+    "Intelligence": 10,
+    "Charisma": 9,
+    "Constitution": 12,
+    "Dexterity": 15,
+    "Strength": 13,
+    "Wisdom": 14
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "AC": "16 (scale mail, shield)",
+  "HP": "4d8+4",
+  "name": "Duergar Kavalrachni",
+  "abilities": {
+    "Strength": 14,
+    "Constitution": 14,
+    "Dexterity": 11,
+    "Wisdom": 10,
+    "Intelligence": 11,
+    "Charisma": 9
+  }
+}

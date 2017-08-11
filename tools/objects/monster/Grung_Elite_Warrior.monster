@@ -1,0 +1,13 @@
+{
+  "HP": "9d6+18",
+  "AC": "13",
+  "name": "Grung Elite Warrior",
+  "abilities": {
+    "Dexterity": 16,
+    "Constitution": 15,
+    "Charisma": 12,
+    "Wisdom": 11,
+    "Intelligence": 10,
+    "Strength": 7
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "HP": "4d6+4",
+  "AC": "14 (hide armor)",
+  "name": "Chitine",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Charisma": 7,
+    "Wisdom": 10,
+    "Intelligence": 10,
+    "Strength": 10
+  }
+}

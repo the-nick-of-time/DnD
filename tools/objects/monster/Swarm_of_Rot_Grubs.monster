@@ -1,0 +1,13 @@
+{
+  "HP": "5d8",
+  "AC": "8",
+  "name": "Swarm of Rot Grubs",
+  "abilities": {
+    "Dexterity": 7,
+    "Constitution": 10,
+    "Charisma": 1,
+    "Wisdom": 2,
+    "Intelligence": 1,
+    "Strength": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "HP": "10d12+40",
+  "AC": "14 (natural armor)",
+  "name": "Mouth of Grolantor",
+  "abilities": {
+    "Dexterity": 10,
+    "Constitution": 18,
+    "Charisma": 5,
+    "Wisdom": 7,
+    "Intelligence": 5,
+    "Strength": 21
+  }
+}

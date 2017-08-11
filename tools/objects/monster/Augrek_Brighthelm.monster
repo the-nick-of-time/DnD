@@ -1,0 +1,13 @@
+{
+  "AC": "15 (chain shirt, shield)",
+  "HP": "2d8+4",
+  "name": "Augrek Brighthelm",
+  "abilities": {
+    "Dexterity": 11,
+    "Wisdom": 11,
+    "Charisma": 11,
+    "Strength": 14,
+    "Constitution": 15,
+    "Intelligence": 10
+  }
+}

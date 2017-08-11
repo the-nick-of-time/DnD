@@ -1,0 +1,13 @@
+{
+  "HP": "18d8+54",
+  "abilities": {
+    "Dexterity": 12,
+    "Wisdom": 14,
+    "Strength": 20,
+    "Charisma": 16,
+    "Constitution": 16,
+    "Intelligence": 12
+  },
+  "name": "Naergoth Bladelord",
+  "AC": "18 (plate)"
+}

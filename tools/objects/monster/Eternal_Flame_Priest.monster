@@ -1,0 +1,13 @@
+{
+  "AC": "12 (15 with mage armor)",
+  "HP": "8d8+16",
+  "name": "Eternal Flame Priest",
+  "abilities": {
+    "Intelligence": 10,
+    "Charisma": 16,
+    "Constitution": 14,
+    "Dexterity": 15,
+    "Strength": 12,
+    "Wisdom": 11
+  }
+}

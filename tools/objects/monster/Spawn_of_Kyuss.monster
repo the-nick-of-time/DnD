@@ -1,0 +1,13 @@
+{
+  "HP": "9d8+36",
+  "AC": "10",
+  "name": "Spawn of Kyuss",
+  "abilities": {
+    "Dexterity": 11,
+    "Constitution": 18,
+    "Charisma": 3,
+    "Wisdom": 7,
+    "Intelligence": 5,
+    "Strength": 16
+  }
+}

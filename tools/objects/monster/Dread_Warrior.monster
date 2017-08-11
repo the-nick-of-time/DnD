@@ -1,0 +1,13 @@
+{
+  "AC": "18 (chain mail, shield)",
+  "name": "Dread Warrior",
+  "HP": "5d8+15",
+  "abilities": {
+    "Dexterity": 11,
+    "Charisma": 10,
+    "Constitution": 16,
+    "Intelligence": 10,
+    "Strength": 15,
+    "Wisdom": 12
+  }
+}

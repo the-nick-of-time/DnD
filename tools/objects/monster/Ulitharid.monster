@@ -1,0 +1,13 @@
+{
+  "HP": "17d10+34",
+  "AC": "15 (breastplate)",
+  "name": "Ulitharid",
+  "abilities": {
+    "Dexterity": 12,
+    "Constitution": 15,
+    "Charisma": 21,
+    "Wisdom": 19,
+    "Intelligence": 21,
+    "Strength": 15
+  }
+}

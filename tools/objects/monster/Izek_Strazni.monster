@@ -1,0 +1,13 @@
+{
+  "name": "Izek Strazni",
+  "abilities": {
+    "Constitution": 16,
+    "Intelligence": 10,
+    "Charisma": 15,
+    "Wisdom": 9,
+    "Dexterity": 15,
+    "Strength": 18
+  },
+  "HP": "15d8+45",
+  "AC": "14 (studded leather armor)"
+}

@@ -1,0 +1,13 @@
+{
+  "HP": "17d10+85",
+  "AC": "16 (natural armor)",
+  "name": "Devourer",
+  "abilities": {
+    "Dexterity": 12,
+    "Constitution": 20,
+    "Charisma": 16,
+    "Wisdom": 10,
+    "Intelligence": 13,
+    "Strength": 20
+  }
+}

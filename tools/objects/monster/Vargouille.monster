@@ -1,0 +1,13 @@
+{
+  "HP": "3d4+6",
+  "AC": "12",
+  "name": "Vargouille",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Charisma": 2,
+    "Wisdom": 7,
+    "Intelligence": 4,
+    "Strength": 6
+  }
+}

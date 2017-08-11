@@ -1,0 +1,13 @@
+{
+  "AC": "11 (16 with barkskin)",
+  "HP": "8d6+8",
+  "name": "Wiggan Nettlebee",
+  "abilities": {
+    "Intelligence": 14,
+    "Charisma": 13,
+    "Constitution": 12,
+    "Dexterity": 12,
+    "Strength": 8,
+    "Wisdom": 15
+  }
+}

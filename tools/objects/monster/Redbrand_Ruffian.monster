@@ -1,0 +1,13 @@
+{
+  "AC": "14 (studded leather armor)",
+  "name": "Redbrand Ruffian",
+  "abilities": {
+    "Intelligence": 9,
+    "Wisdom": 9,
+    "Constitution": 12,
+    "Charisma": 11,
+    "Strength": 11,
+    "Dexterity": 14
+  },
+  "HP": "3d8+3"
+}

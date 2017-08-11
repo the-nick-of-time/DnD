@@ -1,0 +1,13 @@
+{
+  "AC": "13 (chain shirt)",
+  "HP": "8d8+16",
+  "name": "Crushing Wave Priest",
+  "abilities": {
+    "Intelligence": 10,
+    "Charisma": 16,
+    "Constitution": 14,
+    "Dexterity": 11,
+    "Strength": 15,
+    "Wisdom": 11
+  }
+}

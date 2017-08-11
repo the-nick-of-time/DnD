@@ -1,0 +1,13 @@
+{
+  "AC": "16 (chain shirt, shield)",
+  "name": "Thayan Warrior",
+  "HP": "8d8+16",
+  "abilities": {
+    "Dexterity": 13,
+    "Charisma": 11,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Strength": 16,
+    "Wisdom": 11
+  }
+}

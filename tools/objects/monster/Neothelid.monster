@@ -1,0 +1,13 @@
+{
+  "HP": "21d20+105",
+  "AC": "16 (natural armor)",
+  "name": "Neothelid",
+  "abilities": {
+    "Dexterity": 7,
+    "Constitution": 21,
+    "Charisma": 12,
+    "Wisdom": 16,
+    "Intelligence": 3,
+    "Strength": 27
+  }
+}

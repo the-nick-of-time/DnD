@@ -1,0 +1,13 @@
+{
+  "name": "Strahd von Zarovich",
+  "abilities": {
+    "Constitution": 18,
+    "Intelligence": 20,
+    "Charisma": 18,
+    "Wisdom": 15,
+    "Dexterity": 18,
+    "Strength": 18
+  },
+  "HP": "17d8+68",
+  "AC": "16 (natural armor)"
+}

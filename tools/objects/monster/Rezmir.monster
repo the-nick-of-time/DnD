@@ -1,0 +1,13 @@
+{
+  "HP": "12d8+36",
+  "name": "Rezmir",
+  "AC": "13 (15 with the Black Dragon Mask)",
+  "abilities": {
+    "Wisdom": 12,
+    "Charisma": 14,
+    "Dexterity": 16,
+    "Intelligence": 15,
+    "Strength": 18,
+    "Constitution": 16
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "AC": "11 (14 with mage armor)",
+  "HP": "6d8+12",
+  "name": "Oreioth",
+  "abilities": {
+    "Intelligence": 16,
+    "Charisma": 11,
+    "Constitution": 14,
+    "Dexterity": 13,
+    "Strength": 8,
+    "Wisdom": 9
+  }
+}

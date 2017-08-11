@@ -1,0 +1,13 @@
+{
+  "AC": "18 (natural armor)",
+  "HP": "28d10+196",
+  "name": "Fraz-Urb'luu",
+  "abilities": {
+    "Strength": 29,
+    "Constitution": 25,
+    "Dexterity": 12,
+    "Wisdom": 24,
+    "Intelligence": 26,
+    "Charisma": 26
+  }
+}

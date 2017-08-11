@@ -1,0 +1,13 @@
+{
+  "HP": "15d12+90",
+  "AC": "21 (plate, shields)",
+  "name": "Fire Giant Dreadnought",
+  "abilities": {
+    "Dexterity": 9,
+    "Constitution": 23,
+    "Charisma": 11,
+    "Wisdom": 10,
+    "Intelligence": 8,
+    "Strength": 27
+  }
+}

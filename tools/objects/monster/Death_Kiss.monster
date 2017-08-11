@@ -1,0 +1,13 @@
+{
+  "HP": "17d10+68",
+  "AC": "16 (natural armor)",
+  "name": "Death Kiss",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 18,
+    "Charisma": 10,
+    "Wisdom": 12,
+    "Intelligence": 10,
+    "Strength": 18
+  }
+}

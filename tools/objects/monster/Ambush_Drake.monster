@@ -1,0 +1,13 @@
+{
+  "HP": "4d6+8",
+  "name": "Ambush Drake",
+  "AC": "13 (natural armor)",
+  "abilities": {
+    "Wisdom": 11,
+    "Charisma": 6,
+    "Dexterity": 15,
+    "Intelligence": 4,
+    "Strength": 13,
+    "Constitution": 14
+  }
+}

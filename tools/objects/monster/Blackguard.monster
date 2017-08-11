@@ -1,0 +1,13 @@
+{
+  "HP": "18d8+72",
+  "AC": "18 (plate)",
+  "name": "Blackguard",
+  "abilities": {
+    "Dexterity": 11,
+    "Constitution": 18,
+    "Charisma": 15,
+    "Wisdom": 14,
+    "Intelligence": 11,
+    "Strength": 18
+  }
+}

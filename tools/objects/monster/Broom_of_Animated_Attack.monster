@@ -1,0 +1,13 @@
+{
+  "name": "Broom of Animated Attack",
+  "abilities": {
+    "Constitution": 10,
+    "Intelligence": 1,
+    "Charisma": 1,
+    "Wisdom": 5,
+    "Dexterity": 17,
+    "Strength": 10
+  },
+  "HP": "5d6",
+  "AC": "15 (natural armor)"
+}

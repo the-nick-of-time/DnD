@@ -1,0 +1,13 @@
+{
+  "AC": "15 (natural armor)",
+  "name": "Giant Crayfish",
+  "HP": "7d10+7",
+  "abilities": {
+    "Dexterity": 13,
+    "Charisma": 3,
+    "Constitution": 13,
+    "Intelligence": 1,
+    "Strength": 15,
+    "Wisdom": 9
+  }
+}

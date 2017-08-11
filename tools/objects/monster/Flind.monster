@@ -1,0 +1,13 @@
+{
+  "HP": "15d8+60",
+  "AC": "16 (chain mail)",
+  "name": "Flind",
+  "abilities": {
+    "Dexterity": 10,
+    "Constitution": 19,
+    "Charisma": 12,
+    "Wisdom": 13,
+    "Intelligence": 11,
+    "Strength": 20
+  }
+}

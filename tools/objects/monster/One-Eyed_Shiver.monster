@@ -1,0 +1,13 @@
+{
+  "AC": "12 (15 with mage armor)",
+  "HP": "9d8+9",
+  "name": "One-Eyed Shiver",
+  "abilities": {
+    "Intelligence": 13,
+    "Charisma": 17,
+    "Constitution": 12,
+    "Dexterity": 14,
+    "Strength": 10,
+    "Wisdom": 13
+  }
+}

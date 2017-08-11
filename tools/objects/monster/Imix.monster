@@ -1,0 +1,13 @@
+{
+  "AC": "17",
+  "HP": "26d12+156",
+  "name": "Imix",
+  "abilities": {
+    "Intelligence": 15,
+    "Charisma": 23,
+    "Constitution": 22,
+    "Dexterity": 24,
+    "Strength": 19,
+    "Wisdom": 16
+  }
+}

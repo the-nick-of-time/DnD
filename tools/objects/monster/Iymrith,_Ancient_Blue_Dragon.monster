@@ -1,0 +1,13 @@
+{
+  "AC": "22 (natural armor)",
+  "HP": "26d20+208",
+  "name": "Iymrith, Ancient Blue Dragon",
+  "abilities": {
+    "Dexterity": 10,
+    "Wisdom": 17,
+    "Charisma": 21,
+    "Strength": 29,
+    "Constitution": 27,
+    "Intelligence": 18
+  }
+}

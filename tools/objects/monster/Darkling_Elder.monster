@@ -1,0 +1,13 @@
+{
+  "HP": "5d8+5",
+  "AC": "15 (studded leather armor)",
+  "name": "Darkling Elder",
+  "abilities": {
+    "Dexterity": 17,
+    "Constitution": 12,
+    "Charisma": 13,
+    "Wisdom": 14,
+    "Intelligence": 10,
+    "Strength": 13
+  }
+}

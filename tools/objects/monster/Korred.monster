@@ -1,0 +1,13 @@
+{
+  "HP": "12d6+60",
+  "AC": "17 (natural armor)",
+  "name": "Korred",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 20,
+    "Charisma": 9,
+    "Wisdom": 15,
+    "Intelligence": 10,
+    "Strength": 23
+  }
+}

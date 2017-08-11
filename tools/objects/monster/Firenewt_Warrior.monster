@@ -1,0 +1,13 @@
+{
+  "HP": "4d8+4",
+  "AC": "16 (chain shirt, shield)",
+  "name": "Firenewt Warrior",
+  "abilities": {
+    "Dexterity": 13,
+    "Constitution": 12,
+    "Charisma": 8,
+    "Wisdom": 11,
+    "Intelligence": 7,
+    "Strength": 10
+  }
+}

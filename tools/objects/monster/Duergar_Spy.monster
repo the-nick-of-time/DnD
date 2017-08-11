@@ -1,0 +1,13 @@
+{
+  "AC": "15 (studded leather)",
+  "name": "Duergar Spy",
+  "HP": "6d8+6",
+  "abilities": {
+    "Dexterity": 16,
+    "Charisma": 13,
+    "Constitution": 12,
+    "Intelligence": 12,
+    "Strength": 10,
+    "Wisdom": 10
+  }
+}

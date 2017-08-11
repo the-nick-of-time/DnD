@@ -1,0 +1,13 @@
+{
+  "HP": "3d4+3",
+  "AC": "16",
+  "name": "Quickling",
+  "abilities": {
+    "Dexterity": 23,
+    "Constitution": 13,
+    "Charisma": 7,
+    "Wisdom": 12,
+    "Intelligence": 10,
+    "Strength": 4
+  }
+}

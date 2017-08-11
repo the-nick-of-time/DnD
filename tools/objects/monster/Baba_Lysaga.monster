@@ -1,0 +1,13 @@
+{
+  "name": "Baba Lysaga",
+  "abilities": {
+    "Constitution": 16,
+    "Intelligence": 20,
+    "Charisma": 13,
+    "Wisdom": 17,
+    "Dexterity": 10,
+    "Strength": 18
+  },
+  "HP": "16d8+48",
+  "AC": "15 (natural armor)"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Mongrelfolk",
+  "abilities": {
+    "Constitution": 15,
+    "Intelligence": 9,
+    "Charisma": 6,
+    "Wisdom": 10,
+    "Dexterity": 9,
+    "Strength": 12
+  },
+  "HP": "4d8+8",
+  "AC": "11 (natural armor)"
+}

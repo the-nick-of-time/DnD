@@ -1,0 +1,13 @@
+{
+  "AC": "18 (plate)",
+  "HP": "8d8+16",
+  "name": "Sir Baric Nylef",
+  "abilities": {
+    "Dexterity": 11,
+    "Wisdom": 15,
+    "Charisma": 15,
+    "Strength": 18,
+    "Constitution": 14,
+    "Intelligence": 11
+  }
+}

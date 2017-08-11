@@ -1,0 +1,13 @@
+{
+  "AC": "16",
+  "HP": "22d20+110",
+  "name": "Maegera the Dawn Titan",
+  "abilities": {
+    "Dexterity": 22,
+    "Wisdom": 10,
+    "Charisma": 19,
+    "Strength": 21,
+    "Constitution": 20,
+    "Intelligence": 10
+  }
+}

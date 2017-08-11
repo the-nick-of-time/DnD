@@ -1,0 +1,13 @@
+{
+  "HP": "3d6+3",
+  "AC": "12",
+  "name": "Kobold Inventor",
+  "abilities": {
+    "Dexterity": 15,
+    "Constitution": 12,
+    "Charisma": 8,
+    "Wisdom": 7,
+    "Intelligence": 8,
+    "Strength": 7
+  }
+}

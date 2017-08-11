@@ -1,0 +1,13 @@
+{
+  "AC": "14 (natural armor)",
+  "HP": "7d8+28",
+  "name": "Troglodyte Champion of Laogzed",
+  "abilities": {
+    "Strength": 18,
+    "Constitution": 18,
+    "Dexterity": 12,
+    "Wisdom": 23,
+    "Intelligence": 8,
+    "Charisma": 12
+  }
+}

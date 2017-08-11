@@ -1,0 +1,13 @@
+{
+  "AC": "13",
+  "HP": "7d8+7",
+  "name": "Uthgardt Shaman",
+  "abilities": {
+    "Dexterity": 12,
+    "Wisdom": 15,
+    "Charisma": 12,
+    "Strength": 14,
+    "Constitution": 13,
+    "Intelligence": 10
+  }
+}

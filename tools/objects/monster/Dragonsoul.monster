@@ -1,0 +1,13 @@
+{
+  "HP": "17d8+34",
+  "abilities": {
+    "Dexterity": 18,
+    "Wisdom": 12,
+    "Strength": 11,
+    "Charisma": 16,
+    "Constitution": 14,
+    "Intelligence": 13
+  },
+  "name": "Dragonsoul",
+  "AC": "16 (studded leather)"
+}

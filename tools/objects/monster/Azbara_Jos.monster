@@ -1,0 +1,13 @@
+{
+  "HP": "6d8+12",
+  "name": "Azbara Jos",
+  "AC": "13 (16 with mage armor)",
+  "abilities": {
+    "Wisdom": 13,
+    "Charisma": 11,
+    "Dexterity": 16,
+    "Intelligence": 16,
+    "Strength": 9,
+    "Constitution": 14
+  }
+}

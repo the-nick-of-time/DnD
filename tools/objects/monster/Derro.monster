@@ -1,0 +1,13 @@
+{
+  "AC": "13 (leather armor)",
+  "HP": "3d6+3",
+  "name": "Derro",
+  "abilities": {
+    "Strength": 9,
+    "Constitution": 12,
+    "Dexterity": 14,
+    "Wisdom": 5,
+    "Intelligence": 11,
+    "Charisma": 9
+  }
+}

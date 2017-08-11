@@ -1,0 +1,13 @@
+{
+  "HP": "8d8",
+  "AC": "12",
+  "name": "Swarm of Cranium Rats",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 10,
+    "Charisma": 14,
+    "Wisdom": 11,
+    "Intelligence": 15,
+    "Strength": 9
+  }
+}

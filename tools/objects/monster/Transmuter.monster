@@ -1,0 +1,13 @@
+{
+  "HP": "9d8",
+  "AC": "12 (15 with mage armor)",
+  "name": "Transmuter",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 11,
+    "Charisma": 11,
+    "Wisdom": 12,
+    "Intelligence": 17,
+    "Strength": 9
+  }
+}

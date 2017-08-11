@@ -1,0 +1,13 @@
+{
+  "AC": "13 (leather)",
+  "HP": "6d8",
+  "name": "Shalvus Martholio",
+  "abilities": {
+    "Dexterity": 15,
+    "Wisdom": 14,
+    "Charisma": 14,
+    "Strength": 10,
+    "Constitution": 10,
+    "Intelligence": 12
+  }
+}

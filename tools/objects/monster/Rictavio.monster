@@ -1,0 +1,13 @@
+{
+  "name": "Rictavio",
+  "abilities": {
+    "Constitution": 13,
+    "Intelligence": 16,
+    "Charisma": 16,
+    "Wisdom": 18,
+    "Dexterity": 12,
+    "Strength": 9
+  },
+  "HP": "14d8+14",
+  "AC": "12 (leather armor)"
+}

@@ -1,0 +1,13 @@
+{
+  "HP": "14d8+28",
+  "AC": "17 (natural armor)",
+  "name": "Bheur Hag",
+  "abilities": {
+    "Dexterity": 16,
+    "Constitution": 14,
+    "Charisma": 16,
+    "Wisdom": 13,
+    "Intelligence": 12,
+    "Strength": 13
+  }
+}

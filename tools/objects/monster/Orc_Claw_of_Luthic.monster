@@ -1,0 +1,13 @@
+{
+  "HP": "6d8+18",
+  "AC": "14 (hide armor)",
+  "name": "Orc Claw of Luthic",
+  "abilities": {
+    "Dexterity": 15,
+    "Constitution": 16,
+    "Charisma": 11,
+    "Wisdom": 15,
+    "Intelligence": 10,
+    "Strength": 14
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "AC": "10 (13 with mage armor)",
+  "HP": "11d8+33",
+  "name": "Miraj Vizann",
+  "abilities": {
+    "Intelligence": 13,
+    "Charisma": 18,
+    "Constitution": 17,
+    "Dexterity": 10,
+    "Strength": 12,
+    "Wisdom": 11
+  }
+}

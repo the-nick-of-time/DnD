@@ -1,0 +1,13 @@
+{
+  "HP": "6d6+12",
+  "AC": "14 (natural armor)",
+  "name": "Vegepygmy Chief",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Charisma": 9,
+    "Wisdom": 12,
+    "Intelligence": 7,
+    "Strength": 14
+  }
+}

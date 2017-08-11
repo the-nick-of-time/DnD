@@ -1,0 +1,13 @@
+{
+  "AC": "14",
+  "name": "Siren",
+  "HP": "7d8+7",
+  "abilities": {
+    "Dexterity": 18,
+    "Charisma": 16,
+    "Constitution": 12,
+    "Intelligence": 13,
+    "Strength": 10,
+    "Wisdom": 14
+  }
+}

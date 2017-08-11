@@ -1,0 +1,13 @@
+{
+  "HP": "12d8+24",
+  "abilities": {
+    "Dexterity": 16,
+    "Wisdom": 12,
+    "Strength": 11,
+    "Charisma": 14,
+    "Constitution": 14,
+    "Intelligence": 12
+  },
+  "name": "Dragonfang",
+  "AC": "15 (studded leather)"
+}

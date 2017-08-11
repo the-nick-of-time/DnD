@@ -1,0 +1,13 @@
+{
+  "AC": "20 (natural armor)",
+  "HP": "27d20+243",
+  "name": "Ogremoch",
+  "abilities": {
+    "Intelligence": 11,
+    "Charisma": 22,
+    "Constitution": 28,
+    "Dexterity": 11,
+    "Strength": 26,
+    "Wisdom": 15
+  }
+}

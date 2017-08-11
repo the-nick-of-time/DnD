@@ -1,0 +1,13 @@
+{
+  "HP": "6d8+6",
+  "name": "Dragonwing",
+  "AC": "14 (leather armor)",
+  "abilities": {
+    "Wisdom": 11,
+    "Charisma": 13,
+    "Dexterity": 16,
+    "Intelligence": 11,
+    "Strength": 11,
+    "Constitution": 13
+  }
+}

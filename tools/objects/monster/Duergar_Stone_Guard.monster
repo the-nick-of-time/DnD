@@ -1,0 +1,13 @@
+{
+  "AC": "18 (chain mail, shield)",
+  "HP": "6d8+12",
+  "name": "Duergar Stone Guard",
+  "abilities": {
+    "Strength": 18,
+    "Constitution": 14,
+    "Dexterity": 11,
+    "Wisdom": 10,
+    "Intelligence": 11,
+    "Charisma": 9
+  }
+}

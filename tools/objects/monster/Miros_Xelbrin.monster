@@ -1,0 +1,13 @@
+{
+  "AC": "10",
+  "HP": "4d8+4",
+  "name": "Miros Xelbrin",
+  "abilities": {
+    "Dexterity": 10,
+    "Wisdom": 12,
+    "Charisma": 14,
+    "Strength": 16,
+    "Constitution": 15,
+    "Intelligence": 11
+  }
+}

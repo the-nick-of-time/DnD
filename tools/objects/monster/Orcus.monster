@@ -1,0 +1,13 @@
+{
+  "AC": "17 (natural armor)",
+  "HP": "30d12+210",
+  "name": "Orcus",
+  "abilities": {
+    "Strength": 27,
+    "Constitution": 25,
+    "Dexterity": 14,
+    "Wisdom": 20,
+    "Intelligence": 20,
+    "Charisma": 25
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "HP": "20d10+100",
+  "AC": "10",
+  "name": "Elder Brain",
+  "abilities": {
+    "Dexterity": 10,
+    "Constitution": 20,
+    "Charisma": 24,
+    "Wisdom": 19,
+    "Intelligence": 21,
+    "Strength": 15
+  }
+}

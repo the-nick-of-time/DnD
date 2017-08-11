@@ -1,0 +1,13 @@
+{
+  "AC": "14 (natural armor)",
+  "name": "Kelpie",
+  "HP": "9d8+27",
+  "abilities": {
+    "Dexterity": 14,
+    "Charisma": 10,
+    "Constitution": 16,
+    "Intelligence": 7,
+    "Strength": 14,
+    "Wisdom": 12
+  }
+}

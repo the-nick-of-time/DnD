@@ -1,0 +1,13 @@
+{
+  "HP": "16d12+80",
+  "AC": "14 (natural armor)",
+  "name": "Froghemoth",
+  "abilities": {
+    "Dexterity": 13,
+    "Constitution": 20,
+    "Charisma": 5,
+    "Wisdom": 12,
+    "Intelligence": 2,
+    "Strength": 23
+  }
+}

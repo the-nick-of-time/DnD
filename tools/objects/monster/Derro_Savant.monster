@@ -1,0 +1,13 @@
+{
+  "AC": "13 (leather armor)",
+  "HP": "11d6+11",
+  "name": "Derro Savant",
+  "abilities": {
+    "Strength": 9,
+    "Constitution": 12,
+    "Dexterity": 14,
+    "Wisdom": 5,
+    "Intelligence": 11,
+    "Charisma": 14
+  }
+}

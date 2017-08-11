@@ -1,0 +1,13 @@
+{
+  "HP": "5d6+10",
+  "AC": "15 (natural armor)",
+  "name": "Kobold Scale Sorcerer",
+  "abilities": {
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Charisma": 14,
+    "Wisdom": 9,
+    "Intelligence": 10,
+    "Strength": 7
+  }
+}

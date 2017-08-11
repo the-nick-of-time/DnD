@@ -1,0 +1,13 @@
+{
+  "AC": "18 (natural armor)",
+  "HP": "28d12+168",
+  "name": "Juiblex",
+  "abilities": {
+    "Strength": 24,
+    "Constitution": 23,
+    "Dexterity": 10,
+    "Wisdom": 20,
+    "Intelligence": 20,
+    "Charisma": 16
+  }
+}

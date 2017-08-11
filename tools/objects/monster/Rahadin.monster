@@ -1,0 +1,13 @@
+{
+  "name": "Rahadin",
+  "abilities": {
+    "Constitution": 17,
+    "Intelligence": 15,
+    "Charisma": 18,
+    "Wisdom": 16,
+    "Dexterity": 22,
+    "Strength": 14
+  },
+  "HP": "18d8+54",
+  "AC": "18 (studded leather)"
+}

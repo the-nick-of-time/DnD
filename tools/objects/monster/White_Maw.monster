@@ -1,0 +1,13 @@
+{
+  "AC": "5\n",
+  "name": "White Maw",
+  "HP": "14d20+70",
+  "abilities": {
+    "Dexterity": 1,
+    "Charisma": 3,
+    "Constitution": 20,
+    "Intelligence": 12,
+    "Strength": 18,
+    "Wisdom": 10
+  }
+}

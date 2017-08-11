@@ -1,0 +1,13 @@
+{
+  "AC": "18 (plate)",
+  "HP": "18d8+36",
+  "name": "Fire Elemental Myrmidon",
+  "abilities": {
+    "Intelligence": 9,
+    "Charisma": 10,
+    "Constitution": 15,
+    "Dexterity": 18,
+    "Strength": 13,
+    "Wisdom": 10
+  }
+}

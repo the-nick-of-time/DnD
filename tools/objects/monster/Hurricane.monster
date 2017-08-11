@@ -1,0 +1,13 @@
+{
+  "AC": "14",
+  "HP": "6d8+6",
+  "name": "Hurricane",
+  "abilities": {
+    "Intelligence": 10,
+    "Charisma": 10,
+    "Constitution": 13,
+    "Dexterity": 16,
+    "Strength": 12,
+    "Wisdom": 12
+  }
+}

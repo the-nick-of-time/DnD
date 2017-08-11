@@ -1,0 +1,13 @@
+{
+  "AC": "10 (13 with mage armor)",
+  "HP": "8d8+16",
+  "name": "Fathomer",
+  "abilities": {
+    "Intelligence": 11,
+    "Charisma": 15,
+    "Constitution": 14,
+    "Dexterity": 11,
+    "Strength": 14,
+    "Wisdom": 11
+  }
+}

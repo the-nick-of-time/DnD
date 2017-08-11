@@ -1,0 +1,13 @@
+{
+  "name": "Strahd Zombie",
+  "abilities": {
+    "Constitution": 16,
+    "Intelligence": 3,
+    "Charisma": 5,
+    "Wisdom": 6,
+    "Dexterity": 6,
+    "Strength": 13
+  },
+  "HP": "4d8+12",
+  "AC": "8"
+}

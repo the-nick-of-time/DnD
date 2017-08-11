@@ -1,0 +1,13 @@
+{
+  "HP": "18d8+36",
+  "AC": "18 (plate)",
+  "name": "War Priest",
+  "abilities": {
+    "Dexterity": 10,
+    "Constitution": 14,
+    "Charisma": 13,
+    "Wisdom": 17,
+    "Intelligence": 11,
+    "Strength": 16
+  }
+}

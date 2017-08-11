@@ -1,0 +1,13 @@
+{
+  "AC": "13 (natural armor)",
+  "HP": "7d12+14",
+  "name": "Lifferlas",
+  "abilities": {
+    "Dexterity": 6,
+    "Wisdom": 10,
+    "Charisma": 7,
+    "Strength": 19,
+    "Constitution": 15,
+    "Intelligence": 10
+  }
+}

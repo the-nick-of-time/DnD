@@ -1,0 +1,13 @@
+{
+  "AC": "18 (natural armor)",
+  "HP": "24d12+168",
+  "name": "Olhydra",
+  "abilities": {
+    "Intelligence": 17,
+    "Charisma": 23,
+    "Constitution": 24,
+    "Dexterity": 22,
+    "Strength": 21,
+    "Wisdom": 18
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "HP": "2d6+4",
+  "AC": "12",
+  "name": "Grung",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 15,
+    "Charisma": 10,
+    "Wisdom": 11,
+    "Intelligence": 10,
+    "Strength": 7
+  }
+}

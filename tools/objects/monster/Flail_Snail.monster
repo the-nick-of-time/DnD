@@ -1,0 +1,13 @@
+{
+  "HP": "5d10+25",
+  "AC": "16 (natural armor)",
+  "name": "Flail Snail",
+  "abilities": {
+    "Dexterity": 5,
+    "Constitution": 20,
+    "Charisma": 5,
+    "Wisdom": 10,
+    "Intelligence": 3,
+    "Strength": 17
+  }
+}

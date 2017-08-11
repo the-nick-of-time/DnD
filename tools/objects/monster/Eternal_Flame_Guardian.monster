@@ -1,0 +1,13 @@
+{
+  "AC": "17 (breastplate, shield; 15 while using a crossbow)",
+  "HP": "7d8+14",
+  "name": "Eternal Flame Guardian",
+  "abilities": {
+    "Intelligence": 8,
+    "Charisma": 13,
+    "Constitution": 14,
+    "Dexterity": 13,
+    "Strength": 15,
+    "Wisdom": 11
+  }
+}

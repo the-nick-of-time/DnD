@@ -1,0 +1,13 @@
+{
+  "HP": "9d8+18",
+  "AC": "15 (natural armor)",
+  "name": "Bodak",
+  "abilities": {
+    "Dexterity": 16,
+    "Constitution": 15,
+    "Charisma": 12,
+    "Wisdom": 12,
+    "Intelligence": 7,
+    "Strength": 15
+  }
+}

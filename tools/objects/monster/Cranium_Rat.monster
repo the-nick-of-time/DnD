@@ -1,0 +1,13 @@
+{
+  "HP": "1d4",
+  "AC": "12",
+  "name": "Cranium Rat",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 10,
+    "Charisma": 8,
+    "Wisdom": 11,
+    "Intelligence": 4,
+    "Strength": 2
+  }
+}

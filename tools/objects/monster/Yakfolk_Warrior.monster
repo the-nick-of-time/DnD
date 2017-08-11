@@ -1,0 +1,13 @@
+{
+  "AC": "11 (leather)",
+  "HP": "8d10+16",
+  "name": "Yakfolk Warrior",
+  "abilities": {
+    "Dexterity": 11,
+    "Wisdom": 15,
+    "Charisma": 14,
+    "Strength": 18,
+    "Constitution": 15,
+    "Intelligence": 14
+  }
+}

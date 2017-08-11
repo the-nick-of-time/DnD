@@ -1,0 +1,13 @@
+{
+  "name": "Pidlwick II",
+  "abilities": {
+    "Constitution": 11,
+    "Intelligence": 8,
+    "Charisma": 10,
+    "Wisdom": 13,
+    "Dexterity": 14,
+    "Strength": 10
+  },
+  "HP": "3d6",
+  "AC": "14 (natural armor)"
+}

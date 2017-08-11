@@ -1,0 +1,13 @@
+{
+  "name": "Phantom Warrior",
+  "abilities": {
+    "Constitution": 16,
+    "Intelligence": 8,
+    "Charisma": 15,
+    "Wisdom": 10,
+    "Dexterity": 11,
+    "Strength": 16
+  },
+  "HP": "6d8+18",
+  "AC": "16"
+}

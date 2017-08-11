@@ -1,0 +1,13 @@
+{
+  "AC": "15 (chain shirt)",
+  "HP": "3d8",
+  "name": "Drow Spore Servant",
+  "abilities": {
+    "Strength": 10,
+    "Constitution": 10,
+    "Dexterity": 14,
+    "Wisdom": 6,
+    "Intelligence": 2,
+    "Charisma": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Wereraven",
+  "abilities": {
+    "Constitution": 11,
+    "Intelligence": 13,
+    "Charisma": 14,
+    "Wisdom": 15,
+    "Dexterity": 15,
+    "Strength": 10
+  },
+  "HP": "7d8",
+  "AC": "12"
+}

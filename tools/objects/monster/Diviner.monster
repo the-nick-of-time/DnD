@@ -1,0 +1,13 @@
+{
+  "HP": "15d8",
+  "AC": "12 (15 with mage armor)",
+  "name": "Diviner",
+  "abilities": {
+    "Dexterity": 14,
+    "Constitution": 11,
+    "Charisma": 11,
+    "Wisdom": 12,
+    "Intelligence": 18,
+    "Strength": 9
+  }
+}

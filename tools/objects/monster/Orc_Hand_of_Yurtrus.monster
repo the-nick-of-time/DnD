@@ -1,0 +1,13 @@
+{
+  "HP": "4d8+12",
+  "AC": "12 (hide armor)",
+  "name": "Orc Hand of Yurtrus",
+  "abilities": {
+    "Dexterity": 11,
+    "Constitution": 16,
+    "Charisma": 9,
+    "Wisdom": 14,
+    "Intelligence": 11,
+    "Strength": 12
+  }
+}

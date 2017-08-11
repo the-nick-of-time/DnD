@@ -1,0 +1,13 @@
+{
+  "AC": "13",
+  "name": "Nereid",
+  "HP": "8d8+8",
+  "abilities": {
+    "Dexterity": 17,
+    "Charisma": 16,
+    "Constitution": 12,
+    "Intelligence": 13,
+    "Strength": 10,
+    "Wisdom": 14
+  }
+}

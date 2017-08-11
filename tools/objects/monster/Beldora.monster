@@ -1,0 +1,13 @@
+{
+  "AC": "12",
+  "HP": "4d8",
+  "name": "Beldora",
+  "abilities": {
+    "Dexterity": 14,
+    "Wisdom": 12,
+    "Charisma": 16,
+    "Strength": 10,
+    "Constitution": 10,
+    "Intelligence": 16
+  }
+}

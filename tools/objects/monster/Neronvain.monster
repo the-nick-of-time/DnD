@@ -1,0 +1,13 @@
+{
+  "HP": "18d8+36",
+  "abilities": {
+    "Dexterity": 17,
+    "Wisdom": 13,
+    "Strength": 8,
+    "Charisma": 18,
+    "Constitution": 15,
+    "Intelligence": 16
+  },
+  "name": "Neronvain",
+  "AC": "17"
+}

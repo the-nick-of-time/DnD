@@ -1,0 +1,13 @@
+{
+  "HP": "3d6+3",
+  "AC": "14 (leather armor)",
+  "name": "Darkling",
+  "abilities": {
+    "Dexterity": 16,
+    "Constitution": 112,
+    "Charisma": 10,
+    "Wisdom": 12,
+    "Intelligence": 10,
+    "Strength": 9
+  }
+}

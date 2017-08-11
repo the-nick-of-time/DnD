@@ -1,0 +1,13 @@
+{
+  "HP": "7d8+14",
+  "AC": "13 (studded leather armor)",
+  "name": "Hobgoblin Devastator",
+  "abilities": {
+    "Dexterity": 12,
+    "Constitution": 14,
+    "Charisma": 11,
+    "Wisdom": 13,
+    "Intelligence": 16,
+    "Strength": 13
+  }
+}

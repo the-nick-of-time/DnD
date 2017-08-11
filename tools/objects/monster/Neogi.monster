@@ -1,0 +1,13 @@
+{
+  "HP": "6d6+12",
+  "AC": "15 (natural armor)",
+  "name": "Neogi",
+  "abilities": {
+    "Dexterity": 16,
+    "Constitution": 14,
+    "Charisma": 15,
+    "Wisdom": 12,
+    "Intelligence": 13,
+    "Strength": 6
+  }
+}

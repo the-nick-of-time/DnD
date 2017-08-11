@@ -1,0 +1,13 @@
+{
+  "HP": "4d8+8",
+  "AC": "13 (natural armor)",
+  "name": "Deinonychus",
+  "abilities": {
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Charisma": 6,
+    "Wisdom": 12,
+    "Intelligence": 4,
+    "Strength": 15
+  }
+}

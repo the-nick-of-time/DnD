@@ -1,0 +1,13 @@
+{
+  "AC": "12 (15 with mage armor)",
+  "HP": "8d8+8",
+  "name": "Skyweaver",
+  "abilities": {
+    "Intelligence": 11,
+    "Charisma": 16,
+    "Constitution": 12,
+    "Dexterity": 14,
+    "Strength": 8,
+    "Wisdom": 10
+  }
+}

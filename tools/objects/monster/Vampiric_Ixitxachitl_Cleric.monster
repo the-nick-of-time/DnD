@@ -1,0 +1,13 @@
+{
+  "AC": "16 (natural armor)",
+  "HP": "8d8+8",
+  "name": "Vampiric Ixitxachitl Cleric",
+  "abilities": {
+    "Strength": 14,
+    "Constitution": 13,
+    "Dexterity": 18,
+    "Wisdom": 13,
+    "Intelligence": 12,
+    "Charisma": 7
+  }
+}

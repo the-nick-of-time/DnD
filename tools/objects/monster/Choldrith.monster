@@ -1,0 +1,13 @@
+{
+  "HP": "12d8+12",
+  "AC": "15 (studded leather armor)",
+  "name": "Choldrith",
+  "abilities": {
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Charisma": 10,
+    "Wisdom": 14,
+    "Intelligence": 11,
+    "Strength": 12
+  }
+}

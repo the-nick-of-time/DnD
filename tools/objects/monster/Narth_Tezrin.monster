@@ -1,0 +1,13 @@
+{
+  "AC": "12",
+  "HP": "4d8",
+  "name": "Narth Tezrin",
+  "abilities": {
+    "Dexterity": 15,
+    "Wisdom": 14,
+    "Charisma": 16,
+    "Strength": 10,
+    "Constitution": 10,
+    "Intelligence": 12
+  }
+}

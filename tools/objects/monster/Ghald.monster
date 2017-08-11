@@ -1,0 +1,13 @@
+{
+  "AC": "15 (natural armor)",
+  "HP": "12d10+36",
+  "name": "Ghald",
+  "abilities": {
+    "Intelligence": 14,
+    "Charisma": 17,
+    "Constitution": 16,
+    "Dexterity": 17,
+    "Strength": 19,
+    "Wisdom": 13
+  }
+}

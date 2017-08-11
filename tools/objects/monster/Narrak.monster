@@ -1,0 +1,13 @@
+{
+  "AC": "12 (15 to mage armor)",
+  "HP": "9d6+9",
+  "name": "Narrak",
+  "abilities": {
+    "Strength": 9,
+    "Constitution": 13,
+    "Dexterity": 14,
+    "Wisdom": 5,
+    "Intelligence": 14,
+    "Charisma": 16
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "HP": "5d8+10",
+  "AC": "11 (natural armor)",
+  "name": "Sea Spawn",
+  "abilities": {
+    "Dexterity": 8,
+    "Constitution": 15,
+    "Charisma": 8,
+    "Wisdom": 10,
+    "Intelligence": 6,
+    "Strength": 15
+  }
+}

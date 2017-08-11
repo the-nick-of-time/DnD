@@ -1,0 +1,13 @@
+{
+  "AC": "15 (natural armor)",
+  "HP": "10d10+20",
+  "name": "Yestabrod",
+  "abilities": {
+    "Strength": 12,
+    "Constitution": 14,
+    "Dexterity": 10,
+    "Wisdom": 15,
+    "Intelligence": 13,
+    "Charisma": 10
+  }
+}

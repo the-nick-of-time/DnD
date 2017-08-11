@@ -1,0 +1,13 @@
+{
+  "AC": "11",
+  "HP": "2d6+2",
+  "name": "Oren Yogilvy",
+  "abilities": {
+    "Dexterity": 13,
+    "Wisdom": 10,
+    "Charisma": 16,
+    "Strength": 8,
+    "Constitution": 12,
+    "Intelligence": 11
+  }
+}
