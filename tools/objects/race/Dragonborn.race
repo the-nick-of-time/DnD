@@ -1,0 +1,8 @@
+{
+  "name": "Dragonborn",
+  "bonus": {
+    "Strength": 2,
+		"Charisma": 1
+  },
+  "size": "Medium"
+}
