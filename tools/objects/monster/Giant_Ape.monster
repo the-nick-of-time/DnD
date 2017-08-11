@@ -1,0 +1,13 @@
+{
+  "name": "Giant Ape",
+  "HP": "15d12",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 23,
+    "Constitution": 18,
+    "Wisdom": 12,
+    "Dexterity": 14,
+    "Intelligence": 7
+  }
+}

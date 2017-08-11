@@ -1,0 +1,13 @@
+{
+  "name": "Rust Monster",
+  "HP": "5d8",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 13,
+    "Constitution": 13,
+    "Wisdom": 13,
+    "Dexterity": 12,
+    "Intelligence": 2
+  }
+}

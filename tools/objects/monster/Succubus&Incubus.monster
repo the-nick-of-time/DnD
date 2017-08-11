@@ -1,0 +1,13 @@
+{
+  "name": "Succubus/Incubus",
+  "HP": "12d8",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 20,
+    "Strength": 8,
+    "Constitution": 13,
+    "Wisdom": 12,
+    "Dexterity": 17,
+    "Intelligence": 15
+  }
+}

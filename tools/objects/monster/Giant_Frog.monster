@@ -1,0 +1,13 @@
+{
+  "name": "Giant Frog",
+  "HP": "4d8",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 12,
+    "Constitution": 11,
+    "Wisdom": 10,
+    "Dexterity": 13,
+    "Intelligence": 2
+  }
+}

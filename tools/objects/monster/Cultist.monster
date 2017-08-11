@@ -1,0 +1,13 @@
+{
+  "name": "Cultist",
+  "HP": "2d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 11,
+    "Constitution": 10,
+    "Wisdom": 11,
+    "Dexterity": 12,
+    "Intelligence": 10
+  }
+}

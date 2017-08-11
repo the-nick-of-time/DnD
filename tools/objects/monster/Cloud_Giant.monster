@@ -1,0 +1,13 @@
+{
+  "name": "Cloud Giant",
+  "HP": "16d12",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 16,
+    "Strength": 27,
+    "Constitution": 22,
+    "Wisdom": 16,
+    "Dexterity": 10,
+    "Intelligence": 12
+  }
+}

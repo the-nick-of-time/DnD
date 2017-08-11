@@ -1,0 +1,13 @@
+{
+  "name": "Winter Wolf",
+  "HP": "10d10",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 18,
+    "Constitution": 14,
+    "Wisdom": 12,
+    "Dexterity": 13,
+    "Intelligence": 7
+  }
+}

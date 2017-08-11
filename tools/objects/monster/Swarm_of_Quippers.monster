@@ -1,0 +1,13 @@
+{
+  "name": "Swarm of Quippers",
+  "HP": "8d8",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 2,
+    "Strength": 13,
+    "Constitution": 9,
+    "Wisdom": 7,
+    "Dexterity": 16,
+    "Intelligence": 1
+  }
+}

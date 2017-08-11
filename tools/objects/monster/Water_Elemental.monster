@@ -1,0 +1,13 @@
+{
+  "name": "Water Elemental",
+  "HP": "12d10",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 18,
+    "Constitution": 18,
+    "Wisdom": 10,
+    "Dexterity": 14,
+    "Intelligence": 5
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Jackal",
+  "HP": "1d6",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 8,
+    "Constitution": 11,
+    "Wisdom": 12,
+    "Dexterity": 15,
+    "Intelligence": 3
+  }
+}

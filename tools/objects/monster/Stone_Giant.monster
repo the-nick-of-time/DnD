@@ -1,0 +1,13 @@
+{
+  "name": "Stone Giant",
+  "HP": "11d12",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 9,
+    "Strength": 23,
+    "Constitution": 20,
+    "Wisdom": 12,
+    "Dexterity": 15,
+    "Intelligence": 10
+  }
+}

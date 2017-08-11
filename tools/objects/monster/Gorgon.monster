@@ -1,0 +1,13 @@
+{
+  "name": "Gorgon",
+  "HP": "12d10",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 20,
+    "Constitution": 18,
+    "Wisdom": 12,
+    "Dexterity": 11,
+    "Intelligence": 2
+  }
+}

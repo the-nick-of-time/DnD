@@ -1,0 +1,13 @@
+{
+  "name": "Weasel",
+  "HP": "1d4",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 3,
+    "Constitution": 8,
+    "Wisdom": 12,
+    "Dexterity": 16,
+    "Intelligence": 2
+  }
+}

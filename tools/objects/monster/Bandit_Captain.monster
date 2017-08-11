@@ -1,0 +1,13 @@
+{
+  "name": "Bandit Captain",
+  "HP": "10d8",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 14,
+    "Strength": 15,
+    "Constitution": 14,
+    "Wisdom": 11,
+    "Dexterity": 16,
+    "Intelligence": 14
+  }
+}

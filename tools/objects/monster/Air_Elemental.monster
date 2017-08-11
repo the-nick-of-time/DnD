@@ -1,0 +1,13 @@
+{
+  "name": "Air Elemental",
+  "HP": "12d10",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 14,
+    "Constitution": 14,
+    "Wisdom": 10,
+    "Dexterity": 20,
+    "Intelligence": 6
+  }
+}

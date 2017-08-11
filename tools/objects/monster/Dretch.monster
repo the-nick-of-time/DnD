@@ -1,0 +1,13 @@
+{
+  "name": "Dretch",
+  "HP": "4d6",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 11,
+    "Constitution": 12,
+    "Wisdom": 8,
+    "Dexterity": 11,
+    "Intelligence": 5
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Green Dragon Wyrmling",
+  "HP": "7d8",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 13,
+    "Strength": 15,
+    "Constitution": 13,
+    "Wisdom": 11,
+    "Dexterity": 12,
+    "Intelligence": 14
+  }
+}

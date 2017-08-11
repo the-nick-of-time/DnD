@@ -1,0 +1,13 @@
+{
+  "name": "Stirge",
+  "HP": "1d4",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 4,
+    "Constitution": 11,
+    "Wisdom": 8,
+    "Dexterity": 16,
+    "Intelligence": 2
+  }
+}

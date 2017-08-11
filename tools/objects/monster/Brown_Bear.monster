@@ -1,0 +1,13 @@
+{
+  "name": "Brown Bear",
+  "HP": "4d10",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 19,
+    "Constitution": 16,
+    "Wisdom": 13,
+    "Dexterity": 10,
+    "Intelligence": 2
+  }
+}

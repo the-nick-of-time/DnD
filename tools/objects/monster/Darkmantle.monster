@@ -1,0 +1,13 @@
+{
+  "name": "Darkmantle",
+  "HP": "5d6",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 16,
+    "Constitution": 13,
+    "Wisdom": 10,
+    "Dexterity": 12,
+    "Intelligence": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Young Gold Dragon",
+  "HP": "17d10",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 20,
+    "Strength": 23,
+    "Constitution": 21,
+    "Wisdom": 13,
+    "Dexterity": 14,
+    "Intelligence": 16
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Young Bronze Dragon",
+  "HP": "15d10",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 17,
+    "Strength": 21,
+    "Constitution": 19,
+    "Wisdom": 13,
+    "Dexterity": 10,
+    "Intelligence": 14
+  }
+}

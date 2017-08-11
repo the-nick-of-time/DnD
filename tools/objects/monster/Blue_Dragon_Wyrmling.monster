@@ -1,0 +1,13 @@
+{
+  "name": "Blue Dragon Wyrmling",
+  "HP": "8d8",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 15,
+    "Strength": 17,
+    "Constitution": 15,
+    "Wisdom": 11,
+    "Dexterity": 10,
+    "Intelligence": 12
+  }
+}

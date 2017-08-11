@@ -1,0 +1,13 @@
+{
+  "name": "Red Dragon Wyrmling",
+  "HP": "10d8",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 15,
+    "Strength": 19,
+    "Constitution": 17,
+    "Wisdom": 11,
+    "Dexterity": 10,
+    "Intelligence": 12
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Giant Constrictor Snake",
+  "HP": "8d12",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 19,
+    "Constitution": 12,
+    "Wisdom": 10,
+    "Dexterity": 14,
+    "Intelligence": 1
+  }
+}

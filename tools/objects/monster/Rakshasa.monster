@@ -1,0 +1,13 @@
+{
+  "name": "Rakshasa",
+  "HP": "13d8",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 20,
+    "Strength": 14,
+    "Constitution": 18,
+    "Wisdom": 16,
+    "Dexterity": 17,
+    "Intelligence": 13
+  }
+}

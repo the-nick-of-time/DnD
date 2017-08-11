@@ -1,0 +1,13 @@
+{
+  "name": "Grimlock",
+  "HP": "2d8",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 16,
+    "Constitution": 12,
+    "Wisdom": 8,
+    "Dexterity": 12,
+    "Intelligence": 9
+  }
+}

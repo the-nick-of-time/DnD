@@ -1,0 +1,13 @@
+{
+  "name": "Deva",
+  "HP": "16d8",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 20,
+    "Strength": 18,
+    "Constitution": 18,
+    "Wisdom": 20,
+    "Dexterity": 18,
+    "Intelligence": 17
+  }
+}

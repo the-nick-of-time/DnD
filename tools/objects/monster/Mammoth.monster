@@ -1,0 +1,13 @@
+{
+  "name": "Mammoth",
+  "HP": "11d12",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 24,
+    "Constitution": 21,
+    "Wisdom": 11,
+    "Dexterity": 9,
+    "Intelligence": 3
+  }
+}

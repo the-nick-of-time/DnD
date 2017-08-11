@@ -1,0 +1,13 @@
+{
+  "name": "Druid",
+  "HP": "5d8",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 10,
+    "Constitution": 13,
+    "Wisdom": 15,
+    "Dexterity": 12,
+    "Intelligence": 12
+  }
+}

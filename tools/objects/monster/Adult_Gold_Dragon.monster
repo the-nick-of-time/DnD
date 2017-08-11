@@ -1,0 +1,13 @@
+{
+  "name": "Adult Gold Dragon",
+  "HP": "19d12",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 24,
+    "Strength": 27,
+    "Constitution": 25,
+    "Wisdom": 15,
+    "Dexterity": 14,
+    "Intelligence": 16
+  }
+}

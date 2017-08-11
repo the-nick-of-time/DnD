@@ -1,0 +1,13 @@
+{
+  "name": "Adult White Dragon",
+  "HP": "16d12",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 12,
+    "Strength": 22,
+    "Constitution": 22,
+    "Wisdom": 12,
+    "Dexterity": 10,
+    "Intelligence": 8
+  }
+}

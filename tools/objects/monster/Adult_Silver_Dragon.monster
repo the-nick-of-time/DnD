@@ -1,0 +1,13 @@
+{
+  "name": "Adult Silver Dragon",
+  "HP": "18d12",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 21,
+    "Strength": 27,
+    "Constitution": 25,
+    "Wisdom": 13,
+    "Dexterity": 10,
+    "Intelligence": 16
+  }
+}

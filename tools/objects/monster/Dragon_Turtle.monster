@@ -1,0 +1,13 @@
+{
+  "name": "Dragon Turtle",
+  "HP": "22d20",
+  "AC": 20,
+  "abilities": {
+    "Charisma": 12,
+    "Strength": 25,
+    "Constitution": 20,
+    "Wisdom": 12,
+    "Dexterity": 10,
+    "Intelligence": 10
+  }
+}

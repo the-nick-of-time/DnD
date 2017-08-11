@@ -1,0 +1,13 @@
+{
+  "name": "Drow",
+  "HP": "3d8",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 12,
+    "Strength": 10,
+    "Constitution": 10,
+    "Wisdom": 11,
+    "Dexterity": 14,
+    "Intelligence": 11
+  }
+}

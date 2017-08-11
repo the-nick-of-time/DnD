@@ -1,0 +1,13 @@
+{
+  "name": "Kobold",
+  "HP": "2d6",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 7,
+    "Constitution": 9,
+    "Wisdom": 7,
+    "Dexterity": 15,
+    "Intelligence": 8
+  }
+}

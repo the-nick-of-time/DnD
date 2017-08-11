@@ -1,0 +1,13 @@
+{
+  "name": "Kraken",
+  "HP": "27d20",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 20,
+    "Strength": 30,
+    "Constitution": 25,
+    "Wisdom": 18,
+    "Dexterity": 11,
+    "Intelligence": 22
+  }
+}

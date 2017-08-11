@@ -1,0 +1,13 @@
+{
+  "name": "Acolyte",
+  "HP": "2d8",
+  "AC": 10,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 10,
+    "Constitution": 10,
+    "Wisdom": 14,
+    "Dexterity": 10,
+    "Intelligence": 10
+  }
+}

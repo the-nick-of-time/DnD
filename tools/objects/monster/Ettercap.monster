@@ -1,0 +1,13 @@
+{
+  "name": "Ettercap",
+  "HP": "8d8",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 14,
+    "Constitution": 13,
+    "Wisdom": 12,
+    "Dexterity": 15,
+    "Intelligence": 7
+  }
+}

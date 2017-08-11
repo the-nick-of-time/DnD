@@ -1,0 +1,13 @@
+{
+  "name": "Planetar",
+  "HP": "16d10",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 25,
+    "Strength": 24,
+    "Constitution": 24,
+    "Wisdom": 22,
+    "Dexterity": 20,
+    "Intelligence": 19
+  }
+}

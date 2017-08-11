@@ -1,0 +1,13 @@
+{
+  "name": "Adult Black Dragon",
+  "HP": "17d12",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 17,
+    "Strength": 23,
+    "Constitution": 21,
+    "Wisdom": 13,
+    "Dexterity": 14,
+    "Intelligence": 14
+  }
+}

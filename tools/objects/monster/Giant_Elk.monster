@@ -1,0 +1,13 @@
+{
+  "name": "Giant Elk",
+  "HP": "5d12",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 19,
+    "Constitution": 14,
+    "Wisdom": 14,
+    "Dexterity": 16,
+    "Intelligence": 7
+  }
+}

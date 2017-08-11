@@ -1,0 +1,13 @@
+{
+  "name": "Androsphinx",
+  "HP": "19d10",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 23,
+    "Strength": 22,
+    "Constitution": 20,
+    "Wisdom": 18,
+    "Dexterity": 10,
+    "Intelligence": 16
+  }
+}

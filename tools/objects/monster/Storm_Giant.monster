@@ -1,0 +1,13 @@
+{
+  "name": "Storm Giant",
+  "HP": "20d12",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 18,
+    "Strength": 29,
+    "Constitution": 20,
+    "Wisdom": 18,
+    "Dexterity": 14,
+    "Intelligence": 16
+  }
+}

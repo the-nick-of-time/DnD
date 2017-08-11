@@ -1,0 +1,13 @@
+{
+  "name": "Octopus",
+  "HP": "1d6",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 4,
+    "Strength": 4,
+    "Constitution": 11,
+    "Wisdom": 10,
+    "Dexterity": 15,
+    "Intelligence": 3
+  }
+}

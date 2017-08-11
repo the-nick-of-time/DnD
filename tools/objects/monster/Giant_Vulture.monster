@@ -1,0 +1,13 @@
+{
+  "name": "Giant Vulture",
+  "HP": "3d10",
+  "AC": 10,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 15,
+    "Constitution": 15,
+    "Wisdom": 12,
+    "Dexterity": 10,
+    "Intelligence": 6
+  }
+}

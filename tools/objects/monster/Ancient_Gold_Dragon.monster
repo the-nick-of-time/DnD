@@ -1,0 +1,13 @@
+{
+  "name": "Ancient Gold Dragon",
+  "HP": "28d20",
+  "AC": 22,
+  "abilities": {
+    "Charisma": 28,
+    "Strength": 30,
+    "Constitution": 29,
+    "Wisdom": 17,
+    "Dexterity": 14,
+    "Intelligence": 18
+  }
+}

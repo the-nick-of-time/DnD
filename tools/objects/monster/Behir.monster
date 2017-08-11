@@ -1,0 +1,13 @@
+{
+  "name": "Behir",
+  "HP": "16d12",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 12,
+    "Strength": 23,
+    "Constitution": 18,
+    "Wisdom": 14,
+    "Dexterity": 16,
+    "Intelligence": 7
+  }
+}

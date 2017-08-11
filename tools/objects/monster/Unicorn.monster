@@ -1,0 +1,13 @@
+{
+  "name": "Unicorn",
+  "HP": "9d10",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 16,
+    "Strength": 18,
+    "Constitution": 15,
+    "Wisdom": 17,
+    "Dexterity": 14,
+    "Intelligence": 11
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Swarm of Ravens",
+  "HP": "7d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 6,
+    "Constitution": 8,
+    "Wisdom": 12,
+    "Dexterity": 14,
+    "Intelligence": 3
+  }
+}

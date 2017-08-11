@@ -1,0 +1,13 @@
+{
+  "name": "Spider",
+  "HP": "1d4",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 2,
+    "Strength": 2,
+    "Constitution": 8,
+    "Wisdom": 10,
+    "Dexterity": 14,
+    "Intelligence": 1
+  }
+}

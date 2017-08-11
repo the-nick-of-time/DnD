@@ -1,0 +1,13 @@
+{
+  "name": "Erinyes",
+  "HP": "18d8",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 18,
+    "Strength": 18,
+    "Constitution": 18,
+    "Wisdom": 14,
+    "Dexterity": 16,
+    "Intelligence": 14
+  }
+}

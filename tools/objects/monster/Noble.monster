@@ -1,0 +1,13 @@
+{
+  "name": "Noble",
+  "HP": "2d8",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 16,
+    "Strength": 11,
+    "Constitution": 11,
+    "Wisdom": 14,
+    "Dexterity": 12,
+    "Intelligence": 12
+  }
+}

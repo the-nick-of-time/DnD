@@ -1,0 +1,13 @@
+{
+  "name": "Copper Dragon Wyrmling",
+  "HP": "4d8",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 13,
+    "Strength": 15,
+    "Constitution": 13,
+    "Wisdom": 11,
+    "Dexterity": 12,
+    "Intelligence": 14
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Plesiosaurus",
+  "HP": "8d10",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 18,
+    "Constitution": 16,
+    "Wisdom": 12,
+    "Dexterity": 15,
+    "Intelligence": 2
+  }
+}

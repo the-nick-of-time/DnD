@@ -1,0 +1,13 @@
+{
+  "name": "Poisonous Snake",
+  "HP": "1d4",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 2,
+    "Constitution": 11,
+    "Wisdom": 10,
+    "Dexterity": 16,
+    "Intelligence": 1
+  }
+}

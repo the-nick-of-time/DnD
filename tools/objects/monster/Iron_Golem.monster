@@ -1,0 +1,13 @@
+{
+  "name": "Iron Golem",
+  "HP": "20d10",
+  "AC": 20,
+  "abilities": {
+    "Charisma": 1,
+    "Strength": 24,
+    "Constitution": 20,
+    "Wisdom": 11,
+    "Dexterity": 9,
+    "Intelligence": 3
+  }
+}

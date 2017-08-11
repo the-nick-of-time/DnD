@@ -1,0 +1,13 @@
+{
+  "name": "Ice Devil",
+  "HP": "19d10",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 18,
+    "Strength": 21,
+    "Constitution": 18,
+    "Wisdom": 15,
+    "Dexterity": 14,
+    "Intelligence": 18
+  }
+}

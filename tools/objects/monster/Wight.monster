@@ -1,0 +1,13 @@
+{
+  "name": "Wight",
+  "HP": "6d8",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 15,
+    "Strength": 15,
+    "Constitution": 16,
+    "Wisdom": 13,
+    "Dexterity": 14,
+    "Intelligence": 10
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Invisible Stalker",
+  "HP": "16d8",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 16,
+    "Constitution": 14,
+    "Wisdom": 15,
+    "Dexterity": 19,
+    "Intelligence": 10
+  }
+}

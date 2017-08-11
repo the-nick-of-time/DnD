@@ -1,0 +1,13 @@
+{
+  "name": "Sprite",
+  "HP": "1d4",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 3,
+    "Constitution": 10,
+    "Wisdom": 13,
+    "Dexterity": 18,
+    "Intelligence": 14
+  }
+}

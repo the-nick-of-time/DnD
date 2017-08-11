@@ -1,0 +1,13 @@
+{
+  "name": "Pit Fiend",
+  "HP": "24d10",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 24,
+    "Strength": 26,
+    "Constitution": 24,
+    "Wisdom": 18,
+    "Dexterity": 14,
+    "Intelligence": 22
+  }
+}

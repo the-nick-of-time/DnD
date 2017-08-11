@@ -1,0 +1,13 @@
+{
+  "name": "Quasit",
+  "HP": "3d4",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 5,
+    "Constitution": 10,
+    "Wisdom": 10,
+    "Dexterity": 17,
+    "Intelligence": 7
+  }
+}

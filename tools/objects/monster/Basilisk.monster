@@ -1,0 +1,13 @@
+{
+  "name": "Basilisk",
+  "HP": "8d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 16,
+    "Constitution": 15,
+    "Wisdom": 8,
+    "Dexterity": 8,
+    "Intelligence": 2
+  }
+}

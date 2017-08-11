@@ -1,0 +1,13 @@
+{
+  "name": "Oni",
+  "HP": "13d10",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 15,
+    "Strength": 19,
+    "Constitution": 16,
+    "Wisdom": 12,
+    "Dexterity": 11,
+    "Intelligence": 14
+  }
+}

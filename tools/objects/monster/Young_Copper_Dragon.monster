@@ -1,0 +1,13 @@
+{
+  "name": "Young Copper Dragon",
+  "HP": "14d10",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 15,
+    "Strength": 19,
+    "Constitution": 17,
+    "Wisdom": 13,
+    "Dexterity": 12,
+    "Intelligence": 16
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Swarm of Bats",
+  "HP": "5d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 4,
+    "Strength": 5,
+    "Constitution": 10,
+    "Wisdom": 12,
+    "Dexterity": 15,
+    "Intelligence": 2
+  }
+}

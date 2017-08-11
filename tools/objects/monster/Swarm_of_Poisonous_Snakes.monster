@@ -1,0 +1,13 @@
+{
+  "name": "Swarm of Poisonous Snakes",
+  "HP": "8d8",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 8,
+    "Constitution": 11,
+    "Wisdom": 10,
+    "Dexterity": 18,
+    "Intelligence": 1
+  }
+}

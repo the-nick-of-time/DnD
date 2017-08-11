@@ -1,0 +1,13 @@
+{
+  "name": "Giant Goat",
+  "HP": "3d10",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 17,
+    "Constitution": 12,
+    "Wisdom": 12,
+    "Dexterity": 11,
+    "Intelligence": 3
+  }
+}

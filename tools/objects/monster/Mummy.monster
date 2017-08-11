@@ -1,0 +1,13 @@
+{
+  "name": "Mummy",
+  "HP": "9d8",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 12,
+    "Strength": 16,
+    "Constitution": 15,
+    "Wisdom": 10,
+    "Dexterity": 8,
+    "Intelligence": 6
+  }
+}

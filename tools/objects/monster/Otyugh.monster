@@ -1,0 +1,13 @@
+{
+  "name": "Otyugh",
+  "HP": "12d10",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 16,
+    "Constitution": 19,
+    "Wisdom": 13,
+    "Dexterity": 11,
+    "Intelligence": 6
+  }
+}

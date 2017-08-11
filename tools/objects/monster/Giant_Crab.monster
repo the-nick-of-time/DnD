@@ -1,0 +1,13 @@
+{
+  "name": "Giant Crab",
+  "HP": "3d8",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 13,
+    "Constitution": 11,
+    "Wisdom": 9,
+    "Dexterity": 15,
+    "Intelligence": 1
+  }
+}

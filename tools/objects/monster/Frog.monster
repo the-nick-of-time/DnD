@@ -1,0 +1,13 @@
+{
+  "name": "Frog",
+  "HP": "1d4",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 1,
+    "Constitution": 8,
+    "Wisdom": 8,
+    "Dexterity": 13,
+    "Intelligence": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Triceratops",
+  "HP": "10d12",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 22,
+    "Constitution": 17,
+    "Wisdom": 11,
+    "Dexterity": 9,
+    "Intelligence": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Lizard",
+  "HP": "1d4",
+  "AC": 10,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 2,
+    "Constitution": 10,
+    "Wisdom": 8,
+    "Dexterity": 11,
+    "Intelligence": 1
+  }
+}

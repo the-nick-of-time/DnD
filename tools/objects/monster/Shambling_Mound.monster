@@ -1,0 +1,13 @@
+{
+  "name": "Shambling Mound",
+  "HP": "16d10",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 18,
+    "Constitution": 16,
+    "Wisdom": 10,
+    "Dexterity": 8,
+    "Intelligence": 5
+  }
+}

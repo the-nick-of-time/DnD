@@ -1,0 +1,13 @@
+{
+  "name": "Aboleth",
+  "HP": "18d10",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 18,
+    "Strength": 21,
+    "Constitution": 15,
+    "Wisdom": 15,
+    "Dexterity": 9,
+    "Intelligence": 18
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Horned Devil",
+  "HP": "17d10",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 17,
+    "Strength": 22,
+    "Constitution": 21,
+    "Wisdom": 16,
+    "Dexterity": 17,
+    "Intelligence": 12
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Bulette",
+  "HP": "9d10",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 19,
+    "Constitution": 21,
+    "Wisdom": 10,
+    "Dexterity": 11,
+    "Intelligence": 2
+  }
+}

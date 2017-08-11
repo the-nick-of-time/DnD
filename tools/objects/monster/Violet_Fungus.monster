@@ -1,0 +1,13 @@
+{
+  "name": "Violet Fungus",
+  "HP": "4d8",
+  "AC": 5,
+  "abilities": {
+    "Charisma": 1,
+    "Strength": 3,
+    "Constitution": 10,
+    "Wisdom": 3,
+    "Dexterity": 1,
+    "Intelligence": 1
+  }
+}

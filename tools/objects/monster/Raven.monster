@@ -1,0 +1,13 @@
+{
+  "name": "Raven",
+  "HP": "1d4",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 2,
+    "Constitution": 8,
+    "Wisdom": 12,
+    "Dexterity": 14,
+    "Intelligence": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Salamander",
+  "HP": "12d10",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 12,
+    "Strength": 18,
+    "Constitution": 15,
+    "Wisdom": 10,
+    "Dexterity": 14,
+    "Intelligence": 11
+  }
+}

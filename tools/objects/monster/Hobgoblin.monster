@@ -1,0 +1,13 @@
+{
+  "name": "Hobgoblin",
+  "HP": "2d8",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 9,
+    "Strength": 13,
+    "Constitution": 12,
+    "Wisdom": 10,
+    "Dexterity": 12,
+    "Intelligence": 10
+  }
+}

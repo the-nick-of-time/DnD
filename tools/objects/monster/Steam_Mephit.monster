@@ -1,0 +1,13 @@
+{
+  "name": "Steam Mephit",
+  "HP": "6d6",
+  "AC": 10,
+  "abilities": {
+    "Charisma": 12,
+    "Strength": 5,
+    "Constitution": 10,
+    "Wisdom": 10,
+    "Dexterity": 11,
+    "Intelligence": 11
+  }
+}

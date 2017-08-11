@@ -1,0 +1,13 @@
+{
+  "name": "Werewolf",
+  "HP": "9d8",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 15,
+    "Constitution": 14,
+    "Wisdom": 11,
+    "Dexterity": 13,
+    "Intelligence": 10
+  }
+}

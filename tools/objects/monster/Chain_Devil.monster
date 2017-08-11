@@ -1,0 +1,13 @@
+{
+  "name": "Chain Devil",
+  "HP": "10d8",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 14,
+    "Strength": 18,
+    "Constitution": 18,
+    "Wisdom": 12,
+    "Dexterity": 15,
+    "Intelligence": 11
+  }
+}

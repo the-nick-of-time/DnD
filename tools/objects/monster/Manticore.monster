@@ -1,0 +1,13 @@
+{
+  "name": "Manticore",
+  "HP": "8d10",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 17,
+    "Constitution": 17,
+    "Wisdom": 12,
+    "Dexterity": 16,
+    "Intelligence": 7
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Dryad",
+  "HP": "5d8",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 18,
+    "Strength": 10,
+    "Constitution": 11,
+    "Wisdom": 15,
+    "Dexterity": 12,
+    "Intelligence": 14
+  }
+}

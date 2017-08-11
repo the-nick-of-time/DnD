@@ -1,0 +1,13 @@
+{
+  "name": "Owlbear",
+  "HP": "7d10",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 20,
+    "Constitution": 17,
+    "Wisdom": 12,
+    "Dexterity": 12,
+    "Intelligence": 3
+  }
+}

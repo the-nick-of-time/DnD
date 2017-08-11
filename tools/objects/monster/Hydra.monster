@@ -1,0 +1,13 @@
+{
+  "name": "Hydra",
+  "HP": "15d12",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 20,
+    "Constitution": 20,
+    "Wisdom": 10,
+    "Dexterity": 12,
+    "Intelligence": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Veteran",
+  "HP": "9d8",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 16,
+    "Constitution": 14,
+    "Wisdom": 11,
+    "Dexterity": 13,
+    "Intelligence": 10
+  }
+}

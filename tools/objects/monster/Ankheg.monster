@@ -1,0 +1,13 @@
+{
+  "name": "Ankheg",
+  "HP": "6d10",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 17,
+    "Constitution": 13,
+    "Wisdom": 13,
+    "Dexterity": 11,
+    "Intelligence": 1
+  }
+}

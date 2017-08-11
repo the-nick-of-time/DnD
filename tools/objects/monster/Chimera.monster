@@ -1,0 +1,13 @@
+{
+  "name": "Chimera",
+  "HP": "12d10",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 19,
+    "Constitution": 19,
+    "Wisdom": 14,
+    "Dexterity": 11,
+    "Intelligence": 3
+  }
+}

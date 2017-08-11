@@ -1,0 +1,13 @@
+{
+  "name": "Magma Mephit",
+  "HP": "5d6",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 8,
+    "Constitution": 12,
+    "Wisdom": 10,
+    "Dexterity": 12,
+    "Intelligence": 7
+  }
+}

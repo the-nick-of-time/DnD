@@ -1,0 +1,13 @@
+{
+  "name": "Balor",
+  "HP": "21d12",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 22,
+    "Strength": 26,
+    "Constitution": 22,
+    "Wisdom": 16,
+    "Dexterity": 15,
+    "Intelligence": 20
+  }
+}

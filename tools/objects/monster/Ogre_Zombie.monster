@@ -1,0 +1,13 @@
+{
+  "name": "Ogre Zombie",
+  "HP": "9d10",
+  "AC": 8,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 19,
+    "Constitution": 18,
+    "Wisdom": 6,
+    "Dexterity": 6,
+    "Intelligence": 3
+  }
+}

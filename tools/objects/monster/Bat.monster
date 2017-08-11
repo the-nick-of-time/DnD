@@ -1,0 +1,13 @@
+{
+  "name": "Bat",
+  "HP": "1d4",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 4,
+    "Strength": 2,
+    "Constitution": 8,
+    "Wisdom": 12,
+    "Dexterity": 15,
+    "Intelligence": 2
+  }
+}

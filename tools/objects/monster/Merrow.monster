@@ -1,0 +1,13 @@
+{
+  "name": "Merrow",
+  "HP": "6d10",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 9,
+    "Strength": 18,
+    "Constitution": 15,
+    "Wisdom": 10,
+    "Dexterity": 10,
+    "Intelligence": 8
+  }
+}

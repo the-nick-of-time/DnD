@@ -1,0 +1,13 @@
+{
+  "name": "Hawk",
+  "HP": "1d4",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 5,
+    "Constitution": 8,
+    "Wisdom": 14,
+    "Dexterity": 16,
+    "Intelligence": 2
+  }
+}

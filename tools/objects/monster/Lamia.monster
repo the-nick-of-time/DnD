@@ -1,0 +1,13 @@
+{
+  "name": "Lamia",
+  "HP": "13d10",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 16,
+    "Strength": 16,
+    "Constitution": 15,
+    "Wisdom": 15,
+    "Dexterity": 13,
+    "Intelligence": 14
+  }
+}

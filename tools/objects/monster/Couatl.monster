@@ -1,0 +1,13 @@
+{
+  "name": "Couatl",
+  "HP": "13d8",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 18,
+    "Strength": 16,
+    "Constitution": 17,
+    "Wisdom": 20,
+    "Dexterity": 20,
+    "Intelligence": 18
+  }
+}

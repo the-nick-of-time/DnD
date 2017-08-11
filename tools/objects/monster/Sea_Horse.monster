@@ -1,0 +1,13 @@
+{
+  "name": "Sea Horse",
+  "HP": "1d4",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 2,
+    "Strength": 1,
+    "Constitution": 8,
+    "Wisdom": 10,
+    "Dexterity": 12,
+    "Intelligence": 1
+  }
+}

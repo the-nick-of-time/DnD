@@ -1,0 +1,13 @@
+{
+  "name": "Warhorse Skeleton",
+  "HP": "3d10",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 18,
+    "Constitution": 15,
+    "Wisdom": 8,
+    "Dexterity": 12,
+    "Intelligence": 2
+  }
+}

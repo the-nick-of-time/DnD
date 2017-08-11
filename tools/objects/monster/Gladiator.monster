@@ -1,0 +1,13 @@
+{
+  "name": "Gladiator",
+  "HP": "15d8",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 15,
+    "Strength": 18,
+    "Constitution": 16,
+    "Wisdom": 12,
+    "Dexterity": 15,
+    "Intelligence": 10
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Half-Red Dragon Veteran",
+  "HP": "10d8",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 16,
+    "Constitution": 14,
+    "Wisdom": 11,
+    "Dexterity": 13,
+    "Intelligence": 10
+  }
+}

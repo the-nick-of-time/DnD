@@ -1,0 +1,13 @@
+{
+  "name": "Roper",
+  "HP": "11d10",
+  "AC": 20,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 18,
+    "Constitution": 17,
+    "Wisdom": 16,
+    "Dexterity": 8,
+    "Intelligence": 7
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Spy",
+  "HP": "6d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 16,
+    "Strength": 10,
+    "Constitution": 10,
+    "Wisdom": 14,
+    "Dexterity": 15,
+    "Intelligence": 12
+  }
+}

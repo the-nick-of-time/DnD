@@ -1,0 +1,13 @@
+{
+  "name": "Shrieker",
+  "HP": "3d8",
+  "AC": 5,
+  "abilities": {
+    "Charisma": 1,
+    "Strength": 1,
+    "Constitution": 10,
+    "Wisdom": 3,
+    "Dexterity": 1,
+    "Intelligence": 1
+  }
+}

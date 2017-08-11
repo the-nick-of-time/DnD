@@ -1,0 +1,13 @@
+{
+  "name": "Harpy",
+  "HP": "7d8",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 13,
+    "Strength": 12,
+    "Constitution": 12,
+    "Wisdom": 10,
+    "Dexterity": 13,
+    "Intelligence": 7
+  }
+}

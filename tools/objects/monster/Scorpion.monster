@@ -1,0 +1,13 @@
+{
+  "name": "Scorpion",
+  "HP": "1d4",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 2,
+    "Strength": 2,
+    "Constitution": 8,
+    "Wisdom": 8,
+    "Dexterity": 11,
+    "Intelligence": 1
+  }
+}

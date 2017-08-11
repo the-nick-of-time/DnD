@@ -1,0 +1,13 @@
+{
+  "name": "Elephant",
+  "HP": "8d12",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 22,
+    "Constitution": 17,
+    "Wisdom": 11,
+    "Dexterity": 9,
+    "Intelligence": 3
+  }
+}

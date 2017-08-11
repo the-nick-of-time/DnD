@@ -1,0 +1,13 @@
+{
+  "name": "Gnoll",
+  "HP": "5d8",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 14,
+    "Constitution": 11,
+    "Wisdom": 10,
+    "Dexterity": 12,
+    "Intelligence": 6
+  }
+}

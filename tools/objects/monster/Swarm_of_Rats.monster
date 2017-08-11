@@ -1,0 +1,13 @@
+{
+  "name": "Swarm of Rats",
+  "HP": "7d8",
+  "AC": 10,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 9,
+    "Constitution": 9,
+    "Wisdom": 10,
+    "Dexterity": 11,
+    "Intelligence": 2
+  }
+}

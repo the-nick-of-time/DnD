@@ -1,0 +1,13 @@
+{
+  "name": "Cockatrice",
+  "HP": "6d6",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 6,
+    "Constitution": 12,
+    "Wisdom": 13,
+    "Dexterity": 12,
+    "Intelligence": 2
+  }
+}

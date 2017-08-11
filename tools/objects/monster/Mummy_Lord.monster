@@ -1,0 +1,13 @@
+{
+  "name": "Mummy Lord",
+  "HP": "13d8",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 16,
+    "Strength": 18,
+    "Constitution": 17,
+    "Wisdom": 18,
+    "Dexterity": 10,
+    "Intelligence": 11
+  }
+}

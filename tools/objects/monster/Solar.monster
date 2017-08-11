@@ -1,0 +1,13 @@
+{
+  "name": "Solar",
+  "HP": "18d10",
+  "AC": 21,
+  "abilities": {
+    "Charisma": 30,
+    "Strength": 26,
+    "Constitution": 26,
+    "Wisdom": 25,
+    "Dexterity": 22,
+    "Intelligence": 25
+  }
+}

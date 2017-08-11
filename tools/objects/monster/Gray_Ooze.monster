@@ -1,0 +1,13 @@
+{
+  "name": "Gray Ooze",
+  "HP": "3d8",
+  "AC": 8,
+  "abilities": {
+    "Charisma": 2,
+    "Strength": 12,
+    "Constitution": 16,
+    "Wisdom": 6,
+    "Dexterity": 6,
+    "Intelligence": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Flesh Golem",
+  "HP": "11d8",
+  "AC": 9,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 19,
+    "Constitution": 18,
+    "Wisdom": 10,
+    "Dexterity": 9,
+    "Intelligence": 6
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Hippogriff",
+  "HP": "3d10",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 17,
+    "Constitution": 13,
+    "Wisdom": 12,
+    "Dexterity": 13,
+    "Intelligence": 2
+  }
+}

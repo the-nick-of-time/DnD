@@ -1,0 +1,13 @@
+{
+  "name": "Animated Armor",
+  "HP": "6d8",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 1,
+    "Strength": 14,
+    "Constitution": 13,
+    "Wisdom": 3,
+    "Dexterity": 11,
+    "Intelligence": 1
+  }
+}

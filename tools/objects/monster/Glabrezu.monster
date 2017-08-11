@@ -1,0 +1,13 @@
+{
+  "name": "Glabrezu",
+  "HP": "15d10",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 16,
+    "Strength": 20,
+    "Constitution": 21,
+    "Wisdom": 17,
+    "Dexterity": 15,
+    "Intelligence": 19
+  }
+}

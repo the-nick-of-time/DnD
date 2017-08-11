@@ -1,0 +1,13 @@
+{
+  "name": "Djinni",
+  "HP": "14d10",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 20,
+    "Strength": 21,
+    "Constitution": 22,
+    "Wisdom": 16,
+    "Dexterity": 15,
+    "Intelligence": 15
+  }
+}

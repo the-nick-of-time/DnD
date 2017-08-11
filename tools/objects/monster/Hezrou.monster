@@ -1,0 +1,13 @@
+{
+  "name": "Hezrou",
+  "HP": "13d10",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 13,
+    "Strength": 19,
+    "Constitution": 20,
+    "Wisdom": 12,
+    "Dexterity": 17,
+    "Intelligence": 5
+  }
+}

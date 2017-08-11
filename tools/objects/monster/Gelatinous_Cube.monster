@@ -1,0 +1,13 @@
+{
+  "name": "Gelatinous Cube",
+  "HP": "8d10",
+  "AC": 6,
+  "abilities": {
+    "Charisma": 1,
+    "Strength": 14,
+    "Constitution": 20,
+    "Wisdom": 6,
+    "Dexterity": 3,
+    "Intelligence": 1
+  }
+}

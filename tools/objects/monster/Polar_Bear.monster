@@ -1,0 +1,13 @@
+{
+  "name": "Polar Bear",
+  "HP": "5d10",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 20,
+    "Constitution": 16,
+    "Wisdom": 13,
+    "Dexterity": 10,
+    "Intelligence": 2
+  }
+}

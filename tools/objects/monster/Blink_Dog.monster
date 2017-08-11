@@ -1,0 +1,13 @@
+{
+  "name": "Blink Dog",
+  "HP": "4d8",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 12,
+    "Constitution": 12,
+    "Wisdom": 13,
+    "Dexterity": 17,
+    "Intelligence": 10
+  }
+}

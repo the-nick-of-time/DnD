@@ -1,0 +1,13 @@
+{
+  "name": "Knight",
+  "HP": "8d8",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 15,
+    "Strength": 16,
+    "Constitution": 14,
+    "Wisdom": 11,
+    "Dexterity": 11,
+    "Intelligence": 11
+  }
+}

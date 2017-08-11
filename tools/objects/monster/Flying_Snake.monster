@@ -1,0 +1,13 @@
+{
+  "name": "Flying Snake",
+  "HP": "2d4",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 4,
+    "Constitution": 11,
+    "Wisdom": 12,
+    "Dexterity": 18,
+    "Intelligence": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Giant Boar",
+  "HP": "5d10",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 17,
+    "Constitution": 16,
+    "Wisdom": 7,
+    "Dexterity": 10,
+    "Intelligence": 2
+  }
+}

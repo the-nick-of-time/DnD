@@ -1,0 +1,13 @@
+{
+  "name": "Adult Blue Dracolich",
+  "HP": "18d12",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 19,
+    "Strength": 25,
+    "Constitution": 23,
+    "Wisdom": 15,
+    "Dexterity": 10,
+    "Intelligence": 16
+  }
+}

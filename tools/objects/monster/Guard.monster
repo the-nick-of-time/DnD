@@ -1,0 +1,13 @@
+{
+  "name": "Guard",
+  "HP": "2d8",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 13,
+    "Constitution": 12,
+    "Wisdom": 11,
+    "Dexterity": 12,
+    "Intelligence": 10
+  }
+}

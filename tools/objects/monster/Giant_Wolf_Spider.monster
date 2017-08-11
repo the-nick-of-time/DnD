@@ -1,0 +1,13 @@
+{
+  "name": "Giant Wolf Spider",
+  "HP": "2d8",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 4,
+    "Strength": 12,
+    "Constitution": 13,
+    "Wisdom": 12,
+    "Dexterity": 16,
+    "Intelligence": 3
+  }
+}

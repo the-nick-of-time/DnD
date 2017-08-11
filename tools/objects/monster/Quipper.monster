@@ -1,0 +1,13 @@
+{
+  "name": "Quipper",
+  "HP": "1d4",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 2,
+    "Strength": 2,
+    "Constitution": 9,
+    "Wisdom": 7,
+    "Dexterity": 16,
+    "Intelligence": 1
+  }
+}

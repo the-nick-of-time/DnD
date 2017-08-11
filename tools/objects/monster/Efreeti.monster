@@ -1,0 +1,13 @@
+{
+  "name": "Efreeti",
+  "HP": "16d10",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 16,
+    "Strength": 22,
+    "Constitution": 24,
+    "Wisdom": 15,
+    "Dexterity": 12,
+    "Intelligence": 16
+  }
+}

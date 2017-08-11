@@ -1,0 +1,13 @@
+{
+  "name": "Rug of Smothering",
+  "HP": "6d10",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 1,
+    "Strength": 17,
+    "Constitution": 10,
+    "Wisdom": 3,
+    "Dexterity": 14,
+    "Intelligence": 1
+  }
+}

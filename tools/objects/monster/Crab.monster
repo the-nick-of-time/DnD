@@ -1,0 +1,13 @@
+{
+  "name": "Crab",
+  "HP": "1d4",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 2,
+    "Strength": 2,
+    "Constitution": 10,
+    "Wisdom": 8,
+    "Dexterity": 11,
+    "Intelligence": 1
+  }
+}

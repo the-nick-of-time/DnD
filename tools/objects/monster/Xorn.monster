@@ -1,0 +1,13 @@
+{
+  "name": "Xorn",
+  "HP": "7d8",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 17,
+    "Constitution": 22,
+    "Wisdom": 10,
+    "Dexterity": 10,
+    "Intelligence": 11
+  }
+}

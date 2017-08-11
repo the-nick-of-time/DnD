@@ -1,0 +1,13 @@
+{
+  "name": "Doppelganger",
+  "HP": "8d8",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 14,
+    "Strength": 11,
+    "Constitution": 14,
+    "Wisdom": 12,
+    "Dexterity": 18,
+    "Intelligence": 11
+  }
+}

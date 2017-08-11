@@ -1,0 +1,13 @@
+{
+  "name": "Will-o'-Wisp",
+  "HP": "9d4",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 1,
+    "Constitution": 10,
+    "Wisdom": 14,
+    "Dexterity": 28,
+    "Intelligence": 13
+  }
+}

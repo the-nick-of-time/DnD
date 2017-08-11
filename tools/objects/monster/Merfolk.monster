@@ -1,0 +1,13 @@
+{
+  "name": "Merfolk",
+  "HP": "2d8",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 12,
+    "Strength": 10,
+    "Constitution": 12,
+    "Wisdom": 11,
+    "Dexterity": 13,
+    "Intelligence": 11
+  }
+}

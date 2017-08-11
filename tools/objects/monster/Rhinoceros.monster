@@ -1,0 +1,13 @@
+{
+  "name": "Rhinoceros",
+  "HP": "6d10",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 21,
+    "Constitution": 15,
+    "Wisdom": 12,
+    "Dexterity": 8,
+    "Intelligence": 2
+  }
+}

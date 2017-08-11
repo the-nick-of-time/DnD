@@ -1,0 +1,13 @@
+{
+  "name": "Wraith",
+  "HP": "9d8",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 15,
+    "Strength": 6,
+    "Constitution": 16,
+    "Wisdom": 14,
+    "Dexterity": 16,
+    "Intelligence": 12
+  }
+}

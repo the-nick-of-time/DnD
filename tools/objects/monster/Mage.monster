@@ -1,0 +1,13 @@
+{
+  "name": "Mage",
+  "HP": "9d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 9,
+    "Constitution": 11,
+    "Wisdom": 12,
+    "Dexterity": 14,
+    "Intelligence": 17
+  }
+}

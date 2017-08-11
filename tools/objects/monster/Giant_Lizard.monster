@@ -1,0 +1,13 @@
+{
+  "name": "Giant Lizard",
+  "HP": "3d10",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 15,
+    "Constitution": 13,
+    "Wisdom": 10,
+    "Dexterity": 12,
+    "Intelligence": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Berserker",
+  "HP": "9d8",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 9,
+    "Strength": 16,
+    "Constitution": 17,
+    "Wisdom": 11,
+    "Dexterity": 12,
+    "Intelligence": 9
+  }
+}

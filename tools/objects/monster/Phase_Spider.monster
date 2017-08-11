@@ -1,0 +1,13 @@
+{
+  "name": "Phase Spider",
+  "HP": "5d10",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 15,
+    "Constitution": 12,
+    "Wisdom": 10,
+    "Dexterity": 15,
+    "Intelligence": 6
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Brass Dragon Wyrmling",
+  "HP": "3d8",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 13,
+    "Strength": 15,
+    "Constitution": 13,
+    "Wisdom": 11,
+    "Dexterity": 10,
+    "Intelligence": 10
+  }
+}

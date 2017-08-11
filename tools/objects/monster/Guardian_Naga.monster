@@ -1,0 +1,13 @@
+{
+  "name": "Guardian Naga",
+  "HP": "15d10",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 18,
+    "Strength": 19,
+    "Constitution": 16,
+    "Wisdom": 19,
+    "Dexterity": 18,
+    "Intelligence": 16
+  }
+}

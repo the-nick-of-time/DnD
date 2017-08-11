@@ -1,0 +1,13 @@
+{
+  "name": "Green Hag",
+  "HP": "11d8",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 14,
+    "Strength": 18,
+    "Constitution": 16,
+    "Wisdom": 14,
+    "Dexterity": 12,
+    "Intelligence": 13
+  }
+}

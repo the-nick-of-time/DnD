@@ -1,0 +1,13 @@
+{
+  "name": "Tyrannosaurus Rex",
+  "HP": "13d12",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 9,
+    "Strength": 25,
+    "Constitution": 19,
+    "Wisdom": 12,
+    "Dexterity": 10,
+    "Intelligence": 2
+  }
+}

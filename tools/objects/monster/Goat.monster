@@ -1,0 +1,13 @@
+{
+  "name": "Goat",
+  "HP": "1d8",
+  "AC": 10,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 12,
+    "Constitution": 11,
+    "Wisdom": 10,
+    "Dexterity": 10,
+    "Intelligence": 2
+  }
+}

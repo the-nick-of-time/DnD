@@ -1,0 +1,13 @@
+{
+  "name": "Adult Brass Dragon",
+  "HP": "15d12",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 17,
+    "Strength": 23,
+    "Constitution": 21,
+    "Wisdom": 13,
+    "Dexterity": 10,
+    "Intelligence": 14
+  }
+}

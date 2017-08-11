@@ -1,0 +1,13 @@
+{
+  "name": "Deep Gnome (Svirfneblin)",
+  "HP": "3d6",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 9,
+    "Strength": 15,
+    "Constitution": 14,
+    "Wisdom": 10,
+    "Dexterity": 14,
+    "Intelligence": 12
+  }
+}

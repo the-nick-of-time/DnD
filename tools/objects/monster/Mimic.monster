@@ -1,0 +1,13 @@
+{
+  "name": "Mimic",
+  "HP": "9d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 17,
+    "Constitution": 15,
+    "Wisdom": 13,
+    "Dexterity": 12,
+    "Intelligence": 5
+  }
+}

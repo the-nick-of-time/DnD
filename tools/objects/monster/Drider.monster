@@ -1,0 +1,13 @@
+{
+  "name": "Drider",
+  "HP": "13d10",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 12,
+    "Strength": 16,
+    "Constitution": 18,
+    "Wisdom": 14,
+    "Dexterity": 16,
+    "Intelligence": 13
+  }
+}

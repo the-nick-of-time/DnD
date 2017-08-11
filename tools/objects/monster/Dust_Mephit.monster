@@ -1,0 +1,13 @@
+{
+  "name": "Dust Mephit",
+  "HP": "5d6",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 5,
+    "Constitution": 10,
+    "Wisdom": 11,
+    "Dexterity": 14,
+    "Intelligence": 9
+  }
+}

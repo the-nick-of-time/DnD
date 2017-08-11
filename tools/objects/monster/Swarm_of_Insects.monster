@@ -1,0 +1,13 @@
+{
+  "name": "Swarm of Insects",
+  "HP": "5d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 1,
+    "Strength": 3,
+    "Constitution": 10,
+    "Wisdom": 7,
+    "Dexterity": 13,
+    "Intelligence": 1
+  }
+}

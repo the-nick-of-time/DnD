@@ -1,0 +1,13 @@
+{
+  "name": "Zombie",
+  "HP": "3d8",
+  "AC": 8,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 13,
+    "Constitution": 16,
+    "Wisdom": 6,
+    "Dexterity": 6,
+    "Intelligence": 3
+  }
+}

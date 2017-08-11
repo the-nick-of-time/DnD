@@ -1,0 +1,13 @@
+{
+  "name": "White Dragon Wyrmling",
+  "HP": "5d8",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 14,
+    "Constitution": 14,
+    "Wisdom": 10,
+    "Dexterity": 10,
+    "Intelligence": 5
+  }
+}

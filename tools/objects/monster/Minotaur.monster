@@ -1,0 +1,13 @@
+{
+  "name": "Minotaur",
+  "HP": "9d10",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 9,
+    "Strength": 18,
+    "Constitution": 16,
+    "Wisdom": 16,
+    "Dexterity": 11,
+    "Intelligence": 6
+  }
+}

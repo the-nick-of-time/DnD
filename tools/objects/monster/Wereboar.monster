@@ -1,0 +1,13 @@
+{
+  "name": "Wereboar",
+  "HP": "12d8",
+  "AC": 10,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 17,
+    "Constitution": 15,
+    "Wisdom": 11,
+    "Dexterity": 10,
+    "Intelligence": 10
+  }
+}

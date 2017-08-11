@@ -1,0 +1,13 @@
+{
+  "name": "Eagle",
+  "HP": "1d6",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 6,
+    "Constitution": 10,
+    "Wisdom": 14,
+    "Dexterity": 15,
+    "Intelligence": 2
+  }
+}

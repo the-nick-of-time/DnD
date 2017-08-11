@@ -1,0 +1,13 @@
+{
+  "name": "Griffon",
+  "HP": "7d10",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 18,
+    "Constitution": 16,
+    "Wisdom": 13,
+    "Dexterity": 15,
+    "Intelligence": 2
+  }
+}

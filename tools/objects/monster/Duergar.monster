@@ -1,0 +1,13 @@
+{
+  "name": "Duergar",
+  "HP": "4d8",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 9,
+    "Strength": 14,
+    "Constitution": 14,
+    "Wisdom": 10,
+    "Dexterity": 11,
+    "Intelligence": 11
+  }
+}

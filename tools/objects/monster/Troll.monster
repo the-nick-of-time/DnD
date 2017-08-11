@@ -1,0 +1,13 @@
+{
+  "name": "Troll",
+  "HP": "8d10",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 18,
+    "Constitution": 20,
+    "Wisdom": 9,
+    "Dexterity": 13,
+    "Intelligence": 7
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Bone Devil",
+  "HP": "15d10",
+  "AC": 19,
+  "abilities": {
+    "Charisma": 16,
+    "Strength": 18,
+    "Constitution": 18,
+    "Wisdom": 14,
+    "Dexterity": 16,
+    "Intelligence": 13
+  }
+}

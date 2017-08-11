@@ -1,0 +1,13 @@
+{
+  "name": "Archmage",
+  "HP": "18d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 16,
+    "Strength": 10,
+    "Constitution": 12,
+    "Wisdom": 15,
+    "Dexterity": 14,
+    "Intelligence": 20
+  }
+}

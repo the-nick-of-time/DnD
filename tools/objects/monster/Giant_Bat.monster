@@ -1,0 +1,13 @@
+{
+  "name": "Giant Bat",
+  "HP": "4d10",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 15,
+    "Constitution": 11,
+    "Wisdom": 12,
+    "Dexterity": 16,
+    "Intelligence": 2
+  }
+}

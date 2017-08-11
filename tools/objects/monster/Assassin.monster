@@ -1,0 +1,13 @@
+{
+  "name": "Assassin",
+  "HP": "12d8",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 11,
+    "Constitution": 14,
+    "Wisdom": 11,
+    "Dexterity": 16,
+    "Intelligence": 13
+  }
+}

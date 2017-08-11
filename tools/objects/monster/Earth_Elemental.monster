@@ -1,0 +1,13 @@
+{
+  "name": "Earth Elemental",
+  "HP": "12d10",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 20,
+    "Constitution": 20,
+    "Wisdom": 10,
+    "Dexterity": 8,
+    "Intelligence": 5
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Purple Worm",
+  "HP": "15d20",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 4,
+    "Strength": 28,
+    "Constitution": 22,
+    "Wisdom": 8,
+    "Dexterity": 7,
+    "Intelligence": 1
+  }
+}

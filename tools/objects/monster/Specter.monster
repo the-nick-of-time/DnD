@@ -1,0 +1,13 @@
+{
+  "name": "Specter",
+  "HP": "5d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 1,
+    "Constitution": 11,
+    "Wisdom": 10,
+    "Dexterity": 14,
+    "Intelligence": 10
+  }
+}

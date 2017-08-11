@@ -1,0 +1,13 @@
+{
+  "name": "Black Dragon Wyrmling",
+  "HP": "6d8",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 13,
+    "Strength": 15,
+    "Constitution": 13,
+    "Wisdom": 11,
+    "Dexterity": 14,
+    "Intelligence": 10
+  }
+}

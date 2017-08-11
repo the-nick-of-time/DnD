@@ -1,0 +1,13 @@
+{
+  "name": "Hell Hound",
+  "HP": "7d8",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 17,
+    "Constitution": 14,
+    "Wisdom": 13,
+    "Dexterity": 12,
+    "Intelligence": 6
+  }
+}

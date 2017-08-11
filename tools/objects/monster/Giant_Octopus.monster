@@ -1,0 +1,13 @@
+{
+  "name": "Giant Octopus",
+  "HP": "8d10",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 4,
+    "Strength": 17,
+    "Constitution": 13,
+    "Wisdom": 10,
+    "Dexterity": 13,
+    "Intelligence": 4
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Giant Fire Beetle",
+  "HP": "1d6",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 8,
+    "Constitution": 12,
+    "Wisdom": 7,
+    "Dexterity": 10,
+    "Intelligence": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Giant Owl",
+  "HP": "3d10",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 13,
+    "Constitution": 12,
+    "Wisdom": 13,
+    "Dexterity": 15,
+    "Intelligence": 8
+  }
+}

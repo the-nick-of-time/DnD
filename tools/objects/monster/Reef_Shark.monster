@@ -1,0 +1,13 @@
+{
+  "name": "Reef Shark",
+  "HP": "4d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 4,
+    "Strength": 14,
+    "Constitution": 13,
+    "Wisdom": 10,
+    "Dexterity": 13,
+    "Intelligence": 1
+  }
+}

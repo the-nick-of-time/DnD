@@ -1,0 +1,13 @@
+{
+  "name": "Lizardfolk",
+  "HP": "4d8",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 15,
+    "Constitution": 13,
+    "Wisdom": 12,
+    "Dexterity": 10,
+    "Intelligence": 7
+  }
+}

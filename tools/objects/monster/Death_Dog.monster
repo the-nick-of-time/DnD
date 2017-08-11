@@ -1,0 +1,13 @@
+{
+  "name": "Death Dog",
+  "HP": "6d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 15,
+    "Constitution": 14,
+    "Wisdom": 13,
+    "Dexterity": 14,
+    "Intelligence": 3
+  }
+}

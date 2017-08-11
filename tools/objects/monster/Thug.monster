@@ -1,0 +1,13 @@
+{
+  "name": "Thug",
+  "HP": "5d8",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 15,
+    "Constitution": 14,
+    "Wisdom": 10,
+    "Dexterity": 11,
+    "Intelligence": 10
+  }
+}

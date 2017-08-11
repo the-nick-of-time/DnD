@@ -1,0 +1,13 @@
+{
+  "name": "Magmin",
+  "HP": "2d6",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 7,
+    "Constitution": 12,
+    "Wisdom": 11,
+    "Dexterity": 15,
+    "Intelligence": 8
+  }
+}

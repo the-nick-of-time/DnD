@@ -1,0 +1,13 @@
+{
+  "name": "Homunculus",
+  "HP": "2d4",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 4,
+    "Constitution": 11,
+    "Wisdom": 10,
+    "Dexterity": 15,
+    "Intelligence": 10
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Treant",
+  "HP": "12d12",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 12,
+    "Strength": 23,
+    "Constitution": 21,
+    "Wisdom": 16,
+    "Dexterity": 8,
+    "Intelligence": 12
+  }
+}

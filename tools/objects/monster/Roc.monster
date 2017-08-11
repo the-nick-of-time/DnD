@@ -1,0 +1,13 @@
+{
+  "name": "Roc",
+  "HP": "16d20",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 9,
+    "Strength": 28,
+    "Constitution": 20,
+    "Wisdom": 10,
+    "Dexterity": 10,
+    "Intelligence": 3
+  }
+}

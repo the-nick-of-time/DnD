@@ -1,0 +1,13 @@
+{
+  "name": "Giant Spider",
+  "HP": "4d10",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 4,
+    "Strength": 14,
+    "Constitution": 12,
+    "Wisdom": 11,
+    "Dexterity": 16,
+    "Intelligence": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Boar",
+  "HP": "2d8",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 13,
+    "Constitution": 12,
+    "Wisdom": 9,
+    "Dexterity": 11,
+    "Intelligence": 2
+  }
+}

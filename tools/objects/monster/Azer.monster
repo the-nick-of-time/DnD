@@ -1,0 +1,13 @@
+{
+  "name": "Azer",
+  "HP": "6d8",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 17,
+    "Constitution": 15,
+    "Wisdom": 13,
+    "Dexterity": 12,
+    "Intelligence": 12
+  }
+}

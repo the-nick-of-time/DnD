@@ -1,0 +1,13 @@
+{
+  "name": "Stone Golem",
+  "HP": "17d10",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 1,
+    "Strength": 22,
+    "Constitution": 20,
+    "Wisdom": 11,
+    "Dexterity": 9,
+    "Intelligence": 3
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Young Red Dragon",
+  "HP": "17d10",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 19,
+    "Strength": 23,
+    "Constitution": 21,
+    "Wisdom": 11,
+    "Dexterity": 10,
+    "Intelligence": 14
+  }
+}

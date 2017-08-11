@@ -1,0 +1,13 @@
+{
+  "name": "Nalfeshnee",
+  "HP": "16d10",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 15,
+    "Strength": 21,
+    "Constitution": 22,
+    "Wisdom": 12,
+    "Dexterity": 10,
+    "Intelligence": 19
+  }
+}

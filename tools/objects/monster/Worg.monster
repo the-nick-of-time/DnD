@@ -1,0 +1,13 @@
+{
+  "name": "Worg",
+  "HP": "4d10",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 16,
+    "Constitution": 13,
+    "Wisdom": 11,
+    "Dexterity": 13,
+    "Intelligence": 7
+  }
+}

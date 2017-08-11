@@ -1,0 +1,13 @@
+{
+  "name": "Weretiger",
+  "HP": "16d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 17,
+    "Constitution": 16,
+    "Wisdom": 13,
+    "Dexterity": 15,
+    "Intelligence": 10
+  }
+}

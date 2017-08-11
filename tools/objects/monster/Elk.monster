@@ -1,0 +1,13 @@
+{
+  "name": "Elk",
+  "HP": "2d10",
+  "AC": 10,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 16,
+    "Constitution": 12,
+    "Wisdom": 10,
+    "Dexterity": 10,
+    "Intelligence": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Frost Giant",
+  "HP": "12d12",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 12,
+    "Strength": 23,
+    "Constitution": 21,
+    "Wisdom": 10,
+    "Dexterity": 9,
+    "Intelligence": 9
+  }
+}

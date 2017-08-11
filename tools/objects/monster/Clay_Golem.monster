@@ -1,0 +1,13 @@
+{
+  "name": "Clay Golem",
+  "HP": "14d10",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 1,
+    "Strength": 20,
+    "Constitution": 18,
+    "Wisdom": 8,
+    "Dexterity": 9,
+    "Intelligence": 3
+  }
+}

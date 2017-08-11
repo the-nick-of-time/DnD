@@ -1,0 +1,13 @@
+{
+  "name": "Giant Scorpion",
+  "HP": "7d10",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 15,
+    "Constitution": 15,
+    "Wisdom": 9,
+    "Dexterity": 13,
+    "Intelligence": 1
+  }
+}

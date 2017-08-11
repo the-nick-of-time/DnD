@@ -1,0 +1,13 @@
+{
+  "name": "Spirit Naga",
+  "HP": "10d10",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 16,
+    "Strength": 18,
+    "Constitution": 14,
+    "Wisdom": 15,
+    "Dexterity": 17,
+    "Intelligence": 16
+  }
+}

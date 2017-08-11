@@ -1,0 +1,13 @@
+{
+  "name": "Centaur",
+  "HP": "6d10",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 18,
+    "Constitution": 14,
+    "Wisdom": 13,
+    "Dexterity": 14,
+    "Intelligence": 9
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Medusa",
+  "HP": "17d8",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 15,
+    "Strength": 10,
+    "Constitution": 16,
+    "Wisdom": 13,
+    "Dexterity": 15,
+    "Intelligence": 12
+  }
+}

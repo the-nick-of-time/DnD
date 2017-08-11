@@ -1,0 +1,13 @@
+{
+  "name": "Giant Sea Horse",
+  "HP": "3d10",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 12,
+    "Constitution": 11,
+    "Wisdom": 12,
+    "Dexterity": 15,
+    "Intelligence": 2
+  }
+}

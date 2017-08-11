@@ -1,0 +1,13 @@
+{
+  "name": "Cult Fanatic",
+  "HP": "6d8",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 14,
+    "Strength": 11,
+    "Constitution": 12,
+    "Wisdom": 13,
+    "Dexterity": 14,
+    "Intelligence": 10
+  }
+}

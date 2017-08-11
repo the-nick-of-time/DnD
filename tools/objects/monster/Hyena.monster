@@ -1,0 +1,13 @@
+{
+  "name": "Hyena",
+  "HP": "1d8",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 11,
+    "Constitution": 12,
+    "Wisdom": 12,
+    "Dexterity": 13,
+    "Intelligence": 2
+  }
+}

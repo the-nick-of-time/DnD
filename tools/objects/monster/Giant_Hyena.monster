@@ -1,0 +1,13 @@
+{
+  "name": "Giant Hyena",
+  "HP": "6d10",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 16,
+    "Constitution": 14,
+    "Wisdom": 12,
+    "Dexterity": 14,
+    "Intelligence": 2
+  }
+}

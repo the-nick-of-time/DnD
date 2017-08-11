@@ -1,0 +1,13 @@
+{
+  "name": "Imp",
+  "HP": "3d4",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 14,
+    "Strength": 6,
+    "Constitution": 13,
+    "Wisdom": 12,
+    "Dexterity": 17,
+    "Intelligence": 11
+  }
+}

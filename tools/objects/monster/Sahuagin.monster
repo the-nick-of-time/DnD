@@ -1,0 +1,13 @@
+{
+  "name": "Sahuagin",
+  "HP": "4d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 9,
+    "Strength": 13,
+    "Constitution": 12,
+    "Wisdom": 13,
+    "Dexterity": 11,
+    "Intelligence": 12
+  }
+}

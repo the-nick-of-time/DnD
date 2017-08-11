@@ -1,0 +1,13 @@
+{
+  "name": "Flying Sword",
+  "HP": "5d6",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 1,
+    "Strength": 12,
+    "Constitution": 11,
+    "Wisdom": 5,
+    "Dexterity": 15,
+    "Intelligence": 1
+  }
+}

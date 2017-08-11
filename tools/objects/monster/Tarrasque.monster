@@ -1,0 +1,13 @@
+{
+  "name": "Tarrasque",
+  "HP": "33d20",
+  "AC": 25,
+  "abilities": {
+    "Charisma": 11,
+    "Strength": 30,
+    "Constitution": 30,
+    "Wisdom": 11,
+    "Dexterity": 11,
+    "Intelligence": 3
+  }
+}

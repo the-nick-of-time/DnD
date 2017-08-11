@@ -1,0 +1,13 @@
+{
+  "name": "Wolf",
+  "HP": "2d8",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 12,
+    "Constitution": 12,
+    "Wisdom": 12,
+    "Dexterity": 15,
+    "Intelligence": 3
+  }
+}

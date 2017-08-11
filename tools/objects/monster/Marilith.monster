@@ -1,0 +1,13 @@
+{
+  "name": "Marilith",
+  "HP": "18d10",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 20,
+    "Strength": 18,
+    "Constitution": 20,
+    "Wisdom": 16,
+    "Dexterity": 20,
+    "Intelligence": 18
+  }
+}

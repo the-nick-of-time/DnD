@@ -1,0 +1,13 @@
+{
+  "name": "Ancient Blue Dragon",
+  "HP": "26d20",
+  "AC": 22,
+  "abilities": {
+    "Charisma": 21,
+    "Strength": 29,
+    "Constitution": 27,
+    "Wisdom": 17,
+    "Dexterity": 10,
+    "Intelligence": 18
+  }
+}

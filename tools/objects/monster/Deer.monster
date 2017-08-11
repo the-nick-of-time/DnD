@@ -1,0 +1,13 @@
+{
+  "name": "Deer",
+  "HP": "1d8",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 11,
+    "Constitution": 11,
+    "Wisdom": 14,
+    "Dexterity": 16,
+    "Intelligence": 2
+  }
+}

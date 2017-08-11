@@ -1,0 +1,13 @@
+{
+  "name": "Badger",
+  "HP": "1d4",
+  "AC": 10,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 4,
+    "Constitution": 12,
+    "Wisdom": 12,
+    "Dexterity": 11,
+    "Intelligence": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Ice Mephit",
+  "HP": "6d6",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 12,
+    "Strength": 7,
+    "Constitution": 10,
+    "Wisdom": 11,
+    "Dexterity": 13,
+    "Intelligence": 9
+  }
+}

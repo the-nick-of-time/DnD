@@ -1,0 +1,13 @@
+{
+  "name": "Shadow",
+  "HP": "3d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 6,
+    "Constitution": 13,
+    "Wisdom": 10,
+    "Dexterity": 14,
+    "Intelligence": 6
+  }
+}

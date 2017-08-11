@@ -1,0 +1,13 @@
+{
+  "name": "Giant Poisonous Snake",
+  "HP": "2d8",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 10,
+    "Constitution": 13,
+    "Wisdom": 10,
+    "Dexterity": 18,
+    "Intelligence": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Giant Badger",
+  "HP": "2d8",
+  "AC": 10,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 13,
+    "Constitution": 15,
+    "Wisdom": 12,
+    "Dexterity": 10,
+    "Intelligence": 2
+  }
+}

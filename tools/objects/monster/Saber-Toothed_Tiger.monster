@@ -1,0 +1,13 @@
+{
+  "name": "Saber-Toothed Tiger",
+  "HP": "7d10",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 18,
+    "Constitution": 15,
+    "Wisdom": 12,
+    "Dexterity": 14,
+    "Intelligence": 3
+  }
+}

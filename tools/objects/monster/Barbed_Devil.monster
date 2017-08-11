@@ -1,0 +1,13 @@
+{
+  "name": "Barbed Devil",
+  "HP": "13d8",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 14,
+    "Strength": 16,
+    "Constitution": 18,
+    "Wisdom": 14,
+    "Dexterity": 17,
+    "Intelligence": 12
+  }
+}

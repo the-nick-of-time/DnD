@@ -1,0 +1,13 @@
+{
+  "name": "Ghost",
+  "HP": "10d8",
+  "AC": 11,
+  "abilities": {
+    "Charisma": 17,
+    "Strength": 7,
+    "Constitution": 10,
+    "Wisdom": 12,
+    "Dexterity": 13,
+    "Intelligence": 10
+  }
+}

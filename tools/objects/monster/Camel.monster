@@ -1,0 +1,13 @@
+{
+  "name": "Camel",
+  "HP": "2d10",
+  "AC": 9,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 16,
+    "Constitution": 14,
+    "Wisdom": 8,
+    "Dexterity": 8,
+    "Intelligence": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Gargoyle",
+  "HP": "7d8",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 15,
+    "Constitution": 16,
+    "Wisdom": 11,
+    "Dexterity": 11,
+    "Intelligence": 6
+  }
+}

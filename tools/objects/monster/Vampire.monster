@@ -1,0 +1,13 @@
+{
+  "name": "Vampire",
+  "HP": "17d8",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 18,
+    "Strength": 18,
+    "Constitution": 18,
+    "Wisdom": 15,
+    "Dexterity": 18,
+    "Intelligence": 17
+  }
+}

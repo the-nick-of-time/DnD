@@ -1,0 +1,13 @@
+{
+  "name": "Fire Giant",
+  "HP": "13d12",
+  "AC": 18,
+  "abilities": {
+    "Charisma": 13,
+    "Strength": 25,
+    "Constitution": 23,
+    "Wisdom": 14,
+    "Dexterity": 9,
+    "Intelligence": 10
+  }
+}

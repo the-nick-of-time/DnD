@@ -1,0 +1,13 @@
+{
+  "name": "Minotaur Skeleton",
+  "HP": "9d10",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 18,
+    "Constitution": 15,
+    "Wisdom": 8,
+    "Dexterity": 11,
+    "Intelligence": 6
+  }
+}

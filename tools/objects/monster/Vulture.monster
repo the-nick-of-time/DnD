@@ -1,0 +1,13 @@
+{
+  "name": "Vulture",
+  "HP": "1d8",
+  "AC": 10,
+  "abilities": {
+    "Charisma": 4,
+    "Strength": 7,
+    "Constitution": 13,
+    "Wisdom": 12,
+    "Dexterity": 10,
+    "Intelligence": 2
+  }
+}

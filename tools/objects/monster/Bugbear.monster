@@ -1,0 +1,13 @@
+{
+  "name": "Bugbear",
+  "HP": "5d8",
+  "AC": 16,
+  "abilities": {
+    "Charisma": 9,
+    "Strength": 15,
+    "Constitution": 13,
+    "Wisdom": 11,
+    "Dexterity": 14,
+    "Intelligence": 8
+  }
+}

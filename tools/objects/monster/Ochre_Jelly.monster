@@ -1,0 +1,13 @@
+{
+  "name": "Ochre Jelly",
+  "HP": "6d10",
+  "AC": 8,
+  "abilities": {
+    "Charisma": 1,
+    "Strength": 15,
+    "Constitution": 14,
+    "Wisdom": 6,
+    "Dexterity": 6,
+    "Intelligence": 2
+  }
+}

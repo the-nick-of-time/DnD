@@ -1,0 +1,13 @@
+{
+  "name": "Wererat",
+  "HP": "6d8",
+  "AC": 12,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 10,
+    "Constitution": 12,
+    "Wisdom": 10,
+    "Dexterity": 15,
+    "Intelligence": 11
+  }
+}

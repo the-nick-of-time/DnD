@@ -1,0 +1,13 @@
+{
+  "name": "Cloaker",
+  "HP": "12d10",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 14,
+    "Strength": 17,
+    "Constitution": 12,
+    "Wisdom": 12,
+    "Dexterity": 15,
+    "Intelligence": 13
+  }
+}

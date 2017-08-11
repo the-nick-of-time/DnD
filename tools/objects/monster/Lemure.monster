@@ -1,0 +1,13 @@
+{
+  "name": "Lemure",
+  "HP": "3d8",
+  "AC": 7,
+  "abilities": {
+    "Charisma": 3,
+    "Strength": 10,
+    "Constitution": 11,
+    "Wisdom": 11,
+    "Dexterity": 5,
+    "Intelligence": 1
+  }
+}

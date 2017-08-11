@@ -1,0 +1,13 @@
+{
+  "name": "Grick",
+  "HP": "6d8",
+  "AC": 14,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 14,
+    "Constitution": 11,
+    "Wisdom": 14,
+    "Dexterity": 14,
+    "Intelligence": 3
+  }
+}

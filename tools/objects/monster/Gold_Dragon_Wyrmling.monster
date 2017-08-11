@@ -1,0 +1,13 @@
+{
+  "name": "Gold Dragon Wyrmling",
+  "HP": "8d8",
+  "AC": 17,
+  "abilities": {
+    "Charisma": 16,
+    "Strength": 19,
+    "Constitution": 17,
+    "Wisdom": 11,
+    "Dexterity": 14,
+    "Intelligence": 14
+  }
+}

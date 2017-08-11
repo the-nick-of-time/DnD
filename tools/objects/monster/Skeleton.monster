@@ -1,0 +1,13 @@
+{
+  "name": "Skeleton",
+  "HP": "2d8",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 5,
+    "Strength": 10,
+    "Constitution": 15,
+    "Wisdom": 8,
+    "Dexterity": 14,
+    "Intelligence": 6
+  }
+}

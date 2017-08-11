@@ -1,0 +1,13 @@
+{
+  "name": "Pony",
+  "HP": "2d8",
+  "AC": 10,
+  "abilities": {
+    "Charisma": 7,
+    "Strength": 15,
+    "Constitution": 13,
+    "Wisdom": 11,
+    "Dexterity": 10,
+    "Intelligence": 2
+  }
+}

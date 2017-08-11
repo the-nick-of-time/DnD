@@ -1,0 +1,13 @@
+{
+  "name": "Wyvern",
+  "HP": "13d10",
+  "AC": 13,
+  "abilities": {
+    "Charisma": 6,
+    "Strength": 19,
+    "Constitution": 16,
+    "Wisdom": 12,
+    "Dexterity": 10,
+    "Intelligence": 5
+  }
+}
