@@ -1,5 +1,7 @@
 import tkinter as tk
 import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 from classes import Character
 import helpers as h

@@ -1,5 +1,7 @@
 import tkinter as tk
 import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import GUIbasics as gui
 import helpers as h
@@ -36,6 +38,11 @@ class ConditionsDisplay(gui.Section):
         self.exhaustionlevel.grid(row=0, column=1)
         self.removeexhaustion.grid(row=0, column=2)
         self.display.grid(row=1, column=0)
+        for name in self.character.conditions:
+            try:
+                self.buttons[name].config(bg='red')
+            except KeyError:
+                pass
 
     def draw_dynamic(self):
         fullconditions = '\n'.join(h.condition_defs[name]

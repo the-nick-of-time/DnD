@@ -2,6 +2,8 @@ import tkinter as tk
 from os.path import isfile
 from collections import OrderedDict
 import json
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import GUIbasics as gui
 import interface as iface

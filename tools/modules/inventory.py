@@ -3,6 +3,7 @@ import re
 from collections import OrderedDict
 import sys
 import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import helpers as h
 import GUIbasics as gui

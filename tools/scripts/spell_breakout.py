@@ -1,6 +1,9 @@
 import json
 import os
 import re
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
+
 from read_md import read_markdown
 from helpers import clean
 

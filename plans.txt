@@ -1,0 +1,14 @@
+WHAT TO DO
+
+
+I set the convention that a string of the form $VAR will be interpreted by means of calling Character.__getattr__(VAR)/Character.VAR (the two will be equivalent)
+Would this involve checking every string for starting with $? Surely there's a better way
+It definitely comes up in bonuses; I can always check there
+Also in resources
+
+
+Variant: character file would have a map of {"name": "/path/to/source.file/path/to/value"} as I just wrote helpers.path_follower to address this
+They would keep some parts locally (e.g. number on resources)
+On levelup these would need to be updated somehow
+
+LEVEL UP

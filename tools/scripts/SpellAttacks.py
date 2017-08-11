@@ -1,5 +1,7 @@
 import os
 import re
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import interface as iface
 import helpers as h

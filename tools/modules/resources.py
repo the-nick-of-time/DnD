@@ -1,5 +1,7 @@
 import tkinter as tk
 import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import GUIbasics as gui
 import helpers as h
@@ -7,24 +9,28 @@ import classes as c
 import interface as iface
 
 
-class FeaturesDisplay(gui.Section):
+class ResourcesDisplay(gui.Section):
     def __init__(self, container, character):
         gui.Section.__init__(self, container)
         self.displays = []
-        for f in character.features:
-            self.displays.append(gui.EffectPane(self.f, f.name, str(f)))
+        for r in character.resources:
+            self.displays.append(gui.ResourceDisplay(self.f, r, True))
         self.draw_static()
 
     def draw_static(self):
-        s = 10
+        s = 4
         for (i, d) in enumerate(self.displays):
             d.grid(row=i%s, column=i//s)
 
 
-class module(FeaturesDisplay):
+class module(ResourcesDisplay):
     def __init__(self, container, character):
-        FeaturesDisplay.__init__(self, container, character)
-        self.f.config(bd=2, relief='groove')
+        ResourcesDisplay.__init__(self, container, character)
+        self.f.config(pady=5)
+
+    def draw_dynamic(self):
+        for d in self.displays:
+            d.draw_dynamic()
 
 
 class main(gui.Section):
@@ -50,11 +56,12 @@ class main(gui.Section):
         else:
             raise FileNotFoundError
         self.character = c.Character(self.record)
-        self.core = FeaturesDisplay(self.f, self.character)
+        self.core = ResourcesDisplay(self.f, self.character)
         self.draw_static()
         self.container.deiconify()
 
     def quit(self):
+        self.character.write()
         self.container.destroy()
 
 

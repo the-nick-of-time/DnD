@@ -1,4 +1,7 @@
 import json
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
+
 import helpers as h
 
 path = '../objects/treasure/'

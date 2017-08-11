@@ -147,5 +147,9 @@
       "number": 1
     }
   },
-  "conditions": []
+  "conditions": [
+    "poisoned",
+    "exhaustion2",
+    "deafened"
+  ]
 }

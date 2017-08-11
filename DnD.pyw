@@ -3,96 +3,50 @@
 import tkinter as tk
 import os
 
-import tools.modules.monstermanager as mm
-import tools.modules.charactermanager as cm
-import tools.modules.charactercreator as cc
+import tools.modules.character_manager as cm
+import tools.modules.monsters as mm
 import tools.modules.dice as dc
-# import tools.modules.charactereditor as ce
-import tools.forge.inventory as iv
-import tools.forge.SpellGUI as sp
-import tools.forge.hp as hp
 
 
-class core:
+class main:
     def __init__(self, window):
-        self.master = window
-        playerlabel = tk.Label(self.master, text="Player", font="Calibri 20")
-        playerlabel.grid(row=0, column=0)
-        DMlabel = tk.Label(self.master, text="DM", font="Calibri 20")
-        DMlabel.grid(row=0, column=1)
-        manage = tk.Button(self.master,
-                           text="Play a Character",
-                           command=lambda: self.characterplay())
-        manage.grid(row=1, column=0)
-        create = tk.Button(self.master,
-                           text="Create a New Character",
-                           command=lambda: self.charactercreate())
-        create.grid(row=2, column=0, pady=5)
-        # edit = tk.Button(self.master,
-        #                  text="Edit an Existing Character",
-        #                  command=lambda: self.characteredit())
-        # edit.grid(row=3, column=0, pady=5)
-        inventory = tk.Button(self.master, text="Manage Your Inventory",
-                              command=lambda: self.characterinventory())
-        inventory.grid(row=3, column=0, pady=5)
-        hpmanage = tk.Button(self.master, text="Manage Your HP",
-                             command=lambda: self.characterhp())
-        hpmanage.grid(row=4, column=0, pady=5)
-        spellmanage = tk.Button(self.master, text="Manage Your Spells",
-                                command=lambda: self.characterspells())
-        spellmanage.grid(row=5, column=0, pady=5)
-        monster = tk.Button(self.master,
-                            text="Create New Encounter",
-                            command=lambda: self.monstermanage())
-        monster.grid(row=1, column=1, padx=10)
-        dicelabel = tk.Label(self.master, text="Dice", font="Calibri 20")
-        dicelabel.grid(row=0, column=2)
-        dice = tk.Button(self.master,
-                         text="Roll Dice",
-                         command=lambda: self.dicesimulator())
-        dice.grid(row=1, column=2)
+        self.window = window
+        self.f = tk.Frame(window)
+        self.playerframe = tk.LabelFrame(self.f, text='Player', padx=10,
+                                         pady=5)
+        self.dmframe = tk.LabelFrame(self.f, text='DM', padx=10, pady=5)
+        self.rollframe = tk.LabelFrame(self.f, text='Any', padx=10, pady=5)
+        self.charmanage = tk.Button(self.playerframe, text='Manage\nCharacter',
+                                    command=self.charactermanager)
+        self.monstermanage = tk.Button(self.dmframe, text='Manage\nEncounter',
+                                       command=self.monstermanager)
+        self.diceroll = tk.Button(self.rollframe, text='Roll\nDice',
+                                  command=self.dice)
+        self.draw_static()
 
-    def undisplay(self):
-        for widget in self.master.winfo_children():
-            # widget.grid_forget()
-            widget.destroy()
+    def draw_static(self):
+        self.f.pack()
+        self.playerframe.grid(row=0, column=0)
+        self.charmanage.pack()
+        self.dmframe.grid(row=0, column=1)
+        self.monstermanage.pack()
+        self.rollframe.grid(row=0, column=2)
+        self.diceroll.pack()
 
-    def monstermanage(self):
-        self.undisplay()
-        mm.main(self.master)
+    def charactermanager(self):
+        self.f.destroy()
+        cm.main(self.window)
 
-    def characterplay(self):
-        self.undisplay()
-        cm.main(self.master)
+    def monstermanager(self):
+        self.f.destroy()
+        mm.main(self.window)
 
-    def charactercreate(self):
-        self.undisplay()
-        cc.main(self.master)
+    def dice(self):
+        self.f.destroy()
+        dc.DiceRoll(self.window)
 
-    def characterinventory(self):
-        self.undisplay()
-        iv.main(self.master)
-
-    def characterhp(self):
-        self.undisplay()
-        hp.main(self.master)
-
-    def characterspells(self):
-        self.undisplay()
-        sp.main(self.master)
-
-#    def characteredit(self):
-#        self.undisplay()
-#        ce.main(self.master)
-
-    def dicesimulator(self):
-        self.undisplay()
-        dc.main(self.master)
-
-
-#os.chdir(os.path.dirname(__file__))
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 win = tk.Tk()
-app = core(win)
+win.title('D&D')
+app = main(win)
 win.mainloop()

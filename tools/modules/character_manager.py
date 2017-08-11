@@ -1,12 +1,15 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import GUIbasics as gui
 import classes as c
 import interface as iface
 import helpers as h
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import abilities
 import dice
 import hp
@@ -85,6 +88,7 @@ class main:
             self.record = iface.JSONInterface(path)
         else:
             gui.ErrorMessage('A character with that name was not found.')
+            print(iface.JSONInterface.OBJECTSPATH + path)
             raise FileNotFoundError
         self.character = c.Character(self.record)
         self.container.title(str(self.character))

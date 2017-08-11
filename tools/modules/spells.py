@@ -1,5 +1,8 @@
 import tkinter as tk
 from math import sqrt
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import helpers as h
 import GUIbasics as gui

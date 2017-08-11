@@ -4,8 +4,8 @@ import os
 
 import classes as c
 
-# with open('./tools/forge/conditions.json') as f:
-with open('./conditions.json') as f:
+d = os.path.dirname(os.path.abspath(__file__))
+with open(d + '/conditions.json') as f:
     condition_defs = json.load(f)
 
 D20 = '1d20'
@@ -78,8 +78,6 @@ def type_select(extension):
         "class": {"": c.Class},
         "item": {"magic": {"": c.MagicItem},
                  "": c.Item},
-        # "race": {"": Race},
-        # "skill": {"": Skill},
         "spell": {"": c.Spell},
         "treasure": {"": c.Item},
         "weapon": {
