@@ -160,7 +160,7 @@ class InventoryHandler(gui.Section):
         return s
 
     def strength_analysis(self):
-        strength = self.character.get('/abilities/strength')
+        strength = self.character.get('/abilities/Strength')
         stages = ["No penalty.",
                   "Your speed drops by 10 feet.",
                   "Your speed drops by 20 feet and you have disadvantage on "
@@ -179,6 +179,18 @@ class InventoryHandler(gui.Section):
 
     def write(self):
         self.handler.write()
+
+
+class module(gui.Section):
+    def __init__(self, container, character):
+        gui.Section.__init__(self, container, width=900, height=500)
+        self.character = character
+        self.core = InventoryHandler(self.f, character.inventory,
+                                     character.record)
+        self.draw_dynamic()
+
+    def draw_dynamic(self):
+        self.core.grid(row=0, column=0)
 
 
 class main(gui.Section):

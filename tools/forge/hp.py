@@ -16,7 +16,8 @@ class HitDiceDisplay(gui.ResourceDisplay):
         self.parentwidget = parentwidget
 
     def decrement(self):
-        self.parent.use_HD(self.resource.value)
+        val = self.parent.use_HD(self.resource.value)
+        self.display.config(text=str(val))
         self.draw_dynamic()
         self.parentwidget.draw_dynamic()
 
@@ -120,6 +121,12 @@ class HitPointDisplay(gui.Section):
         for item in self.hddisplays:
             item.draw_dynamic()
         self.draw_dynamic()
+
+
+class module(HitPointDisplay):
+    def __init__(self, container, character):
+        HitPointDisplay.__init__(self, container, character.hp)
+        self.f.config(bd=2, relief='groove', pady=5)
 
 
 class main(gui.Section):

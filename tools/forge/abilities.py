@@ -112,6 +112,12 @@ class SkillDisplay(gui.Section):
         self.display['text'] = '{}+{}={}'.format(*reversed(result))
 
 
+class module(AbilityDisplay):
+    def __init__(self, container, character):
+        AbilityDisplay.__init__(self, container, character)
+        self.f.config(pady=5)
+
+
 class main(gui.Section):
     def __init__(self, window):
         gui.Section.__init__(self, window)

@@ -70,14 +70,29 @@ class Race:
 
 
 class Resource:
-    def __init__(self, jf, path, defjf=None, defpath=None):
+    def __init__(self, jf, path, defjf=None, defpath=None, character=None):
+        # TODO: implement write protection on maxnumber when it is in an external file (ie defjf is not none)?
         self.record = jf
+        self.character = character
         self.definition = defjf if (defjf is not None) else jf
         self.path = path
         self.defpath = defpath if (defpath is not None) else path
         self.name = self.definition.get(self.defpath + '/name')
-        self.value = self.definition.get(self.defpath + '/value')
+        # self.value = self.definition.get(self.defpath + '/value')
+        v = self.definition.get(self.defpath + '/value')
+        if (self.character is not None):
+            self.value = self.character.parse_vars(v, mathIt=False)
+        else:
+            self.value = v
         self.recharge = self.definition.get(self.defpath + '/recharge')
+
+    # @property
+    # def value(self):
+    #     v = self.definition.get(self.defpath + '/value')
+    #     if (self.character is not None):
+    #         return self.character.parse_vars(v, mathIt=False)
+    #     else:
+    #         return v
 
     @property
     def number(self):
@@ -91,7 +106,11 @@ class Resource:
     def maxnumber(self):
         val = self.record.get(self.path + '/maxnumber')
         if (val is not None):
+            if (self.character is not None):
+                return self.character.parse_vars(val)
             return val
+        if (self.character is not None):
+            return self.character.parse_vars(self.definition.get(self.defpath + '/maxnumber'))
         return self.definition.get(self.defpath + '/maxnumber')
 
     @maxnumber.setter
@@ -101,10 +120,13 @@ class Resource:
     def use(self, howmany):
         if (self.number < howmany):
             raise LowOnResource(self)
+        self.number -= howmany
         if (isinstance(self.value, str)):
-            self.number -= howmany
             return r.roll('+'.join([self.value] * howmany))
-        return howmany * self.value
+        elif (isinstance(self.value, int)):
+            return howmany * self.value
+        else:
+            return 0
 
     def regain(self, howmany):
         if (self.number + howmany > self.maxnumber):
@@ -127,6 +149,33 @@ class Resource:
 
     def write(self):
         self.record.write()
+
+
+class Feature:
+    def __init__(self, char, path):
+        # char is the Character
+        # path is a full path to the feature including its file
+        tup = h.path_follower(path)
+        self.character = char
+        self.charrecord = char.record
+        self.record = tup[0]
+        self.path = tup[1]
+        self.bonuses = self.record.get(self.path + '/bonus')
+        rs = self.record.get(self.path + '/resource')
+        if (rs is not None):
+            name = rs['name']
+            self.resource = Resource(self.charrecord, '/resources/' + name,
+                                     self.record, self.path + '/resource',
+                                     self.character)
+        else:
+            self.resource = rs
+
+    def __str__(self):
+        return self.record.get(self.path + '/description')
+
+    @property
+    def name(self):
+        return self.path.split('/')[-1]
 
 
 class Character:
@@ -202,6 +251,7 @@ class Character:
         self.register_attacks()
         self.features = self.get_features()
         self.bonuses = self.get_bonuses()
+        self.resources = self.get_resources()
         self.death_save_fails = 0
         self.conditions = set()
         self.lucky = False  # except that halflings get it
@@ -223,6 +273,10 @@ class Character:
             return h.modifier(self.abilities['Wisdom'])
         if (key.lower() == 'cha_mod'):
             return h.modifier(self.abilities['Charisma'])
+        if (key.lower() == 'caster_level'):
+            return self.caster_level
+        if (key.lower() == 'level'):
+            return self.level
         if (key.endswith('_level')):
             head, _, _ = key.partition('_')
             try:
@@ -230,7 +284,7 @@ class Character:
             except KeyError:
                 return 0
             return cl.level
-        raise AttributeError
+        return self.record.get('/' + key)
 
     def add_condition(self, name):
         if (name == 'exhaustion'):
@@ -273,14 +327,23 @@ class Character:
 
     def spell_spend(self, spell):
         if (isinstance(spell, int)):
+            lv = spell
             path = '/spell_slots/' + str(spell)
         else:
+            lv = spell.level
             path = '/spell_slots/' + str(spell.level)
         num = self.record.get(path)
         if (num > 0):
             self.record.set(path, num-1)
         else:
-            raise (OutOfSpells(self, spell))
+            for val in range(lv, 10):
+                path = '/spell_slots/' + str(val)
+                num = self.record.get(path)
+                if (num is not None and num > 0):
+                    self.record.set(path, num-1)
+                    break
+            else:
+                raise (OutOfSpells(self, spell))
 
     def item_consume(self, name):
         try:
@@ -344,10 +407,14 @@ class Character:
         return bonuses
 
     def get_features(self):
-        features = {}
+        features = []
+        # features = {}
         # features.update(self.race.features)
         # for n, c, l in self.classes:
         #     features.update(c.features)
+        for n, p in self.record.get('/features').items():
+            # features[n] = Feature(p)
+            features.append(Feature(self, p))
         return features
 
     def get_resources(self):
@@ -357,6 +424,20 @@ class Character:
         # for n in self.features:
         #     if ('resource' in self.features[n]):
         #         resources.append(self.features[n]['resource'])
+        for f in self.features:
+            if (f.resource):
+                resources.append(f.resource)
+        for item in self.inventory:
+            if (item.equipped):
+                try:
+                    res = item.charge
+                    definition = res['path']
+                    (jf, path) = h.path_follower(definition)
+                    new = Resource(self.record, item.path + '/charge',
+                                   jf, path)
+                    resources.append(new)
+                except AttributeError:
+                    continue
         return resources
 
     def set_abilities(self, name, value):
@@ -385,12 +466,14 @@ class Character:
 
     @property
     def AC(self):
-        baseAC = 0
+        baseAC = 10 + self.dex_mod
         bonusAC = self.bonuses['AC']
         for item in self.inventory:
-            if (item.get('/equipped')):
-                ac = item.get('/AC')
-                baseAC = ac if (ac is not None and ac > baseAC) else baseAC
+            if (isinstance(item.obj, Armor)):
+                if (item.equipped):
+                    # ac = item.get('/base_AC')
+                    ac = item.get_AC(self.dex_mod)
+                    baseAC = ac if (ac is not None and ac > baseAC) else baseAC
         return baseAC + bonusAC
 
     @property
@@ -477,17 +560,22 @@ class Character:
 
     def rest(self, what):
         self.hp.rest(what)
+        for res in self.resources:
+            res.rest(what)
         if (what == 'long'):
             self.record.set('/spell_slots', self.max_spell_slots[:])
         elif (what == 'short'):
             pass
 
-    def parse_vars(self, s):
+    def parse_vars(self, s, mathIt=True):
         if (isinstance(s, str)):
             pattern = '\$[a-zA-Z_]+'
             rep = lambda m: str(self.__getattr__(m.group(0)))
             new = re.sub(pattern, rep, s)
-            return r.roll(new)
+            if (mathIt):
+                return r.roll(new)
+            else:
+                return new
         elif (isinstance(s, int) or s is None):
             return s
         else:
@@ -559,8 +647,17 @@ class ItemEntry:
         self.load_from_file()
 
     def __getattr__(self, key):
+        val = self.record.get(self.path + '/' + key)
+        if (val is not None):
+            return val
         if (self.obj):
-            return self.obj.__getattribute__(key)
+            try:
+                return self.obj.__getattribute__(key)
+            except AttributeError:
+                val = self.obj.__getattr__(key)
+                if (val is not None):
+                    return val
+                raise AttributeError
         raise AttributeError
 
     def load_from_file(self):
@@ -756,8 +853,7 @@ class HDHandler(Resource):
             roll = self.use(1)
         except LowOnResource as e:
             return 0
-
-        conmod = h.modifier(self.record.get('/abilities/constitution'))
+        conmod = h.modifier(self.record.get('/abilities/Constitution'))
         return roll+conmod if (roll+conmod > 1) else 1
 
     def rest(self, what):
@@ -1181,8 +1277,20 @@ class Armor(Item):
     """
     def __init__(self, jf):
         Item.__init__(self, jf)
-        self.base_AC = self.record.get('/AC') or 0
+        self.base_AC = self.record.get('/base_AC') or 10
         self.bonus_AC = self.record.get('/bonus/AC') or 0
+        self.type = self.record.get('/type')
+
+    def get_AC(self, dexmod):
+        if (self.type == 'Shield'):
+            return 0
+        if (self.type == 'LightArmor'):
+            effective = dexmod
+        elif (self.type == 'MediumArmor'):
+            effective = dexmod if (dexmod <= 2) else 2
+        elif (self.type == 'HeavyArmor'):
+            effective = 0
+        return self.base_AC + effective
 
 
 class MagicItem(Item):

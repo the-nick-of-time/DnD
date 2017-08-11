@@ -69,6 +69,11 @@ class Attacks(gui.Section):
         self.output.update(*result)
 
 
+class module(Attacks):
+    def __init__(self, container, character):
+        Attacks.__init__(self, container, character)
+
+
 class main(gui.Section):
     def __init__(self, window):
         gui.Section.__init__(self, window)

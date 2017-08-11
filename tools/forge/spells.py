@@ -65,6 +65,8 @@ class NumberDisplay(gui.Section):
             self.values[i].set(str(num))
 
     def long_rest(self):
+        if (len(self.entries) < len(self.character.max_spell_slots)):
+            self.draw_static()
         self.character.rest('long')
         self.draw_dynamic()
 
@@ -159,6 +161,29 @@ class SpellSection(gui.Section):
                 d.grid(row=i%s, column=i//s)
             i = len(self.displays)
             self.effects.grid(row=i%s, column=i//s)
+
+
+class module(gui.Section):
+    def __init__(self, container, character):
+        gui.Section.__init__(self, container)
+        self.numbers = NumberDisplay(self.f, character)
+        self.numbers.rest.destroy()
+        self.excessblock = tk.Frame(self.f)
+        self.effects = LongEffectDisplay(self.excessblock, '')
+        self.roll = dice.module(self.excessblock, character)
+        self.detail = SpellSection(self.f, character.record, character,
+                                   self.numbers, self.effects)
+        self.draw_static()
+
+    def draw_static(self):
+        self.detail.grid(row=0, column=0)
+        self.excessblock.grid(row=0, column=1)
+        self.effects.grid(row=0, column=0)
+        self.roll.grid(row=1, column=0)
+        self.numbers.grid(row=0, column=2)
+
+    def draw_dynamic(self):
+        self.numbers.draw_dynamic()
 
 
 class main(gui.Section):

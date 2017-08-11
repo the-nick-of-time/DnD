@@ -17,6 +17,18 @@ class DiceRoll(gui.Section):
     def do_roll(self):
         self.result["text"] = r.roll(self.generalRoll.get(), option='multipass')
 
+
+class module(DiceRoll):
+    def __init__(self, container, character):
+        DiceRoll.__init__(self, container)
+        self.character = character
+
+    def do_roll(self):
+        s = self.generalRoll.get()
+        parsed = self.character.parse_vars(s, mathIt=False)
+        self.result["text"] = r.roll(parsed, option='multipass')
+
+
 if __name__ == '__main__':
     win = tk.Tk()
     app = DiceRoll(win)
