@@ -16,5 +16,6 @@
   "casting_time": "1 action",
   "attack_roll": true,
   "damage": "2d6",
+  "attacks": 3,
   "damage_type": "fire"
 }
