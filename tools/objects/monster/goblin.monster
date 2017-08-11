@@ -1,16 +1,13 @@
 {
-	"name": "Goblin",
-	"AC": 15,
-	"HP": "2d6",
-	"abilities": {
-		"strength": 8,
-		"dexterity": 14,
-		"constitution": 10,
-		"intelligence": 10,
-		"wisdom": 8,
-		"charisma": 8
-	},
-	"skills": {
-		"Stealth": 6
-	}
+  "name": "Goblin",
+  "HP": "2d6",
+  "AC": 15,
+  "abilities": {
+    "Charisma": 8,
+    "Strength": 8,
+    "Constitution": 10,
+    "Wisdom": 8,
+    "Dexterity": 14,
+    "Intelligence": 10
+  }
 }

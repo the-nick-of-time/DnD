@@ -46,7 +46,7 @@
   "features": [ {},
     {
 			"Bardic Inspiration": {
-				"description": "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet ofyou who can hear you. That creature gains one Bardic Inspiration die, a d6. Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide hefore the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled. it is lost. A creature can have only one Bardic Inspiration die at a time. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.",
+				"description": "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6. Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide hefore the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled. it is lost. A creature can have only one Bardic Inspiration die at a time. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.",
 				"resource": {
 				  "name": "Bardic Inspiration",
 				  "maxnumber": "$cha_mod",
@@ -70,15 +70,123 @@
 			"choose": {
 				"number": 1,
 				"Bard College: Lore": {
-				  "description": "You delve into the advanced techniques of a bard college of your choice.Bards Dfthe College of Lore know something about most things, collecting bits Dfknowledge from sources as diverse as scholarly tomes and peasant tales. Whether singing folk ballads in taverns or elaborate compositions in royal courts, these bards use their gifts to hold audiences spellbound. When the applause dies down, the audience members might find themselves questioning everything they held to be true, from their faith in the priesthood of the localtemple to their loyalty to the king. The loyalty Dfthese bards Iies in the pursuit Dfbeauty and truth, not in fealty to a monarch or following the tenets of a deity. A noble who keeps such a bard as a herald or advisor knows that the bard would rather be honest than politic. The college's members gather in libraries and sometimes in actual colleges, complete with classrooms and dormitories, to share their lore with one another. They also meet at festivaIs or affairs of state, where they can expose corruption, unravellies, and poke fun at self- important figures of authority."
+				  "description": "You delve into the advanced techniques of a bard college of your choice. Bards of the College of Lore know something about most things, collecting bits of knowledge from sources as diverse as scholarly tomes and peasant tales. Whether singing folk ballads in taverns or elaborate compositions in royal courts, these bards use their gifts to hold audiences spellbound. When the applause dies down, the audience members might find themselves questioning everything they held to be true, from their faith in the priesthood of the localtemple to their loyalty to the king. The loyalty of these bards lies in the pursuit of beauty and truth, not in fealty to a monarch or following the tenets of a deity. A noble who keeps such a bard as a herald or advisor knows that the bard would rather be honest than politic. The college's members gather in libraries and sometimes in actual colleges, complete with classrooms and dormitories, to share their lore with one another. They also meet at festivals or affairs of state, where they can expose corruption, unravel lies, and poke fun at self-important figures of authority."
 				},
 				"Bard College: Valor": {
-				  "description": "You delve into the advanced techniques of a bard college of your choice. Bards of the Cullege uf Valor are daring skalds whosc tales keep alive the Illemury uf the great heroes of the past, and thereby inspire a new generatioll of heroes. These bards gather in mead halls or around great bonfires to sing the deeds of the mighty, both past and present. They traveI the land to witness great events firsthand and tu ensure that the melllory of those events doesn't pass frolO the world. With their songs, they inspire others to reach the same heights of accomplishment as the heroes of old."
+				  "description": "You delve into the advanced techniques of a bard college of your choice. Bards of the College uf Valor are daring skalds whose tales keep alive the memory of the great heroes of the past, and thereby inspire a new generation of heroes. These bards gather in mead halls or around great bonfires to sing the deeds of the mighty, both past and present. They travel the land to witness great events firsthand and to ensure that the memory of those events doesn't pass from the world. With their songs, they inspire others to reach the same heights of accomplishment as the heroes of old."
 				}
 			},
-			"Expertise": {
-			  "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies."
-			}
+      "choose": {
+        "number": 2,
+        "Expertise: Athletics": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Athletics": "$proficiency"}
+          }
+        },
+        "Expertise: Acrobatics": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Acrobatics": "$proficiency"}
+          }
+        },
+        "Expertise: Sleight of Hand": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Sleight of Hand": "$proficiency"}
+          }
+        },
+        "Expertise: Stealth": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Stealth": "$proficiency"}
+          }
+        },
+        "Expertise: Arcana": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Arcana": "$proficiency"}
+          }
+        },
+        "Expertise: History": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"History": "$proficiency"}
+          }
+        },
+        "Expertise: Investigation": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Investigation": "$proficiency"}
+          }
+        },
+        "Expertise: Nature": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Nature": "$proficiency"}
+          }
+        },
+        "Expertise: Religion": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Religion": "$proficiency"}
+          }
+        },
+        "Expertise: Animal Handling": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Animal Handling": "$proficiency"}
+          }
+        },
+        "Expertise: Insight": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Insight": "$proficiency"}
+          }
+        },
+        "Expertise: Medicine": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Medicine": "$proficiency"}
+          }
+        },
+        "Expertise: Perception": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Perception": "$proficiency"}
+          }
+        },
+        "Expertise: Survival": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Survival": "$proficiency"}
+          }
+        },
+        "Expertise: Deception": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Deception": "$proficiency"}
+          }
+        },
+        "Expertise: Intimidation": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Intimidation": "$proficiency"}
+          }
+        },
+        "Expertise: Performance": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Performance": "$proficiency"}
+          }
+        },
+        "Expertise: Persuasion": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Persuasion": "$proficiency"}
+          }
+        }
+      }
 		},
     {},
     {
@@ -110,9 +218,117 @@
 				  "recharge": "short rest"
 				}
 			},
-			"Expertise": {
-			  "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies."
-			}
+      "choose": {
+        "number": 2,
+        "Expertise: Athletics": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Athletics": "$proficiency"}
+          }
+        },
+        "Expertise: Acrobatics": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Acrobatics": "$proficiency"}
+          }
+        },
+        "Expertise: Sleight of Hand": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Sleight of Hand": "$proficiency"}
+          }
+        },
+        "Expertise: Stealth": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Stealth": "$proficiency"}
+          }
+        },
+        "Expertise: Arcana": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Arcana": "$proficiency"}
+          }
+        },
+        "Expertise: History": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"History": "$proficiency"}
+          }
+        },
+        "Expertise: Investigation": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Investigation": "$proficiency"}
+          }
+        },
+        "Expertise: Nature": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Nature": "$proficiency"}
+          }
+        },
+        "Expertise: Religion": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Religion": "$proficiency"}
+          }
+        },
+        "Expertise: Animal Handling": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Animal Handling": "$proficiency"}
+          }
+        },
+        "Expertise: Insight": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Insight": "$proficiency"}
+          }
+        },
+        "Expertise: Medicine": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Medicine": "$proficiency"}
+          }
+        },
+        "Expertise: Perception": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Perception": "$proficiency"}
+          }
+        },
+        "Expertise: Survival": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Survival": "$proficiency"}
+          }
+        },
+        "Expertise: Deception": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Deception": "$proficiency"}
+          }
+        },
+        "Expertise: Intimidation": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Intimidation": "$proficiency"}
+          }
+        },
+        "Expertise: Performance": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Performance": "$proficiency"}
+          }
+        },
+        "Expertise: Persuasion": {
+          "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.",
+          "bonus": {
+            "skill": {"Persuasion": "$proficiency"}
+          }
+        }
+      }
 		},
     {},
     {},

@@ -22,8 +22,8 @@ def childrenrecursive(current):
 
 
 class Monster:
-    abilnames = ['strength', 'dexterity', 'constitution', 'intelligence',
-                 'wisdom', 'charisma']
+    abilnames = ['Strength', 'Dexterity', 'Constitution', 'Intelligence',
+                 'Wisdom', 'Charisma']
     def __init__(self, data):
         self.name = data['name']
         self.HP = int(r.roll(data['HP'], option='average' if data['average'] else 'execute'))
@@ -31,7 +31,8 @@ class Monster:
         self.AC = data['AC']
         self.abilities = data['abilities']
         self.initiative = (r.roll('1d20') +
-                           h.modifier(data['abilities']['dexterity']))
+                           h.modifier(data['abilities']['Dexterity']))
+        self.saves = data.get('saves', {})
 
     def __lt__(self, other):
         return self.initiative < other.initiative
@@ -105,7 +106,7 @@ class MonsterDisplay(gui.Section):
         ########
         self.namesec.grid(row=0, column=0)
         self.nameL.grid(row=0, column=0, sticky='w')
-        self.initL.grid(row=0, column=1, sticky='e')
+        self.initL.grid(row=1, column=0, sticky='e')
         ####
         self.acsec.grid(row=0, column=1)
         self.hpL.grid(row=0, column=0, sticky='w')
@@ -149,7 +150,7 @@ class MonsterDisplay(gui.Section):
     def do_attack(self):
         adv = self.advantage.get()
         dis = self.disadvantage.get()
-        attstring = '2d20h1' if (adv and not dis) else '2d20l1' if (dis and not adv) else '1d20'
+        attstring = h.d20_roll(adv, dis)
         attroll = r.roll(attstring)
         ###
         if (attroll == 20):
@@ -296,7 +297,7 @@ class CharacterBuilder:
 
 class main(gui.Section):
     def __init__(self, window):
-        gui.Section.__init__(self, window, height=755, width=965)
+        gui.Section.__init__(self, window, height=770, width=965)
         self.monsterdata = {}
         self.prevmonster = {}
         self.characterdata = {}

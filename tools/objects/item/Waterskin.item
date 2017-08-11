@@ -1,0 +1,7 @@
+{
+  "name": "Waterskin",
+  "value": 0.2,
+  "weight": 5,
+  "effect": "This waterskin weighs only half a pound when empty.",
+  "description": "This waterskin holds two day's worth of water."
+}

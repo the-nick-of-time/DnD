@@ -1,0 +1,7 @@
+{
+  "name": "Hemp Rope",
+  "value": 0.02,
+  "weight": 0.2,
+  "effect": "You could cut off a length of this rope to serve your needs.",
+  "description": "You have a number of feet of hemp rope."
+}

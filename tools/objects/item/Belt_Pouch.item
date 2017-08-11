@@ -1,0 +1,7 @@
+{
+  "name": "Belt Pouch",
+  "value": 0.5,
+  "weight": 1,
+  "effect": "You can store 1 cubic foot or 6 pounds of stuff in this pouch.",
+  "description": "This small pouch is carried on the belt."
+}
