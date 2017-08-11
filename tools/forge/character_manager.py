@@ -5,6 +5,7 @@ import os
 import GUIbasics as gui
 import classes as c
 import interface as iface
+import helpers as h
 
 import abilities
 import dice
@@ -14,6 +15,7 @@ import spells
 import features
 import resources
 import attacks
+import conditions
 
 
 class main:
@@ -49,7 +51,8 @@ class main:
         ######
         # Attacks
         self.core.add(self.attackpage, text='Attacks')
-        self.attacks.grid(row=0, column=0)
+        self.attacks.grid(row=0, column=0, sticky='n')
+        self.conditions.grid(row=0, column=1, sticky='n')
         ######
         # Features
         self.core.add(self.featurespage, text='Features')
@@ -77,12 +80,14 @@ class main:
 
     def startup_end(self):
         name = self.charactername['Character Name?']
-        path = 'character/' + name + '.character'
+        path = 'character/' + h.clean(name) + '.character'
         if (os.path.exists(iface.JSONInterface.OBJECTSPATH + path)):
             self.record = iface.JSONInterface(path)
         else:
+            gui.ErrorMessage('A character with that name was not found.')
             raise FileNotFoundError
         self.character = c.Character(self.record)
+        self.container.title(str(self.character))
         ######
         # Front page
         self.info = Information(self.frontpage, self.character)
@@ -92,6 +97,7 @@ class main:
         ######
         # Attacks
         self.attacks = attacks.module(self.attackpage, self.character)
+        self.conditions = conditions.module(self.attackpage, self.character)
         ######
         # Features
         self.features = features.module(self.featurespage, self.character)
@@ -108,7 +114,7 @@ class main:
         self.draw_static()
 
     def writequit(self):
-        # self.character.write()
+        self.character.write()
         self.container.destroy()
 
     def rest(self, which):
@@ -116,6 +122,7 @@ class main:
         self.spells.draw_dynamic()
         self.resources.draw_dynamic()
         self.HP.draw_dynamic()
+        self.conditions.draw_dynamic()
 
 
 class Information(gui.Section):
@@ -141,7 +148,7 @@ class Information(gui.Section):
 
 if (__name__ == '__main__'):
     win = tk.Tk()
-    win.wm_title('Character Manager')
+    # win.wm_title('Character Manager')
     iface.JSONInterface.OBJECTSPATH = '../objects/'
     app = main(win)
     win.mainloop()

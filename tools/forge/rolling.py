@@ -174,9 +174,17 @@ def roll(s, modifiers=0, option='execute'):
         return execute(T, operators) + modifiers
     elif (option == 'multipass'):
         # TODO: add modifiers into the passes
-        return display_multipass(tokens(s, operators), operators)
+        import re
+        pattern = '\(.*\)'
+        rep = lambda m: str(roll(m.group(0)))
+        new = re.sub(pattern, rep, s)
+        return display_multipass(tokens(new, operators), operators)
     elif (option == 'multipass_critical'):
         # TODO: add modifiers into the passes
+        import re
+        pattern = '\(.*\)'
+        rep = lambda m: str(roll(m.group(0)))
+        new = re.sub(pattern, rep, s)
         T = tokens(s, operators)
         T = critify(T, operators)
         return display_multipass(T, operators)

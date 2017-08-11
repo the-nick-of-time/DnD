@@ -54,14 +54,17 @@ class Section:
 
 
 class InfoButton:
-    def __init__(self, container, poptext):
+    def __init__(self, container, poptext, title=''):
         self.container = container
         self.poptext = poptext
+        self.title = title
 
         self.b = tk.Button(self.container, text='?', command=self.popup)
 
     def popup(self):
         win = tk.Toplevel()
+        if (self.title):
+            win.title(self.title)
         disp = tk.Label(win, text=self.poptext, wraplength=250)
         # if (isinstance(self.poptext, tk.StringVar)):
         #     disp['textvariable'] = self.poptext
@@ -98,7 +101,7 @@ class EffectPane(Section):
 
         self.short_display = tk.Label(self.f, text=self.short, width=30,
                                       wraplength=200)
-        self.long_display = InfoButton(self.f, self.long)
+        self.long_display = InfoButton(self.f, self.long, self.short)
 
         self.draw_static()
         self.draw_dynamic()
@@ -138,6 +141,9 @@ class Query:
     def draw(self):
         for (i, q) in enumerate(self.questions):
             self.answers[q] = util.labeledEntry(self.win, q, 2*i, 0)
+        self.answers[self.questions[-1]].bind("<Return>",
+                                              lambda event: self.finish())
+        self.answers[self.questions[0]].focus_set()
         self.accept.grid(row=2*i+1, column=1)
 
     def finish(self):

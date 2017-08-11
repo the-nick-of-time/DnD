@@ -20,6 +20,25 @@ def modifier(score):
     return (int(score) - 10) // 2
 
 
+def d20_roll(adv=False, dis=False, luck=False):
+    if (adv and not dis):
+        if (luck):
+            return ADV_LUCK
+        else:
+            return ADV
+    elif (dis and not adv):
+        if (luck):
+            return DIS_LUCK
+        else:
+            return DIS
+    else:
+        if (luck):
+            return D20_LUCK
+        else:
+            return D20
+
+
+
 def shorten(effect):
     """Takes an effects string and returns the first sentence."""
     if (effect):

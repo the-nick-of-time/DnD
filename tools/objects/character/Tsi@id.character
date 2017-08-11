@@ -1,0 +1,131 @@
+{
+  "name": "Tsi'id",
+  "level": "Barbarian 1",
+  "race": "Dragonborn (Black)",
+  "HP": {
+    "max": 13,
+    "current": 13,
+    "temp": 0,
+    "HD": {
+      "1d12": {
+        "number": 1,
+        "maxnumber": 1
+      }
+    }
+  },
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 13,
+    "Constitution": 13,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 9
+  },
+  "saves": [
+    "Strength",
+    "Constitution"
+  ],
+  "skills": [
+    "Athletics",
+    "Intimidation",
+    "Perception",
+    "Stealth"
+  ],
+  "languages": [
+    "Common",
+    "Draconic",
+    "Orcish"
+  ],
+  "inventory": {
+    "Maul": {
+      "type": "weapon",
+      "quantity": 1,
+      "equipped": true
+    },
+    "Javelin": {
+      "type": "weapon",
+      "quantity": 4,
+      "equipped": true
+    },
+    "Handaxe": {
+      "type": "weapon",
+      "quantity": 2,
+      "equipped": true
+    },
+    "Belt Pouch": {
+      "type": "item",
+      "quantity": 1,
+      "equipped": true
+    },
+    "Wolf Fur Half-cape": {
+      "type": "item",
+      "quantity": 1,
+      "equipped": true
+    },
+    "Traveler's Clothes": {
+      "type": "item",
+      "quantity": 1,
+      "equipped": true
+    },
+    "Backpack": {
+      "type": "item",
+      "quantity": 1,
+      "equipped": true
+    },
+    "Bedroll": {
+      "type": "item",
+      "quantity": 1,
+      "equipped": true
+    },
+    "Mess Kit": {
+      "type": "item",
+      "quantity": 1,
+      "equipped": true
+    },
+    "Tinderbox": {
+      "type": "item",
+      "quantity": 1,
+      "equipped": true
+    },
+    "Torch": {
+      "type": "item",
+      "quantity": 10,
+      "equipped": true
+    },
+    "Trail Rations": {
+      "type": "item",
+      "quantity": 10,
+      "equipped": true
+    },
+    "Waterskin": {
+      "type": "item",
+      "quantity": 1,
+      "equipped": true
+    },
+    "Hemp Rope": {
+      "type": "item",
+      "quantity": 50,
+      "equipped": true
+    }
+  },
+  "spells_prepared": {
+    "always_prepared": [],
+    "prepared_today": []
+  },
+  "spell_slots": [],
+  "features": {
+    "Rage": "class/Barbarian.class/features/1/Rage",
+    "Unarmored Defense": "class/Barbarian.class/features/1/Unarmored Defense",
+    "Breath Weapon": "race/Dragonborn.Black.sub.race/features/Breath Weapon",
+    "Damage Resistance": "race/Dragonborn.Black.sub.race/features/Damage Resistance"
+  },
+  "resources": {
+    "Rage": {
+      "number": 2
+    },
+    "Breath Weapon": {
+      "number": 1
+    }
+  },
+  "conditions": []
+}

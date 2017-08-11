@@ -102,26 +102,16 @@
       "Light",
       "Guidance",
       "Thaumaturgy",
-      "Spare the Dying",
-      "Burning Hands",
-      "Faerie Fire",
-      "Flaming Sphere",
-      "Scorching Ray",
-      "Fireball",
-      "Daylight",
-      "Guardian of Faith",
-      "Wall of Fire",
-      "Flame Strike",
-      "Scrying"
+      "Spare the Dying"
     ]
   },
   "spell_slots": [
     999999,
     4,
-    3,
-    3,
-    3,
     2,
+    3,
+    3,
+    1,
     1
   ],
   "features": {
@@ -142,7 +132,7 @@
   },
   "resources": {
     "Channel Divinity": {
-      "number": 2
+      "number": 1
     },
     "Lay on Hands": {
       "number": 10
@@ -156,5 +146,6 @@
     "Divine Intervention": {
       "number": 1
     }
-  }
+  },
+  "conditions": []
 }

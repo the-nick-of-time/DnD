@@ -48,11 +48,11 @@
       "quantity": 1,
       "equipped": true
     },
-		"Bolt": {
-			"type": "weapon",
+    "Bolt": {
+      "type": "weapon",
       "quantity": 20,
       "equipped": true
-		}
+    }
   },
   "spells_prepared": {
     "always_prepared": [
@@ -75,7 +75,8 @@
   },
   "resources": {
     "Bardic Inspiration": {
-      "number": 1
+      "number": 3
     }
-  }
+  },
+  "conditions": []
 }

@@ -69,5 +69,6 @@
     "Divine Sense": {
       "number": 3
     }
-  }
+  },
+  "conditions": []
 }

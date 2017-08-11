@@ -81,18 +81,17 @@ class Resource:
         # self.value = self.definition.get(self.defpath + '/value')
         v = self.definition.get(self.defpath + '/value')
         if (self.character is not None):
-            self.value = self.character.parse_vars(v, mathIt=False)
+            val = self.character.parse_vars(v, mathIt=False)
+            if (isinstance(val, str)):
+                pattern = '\(.*\)'
+                rep = lambda m: str(r.roll(m.group(0)))
+                new = re.sub(pattern, rep, val)
+                self.value = new
+            else:
+                self.value = val
         else:
             self.value = v
         self.recharge = self.definition.get(self.defpath + '/recharge')
-
-    # @property
-    # def value(self):
-    #     v = self.definition.get(self.defpath + '/value')
-    #     if (self.character is not None):
-    #         return self.character.parse_vars(v, mathIt=False)
-    #     else:
-    #         return v
 
     @property
     def number(self):
@@ -246,15 +245,15 @@ class Character:
         self.race = cm.RaceMap(jf.get('/race'))
         self.hp = HPhandler(self.record)
         self.inventory = Inventory(self.record)
+        self.features = self.get_features()
+        self.bonuses = self.get_bonuses()
         self.spells = SpellsPrepared(jf, self)
         self.attacks = {}
         self.register_attacks()
-        self.features = self.get_features()
-        self.bonuses = self.get_bonuses()
         self.resources = self.get_resources()
         self.death_save_fails = 0
-        self.conditions = set()
-        self.lucky = False  # except that halflings get it
+        self.conditions = set(self.record.get('/conditions') or [])
+        # self.lucky = False  # except that halflings get it
 
     def __str__(self):
         return self.name
@@ -358,14 +357,16 @@ class Character:
     def ability_check(self, which, skill='', adv=False, dis=False):
         applyskill = skill in self.skills
         ability = h.modifier(self.abilities[which])
-        rollstr = '2d20h1' if (adv and not dis) else '2d20l1' if (dis and not adv) else '1d20'
+        rollstr = h.d20_roll(adv, dis, self.bonuses.get('lucky', False))
         roll = r.roll(rollstr)
         if (applyskill):
             prof = self.proficiency
+        elif(self.bonuses.get('jack_of_all_trades', False)):
+            prof = self.proficiency // 2
         else:
             prof = 0
-        bon = (self.bonuses['check'] or {}).get(which, 0) \
-              + (self.bonuses['skill'] or {}).get(skill, 0)
+        bon = self.parse_vars(self.bonuses.get('check', {}).get(which, 0)) \
+              + self.parse_vars(self.bonuses.get('skill', {}).get(skill, 0))
         return (roll + prof + ability + bon, prof + ability + bon, roll)
 
     def ability_save(self, which, adv=False, dis=False):
@@ -375,13 +376,13 @@ class Character:
         else:
             prof = 0
         ability = h.modifier(self.abilities[which])
-        rollstr = '2d20h1' if (adv and not dis) else '2d20l1' if (dis and not adv) else '1d20'
+        rollstr = h.d20_roll(adv, dis, self.bonuses.get('lucky', False))
         roll = r.roll(rollstr)
-        bon = (self.bonuses['save'] or {}).get(which, 0)
+        bon = self.parse_vars(self.bonuses.get('save', {}).get(which, 0))
         return (roll + prof + ability + bon, prof + ability + bon, roll)
 
     def death_save(self):
-        val = r.roll('1d20')
+        val = r.roll(h.d20_roll(luck=self.bonuses.get('lucky', False)))
         if (val == 1):
             self.death_save_fails += 2
         elif (val == 20):
@@ -394,16 +395,32 @@ class Character:
             self.conditions.add('dead')
 
     def get_bonuses(self):
-        bonuses = defaultdict(lambda: 0)
-        # bonuses = {}
-        # for item in self.inventory:
-        #     newbonus = item.get('/bonus')
-        #     if (newbonus is not None):
-        #         for var, amount in newbonus.items():
-        #             if (var not in bonuses):
-        #                 bonuses.update({var: amount})
-        #             else:
-        #                 bonuses[var] += amount
+        # bonuses = defaultdict(lambda: 0)
+        def add_bonus(self, new, bonuses):
+            nonstackable = {'base_AC', 'lucky', 'jack_of_all_trades'}
+            for var, amount in new.items():
+                if (var not in bonuses):
+                    bonuses.update({var: amount})
+                elif (var in nonstackable):
+                    # values are evaluated only at creation time, but should hopefully be static
+                    newval = self.parse_vars(amount)
+                    existing = self.parse_vars(bonuses[var])
+                    if (newval > existing):
+                        bonuses[var] = amount
+                else:
+                    newval = self.parse_vars(amount)
+                    existing = self.parse_vars(bonuses[var])
+                    bonuses[var] = newval + existing
+        bonuses = {}
+        for item in self.inventory:
+            if (item.equipped):
+                newbonus = item.get('/bonus')
+                if (newbonus is not None):
+                    add_bonus(self, newbonus, bonuses)
+        for f in self.features:
+            new = f.bonuses
+            if (new is not None):
+                add_bonus(self, new, bonuses)
         return bonuses
 
     def get_features(self):
@@ -433,8 +450,8 @@ class Character:
                     res = item.charge
                     definition = res['path']
                     (jf, path) = h.path_follower(definition)
-                    new = Resource(self.record, item.path + '/charge',
-                                   jf, path)
+                    new = MagicCharge(self.record, item.path + '/charge',
+                                      jf, path)
                     resources.append(new)
                 except AttributeError:
                     continue
@@ -466,8 +483,14 @@ class Character:
 
     @property
     def AC(self):
-        baseAC = 10 + self.dex_mod
-        bonusAC = self.bonuses['AC']
+        # It's possible to have a new calculation of base AC in bonuses
+        bonusbase = self.bonuses.get('base_AC', 0)
+        if (bonusbase):
+            baseAC = self.parse_vars(bonusbase)
+        else:
+            baseAC = 10 + self.dex_mod
+
+        bonusAC = self.bonuses.get('AC', 0)
         for item in self.inventory:
             if (isinstance(item.obj, Armor)):
                 if (item.equipped):
@@ -532,22 +555,33 @@ class Character:
 
     def save_DC(self, spell):
         return (8
-                + self.bonuses['save_DC']
+                + self.bonuses.get('save_DC', 0)
                 + h.modifier(self.relevant_abil(spell)))
 
     def relevant_abil(self, forwhat):
         if (isinstance(forwhat, Spell)):
             sharedclasses = set(forwhat.classes) & set(self.classes.names())
             if (sharedclasses):
-                candidate = 0
-                for name in sharedclasses:
-                    abilname = self.classes[name].get('/spellcasting/ability')
+                # It was actually found in one of your class spell lists
+                classnames = sharedclasses
+            else:
+                # It wasn't, yet you have it nonetheless
+                # Just get the largest number from your classes, as I have no
+                #   more ways of determining spell source
+                classnames = self.classes.names()
+            candidate = 0
+            for name in classnames:
+                abilname = self.classes[name].get('/spellcasting/ability')
+                if (abilname is not None):
                     score = self.abilities[abilname]
                     if (score > candidate):
                         candidate = score
-                return candidate
-            else:
-                raise AttributeError('You don\'t have that spell available.')
+            return candidate
+            # else:
+                # At this point it should be established that you have the
+                #   spell available
+                # raise AttributeError('You don\'t have that spell available.')
+
         elif (isinstance(forwhat, Weapon)):
             candidate = 0
             for abilname in forwhat.ability:
@@ -564,6 +598,7 @@ class Character:
             res.rest(what)
         if (what == 'long'):
             self.record.set('/spell_slots', self.max_spell_slots[:])
+            self.remove_condition('exhaustion')
         elif (what == 'short'):
             pass
 
@@ -576,7 +611,7 @@ class Character:
                 return r.roll(new)
             else:
                 return new
-        elif (isinstance(s, int) or s is None):
+        elif (isinstance(s, (int, list)) or s is None):
             return s
         else:
             raise TypeError('This should work on anything directly grabbed '
@@ -584,6 +619,7 @@ class Character:
 
     def write(self):
         self.record.set('/abilities', self.abilities)
+        self.record.set('/conditions', list(self.conditions))
         # self.record.set('/spell_slots', self.spell_slots)
         self.record.write()
 
@@ -893,7 +929,7 @@ class Attack:
 
     def __init__(self, jf):
         self.damage_dice = jf.get('/damage')
-        self.num_targets = jf.get('/attacks')
+        self.num_targets = jf.get('/attacks') or 1
 
     @staticmethod
     def display_result(result):
@@ -993,7 +1029,8 @@ class SpellsPrepared:
     def prepared(self):
         today = set(self.record.get('/spells_prepared/prepared_today'))
         always = set(self.record.get('/spells_prepared/always_prepared'))
-        return today | always
+        bonuses = set(self.char.bonuses.get('always_prepared', []))
+        return today | always | bonuses
 
     @property
     def prepared_today(self):
@@ -1063,7 +1100,7 @@ class SpellAttack(Spell, Attack):
         self.attack_roll = jf.get('/attack_roll')
         if (not self.attack_roll):
             self.save = jf.get('/save')
-        self.add_abil = jf.get('/add_abil')
+        # self.add_abil = jf.get('/add_abil')
 
     def setowner(self, character):
         Spell.setowner(self, character)
@@ -1079,17 +1116,23 @@ class SpellAttack(Spell, Attack):
             return ('', '', str(error))
         attacks = []
         damages = []
-        if (self.add_abil):
-            abil = h.modifier(character.relevant_abil(self))
+        if (self.level == 0):
+            s = character.bonuses.get('cantrip_damage', 0)
+            extradamage = character.parse_vars(s)
         else:
-            abil = 0
+            extradamage = 0
+        # if (self.add_abil):
+        #     abil = h.modifier(character.relevant_abil(self))
+        # else:
+        #     abil = 0
         if (self.attack_roll):
-            if (adv and not dis):
-                dice = h.ADV if not character.lucky else h.ADV_LUCK
-            elif (dis and not adv):
-                dice = h.DIS if not character.lucky else h.DIS_LUCK
-            else:
-                dice = h.D20 if not character.lucky else h.D20_LUCK
+            # if (adv and not dis):
+            #     dice = h.ADV if not character.lucky else h.ADV_LUCK
+            # elif (dis and not adv):
+            #     dice = h.DIS if not character.lucky else h.DIS_LUCK
+            # else:
+            #     dice = h.D20 if not character.lucky else h.D20_LUCK
+            dice = h.d20_roll(adv, dis, character.bonuses.get('lucky', False))
             for each in range(self.num_targets):
                 attack_roll = r.roll(dice)
                 attack_mods = r.roll(attack_bonus) \
@@ -1103,20 +1146,20 @@ class SpellAttack(Spell, Attack):
                     # Critical hit
                     attack_roll = 'Critical hit!'
                     damage_mods = r.roll(damage_bonus, option='critical') \
-                                  + abil
+                                  + extradamage
                     damage_roll = r.roll(self.damage_dice, option='critical') \
                                   + damage_mods
                 else:
                     # Normal attack
                     attack_roll += attack_mods
-                    damage_mods = r.roll(damage_bonus) + abil
+                    damage_mods = r.roll(damage_bonus) + extradamage
                     damage_roll = r.roll(self.damage_dice) + damage_mods
                 attacks.append(attack_roll)
                 damages.append(damage_roll)
         else:
             formatstr = 'Targets make a DC {n} {t} save.'
             attacks.append(formatstr.format(n=character.save_DC(self), t=self.save))
-            damage_mods = r.roll(damage_bonus) + abil
+            damage_mods = r.roll(damage_bonus) + extradamage
             damage = r.roll(self.damage_dice) + damage_mods
             damages.append(damage)
         return (attacks, damages, self.effect)
@@ -1181,16 +1224,17 @@ class Weapon(Attack, Item):
         self.hands = jf.get('/hands')
         self.classification = jf.get('/type')
         self.ability = jf.get('/ability')
-        self.magic_bonus = defaultdict(lambda: 0)
+        self.magic_bonus = {}
 
     @Attack.attackwrap
     def attack(self, character, adv, dis, attack_bonus, damage_bonus):
-        if (adv and not dis):
-            dice = h.ADV
-        elif (dis and not adv):
-            dice = h.DIS
-        else:
-            dice = h.D20
+        dice = h.d20_roll(adv, dis, character.bonuses.get('lucky', False))
+        # if (adv and not dis):
+        #     dice = h.ADV
+        # elif (dis and not adv):
+        #     dice = h.DIS
+        # else:
+        #     dice = h.D20
 
         attack = []
         damage = []
