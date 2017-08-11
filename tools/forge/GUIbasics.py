@@ -148,9 +148,10 @@ class Query:
 
 
 class ResourceDisplay(Section):
-    def __init__(self, container, resource):
+    def __init__(self, container, resource, lockMax=False):
         Section.__init__(self, container)
         self.resource = resource
+        self.lockMax = lockMax
         self.name = tk.Label(self.f, text=self.resource.name)
         self.numbers = tk.Frame(self.f)
         self.currentvalue = tk.StringVar()
@@ -158,9 +159,13 @@ class ResourceDisplay(Section):
         self.current = tk.Entry(self.numbers, textvariable=self.currentvalue,
                                 width=5)
         self.slash = tk.Label(self.numbers, text='/')
-        self.mxvalue = tk.StringVar()
-        self.mxvalue.trace('w', lambda a,b,c: self.update_maxnumber())
-        self.mx = tk.Entry(self.numbers, textvariable=self.mxvalue, width=5)
+        if (lockMax):
+            self.mx = tk.Label(self.numbers, width=5,
+                               text=str(self.resource.maxnumber))
+        else:
+            self.mxvalue = tk.StringVar()
+            self.mxvalue.trace('w', lambda a,b,c: self.update_maxnumber())
+            self.mx = tk.Entry(self.numbers, textvariable=self.mxvalue, width=5)
         self.value = tk.Label(self.numbers, text='*'+self.resource.value if isinstance(self.resource.value, str) else '')
         self.buttonframe = tk.Frame(self.f)
         self.inc = tk.Button(self.buttonframe, text='+',
@@ -169,6 +174,7 @@ class ResourceDisplay(Section):
                              command=self.decrement)
         self.resetbutton = tk.Button(self.buttonframe, text='Reset',
                                command=self.reset)
+        self.display = tk.Label(self.buttonframe, width=3)
         self.draw_static()
         self.draw_dynamic()
 
@@ -180,16 +186,20 @@ class ResourceDisplay(Section):
         self.mx.grid(row=0, column=2)
         self.value.grid(row=0, column=3)
         self.buttonframe.grid(row=2, column=0)
-        self.inc.grid(row=0, column=0)
-        self.dec.grid(row=0, column=1)
-        self.resetbutton.grid(row=0, column=2)
+        self.display.grid(row=0, column=0)
+        self.inc.grid(row=0, column=1)
+        self.dec.grid(row=0, column=2)
+        self.resetbutton.grid(row=0, column=3)
 
     def draw_dynamic(self):
-        self.mxvalue.set(str(self.resource.maxnumber))
+        if (not self.lockMax):
+            self.mxvalue.set(str(self.resource.maxnumber))
         self.currentvalue.set(str(self.resource.number))
 
     def update_number(self):
-        self.resource.number = int(self.currentvalue.get() or 0)
+        val = self.currentvalue.get()
+        if (val.isnumeric()):
+            self.resource.number = int(val)
 
     def update_maxnumber(self):
         self.resource.maxnumber = int(self.mxvalue.get() or 0)
@@ -199,9 +209,14 @@ class ResourceDisplay(Section):
         self.draw_dynamic()
 
     def decrement(self):
-        self.resource.use(1)
+        val = self.resource.use(1)
+        self.display.config(text=str(val))
         self.draw_dynamic()
 
     def reset(self):
         self.resource.reset()
+        self.draw_dynamic()
+
+    def rest(self, which):
+        self.resource.rest(which)
         self.draw_dynamic()
