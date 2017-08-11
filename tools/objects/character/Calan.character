@@ -34,6 +34,10 @@
     "Intimidation",
     "Medicine"
   ],
+  "languages": [
+    "Common",
+    "Gnomish"
+  ],
   "inventory": {
     "Longsword": {
       "type": "weapon",
@@ -53,17 +57,17 @@
     "Trail Rations": {
       "type": "item",
       "quantity": 4,
-      "equipped": true
+      "equipped": false
     },
     "Mirror": {
       "type": "item",
       "quantity": 1,
-      "equipped": true
+      "equipped": false
     },
     "Oil": {
       "type": "item",
       "quantity": 3,
-      "equipped": true
+      "equipped": false
     },
     "Animated Shield": {
       "type": "magic apparel",
@@ -71,7 +75,7 @@
       "equipped": true,
       "charge": {
         "number": 1,
-        "path": "armor/Animated_Shield.magic.apparel/charges"
+        "path": "apparel/Animated_Shield.magic.apparel/charges"
       }
     }
   },
@@ -122,10 +126,11 @@
   ],
   "features": {
     "Channel Divinity": "class/Cleric.class/features/6/Channel Divinity",
+    "Channel Divinity: Turn Undead": "class/Cleric.class/features/2/Channel Divinity: Turn Undead",
     "Divine Intervention": "class/Cleric.class/features/10/Divine Intervention",
     "Destroy Undead": "class/Cleric.class/features/11/Destroy Undead",
     "Ability Score Improvement": "class/Cleric.class/features/8/Ability Score Improvement",
-    "Fighting Style: PROTECTION": "class/Paladin.class/features/2/choose_one/Fighting Style: PROTECTION",
+    "Fighting Style: PROTECTION": "class/Paladin.class/features/2/choose/Fighting Style: PROTECTION",
     "Divine Smite": "class/Paladin.class/features/2/Divine Smite",
     "Lay on Hands": "class/Paladin.class/features/1/Lay on Hands",
     "Divine Sense": "class/Paladin.class/features/1/Divine Sense",
@@ -134,5 +139,22 @@
     "Channel Divinity: Radiance of the Dawn": "class/Cleric.Light.sub.class/features/2/Channel Divinity: Radiance of the Dawn",
     "Potent Spellcasting": "class/Cleric.Light.sub.class/features/8/Potent Spellcasting",
     "Domain Spells": "class/Cleric.Light.sub.class/features/9/Domain Spells"
+  },
+  "resources": {
+    "Channel Divinity": {
+      "number": 2
+    },
+    "Lay on Hands": {
+      "number": 10
+    },
+    "Divine Sense": {
+      "number": 4
+    },
+    "Warding Flare": {
+      "number": 4
+    },
+    "Divine Intervention": {
+      "number": 1
+    }
   }
 }

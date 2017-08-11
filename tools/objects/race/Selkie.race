@@ -1,0 +1,14 @@
+{
+  "name": "Selkie",
+  "bonus": {
+    "Dexterity": 2,
+    "Wisdom": 1
+  },
+  "size": "Medium",
+  "appearance": "Selkies tend to have dark brown hair and dark eyes, with little to no sclera visible.",
+  "features": {
+    "Seal Skin": {
+      "description": "As an action, you transform into a seal. In seal form, you retain your ability scores and hit points. Anything you are carrying is subsumed into your new form. Your speed becomes 15 feet, and you gain a swim speed of 50 feet. You gain the following action option:\nBite: +dex+proficiency, 2d6+dex piercing damage.\nIf you become unconscious, you revert to your human form. You gain the following trait:\nHold Breath: You can hold your breath for a number of minutes equal to ten times your Constitution modifier (minimum 10)"
+    }
+  }
+}

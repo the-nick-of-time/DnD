@@ -1,0 +1,10 @@
+{
+  "name": "Chain Mail",
+  "type": "HeavyArmor",
+  "base_AC": 16,
+  "stealth disadvantage": true,
+  "value": 75,
+  "weight": 55,
+  "effect": "Donning this armor takes 10 minutes. Doffing takes 5.",
+  "description": "This armor is made of interlocking steel rings."
+}

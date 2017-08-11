@@ -37,7 +37,7 @@
       ]
     }
   },
-  "spell": {
+  "spellcasting": {
     "ability": "Charisma",
     "slots": "full",
     "levels": "full",
@@ -58,7 +58,7 @@
     },
     {
       "Font of Magic": {
-        "description": "You tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects.\nSORCERY POINTS\nYou have 2 sorcery points, and you gain more as you reach higher levels. as shown in the Sorcery Points column of the Sorcerer table. You can never have more sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest.\nFLEXIBLE CASTING\nYou can use your sorcery points to gain additional spell slots. or sacrifice spell slots to gain additional sorcery points. You learn other ways to use your sorcery points as you reach higher levels.\nCreating Spell Slots: You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. The Creating Spell Slots table shows the cost of creating a spell slot of a given level. You can create spell slots no higher in level than 5th.\nCreating Spell Slots\nSpell Slot Level | Sorcery point cost\n    1st         |         2\n    2nd         |         3\n    3rd         |         5\n    4th         |         6\n    5th         |         7\nConverting a Spell Slot to Sorcery Points: As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot's level.",
+        "description": "You tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects.\nSORCERY POINTS\nYou have 2 sorcery points, and you gain more as you reach higher levels. as shown in the Sorcery Points column of the Sorcerer table. You can never have more sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest.\nFLEXIBLE CASTING\nYou can use your sorcery points to gain additional spell slots. or sacrifice spell slots to gain additional sorcery points. You learn other ways to use your sorcery points as you reach higher levels.\nCreating Spell Slots: You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. The Creating Spell Slots table shows the cost of creating a spell slot of a given level. You can create spell slots no higher in level than 5th.\nCreating Spell Slots\nSpell Slot Level | Sorcery point cost\n    1st          |         2\n    2nd          |         3\n    3rd          |         5\n    4th          |         6\n    5th          |         7\nConverting a Spell Slot to Sorcery Points: As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot's level.",
         "resource": {
           "name": "Sorcery Points",
           "maxnumber": "$Sorcerer_level",
@@ -69,6 +69,33 @@
     {
       "Metamagic": {
         "description": "You gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You gain another one at 10th and 17th level. You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.\nCAREFUL SPELL\nWhen you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 sorcery point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell.\nDISTANT SPELL\nWhen you cast a spell that has a range of 5 feet or greater, you can spend 1 sorcery point to double the range of the spell. When you cast a spell that has a range of touch, you can spend 1 sorcery point to make the range of the spell 30 feel.\nEMPOWERED SPELL\nWhen you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls. You can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell.\nEXTENDED SPELL\nWhen you cast a spell that has a duration of 1 minute or longer. you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours.\nHEIGHTENED SPELL\nWhen you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 sorcery points to give one target of the spell disadvantage on its first saving throw made against the spell.\nQUICKENED SPELL\nWhen you cast a spell that has a casting time of 1 action, you can spend 2 sorcery points to change the casting time to 1 bonus action for this casting.\nSUBTLE SPELL\nWhen you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components.\nTWINNED SPELL\nWhen you cast a spell that targets only one creature and doesn't have a range of self, you can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip)."
+      },
+      "choose": {
+        "number": 2,
+        "Metamagic: CAREFUL SPELL": {
+          "description": "You gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.\nCAREFUL SPELL\nWhen you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 sorcery point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell."
+        },
+        "Metamagic: DISTANT SPELL": {
+          "description": "You gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.\nDISTANT SPELL\nWhen you cast a spell that has a range of 5 feet or greater, you can spend 1 sorcery point to double the range of the spell. When you cast a spell that has a range of touch, you can spend 1 sorcery point to make the range of the spell 30 feel."
+        },
+        "Metamagic: EMPOWERED SPELL": {
+          "description": "You gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.\nEMPOWERED SPELL\nWhen you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls. You can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell."
+        },
+        "Metamagic: EXTENDED SPELL": {
+          "description": "You gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.\nEXTENDED SPELL\nWhen you cast a spell that has a duration of 1 minute or longer. you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours."
+        },
+        "Metamagic: HEIGHTENED SPELL": {
+          "description": "You gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.\nHEIGHTENED SPELL\nWhen you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 sorcery points to give one target of the spell disadvantage on its first saving throw made against the spell."
+        },
+        "Metamagic: QUICKENED SPELL": {
+          "description": "You gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.\nQUICKENED SPELL\nWhen you cast a spell that has a casting time of 1 action, you can spend 2 sorcery points to change the casting time to 1 bonus action for this casting."
+        },
+        "Metamagic: SUBTLE SPELL": {
+          "description": "You gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.\nSUBTLE SPELL\nWhen you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components."
+        },
+        "Metamagic: TWINNED SPELL": {
+          "description": "You gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.\nTWINNED SPELL\nWhen you cast a spell that targets only one creature and doesn't have a range of self, you can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip)."
+        }
       }
     },
     {

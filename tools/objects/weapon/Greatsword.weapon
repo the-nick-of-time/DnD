@@ -1,0 +1,12 @@
+{
+  "name": "Greatsword",
+  "value": 50,
+  "weight": 6,
+  "description": "This long sword is wielded with two hands.",
+  "effect": "You sweep the sword in a long arc.",
+  "damage": "2d6",
+	"damage_type": "Slashing",
+  "ability": ["Strength"],
+  "type": "Martial",
+  "hands": "two"
+}

@@ -35,6 +35,10 @@
   "tools": [
     "Leatherworking Tools"
   ],
+  "languages": [
+    "Common",
+    "Halfling"
+  ],
   "spell_slots": [],
   "spells_prepared": {
     "always_prepared": [],
@@ -130,11 +134,22 @@
     "Fighting Style: TWO-WEAPON FIGHTING": "class/Fighter.class/features/1/choose/Fighting Style: TWO-WEAPON FIGHTING",
     "Second Wind": "class/Fighter.class/features/1/Second Wind",
     "Action Surge": "class/Fighter.class/features/2/Action Surge",
-    "Martial Archetype: Battle Master": "class/Fighter.class/features/3/Martial Archetype: Battle Master",
+    "Martial Archetype: Battle Master": "class/Fighter.class/features/3/choose/Martial Archetype: Battle Master",
     "Combat Superiority": "class/Fighter.Battle_Master.sub.class/features/3/Combat Superiority",
     "Student of War": "class/Fighter.Battle_Master.sub.class/features/3/Student of War",
     "Disarming Attack": "class/Fighter.Battle_Master.sub.class/features/3/choose/Disarming Attack",
     "Parry": "class/Fighter.Battle_Master.sub.class/features/3/choose/Parry",
     "Trip Attack": "class/Fighter.Battle_Master.sub.class/features/3/choose/Trip Attack"
+  },
+  "resources": {
+    "Superiority Dice": {
+      "number": 4
+    },
+    "Second Wind": {
+      "number": 1
+    },
+    "Action Surge": {
+      "number": 1
+    }
   }
 }

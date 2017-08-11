@@ -1,0 +1,81 @@
+{
+  "name": "Mairra",
+  "level": "Bard 1",
+  "race": "Selkie",
+  "HP": {
+    "max": 9,
+    "current": 9,
+    "temp": 0,
+    "HD": {
+      "1d8": {
+        "maxnumber": 1,
+        "number": 1
+      }
+    }
+  },
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 12,
+    "Constitution": 12,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 16
+  },
+  "saves": [
+    "Dexterity",
+    "Charisma"
+  ],
+  "skills": [
+    "Arcana",
+    "History",
+    "Nature",
+    "Insight",
+    "Performance"
+  ],
+  "languages": [
+    "Common",
+    "Elvish",
+    "Fae"
+  ],
+  "inventory": {
+    "Leather Armor": {
+      "type": "apparel",
+      "quantity": 1,
+      "equipped": true
+    },
+    "Light Crossbow": {
+      "type": "weapon",
+      "quantity": 1,
+      "equipped": true
+    },
+		"Bolt": {
+			"type": "weapon",
+      "quantity": 20,
+      "equipped": true
+		}
+  },
+  "spells_prepared": {
+    "always_prepared": [
+      "Message",
+      "Dancing Lights",
+      "Sleep",
+      "Heroism",
+      "Bane",
+      "Comprehend Languages"
+    ],
+    "prepared_today": []
+  },
+  "spell_slots": [
+    999999,
+    2
+  ],
+  "features": {
+    "Bardic Inspiration": "class/Bard.class/features/1/Bardic Inspiration",
+    "Seal Skin": "race/Selkie.race/features/Seal Skin"
+  },
+  "resources": {
+    "Bardic Inspiration": {
+      "number": 1
+    }
+  }
+}

@@ -8,7 +8,7 @@
         "description": "When you choose this archetype at 3rd level, you learn maneuvers that are fueled by special dice called superiority dice.\nManeuvers. You learn three maneuvers of your choice, which are detailed under \"Maneuvers\" below. Many maneuvers enhance an attack in some way. You can use only one maneuver per attack. You learn two additional maneuvers ofyour choice at 7th, 10th, and 15th level. Each time you learn new maneuvers, you can also replace one maneuver you know with a different one.\nSuperiority Dice. You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain ali of your expended superiority dice when you finish a short or long rest. Yougain another superiority die at 7th level and one more at 15th level.\nSaving Throws. Some of your maneuvers require your target to make a saving throw to resist the maneuver's effects. The saving throw DC is calculated as 8 + your proficiency bonus + your Strength or Dexterity modifier.",
         "resource": {
           "name": "Superiority Dice",
-          "number": 4,
+          "maxnumber": 4,
           "value": "1d8",
           "recharge": "short rest"
         }
@@ -79,7 +79,7 @@
         "description": "When you choose this archetype at 3rd level, you learn maneuvers that are fueled by special dice called superiority dice.\nManeuvers. You learn three maneuvers of your choice, which are detailed under \"Maneuvers\" below. Many maneuvers enhance an attack in some way. You can use only one maneuver per attack. You learn two additional maneuvers ofyour choice at 7th, 10th, and 15th level. Each time you learn new maneuvers, you can also replace one maneuver you know with a different one.\nSuperiority Dice. You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain ali of your expended superiority dice when you finish a short or long rest. Yougain another superiority die at 7th level and one more at 15th level.\nSaving Throws. Some of your maneuvers require your target to make a saving throw to resist the maneuver's effects. The saving throw DC is calculated as 8 + your proficiency bonus + your Strength or Dexterity modifier.",
         "resource": {
           "name": "Superiority Dice",
-          "number": 5,
+          "maxnumber": 5,
           "value": "1d8",
           "recharge": "short rest"
         }
@@ -143,7 +143,7 @@
         "description": "When you choose this archetype at 3rd level, you learn maneuvers that are fueled by special dice called superiority dice.\nManeuvers. You learn three maneuvers of your choice, which are detailed under \"Maneuvers\" below. Many maneuvers enhance an attack in some way. You can use only one maneuver per attack. You learn two additional maneuvers ofyour choice at 7th, 10th, and 15th level. Each time you learn new maneuvers, you can also replace one maneuver you know with a different one.\nSuperiority Dice. You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain ali of your expended superiority dice when you finish a short or long rest. Yougain another superiority die at 7th level and one more at 15th level.\nSaving Throws. Some of your maneuvers require your target to make a saving throw to resist the maneuver's effects. The saving throw DC is calculated as 8 + your proficiency bonus + your Strength or Dexterity modifier.",
         "resource": {
           "name": "Superiority Dice",
-          "number": 5,
+          "maxnumber": 5,
           "value": "1d10",
           "recharge": "short rest"
         }
@@ -212,7 +212,7 @@
         "description": "When you choose this archetype at 3rd level, you learn maneuvers that are fueled by special dice called superiority dice.\nManeuvers. You learn three maneuvers of your choice, which are detailed under \"Maneuvers\" below. Many maneuvers enhance an attack in some way. You can use only one maneuver per attack. You learn two additional maneuvers ofyour choice at 7th, 10th, and 15th level. Each time you learn new maneuvers, you can also replace one maneuver you know with a different one.\nSuperiority Dice. You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain ali of your expended superiority dice when you finish a short or long rest. Yougain another superiority die at 7th level and one more at 15th level.\nSaving Throws. Some of your maneuvers require your target to make a saving throw to resist the maneuver's effects. The saving throw DC is calculated as 8 + your proficiency bonus + your Strength or Dexterity modifier.",
         "resource": {
           "name": "Superiority Dice",
-          "number": 6,
+          "maxnumber": 6,
           "value": "1d10",
           "recharge": "short rest"
         }
@@ -276,7 +276,7 @@
         "description": "When you choose this archetype at 3rd level, you learn maneuvers that are fueled by special dice called superiority dice.\nManeuvers. You learn three maneuvers of your choice, which are detailed under \"Maneuvers\" below. Many maneuvers enhance an attack in some way. You can use only one maneuver per attack. You learn two additional maneuvers ofyour choice at 7th, 10th, and 15th level. Each time you learn new maneuvers, you can also replace one maneuver you know with a different one.\nSuperiority Dice. You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain ali of your expended superiority dice when you finish a short or long rest. Yougain another superiority die at 7th level and one more at 15th level.\nSaving Throws. Some of your maneuvers require your target to make a saving throw to resist the maneuver's effects. The saving throw DC is calculated as 8 + your proficiency bonus + your Strength or Dexterity modifier.",
         "resource": {
           "name": "Superiority Dice",
-          "number": 6,
+          "maxnumber": 6,
           "value": "1d12",
           "recharge": "short rest"
         }

@@ -1,0 +1,13 @@
+{
+  "name": "Light Crossbow",
+  "value": 25,
+  "weight": 5,
+  "description": "This crossbow is made from light wood.",
+  "effect": "You fire a bolt at your enemy",
+  "damage": "1d8",
+	"damage_type": "Piercing",
+  "ability": ["Dexterity"],
+  "type": "Simple",
+  "hands": "two",
+	"consumes": "Bolt"
+}

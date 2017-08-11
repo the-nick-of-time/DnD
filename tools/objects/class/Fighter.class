@@ -1,4 +1,4 @@
-ur{
+{
   "name": "Fighter",
   "superclass": [
     "ALL"
@@ -69,7 +69,7 @@ ur{
         "description": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again.",
         "resource": {
           "name": "Second Wind",
-          "number": 1,
+          "maxnumber": 1,
           "value": "1d10+$Fighter_level",
           "recharge": "short rest"
         }
@@ -80,7 +80,7 @@ ur{
         "description": "You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again.",
         "resource": {
           "name": "Action Surge",
-          "number": 1,
+          "maxnumber": 1,
           "value": 0,
           "recharge": "short rest"
         }
@@ -126,7 +126,7 @@ ur{
         "description": "You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest.",
         "resource": {
           "name": "Indomitable save reroll",
-          "number": 1,
+          "maxnumber": 1,
           "value": 0,
           "recharge": "long rest"
         }
@@ -148,7 +148,7 @@ ur{
         "description": "You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest.",
         "resource": {
           "name": "Indomitable save reroll",
-          "number": 2,
+          "maxnumber": 2,
           "value": 0,
           "recharge": "long rest"
         }
@@ -170,7 +170,7 @@ ur{
         "description": "You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn.",
         "resource": {
           "name": "Action Surge",
-          "number": 2,
+          "maxnumber": 2,
           "value": 0,
           "recharge": "short rest"
         }
@@ -179,7 +179,7 @@ ur{
         "description": "You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest.",
         "resource": {
           "name": "Indomitable save reroll",
-          "number": 3,
+          "maxnumber": 3,
           "value": 0,
           "recharge": "long rest"
         }

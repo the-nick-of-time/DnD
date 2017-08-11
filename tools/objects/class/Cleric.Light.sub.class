@@ -46,7 +46,12 @@
     },
     {
       "Warding Flare": {
-        "description": "You can interpose divine light between you and an enemy. When you or a creature other than you is attacked by a creature within 30 feet that you can see, you can use your reaction to impose disadvantage on the attack roll. You can use this feature a number of times equal to your Wisdom modifier (minimum 1) between long rests."
+        "description": "You can interpose divine light between you and an enemy. When you or a creature other than you is attacked by a creature within 30 feet that you can see, you can use your reaction to impose disadvantage on the attack roll. You can use this feature a number of times equal to your Wisdom modifier (minimum 1) between long rests.",
+        "resource": {
+          "name": "Warding Flare",
+          "maxnumber": "$wis_mod",
+          "recharge": "long rest"
+        }
       }
     },
     {

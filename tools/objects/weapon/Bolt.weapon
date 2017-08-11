@@ -1,0 +1,13 @@
+{
+  "name": "Arrow",
+  "damage": "1",
+  "damage_type": "Piercing",
+  "ability": [
+    "Dexterity"
+  ],
+  "consumes": "Arrow",
+  "value": 0.05,
+  "weight": 0.05,
+  "description": "This crossbow bolt may be tipped with flint or iron.",
+  "effect": "You can use a crossbow bolt as ammunition for a crossbow or as a weapon on its own."
+}

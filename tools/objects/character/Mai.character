@@ -32,10 +32,15 @@
     "Constitution",
     "Charisma"
   ],
+  "languages": [
+    "Common",
+    "Dwarvish",
+    "Primordial"
+  ],
   "spell_slots": [
     999999,
     4,
-    2
+    3
   ],
   "spells_prepared": {
     "always_prepared": [
@@ -122,6 +127,19 @@
       "quantity": 40,
       "type": "treasure",
       "equipped": false
+    }
+  },
+  "features": {
+    "Font of Magic": "class/Sorcerer.class/features/2/Font of Magic",
+    "Metamagic: DISTANT SPELL": "class/Sorcerer.class/features/3/choose/Metamagic: DISTANT SPELL",
+    "Metamagic: TWINNED SPELL": "class/Sorcerer.class/features/3/choose/Metamagic: TWINNED SPELL",
+    "Ability Score Improvement": "class/Sorcerer.class/features/4/Ability Score Improvement",
+    "Wind Speaker": "class/Sorcerer.Storm.sub.class/features/1/Wind Speaker",
+    "Tempestuous Magic": "class/Sorcerer.Storm.sub.class/features/1/Tempestuous Magic"
+  },
+  "resources": {
+    "Sorcery Points": {
+      "number": 4
     }
   }
 }

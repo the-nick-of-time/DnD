@@ -1,0 +1,73 @@
+{
+  "name": "Kharzal",
+  "level": "Paladin 1",
+  "race": "Orc",
+  "HP": {
+    "max": 12,
+    "current": 12,
+    "temp": 0,
+    "HD": {
+      "1d10": {
+        "maxnumber": 1,
+        "number": 1
+      }
+    }
+  },
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 8,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 14
+  },
+  "saves": [
+    "Wisdom",
+    "Charisma"
+  ],
+  "skills": [
+    "Athletics",
+    "History",
+    "Medicine",
+    "Survival",
+    "Intimidation"
+  ],
+  "languages": [
+    "Common",
+    "Orcish",
+    "Fae"
+  ],
+  "inventory": {
+    "Greatsword": {
+      "type": "weapon",
+      "quantity": 1,
+      "equipped": true
+    },
+    "Chain mail": {
+      "type": "apparel",
+      "quantity": 1,
+      "equipped": true
+    }
+  },
+  "spells_prepared": {
+    "prepared_today": [],
+    "always_prepared": []
+  },
+  "spell_slots": [],
+  "features": {
+    "Lay on Hands": "class/Paladin.class/features/1/Lay on Hands",
+    "Divine Sense": "class/Paladin.class/features/1/Divine Sense",
+    "Darkvision": "race/Orc.race/features/Darkvision",
+    "Menacing": "race/Orc.race/features/Menacing",
+    "Relentless Endurance": "race/Orc.race/features/Relentless Endurance",
+    "Savage Attacks": "race/Orc.race/features/Savage Attacks"
+  },
+  "resources": {
+    "Lay on Hands": {
+      "number": 5
+    },
+    "Divine Sense": {
+      "number": 3
+    }
+  }
+}
