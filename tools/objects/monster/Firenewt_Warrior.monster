@@ -1,6 +1,6 @@
 {
   "HP": "4d8+4",
-  "AC": "16 (chain shirt, shield)",
+  "AC": 16,
   "name": "Firenewt Warrior",
   "abilities": {
     "Dexterity": 13,

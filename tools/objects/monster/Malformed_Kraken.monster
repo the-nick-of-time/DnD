@@ -1,5 +1,5 @@
 {
-  "AC": "17 (natural armor)",
+  "AC": 17,
   "name": "Malformed Kraken",
   "HP": "15d12+75",
   "abilities": {

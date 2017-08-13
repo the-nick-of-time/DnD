@@ -1,6 +1,6 @@
 {
   "HP": "7d10+21",
-  "AC": "13",
+  "AC": 13,
   "name": "Girallon",
   "abilities": {
     "Dexterity": 16,

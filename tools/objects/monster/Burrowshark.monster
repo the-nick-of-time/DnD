@@ -1,5 +1,5 @@
 {
-  "AC": "18 (plate)",
+  "AC": 18,
   "HP": "11d8+33",
   "name": "Burrowshark",
   "abilities": {

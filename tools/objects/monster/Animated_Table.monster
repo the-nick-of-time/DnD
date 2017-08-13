@@ -1,5 +1,5 @@
 {
-  "AC": "15 (natural armor)",
+  "AC": 15,
   "name": "Animated Table",
   "HP": "6d10+6",
   "abilities": {

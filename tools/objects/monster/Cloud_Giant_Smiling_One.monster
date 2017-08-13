@@ -1,6 +1,6 @@
 {
   "HP": "21d12+128",
-  "AC": "15 (natural armor)",
+  "AC": 15,
   "name": "Cloud Giant Smiling One",
   "abilities": {
     "Dexterity": 12,

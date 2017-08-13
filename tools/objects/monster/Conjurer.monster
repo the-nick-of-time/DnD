@@ -1,6 +1,6 @@
 {
   "HP": "9d8",
-  "AC": "12 (15 with mage armor)",
+  "AC": 12,
   "name": "Conjurer",
   "abilities": {
     "Dexterity": 14,

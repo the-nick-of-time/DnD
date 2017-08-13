@@ -1,6 +1,6 @@
 {
   "HP": "10d10+30",
-  "AC": "13 (natural armor)",
+  "AC": 13,
   "name": "Trapper",
   "abilities": {
     "Dexterity": 10,

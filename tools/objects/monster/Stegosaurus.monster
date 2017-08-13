@@ -1,6 +1,6 @@
 {
   "HP": "8d12+24",
-  "AC": "13 (natural armor)",
+  "AC": 13,
   "name": "Stegosaurus",
   "abilities": {
     "Dexterity": 9,

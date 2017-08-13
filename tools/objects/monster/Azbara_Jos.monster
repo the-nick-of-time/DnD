@@ -1,7 +1,7 @@
 {
   "HP": "6d8+12",
   "name": "Azbara Jos",
-  "AC": "13 (16 with mage armor)",
+  "AC": 13,
   "abilities": {
     "Wisdom": 13,
     "Charisma": 11,

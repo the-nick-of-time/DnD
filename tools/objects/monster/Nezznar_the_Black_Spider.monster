@@ -1,5 +1,5 @@
 {
-  "AC": "11 (14 with mage armor)",
+  "AC": 11,
   "name": "Nezznar the Black Spider",
   "abilities": {
     "Intelligence": 16,

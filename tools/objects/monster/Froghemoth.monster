@@ -1,6 +1,6 @@
 {
   "HP": "16d12+80",
-  "AC": "14 (natural armor)",
+  "AC": 14,
   "name": "Froghemoth",
   "abilities": {
     "Dexterity": 13,

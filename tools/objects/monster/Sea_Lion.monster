@@ -1,5 +1,5 @@
 {
-  "AC": "15 (natural armor)",
+  "AC": 15,
   "name": "Sea Lion",
   "HP": "12d10+24",
   "abilities": {

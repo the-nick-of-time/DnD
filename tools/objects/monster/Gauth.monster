@@ -1,6 +1,6 @@
 {
   "HP": "9d8+27",
-  "AC": "15 (natural armor)",
+  "AC": 15,
   "name": "Gauth",
   "abilities": {
     "Dexterity": 14,

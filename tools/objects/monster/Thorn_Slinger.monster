@@ -1,5 +1,5 @@
 {
-  "AC": "11",
+  "AC": 11,
   "name": "Thorn Slinger",
   "HP": "5d10+5",
   "abilities": {

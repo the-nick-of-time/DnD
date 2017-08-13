@@ -1,6 +1,6 @@
 {
   "HP": "11d8+33",
-  "AC": "16 (natural armor)",
+  "AC": 16,
   "name": "Babau",
   "abilities": {
     "Dexterity": 16,

@@ -1,6 +1,6 @@
 {
   "HP": "3d8+6",
-  "AC": "12 (natural armor)",
+  "AC": 12,
   "name": "Dimetrodon",
   "abilities": {
     "Dexterity": 10,

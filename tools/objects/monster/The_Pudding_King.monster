@@ -1,5 +1,5 @@
 {
-  "AC": "13 (16 with mage armor)",
+  "AC": 13,
   "HP": "9d6+18",
   "name": "The Pudding King",
   "abilities": {

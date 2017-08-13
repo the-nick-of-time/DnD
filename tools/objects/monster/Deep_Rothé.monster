@@ -1,6 +1,6 @@
 {
   "HP": "2d8+4",
-  "AC": "10",
+  "AC": 10,
   "name": "Deep Roth\u00e9",
   "abilities": {
     "Dexterity": 10,

@@ -1,6 +1,6 @@
 {
   "HP": "24d8+24",
-  "AC": "16 (hide armor, shield)",
+  "AC": 16,
   "name": "Archdruid",
   "abilities": {
     "Dexterity": 14,

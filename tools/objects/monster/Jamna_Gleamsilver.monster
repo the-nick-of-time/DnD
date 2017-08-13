@@ -1,7 +1,7 @@
 {
   "HP": "4d6+8",
   "name": "Jamna Gleamsilver",
-  "AC": "15 (leather armor)",
+  "AC": 15,
   "abilities": {
     "Wisdom": 10,
     "Charisma": 12,

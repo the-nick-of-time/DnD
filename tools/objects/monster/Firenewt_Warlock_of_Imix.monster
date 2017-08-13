@@ -1,6 +1,6 @@
 {
   "HP": "6d8+6",
-  "AC": "10 (13 with mage armor)",
+  "AC": 10,
   "name": "Firenewt Warlock of Imix",
   "abilities": {
     "Dexterity": 11,

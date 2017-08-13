@@ -1,5 +1,5 @@
 {
-  "AC": "12 (15 with mage armor)",
+  "AC": 12,
   "name": "Yusdrayl",
   "HP": "3d6+6",
   "abilities": {

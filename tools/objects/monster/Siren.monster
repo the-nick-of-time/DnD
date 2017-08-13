@@ -1,5 +1,5 @@
 {
-  "AC": "14",
+  "AC": 14,
   "name": "Siren",
   "HP": "7d8+7",
   "abilities": {

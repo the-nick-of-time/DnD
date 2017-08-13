@@ -1,5 +1,5 @@
 {
-  "AC": "16 (chain mail)",
+  "AC": 16,
   "name": "Sildar Hallwinter",
   "abilities": {
     "Intelligence": 10,

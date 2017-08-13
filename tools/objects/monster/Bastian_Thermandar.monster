@@ -1,5 +1,5 @@
 {
-  "AC": "12 (15 with mage armor)",
+  "AC": 12,
   "HP": "12d8+24",
   "name": "Bastian Thermandar",
   "abilities": {

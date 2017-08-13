@@ -1,5 +1,5 @@
 {
-  "AC": "22 (natural armor)",
+  "AC": 22,
   "HP": "23d12+184",
   "name": "Baphomet",
   "abilities": {

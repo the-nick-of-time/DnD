@@ -1,6 +1,6 @@
 {
   "HP": "3d4+3",
-  "AC": "16",
+  "AC": 16,
   "name": "Quickling",
   "abilities": {
     "Dexterity": 23,

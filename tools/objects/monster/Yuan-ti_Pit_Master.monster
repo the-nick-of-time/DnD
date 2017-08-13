@@ -1,6 +1,6 @@
 {
   "HP": "16d8+16",
-  "AC": "14 (natural armor)",
+  "AC": 14,
   "name": "Yuan-ti Pit Master",
   "abilities": {
     "Dexterity": 14,

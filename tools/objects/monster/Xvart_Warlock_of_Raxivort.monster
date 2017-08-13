@@ -1,6 +1,6 @@
 {
   "HP": "5d6+5",
-  "AC": "12 (15 with mage armor)",
+  "AC": 12,
   "name": "Xvart Warlock of Raxivort",
   "abilities": {
     "Dexterity": 14,

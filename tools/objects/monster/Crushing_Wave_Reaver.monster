@@ -1,5 +1,5 @@
 {
-  "AC": "14 (shield)",
+  "AC": 14,
   "HP": "4d8+4",
   "name": "Crushing Wave Reaver",
   "abilities": {

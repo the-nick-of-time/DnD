@@ -1,7 +1,7 @@
 {
   "HP": "11d10+33",
   "name": "Captain Othelstan",
-  "AC": "19 (splint, shield)",
+  "AC": 19,
   "abilities": {
     "Wisdom": 14,
     "Charisma": 12,

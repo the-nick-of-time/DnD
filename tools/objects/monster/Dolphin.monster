@@ -1,6 +1,6 @@
 {
   "HP": "2d8+2",
-  "AC": "12 (natural armor)",
+  "AC": 12,
   "name": "Dolphin",
   "abilities": {
     "Dexterity": 13,

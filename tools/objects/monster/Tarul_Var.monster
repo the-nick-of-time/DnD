@@ -1,5 +1,5 @@
 {
-  "AC": "16 (natural armor)",
+  "AC": 16,
   "name": "Tarul Var",
   "HP": "14d8+42",
   "abilities": {

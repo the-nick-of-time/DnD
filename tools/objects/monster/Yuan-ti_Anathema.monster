@@ -1,6 +1,6 @@
 {
   "HP": "18d12+72",
-  "AC": "16 (natural armor)",
+  "AC": 16,
   "name": "Yuan-ti Anathema",
   "abilities": {
     "Dexterity": 13,

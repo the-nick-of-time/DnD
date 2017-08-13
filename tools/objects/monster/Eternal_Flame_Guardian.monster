@@ -1,5 +1,5 @@
 {
-  "AC": "17 (breastplate, shield; 15 while using a crossbow)",
+  "AC": 17,
   "HP": "7d8+14",
   "name": "Eternal Flame Guardian",
   "abilities": {

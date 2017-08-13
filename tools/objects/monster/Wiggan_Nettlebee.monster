@@ -1,5 +1,5 @@
 {
-  "AC": "11 (16 with barkskin)",
+  "AC": 11,
   "HP": "8d6+8",
   "name": "Wiggan Nettlebee",
   "abilities": {

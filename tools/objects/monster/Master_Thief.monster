@@ -1,6 +1,6 @@
 {
   "HP": "13d8+26",
-  "AC": "16 (studded leather armor)",
+  "AC": 16,
   "name": "Master Thief",
   "abilities": {
     "Dexterity": 18,

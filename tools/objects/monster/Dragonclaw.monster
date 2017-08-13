@@ -1,7 +1,7 @@
 {
   "HP": "3d8+3",
   "name": "Dragonclaw",
-  "AC": "14 (leather armor)",
+  "AC": 14,
   "abilities": {
     "Wisdom": 10,
     "Charisma": 12,

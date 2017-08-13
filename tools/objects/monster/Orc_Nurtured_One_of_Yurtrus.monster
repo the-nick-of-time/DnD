@@ -1,6 +1,6 @@
 {
   "HP": "4d8+12",
-  "AC": "9",
+  "AC": 9,
   "name": "Orc Nurtured One of Yurtrus",
   "abilities": {
     "Dexterity": 8,

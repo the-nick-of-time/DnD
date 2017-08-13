@@ -1,5 +1,5 @@
 {
-  "AC": "18 (plate)",
+  "AC": 18,
   "HP": "17d8+51",
   "name": "Water Elemental Myrmidon",
   "abilities": {

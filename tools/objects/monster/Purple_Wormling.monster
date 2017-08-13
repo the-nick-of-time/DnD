@@ -1,5 +1,5 @@
 {
-  "AC": "12 (natural armor)",
+  "AC": 12,
   "HP": "5d10+15",
   "name": "Purple Wormling",
   "abilities": {

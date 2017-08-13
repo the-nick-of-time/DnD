@@ -1,6 +1,6 @@
 {
   "HP": "13d6+26",
-  "AC": "15 (natural armor)",
+  "AC": 15,
   "name": "Neogi Master",
   "abilities": {
     "Dexterity": 16,

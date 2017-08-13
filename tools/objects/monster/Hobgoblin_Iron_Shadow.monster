@@ -1,6 +1,6 @@
 {
   "HP": "5d8+10",
-  "AC": "15",
+  "AC": 15,
   "name": "Hobgoblin Iron Shadow",
   "abilities": {
     "Dexterity": 16,

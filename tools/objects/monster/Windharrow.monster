@@ -1,5 +1,5 @@
 {
-  "AC": "15 (studded leather)",
+  "AC": 15,
   "HP": "10d8+10",
   "name": "Windharrow",
   "abilities": {

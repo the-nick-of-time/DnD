@@ -1,6 +1,6 @@
 {
   "HP": "12d8+12",
-  "AC": "15 (studded leather armor)",
+  "AC": 15,
   "name": "Choldrith",
   "abilities": {
     "Dexterity": 16,

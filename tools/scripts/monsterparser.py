@@ -22,22 +22,22 @@ dry = False
 # t = ElementTree.parse("../../../DnDAppFiles/Bestiary/Princes of the Apocalypse Bestiary.xml")
 # t = ElementTree.parse("../../../DnDAppFiles/Bestiary/Storm King's Thunder.xml")
 # t = ElementTree.parse("../../../DnDAppFiles/Bestiary/Tales From the Yawining Portal Bestiary.xml")
-t = ElementTree.parse("../../../DnDAppFiles/Bestiary/The Rise of Tiamat Bestiary.xml")
+# t = ElementTree.parse("../../../DnDAppFiles/Bestiary/The Rise of Tiamat Bestiary.xml")
 
 
-root = t.getroot()
-for item in root:
-    # print(item[0].text)
-    monster['name'] = item[0].text
-    # print(item[4].text)
-    monster['armor_class'] = item[4].text
-    # print(item[5].text)
-    s = item[5].text
-    m = re.search('\(.+\)', s).group(0).strip('()')
-    monster['hit_dice'] = m
-    for name, abil in zip(['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'], item[7:13]):
-        # print(abil.text)
-        monster[name] = int(abil.text)
+# root = t.getroot()
+# for item in root:
+#     # print(item[0].text)
+#     monster['name'] = item[0].text
+#     # print(item[4].text)
+#     monster['armor_class'] = item[4].text
+#     # print(item[5].text)
+#     s = item[5].text
+#     m = re.search('\(.+\)', s).group(0).strip('()')
+#     monster['hit_dice'] = m
+#     for name, abil in zip(['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'], item[7:13]):
+#         # print(abil.text)
+#         monster[name] = int(abil.text)
     # print(monster)
     # for child in item:
     #     print(child.text)
@@ -47,28 +47,39 @@ for item in root:
 #
 #
 # for monster in core[:-1]:
-    print(monster['name'])
-    data = {
-        "name": monster['name'],
-        "AC": monster['armor_class'],
-        "HP": monster['hit_dice'],
-        "abilities": {
-            "Strength": monster['strength'],
-            "Dexterity": monster['dexterity'],
-            "Constitution": monster['constitution'],
-            "Intelligence": monster['intelligence'],
-            "Wisdom": monster['wisdom'],
-            "Charisma": monster['charisma']
-        }
-    }
-    # print(data)
-    # TODO: add in skills after implementing that in monsters.py
-    if dry:
-        s = json.dumps(data, indent=2)
-        print(s)
-    else:
-        formatstr = '{}monster/{}.monster'
-        filename = formatstr.format(JSONInterface.OBJECTSPATH,
-                                    h.clean(monster['name']))
-        with open(filename, 'w') as outfile:
-            json.dump(data, outfile, indent=2)
+#     print(monster['name'])
+#     data = {
+#         "name": monster['name'],
+#         "AC": monster['armor_class'],
+#         "HP": monster['hit_dice'],
+#         "abilities": {
+#             "Strength": monster['strength'],
+#             "Dexterity": monster['dexterity'],
+#             "Constitution": monster['constitution'],
+#             "Intelligence": monster['intelligence'],
+#             "Wisdom": monster['wisdom'],
+#             "Charisma": monster['charisma']
+#         }
+#     }
+#     # print(data)
+#     # TODO: add in skills after implementing that in monsters.py
+#     if dry:
+#         s = json.dumps(data, indent=2)
+#         print(s)
+#     else:
+#         formatstr = '{}monster/{}.monster'
+#         filename = formatstr.format(JSONInterface.OBJECTSPATH,
+#                                     h.clean(monster['name']))
+#         with open(filename, 'w') as outfile:
+#             json.dump(data, outfile, indent=2)
+
+
+for f in os.scandir(JSONInterface.OBJECTSPATH + 'monster/'):
+    print(f.name)
+    jf = JSONInterface('monster/' + f.name)
+    ac = jf.get('/AC')
+    if isinstance(ac, str):
+        new = re.match('\d+', ac)
+        if new is not None:
+            jf.set('/AC', int(new.group(0)))
+    jf.write()

@@ -1,5 +1,5 @@
 {
-  "AC": "15 (chain shirt, shield)",
+  "AC": 15,
   "HP": "2d8+4",
   "name": "Augrek Brighthelm",
   "abilities": {

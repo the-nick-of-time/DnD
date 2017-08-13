@@ -1,6 +1,6 @@
 {
   "HP": "2d10+4",
-  "AC": "10",
+  "AC": 10,
   "name": "Stench Kow",
   "abilities": {
     "Dexterity": 10,

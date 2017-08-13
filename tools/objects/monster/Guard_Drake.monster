@@ -1,7 +1,7 @@
 {
   "HP": "7d8+21",
   "name": "Guard Drake",
-  "AC": "14 (natural armor)",
+  "AC": 14,
   "abilities": {
     "Wisdom": 10,
     "Charisma": 7,

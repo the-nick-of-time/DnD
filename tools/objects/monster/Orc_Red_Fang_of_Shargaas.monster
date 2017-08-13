@@ -1,6 +1,6 @@
 {
   "HP": "8d8+16",
-  "AC": "15 (studded leather armor)",
+  "AC": 15,
   "name": "Orc Red Fang of Shargaas",
   "abilities": {
     "Dexterity": 16,

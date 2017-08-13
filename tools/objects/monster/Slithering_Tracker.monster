@@ -1,6 +1,6 @@
 {
   "HP": "5d8+10",
-  "AC": "14",
+  "AC": 14,
   "name": "Slithering Tracker",
   "abilities": {
     "Dexterity": 19,

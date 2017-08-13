@@ -1,6 +1,6 @@
 {
   "HP": "3d10+3",
-  "AC": "11 (natural armor)",
+  "AC": 11,
   "name": "Hadrosaurus",
   "abilities": {
     "Dexterity": 10,

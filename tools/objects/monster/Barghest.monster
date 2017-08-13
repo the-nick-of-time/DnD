@@ -1,6 +1,6 @@
 {
   "HP": "12d10+24",
-  "AC": "17 (natural armor)",
+  "AC": 17,
   "name": "Barghest",
   "abilities": {
     "Dexterity": 15,

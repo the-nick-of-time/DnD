@@ -1,6 +1,6 @@
 {
   "HP": "13d8+13",
-  "AC": "14 (natural armor)",
+  "AC": 14,
   "name": "Yuan-ti Mind Whisperer",
   "abilities": {
     "Dexterity": 14,

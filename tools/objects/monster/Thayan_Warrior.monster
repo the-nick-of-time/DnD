@@ -1,5 +1,5 @@
 {
-  "AC": "16 (chain shirt, shield)",
+  "AC": 16,
   "name": "Thayan Warrior",
   "HP": "8d8+16",
   "abilities": {

@@ -1,6 +1,6 @@
 {
   "HP": "3d6+3",
-  "AC": "12",
+  "AC": 12,
   "name": "Kobold Inventor",
   "abilities": {
     "Dexterity": 15,

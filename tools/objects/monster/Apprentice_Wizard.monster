@@ -1,6 +1,6 @@
 {
   "HP": "2d8",
-  "AC": "10",
+  "AC": 10,
   "name": "Apprentice Wizard",
   "abilities": {
     "Dexterity": 10,

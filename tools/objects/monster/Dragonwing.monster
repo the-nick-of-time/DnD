@@ -1,7 +1,7 @@
 {
   "HP": "6d8+6",
   "name": "Dragonwing",
-  "AC": "14 (leather armor)",
+  "AC": 14,
   "abilities": {
     "Wisdom": 11,
     "Charisma": 13,

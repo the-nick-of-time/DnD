@@ -1,6 +1,6 @@
 {
   "HP": "20d10+100",
-  "AC": "10",
+  "AC": 10,
   "name": "Elder Brain",
   "abilities": {
     "Dexterity": 10,

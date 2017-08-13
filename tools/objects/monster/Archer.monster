@@ -1,6 +1,6 @@
 {
   "HP": "10d8+30",
-  "AC": "16 (studded leather armor)",
+  "AC": 16,
   "name": "Archer",
   "abilities": {
     "Dexterity": 18,

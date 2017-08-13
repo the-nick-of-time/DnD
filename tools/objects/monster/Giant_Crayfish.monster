@@ -1,5 +1,5 @@
 {
-  "AC": "15 (natural armor)",
+  "AC": 15,
   "name": "Giant Crayfish",
   "HP": "7d10+7",
   "abilities": {

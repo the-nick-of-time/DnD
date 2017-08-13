@@ -1,6 +1,6 @@
 {
   "HP": "20d12+100",
-  "AC": "12",
+  "AC": 12,
   "name": "Storm Giant Quintessent",
   "abilities": {
     "Dexterity": 14,

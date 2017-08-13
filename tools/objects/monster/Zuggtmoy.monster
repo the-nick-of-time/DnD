@@ -1,5 +1,5 @@
 {
-  "AC": "18 (natural armor)",
+  "AC": 18,
   "HP": "32d10+128",
   "name": "Zuggtmoy",
   "abilities": {

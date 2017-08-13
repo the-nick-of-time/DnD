@@ -1,5 +1,5 @@
 {
-  "AC": "15 (natural armor)",
+  "AC": 15,
   "name": "Greater Zombie",
   "HP": "13d8+39",
   "abilities": {

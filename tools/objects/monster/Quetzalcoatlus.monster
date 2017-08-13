@@ -1,6 +1,6 @@
 {
   "HP": "4d12+4",
-  "AC": "13 (natural armor)",
+  "AC": 13,
   "name": "Quetzalcoatlus",
   "abilities": {
     "Dexterity": 13,

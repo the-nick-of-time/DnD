@@ -1,6 +1,6 @@
 {
   "HP": "6d6+24",
-  "AC": "13 (natural armor)",
+  "AC": 13,
   "name": "Redcap",
   "abilities": {
     "Dexterity": 13,

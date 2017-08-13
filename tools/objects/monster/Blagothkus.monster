@@ -1,7 +1,7 @@
 {
   "HP": "12d12+60",
   "name": "Blagothkus",
-  "AC": "17 (splint)",
+  "AC": 17,
   "abilities": {
     "Wisdom": 15,
     "Charisma": 15,

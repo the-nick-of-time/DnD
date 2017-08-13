@@ -1,5 +1,5 @@
 {
-  "AC": "16",
+  "AC": 16,
   "HP": "12d8+24",
   "name": "Hellenrae",
   "abilities": {

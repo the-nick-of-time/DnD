@@ -1,6 +1,6 @@
 {
   "HP": "12d8+24",
-  "AC": "12 (15 with mage armor)",
+  "AC": 12,
   "name": "Warlock of the Fiend",
   "abilities": {
     "Dexterity": 14,

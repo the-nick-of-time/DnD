@@ -9,5 +9,5 @@
     "Strength": 18
   },
   "HP": "16d8+48",
-  "AC": "15 (natural armor)"
+  "AC": 15
 }

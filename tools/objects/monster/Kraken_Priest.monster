@@ -1,6 +1,6 @@
 {
   "HP": "10d8+30",
-  "AC": "10",
+  "AC": 10,
   "name": "Kraken Priest",
   "abilities": {
     "Dexterity": 10,

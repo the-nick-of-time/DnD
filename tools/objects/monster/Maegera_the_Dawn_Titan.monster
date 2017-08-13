@@ -1,5 +1,5 @@
 {
-  "AC": "16",
+  "AC": 16,
   "HP": "22d20+110",
   "name": "Maegera the Dawn Titan",
   "abilities": {

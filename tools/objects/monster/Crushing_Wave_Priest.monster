@@ -1,5 +1,5 @@
 {
-  "AC": "13 (chain shirt)",
+  "AC": 13,
   "HP": "8d8+16",
   "name": "Crushing Wave Priest",
   "abilities": {

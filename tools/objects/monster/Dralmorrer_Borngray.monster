@@ -1,7 +1,7 @@
 {
   "HP": "7d10+14",
   "name": "Dralmorrer Borngray",
-  "AC": "16 (studded leather, shield)",
+  "AC": 16,
   "abilities": {
     "Wisdom": 10,
     "Charisma": 8,

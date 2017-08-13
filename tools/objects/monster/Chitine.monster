@@ -1,6 +1,6 @@
 {
   "HP": "4d6+4",
-  "AC": "14 (hide armor)",
+  "AC": 14,
   "name": "Chitine",
   "abilities": {
     "Dexterity": 14,

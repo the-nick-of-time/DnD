@@ -1,6 +1,6 @@
 {
   "HP": "11d8",
-  "AC": "11 (14 with mage armor)",
+  "AC": 11,
   "name": "Warlock of the Archfey",
   "abilities": {
     "Dexterity": 13,

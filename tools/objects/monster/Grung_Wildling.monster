@@ -1,6 +1,6 @@
 {
   "HP": "5d6+10",
-  "AC": "13 (16 with barkskin)",
+  "AC": 13,
   "name": "Grung Wildling",
   "abilities": {
     "Dexterity": 16,

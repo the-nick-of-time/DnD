@@ -1,5 +1,5 @@
 {
-  "AC": "12 (hide armor)",
+  "AC": 12,
   "HP": "7d10+14",
   "name": "Yakfolk Priest",
   "abilities": {

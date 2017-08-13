@@ -1,6 +1,6 @@
 {
   "HP": "18d8+72",
-  "AC": "18 (plate)",
+  "AC": 18,
   "name": "Blackguard",
   "abilities": {
     "Dexterity": 11,

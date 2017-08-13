@@ -1,6 +1,6 @@
 {
   "HP": "6d8+6",
-  "AC": "13 (natural armor)",
+  "AC": 13,
   "name": "Maw Demon",
   "abilities": {
     "Dexterity": 8,

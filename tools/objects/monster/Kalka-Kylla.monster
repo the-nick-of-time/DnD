@@ -1,5 +1,5 @@
 {
-  "AC": "15 (natural armor)",
+  "AC": 15,
   "name": "Kalka-Kylla",
   "HP": "10d10+30",
   "abilities": {

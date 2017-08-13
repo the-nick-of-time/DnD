@@ -1,6 +1,6 @@
 {
   "HP": "18d8+36",
-  "AC": "18 (plate)",
+  "AC": 18,
   "name": "War Priest",
   "abilities": {
     "Dexterity": 10,

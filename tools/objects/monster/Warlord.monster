@@ -1,6 +1,6 @@
 {
   "HP": "27d8+108",
-  "AC": "18 (plate)",
+  "AC": 18,
   "name": "Warlord",
   "abilities": {
     "Dexterity": 16,

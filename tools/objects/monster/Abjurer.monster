@@ -1,6 +1,6 @@
 {
   "HP": "13d8+26",
-  "AC": "12 (15 with mage armor)",
+  "AC": 12,
   "name": "Abjurer",
   "abilities": {
     "Dexterity": 14,

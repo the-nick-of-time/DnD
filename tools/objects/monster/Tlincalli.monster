@@ -1,6 +1,6 @@
 {
   "HP": "10d10+30",
-  "AC": "15 (natural armor)",
+  "AC": 15,
   "name": "Tlincalli",
   "abilities": {
     "Dexterity": 13,

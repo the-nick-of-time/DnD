@@ -1,7 +1,7 @@
 {
   "HP": "6d12+18",
   "name": "Langdedrosa Cyanwrath",
-  "AC": "17 (splint)",
+  "AC": 17,
   "abilities": {
     "Wisdom": 14,
     "Charisma": 12,

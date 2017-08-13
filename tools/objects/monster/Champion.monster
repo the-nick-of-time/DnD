@@ -1,6 +1,6 @@
 {
   "HP": "22d8+44",
-  "AC": "18 (plate)",
+  "AC": 18,
   "name": "Champion",
   "abilities": {
     "Dexterity": 15,

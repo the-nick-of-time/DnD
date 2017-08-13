@@ -1,5 +1,5 @@
 {
-  "AC": "16 (scale mail, shield)",
+  "AC": 16,
   "HP": "4d8+4",
   "name": "Duergar Kavalrachni",
   "abilities": {

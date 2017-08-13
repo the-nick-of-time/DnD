@@ -1,6 +1,6 @@
 {
   "HP": "9d8+27",
-  "AC": "11",
+  "AC": 11,
   "name": "Deep Scion",
   "abilities": {
     "Dexterity": 13,

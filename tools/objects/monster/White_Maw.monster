@@ -1,5 +1,5 @@
 {
-  "AC": "5\n",
+  "AC": 5,
   "name": "White Maw",
   "HP": "14d20+70",
   "abilities": {

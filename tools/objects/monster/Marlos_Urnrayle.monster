@@ -1,5 +1,5 @@
 {
-  "AC": "15 (natural armor)",
+  "AC": 15,
   "HP": "16d8+64",
   "name": "Marlos Urnrayle",
   "abilities": {

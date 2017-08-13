@@ -1,5 +1,5 @@
 {
-  "AC": "14",
+  "AC": 14,
   "HP": "6d8+6",
   "name": "Hurricane",
   "abilities": {

@@ -1,6 +1,6 @@
 {
   "HP": "3d10+6",
-  "AC": "14 (natural armor)",
+  "AC": 14,
   "name": "Giant Strider",
   "abilities": {
     "Dexterity": 13,

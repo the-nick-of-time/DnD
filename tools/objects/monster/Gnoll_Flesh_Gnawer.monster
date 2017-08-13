@@ -1,6 +1,6 @@
 {
   "HP": "4d8+4",
-  "AC": "14 (studded leather armor)",
+  "AC": 14,
   "name": "Gnoll Flesh Gnawer",
   "abilities": {
     "Dexterity": 14,

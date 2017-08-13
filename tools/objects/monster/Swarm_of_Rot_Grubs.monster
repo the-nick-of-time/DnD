@@ -1,6 +1,6 @@
 {
   "HP": "5d8",
-  "AC": "8",
+  "AC": 8,
   "name": "Swarm of Rot Grubs",
   "abilities": {
     "Dexterity": 7,

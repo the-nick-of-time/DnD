@@ -1,7 +1,7 @@
 {
   "HP": "7d8+28",
   "name": "Pharblex Spattergoo",
-  "AC": "15 (studded leather armor, shield)",
+  "AC": 15,
   "abilities": {
     "Wisdom": 16,
     "Charisma": 7,

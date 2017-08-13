@@ -1,6 +1,6 @@
 {
   "HP": "12d8+12",
-  "AC": "12 (15 with mage armor)",
+  "AC": 12,
   "name": "Necromancer",
   "abilities": {
     "Dexterity": 14,

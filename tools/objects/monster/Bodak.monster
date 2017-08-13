@@ -1,6 +1,6 @@
 {
   "HP": "9d8+18",
-  "AC": "15 (natural armor)",
+  "AC": 15,
   "name": "Bodak",
   "abilities": {
     "Dexterity": 16,

@@ -1,6 +1,6 @@
 {
   "HP": "16d12+48",
-  "AC": "20 (natural armor)",
+  "AC": 20,
   "name": "Ki-rin",
   "abilities": {
     "Dexterity": 16,

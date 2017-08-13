@@ -1,6 +1,6 @@
 {
   "HP": "11d8+11",
-  "AC": "16",
+  "AC": 16,
   "name": "Martial Arts Adept",
   "abilities": {
     "Dexterity": 17,

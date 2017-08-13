@@ -1,6 +1,6 @@
 {
   "HP": "15d8+60",
-  "AC": "16 (chain mail)",
+  "AC": 16,
   "name": "Flind",
   "abilities": {
     "Dexterity": 10,

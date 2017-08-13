@@ -1,6 +1,6 @@
 {
   "HP": "2d6",
-  "AC": "13 (leather armor)",
+  "AC": 13,
   "name": "Xvart",
   "abilities": {
     "Dexterity": 14,

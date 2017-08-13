@@ -1,6 +1,6 @@
 {
   "HP": "4d8+4",
-  "AC": "13 (leather armor)",
+  "AC": 13,
   "name": "Gnoll Hunter",
   "abilities": {
     "Dexterity": 14,

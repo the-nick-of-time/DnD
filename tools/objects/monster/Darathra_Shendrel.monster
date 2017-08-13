@@ -1,5 +1,5 @@
 {
-  "AC": "14 (breastplate)",
+  "AC": 14,
   "HP": "8d8+16",
   "name": "Darathra Shendrel",
   "abilities": {

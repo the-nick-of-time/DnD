@@ -1,5 +1,5 @@
 {
-  "AC": "9 (natural armor)",
+  "AC": 9,
   "name": "Ooze Master",
   "HP": "12d12+60",
   "abilities": {

@@ -1,5 +1,5 @@
 {
-  "AC": "13 (natural armor)",
+  "AC": 13,
   "HP": "7d12+14",
   "name": "Lifferlas",
   "abilities": {

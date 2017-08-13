@@ -1,6 +1,6 @@
 {
   "HP": "10d8+30",
-  "AC": "18 (natural armor, shield)",
+  "AC": 18,
   "name": "Wood Woad",
   "abilities": {
     "Dexterity": 12,

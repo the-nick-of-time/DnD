@@ -1,6 +1,6 @@
 {
   "HP": "3d4",
-  "AC": "11",
+  "AC": 11,
   "name": "Neogi Hatchling",
   "abilities": {
     "Dexterity": 13,

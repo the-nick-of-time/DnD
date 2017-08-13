@@ -1,5 +1,5 @@
 {
-  "AC": "13 (leather armor)",
+  "AC": 13,
   "HP": "3d6+3",
   "name": "Derro",
   "abilities": {

@@ -1,5 +1,5 @@
 {
-  "AC": "11 (leather)",
+  "AC": 11,
   "HP": "8d10+16",
   "name": "Yakfolk Warrior",
   "abilities": {

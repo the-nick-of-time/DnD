@@ -1,6 +1,6 @@
 {
   "HP": "8d8+24",
-  "AC": "18 (chain mail, shield)",
+  "AC": 18,
   "name": "Orc Blade of Ilneval",
   "abilities": {
     "Dexterity": 11,

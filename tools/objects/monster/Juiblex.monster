@@ -1,5 +1,5 @@
 {
-  "AC": "18 (natural armor)",
+  "AC": 18,
   "HP": "28d12+168",
   "name": "Juiblex",
   "abilities": {

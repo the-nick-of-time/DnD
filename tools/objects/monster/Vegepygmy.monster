@@ -1,6 +1,6 @@
 {
   "HP": "2d6+2",
-  "AC": "13 (natural armor)",
+  "AC": 13,
   "name": "Vegepygmy",
   "abilities": {
     "Dexterity": 14,

@@ -1,6 +1,6 @@
 {
   "HP": "7d6+7",
-  "AC": "15 (natural armor)",
+  "AC": 15,
   "name": "Meenlock",
   "abilities": {
     "Dexterity": 15,

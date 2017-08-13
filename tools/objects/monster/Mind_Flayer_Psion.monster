@@ -1,6 +1,6 @@
 {
   "HP": "13d8+13",
-  "AC": "15 (breastplate)",
+  "AC": 15,
   "name": "Mind Flayer Psion",
   "abilities": {
     "Dexterity": 12,

@@ -1,6 +1,6 @@
 {
   "HP": "5d8+5",
-  "AC": "14 (natural armor)",
+  "AC": 14,
   "name": "Thorny",
   "abilities": {
     "Dexterity": 12,

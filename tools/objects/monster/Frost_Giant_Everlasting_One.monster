@@ -1,6 +1,6 @@
 {
   "HP": "14d12+98",
-  "AC": "15 (patchwork armor)",
+  "AC": 15,
   "name": "Frost Giant Everlasting One",
   "abilities": {
     "Dexterity": 9,

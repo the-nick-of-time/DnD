@@ -1,5 +1,5 @@
 {
-  "AC": "18 (chain mail, shield)",
+  "AC": 18,
   "name": "Dread Warrior",
   "HP": "5d8+15",
   "abilities": {

@@ -1,6 +1,6 @@
 {
   "HP": "10d10+20",
-  "AC": "17 (natural armor)",
+  "AC": 17,
   "name": "Annis Hag",
   "abilities": {
     "Dexterity": 12,

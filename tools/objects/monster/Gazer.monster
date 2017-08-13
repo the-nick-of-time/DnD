@@ -1,6 +1,6 @@
 {
   "HP": "3d4+6",
-  "AC": "13",
+  "AC": 13,
   "name": "Gazer",
   "abilities": {
     "Dexterity": 17,

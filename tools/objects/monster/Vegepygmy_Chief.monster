@@ -1,6 +1,6 @@
 {
   "HP": "6d6+12",
-  "AC": "14 (natural armor)",
+  "AC": 14,
   "name": "Vegepygmy Chief",
   "abilities": {
     "Dexterity": 14,

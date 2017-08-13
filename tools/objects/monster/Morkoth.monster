@@ -1,6 +1,6 @@
 {
   "HP": "20d8+40",
-  "AC": "17 (natural armor)",
+  "AC": 17,
   "name": "Morkoth",
   "abilities": {
     "Dexterity": 14,

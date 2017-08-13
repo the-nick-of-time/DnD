@@ -1,5 +1,5 @@
 {
-  "AC": "16 (natural armor)",
+  "AC": 16,
   "HP": "15d8+45",
   "name": "Gar Shatterkeel",
   "abilities": {

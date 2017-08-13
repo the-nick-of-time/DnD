@@ -1,6 +1,6 @@
 {
   "HP": "3d4+3",
-  "AC": "13 (natural armor)",
+  "AC": 13,
   "name": "Velociraptor",
   "abilities": {
     "Dexterity": 14,

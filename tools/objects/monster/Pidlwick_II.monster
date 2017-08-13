@@ -9,5 +9,5 @@
     "Strength": 10
   },
   "HP": "3d6",
-  "AC": "14 (natural armor)"
+  "AC": 14
 }

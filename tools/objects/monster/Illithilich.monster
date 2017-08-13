@@ -1,6 +1,6 @@
 {
   "HP": "18d8+54",
-  "AC": "17 (natural armor)",
+  "AC": 17,
   "name": "Illithilich",
   "abilities": {
     "Dexterity": 16,

@@ -1,6 +1,6 @@
 {
   "HP": "8d6+16",
-  "AC": "15 (leather armor, shield)",
+  "AC": 15,
   "name": "Kobold Dragonshield",
   "abilities": {
     "Dexterity": 15,

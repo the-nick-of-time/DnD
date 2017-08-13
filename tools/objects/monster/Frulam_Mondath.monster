@@ -1,7 +1,7 @@
 {
   "HP": "8d8+8",
   "name": "Frulam Mondath",
-  "AC": "16 (chain mail)",
+  "AC": 16,
   "abilities": {
     "Wisdom": 18,
     "Charisma": 15,

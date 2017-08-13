@@ -1,5 +1,5 @@
 {
-  "AC": "13 (leather)",
+  "AC": 13,
   "HP": "2d8",
   "name": "Howling Hatred Initiate",
   "abilities": {

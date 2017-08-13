@@ -1,5 +1,5 @@
 {
-  "AC": "10 (13 with mage armor)",
+  "AC": 10,
   "HP": "8d8+24",
   "name": "Shoalar Quanderil",
   "abilities": {

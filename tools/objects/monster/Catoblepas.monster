@@ -1,6 +1,6 @@
 {
   "HP": "8d10+40",
-  "AC": "14 (natural armor)",
+  "AC": 14,
   "name": "Catoblepas",
   "abilities": {
     "Dexterity": 12,

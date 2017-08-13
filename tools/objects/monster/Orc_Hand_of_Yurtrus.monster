@@ -1,6 +1,6 @@
 {
   "HP": "4d8+12",
-  "AC": "12 (hide armor)",
+  "AC": 12,
   "name": "Orc Hand of Yurtrus",
   "abilities": {
     "Dexterity": 11,

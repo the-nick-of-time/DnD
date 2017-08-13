@@ -1,5 +1,5 @@
 {
-  "AC": "14 (studded leather armor)",
+  "AC": 14,
   "name": "Redbrand Ruffian",
   "abilities": {
     "Intelligence": 9,

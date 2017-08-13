@@ -1,5 +1,5 @@
 {
-  "AC": "14 (natural armor)",
+  "AC": 14,
   "HP": "7d8+28",
   "name": "Troglodyte Champion of Laogzed",
   "abilities": {

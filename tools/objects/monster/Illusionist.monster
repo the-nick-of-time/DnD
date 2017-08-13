@@ -1,6 +1,6 @@
 {
   "HP": "7d8+7",
-  "AC": "12 (15 with mage armor)",
+  "AC": 12,
   "name": "Illusionist",
   "abilities": {
     "Dexterity": 14,

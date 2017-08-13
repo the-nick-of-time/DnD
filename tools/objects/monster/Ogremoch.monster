@@ -1,5 +1,5 @@
 {
-  "AC": "20 (natural armor)",
+  "AC": 20,
   "HP": "27d20+243",
   "name": "Ogremoch",
   "abilities": {

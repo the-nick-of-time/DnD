@@ -1,6 +1,6 @@
 {
   "HP": "9d8+36",
-  "AC": "10",
+  "AC": 10,
   "name": "Spawn of Kyuss",
   "abilities": {
     "Dexterity": 11,

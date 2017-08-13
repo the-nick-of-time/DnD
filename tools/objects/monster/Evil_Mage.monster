@@ -1,5 +1,5 @@
 {
-  "AC": "12",
+  "AC": 12,
   "name": "Evil Mage",
   "abilities": {
     "Intelligence": 17,

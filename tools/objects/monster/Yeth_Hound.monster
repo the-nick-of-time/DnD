@@ -1,6 +1,6 @@
 {
   "HP": "6d10+18",
-  "AC": "14 (natural armor)",
+  "AC": 14,
   "name": "Yeth Hound",
   "abilities": {
     "Dexterity": 17,

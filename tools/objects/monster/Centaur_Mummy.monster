@@ -1,5 +1,5 @@
 {
-  "AC": "13 (natural armor)",
+  "AC": 13,
   "name": "Centaur Mummy",
   "HP": "10d10+30",
   "abilities": {

@@ -1,5 +1,5 @@
 {
-  "AC": "14 (leather armor)",
+  "AC": 14,
   "HP": "4d8",
   "name": "Duergar Soulblade",
   "abilities": {

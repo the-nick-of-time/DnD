@@ -1,6 +1,6 @@
 {
   "HP": "12d8+12",
-  "AC": "17 (leather armor)",
+  "AC": 17,
   "name": "Swashbuckler",
   "abilities": {
     "Dexterity": 18,

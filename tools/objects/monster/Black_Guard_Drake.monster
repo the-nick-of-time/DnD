@@ -1,6 +1,6 @@
 {
   "HP": "7d8+21",
-  "AC": "14 (natural armor)",
+  "AC": 14,
   "name": "Black Guard Drake",
   "abilities": {
     "Dexterity": 11,

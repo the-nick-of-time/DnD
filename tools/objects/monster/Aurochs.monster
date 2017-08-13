@@ -1,6 +1,6 @@
 {
   "HP": "4d10+16",
-  "AC": "11 (natural armor)",
+  "AC": 11,
   "name": "Aurochs",
   "abilities": {
     "Dexterity": 10,

@@ -1,7 +1,7 @@
 {
   "HP": "11d8+22",
   "name": "Rath Modar",
-  "AC": "13 (16 with mage armor)",
+  "AC": 13,
   "abilities": {
     "Wisdom": 14,
     "Charisma": 10,

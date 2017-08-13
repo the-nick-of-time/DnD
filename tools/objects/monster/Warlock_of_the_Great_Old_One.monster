@@ -1,6 +1,6 @@
 {
   "HP": "14d8+28",
-  "AC": "12 (15 with mage armor)",
+  "AC": 12,
   "name": "Warlock of the Great Old One",
   "abilities": {
     "Dexterity": 14,

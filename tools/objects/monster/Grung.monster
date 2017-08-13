@@ -1,6 +1,6 @@
 {
   "HP": "2d6+4",
-  "AC": "12",
+  "AC": 12,
   "name": "Grung",
   "abilities": {
     "Dexterity": 14,
