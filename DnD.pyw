@@ -39,11 +39,11 @@ class main:
 
     def monstermanager(self):
         self.f.destroy()
-        mm.main(self.window)
+        mm.main(self.window).pack()
 
     def dice(self):
         self.f.destroy()
-        dc.DiceRoll(self.window)
+        dc.DiceRoll(self.window).pack()
 
 
 win = tk.Tk()
