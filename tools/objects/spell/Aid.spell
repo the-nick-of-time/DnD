@@ -1,7 +1,7 @@
 {
   "components": "V, S, M (a tiny strip of white cloth)",
   "ritual": false,
-  "effect": "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.\n\n**At Higher Levels.** When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.",
+  "effect": "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.\n**At Higher Levels.** When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.",
   "range": "30 feet",
   "school": "Abjuration",
   "class": [

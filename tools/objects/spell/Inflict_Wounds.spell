@@ -1,7 +1,7 @@
 {
   "components": "V, S",
   "ritual": false,
-  "effect": "Make a melee spell attack against a creature you can\n\nreach. On a hit, the target takes 3d10 necrotic damage.\n\n**At Higher Levels.** When you cast this spell using a\n\nspell slot of 2nd level or higher, the damage increases by\n\n1d10 for each slot level above 1st.",
+  "effect": "Make a melee spell attack against a creature you can\nreach. On a hit, the target takes 3d10 necrotic damage.\n**At Higher Levels.** When you cast this spell using a\nspell slot of 2nd level or higher, the damage increases by\n1d10 for each slot level above 1st.",
   "range": "Touch",
   "school": "Necromancy",
   "class": [

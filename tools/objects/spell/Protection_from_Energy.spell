@@ -1,7 +1,7 @@
 {
   "components": "V, S",
   "ritual": false,
-  "effect": "For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or thunder.\n",
+  "effect": "For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or thunder.",
   "range": "Touch",
   "school": "Abjuration",
   "class": [

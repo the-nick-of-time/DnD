@@ -1,7 +1,7 @@
 {
   "components": "V, S, M (a small parchment with a bit of holy text written on it)",
   "ritual": false,
-  "effect": "A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.\n",
+  "effect": "A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
   "range": "60 feet",
   "school": "Abjuration",
   "class": [

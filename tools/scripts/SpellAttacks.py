@@ -41,15 +41,22 @@ for f in os.scandir('../objects/spell/'):
     #     if roll:
     #         jf.set('/damage', roll.group(1))
     # jf.write()
-    comp = jf.get('/components')
-    result = re.fullmatch(component_pattern, comp)
-    if (result is not None):
-        new = []
-        for item in result.groups():
-            if (item):
-                new.append(item)
-        # result = ((item if item) for item in result.groups())
-        newcomp = ', '.join(new)
-        print(newcomp)
-        jf.set('/components', newcomp)
-        jf.write()
+    # comp = jf.get('/components')
+    # result = re.fullmatch(component_pattern, comp)
+    # if (result is not None):
+    #     new = []
+    #     for item in result.groups():
+    #         if (item):
+    #             new.append(item)
+    #     # result = ((item if item) for item in result.groups())
+    #     newcomp = ', '.join(new)
+    #     print(newcomp)
+    #     jf.set('/components', newcomp)
+    #     jf.write()
+    desc = jf.get('/effect')
+    # new = re.sub('\n(?=[\n$])')
+    new = desc.replace('\n\n', '\n').rstrip()
+    if (f.name == 'Scrying.spell'):
+        print(new)
+    jf.set('/effect', new)
+    jf.write()

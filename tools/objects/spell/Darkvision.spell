@@ -1,7 +1,7 @@
 {
   "components": "V, S, M  (either a pinch of dried carrot or an agate)",
   "ritual": false,
-  "effect": "You touch a willing creature to grant it the ability to see in the dark. For the duration, that creature has darkvision out to a range of 60 feet.\n",
+  "effect": "You touch a willing creature to grant it the ability to see in the dark. For the duration, that creature has darkvision out to a range of 60 feet.",
   "range": "Touch",
   "school": "Transmutation",
   "class": [
