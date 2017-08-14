@@ -107,7 +107,10 @@
     },
     {
       "Extra Attack": {
-        "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn."
+        "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn.",
+        "bonus": {
+          "attacks": 1
+        }
       }
     },
     {
@@ -135,7 +138,10 @@
     {},
     {
       "Extra Attack": {
-        "description": "You can attack three times, instead of once, whenever you take the Attack action on your turn."
+        "description": "You can attack three times, instead of once, whenever you take the Attack action on your turn.",
+        "bonus": {
+          "attacks": 2
+        }
       }
     },
     {
