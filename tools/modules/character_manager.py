@@ -19,6 +19,7 @@ import features
 import resources
 import attacks
 import conditions
+import equipment
 
 
 class main:
@@ -33,6 +34,7 @@ class main:
         self.short_rest = tk.Button(self.buttons, text='Short rest',
                                     command=lambda: self.rest('short'))
         self.core = ttk.Notebook(window)
+        self.core.bind("<<NotebookTabChanged>>", self.tab_update)
         ######
         self.frontpage = tk.Frame(self.core)
         self.featurespage = tk.Frame(self.core)
@@ -56,6 +58,7 @@ class main:
         self.core.add(self.attackpage, text='Attacks')
         self.attacks.grid(row=0, column=0, sticky='n')
         self.conditions.grid(row=0, column=1, sticky='n')
+        self.equipment.grid(row=1, column=0)
         ######
         # Features
         self.core.add(self.featurespage, text='Features')
@@ -102,6 +105,7 @@ class main:
         # Attacks
         self.attacks = attacks.module(self.attackpage, self.character)
         self.conditions = conditions.module(self.attackpage, self.character)
+        self.equipment = equipment.module(self.attackpage, self.character)
         ######
         # Features
         self.features = features.module(self.featurespage, self.character)
@@ -128,6 +132,20 @@ class main:
         self.HP.draw_dynamic()
         self.conditions.draw_dynamic()
 
+    def tab_update(self, event):
+        index = event.widget.index('current')
+        if (index == 0):
+            self.info.draw_dynamic()
+            self.HP.draw_dynamic()
+        elif (index == 1):
+            self.conditions.draw_dynamic()
+        elif (index == 2):
+            self.resources.draw_dynamic()
+        elif (index == 3):
+            self.inventory.draw_dynamic()
+        elif (index == 4):
+            self.spells.draw_dynamic()
+
 
 class Information(gui.Section):
     def __init__(self, container, character):
@@ -148,6 +166,9 @@ class Information(gui.Section):
         self.race.grid(row=2, column=0)
         self.languages.grid(row=3, column=0)
         self.AC.grid(row=4, column=0)
+
+    def draw_dynamic(self):
+        self.AC.config(text='AC: ' + str(self.character.AC))
 
 
 if (__name__ == '__main__'):

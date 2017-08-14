@@ -102,7 +102,8 @@ class SpellDisplay(gui.Section):
                                       comp=self.handler.components,
                                       dur=self.handler.duration,
                                       desc=self.handler.effect)
-        self.moreinfo = gui.InfoButton(self.timeanddisplay, info)
+        self.moreinfo = gui.InfoButton(self.timeanddisplay, info,
+                                       title=self.handler.name)
         self.range = tk.Label(self.f, text=self.handler.range)
         d = self.handler.duration.capitalize() + (' (C)' if
                                                   self.handler.isconcentration

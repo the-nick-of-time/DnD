@@ -108,6 +108,8 @@ class HitPointDisplay(gui.Section):
         self.currentvalue.set(self.handler.current)
         self.mxvalue.set(self.handler.max)
         self.tempvalue.set(self.handler.temp)
+        for d in self.hddisplays:
+            d.draw_dynamic()
 
     def update_maxhp(self):
         self.handler.max = int(self.mxvalue.get() or 0)

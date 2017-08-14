@@ -1,6 +1,7 @@
 import tkinter as tk
 import re
 from collections import OrderedDict
+import itertools
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
@@ -54,6 +55,7 @@ class ItemDisplay(gui.Section):
         self.numbervalue.set(self.item.number)
 
     def draw_dynamic(self):
+        self.numbervalue.set(self.get_number())
         self.weight['text'] = '{w:0.2f} lb'.format(w=self.total_weight())
         self.value['text'] = '{v:0.2f} gp'.format(v=self.total_value())
         self.reporter()
@@ -116,6 +118,9 @@ class InventoryHandler(gui.Section):
         self.draw_static()
         self.draw_dynamic()
 
+    def __iter__(self):
+        return (item for item in itertools.chain(*self.objectblocks))
+
     def draw_static(self):
         self.frameframe.grid(row=0, column=0)
         for (i, name) in enumerate(self.framenames):
@@ -134,6 +139,7 @@ class InventoryHandler(gui.Section):
                 if (item.get_number() > 0):
                     item.grid(row=i%s, column=i//s)
                     i += 1
+                    item.draw_dynamic()
         self.update_encumbrance()
 
     def update_encumbrance(self):
@@ -178,6 +184,11 @@ class InventoryHandler(gui.Section):
             if (carryWeight <= t):
                 return s
 
+    def setowner(self, character):
+        self.owner = character
+        for item in self.handler:
+            item.setowner(character)
+
     def write(self):
         self.handler.write()
 
@@ -188,9 +199,14 @@ class module(gui.Section):
         self.character = character
         self.core = InventoryHandler(self.f, character.inventory,
                                      character.record)
-        self.draw_dynamic()
+        self.core.setowner(character)
+        self.draw_static()
 
     def draw_dynamic(self):
+        self.core.draw_dynamic()
+        # for itemblock
+
+    def draw_static(self):
         self.core.grid(row=0, column=0)
 
 

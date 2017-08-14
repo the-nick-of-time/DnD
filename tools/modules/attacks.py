@@ -7,6 +7,12 @@ import classes as c
 import GUIbasics as gui
 import interface as iface
 import helpers as h
+import rolling as r
+
+
+class Definer:
+    def __init__(self, window, callbackfun):
+        pass
 
 
 class AttackDisplay(gui.Section):
@@ -29,8 +35,8 @@ class AttackDisplay(gui.Section):
 
 
 class Attacks(gui.Section):
-    def __init__(self, container, character):
-        gui.Section.__init__(self, container)
+    def __init__(self, container, character, **kwargs):
+        gui.Section.__init__(self, container, **kwargs)
         self.character = character
         self.buttonf = tk.Frame(self.f)
         attacknames = sorted(self.character.attacks)
@@ -44,14 +50,15 @@ class Attacks(gui.Section):
         self.atkbonus = tk.Entry(self.remainingf)
         self.damL = tk.Label(self.remainingf, text='Damage Bonus')
         self.dambonus = tk.Entry(self.remainingf)
+        self.basicAttack = tk.Button(self.remainingf, text='User-Defined\nAttack and Damage', command=lambda: self.attack(None))
         self.output = AttackDisplay(self.f)
         self.draw_static()
 
     def draw_static(self):
         self.buttonf.grid(row=0, column=0)
-        s = 6
+        s = 3
         for (i, obj) in enumerate(self.buttons):
-            obj.grid(row=i%s, column=i//s)
+            obj.grid(row=i//s, column=i%s)
         self.remainingf.grid(row=1, column=0)
         self.atkL.grid(row=0, column=0)
         self.atkbonus.grid(row=0, column=1)
@@ -59,21 +66,40 @@ class Attacks(gui.Section):
         self.damL.grid(row=1, column=0)
         self.dambonus.grid(row=1, column=1)
         self.disbutton.grid(row=1, column=2)
+        self.basicAttack.grid(row=2, column=1)
         ######
         self.output.grid(row=2, column=0)
 
     def attack(self, which):
         advantage = self.adv.get()
         disadvantage = self.dis.get()
-        attack_bonus = self.atkbonus.get()
-        damage_bonus = self.dambonus.get()
-        result = which.attack(self.character, advantage, disadvantage, attack_bonus, damage_bonus)
+        attack_bonus = self.character.parse_vars(self.atkbonus.get(), False)
+        damage_bonus = self.character.parse_vars(self.dambonus.get(), False)
+        if (which is None):
+            atkroll = r.roll(h.d20_roll(advantage, disadvantage, self.character.bonuses.get('lucky', False)), option='multipass')
+            atkbon = r.roll(attack_bonus, option='multipass')
+            if (atkroll == 20):
+                # mode = 'critical'
+                mode = 'multipass_critical'
+                atk = 'Critical Hit!'
+            elif (atkroll == 1):
+                mode = 'zero'
+                atk = 'Critical Miss.'
+            else:
+                # mode = 'execute'
+                mode = 'multipass'
+                atk = atkroll + atkbon
+            dam = r.roll(damage_bonus, option=mode)
+            result = ('Attack Roll: ' + str(atk), 'Damage Roll: ' + str(dam), '')
+            # result = ('Attack Roll: ' + str(atk), 'Damage Roll: ' + str(dam), '')
+        else:
+            result = which.attack(self.character, advantage, disadvantage, attack_bonus, damage_bonus)
         self.output.update(*result)
 
 
 class module(Attacks):
     def __init__(self, container, character):
-        Attacks.__init__(self, container, character)
+        Attacks.__init__(self, container, character, bd=2, relief='groove')
 
 
 class main(gui.Section):

@@ -32,8 +32,9 @@ class module(DiceRoll):
         self.result["text"] = r.roll(parsed, option='multipass')
 
 
-if __name__ == '__main__':
+if (__name__ == '__main__'):
     win = tk.Tk()
+    win.title('Dice')
     app = DiceRoll(win)
     app.pack()
     win.mainloop()
