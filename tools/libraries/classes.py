@@ -260,26 +260,28 @@ class Character:
 
     def __getattr__(self, key):
         key = key.lstrip('$')
-        if (key.lower() == 'str_mod'):
+        if (re.match('str(ength)?_mod(ifier)?', key, flags=re.I)):
             return h.modifier(self.abilities['Strength'])
-        if (key.lower() == 'dex_mod'):
+        if (re.match('dex(terity)?_mod(ifier)?', key, flags=re.I)):
             return h.modifier(self.abilities['Dexterity'])
-        if (key.lower() == 'con_mod'):
+        if (re.match('con(stitution)?_mod(ifier)?', key, flags=re.I)):
             return h.modifier(self.abilities['Constitution'])
-        if (key.lower() == 'int_mod'):
+        if (re.match('int(elligence)?_mod(ifier)?', key, flags=re.I)):
             return h.modifier(self.abilities['Intelligence'])
-        if (key.lower() == 'wis_mod'):
+        if (re.match('wis(dom)?_mod(ifier)?', key, flags=re.I)):
             return h.modifier(self.abilities['Wisdom'])
-        if (key.lower() == 'cha_mod'):
+        if (re.match('cha(risma)?_mod(ifier)?', key, flags=re.I)):
             return h.modifier(self.abilities['Charisma'])
         if (key.lower() == 'caster_level'):
             return self.caster_level
+        if (re.match('prof(iciency)?', key, flags=re.I)):
+            return self.proficiency
         if (key.lower() == 'level'):
             return self.level
         if (key.endswith('_level')):
             head, _, _ = key.partition('_')
             try:
-                cl = self.classes[head]
+                cl = self.classes[head.capitalize()]
             except KeyError:
                 return 0
             return cl.level
@@ -335,24 +337,25 @@ class Character:
         if (num > 0):
             self.record.set(path, num-1)
         else:
-            for val in range(lv, 10):
+            for val in range(lv, len(self.spell_slots)):
                 path = '/spell_slots/' + str(val)
                 num = self.record.get(path)
                 if (num is not None and num > 0):
                     self.record.set(path, num-1)
-                    break
-            else:
-                raise (OutOfSpells(self, spell))
+                    return None
+            # If it fails to find a spell slot, you're out of spells
+            raise (OutOfSpells(self, spell))
 
     def item_consume(self, name):
-        try:
-            obj = self.inventory[name]
-        except KeyError:
-            raise OutOfItems(self, name)
-        if (obj.number > 0):
-            obj.number -= 1
-        else:
-            raise OutOfItems(self, name)
+        if (name is not None):
+            try:
+                obj = self.inventory[name]
+            except KeyError:
+                raise OutOfItems(self, name)
+            if (obj.number > 0):
+                obj.number -= 1
+            else:
+                raise OutOfItems(self, name)
 
     def ability_check(self, which, skill='', adv=False, dis=False):
         applyskill = skill in self.skills
@@ -393,11 +396,12 @@ class Character:
             self.death_save_fails += 1
         if (self.death_save_fails >= 3):
             self.conditions.add('dead')
+        return val
 
     def get_bonuses(self):
         # bonuses = defaultdict(lambda: 0)
         def add_bonus(self, new, bonuses):
-            nonstackable = {'base_AC', 'lucky', 'jack_of_all_trades'}
+            nonstackable = {'base_AC', 'lucky', 'jack_of_all_trades', 'attacks'}
             for var, amount in new.items():
                 if (var not in bonuses):
                     bonuses.update({var: amount})
@@ -543,6 +547,8 @@ class Character:
         cl = self.classes[0]
         if (len(self.classes) == 1):
             t = cl.get('/spellcasting/slots')
+            if (t is None):
+                return []
         else:
             t = 'full'
         path = '/slots/{}/{}'.format(t, self.caster_level)
@@ -556,7 +562,8 @@ class Character:
     def save_DC(self, spell):
         return (8
                 + self.bonuses.get('save_DC', 0)
-                + h.modifier(self.relevant_abil(spell)))
+                + h.modifier(self.relevant_abil(spell))
+                + self.proficiency)
 
     def relevant_abil(self, forwhat):
         if (isinstance(forwhat, Spell)):
@@ -736,10 +743,11 @@ class ItemEntry:
     @equipped.setter
     def equipped(self, value):
         # Make it a str instead for slot name occupied
-        if (isinstance(value, bool)):
-            self.record.set(self.path + '/equipped', value)
-        else:
-            raise TypeError('The equipped value must be bool')
+        self.record.set(self.path + '/equipped', value)
+        # if (isinstance(value, bool)):
+        #     self.record.set(self.path + '/equipped', value)
+        # else:
+        #     raise TypeError('The equipped value must be bool')
 
     @property
     def type(self):
@@ -760,11 +768,11 @@ class ItemEntry:
             return 0
 
     @property
-    def consumable(self):
+    def consumes(self):
         if (self.obj is not None):
-            return self.obj.consumable
+            return self.obj.consumes
         else:
-            return False
+            return None
 
     def get(self, key):
         if (self.obj is not None):
@@ -772,12 +780,19 @@ class ItemEntry:
         return None
 
     def use(self):
-        if (self.consumable):
-            self.number -= 1
+        # if (self.consumable):
+        #     self.number -= 1
+        # if (self.consumes):
+        #     self.person.item_consume(self.consumes)
         if (self.obj is not None):
             return self.obj.use()
         else:
             return ''
+
+    def setowner(self, character):
+        self.person = character
+        if (self.obj is not None):
+            self.obj.setowner(character)
 
     def describe(self):
         if (self.obj is not None):
@@ -861,13 +876,16 @@ class HPhandler:
 
     def use_HD(self, which):
         """Use a specific one of your hit dice."""
-        return self.change_HP(self.hd[which].use_HD())
+        val = self.hd[which].use_HD()
+        self.change_HP(val)
+        return val
 
     def rest(self, what):
         if (what == 'long'):
             # mx = self.record.get('/HP/max')
             # self.record.set('/HP/current', mx)
             self.current = self.max
+            self.temp = 0
             for obj in self.hd.values():
                 obj.rest('long')
 
@@ -998,7 +1016,8 @@ class Spell:
             try:
                 self.owner.spell_spend(self)
             except OutOfSpells as e:
-                return str(e)
+                # return str(e)
+                raise e
         return self.effect
 
     def is_available(self, character):
@@ -1105,8 +1124,10 @@ class SpellAttack(Spell, Attack):
     def setowner(self, character):
         Spell.setowner(self, character)
         if (self.level == 0):
-            self.damage_dice = '+'.join([self.damage_dice] *
-                                        self.owner.cantrip_scale)
+            # self.damage_dice = '+'.join([self.damage_dice] *
+            #                             self.owner.cantrip_scale)
+            rep = lambda m: str(int(m.group(0)) * self.owner.cantrip_scale)
+            self.damage_dice = re.sub('\d+', rep, self.damage_dice, count=1)
 
     @Attack.attackwrap
     def attack(self, character, adv, dis, attack_bonus, damage_bonus):
@@ -1121,22 +1142,12 @@ class SpellAttack(Spell, Attack):
             extradamage = character.parse_vars(s)
         else:
             extradamage = 0
-        # if (self.add_abil):
-        #     abil = h.modifier(character.relevant_abil(self))
-        # else:
-        #     abil = 0
         if (self.attack_roll):
-            # if (adv and not dis):
-            #     dice = h.ADV if not character.lucky else h.ADV_LUCK
-            # elif (dis and not adv):
-            #     dice = h.DIS if not character.lucky else h.DIS_LUCK
-            # else:
-            #     dice = h.D20 if not character.lucky else h.D20_LUCK
             dice = h.d20_roll(adv, dis, character.bonuses.get('lucky', False))
             for each in range(self.num_targets):
-                attack_roll = r.roll(dice)
-                attack_mods = r.roll(attack_bonus) \
-                              + r.roll(character.proficiency) \
+                attack_roll = r.roll(dice, option='multipass')
+                attack_mods = r.roll(attack_bonus, option='multipass') \
+                              + r.roll(character.proficiency, option='multipass') \
                               + h.modifier(character.relevant_abil(self))
                 if (attack_roll == 1):
                     # Crit fail
@@ -1145,22 +1156,22 @@ class SpellAttack(Spell, Attack):
                 elif (attack_roll == 20):
                     # Critical hit
                     attack_roll = 'Critical hit!'
-                    damage_mods = r.roll(damage_bonus, option='critical') \
+                    damage_mods = r.roll(damage_bonus, option='multipass_critical') \
                                   + extradamage
-                    damage_roll = r.roll(self.damage_dice, option='critical') \
+                    damage_roll = r.roll(self.damage_dice, option='multipass_critical') \
                                   + damage_mods
                 else:
                     # Normal attack
                     attack_roll += attack_mods
-                    damage_mods = r.roll(damage_bonus) + extradamage
-                    damage_roll = r.roll(self.damage_dice) + damage_mods
+                    damage_mods = r.roll(damage_bonus, option='multipass') + extradamage
+                    damage_roll = r.roll(self.damage_dice, option='multipass') + damage_mods
                 attacks.append(attack_roll)
                 damages.append(damage_roll)
         else:
             formatstr = 'Targets make a DC {n} {t} save.'
             attacks.append(formatstr.format(n=character.save_DC(self), t=self.save))
-            damage_mods = r.roll(damage_bonus) + extradamage
-            damage = r.roll(self.damage_dice) + damage_mods
+            damage_mods = r.roll(damage_bonus, option='multipass') + extradamage
+            damage = r.roll(self.damage_dice, option='multipass') + damage_mods
             damages.append(damage)
         return (attacks, damages, self.effect)
 
@@ -1182,7 +1193,7 @@ class Item:
         self.name = jf.get('/name')
         self.value = jf.get('/value')
         self.weight = jf.get('/weight')
-        self.consumable = jf.get('/consumable')
+        self.consumes = jf.get('/consumes')
         self.effect = jf.get('/effect')
         self.description = jf.get('/description')
         self.owner = None
@@ -1203,6 +1214,8 @@ class Item:
             raise ValueError("You must give a Character.")
 
     def use(self):
+        if (self.owner):
+            self.owner.item_consume(self.consumes)
         return self.effect
 
     def describe(self):
@@ -1229,22 +1242,16 @@ class Weapon(Attack, Item):
     @Attack.attackwrap
     def attack(self, character, adv, dis, attack_bonus, damage_bonus):
         dice = h.d20_roll(adv, dis, character.bonuses.get('lucky', False))
-        # if (adv and not dis):
-        #     dice = h.ADV
-        # elif (dis and not adv):
-        #     dice = h.DIS
-        # else:
-        #     dice = h.D20
 
         attack = []
         damage = []
         abil = h.modifier(character.relevant_abil(self))
-        for all in range(self.num_targets):
-            attack_roll = r.roll(dice)
-            attack_mods = r.roll(attack_bonus) \
-                          + r.roll(character.proficiency) \
-                          + abil #\
-                        #   + r.roll(self.magic_bonus['attack'])
+        for all in range(self.num_targets + character.bonuses.get('attacks', 0)):
+            attack_roll = r.roll(dice, option='multipass')
+            attack_mods = r.roll(attack_bonus, option='multipass') \
+                          + r.roll(character.proficiency, option='multipass') \
+                          + abil \
+                          + r.roll(self.magic_bonus.get('attack', 0), option='multipass')
 
             if (attack_roll == 1):
                 # Crit fail
@@ -1253,19 +1260,19 @@ class Weapon(Attack, Item):
             elif (attack_roll == 20):
                 # Critical hit
                 attack_roll = 'Critical hit!'
-                damage_mods = abil \
-                              + r.roll(damage_bonus, option='critical') #\
-                            #   + r.roll(self.magic_bonus['damage'],
-                            #            option='critical')
-                damage_roll = r.roll(self.damage_dice, option='critical') \
-                              + damage_mods
+                # damage_mods = abil \
+                #               + r.roll(damage_bonus, option='critical')
+                # damage_roll = r.roll(self.damage_dice, option='critical') \
+                #               + damage_mods
+                damage_mods = abil + r.roll(damage_bonus, option='multipass_critical') + r.roll(self.magic_bonus.get('attack', 0), option='multipass_critical')
+                damage_roll = r.roll(self.damage_dice, option='multipass_critical') + damage_mods
             else:
                 # Normal attack
                 attack_roll += attack_mods
                 damage_mods = abil \
-                              + r.roll(damage_bonus) #\
-                            #   + r.roll(self.magic_bonus['damage'])
-                damage_roll = r.roll(self.damage_dice) + damage_mods
+                              + r.roll(damage_bonus, option='multipass') \
+                              + r.roll(self.magic_bonus.get('damage', 0), option='multipass')
+                damage_roll = r.roll(self.damage_dice, option='multipass') + damage_mods
             attack.append(attack_roll)
             damage.append(damage_roll)
         return (attack, damage, self.effect)
@@ -1296,7 +1303,8 @@ class RangedWeapon(Weapon):
 
     def spend_ammo(self):
         try:
-            self.owner.item_consume(self.ammunition)
+            # self.owner.item_consume(self.ammunition)
+            self.owner.item_consume(self.consumes)
         except OutOfItems:
             raise
             # NOTE: This exception needs to be caught at the attack level
@@ -1326,14 +1334,14 @@ class Armor(Item):
         self.type = self.record.get('/type')
 
     def get_AC(self, dexmod):
-        if (self.type == 'Shield'):
-            return 0
-        if (self.type == 'LightArmor'):
+        if (self.type == 'LightArmor' or self.type == 'Clothes'):
             effective = dexmod
         elif (self.type == 'MediumArmor'):
             effective = dexmod if (dexmod <= 2) else 2
         elif (self.type == 'HeavyArmor'):
             effective = 0
+        else:
+            return 0
         return self.base_AC + effective
 
 
@@ -1354,6 +1362,7 @@ class MagicItem(Item):
     """
     def __init__(self, jf):
         Item.__init__(self, jf)
+        self.magic_bonus = jf.get('/bonus')
 
     def setowner(self, character):
         pass

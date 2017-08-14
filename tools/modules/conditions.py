@@ -24,6 +24,12 @@ class ConditionsDisplay(gui.Section):
         self.removeexhaustion = tk.Button(self.ex, text='Remove Exhaustion', command=lambda: self.exhaustion('remove'))
         self.exhaustionlevel = tk.Label(self.ex)
         ######
+        self.death = tk.Frame(self.block)
+        self.deathsave = tk.Button(self.death, text='Death Saving Throw', command=self.death_save)
+        self.deathdisplay = tk.Label(self.death, text='0')
+        self.stabilize = tk.Button(self.death, text='Stabilize', command=self.stable)
+        self.rollval = tk.Label(self.death)
+        ######
         self.display = tk.Label(self.f, width=50, wraplength=360)
         self.draw_static()
         self.draw_dynamic()
@@ -37,6 +43,13 @@ class ConditionsDisplay(gui.Section):
         self.addexhaustion.grid(row=0, column=0)
         self.exhaustionlevel.grid(row=0, column=1)
         self.removeexhaustion.grid(row=0, column=2)
+        ######
+        self.death.grid(row=(i+2)%s, column=(i+2)//s)
+        self.deathsave.grid(row=0, column=0)
+        self.deathdisplay.grid(row=0, column=1)
+        self.stabilize.grid(row=0, column=2)
+        self.rollval.grid(row=1, column=0)
+        ######
         self.display.grid(row=1, column=0)
         for name in self.character.conditions:
             try:
@@ -83,6 +96,26 @@ class ConditionsDisplay(gui.Section):
         # self.addexhaustion.config(bg=colors[amount])
         # self.removeexhaustion.config(bg=colors[amount])
         # self.exhaustionlevel.config(bg=colors[amount], text=str(amount))
+        self.draw_dynamic()
+
+    def death_save(self):
+        roll = self.character.death_save()
+        self.rollval.config(text=str(roll))
+        for name in {'dying', 'dead'}:
+            if (name in self.character.conditions):
+                self.buttons[name].config(bg='red')
+            else:
+                self.buttons[name].config(bg='#F0F0F0')
+        f = self.character.death_save_fails
+        colors = ['#F0F0F0', '#FF9900', '#FF3300', '#FF0000']
+        self.deathdisplay.config(text=str(f), bg=colors[f])
+        self.draw_dynamic()
+
+    def stable(self):
+        self.character.death_save_fails = 0
+        self.character.remove_condition('dying')
+        self.deathdisplay.config(text='0', bg='#F0F0F0')
+        self.buttons['dying'].config(bg='#F0F0F0')
         self.draw_dynamic()
 
 
