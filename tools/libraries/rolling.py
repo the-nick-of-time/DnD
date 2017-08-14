@@ -82,35 +82,54 @@ class Roll(list):
     def __repr__(self):
         return self.__str__()
 
+    # def __add__(self, other):
+    #     return Result(rolls=[self]) + other
+    #
+    # def __sub__(self, other):
+    #     return Result(rolls=[self]) - other
+
 
 # class Result:
 #     def __init__(self, initial=0, rolls=[]):
 #         # self.tokens = tokens
 #         self.rolls = rolls
 #         self.value = initial
-#         # self.constants = 0
+#         self.constants = 0
 #
 #     def __str__(self):
-#         rolls = ', '.join([str(item) for item in self.rolls])
+#         rolls = '+'.join([str(item) for item in self.rolls])
 #         # mod = self.constants
 #         # return '{} + {}'.format(rolls, mod)
-#         return '{}\n{}'.format(rolls, self.value)
+#         return '{}+{}={}'.format(rolls, self.constants, self.value)
 #
 #     def __add__(self, other):
+#         # print(self, other)
 #         if (isinstance(other, Roll)):
 #             self.rolls.append(other)
 #             self.value += sum(other)
 #         elif (isinstance(other, list)):
 #             self.value += sum(other)
+#             self.constants += other.constants
+#         elif (isinstance(other, Result)):
+#             self.rolls.extend(other.rolls)
+#             self.constants += other.constants
+#             self.value += other.value
 #         else:
+#             self.constants += other
 #             self.value += other
 #         return self
 #
 #     def __radd__(self, other):
 #         return self.__add__(other)
 #
+#     def __sub__(self, other):
+#         if (isinstance(other, Roll))
+#
 #     def __repr__(self):
 #         return self.__str__()
+#
+#     def __int__(self):
+#         return self.value
 
 
 def roll(s, modifiers=0, option='execute'):
@@ -173,12 +192,15 @@ def roll(s, modifiers=0, option='execute'):
         T = averageify(T, operators)
         return execute(T, operators) + modifiers
     elif (option == 'multipass'):
-        # TODO: add modifiers into the passes
         import re
         pattern = '\(.*\)'
         rep = lambda m: str(roll(m.group(0)))
         new = re.sub(pattern, rep, s)
-        return display_multipass(tokens(new, operators), operators)
+        T = tokens(new, operators)
+        if (modifiers):
+            T.append(string_to_operator('+', operators))
+            T.append(modifiers)
+        return display_multipass(T, operators)
     elif (option == 'multipass_critical'):
         # TODO: add modifiers into the passes
         import re
@@ -187,6 +209,9 @@ def roll(s, modifiers=0, option='execute'):
         new = re.sub(pattern, rep, s)
         T = tokens(s, operators)
         T = critify(T, operators)
+        if (modifiers):
+            T.append(string_to_operator('+'))
+            T.append(modifiers)
         return display_multipass(T, operators)
     elif (option == 'tokenize'):
         return tokens(s)
@@ -269,10 +294,11 @@ def tokens(s, operators):
 
 def execute(T, operators):
     oper = []
+    # nums = [Result()]
     nums = []
     while (len(T) > 0):
         current = T.pop(0)
-        if (type(current) is int or type(current) is list):
+        if (isinstance(current, (int, list))):
             nums.append(current)
         elif (current == '('):
             oper.append(current)
@@ -531,14 +557,48 @@ def multipass(T, operators):
     return out
 
 
+class MultipassResult:
+    def __init__(self, passes, ops):
+        self.ops = ops
+        self.postrolls = passes[2]
+        self.final = passes[-1]
+
+    def __str__(self):
+        r = ''.join([str(item) for item in self.postrolls])
+        t = str(self.final)
+        return r + ' = ' + t
+
+    def __int__(self):
+        return self.passes[-1]
+
+    def __eq__(self, other):
+        if (isinstance(other, int)):
+            return self.final == other
+        else:
+            return self is other
+
+    def __add__(self, other):
+        if (isinstance(other, MultipassResult)):
+            self.postrolls.append(string_to_operator('+', self.ops))
+            self.postrolls.extend(other.postrolls)
+            self.final += other.final
+            return self
+        elif (isinstance(other, int)):
+            self.postrolls.append(string_to_operator('+', self.ops))
+            self.postrolls.append(other)
+            self.final += other
+            return self
+
+
 def display_multipass(T, operators):
     result = multipass(T, operators)
-    selections = (2, -1)
-    out = []
-    for i in selections[:-1]:
-        out.append(''.join([str(item) for item in result[i]]))
-    out.append(str(result[selections[-1]]))
-    return '\n'.join(out)
+    # selections = (2, -1)
+    # out = []
+    # for i in selections[:-1]:
+    #     out.append(''.join([str(item) for item in result[i]]))
+    # out.append(str(result[selections[-1]]))
+    # return '\n'.join(out)
+    return MultipassResult(result, operators)
 
 
 ### Tests ###
@@ -546,9 +606,10 @@ def display_multipass(T, operators):
 if __name__ == '__main__':
     print(roll('3d4', option='multipass'))
     print(roll('1d4+2', option='multipass'))
-    print(roll('8d4ro1+2', option='multipass'))
+    print(roll('8d4ro1+2', modifiers=5, option='multipass'))
     print(roll('1d4+2'))
     print(roll('2d20h1+1'))
+    print(roll('2d20h1+1d4'))
     print(roll('1d4+(4+3)*2'))
     print(roll('1d4+4+3*2'))
     print(roll('1+3*2^1d4'))
