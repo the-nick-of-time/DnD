@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import filedialog
+from tkinter import messagebox
 import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
@@ -153,18 +155,18 @@ class MonsterDisplay(gui.Section):
         adv = self.advantage.get()
         dis = self.disadvantage.get()
         attstring = h.d20_roll(adv, dis)
-        attroll = r.roll(attstring)
+        attroll = r.roll(attstring, option='multipass')
         ###
         if (attroll == 20):
             attresult = 'Critical Hit'
-            damresult = str(r.roll(self.damageE.get(), option='critical'))
+            damresult = str(r.roll(self.damage.get(), option='multipass_critical'))
         elif (attroll == 1):
             attresult = 'Critical Miss'
             damresult = '0'
         else:
             attmodifiers = r.roll(self.attack.get())
             attresult = str(attroll + attmodifiers)
-            damresult = str(r.call(self.damageE.get()))
+            damresult = str(r.call(self.damage.get(), option='multipass'))
         ###
         self.attackresult['text'] = 'Attack result: ' + attresult
         self.damageresult['text'] = 'Damage done: ' + damresult
@@ -242,21 +244,29 @@ class Builder:
     def pick_file(self):
         self.mainframe.destroy()
         self.choosefile.destroy()
-        self.filequery = util.labeledEntry(self.win, 'Monster Name', 0, 0)
-        self.average = tk.Checkbutton(self.win,
-                                      text="Take average\nvalue of HP?",
-                                      variable=self.av)
-        self.average.grid(row=1, column=1)
-        self.confirm = tk.Button(self.win, text='Load', command=self.load_file)
-        self.confirm.grid(row=2, column=0)
+        # self.filequery = util.labeledEntry(self.win, 'Monster Name', 0, 0)
+        # self.average = tk.Checkbutton(self.win,
+        #                               text="Take average\nvalue of HP?",
+        #                               variable=self.av)
+        # self.average.grid(row=1, column=1)
+        # self.confirm = tk.Button(self.win, text='Load', command=self.load_file)
+        # self.confirm.grid(row=2, column=0)
+        d = os.path.abspath(iface.JSONInterface.OBJECTSPATH) + '/monster/'
+        self.filename = filedialog.askopenfilename(initialdir=d, filetypes=[('monster file', '*.monster')])
+        print(self.filename)
+        self.load_file()
 
     def load_file(self):
         base = iface.JSONInterface.OBJECTSPATH
-        filename = 'monster/' + h.clean(self.filequery.get().casefold()) + '.monster'
-        if (os.path.isfile(base + filename)):
-            interface = iface.JSONInterface(filename)
+        # filename = 'monster/' + h.clean(self.filequery.get().casefold()) + '.monster'
+        filename = self.filename
+        # if (os.path.isfile(base + filename)):
+        if (os.path.isfile(filename)):
+            interface = iface.JSONInterface(filename, isabsolute=True)
             self.data.update(interface.get('/'))
-            self.data.update({'average': self.av.get()})
+            # self.data.update({'average': self.av.get()})
+            av = messagebox.askyesno(message='Take average HP?')
+            self.data.update({'average': av})
             self.finish(fromfile=True)
         else:
             gui.ErrorMessage('That file does not exist. Check your spelling.')

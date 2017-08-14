@@ -9,7 +9,7 @@ class JSONInterface:
     EXTANT = {}
     # OBJECTSPATH = abspath('.') + '/tools/objects/'
 
-    def __new__(cls, filename):
+    def __new__(cls, filename, **kwargs):
         # If there is already an interface to the file open, return that
         #   instead of opening a new one
         if (JSONInterface.OBJECTSPATH + filename in JSONInterface.EXTANT):
@@ -18,11 +18,14 @@ class JSONInterface:
             obj = super().__new__(cls)
             return obj
 
-    def __init__(self, filename):
+    def __init__(self, filename, isabsolute=False):
         broken = filename.split('/')[-1].split('.')
         self.shortfilename = ' '.join(reversed(broken[:len(broken) // 2]))
         # TODO: Unclean filename?
-        self.filename = self.OBJECTSPATH + filename
+        if (isabsolute):
+            self.filename = filename
+        else:
+            self.filename = self.OBJECTSPATH + filename
         with open(self.filename) as f:
             data = json.load(f, object_pairs_hook=collections.OrderedDict)
             self.info = data
