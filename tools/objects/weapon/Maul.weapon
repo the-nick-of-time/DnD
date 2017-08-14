@@ -5,6 +5,7 @@
   "ability": ["Strength"],
   "value": 10,
   "weight": 10,
+  "weapon_type": "Martial",
   "description": "A large hammer head on the end of a sturdy shaft.\n",
   "effect": "You swing the sledgehammer, bringing its destructive force to bear on your enemies.\n"
 }

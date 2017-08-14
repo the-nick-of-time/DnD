@@ -2,7 +2,7 @@
   "name": "Shortbow",
   "damage": "1d6",
   "damage_type": "Piercing",
-  "type": "Simple",
+  "weapon_type": "Simple",
   "hands": "two",
   "ability": [
     "Dexterity"

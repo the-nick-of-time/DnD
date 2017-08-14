@@ -7,7 +7,7 @@
   "damage": "1d8",
 	"damage_type": "Piercing",
   "ability": ["Dexterity"],
-  "type": "Simple",
+  "weapon_type": "Simple",
   "hands": "two",
 	"consumes": "Bolt"
 }

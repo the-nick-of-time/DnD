@@ -7,6 +7,6 @@
   "damage": "2d6",
 	"damage_type": "Slashing",
   "ability": ["Strength"],
-  "type": "Martial",
+  "weapon_type": "Martial",
   "hands": "two"
 }

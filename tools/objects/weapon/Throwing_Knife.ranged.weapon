@@ -6,6 +6,7 @@
   "description": "This knife is specially weighted for throwing.",
   "attacks": 1,
   "hands": "one",
+  "weapon_type": "Simple",
   "ability": [
     "Dexterity",
     "Strength"

@@ -6,7 +6,7 @@
   "damage": "1d4",
   "damage_type": "Piercing",
   "ability": ["Dexterity", "Strength"],
-  "type": "Martial",
+  "weapon_type": "Martial",
   "hands": "one",
   "effect": "Attacking with this dagger removes your defensive bonus."
 }

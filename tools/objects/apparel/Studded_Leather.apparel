@@ -1,7 +1,7 @@
 {
   "name": "Studded Leather",
-  "type": "light",
-  "AC": 12,
+  "type": "LightArmor",
+  "base_AC": 12,
   "stealth disadvantage": false,
   "value": 45,
   "weight": 13

@@ -8,7 +8,7 @@
   "ability": [
     "Strength"
   ],
-  "type": "martial",
+  "weapon_type": "martial",
   "hands": "two",
   "description": "This is a large, long-bladed axe."
 }

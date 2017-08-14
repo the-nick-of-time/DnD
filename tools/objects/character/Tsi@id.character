@@ -106,6 +106,21 @@
       "type": "item",
       "quantity": 50,
       "equipped": true
+    },
+    "gp": {
+      "type": "treasure",
+      "quantity": 7,
+      "equipped": false
+    },
+    "sp": {
+      "type": "treasure",
+      "quantity": 24,
+      "equipped": false
+    },
+    "cp": {
+      "type": "treasure",
+      "quantity": 60,
+      "equipped": false
     }
   },
   "spells_prepared": {

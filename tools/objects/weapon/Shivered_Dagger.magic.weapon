@@ -2,7 +2,7 @@
   "name": "Shivered Dagger",
   "damage": "1d4",
   "damage_type":"Piercing",
-  "type": "Simple",
+  "weapon_type": "Simple",
   "attacks": 1,
   "hands": 1,
   "ability": [

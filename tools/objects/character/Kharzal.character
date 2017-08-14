@@ -41,12 +41,12 @@
     "Greatsword": {
       "type": "weapon",
       "quantity": 1,
-      "equipped": true
+      "equipped": null
     },
     "Chain mail": {
       "type": "apparel",
       "quantity": 1,
-      "equipped": true
+      "equipped": "heavyarmor"
     }
   },
   "spells_prepared": {

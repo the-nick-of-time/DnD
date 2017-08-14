@@ -5,7 +5,7 @@
   "ability": [
     "Dexterity"
   ],
-  "consumes": "Arrow",
+  "consumes": "Bolt",
   "value": 0.05,
   "weight": 0.05,
   "description": "This crossbow bolt may be tipped with flint or iron.",

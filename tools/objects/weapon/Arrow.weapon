@@ -6,6 +6,7 @@
     "Dexterity"
   ],
   "consumes": "Arrow",
+  "weapon_type": "Simple",
   "value": 0.05,
   "weight": 0.05,
   "description": "This arrow may be tipped with flint or iron.",

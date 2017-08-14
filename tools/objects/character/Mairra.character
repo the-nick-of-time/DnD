@@ -41,17 +41,17 @@
     "Leather Armor": {
       "type": "apparel",
       "quantity": 1,
-      "equipped": true
+      "equipped": "lightarmor"
     },
     "Light Crossbow": {
       "type": "weapon",
       "quantity": 1,
-      "equipped": true
+      "equipped": null
     },
     "Bolt": {
       "type": "weapon",
       "quantity": 20,
-      "equipped": true
+      "equipped": null
     }
   },
   "spells_prepared": {

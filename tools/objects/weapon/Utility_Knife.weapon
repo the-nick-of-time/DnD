@@ -7,6 +7,6 @@
   "damage": "1d4",
   "damage_type": "Piercing",
   "ability": ["Dexterity", "Strength"],
-  "type": "Simple",
+  "weapon_type": "Simple",
   "hands": "one"
 }

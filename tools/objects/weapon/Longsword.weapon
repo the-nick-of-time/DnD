@@ -3,7 +3,7 @@
   "damage": "1d8",
   "damage_type": "Slashing",
   "attacks": 1,
-  "type": "Martial",
+  "weapon_type": "Martial",
   "hands": "versatile",
   "ability": [
     "Strength"

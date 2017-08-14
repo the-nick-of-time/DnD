@@ -40,7 +40,7 @@
   "spell_slots": [
     999999,
     4,
-    2
+    3
   ],
   "spells_prepared": {
     "always_prepared": [
@@ -91,7 +91,7 @@
     "Silk Gloves": {
       "quantity": 1,
       "type": "apparel",
-      "equipped": false
+      "equipped": "glove"
     },
     "Backpack": {
       "quantity": 1,
@@ -101,7 +101,7 @@
     "Good Clothes": {
       "quantity": 3,
       "type": "apparel",
-      "equipped": false
+      "equipped": "clothes"
     },
     "Utility Knife": {
       "quantity": 1,

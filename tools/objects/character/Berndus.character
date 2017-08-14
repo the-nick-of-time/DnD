@@ -48,22 +48,22 @@
     "Dagger": {
       "quantity": 3,
       "type": "weapon",
-      "equipped": true
+      "equipped": null
     },
     "Throwing Knife": {
       "quantity": 4,
       "type": "weapon",
-      "equipped": true
+      "equipped": null
     },
     "Parrying Dagger": {
       "quantity": 1,
       "type": "weapon",
-      "equipped": true
+      "equipped": null
     },
     "Studded Leather": {
       "quantity": 1,
       "type": "apparel",
-      "equipped": true
+      "equipped": "lightarmor"
     },
     "cp": {
       "quantity": 35,
@@ -151,5 +151,6 @@
     "Action Surge": {
       "number": 1
     }
-  }
+  },
+  "conditions": []
 }

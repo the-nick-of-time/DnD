@@ -42,37 +42,37 @@
     "Longsword": {
       "type": "weapon",
       "quantity": 1,
-      "equipped": true
+      "equipped": ""
     },
     "Dart": {
       "type": "ranged weapon",
       "quantity": 5,
-      "equipped": true
+      "equipped": ""
     },
     "Plate Armor": {
       "type": "apparel",
       "quantity": 1,
-      "equipped": true
+      "equipped": "heavyarmor"
     },
     "Trail Rations": {
       "type": "item",
       "quantity": 4,
-      "equipped": false
+      "equipped": ""
     },
     "Mirror": {
       "type": "item",
       "quantity": 1,
-      "equipped": false
+      "equipped": ""
     },
     "Oil": {
       "type": "item",
       "quantity": 3,
-      "equipped": false
+      "equipped": ""
     },
     "Animated Shield": {
       "type": "magic apparel",
       "quantity": 1,
-      "equipped": true,
+      "equipped": "shield",
       "charge": {
         "number": 1,
         "path": "apparel/Animated_Shield.magic.apparel/charges"
@@ -108,10 +108,10 @@
   "spell_slots": [
     999999,
     4,
+    3,
+    3,
+    3,
     2,
-    3,
-    3,
-    1,
     1
   ],
   "features": {
@@ -132,7 +132,7 @@
   },
   "resources": {
     "Channel Divinity": {
-      "number": 1
+      "number": 2
     },
     "Lay on Hands": {
       "number": 10
@@ -147,9 +147,5 @@
       "number": 1
     }
   },
-  "conditions": [
-    "poisoned",
-    "exhaustion2",
-    "deafened"
-  ]
+  "conditions": []
 }
