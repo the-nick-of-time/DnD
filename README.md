@@ -10,7 +10,7 @@
 
 Direct all comments, suggestions, and bug reports at github.com/the-nick-of-time
 All tools in this package are released under the GNU General Public License version 2, as detailed within the file LICENSE. Refer to that document before doing anything except downloading for personal use.
-These were written in Python 3.4.0-3.5.2 and I do not guarantee that they will work correctly on any other platform.
+These were written in Python 3.5.2 and I do not guarantee that they will work correctly on any other platform.
 
 
 # GENERAL USE
@@ -51,90 +51,59 @@ Any string that can be parsed by the "rolling" code is called throughout all my 
 
 -----
 
-# Using DnD.py
+# Using DnD.pyw
 
 ## Dice
 This program uses the rolling code to power a minimal interface for rolling dice. All you need to do is start it up from the main program and type in the box. The button or the enter key will roll the dice that you specify in the entry.
 
 
 -----
-SECTION 3: PLAYERS
-Before getting to the fun part, you need to create your character file. This is done by starting up the character creator from the main program and filling it out as described below.
-After finishing that, run the main program again and you're ready to go!
-From here on out, you should not have to touch the character creator again until you gain a new attack.
+## Character Manager
 
+### HP
+The box in the lower left is where you enter rolls that will change your HP. For instance, if you take 1d8+3 damage from an arrow, you would enter -(1d8+3) and either hit Enter or press the "Change HP" button. If you instead gain some temporary hit points, press the "Add Temp HP" button. For instance, if you cast *false life* you could enter 1d4+4 then press the "Add Temp HP" button.
 
-3.1: Character Creator
-This program will write a file called "*the name of your character*.ini" that contains all the information necessary to construct your character.
+### Abilities and Skills
+Here you can make ability checks, saving throws, and skill checks. The saves and skills you are proficient in are highlighted in green. Whether you have advantage or disadvantage on this roll is controlled by the checkboxes at the bottom.
 
-Fill out the fields on the left and in the abilities section. These are largely self-explanatory. Class accepts the names of the classes in the Player's Handbook as well as "multiclass". This option is only used to determine the spell slots available to you, so if none of these options directly apply to you (Eldritch Knight maybe? I've never played one) use an equivalent class like Paladin.
+### Basic Roller
+There are a couple of these throughout the interface. Here, you can place any arbitrary roll to make. In addition to all of the stuff described earlier, you can use variables from your character by including them in the form `$var` where `var` can be:
 
-Next, fill out weapon and spell creation sections. Leave sections blank to use default values.
+| `var` | Meaning |
+| :------------- | :------------- |
+| `proficiency` | Your proficiency bonus |
+| `ability_mod` | Where ability is any ability name or its short version; gets that modifier |
+| `level` | Your total level |
+| `caster_level` | Your total caster level |
+| `class_level` | Your level in a specific class |
+<!-- | `str_mod` | Your Strength modifier |
+| `dex_mod` | Your Dexterity modifier |
+| `con_mod` | Your Constitution modifier |
+| `int_mod` | Your Intelligence modifier |
+| `wis_mod` | Your Wisdom modifier |
+| `cha_mod` | Your Charisma modifier | -->
 
-Name: The name of the weapon or spell (not case-sensitive)
+### Attacks
+SUBJECT TO CHANGE
 
-Damage Dice: base damage done by the attack, like 1d4 or 2d10+6
+### Conditions
+Toggle conditions using the buttons. All the effects are printed below the rank of buttons.
 
-Ability used: str, dex, con, int, wis, or cha, the ability used with this attack (often class-dependent, but you need to put it in here)
+### Class and Racial Features
+Their names are displayed alongside a button that leads to their full description.
 
-Attacks per Action: how many individual attacks are done with every attack action that you take. For instance, the spell Scorching Ray has a 3 for this entry. For AoE spells, you probably just want to put as many targets as could reasonably be hit by it. You can always just roll extra to make up the difference.
+### Resources
+All resources you have available are listed here. When you use one (with the '-' button) its value is rolled and displayed in the lower left. When you rest (using either of the buttons at the bottom of the screen) the numbers are reset. You could also manually reset them with the button associated with that resource.
 
-Magic Bonus (Weapon): A magic bonus to be added to attack and damage rolls.
+### Inventory
+Displays all your items categorized into weapons, apparel, treasure, and generic items. It keeps track of their weight and uses the variant encumbrance rules (PHB 176) to calculate any penalties you might have for carrying so much.
 
-Make Attack Roll?: If yes, do an attack roll with each attack. If no, it means that the attack automatically hits (for weapon) or instead requires a saving throw (spell).
-
-Saving Throw Type (spell): What save type the target needs to make (like Dexterity or Constitution)
-
-Ammunition (Weapon): Number of pieces of ammunition that the weapon has. One piece is consumed by each use of this weapon.
-
-Add Ability Modifier to Damage (spell): Whether to add your ability mod to the damage done by this spell. This is yes or no like the attack roll question.
-
-Spell Level: The level of the spell.
-
-Additional Information: This is space for some additional notes on the attack, to be displayed when you attack.
-
-After filling out one of these sections, press the associated "Make" button to commit this change to memory.
-When you want to save, hit the "Write" button. When you are done and want to quit, hit the "Quit" button.
-
-To edit one of the spell or weapon entries during the same session, fill out the section with the correct information and hit the "Make" button. When you create an entry that has the same name as another, it will overwrite the old entry.
-
-If editing later, you will want to use the "Read" button after entering your character's name to reopen the file. Otherwise, the old data will be discarded entirely. This also allows you to overwrite individual entries as if it was in the same session as you made it.
-
-
-
-3.2: Character Manager
-To use this program, enter the character's name in the relevant entry exactly as it appears in the title of the .ini file, then hit Enter or press the load button. This should set everything up for you.
-
-HP SECTION:
-  This has several entries in it. You generally don't need to directly change any of them except for the bottom one.
-  The bottom entry is where you put changes in your HP. It can be any valid rollable string, as defined in the rolling module. Upon pressing the "Alter HP" button, the value in the box is added to your current HP. Do note that, to take damage, you need enter a negative value in the box, like -4 or -3d6.
-
-ATTACK SECTION:
-  To perform attacks, enter the name of the attack (not case-sensitive) into the box and then press the ATTACK button or the Enter key.
-  The check boxes to the right of the main entry allow you to indicate whether you are making the attack with advantage or disadvantage. If both are checked, they cancel out.
-  The attack and damage bonus entries below the main one are there to indicate special bonuses, beyond what is expected. Normally, your attack bonus will be equal to your ability modifier + your proficiency bonus + magic bonus on your weapon (if any). Your normal damage bonus is your ability modifier (for a weapon or a spell with the addAbilityToDamage property.) The two bonuses entered in these boxes can be any rollable string. For instance, if you have a support-heavy group, you could have a +1 on attack rolls and a +1d6+1 on damage. These sort of temporary buffs are what these entries are for.
-
-SPELL SECTION:
-  This shows what spell slots you have not yet spent.
-  When you cast a spell as an attack, this section will respond. For all your other spellcasting needs, there are the associated buttons. The + and - buttons regain or spend spell slots of that level. The Reset button refreshes your spell slots to the maximum, like when you rest and regain all expended spell slots.
-  Note that this has no way of keeping track of sorcery points, ki points, or channel divinity uses. I leave that to you.
-
-GENERIC ROLL SECTION:
-  This entry accepts any rollable string, and rolls it when you press the button.
-
-QUIT:
-  Saves and quits. This saves all HP-related numbers, your current level, and even all of your abilities (in case those change at all).
-
+### Spells
+Shows all the spells you have prepared. You can view a detailed description of each spell with the '?' button, or cast it with the "Cast" button. There is another roller here so you can roll any dice associated with the spell.  
+Spell slots are shown on the right. You can manually change each number with the buttons or by typing a new number in the box.
 
 ----------
-SECTION 4: DUNGEON MASTERS
-The Monster Manager is written for you. It keeps track of monsters and allows you to roll any other dice you need while running a combat. There is no preparation needed to use this, so just run it as is.
+## Monster Manager
+In the beginning, there is a simple dice roller. It has the functionality described at the beginning.
 
-4.1: Using the Monster Manager
-The first thing you will likely want to do is press the "New Monster" button to open the dialog. This will create a popup window with a variety of fields that can be filled out. Fill them with relevant information and hit the "Finish" button.
-
-The main window will now contain a section that contains relevant information about the monster. From here, you can make the monster take damage (by inserting a negative value in the "Change HP" entry and pressing the button), recover HP (same but positive), or perform attacks. This aspect perhaps bears explanation. To perform an attack, fill out the attack bonus and damage done and press the button. The attack bonus is **added to the d20 roll and should not include the d20**, and can be any valid rollable string, as defined in section 1.1.
-
-If you need to roll dice for any other reason, there is a section that has just an entry and a button.
-
-I recommend creating all the monsters first and then the characters. This ensures that the copy feature works correctly. However, it won't break anything if you add monsters after characters.
+When you press the "New Monster" button, you get a popup. You can either press "Load from file" or fill out the data yourself.
