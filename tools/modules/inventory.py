@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import tkinter as tk
 import re
 from collections import OrderedDict

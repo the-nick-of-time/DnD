@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import tkinter as tk
 import os
 import sys
@@ -39,6 +41,7 @@ class ConditionsDisplay(gui.Section):
         s = 6
         for (i, name) in enumerate(sorted(self.buttons.keys())):
             self.buttons[name].grid(row=i%s, column=i//s)
+        self.basecolor = self.buttons[name].cget('bg')
         self.ex.grid(row=(i+1)%s, column=(i+1)//s)
         self.addexhaustion.grid(row=0, column=0)
         self.exhaustionlevel.grid(row=0, column=1)
@@ -66,7 +69,7 @@ class ConditionsDisplay(gui.Section):
             if ('exhaustion{}'.format(i + 1) in self.character.conditions):
                 amount = i + 1
                 break
-        colors = ['#F0F0F0', '#FFEE00', '#FFCC00', "#FF9900", "#FF6600",
+        colors = [self.basecolor, '#FFEE00', '#FFCC00', "#FF9900", "#FF6600",
                   "#FF3300", "#FF0000"]
         self.addexhaustion.config(bg=colors[amount])
         self.removeexhaustion.config(bg=colors[amount])
@@ -75,7 +78,7 @@ class ConditionsDisplay(gui.Section):
     def toggle_condition(self, name):
         if (name in self.character.conditions):
             self.character.remove_condition(name)
-            self.buttons[name].config(bg='#F0F0F0')
+            self.buttons[name].config(bg=self.basecolor)
         else:
             self.character.add_condition(name)
             self.buttons[name].config(bg='red')
@@ -91,7 +94,7 @@ class ConditionsDisplay(gui.Section):
         #     if ('exhaustion{}'.format(i + 1) in self.character.conditions):
         #         amount = i + 1
         #         break
-        # colors = ['#F0F0F0', '#FFEE00', '#FFCC00', "#FF9900", "#FF6600",
+        # colors = [self.basecolor, '#FFEE00', '#FFCC00', "#FF9900", "#FF6600",
         #           "#FF3300", "#FF0000"]
         # self.addexhaustion.config(bg=colors[amount])
         # self.removeexhaustion.config(bg=colors[amount])
@@ -105,17 +108,17 @@ class ConditionsDisplay(gui.Section):
             if (name in self.character.conditions):
                 self.buttons[name].config(bg='red')
             else:
-                self.buttons[name].config(bg='#F0F0F0')
+                self.buttons[name].config(bg=self.basecolor)
         f = self.character.death_save_fails
-        colors = ['#F0F0F0', '#FF9900', '#FF3300', '#FF0000']
+        colors = [self.basecolor, '#FF9900', '#FF3300', '#FF0000']
         self.deathdisplay.config(text=str(f), bg=colors[f])
         self.draw_dynamic()
 
     def stable(self):
         self.character.death_save_fails = 0
         self.character.remove_condition('dying')
-        self.deathdisplay.config(text='0', bg='#F0F0F0')
-        self.buttons['dying'].config(bg='#F0F0F0')
+        self.deathdisplay.config(text='0', bg=self.basecolor)
+        self.buttons['dying'].config(bg=self.basecolor)
         self.draw_dynamic()
 
 
