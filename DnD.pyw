@@ -2,6 +2,7 @@
 
 import tkinter as tk
 import os
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 import tools.modules.character_manager as cm
 import tools.modules.monsters as mm

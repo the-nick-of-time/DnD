@@ -245,7 +245,7 @@ class Builder:
 
     def pick_file(self):
         self.mainframe.destroy()
-        self.choosefile.destroy()
+        # self.choosefile.destroy()
         # self.filequery = util.labeledEntry(self.win, 'Monster Name', 0, 0)
         # self.average = tk.Checkbutton(self.win,
         #                               text="Take average\nvalue of HP?",
@@ -255,7 +255,7 @@ class Builder:
         # self.confirm.grid(row=2, column=0)
         d = os.path.abspath(iface.JSONInterface.OBJECTSPATH) + '/monster/'
         self.filename = filedialog.askopenfilename(initialdir=d, filetypes=[('monster file', '*.monster')])
-        print(self.filename)
+        # print(self.filename)
         self.load_file()
 
     def load_file(self):
