@@ -1,0 +1,63 @@
+{
+  "name": "Arvel",
+  "race": "Human",
+  "level": "Paladin 1",
+  "languages": [
+    "Common",
+    "Elven"
+  ],
+  "abilities": {
+    "Strength": 15,
+    "Intelligence": 8,
+    "Wisdom": 13,
+    "Charisma": 16,
+    "Dexterity": 8,
+    "Constitution": 15
+  },
+  "saves": [
+    "Wisdom",
+    "Charisma"
+  ],
+  "skills": [
+    "Athletics",
+    "Insight",
+    "Religion"
+  ],
+  "inventory": {
+    "Chain Mail": {
+      "type": "apparel",
+      "quantity": 1,
+      "equipped": true
+    }
+  },
+  "HP": {
+    "current": 12,
+    "temp": 0,
+    "HD": {
+      "1d10": {
+        "number": 1,
+        "maxnumber": 1
+      }
+    },
+    "max": 12
+  },
+  "features": {
+    "Divine Sense": "class/Paladin.class/features/1/Divine Sense",
+    "Skill Proficiency": "race/Human.race/features/Skill Proficiency",
+    "Lay on Hands": "class/Paladin.class/features/1/Lay on Hands"
+  },
+  "spells_prepared": {
+    "always_prepared": [],
+    "prepared_today": []
+  },
+  "spell_slots": [],
+  "resources": {
+    "Lay on Hands": {
+      "number": 0
+    },
+    "Divine Sense": {
+      "number": 0
+    }
+  },
+  "conditions": []
+}
