@@ -1,19 +1,3 @@
-"""
-Tkinter Utility
-Version 1.0 (released 2016-01-09)
-Direct all comments, suggestions, etc. at /u/the-nick-of-time
-Released under the GNU General Public License version 2, as detailed within
-the file LICENSE included in the same directory as this code.
-
-This module contains simple functions to automate common operations done with
-tkinter objects.
-
-labeledEntry creates and places an entry and accompanying label, returning the
-entry object for outside use.
-
-replaceEntry replaces the contents of an entry with a new string.
-"""
-
 import tkinter as tk
 
 
