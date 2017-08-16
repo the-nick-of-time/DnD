@@ -1,14 +1,24 @@
 WHAT TO DO
+ATTACKS
+Attacks should be fully configured by the user; take roll20 as inspiration
+if attack roll
+	- attack bonus as string (e.g. $proficiency+$dex_mod)
+if save
+	- {abil} save against {abil} DC
+damage 1
+	- {damage roll} of {type}
+damage 2
+	- {damage roll} of {type}
 
+SPELLS
+add "prepare" and "unprepare" buttons
 
-I set the convention that a string of the form $VAR will be interpreted by means of calling Character.__getattr__(VAR)/Character.VAR (the two will be equivalent)
-Would this involve checking every string for starting with $? Surely there's a better way
-It definitely comes up in bonuses; I can always check there
-Also in resources
-
-
-Variant: character file would have a map of {"name": "/path/to/source.file/path/to/value"} as I just wrote helpers.path_follower to address this
-They would keep some parts locally (e.g. number on resources)
-On levelup these would need to be updated somehow
+OBJECT CREATOR
+- item: name, value, weight, consumes, effect, description
+- apparel: name, value, weight, consumes, effect, description, type (Light, Heavy, Medium)+Armor
 
 LEVEL UP
+- asks you what class you want to take
+- reads that class file, looks at feature list of the appropriate level
+- if there is a feature there named "choose", look for its number then present a GUI to pick that number of things (toggle buttons, pushing to a stack?)
+- all other features get linked into the character file

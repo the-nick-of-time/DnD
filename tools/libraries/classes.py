@@ -38,7 +38,7 @@ class Class:
         self.record = jf
         self.name = jf.get('/name')
         self.level = classlevel
-        # self.hit_dice = jf.get('/hit_dice')
+        self.hit_dice = jf.get('/hit_dice')
         # self.saves = jf.get('/saves')
         # self._features = jf.get('*/features')
         self.features = {}
@@ -49,11 +49,15 @@ class Class:
 
     def get_features(self):
         """Gets the current features given a certain class level."""
-        featurelist = self.record.get('*/features')
+        # featurelist = self.record.get('*/features')
         for lv in range(self.level, 0, -1):
-            for name in featurelist[lv]:
+            featuresatlevel = self.record.get('*/features/' + str(lv))
+            # for name in featurelist[lv]:
+            #     if (name not in self.features):
+            #         self.features.update(featurelist[lv][name])
+            for name in featuresatlevel:
                 if (name not in self.features):
-                    self.features.update(featurelist[lv][name])
+                    self.features.update(featuresatlevel[name])
 
 
 class Race:
@@ -163,6 +167,11 @@ class Feature:
         rs = self.record.get(self.path + '/resource')
         if (rs is not None):
             name = rs['name']
+            if (self.charrecord.get('/resources/' + name) is None):
+                # newly gained, not yet registered in the character file
+                if (self.charrecord.get('/resources') is None):
+                    self.charrecord.set('/resources', {})
+                self.charrecord.set('/resources/' + name, {'number': 0})
             self.resource = Resource(self.charrecord, '/resources/' + name,
                                      self.record, self.path + '/resource',
                                      self.character)
@@ -1021,7 +1030,7 @@ class Spell:
         return self.effect
 
     def is_available(self, character):
-        for c in character.classes:
+        for (c, obj, lv) in character.classes:
             if c in self.classes:
                 return True
         return False
@@ -1044,6 +1053,9 @@ class SpellsPrepared:
     def __iter__(self):
         return (obj for obj in self.spells.values())
 
+    def __getitem__(self, key):
+        return self.spells[key]
+
     @property
     def prepared(self):
         today = set(self.record.get('/spells_prepared/prepared_today'))
@@ -1063,6 +1075,10 @@ class SpellsPrepared:
     @property
     def always_prepared(self):
         return set(self.record.get('/spells_prepared/always_prepared'))
+
+    @always_prepared.setter
+    def always_prepared(self, value):
+        self.record.set('/spells_prepared/always_prepared', list(value))
 
     def objects(self):
         return self.spells.values()
@@ -1084,13 +1100,22 @@ class SpellsPrepared:
         #     path = '/spells_prepared/{}'.format(name)
         #     if (not self.record.get(path + '/always_prepared')):
         #         self.record.delete(path)
-        self.prepared_today -= {name}
+        if (name in self.prepared_today):
+            self.prepared_today -= {name}
+            del self.spells[name]
+            return True
+        else:
+            return False
 
-    def prepare(self, name):
+    def prepare(self, name, perma=False):
+        if (name in self.prepared):
+            return False
         obj = self.load_from_file(name)
         if (obj.is_available(self.char)):
-            # self.record.set('/spells_prepared/' + name, {"always_prepared": False})
-            self.prepared_today |= {name}
+            if (perma):
+                self.always_prepared |= {name}
+            else:
+                self.prepared_today |= {name}
             self.spells[name] = obj
             return True
         else:

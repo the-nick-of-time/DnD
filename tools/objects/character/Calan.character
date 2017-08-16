@@ -81,21 +81,21 @@
   },
   "spells_prepared": {
     "prepared_today": [
-      "Protection from Evil and Good",
-      "Shield of Faith",
-      "Cure Wounds",
-      "Bless",
-      "Guiding Bolt",
-      "Enhance Ability",
-      "Beacon of Hope",
-      "Mass Healing Word",
-      "Remove Curse",
-      "Protection from Energy",
       "Spirit Guardians",
+      "Guiding Bolt",
       "Freedom of Movement",
+      "Bless",
+      "Beacon of Hope",
+      "Enhance Ability",
+      "Heal",
+      "Remove Curse",
+      "Protection from Evil and Good",
       "Death Ward",
+      "Cure Wounds",
       "Mass Cure Wounds",
-      "Heal"
+      "Mass Healing Word",
+      "Shield of Faith",
+      "Protection from Energy"
     ],
     "always_prepared": [
       "Sacred Flame",

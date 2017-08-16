@@ -88,11 +88,14 @@ class SpellDisplay(gui.Section):
         self.output = output
         self.numbers = numbers
         #####
-        levelnamemap = ['cantrip', '1st-level', '2nd-level', '3rd-level', '4th-level', '5th-level', '6th-level', '7th-level', '8th-level', '9th-level']
+        levelnamemap = ['cantrip', '1st-level', '2nd-level', '3rd-level',
+                        '4th-level', '5th-level', '6th-level', '7th-level',
+                        '8th-level', '9th-level']
         self.namelevel = tk.Frame(self.f)
         self.nameL = tk.Label(self.namelevel, text=self.handler.name)
         args = (levelnamemap[self.handler.level], self.handler.school)
-        lev = '{} {}'.format(*(reversed(args) if self.handler.level == 0 else args))
+        lev = '{} {}'.format(*(reversed(args) if self.handler.level == 0
+                               else args))
         self.leveltype = tk.Label(self.namelevel, text=lev)
         self.timeanddisplay = tk.Frame(self.f)
         self.castingtime = tk.Label(self.timeanddisplay,
@@ -117,6 +120,7 @@ class SpellDisplay(gui.Section):
 
     def __lt__(self, other):
         # Expects other to be a SpellDisplay, it's only used for sorting
+        # return self.handler.level < other.handler.level
         return self.handler.level < other.handler.level
 
     def draw_static(self):
@@ -144,7 +148,7 @@ class SpellDisplay(gui.Section):
 class SpellSection(gui.Section):
     def __init__(self, container, jf, character, numbers, output):
         gui.Section.__init__(self, container, width=500, height=500)
-        self.thisf = tk.Frame(self.f)
+        # self.thisf = tk.Frame(self.f, bg='green')
         self.character = character
         self.displays = {}
         self.numbers = numbers
@@ -152,13 +156,15 @@ class SpellSection(gui.Section):
         # self.numbers = NumberDisplay(self.f, self.character)
         self.handler = c.SpellsPrepared(jf, character)
         for obj in self.handler.objects():
-            self.displays[obj.name] = SpellDisplay(self.thisf, obj, self.effects, self.numbers)
+            self.displays[obj.name] = SpellDisplay(self.f, obj, self.effects,
+                                                   self.numbers)
         self.draw_static()
         self.draw_dynamic()
 
     def draw_static(self):
-        self.thisf.grid(row=0, column=0)
-        self.numbers.grid(row=0, column=1)
+        # self.thisf.grid(row=0, column=0)
+        # self.numbers.grid(row=0, column=1)
+        pass
 
     def draw_dynamic(self):
         s = int(sqrt(len(self.displays)))
@@ -166,7 +172,27 @@ class SpellSection(gui.Section):
             for (i, d) in enumerate(sorted(self.displays.values())):
                 d.grid(row=i%s, column=i//s)
             i = len(self.displays)
-            self.effects.grid(row=i%s, column=i//s)
+
+    def prepare(self, name):
+        success = self.handler.prepare(name)
+        if (success):
+            self.displays[name] = SpellDisplay(self.f, self.handler[name],
+                                               self.effects, self.numbers)
+            self.draw_dynamic()
+
+    def unprepare(self, name):
+        success = self.handler.unprepare(name)
+        if (success):
+            self.displays[name].f.destroy()
+            del self.displays[name]
+            self.draw_dynamic()
+
+    def always_prepare(self, name):
+        success = self.handler.prepare(name, True)
+        if (success):
+            self.displays[name] = SpellDisplay(self.f, self.handler[name],
+                                               self.effects, self.numbers)
+            self.draw_dynamic()
 
 
 class module(gui.Section):
@@ -179,6 +205,18 @@ class module(gui.Section):
         self.roll = dice.module(self.excessblock, character)
         self.detail = SpellSection(self.f, character.record, character,
                                    self.numbers, self.effects)
+        self.prepare = tk.Button(self.excessblock, text='Prepare a spell',
+                                 command=self.prepare_start)
+        np = str(len(self.detail.handler.prepared_today))
+        self.numprepared = tk.Label(self.excessblock,
+                                    text='Spells prepared today: ' + np)
+        self.unprepare = tk.Button(self.excessblock, text='Unprepare a spell',
+                                   command=self.unprepare_start)
+        self.permaprepare = tk.Button(self.excessblock,
+                                      text='Permanently prepare a spell\n'
+                                      '(CANNOT BE UNDONE WITHOUT\nMANUALLY '
+                                      'EDITING THE FILE)',
+                                      command=self.always_prepare_start)
         self.draw_static()
 
     def draw_static(self):
@@ -186,10 +224,42 @@ class module(gui.Section):
         self.excessblock.grid(row=0, column=1)
         self.effects.grid(row=0, column=0)
         self.roll.grid(row=1, column=0)
+        self.prepare.grid(row=2, column=0)
+        self.numprepared.grid(row=3, column=0)
+        self.unprepare.grid(row=4, column=0)
+        self.permaprepare.grid(row=5, column=0)
         self.numbers.grid(row=0, column=2)
 
     def draw_dynamic(self):
         self.numbers.draw_dynamic()
+
+    def prepare_start(self):
+        self.toprepare = {}
+        gui.Query(self.toprepare, self.prepare_end, 'Spell to prepare?')
+
+    def prepare_end(self):
+        name = self.toprepare['Spell to prepare?']
+        self.detail.prepare(name)
+        np = str(len(self.detail.handler.prepared_today))
+        self.numprepared.config(text='Spells prepared today: ' + np)
+
+    def unprepare_start(self):
+        self.tounprepare = {}
+        gui.Query(self.tounprepare, self.unprepare_end, 'Spell to unprepare?')
+
+    def unprepare_end(self):
+        name = self.tounprepare['Spell to unprepare?']
+        self.detail.unprepare(name)
+        np = str(len(self.detail.handler.prepared_today))
+        self.numprepared.config(text='Spells prepared today: ' + np)
+
+    def always_prepare_start(self):
+        self.toprepare = {}
+        gui.Query(self.toprepare, self.prepare_end, 'Spell to always prepare?')
+
+    def always_prepare_end(self):
+        name = self.toprepare['Spell to prepare?']
+        self.detail.always_prepare(name)
 
 
 class main(gui.Section):
@@ -200,6 +270,13 @@ class main(gui.Section):
         # self.effects = gui.EffectPane(self.f, '', '')
         self.effects = LongEffectDisplay(self.excessblock, '')
         self.roll = dice.DiceRoll(self.excessblock)
+        self.prepare = tk.Button(self.excessblock, text='Prepare a spell',
+                                 command=self.prepare_start)
+        np = str(len(self.detail.handler.prepared_today))
+        self.numprepared = tk.Label(self.excessblock,
+                                    text='Spells prepared today: ' + np)
+        self.unprepare = tk.Button(self.excessblock, text='Unprepare a spell',
+                                   command=self.unprepare_start)
         self.QUIT = tk.Button(self.f, text='QUIT', command=self.writequit,
                               fg='red')
         self.begin_start()
@@ -210,6 +287,9 @@ class main(gui.Section):
         self.excessblock.grid(row=0, column=1)
         self.effects.grid(row=0, column=0)
         self.roll.grid(row=1, column=0)
+        self.prepare.grid(row=2, column=0)
+        self.numprepared.grid(row=3, column=0)
+        self.unprepare.grid(row=4, column=0)
         self.numbers.grid(row=0, column=2)
         self.QUIT.grid(row=1, column=3)
 
@@ -223,9 +303,24 @@ class main(gui.Section):
         self.record = iface.JSONInterface(filename)
         self.character = c.Character(self.record)
         self.numbers = NumberDisplay(self.f, self.character)
-        self.handler = SpellSection(self.f, self.record, self.character, self.numbers, self.effects)
+        self.handler = SpellSection(self.f, self.record, self.character,
+                                    self.numbers, self.effects)
+        self.prepare = tk.Button(self.excessblock, text='Prepare a spell',
+                                 command=self.detail.prepare_start)
+        self.unprepare = tk.Button(self.excessblock, text='Unprepare a spell',
+                                   command=self.detail.unprepare_start)
         self.container.deiconify()
         self.draw_static()
+
+    def unprepare_start(self):
+        self.tounprepare = {}
+        gui.Query(self.tounprepare, self.unprepare_end, 'Spell to unprepare?')
+
+    def unprepare_end(self):
+        name = self.tounprepare['Spell to unprepare?']
+        self.detail.unprepare(name)
+        np = str(len(self.detail.handler.prepared_today))
+        self.numprepared.config(text='Spells prepared today: ' + np)
 
     def writequit(self):
         self.character.write()
