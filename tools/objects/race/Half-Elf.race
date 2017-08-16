@@ -1,0 +1,18 @@
+{
+  "name": "Half-Elf",
+  "bonus": {
+    "Charisma": 2
+  },
+  "size": "Medium",
+  "features": {
+    "Low-Light Vision": {
+      "description": "Thanks to your elven heritage, you have superior vision in dim cooditions. You can see in dim light within 60 feet of you as if it were bright light."
+    },
+    "Fey Ancestry": {
+      "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+    },
+    "Skill Versatility": {
+      "description": "You gain proficiency in two skilIs of your choice."
+    }
+  }
+}

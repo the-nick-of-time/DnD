@@ -1,0 +1,19 @@
+{
+  "name": "Tiefling",
+  "bonus": {
+    "Charisma": 2,
+    "Intelligence": 1
+  },
+  "size": "Medium",
+  "features": {
+    "Darkvision": {
+      "description": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim lighl. You can't discern color in darkness, only shades of gray."
+    },
+    "Hellish Resistance": {
+      "description": "You have resistance to fire damage."
+    },
+    "Infernal Legacy": {
+      "description": "You know the thaumatuqJy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spclls."
+    }
+  }
+}

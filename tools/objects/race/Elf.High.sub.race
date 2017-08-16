@@ -1,0 +1,17 @@
+{
+  "name": "High",
+  "bonus": {
+    "Intelligence": 1
+  },
+  "features": {
+    "Elf Weapon Training": {
+      "description": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+    },
+    "Cantrip": {
+      "description": "You know one Cantrip of your choice from lhe wizard spell list. Inlelligence is your spellcasling abilily for il."
+    },
+    "Extra Language": {
+      "description": "You can speak, read, and write one extra language of your choice."
+    }
+  }
+}

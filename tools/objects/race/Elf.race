@@ -1,0 +1,21 @@
+{
+  "name": "Elf",
+  "bonus": {
+    "Dexterity": 2
+  },
+  "size": "Medium",
+  "features": {
+    "Low-Light Vision": {
+      "description": "Accustomed tn twilit forests and the night sky, you have superior vision in dim cooditions. You can see in dim light within 60 feet of you as if it were bright light."
+    },
+    "Keen Senses": {
+      "description": "You have proficieocy in the Perception skill."
+    },
+    "Fey Ancestry": {
+      "description": "You have advaolage on saviog throws agaiost beiog charmed, and magic can't put you to sleep."
+    },
+    "Trance": {
+      "description": "Elves don't need tn sleep. Instead, they meditate deeply, remainiog semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such dreams are actually mental exercises that have becn me reflexive through years of practice. After resling in this way, you gain the same benefit that a human does from 8 hours of sleep."
+    }
+  }
+}

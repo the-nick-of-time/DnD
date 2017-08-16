@@ -1,0 +1,18 @@
+{
+  "name": "Wood",
+  "bonus": {
+    "Wisdom": 1
+  },
+  "size": "",
+  "features": {
+    "Elf Weapon Training": {
+      "description": "You have proficiency wilh lhe longsword, shorlsword, shorlbow, and longbow."
+    },
+    "Fleet of Foot": {
+      "description": "Your base walking speed increases lo 35 feel."
+    },
+    "Mask of the Wild": {
+      "description": "You can altempl to hide even when you are only lighlly obscured by foliage, heavy rain, falling snow, misl, and olher nalural phenomena."
+    }
+  }
+}

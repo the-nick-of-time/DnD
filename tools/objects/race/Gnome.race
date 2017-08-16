@@ -1,0 +1,15 @@
+{
+  "name": "Gnome",
+  "bonus": {
+    "Intelligence": 2
+  },
+  "size": "Small",
+  "features": {
+    "Low-Light Vision": {
+      "description": "Accustomed to life in deep forests and caves, you have superior vision in dim cooditions. You can see in dim light within 60 feet of you as if it were bright light."
+    },
+    "Gnome Cunning": {
+      "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+    }
+  }
+}

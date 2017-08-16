@@ -1,0 +1,19 @@
+{
+  "name": "Mountain",
+  "bonus": {
+    "Strength": 2
+  },
+  "features": {
+    "Dwarven Armor Training": {
+      "description": "You have proficiency in light and medium armor.",
+      "bonus": {
+        "armor_proficiencies": {
+          "types": [
+            "light",
+            "medium"
+          ]
+        }
+      }
+    }
+  }
+}

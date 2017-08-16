@@ -1,0 +1,14 @@
+{
+  "name": "Forest",
+  "bonus": {
+    "Dexterity": 1
+  },
+  "features": {
+    "Natural Illusionist": {
+      "description": "You know the minor illusion cantrip. lntelligence is your spellcasting ability for il."
+    },
+    "Speak with Small Beasts": {
+      "description": "Through sounds and gestures, you can communicate simple ideas with Small ar smaller beasts. Forest gnomes love animaIs and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets."
+    }
+  }
+}

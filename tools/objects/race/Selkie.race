@@ -9,6 +9,12 @@
   "features": {
     "Seal Skin": {
       "description": "As an action, you transform into a seal. In seal form, you retain your ability scores and hit points. Anything you are carrying is subsumed into your new form. Your speed becomes 15 feet, and you gain a swim speed of 50 feet. You gain the following action option:\nBite: +dex+proficiency, 2d6+dex piercing damage.\nIf you become unconscious, you revert to your human form. You gain the following trait:\nHold Breath: You can hold your breath for a number of minutes equal to ten times your Constitution modifier (minimum 10)"
+    },
+    "Keen Senses": {
+      "description": "You have advantage on Perception checks."
+    },
+    "Echolocation": {
+      "description": "Even in human form, you have keen directional hearing. You have blindsight out to a range of 30 feet unless you are deafened. Underwater, this range increases to 60 feet."
     }
   }
 }

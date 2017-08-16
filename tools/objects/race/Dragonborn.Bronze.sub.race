@@ -1,0 +1,17 @@
+{
+  "name": "Bronze",
+  "features": {
+    "Breath Weapon": {
+      "description": "You can use your action to exhale a 5 by 30 foot line of lightning. When you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use your breath weapon, you can't use it again until you complete a short or long rest.",
+			"resource": {
+			  "name": "Breath Weapon",
+			  "maxnumber": 1,
+			  "value": "(2+1*($level>6)+1*($level>11)+1*($level>16))d6",
+			  "recharge": "short rest"
+			}
+    },
+		"Damage Resistance": {
+			"description": "You have resistance to lightning damage."
+		}
+  }
+}
