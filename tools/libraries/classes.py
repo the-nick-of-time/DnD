@@ -145,7 +145,11 @@ class Resource:
             self.reset()
             return self.number
         if (what == 'short'):
-            if (self.recharge == 'short rest'):
+            if (self.recharge == 'short rest' or self.recharge == 'turn'):
+                self.reset()
+                return self.number
+        if (what == 'turn'):
+            if (self.recharge == 'turn'):
                 self.reset()
                 return self.number
         return -1
@@ -1402,11 +1406,15 @@ class MagicCharge(Resource):
         # Overrides the base method because that assumes it will fully
         #   recharge on a long rest, which is usually reasonable but not here
         if (what == 'long'):
-            if (self.recharge == 'long rest' or self.recharge == 'short rest'):
+            if (self.recharge == 'long rest' or self.recharge == 'short rest' or self.recharge == 'turn'):
                 self.regain(r.roll(self.regains))
                 return self.number
         if (what == 'short'):
-            if (self.recharge == 'short rest'):
+            if (self.recharge == 'short rest' or self.recharge == 'turn'):
+                self.regain(r.roll(self.regains))
+                return self.number
+        if (what == 'turn'):
+            if (self.recharge == 'turn'):
                 self.regain(r.roll(self.regains))
                 return self.number
 

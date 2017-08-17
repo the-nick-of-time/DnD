@@ -1,0 +1,39 @@
+{
+  "features": [ {},
+    {},
+    {},
+    {
+      "Bonus Proficiencies": {
+        "description": "You gain proficiency with medium armor, shields, and martial weapuns."
+      },
+      "Combat Inspiration": {
+        "description": "You learn to inspire others in battle. A crcature that has a Bardic lnspiratiun die from you can roll that die and add the number rolled to a weapon damage roll it jusl made. Altematively. when an attack roll is made against the ercature, it can use its reaetion to roll the Bardie Inspiration die and add the numbcr rolled to its AC against that attaek. after seeing the roll but before knowing whelher it hits or misses."
+      }
+    },
+    {},
+    {},
+    {
+      "Extra Attack": {
+        "description": "You can attack twice, instead of once, whcnever rou take the Attack action on your turn."
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "Battle Magic": {
+        "description": "You have rnastered the art of weaving spellcasting and weapon use into a single harmonious act. When yuu use your action to cast a bard spell, you can make one weapon attack as a bonus action."
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ]
+}

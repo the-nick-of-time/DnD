@@ -1,0 +1,103 @@
+{
+  "features": [ {},
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Fog Cloud", "Thunderwave"]
+        }
+      },
+      "Bonus Proficiencies": {
+        "description": "you gain proticiency with martia! weapons and heavy armor."
+      },
+      "Wrath of the Storm": {
+        "description": "You can thunderously rebuke attackers. When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one. You can use this feature a number of times equal to your Wisdom moditier (a minimum of once). You regain ali expended uses when you tinish a long rest.",
+        "resource": {
+          "name": "Wrath of the Storm",
+          "maxnumber": "$wis_mod",
+          "value": "2d8",
+          "recharge": "long rest"
+        }
+      }
+    },
+    {
+      "Channel Divinity: Destructive Wrath": {
+        "description": "You can use your Channel Divinity to wield the power of the storm with unchecked ferocity. When you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling."
+      }
+    },
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Fog Cloud", "Thunderwave", "Gust of Wind", "Shatter"]
+        }
+      }
+    },
+    {},
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Fog Cloud", "Thunderwave", "Gust of Wind", "Shatter", "Call Lightning", "Sleet Storm"]
+        }
+      }
+    },
+    {
+      "Thunderbolt Strike": {
+        "description": "When you deal lightning damage to a Large or smaller creature, you can also push it up to 10 feet away from you."
+      }
+    },
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Fog Cloud", "Thunderwave", "Gust of Wind", "Shatter", "Call Lightning", "Sleet Storm", "Control Water", "Ice Storm"]
+        }
+      }
+    },
+    {
+      "Divine Strike": {
+        "description": "You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 thunder damage to the target.",
+        "resource": {
+          "name": "Divine Strike",
+          "maxnumber": 1,
+          "value": "1d8",
+          "recharge": "turn"
+        }
+      }
+    },
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Fog Cloud", "Thunderwave", "Gust of Wind", "Shatter", "Call Lightning", "Sleet Storm", "Control Water", "Ice Storm", "Destructive Wave", "Insect Plague"]
+        }
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "Divine Strike": {
+        "description": "You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 thunder damage to the target.",
+        "resource": {
+          "name": "Divine Strike",
+          "maxnumber": 1,
+          "value": "2d8",
+          "recharge": "turn"
+        }
+      }
+    },
+    {},
+    {},
+    {
+      "Stormborn": {
+        "description": "You have a flying speed equal to your current walking speed whenever you are not underground or indoors."
+      }
+    },
+    {},
+    {},
+    {}
+  ]
+}

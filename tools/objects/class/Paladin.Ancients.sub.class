@@ -1,0 +1,96 @@
+{
+  "features": [ {},
+    {},
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Ensnaring Strike", "Speak with Animals"]
+        }
+      },
+      "Channel Divinity": {
+        "description": "Your oath allows you to channel divine energy to fuel magical effects. Each ChanneI Divinity option provided by your oath explains how to use it. When you use your ChanneI Divinity, you choose which option to use. You must then finish a short ar long rest to use your Channel Divinity again. Some Channel Divinity effects require saving throws. When you use such an effect from this c1ass, the DC equals your paladin spell save DC.",
+        "resource": {
+          "name": "Channel Divinity",
+          "maxnumber": 1,
+          "value": 0,
+          "recharge": "short rest"
+        }
+      },
+      "Channel Divinity: Nature's Wrath": {
+        "description": "You can use your Channel Divinity to invoke primeval forces to ensnare a foe. As an action, you can cause spectral vines to spring up and reach for a creature within 10 feet ofyou that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be restrained. While restrained by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish."
+      },
+      "Channel Divinity: Turn the Faithless": {
+        "description": "You can use your Channel Divinity to utler ancient words that are painful for fey and fiends to hear. As an action, you present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage. A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. lt also can't take reactions. For its action, it can use only the Dash action or try to escape fram an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action. If the creature's true form is concealed by an illusion, shapeshifting, or other effect, lhat form is revealed while it is turned."
+      }
+    },
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Ensnaring Strike", "Speak with Animals", "Moonbeam", "Misty Step"]
+        }
+      }
+    },
+    {},
+    {
+      "Aura of Warding": {
+        "description": "ancient magic lies so heavily upon you that it forms an eldritch ward. You and friendly creatures within 10 feet of you have resistance to damage from spells."
+      }
+    },
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Ensnaring Strike", "Speak with Animals", "Moonbeam", "Misty Step", "Plant Growth", "Protection From Energy"]
+        }
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Ensnaring Strike", "Speak with Animals", "Moonbeam", "Misty Step", "Plant Growth", "Protection From Energy", "Ice Storm", "Stoneskin"]
+        }
+      }
+    },
+    {},
+    {
+      "Undying Sentinel": {
+        "description": "when you are reduced to O hit points and are not killed oUlright, you can choose to drop to 1 hit point instead. Once you use this ability, you can't use it again until you finish a long rest. Additionally, you suffer none of the drawbacks of old age, and you can't be aged magically."
+      }
+    },
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Ensnaring Strike", "Speak with Animals", "Moonbeam", "Misty Step", "Plant Growth", "Protection From Energy", "Ice Storm", "Stoneskin", "Commune With Nature", "Tree Stride"]
+        }
+      }
+    },
+    {
+      "Aura of Warding": {
+        "description": "ancient magic lies so heavily upon you that it forms an eldritch ward. You and friendly creatures within 30 feet of you have resistance to damage from spells."
+      }
+    },
+    {},
+    {
+      "Elder Champion": {
+        "description": "You can assume the form of an ancient force of nature, taking on an appearance you choose. For example, your skin might turn green or take on a bark-like texture, your hair might become leafy or moss- like, or you might sprout antlers or a lion-like mane. Using your action, you undergo a transformation. For 1 minute, you gain the following benefits: At the start of each ofyour turns, you rega in 10 hit points. Whenever you cast a paladin spell that has a casting time of 1action, you can cast it using a bonus action instead. Enemy creatures within 10 feet of you have disadvan- tage on saving throws against your paladin spells and Channel Divinity options. Once you use this feature, you can't use it again until you finish a long rest.",
+        "resource": {
+          "name": "Elder Champion",
+          "maxnumber": 1,
+          "value": 10,
+          "recharge": "long rest"
+        }
+      }
+    }
+  ]
+}

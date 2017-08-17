@@ -1,0 +1,165 @@
+{
+  "name": "Monk",
+  "superclass": [
+    "ALL"
+  ],
+  "hit_dice": "1d8",
+  "spellcasting": {
+    "ability": "Wisdom",
+    "slots": "full",
+    "levels": "full",
+    "known": "all",
+    "prepare": "$wis_mod+$caster_level",
+    "always_prepared": []
+  },
+  "features": [ {},
+    {
+      "Unarmored Defense": {
+        "description": "while you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier.",
+        "bonus": {
+          "base_AC": "10+$dex_mod+$wis_mod"
+        }
+      },
+      "Martial Arts": {
+        "description": "Your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two-handed or heavy property. You gain the folIowing benefits while you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:\nYou can use Dexterity instead of Strength for the attack and damage rolIs of your unarmed strikes and monk weapons.\nYou can rolI a d4 in place of the normal damage ofyour unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table.\nWhen you use the Attack action with an unarmed strikc or a monk weapon on your turn. you can make one unarmed strike as a bonus action. For example, if you take the Attack action and attack with a quarter- staff, you can also make an unarmed strike as a bonus action, assuming you haven't already taken a bonus action this turn,\nCertain monasteries use specialized forms ofthe monk weapons. For example, you might use a cluh that is two lengths ofwood connected bya short chain (calIed a nunchaku) or a sickle with a shorter, straighter blade (called a kama), Whatever name you use for a monk weapon. you can use the game statistics provided for the weapon in chapter 5."
+      }
+    },
+    {
+      "Ki": {
+        "description": "your training alIows you to harness the mystic energy of ki. Your access to this energy is represented bya number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of the Monk table, You can spend these points to fuel various ki features. You start knowing three such features: Flurry of Blows, Patient Defcnse, and Step of the Wind, You learn more ki features as you gain levels in this class, When you spend a ki poinl. it is unavailable until you finish a short or long rest, at the end of which you draw alI of your expended ki back into yourself. You must spend at least 30 minutes of the rest meditating to regain your ki points, Some ofyour ki features require your target to make a saving throw to resist the feature's effects. The saving throw DC is calculated as folIows: Ki save DC = 8 + your proficiency bonus + your Wisdom modifier\n FLURRY OF BLOWS\n Immediately after you take the Attack action on your turn, you can spend I ki point to make two unarmed strikes as a bonus action.\n PATIENT DEFENSE\n You can spend I ki point to take the Dodge action as a bonus action on your turno\n STEP OF THE WIND\n You can spend I ki point to take the Disengage or Dash action as a bonus action on your turn, and your jump distance is doubled for the turno",
+        "resource": {
+          "name": "Ki Points",
+          "maxnumber": "$monk_level",
+          "value": 1,
+          "recharge": "short rest"
+        }
+      },
+      "Unarmored Movement": {
+        "description": "Your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table."
+      }
+    },
+    {
+      "Monastic Tradition": {
+        "description": "you commit yourself to a monastic tradition: the Way of the Open Hand, the Way of Shadow, or the Way of the Four Elements, all detailed at the cnd of the class description. Your tradition grants you features at 3rd level and again at 6th, 11th, and 17th level."
+      },
+      "Deflect Missiles": {
+        "description": "you can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 +your Dexterity modifier + your monk level. Ifyou reduce the damage to 0, you can catch the missile if it is smalI enough for you to hold in one hand and you have at least one hand free, Ifyou catch a missile in this way, you can spend 1 ki point to make a ranged attack with the weapon or piece of ammunition you just caught, as part of the same reaction. You make this attack with proficiency, regardless of your weapon proficiencies, and the missile counts as a monk weapon for the attack.",
+        "resource": {
+          "name": "Deflect Missiles",
+          "number": "",
+          "maxnumber": 1,
+          "value": "1d10+$dex_mod+$monk_level",
+          "recharge": "turn"
+        }
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      },
+      "Slow Fall": {
+        "description": "You can use your reaction when you falI to reduce any falIing damage you take by an amount equal to five times your monk level.",
+        "resource": {
+          "name": "Slow Fall",
+          "number": "",
+          "maxnumber": 1,
+          "value": "5*$monk_level",
+          "recharge": "turn"
+        }
+      }
+    },
+    {
+      "Extra Attack": {
+        "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn.",
+        "bonus": {
+          "attacks": 1
+        }
+      },
+      "Stunning Strike": {
+        "description": "You can interfere with the flow of ki in an opponent's body. When you hit another creature with a melee weapon attack. you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn."
+      }
+    },
+    {
+      "Unarmored Movement": {
+        "description": "Your speed increases by 15 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table."
+      },
+      "Ki-Empowered Strikes": {
+        "description": "Your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage."
+      }
+    },
+    {
+      "Evasion": {
+        "description": "you rinstinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon's Iightning breath or a firebalJ spell. When you  are subjected to an effect that allows you to make a Dextcrity saving throw to take only half damage, you instead take no damage ifyou succeed on the saving throw, and only half damage ifyou fail."
+      },
+      "Stillness of Mind": {
+        "description": "you can use your action to end one effect on yourself that is causing you to be charmed or frightened."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Unarmored Movement": {
+        "description": "Your speed increases by 15 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table. You also gain the ability to move along vertical surfaces and across liquids on your turn without falIing during the move,"
+      }
+    },
+    {
+      "Unarmored Movement": {
+        "description": "Your speed increases by 20 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table. You also gain the ability to move along vertical surfaces and across liquids on your turn without falIing during the move,"
+      },
+      "Purity of Body": {
+        "description": " your mastery of the ki flowing throllgh you makes you immune to disease and poison."
+      }
+    },
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Tongue of the Sun and Moon": {
+        "description": "you learn to touch the ki of other minds so that you understand ali spoken languages. Moreover, any creature that can understand a langllage can understand what you say."
+      }
+    },
+    {
+      "Unarmored Movement": {
+        "description": "Your speed increases by 25 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table. You also gain the ability to move along vertical surfaces and across liquids on your turn without falIing during the move,"
+      },
+      "Diamond Soul": {
+        "description": "your mastery of ki grants you proficiency in ali saving throws. Additionally, whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result."
+      }
+    },
+    {
+      "Timeless Body": {
+        "description": "your ki sustains you so that you suffer none of the frailty of old age, and you can't be aged magically. You can still die of old age, however. In addition, you no longer need food or water."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {},
+    {
+      "Unarmored Movement": {
+        "description": "Your speed increases by 30 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table. You also gain the ability to move along vertical surfaces and across liquids on your turn without falIing during the move,"
+      },
+      "Empty Body": {
+        "description": "you can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to ali damage but force damage. Additionally, you can spend 8 ki points to cast the astral projection spell, withollt needing material components. When you do so, you can't take any other creatures with you."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Perfect Self": {
+        "description": "When you roll for initiative and have no ki points remaining, you regain 4 ki points."
+      }
+    }
+  ]
+}

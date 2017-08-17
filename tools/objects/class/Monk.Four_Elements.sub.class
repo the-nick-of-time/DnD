@@ -1,0 +1,181 @@
+{
+  "features": [ {},
+    {},
+    {},
+    {
+      "Disciple of the Elements": {
+        "description": "When you choose lhis lradilion ai 3rd level, you learn magical disciplines lhal harness lhe power of lhe four elemenls. A discipline requires you lo spend ki points each time you use it. You know lhe Elemenlal Allunemenl discipline and one olher elemenlal discipline of your choice, which are delailed in lhe \"Elemental Disciplines\" seclion below. You learn one addilional elemental discipline of your choice ai 61h, 111h.and 17th level. Whenever you learn a new elemenlal discipline, you can also replace one elemenlal discipline lhal you already know wilh a different discipline.\n Casting Elemental Spells. Some elemenlal disciplines allow you to casl spells. See chapter 10 for lhe general rules of spellcasling. To cast one of lhese spells, you use ils casting time and olher rules. but you don'l need lo provide malerial componenls for it. Once you reach 51h level in lhis class. you can spend additional ki poinls lo increase the level of an elemenlal discipline spelllhal you casl, provided lhallhe spell has an enhanced effecl at a higher level. as burning hands does. The spell's level increases by 1 for each additional ki point you spend. For example, ifyou are a 5th-level monk and use Sweeping Cinder Strike to cast burning hands, you can spend 3 ki points to cast it as a 2nd-level spell (the discipline's base cosi of 2 ki points plus 1). The maximum number of ki poinls you can spend to casl a spell in lhis Way(including ils base ki point cosi and any addilional ki poinls you spend to increase its level) is delermined byyour monk level. as shown in lhe Spells and Ki Poinls table.\n SPELLS ANO K1 PO1NTS\n Monk levels  |  Maximum Ki Points for a Spell\n 5th-8th      |            3\n 9th-12th     |            4\n 13th-16th    |            5\n 17th-201h    |            6"
+      },
+      "Elemental Attunement": {
+        "description": "Elemental Attunement: You can use your action to briefly control elemental forces nearby, causing one of the following effects of your choice:\nCreate a harmless, instantaneous sensory effect related to air, earth, fire, or water, such as a shower of sparks, a puff of wind, a spray of light mist, or a gentle rumbling of stone.\nInstantaneously light ar snuff out a cand1e, a torch, ar a small campfire.\nChill or warm up to 1 pound of nonliving material for up to 1 hour.\nCause earth, fire, water, or mist that can fit within a 1-foot cube to shape itself into a crude form you designate for 1 minute."
+      },
+      "choose": {
+        "number": 1,
+        "Fangs of the Fire Snake": {
+          "description": "When you use the Atlack action on your turn, you can spend 1 ki point to cause tendrils of llame to stretch out from your fists and feel. Your reach with your unarmed strikes increases by 10 feet for that action, as well as the rest of the turn. A hit with such an attack deals fire damage instead of bludgeoning damage, and ifyou spend 1 ki point when the attack hits, it also deals an extra 1d10 fire damage."
+        },
+        "Fist of Four Thunders": {
+          "description": "You can spend 2 ki points to cast thunderwave."
+        },
+        "Fist of Unbroken Air": {
+          "description": "You can create a blast of compressed air that strikes like a mighty fisl. As an action, you can spend 2 ki points and choose a creature within 30 feet of you. That creature must make a Strength saving throw. On a failed save, the creature takes 3dl0 bludgeoning damage, plus an extra 1dlO bludgeoning damage for each additional ki point you spend, and you can push the creature up to 20 feet away from you and knock it prone. On a successful save, the creature takes half as much damage, and you don't push it or knock it prone."
+        },
+        "Rush of the Gale Spirits": {
+          "description": "You can spend 2 ki points to cast gust of wind."
+        },
+        "Shape the Flowing River": {
+          "description": "As an action, you can spend I ki point to choose an area of ice or water no larger than 30 feet on a side within 120 feet of you. You can change water to ice within the area and vice versa, and you can reshape ice in the area in any manner you choose. You can raise or lower the ice's elevation, create ar fill in a trench, erect or llatten a wall, or form a pillar. The extent of any such changes can't exceed half the area's largest dimensiono For example, ifyou affect a 30-foot square, you can create a pillar up to 15 feet high, raise or lower the square's elevation by up to 15 feet, dig a trench up to 15 feet deep, and so on. You can't shape the ice to trap or injure a creature in the area."
+        },
+        "Sweeping Cinder Strike": {
+          "description": "You can spend 2 ki points to cast burning hands."
+        },
+        "Water Whip": {
+          "description": "You can spend 2 ki points as a bonus action to create a whip of water that shoves and pulls a creature to unbalance lI.A creature that you can see that is within 30 feet of you must make a Dexterity saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10 bludgeoning damage for each additional ki point you spend, and you can either knock it prone or pull it up to 25 feet closer to you. On a successful save, the creature takes half as much damage, and you don't pull Itor knock it prone."
+        }
+      }
+    },
+    {},
+    {},
+    {
+      "choose": {
+        "number": 1,
+        "Clench of the North Wind": {
+          "description": "You can spend 3 ki points to cast hold person."
+        },
+        "Fangs of the Fire Snake": {
+          "description": "When you use the Atlack action on your turn, you can spend 1 ki point to cause tendrils of llame to stretch out from your fists and feel. Your reach with your unarmed strikes increases by 10 feet for that action, as well as the rest of the turn. A hit with such an attack deals fire damage instead of bludgeoning damage, and ifyou spend 1 ki point when the attack hits, it also deals an extra 1d10 fire damage."
+        },
+        "Fist of Four Thunders": {
+          "description": "You can spend 2 ki points to cast thunderwave."
+        },
+        "Fist of Unbroken Air": {
+          "description": "You can create a blast of compressed air that strikes like a mighty fisl. As an action, you can spend 2 ki points and choose a creature within 30 feet of you. That creature must make a Strength saving throw. On a failed save, the creature takes 3dl0 bludgeoning damage, plus an extra 1dlO bludgeoning damage for each additional ki point you spend, and you can push the creature up to 20 feet away from you and knock it prone. On a successful save, the creature takes half as much damage, and you don't push it or knock it prone."
+        },
+        "Gong of the Summit": {
+          "description": "You can spend 3 ki points to cast shatter."
+        },
+        "Rush of the Gale Spirits": {
+          "description": "You can spend 2 ki points to cast gust of wind."
+        },
+        "Shape the Flowing River": {
+          "description": "As an action, you can spend I ki point to choose an area of ice or water no larger than 30 feet on a side within 120 feet of you. You can change water to ice within the area and vice versa, and you can reshape ice in the area in any manner you choose. You can raise or lower the ice's elevation, create ar fill in a trench, erect or llatten a wall, or form a pillar. The extent of any such changes can't exceed half the area's largest dimensiono For example, ifyou affect a 30-foot square, you can create a pillar up to 15 feet high, raise or lower the square's elevation by up to 15 feet, dig a trench up to 15 feet deep, and so on. You can't shape the ice to trap or injure a creature in the area."
+        },
+        "Sweeping Cinder Strike": {
+          "description": "You can spend 2 ki points to cast burning hands."
+        },
+        "Water Whip": {
+          "description": "You can spend 2 ki points as a bonus action to create a whip of water that shoves and pulls a creature to unbalance lI.A creature that you can see that is within 30 feet of you must make a Dexterity saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10 bludgeoning damage for each additional ki point you spend, and you can either knock it prone or pull it up to 25 feet closer to you. On a successful save, the creature takes half as much damage, and you don't pull Itor knock it prone."
+        }
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "choose": {
+        "number": 1,
+        "Clench of the North Wind": {
+          "description": "You can spend 3 ki points to cast hold person."
+        },
+        "Eternal Mountain Defense": {
+          "description": "You can spend 5 ki points to cast stoneskin, targeting yourself."
+        },
+        "Fangs of the Fire Snake": {
+          "description": "When you use the Atlack action on your turn, you can spend 1 ki point to cause tendrils of llame to stretch out from your fists and feel. Your reach with your unarmed strikes increases by 10 feet for that action, as well as the rest of the turn. A hit with such an attack deals fire damage instead of bludgeoning damage, and ifyou spend 1 ki point when the attack hits, it also deals an extra 1d10 fire damage."
+        },
+        "Fist of Four Thunders": {
+          "description": "You can spend 2 ki points to cast thunderwave."
+        },
+        "Fist of Unbroken Air": {
+          "description": "You can create a blast of compressed air that strikes like a mighty fisl. As an action, you can spend 2 ki points and choose a creature within 30 feet of you. That creature must make a Strength saving throw. On a failed save, the creature takes 3dl0 bludgeoning damage, plus an extra 1dlO bludgeoning damage for each additional ki point you spend, and you can push the creature up to 20 feet away from you and knock it prone. On a successful save, the creature takes half as much damage, and you don't push it or knock it prone."
+        },
+        "Flames of the Phoenix": {
+          "description": "You can spend 4 ki points to cast fireball."
+        },
+        "Gong of the Summit": {
+          "description": "You can spend 3 ki points to cast shatter."
+        },
+        "Mist Stance": {
+          "description": "You can spend 4 ki points to cast gaseous form, targeting yourself."
+        },
+        "Ride the Wind": {
+          "description": "You can spend 4 ki points to cast fly, targeting yourself."
+        },
+        "Rush of the Gale Spirits": {
+          "description": "You can spend 2 ki points to cast gust of wind."
+        },
+        "Shape the Flowing River": {
+          "description": "As an action, you can spend I ki point to choose an area of ice or water no larger than 30 feet on a side within 120 feet of you. You can change water to ice within the area and vice versa, and you can reshape ice in the area in any manner you choose. You can raise or lower the ice's elevation, create ar fill in a trench, erect or llatten a wall, or form a pillar. The extent of any such changes can't exceed half the area's largest dimensiono For example, ifyou affect a 30-foot square, you can create a pillar up to 15 feet high, raise or lower the square's elevation by up to 15 feet, dig a trench up to 15 feet deep, and so on. You can't shape the ice to trap or injure a creature in the area."
+        },
+        "Sweeping Cinder Strike": {
+          "description": "You can spend 2 ki points to cast burning hands."
+        },
+        "Water Whip": {
+          "description": "You can spend 2 ki points as a bonus action to create a whip of water that shoves and pulls a creature to unbalance lI.A creature that you can see that is within 30 feet of you must make a Dexterity saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10 bludgeoning damage for each additional ki point you spend, and you can either knock it prone or pull it up to 25 feet closer to you. On a successful save, the creature takes half as much damage, and you don't pull Itor knock it prone."
+        }
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "choose": {
+        "number": 1,
+        "Breath of Winter": {
+          "description": "You can spend 6 ki points to cast cone of cold."
+        },
+        "Clench of the North Wind": {
+          "description": "You can spend 3 ki points to cast hold person."
+        },
+        "Eternal Mountain Defense": {
+          "description": "You can spend 5 ki points to cast stoneskin, targeting yourself."
+        },
+        "Fangs of the Fire Snake": {
+          "description": "When you use the Atlack action on your turn, you can spend 1 ki point to cause tendrils of llame to stretch out from your fists and feel. Your reach with your unarmed strikes increases by 10 feet for that action, as well as the rest of the turn. A hit with such an attack deals fire damage instead of bludgeoning damage, and ifyou spend 1 ki point when the attack hits, it also deals an extra 1d10 fire damage."
+        },
+        "Fist of Four Thunders": {
+          "description": "You can spend 2 ki points to cast thunderwave."
+        },
+        "Fist of Unbroken Air": {
+          "description": "You can create a blast of compressed air that strikes like a mighty fisl. As an action, you can spend 2 ki points and choose a creature within 30 feet of you. That creature must make a Strength saving throw. On a failed save, the creature takes 3dl0 bludgeoning damage, plus an extra 1dlO bludgeoning damage for each additional ki point you spend, and you can push the creature up to 20 feet away from you and knock it prone. On a successful save, the creature takes half as much damage, and you don't push it or knock it prone."
+        },
+        "Flames of the Phoenix": {
+          "description": "You can spend 4 ki points to cast fireball."
+        },
+        "Gong of the Summit": {
+          "description": "You can spend 3 ki points to cast shatter."
+        },
+        "Mist Stance": {
+          "description": "You can spend 4 ki points to cast gaseous form, targeting yourself."
+        },
+        "Ride the Wind": {
+          "description": "You can spend 4 ki points to cast fly, targeting yourself."
+        },
+        "River of Hungry Flame": {
+          "description": "You can spend 5 ki points to cast wall of fire."
+        },
+        "Rush of the Gale Spirits": {
+          "description": "You can spend 2 ki points to cast gust of wind."
+        },
+        "Shape the Flowing River": {
+          "description": "As an action, you can spend I ki point to choose an area of ice or water no larger than 30 feet on a side within 120 feet of you. You can change water to ice within the area and vice versa, and you can reshape ice in the area in any manner you choose. You can raise or lower the ice's elevation, create ar fill in a trench, erect or llatten a wall, or form a pillar. The extent of any such changes can't exceed half the area's largest dimensiono For example, ifyou affect a 30-foot square, you can create a pillar up to 15 feet high, raise or lower the square's elevation by up to 15 feet, dig a trench up to 15 feet deep, and so on. You can't shape the ice to trap or injure a creature in the area."
+        },
+        "Sweeping Cinder Strike": {
+          "description": "You can spend 2 ki points to cast burning hands."
+        },
+        "Water Whip": {
+          "description": "You can spend 2 ki points as a bonus action to create a whip of water that shoves and pulls a creature to unbalance lI.A creature that you can see that is within 30 feet of you must make a Dexterity saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10 bludgeoning damage for each additional ki point you spend, and you can either knock it prone or pull it up to 25 feet closer to you. On a successful save, the creature takes half as much damage, and you don't pull it or knock it prone."
+        },
+        "Wave of Rolling Earth": {
+          "description": "You can spend 6 ki points to cast wall of stone."
+        }
+      }
+    },
+    {},
+    {},
+    {}
+  ]
+}

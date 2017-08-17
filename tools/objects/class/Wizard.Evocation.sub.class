@@ -1,0 +1,43 @@
+{
+  "features": [ {},
+    {},
+    {
+      "Evocation Savant": {
+        "description": "The gold and time you must spend to copy an evocation spell into your spellbook is halved."
+      },
+      "Sculpt Spells": {
+        "description": "you can create pockets of reIative safety within the effects of your evocation spclls. When you cast an evocation spell that affects other creatures that you can see, you can choose a number of them equal to 1 + the spell's level. The chosen creatures automatically succeed on their saving throws against the spell, and they take no damage if they would normally take half damage on a successful save."
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Potent Cantrip": {
+        "description": "Your damaging cantrips affect even creatures that avoid the brunt of the effect. When a creature succeeds on a saving throw against your cantrip, the creature takes half the cantrip's damage (if any) but suffers no additional effect from the cantrip."
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Empowered Evocation": {
+        "description": "You can add your Intelligence modifier to the damage roll of any wizard evocation spell you cast."
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Overchannel": {
+        "description": "you can increase the power of your simpler spells. When you cast a wizard spell of 5th level ar lower that deals damage, you can deal maximum damage with that spell. The first time you do so, you suffer no adverse effect. Ifyou use this feature again before you finish a long rest, you take 2d12 necrotic damage for each level of the spell, immediately after you cast it. Each time you use this feature again before finishing a long rest, the necrotic damage per spelllevel increases by 1d12. This damage ignores resistance and immunity."
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ]
+}

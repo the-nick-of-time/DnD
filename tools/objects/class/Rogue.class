@@ -1,0 +1,383 @@
+{
+  "name": "Rogue",
+  "superclass": [
+    "ALL"
+  ],
+  "hit_dice": "1d8",
+  "proficiencies": {
+    "armors": {
+      "types": [
+        "Light"
+      ],
+      "specific": []
+    },
+    "weapons": {
+      "types": [
+        "Simple"
+      ],
+      "specific": ["Hand Crossbow", "Longsword", "Rapier", "Shortsword"]
+    },
+    "tools": [],
+    "saves": [
+      "Dexterity",
+      "Intelligence"
+    ],
+    "skills": {
+      "number": 2,
+      "which": [
+        "Acrobatics",
+        "Athletics",
+        "Deception",
+        "Insight",
+        "Intimidation",
+        "Investigation",
+        "Perception",
+        "Performance",
+        "Persuasion",
+        "Sleight of Hand",
+        "Stealth"
+      ]
+    }
+  },
+  "features": [ {},
+    {
+      "choose": {
+        "number": 2,
+        "Expertise: Athletics": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Athletics.",
+        "bonus": {
+          "skill": {"Athletics": "$proficiency"}
+        }},
+        "Expertise: Acrobatics": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Acrobatics.",
+        "bonus": {
+          "skill": {"Acrobatics": "$proficiency"}
+        }},
+        "Expertise: Sleight of Hand": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Sleight of Hand.",
+        "bonus": {
+          "skill": {"Sleight of Hand": "$proficiency"}
+        }},
+        "Expertise: Stealth": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Stealth.",
+        "bonus": {
+          "skill": {"Stealth": "$proficiency"}
+        }},
+        "Expertise: Arcana": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Arcana.",
+        "bonus": {
+          "skill": {"Arcana": "$proficiency"}
+        }},
+        "Expertise: History": {"description": "Your proficiency bonus is doubled for any ability check you make that uses History.",
+        "bonus": {
+          "skill": {"History": "$proficiency"}
+        }},
+        "Expertise: Investigation": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Investigation.",
+        "bonus": {
+          "skill": {"Investigation": "$proficiency"}
+        }},
+        "Expertise: Nature": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Nature.",
+        "bonus": {
+          "skill": {"Nature": "$proficiency"}
+        }},
+        "Expertise: Religion": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Religion.",
+        "bonus": {
+          "skill": {"Religion": "$proficiency"}
+        }},
+        "Expertise: Animal Handling": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Animal Handling.",
+        "bonus": {
+          "skill": {"Animal Handling": "$proficiency"}
+        }},
+        "Expertise: Insight": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Insight.",
+        "bonus": {
+          "skill": {"Insight": "$proficiency"}
+        }},
+        "Expertise: Medicine": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Medicine.",
+        "bonus": {
+          "skill": {"Medicine": "$proficiency"}
+        }},
+        "Expertise: Perception": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Perception.",
+        "bonus": {
+          "skill": {"Perception": "$proficiency"}
+        }},
+        "Expertise: Survival": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Survival.",
+        "bonus": {
+          "skill": {"Survival": "$proficiency"}
+        }},
+        "Expertise: Deception": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Deception.",
+        "bonus": {
+          "skill": {"Deception": "$proficiency"}
+        }},
+        "Expertise: Intimidation": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Intimidation.",
+        "bonus": {
+          "skill": {"Intimidation": "$proficiency"}
+        }},
+        "Expertise: Performance": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Performance.",
+        "bonus": {
+          "skill": {"Performance": "$proficiency"}
+        }},
+        "Expertise: Persuasion": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Persuasion.",
+        "bonus": {
+          "skill": {"Persuasion": "$proficiency"}
+        }},
+        "Expertise: Thieves' Tools": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Thieves' Tools.",
+        "bonus": {
+          "tool": {"Thieves' Tools": "$proficiency"}
+        }}
+      },
+      "Sneak Attack": {
+        "description": "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.",
+        "resource": {
+          "name": "Sneak Attack",
+          "maxnumber": 1,
+          "value": "1d6",
+          "recharge": "turn"
+        }
+      },
+      "Thieves' Cant": {
+        "description": "During your rogue training you learned thieves' cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves' cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly. In addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves' guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run."
+      }
+    },
+    {
+      "Cunning Action": {
+        "description": "Your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action."
+      }
+    },
+    {
+      "Sneak Attack": {
+        "description": "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 2d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.",
+        "resource": {
+          "name": "Sneak Attack",
+          "maxnumber": 1,
+          "value": "2d6",
+          "recharge": "turn"
+        }
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Sneak Attack": {
+        "description": "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 3d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.",
+        "resource": {
+          "name": "Sneak Attack",
+          "maxnumber": 1,
+          "value": "3d6",
+          "recharge": "turn"
+        }
+      },
+      "Uncanny Dodge": {
+        "description": "When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
+      }
+    },
+    {
+      "choose": {
+        "number": 2,
+        "Expertise: Athletics": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Athletics.",
+        "bonus": {
+          "skill": {"Athletics": "$proficiency"}
+        }},
+        "Expertise: Acrobatics": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Acrobatics.",
+        "bonus": {
+          "skill": {"Acrobatics": "$proficiency"}
+        }},
+        "Expertise: Sleight of Hand": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Sleight of Hand.",
+        "bonus": {
+          "skill": {"Sleight of Hand": "$proficiency"}
+        }},
+        "Expertise: Stealth": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Stealth.",
+        "bonus": {
+          "skill": {"Stealth": "$proficiency"}
+        }},
+        "Expertise: Arcana": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Arcana.",
+        "bonus": {
+          "skill": {"Arcana": "$proficiency"}
+        }},
+        "Expertise: History": {"description": "Your proficiency bonus is doubled for any ability check you make that uses History.",
+        "bonus": {
+          "skill": {"History": "$proficiency"}
+        }},
+        "Expertise: Investigation": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Investigation.",
+        "bonus": {
+          "skill": {"Investigation": "$proficiency"}
+        }},
+        "Expertise: Nature": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Nature.",
+        "bonus": {
+          "skill": {"Nature": "$proficiency"}
+        }},
+        "Expertise: Religion": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Religion.",
+        "bonus": {
+          "skill": {"Religion": "$proficiency"}
+        }},
+        "Expertise: Animal Handling": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Animal Handling.",
+        "bonus": {
+          "skill": {"Animal Handling": "$proficiency"}
+        }},
+        "Expertise: Insight": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Insight.",
+        "bonus": {
+          "skill": {"Insight": "$proficiency"}
+        }},
+        "Expertise: Medicine": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Medicine.",
+        "bonus": {
+          "skill": {"Medicine": "$proficiency"}
+        }},
+        "Expertise: Perception": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Perception.",
+        "bonus": {
+          "skill": {"Perception": "$proficiency"}
+        }},
+        "Expertise: Survival": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Survival.",
+        "bonus": {
+          "skill": {"Survival": "$proficiency"}
+        }},
+        "Expertise: Deception": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Deception.",
+        "bonus": {
+          "skill": {"Deception": "$proficiency"}
+        }},
+        "Expertise: Intimidation": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Intimidation.",
+        "bonus": {
+          "skill": {"Intimidation": "$proficiency"}
+        }},
+        "Expertise: Performance": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Performance.",
+        "bonus": {
+          "skill": {"Performance": "$proficiency"}
+        }},
+        "Expertise: Persuasion": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Persuasion.",
+        "bonus": {
+          "skill": {"Persuasion": "$proficiency"}
+        }},
+        "Expertise: Thieves' Tools": {"description": "Your proficiency bonus is doubled for any ability check you make that uses Thieves' Tools.",
+        "bonus": {
+          "tool": {"Thieves' Tools": "$proficiency"}
+        }}
+      }
+    },
+    {
+      "Sneak Attack": {
+        "description": "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 4d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.",
+        "resource": {
+          "name": "Sneak Attack",
+          "maxnumber": 1,
+          "value": "4d6",
+          "recharge": "turn"
+        }
+      },
+      "Evasion": {
+        "description": "You can nimbly dodge out of the way of certain area effects, such as a red dragon's fiery breath or an ice storm spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage ifyou succeed on the saving throw, and only half damage ifyou fail."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Sneak Attack": {
+        "description": "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 5d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.",
+        "resource": {
+          "name": "Sneak Attack",
+          "maxnumber": 1,
+          "value": "5d6",
+          "recharge": "turn"
+        }
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Sneak Attack": {
+        "description": "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 6d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.",
+        "resource": {
+          "name": "Sneak Attack",
+          "maxnumber": 1,
+          "value": "6d6",
+          "recharge": "turn"
+        }
+      },
+      "Reliable Talent": {
+        "description": "You have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Sneak Attack": {
+        "description": "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 7d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.",
+        "resource": {
+          "name": "Sneak Attack",
+          "maxnumber": 1,
+          "value": "7d6",
+          "recharge": "turn"
+        }
+      }
+    },
+    {
+      "Blindsense": {
+        "description": "If you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you."
+      }
+    },
+    {
+      "Sneak Attack": {
+        "description": "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 8d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.",
+        "resource": {
+          "name": "Sneak Attack",
+          "maxnumber": 1,
+          "value": "8d6",
+          "recharge": "turn"
+        }
+      },
+      "Slippery Mind": {
+        "description": "You have acquired greater mental strength. You gain proficiency in Wisdom saving throws."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Sneak Attack": {
+        "description": "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 9d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.",
+        "resource": {
+          "name": "Sneak Attack",
+          "maxnumber": 1,
+          "value": "9d6",
+          "recharge": "turn"
+        }
+      }
+    },
+    {
+      "Elusive": {
+        "description": "You are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't incapacitated."
+      }
+    },
+    {
+      "Sneak Attack": {
+        "description": "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 10d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.",
+        "resource": {
+          "name": "Sneak Attack",
+          "maxnumber": 1,
+          "value": "10d6",
+          "recharge": "turn"
+        }
+      },
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Stroke of Luck": {
+        "description": " you have an uncanny knack for succeeding when you need to. Ifyour attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20. Once you use this feature, you can't use it again until you finish a short or long rest.",
+        "resource": {
+          "name": "Stroke of Luck",
+          "maxnumber": 1,
+          "value": "",
+          "recharge": "short rest"
+        }
+      }
+    }
+  ]
+}

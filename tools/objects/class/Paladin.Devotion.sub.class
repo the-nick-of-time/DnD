@@ -1,0 +1,96 @@
+{
+  "features": [ {},
+    {},
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Protection From Evil and Good", "Sanctuary"]
+        }
+      },
+      "Channel Divinity": {
+        "description": "Your oath allows you to channel divine energy to fuel magical effects. Each ChanneI Divinity option provided by your oath explains how to use it. When you use your ChanneI Divinity, you choose which option to use. You must then finish a short ar long rest to use your Channel Divinity again. Some Channel Divinity effects require saving throws. When you use such an effect from this c1ass, the DC equals your paladin spell save DC.",
+        "resource": {
+          "name": "Channel Divinity",
+          "maxnumber": 1,
+          "value": 0,
+          "recharge": "short rest"
+        }
+      },
+      "Channel Divinity: Sacred Weapon": {
+        "description": "As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity.For I minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of+1). The weapon also emits bright light in a 20-foot radius and dim light 20 feel beyond that. 1fthe weapon is not already magical, it becomes magical for the duration. Youcan end this effect on your turn as part of any other action. 1fyou are no longer holding or carrying this weapon, or ifyou fali unconscious, this effect ends."
+      },
+      "Channel Divinity: Turn the Unholy": {
+        "description": "As an action, you present your holysymbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet ofyou must make a Wisdom saving throw. 1fthe creature fails its saving throw, it is turned for I minute or until it takes damage. A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet ofyou. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. Ifthere's nowhere to move, the creature can use the Dodge action."
+      }
+    },
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Protection From Evil and Good", "Sanctuary", "Lesser Restoration", "Zone of Truth"]
+        }
+      }
+    },
+    {},
+    {
+      "Aura of Devotion": {
+        "description": "you and friendly creatures within 10 feet ofyou can't be charmed while you are conscious."
+      }
+    },
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Protection From Evil and Good", "Sanctuary", "Lesser Restoration", "Zone of Truth", "Beacon of Hope", "Dispel Magic"]
+        }
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Protection From Evil and Good", "Sanctuary", "Lesser Restoration", "Zone of Truth", "Beacon of Hope", "Dispel Magic", "Freedom of Movement", "Guardian of Faith"]
+        }
+      }
+    },
+    {},
+    {
+      "Purity of Spirit": {
+        "description": "You are always under the effects ofa protection from evil and good spell."
+      }
+    },
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Protection From Evil and Good", "Sanctuary", "Lesser Restoration", "Zone of Truth", "Beacon of Hope", "Dispel Magic", "Freedom of Movement", "Guardian of Faith", "Commune", "Flame Strike"]
+        }
+      }
+    },
+    {
+      "Aura of Devotion": {
+        "description": "you and friendly creatures within 30 feet ofyou can't be charmed while you are conscious."
+      }
+    },
+    {},
+    {
+      "Holy Nimbus": {
+        "description": "As an action, you can emanate an aura of sunlight. For I minute, bright light shines from yau in a 30-foot radius, and dim light shines 30 feet beyond that. Whenever an enemy creature starts its turo in the bright light, the creature takes lO radiant damage. In addition, for the duration, you have advantage on saving throws against spells cast byfiends or undead. Once you use this feature, you can't use it again until you finish a long rest.",
+        "resource": {
+          "name": "Holy Nimbus",
+          "maxnumber": 1,
+          "value": 10,
+          "recharge": "long rest"
+        }
+      }
+    }
+  ]
+}

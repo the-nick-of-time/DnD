@@ -1,0 +1,97 @@
+{
+  "features": [ {},
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Bless", "Cure Wounds"]
+        }
+      },
+      "Bonus Proficiency": {
+        "description": "You gain proficiency in heavy armor."
+      },
+      "Disciple of Life": {
+        "description": "Your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level."
+      }
+    },
+    {
+      "Channel Divinity: Preserve Life": {
+        "description": "You can use your Channel Divinity to heal the badly injured. As an action, you present your holy symbol and evoke healing energy that can restorc a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a ereature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct."
+      }
+    },
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Bless", "Cure Wounds", "Lesser Restoration", "Spiritual Weapon"]
+        }
+      }
+    },
+    {},
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Bless", "Cure Wounds", "Lesser Restoration", "Spiritual Weapon", "Beacon of Hope", "Revivify"]
+        }
+      }
+    },
+    {
+      "Blessed Healer": {
+        "description": "The healing spclls you cast on others heal you as well. When you cast a spell of 1st level or higher that restores hit points to a creature other than you, you regain hit points equal to 2 + the spell's level."
+      }
+    },
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Bless", "Cure Wounds", "Lesser Restoration", "Spiritual Weapon", "Beacon of Hope", "Revivify", "Death Ward", "Guardian of Faith"]
+        }
+      }
+    },
+    {
+      "Divine Strike": {
+        "description": "You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target.",
+        "resource": {
+          "name": "Divine Strike",
+          "maxnumber": 1,
+          "value": "1d8",
+          "recharge": "turn"
+        }
+      }
+    },
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Bless", "Cure Wounds", "Lesser Restoration", "Spiritual Weapon", "Beacon of Hope", "Revivify", "Death Ward", "Guardian of Faith", "Mass Cure Wounds", "Raise Dead"]
+        }
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "Divine Strike": {
+        "description": "You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 radiant damage to the target.",
+        "resource": {
+          "name": "Divine Strike",
+          "maxnumber": 1,
+          "value": "2d8",
+          "recharge": "turn"
+        }
+      }
+    },
+    {},
+    {},
+    {
+      "Supreme Healing": {
+        "description": "When you would normally roll one or more dice to restore hit points with a spell, you instead use the highest number possible for each die. For example, instead of restoring 2d6 hit points to a creature, you restore 12."
+      }
+    },
+    {},
+    {},
+    {}
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "features": [ {},
+    {
+      "Dragon Ancestor": {
+        "description": " you choose one type of dragon as your ancestor. The damage type associated with each dragon is used by features you gain later.\nDRACONIC  ->  ANCESTRY\nDragon  ->  DamageType\nBlack  ->  Acid\nBlue  ->  Lightning\nBrass  ->  Fire\nBronze  ->  Lightning\nCopper  ->  Acid\nGold  ->  Fire\nGreen  ->  Poison\nRed  ->  Fire\nSilver  ->  Cold\nWhite  ->  Cold\nYou can speak, read, and write Draconic. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check."
+      },
+      "Draconic Resilience": {
+        "description": "As magic f10wsthrough your body, it causes physical traits of your dragon ancestors to emerge. At 1st level, your hit point maximum increases by 1and increases by 1 again whenever you gain a level in this c1ass. Additionally, parts of your skin are covered by a thin sheen of dragon-Iike scales. When you aren't wearing armar, your AC equals 13 + your Dexterity modifier.",
+        "bonus": {
+          "base_AC": 13
+        }
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "Elemental Affinity": {
+        "description": "When you cast a spell thal deals damage of the type associated with your draconic ancestry, add your Charisma modifier to that damage. At the same time, you can spend 1sorcery point to gain resistance to that damage type for 1 hour."
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "Dragon Wings": {
+        "description": "You gain the ability to sprout a pair of dragon wings from your back, gaining a flying speed equal to your current speed. You can create these wings as a bonus action on your turno They last until you dismiss them as a bonus action on your turn. Youcan't manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them."
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Draconic Presence": {
+        "description": "You can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feel. For I minute or until you lose your concentration (as ifyou were casting a concentration spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed (ifyou chose awe) or frightened (ifyou chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours."
+      }
+    },
+    {},
+    {}
+  ]
+}

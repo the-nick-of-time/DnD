@@ -1,0 +1,50 @@
+{
+  "features": [ {},
+    {
+      "Wild Magic Surge": {
+        "description": "your spellcasting can unleash surges of untamed magic. lmmediately after you cast a sorcerer spell of 1st level or higher, the DM can have you roll a d20. Ifyou roll a I, roll on the Wild Magic Surge table to create a random magical effect."
+      },
+      "Tides of Chaos": {
+        "description": "You can manipulate the forces of chance and chaos to gain advantage on one attack roll, ability check, or saving throw. Once you do so, you must finish a long rest before you can use this feature again. Any time before you regain the use of lhis feature, the DM can have you roll on the Wild Magic Surge table immediately after you cast a sorcerer spell of 1st level or higher. You then regain the use of this feature.",
+        "resource": {
+          "name": "Tides of Chaos Advantage",
+          "number": "",
+          "maxnumber": 1,
+          "value": 0,
+          "recharge": "long rest"
+        }
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "Bend Luck": {
+        "description": "you have the ability to twist fate using your wild magic. When another creature you can see makes an attack roll, an ability check, or a saving throw, you can use your reaction and spend 2 sorcery points to roll 1d4 and apply the number rolled as a bonus or penalty (your choice) to the creature's roll. You can do so after the creature rolls but before any effects of the roll occur."
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "Controlled Chaos": {
+        "description": "You gain a modicum of control over the surges of your wild magic. Whenever you roll on the Wild Magic Surge table, you can roll twice and use either number."
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Spell Bombardment": {
+        "description": "The harmful energy ofyour spells intensifies. When you roll damage for a spell and roll the highest number possible on any of the dice, choose one of those dice, roll it again and add that roll to the damage. You can use the feature only once per turn."
+      }
+    },
+    {},
+    {}
+  ]
+}

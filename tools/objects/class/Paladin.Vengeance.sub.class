@@ -1,0 +1,92 @@
+{
+  "features": [ {},
+    {},
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Bane", "Hunter's Mark"]
+        }
+      },
+      "Channel Divinity": {
+        "description": "Your oath allows you to channel divine energy to fuel magical effects. Each ChanneI Divinity option provided by your oath explains how to use it. When you use your ChanneI Divinity, you choose which option to use. You must then finish a short ar long rest to use your Channel Divinity again. Some Channel Divinity effects require saving throws. When you use such an effect from this c1ass, the DC equals your paladin spell save DC.",
+        "resource": {
+          "name": "Channel Divinity",
+          "maxnumber": 1,
+          "value": 0,
+          "recharge": "short rest"
+        }
+      },
+      "Channel Divinity: Abjure Enemy": {
+        "description": "As an aetion, you present your holy symbol and speak a prayer of denunciation, using your ChanneI Divinlty. Choose one ereature within 60 feet of you that you ean see. That ereature must make a Wisdom saving throw, unless it is immune to being frightened. Fiends and undead have disadvantage on this saving throw. On a failed save, lhe ereature is frightened for I minute or until It takes any damage. While frightened, the ereature's speed is O, and It ean't benefit from any bonus to its speed. On a sueeessful save, the ereature's speed is halved for I minute or until the ereature takes any damage."
+      },
+      "Channel Divinity: Vow of Enmity": {
+        "description": "As a bonus aetion, you ean utter a vow of enmity against a ereature you ean see within 10 feet of you, using your Channel Divinity. You gain advantage on attaek rolls against lhe ereature for 1 minute or until it drops to O hit points or falls uneonscious."
+      }
+    },
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Bane", "Hunter's Mark", "Hold Person", "Misty Step"]
+        }
+      }
+    },
+    {},
+    {
+      "Relentless Avenger": {
+        "description": "your supernatural focus helps you close off a foe's retreat. When you hit a ereature with an opportunity attaek, you ean move up to half your speed immediately after the attaek and as part of the same reaetion. This movement doesn't provoke opportunityattaeks."
+      }
+    },
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Bane", "Hunter's Mark", "Hold Person", "Misty Step", "Haste", "Protection From Energy"]
+        }
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Bane", "Hunter's Mark", "Hold Person", "Misty Step", "Haste", "Protection From Energy", "Banishment", "Dimension Door"]
+        }
+      }
+    },
+    {},
+    {
+      "Soul of Vengeance": {
+        "description": "The authority with which you speak your Vow of Enmity gives you greater power over your foe. When a ereature under the effeet of your Vow of Enmity makes an attaek, you ean use your reaetion to make a melee weapon attaek against that ereature if it is within range."
+      }
+    },
+    {},
+    {
+      "Oath Spells": {
+        "description": "Once you gain an oath spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.",
+        "bonus": {
+          "always_prepared": ["Bane", "Hunter's Mark", "Hold Person", "Misty Step", "Haste", "Protection From Energy", "Banishment", "Dimension Door", "Hold Monster", "Scrying"]
+        }
+      }
+    },
+    {},
+    {},
+    {
+      "Avenging Angel": {
+        "description": "At 20th level, you ean assume the form of an angelie avenger. Using your aetion, you undergo a transformation. For I hour, you gain the following benefits: Wings sprout from your baek and grant you a fiying speed of 60 feet. You emanate an aura of menaee in a 30-foot radius. The first time any enemy ereature enters the aura or starts its turn there during a battle, the ereature must sueeeed on a Wisdom saving throw or beeome fright- ened of you for I minute or untit it takes any damage. Attaek rolls against the frightened ereature have advantage. Onee you use this feature, you ean't use it again untit you finish a long rest.",
+        "resource": {
+          "name": "Avenging Angel",
+          "maxnumber": 1,
+          "value": 10,
+          "recharge": "long rest"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "features": [ {},
+    {},
+    {
+      "Illusion Savant": {
+        "description": "The gold and time you must spend to copy an illusion spell into your spellbook is halved."
+      },
+      "Improved Minor Illusion": {
+        "description": "you learn the minor illusion cantrip. If you already know this cantrip, you learn a different wizard cantrip of your choice. The cantrip doesn't count against your number of cantrips known. When you cast minar illusian, yau can create bath a saund and an image with a single casting of the spell."
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Malleable Illusions": {
+        "description": "when you cast an illusion spell that has a duration of 1 minute or longer, you can use yaur action to change the nature of that illusion (using the spell's normal parameters for lhe illusion), provided that you can see the illusion."
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Illusory Self": {
+        "description": "You can create an illusory duplicate ofyourself as an instant, almost instinctual reaction to danger. When a creature makes an attack roll against you, you can use your reaction to interpose the illusory duplicate between the attacker and yourself. The attack automatically misses you, then the ilIusion dissipates. Once you use this feature, you can't use it again untU you finish a short ar long rest.",
+        "resource": {
+          "name": "Illusory Self",
+          "maxnumber": 1,
+          "value": 0,
+          "recharge": "short rest"
+        }
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Illusory Reality": {
+        "description": "You have learned the secret ofweaving shadow magic into your illusions to give them a semi- reality. When you cast an illusion spell of 1st level or higher, you can choose one inanimate, nonmagical object that is part of the illusion and make that object real. You can do this on your turn as a bonus action while the spell is ongoing. The object remains real for I minute. For example, you can create an illusion of a bridge over a chasm and then make it reallong enough for your allies to cross. The object can't deal damage or otherwise directly harm anyone."
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ]
+}

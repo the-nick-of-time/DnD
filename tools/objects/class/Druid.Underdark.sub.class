@@ -1,0 +1,71 @@
+{
+  "features": [ {},
+    {},
+    {
+      "Bonus Cantrip": {
+        "description": "You learn one additional druid cantrip of your choice."
+      },
+      "Natural Recovery": {
+        "description": "you can regain some of your magical energy by sitting in meditation and communing with nature, During a short rest, you choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less lhan half your druid level (rounded up), and none of the slots can be 6th level or higher. You can't use this feature again until you finish a long rest For example, when You are a 4th-level druid, You can recover up to two levels worth of spell slots, You can recover either a 2nd-level slot or two 1st-level slots."
+      }
+    },
+    {
+      "Circle Spells": {
+        "description": "Your mystical connection to the land infuses you with lhe ability lo cast certa in spells, At 3rd, 5th, 7th, and 9th level you gain access to circle spells connecled to the land where you became a drllid, Choose that land-arctic, coast, desert, forest, grassland. mountain, swamp, or Underdark-and consult the associated list of spells, Once you gain access lo a circle spell. you always have il prepared, and it doesn't count against the nllmber of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
+        "bonus": {
+          "always_prepared": ["Spider Climb", "Web"]
+        }
+      }
+    },
+    {},
+    {
+      "Circle Spells": {
+        "description": "Your mystical connection to the land infuses you with lhe ability lo cast certa in spells, At 3rd, 5th, 7th, and 9th level you gain access to circle spells connecled to the land where you became a drllid, Choose that land-arctic, coast, desert, forest, grassland. mountain, swamp, or Underdark-and consult the associated list of spells, Once you gain access lo a circle spell. you always have il prepared, and it doesn't count against the nllmber of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
+        "bonus": {
+          "always_prepared": ["Spider Climb", "Web", "Gaseous Form", "Stinking Cloud"]
+        }
+      }
+    },
+    {
+      "Land's Stride": {
+        "description": "Mving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard. In addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such those created by the entangle spell."
+      }
+    },
+    {
+      "Circle Spells": {
+        "description": "Your mystical connection to the land infuses you with lhe ability lo cast certa in spells, At 3rd, 5th, 7th, and 9th level you gain access to circle spells connecled to the land where you became a drllid, Choose that land-arctic, coast, desert, forest, grassland. mountain, swamp, or Underdark-and consult the associated list of spells, Once you gain access lo a circle spell. you always have il prepared, and it doesn't count against the nllmber of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
+        "bonus": {
+          "always_prepared": ["Spider Climb", "Web", "Gaseous Form", "Stinking Cloud", "Greater Invisibility", "Stone Shape"]
+        }
+      }
+    },
+    {},
+    {
+      "Circle Spells": {
+        "description": "Your mystical connection to the land infuses you with lhe ability lo cast certa in spells, At 3rd, 5th, 7th, and 9th level you gain access to circle spells connecled to the land where you became a drllid, Choose that land-arctic, coast, desert, forest, grassland. mountain, swamp, or Underdark-and consult the associated list of spells, Once you gain access lo a circle spell. you always have il prepared, and it doesn't count against the nllmber of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
+        "bonus": {
+          "always_prepared": ["Spider Climb", "Web", "Gaseous Form", "Stinking Cloud", "Greater Invisibility", "Stone Shape", "Cloudkill", "Insect Plague"]
+        }
+      }
+    },
+    {
+      "Nature's Ward": {
+        "description": "You can't be charmed or frightened by elementals or fey,and you are immune to poison and disease."
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Nature's Sanctuary": {
+        "description": "Creatures of the natural world sense your connection to nature and become hesitant to attack you. When a beast or plant creature attacks you, that creature must make a Wisdom saving throw against your druid spell save DC. On a failed save, the creature must choose a different target, or the attack automatically misses. On a successful save, the creature is immune to this effect for 24 hours. The creature is aware of this effect before it makes its attack against you."
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ]
+}

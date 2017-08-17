@@ -10,8 +10,7 @@
     "slots": "full",
     "levels": "full",
     "known": "all",
-    "prepare": "$wis_mod+$caster_level",
-    "always_prepared": []
+    "prepare": "$wis_mod+$caster_level"
   },
   "features": [
     {},

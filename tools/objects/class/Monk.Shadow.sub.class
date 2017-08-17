@@ -1,0 +1,40 @@
+{
+  "features": [ {},
+    {},
+    {},
+    {
+      "Shadow Arts": {
+        "description": "You can use your ki to duplicate the effects of certain spells. As an action. you can spend 2 ki points to cast darkness, darkvision. pass without trace, or si/ence. without providing material components. Addilionally. you gain the minor iJlusion cantrip ifyou don't already know it."
+      }
+    },
+    {},
+    {},
+    {
+      "Shadow Step": {
+        "description": "You gain the ability to step from one shadow into another. When you are in dim Iight or darkness. as a bonus action you can teleport up to 60 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn."
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "Cloak of Shadows": {
+        "description": "You have learned lo beco me one wilh lhe shadows. When you are in an area of dim lighl or darkness, you can use your aclion lo become invisible. You remain invisible until you make an altack. casl a spell. or are in an area of brighl light."
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "Opportunist": {
+        "description": "You can exploit a creature's momentary distraction when it is hit by an attack. Whenever a creature within 5 feet of you is hit by an attack made by a creature other than you, you can use your reaction to make a melee attack against that creature."
+      }
+    },
+    {},
+    {},
+    {}
+  ]
+}

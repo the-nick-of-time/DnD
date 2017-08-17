@@ -1,0 +1,103 @@
+{
+  "features": [ {},
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Divine Favor", "Shield of Faith"]
+        }
+      },
+      "Bonus Proficiencies": {
+        "description": "You gain proficiency with martial weapons and heavy armor."
+      },
+      "War Priest": {
+        "description": "your god delivers bolts of inspiration to you while you are engaged in battle. When you use the Attack action, you can make one weapon attack as a bonus action. You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain ali expended uses when you finish a long rest.",
+        "resource": {
+          "name": "War Priest Extra Attack",
+          "maxnumber": "$wis_mod",
+          "value": "",
+          "recharge": "long rest"
+        }
+      }
+    },
+    {
+      "Channel Divinity: Guided Strike": {
+        "description": "You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
+      }
+    },
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Divine Favor", "Shield of Faith", "Magic Weapon", "Spiritual Weapon"]
+        }
+      }
+    },
+    {},
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Divine Favor", "Shield of Faith", "Magic Weapon", "Spiritual Weapon", "Crusader's Mantle", "Spirit Guardians"]
+        }
+      }
+    },
+    {
+      "Channel Divinity: War God's Blessing": {
+        "description": "When a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
+      }
+    },
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Divine Favor", "Shield of Faith", "Magic Weapon", "Spiritual Weapon", "Crusader's Mantle", "Spirit Guardians", "Freedom of Movement", "Stoneskin"]
+        }
+      }
+    },
+    {
+      "Divine Strike": {
+        "description": "You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 damage of the same type dealt by the weapon to the target.",
+        "resource": {
+          "name": "Divine Strike",
+          "maxnumber": 1,
+          "value": "1d8",
+          "recharge": "turn"
+        }
+      }
+    },
+    {
+      "Domain Spells": {
+        "description": "Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.",
+        "bonus": {
+          "always_prepared": ["Divine Favor", "Shield of Faith", "Magic Weapon", "Spiritual Weapon", "Crusader's Mantle", "Spirit Guardians", "Freedom of Movement", "Stoneskin", "Flame Strike", "Hold Monster"]
+        }
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "Divine Strike": {
+        "description": "You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 2d8 damage of the same type dealt by the weapon to the target.",
+        "resource": {
+          "name": "Divine Strike",
+          "maxnumber": 1,
+          "value": "2d8",
+          "recharge": "turn"
+        }
+      }
+    },
+    {},
+    {},
+    {
+      "Avatar of Battle": {
+        "description": "You gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons."
+      }
+    },
+    {},
+    {},
+    {}
+  ]
+}

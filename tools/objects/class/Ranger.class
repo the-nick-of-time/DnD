@@ -38,55 +38,115 @@
     "ability": "Wisdom",
     "slots": "half",
     "levels": "half",
-    "known": [
-      0,
-      2,
-      3,
-      3,
-      4,
-      4,
-      5,
-      5,
-      6,
-      6,
-      7,
-      7,
-      8,
-      8,
-      9,
-      9,
-      10,
-      10,
-      11,
-      11
-    ],
-    "prepare": [
-      0,
-      2,
-      3,
-      3,
-      4,
-      4,
-      5,
-      5,
-      6,
-      6,
-      7,
-      7,
-      8,
-      8,
-      9,
-      9,
-      10,
-      10,
-      11,
-      11
-    ],
-    "always prepared": []
+    "known": "limited",
+    "prepare": "known"
   },
-  "features": {
-    "Favored Enemy": {
-      "1": "description"
+  "features": [ {},
+    {
+      "Favored Enemy": {
+        "description": "You have significant experience studying, tracking, hunting, and even talking to a certain type of enemy. Choose a type of favored enemy: aberrations, beasts, celestiais, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can select two races of humanoid (such as gnolls and orcs) as favored enemies. You have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them. When you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at alI."
+      },
+      "Natural Explorer": {
+        "description": "You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain: arctic, coast, desert, forest, grassland, mountain, swamp, or the Underdark. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled ifyou are using a skill that you're proficient in. While traveling for an hour or more in your favored terrain, you gain the following benefits:\nDifticult terrain doesn't slow your group's traveI.\nYour group can't become lost except by magical means.\nEven when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.\nIf you are traveling alone, you can move stealthily at a normal pace.\nWhen you forage, you find twice as much food as you normally would.\nWhile tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.\nYou choose additional favored terrain types aI 6th and 10th level."
+      }
+    },
+    {
+      "choose": {
+        "number": 1,
+        "Fighting Style: DUELING": {
+          "description": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\nDUELING\nWhen you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon."
+        },
+        "Fighting Style: TWO-WEAPON FIGHTING": {
+          "description": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\nTWO-WEAPON FIGHTING\nWhen you engage in two-weapon fighting, you can add your ability modifier to the damage of lhe second attack."
+        },
+        "Fighting Style: ARCHERY": {
+          "description": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\nARCHERY\nYou gain a +2 bonus to attack rolls you make with ranged weapons."
+        },
+        "Fighting Style: DEFENSE": {
+          "description": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\nDEFENSE\nWhile you are wearing armor, you gain a +1 bonus to AC."
+        }
+      }
+    },
+    {
+      "Primeval Awareness": {
+        "description": "You can use your action and expend one ranger spell slot to focus your awareness on the region around you. For 1 minute per level of the spell slot you expend, you can sense whether the following types of creatures are present within 1 mile of you (or within up to 6 miles ifyou are in your favored terrain): aberrations, celestiais, dragons, elementals, fey, fiends, and undead. This feature doesn't reveal the creatures' location or number."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Extra Attack": {
+        "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn.",
+        "bonus": {
+          "attacks": 1
+        }
+      }
+    },
+    {
+      "Favored Enemy": {
+        "description": "You have significant experience studying, tracking, hunting, and even talking to a certain type of enemy. Choose a type of favored enemy: aberrations, beasts, celestiais, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can select two races of humanoid (such as gnolls and orcs) as favored enemies. You have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them. When you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at alI.\nYou choose one additional favored enemy, as well as an associated language, at 6th level. As you gain levels, your choices should reflect the types of monsters you have encountered on your adventures."
+      },
+      "Natural Explorer": {
+        "description": "You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain: arctic, coast, desert, forest, grassland, mountain, swamp, or the Underdark. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled ifyou are using a skill that you're proficient in. While traveling for an hour or more in your favored terrain, you gain the following benefits:\nDifticult terrain doesn't slow your group's traveI.\nYour group can't become lost except by magical means.\nEven when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.\nIf you are traveling alone, you can move stealthily at a normal pace.\nWhen you forage, you find twice as much food as you normally would.\nWhile tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.\nYou choose additional favored terrain types aI 6th and 10th level."
+      }
+    },
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      },
+      "Land's Stride": {
+        "description": "Moving through nonmagical difficult terra in costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard. In addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such those created by the entangle spell."
+      }
+    },
+    {},
+    {
+      "Hide in Plain Sight": {
+        "description": "You can spend 1 minute creating camouflage for yourself. You must have access to fresh mud, dirt. plants. soot. and other naturally occurring materiaIs with which to create your camouflage. Once you are camouflaged in this way, you can try to hide by pressing yourself up against a solid surface, such as a tree or wall, that is at least as tall and wide as you are. You gain a +10 bonus to Dexterity (Stealth) checks as long as you remain there without moving or taking actions. Once you move or take an action or a reaction, you must camouflage yourself again to gain this benefit."
+      },
+      "Natural Explorer": {
+        "description": "You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain: arctic, coast, desert, forest, grassland, mountain, swamp, or the Underdark. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled ifyou are using a skill that you're proficient in. While traveling for an hour or more in your favored terrain, you gain the following benefits:\nDifticult terrain doesn't slow your group's traveI.\nYour group can't become lost except by magical means.\nEven when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.\nIf you are traveling alone, you can move stealthily at a normal pace.\nWhen you forage, you find twice as much food as you normally would.\nWhile tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.\nYou choose additional favored terrain types aI 6th and 10th level."
+      }
+    },
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {},
+    {
+      "Vanish": {
+        "description": "You can use the Hide action as a bonus action on your turn. AIso, you can't be tracked by nonmagical means, unless you choose to leave a trail."
+      },
+      "Favored Enemy": {
+        "description": "You have significant experience studying, tracking, hunting, and even talking to two types of enemy. Choose a type of favored enemy: aberrations, beasts, celestiais, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can select two races of humanoid (such as gnolls and orcs) as favored enemies. You have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them. When you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at alI.\nYou choose one additional favored enemy, as well as an associated language, at 14th level. As you gain levels, your choices should reflect the types of monsters you have encountered on your adventures."
+      }
+    },
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {},
+    {
+      "Feral Senses": {
+        "description": " you gain preternatural senses that help you fight creatures you can't see. When you attack a creature you can't see, your inability to see it doesn't impose disadvantage on your attack rolls against il. You are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn't hidden from you and you aren't blinded or deafened."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Foe Slayer": {
+        "description": "You become an unparalleled hunter of your enemies. Once on each of your turns, you can add your Wisdom modifier to the attack roll or the damage roll of an attack you make against one of your favored enemies. You can choose to use this feature before or after the roll, but before any effects of the roll are applied."
+      }
     }
-  }
+  ]
 }

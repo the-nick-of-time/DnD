@@ -1,0 +1,76 @@
+{
+  "name": "Wizard",
+  "superclass": [
+    "ALL",
+    "CASTER"
+  ],
+  "hit_dice": "1d6",
+  "spellcasting": {
+    "abitity": "Intelligence",
+    "slots": "full",
+    "levels": "full",
+    "known": "limited",
+    "prepare": "$int_mod+$caster_level"
+  },
+  "features": [ {},
+    {
+      "Spellbook": {
+        "description": "Eaeh time you gain a wizard level, you ean add two wizard spells of your ehoiee to your spellbook. Eaeh of these spells must be of a level for whieh you have spell slots, as shown on lhe Wizard table. On your advenlures, you might find other spells lhat you ean add to your spellbook (see the \"Your Spellbook\" sidebar).\nThe spells that You add to your spellbook as You gain levels refiect the arcane research You conduct on your own, as well as intellectual breakthroughs You have had about the nature ofthe multiverse. You might find other spells during your adventures. You could discover a spell recorded on a scroll in an evit wizard's chest, for example, or in a dusty tome in an ancient library.\nCopying a Spell into the Book. When You find a wizard spell of 1st level or higher, You can add it to your spellbook if it is of a level for which You have spell slots and ifYou can spare the time to decipher and copy it. Copying a spell into your spellbook involves reproducing the basic form of the spell, then deciphering the unique system of notation used by the wizard who wrote it. You must practice the spell untit You understand the sounds or gestures required, then transcribe it into your spellbook using your own notation. For each level of the spell, the process takes 2 hours and costs 50 gp. The cost represents material components You expend as You experiment with the spell to master it, as well as the fine inks You need to record it. Once You have spent this time and money, You can prepare the spell just like your other spells.\nReplacing the Book. You can copy a spell from your own spellbook into another book-for example, if You want to make a backup copy of your spellbook. This is just like copying a new spell into your spellbook, but faster and easier, since You understand your own notation and already know how to cast the spell. You need spend only 1 hour and 10 gp for each level of the copied spell. IfYou lose your spellbook, You can use the same procedure to transcribe the spells that You have prepared into a new spellbook. Fitling out the remainder of your spellbook requires You to find new spells to do so, as normal. For this reason, many wizards keep backup spellbooks in a safe place.\nThe Book's Appearance. Your spellbook is a unique compitation af spells, with its own decorative flourishes and margin notes. It might be a plain, functionalleather volume that You received as a gift from your master, a finely bound gitt-edged tome You found in an ancient library, or even a loose collection of notes scrounged together afler You lost your previous spellbook in a mishap."
+      },
+      "Arcane Recovery": {
+        "description": "You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher. For example, ifyou're a 4th-levelwizard, you can recover up to two levels worth of spell slots. Youcan recover either a 2nd-level spell slot or two 1st-level spell slots."
+      }
+    },
+    {
+      "Arcane Tradition": {
+        "description": "you choose an arcane tradition, shaping your practice of magic through one of eight schools: Abjuration, Conjuration, Divination, Enchantment, Evocation, lllusion, Necromancy, or Transmutation, ali detailed at the end of the class description. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level."
+      }
+    },
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {},
+    {
+      "Spell Mastery": {
+        "description": "You have achieved such mastery over certain spells that you can cast them at will. Choose a 1st-level wizard spell and a 2nd.level wizard spell that are in your spellbook. You can cast those spells at their lowest level without expending a spell slot when you have them prepared. 1£you want to cast either spell at a higher level, you must expend a spell slot as normal. By spending 8 hours in study, you can exchange one or both of the spells you chose for different spells of the same levels."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Signature Spells": {
+        "description": "You gain mastery over two powerful spells and can cast them with little effort. Choose two 3rd level wizard spells in your spellbook as your signature spells. Youalways have these spells prepared, they don't count against the number of spells you have prepared, and you can cast each of them once at 3rd level without expending a spell slot. When you do so, you can't do so again until you finish a short or long rest. 1£you want to cast either spell at a higher level, you must expend a spell slot as normal."
+      }
+    }
+  ]
+}

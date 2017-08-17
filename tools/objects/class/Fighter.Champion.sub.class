@@ -1,0 +1,50 @@
+{
+  "features": [ {},
+    {},
+    {},
+    {
+      "Improved Critical": {
+        "description": "Your weapon attacks score a critical hit on a roll of 19 or 20.",
+        "bonus": {
+          "crit_range": 19
+        }
+      }
+    },
+    {},
+    {},
+    {},
+    {
+      "Remarkable Athlete": {
+        "description": "You can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn't already use your proficiency bonus. In addition, when you makc a running longjump, the distance you can cover increases by a number of feet equal to yotlr Strength modifier."
+      }
+    },
+    {},
+    {},
+    {
+      "Additional Fighting Style": {
+        "description": "You can choose a second option from the Fighting Style class feature."
+      }
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "Improved Critical": {
+        "description": "Your weapon attacks score a critical hit on a roll of 18-20.",
+        "bonus": {
+          "crit_range": 18
+        }
+      }
+    },
+    {},
+    {},
+    {
+      "Survivor": {
+        "description": "You attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don't gain this benefit if you have 0 hit points."
+      }
+    },
+    {},
+    {}
+  ]
+}

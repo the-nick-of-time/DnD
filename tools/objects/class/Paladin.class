@@ -38,11 +38,10 @@
     "prepare": "$cha_mod+$caster_level",
     "always_prepared": []
   },
-  "features": [
-    {},
+  "features": [{},
     {
       "Divine Sense": {
-        "description": "The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. Vou know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the hallow spell. Vou can use this feature a number of times equal to 1+ your Charisma modifier. When you finish a long rest, you regain all expended uses.",
+        "description": "The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the hallow spell. You can use this feature a number of times equal to 1+ your Charisma modifier. When you finish a long rest, you regain all expended uses.",
         "resource": {
           "name": "Divine Sense",
           "maxnumber": "1+$cha_mod",
@@ -51,7 +50,7 @@
         }
       },
       "Lay on Hands": {
-        "description": "Your blessed touch can heal wounds. Vou have a pool of healing power that replenishes when you take a long rest. With that pool, you can restore a total number of hit points equal to your paladin level x 5. As an action, you can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount remaining in your pool. Alternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it. You can cure multiple diseases and neutralize multiple poisons with a single use of Lay on Hands, expending hit points separately for each one. This feature has no effect on undead and constructs.",
+        "description": "Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you take a long rest. With that pool, you can restore a total number of hit points equal to your paladin level x 5. As an action, you can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount remaining in your pool. Alternatively, you can expend 5 hit points from your pool of healing to cure the target of one disease or neutralize one poison affecting it. You can cure multiple diseases and neutralize multiple poisons with a single use of Lay on Hands, expending hit points separately for each one. This feature has no effect on undead and constructs.",
         "resource": {
           "name": "Lay on Hands",
           "maxnumber": "$Paladin_level*5",
@@ -77,26 +76,89 @@
         }
       },
       "Divine Smite": {
-        "description": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one paladin spell slot to deal radiant damage to the target, in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by ld8 if the target is an undead or a fiend."
+        "description": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one paladin spell slot to deal radiant damage to the target, in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is an undead or a fiend."
+      }
+    },
+    {
+      "Divine Health": {
+        "description": "The divine magic flowing through you makes you immune to disease."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
+    {
+      "Extra Attack": {
+        "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn.",
+        "bonus": {
+          "attacks": 1
+        }
+      }
+    },
+    {
+      "Aura of Protection": {
+        "description": "Whenever you ar a friendly creature within 10 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (with a minimum bonus of +1). You must be conscious to grant this bonus."
       }
     },
     {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
     {},
+    {
+      "Aura of Courage": {
+        "description": "You and friendly creatures within 10 feet of you can't be frightened while you are conscious."
+      }
+    },
+    {
+      "Improved Divine Smite": {
+        "description": "You are so suffused with righteous might that ali your melee weapon strikes carry divine power with them. Whenever you hit a creature with a meIee weapon, the creature takes an extra 1d8 radiant damage. lf you also use your Divine Smite with an attack, you add this damage to the extra damage of your Divine Smite.",
+        "bonus": {
+          "weapon_damage": "1d8"
+        }
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
     {},
+    {
+      "Cleansing Touch": {
+        "description": "you can use your action to end one spell on yourself ar on one willing creature that you touch. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain expended uses when you finish a long rest.",
+        "resource": {
+          "name": "Cleansing Touch",
+          "maxnumber": "$cha_mod",
+          "value": 0,
+          "recharge": "long rest"
+        }
+      }
+    },
     {},
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
     {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
+    {
+      "Aura of Protection": {
+        "description": "Whenever you ar a friendly creature within 30 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (with a minimum bonus of +1). You must be conscious to grant this bonus."
+      },
+      "Aura of Courage": {
+        "description": "You and friendly creatures within 30 feet of you can't be frightened while you are conscious."
+      }
+    },
+    {
+      "Ability Score Improvement": {
+        "description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+      }
+    },
     {}
   ]
 }
