@@ -32,7 +32,7 @@ class main:
         self.f.pack()
         self.playerframe.grid(row=0, column=0)
         self.charmanage.pack()
-        self.charcreate.pack()
+        self.charcreate.pack(pady=5)
         self.dmframe.grid(row=0, column=1)
         self.monstermanage.pack()
         self.rollframe.grid(row=0, column=2)

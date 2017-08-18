@@ -41,16 +41,16 @@ class Section:
         except AttributeError:
             self.f.grid(row=row, column=column, **kwargs)
 
-    def pack(self):
+    def pack(self, **kwargs):
         try:
-            self.wrapper.pack()
+            self.wrapper.pack(**kwargs)
             self.canvas.grid(row=0, column=0)
             self.vscroll.grid(row=0, column=1, sticky='ns')
             self.hscroll.grid(row=1, column=0, sticky='ew')
             self.canvas.create_window((0, 0), window=self.f, anchor='nw')
             self.f.bind("<Configure>", lambda event: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
         except AttributeError as e:
-            self.f.pack()
+            self.f.pack(**kwargs)
 
 
 class InfoButton:
