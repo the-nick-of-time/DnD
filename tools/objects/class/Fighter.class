@@ -84,15 +84,15 @@
       }
     },
     {
-      "choose": {
+      "subclass": {
         "number": 1,
-        "Martial Archetype: Champion": {
+        "Champion": {
           "description": "You choose an archetype that you strive to emulate in your combat styles and techniques. The archetypal Champion focuses on the development of raw physical power honed to deadly perfection. Those who model themselves on this archetype combine rigorous traioing with physical excellence to deal devastating blows."
         },
-        "Martial Archetype: Battle Master": {
+        "Battle Master": {
           "description": "You choose an archetype that you strive to emulate in your combat styles and techniques. Those who emulate the archetypal Battle Master employ martial techniques passed down through generations. To a Battle Master, combat is an academic field, sometimes including subjects beyond battle such as weaponsmithing and calligraphy. Not every fighter absorbs the lessons of history, theory, and artistry that are reflected in the Battle Master archetype, but those who do are well-rounded fighters of great skill and knowledge."
         },
-        "Martial Archetype: Eldritch Knight": {
+        "Eldritch Knight": {
           "description": "You choose an archetype that you strive to emulate in your combat styles and techniques. The archetypal Eldritch Knight combines the martial mastery common to ali fighters with a careful study of magic. Eldritch Knights use magical techniques similar to those practiced by wizards, They focus their study on two of the eight schools of magic: abjuration and evocation. Abjuration spells grant an Eldritch Knight additional protection in battle, and evocation spells deal damage to many foes at once, extending the fighter's reach in combat. These knights learn a comparatively small number of spells, committing them to memory instead of keeping them in a spellbook."
         }
       }

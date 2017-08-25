@@ -1,4 +1,7 @@
 {
+  "superclass": [
+    "CASTER"
+  ],
   "spellcasting": {
     "ability": "Intelligence",
     "slots": "third",

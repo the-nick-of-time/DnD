@@ -30,7 +30,7 @@
     "ability": "Charisma",
     "slots": "warlock",
     "levels": "warlock",
-    "known": "$Warlock_level+3",
+    "known": "$Warlock_level+1",
     "prepare": "$cha_mod+$caster_level",
     "always_prepared": []
   },
@@ -38,6 +38,18 @@
     {
       "Otherworldly Patron": {
         "description": "AI 1st level, you have slruck a bargain wilh an olherworldly being of your choice: lhe Archfey, lhe Fiend, or lhe Greal Old One, each of which is delailed aI lhe end of lhe class descriplion, Your choice granls you fealures at 1st level and again aI 61h, 101h, and 141h level."
+      },
+      "choose": {
+        "number": 1,
+        "Archfey": {
+          "description": "Your patron is a lord or lady of the fey,a creature of legend who holds secrets that were forgotten before the mortal races were born. This being's motivations are often inscrutable, and sometimes whimsical, and might involve a striving for greater magical power or the settling of age-old grudges. Beings of this sort include the Prince of Frost; the Queen of Air and Darkness, ruler of the Gloaming Court; Titania of the Summer Court; her consort Oberon, the Green Lord; Hyrsam, the Prince of Fools; and ancient hags."
+        },
+        "Fiend": {
+          "description": "You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even ifyou strive against those aims. Such beings desire the corruption or destruction of ali things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz'Urb-Iuu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths."
+        },
+        "Great Old One": {
+          "description": "Your patron is a mysterious entity whose nature is utterly foreign to the fabric of reality. It might come from the Far Realm, the space beyond reality, or it could be one of the elder gods known only in legends. [ts motives are incomprehensible to mortaIs, and its knowledge so immense and ancient that even the greatest libraries pale in comparison to the vast secrets it holds. The Great Old One might be unaware of your existence or entirely indifferent to you, but the secrets YOllhave learned allow YOllto draw YOllrmagic from it. Entities of this type inclllde Ghaunadar, called That Which Lurks; Tharizdun, the Chained God; Dendar, the Night Serpent; Zargon, the Returner; Great Cthulhu; and other unfathomable beings."
+        }
       }
     },
     {

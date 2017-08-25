@@ -42,6 +42,18 @@
       "Monastic Tradition": {
         "description": "you commit yourself to a monastic tradition: the Way of the Open Hand, the Way of Shadow, or the Way of the Four Elements, all detailed at the cnd of the class description. Your tradition grants you features at 3rd level and again at 6th, 11th, and 17th level."
       },
+      "subclass": {
+        "number": 1,
+        "Four Elements": {
+          "description": "You follow a monastic tradilion that teaches you to harness the elemenls. When you focus your ki, you can align yourself with the forces of creation and bend the four elements to your will, using them as an exlension ofyour body, Some members of this tradition dedicale themselves to a single elemenl, but others weave the elements togelher. Many monks of this tradition talloo their bodies wilh representations of their ki powers. commonly imagined as coiling dragons. bul also as phoenixes, fish. planls, mounlains. and cresling waves."
+        },
+        "Open Hand": {
+          "description": "Monks of the Way of the Open Hand are the ultimate masters of martial arts combat, whether armed or unarmed. They learn techniques to push and trip their opponents, manipulate ki to heal damage to their bodies, and practice advanced meditation that can protect them from harm."
+        },
+        "Shadow": {
+          "description": "Monks of the Way of Shadow follow a tradition that values stealth and subterfuge. These monks might be called ninjas or shadowdancers. and they serve as spies and assassins. Sometimes the members of a ninja monastery are family members, forming a clan sworn to secrecy about their arts and missions. Other monasteries are more like thieves' guilds, hiring out their services to nobles, rich merchants, or anyone else who can pay their fees. Regardless of their methods, the heads of these monasteries expect the unquestioning obedience of their students."
+        }
+      },
       "Deflect Missiles": {
         "description": "you can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 +your Dexterity modifier + your monk level. Ifyou reduce the damage to 0, you can catch the missile if it is smalI enough for you to hold in one hand and you have at least one hand free, Ifyou catch a missile in this way, you can spend 1 ki point to make a ranged attack with the weapon or piece of ammunition you just caught, as part of the same reaction. You make this attack with proficiency, regardless of your weapon proficiencies, and the missile counts as a monk weapon for the attack.",
         "resource": {

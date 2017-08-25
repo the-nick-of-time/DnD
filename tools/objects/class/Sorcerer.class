@@ -46,14 +46,25 @@
     "prepare": "known",
     "always_prepared": "known"
   },
-  "features": [
-    {},
+  "features": [ {},
     {
       "Sorcerous Origin": {
         "description": "Choose a sorcerous origin, which describes the source of your innate magical power: Draconic Bloodline or Wild Magic, both detailed at the end of the class description. Your choice grants you features when you choose it at 1st level and again at 6th, 14th, and 18th level."
       },
       "Spellcasting": {
         "description": "You get spellcasting abilities at level 1. Your spellcasting ability is Charisma, so your spell save DC = 8 + your proficiency bonus + your Charisma modifier and your spell attack modifier = your proficiency bonus + your Charisma modifier. You know a number of spells given by the Spells Known column of the Sorcerer table, and always have them prepared. When you gain a sorcerer level, you can replace a spell that you already know with a different one of a level that you can cast."
+      },
+      "subclass": {
+        "number": 1,
+        "Storm": {
+          "description": "Your innate magic comes from the power of elemental air. Many with this power can trace their magic back to a near-death experience caused by the Great Rain, but perhaps you were born during a howling gale so power- ful that folk still tell stories of it, or your lineage might include the influence of potent air creatures such as vaati or djinn. Whatever the case, the magic of the storm permeates your being. Storm sorcerers are invaluable members of a ship's crew. Their magic allows them to exert control over wind and weather in their immediate area. Their abili- ties also prove useful in repelling attacks by sahuagin , pirates, and other waterborne threats."
+        },
+        "Draconic": {
+          "description": "Vour innate magic comes from draconic magic that was mingled with your blood ar that of your ancestors. Most often, sorcerers with this origin trace their descent back to a mighty sorcerer of ancient times who made a bargain with a dragon ar who might even have c1aimed a dragon parenl. Some of these bloodlines are well established in the world, but most are obscure. Any given sorcerer could be the first of a new bloodline, as a result of a pact ar some other exceptional circumstance."
+        },
+        "Wild Magic": {
+          "description": "Your innate magic comes from the wild forces of chaos that underlie the order of creation. You might have endured exposure to some form of raw magic, perhaps through a planar portalleading to Limbo, the Elemental Planes, or lhe mysterious Far Realm. Perhaps you were blessed by a powerful feycreature or marked by a demon. Or your magic could be a fluke ofyour birth, with no apparent cause or reason. However it carne to be, this chaotic magic churns within you, waiting for any outlel."
+        }
       }
     },
     {

@@ -37,8 +37,7 @@
       ]
     }
   },
-  "features": [
-    {},
+  "features": [ {},
     {
       "Rage": {
         "description": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:\n You have advantage on Strength checks and Strength saving throws.\n When you make a melee weapon attack using Strength, you gain a +2 bonus to the damage roll.\n You have resistance to bludgeoning, piercing, and slashing damage.\n If you are able to cast spells, you ean't cast them or concentrate on them while raging.\n Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. You can rage two times between long rests.",
@@ -70,6 +69,15 @@
           "name": "Rage",
           "maxnumber": 3,
           "recharge": "long rest"
+        }
+      },
+      "subclass": {
+        "number": 1,
+        "Berserker": {
+          "description": "For some barbarians. rage is a means to an end-that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker's rage. you thrill in the chaos of battle, heedless of your own health or well-being."
+        },
+        "Totem Warrior": {
+          "description": "The Path of the Totem Warrior is a spiritual journcy, as the barbarian accepts a spirit animal as guide, protector, and inspiration. In battle. your totem spirit fills you with supernatural might. adding magical fuel to your barbarian rage. Most harharian tribes consider a totem animal to bc kin to a particular elan. [n such cases. it is unusual for an individual to have more than one totem animal spirit, though exceptions exisl."
         }
       }
     },

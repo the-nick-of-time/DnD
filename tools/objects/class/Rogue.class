@@ -147,6 +147,18 @@
           "value": "2d6",
           "recharge": "turn"
         }
+      },
+      "subclass": {
+        "number": 1,
+        "Thief": {
+          "description": "You hone your skills in the larcenous arts. Burglars, bandits, cutpurses, and other criminais typically follow this archetype, but so do rogues who prefer to think of themselves as professional treasure seekers, explorers, delvers, and investigators. In addition to improving your agility and stealth, you learn skills useful for delving into ancient ruins, reading unfamiliar languages, and using magic items you normally couldn't employ."
+        },
+        "Assassin": {
+          "description": "You focus your training on the grim art of death. Those who adhere to this archetype are diverse: hired killers, spies, bounty hunters, and even specially anointed priests trained to exterminate the enemies of their deity. Stealth, poison, and disguise help you eliminate your foes with deadly efficiency."
+        },
+        "Arcane Trickster": {
+          "description": "Some rogues enhance their fine-honed skills of stealth and agility with magic, learning tricks of enchantment and illusion. These rogues include pickpockets and burglars, but also pranksters, mischief-makers, and a significant number of adventurers."
+        }
       }
     },
     {

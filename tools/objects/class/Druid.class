@@ -34,6 +34,39 @@
       },
       "Druid Circle": {
         "description": "You choose to identify with a circle of druids: the Circle of the Land or the Circle of the Moon, both detailed at the end of the class description. Your choice grants you features at 2nd levcl and again at 6th, 10th, and 14th level."
+      },
+      "choose": {
+        "number": 1,
+        "Land-Arctic": {
+          "description": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition, These druids meet within sacred circles of trees or standing slones to whisper primai secrets in Druidic, The circle's wisest members preside as the chief priests of communities lhat hold to the Old Faith and serve as advisors to the rulers of those folk, As a member of this circle, your magic is inl1uenced by the land where you were initiated into the circle's mysterious rites."
+        },
+        "Land-Arctic": {
+          "description": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition, These druids meet within sacred circles of trees or standing slones to whisper primai secrets in Druidic, The circle's wisest members preside as the chief priests of communities lhat hold to the Old Faith and serve as advisors to the rulers of those folk, As a member of this circle, your magic is inl1uenced by the land where you were initiated into the circle's mysterious rites."
+        },
+        "Land-Coast": {
+          "description": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition, These druids meet within sacred circles of trees or standing slones to whisper primai secrets in Druidic, The circle's wisest members preside as the chief priests of communities lhat hold to the Old Faith and serve as advisors to the rulers of those folk, As a member of this circle, your magic is inl1uenced by the land where you were initiated into the circle's mysterious rites."
+        },
+        "Land-Desert": {
+          "description": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition, These druids meet within sacred circles of trees or standing slones to whisper primai secrets in Druidic, The circle's wisest members preside as the chief priests of communities lhat hold to the Old Faith and serve as advisors to the rulers of those folk, As a member of this circle, your magic is inl1uenced by the land where you were initiated into the circle's mysterious rites."
+        },
+        "Land-Forest": {
+          "description": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition, These druids meet within sacred circles of trees or standing slones to whisper primai secrets in Druidic, The circle's wisest members preside as the chief priests of communities lhat hold to the Old Faith and serve as advisors to the rulers of those folk, As a member of this circle, your magic is inl1uenced by the land where you were initiated into the circle's mysterious rites."
+        },
+        "Land-Grassland": {
+          "description": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition, These druids meet within sacred circles of trees or standing slones to whisper primai secrets in Druidic, The circle's wisest members preside as the chief priests of communities lhat hold to the Old Faith and serve as advisors to the rulers of those folk, As a member of this circle, your magic is inl1uenced by the land where you were initiated into the circle's mysterious rites."
+        },
+        "Land-Mountain": {
+          "description": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition, These druids meet within sacred circles of trees or standing slones to whisper primai secrets in Druidic, The circle's wisest members preside as the chief priests of communities lhat hold to the Old Faith and serve as advisors to the rulers of those folk, As a member of this circle, your magic is inl1uenced by the land where you were initiated into the circle's mysterious rites."
+        },
+        "Land-Swamp": {
+          "description": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition, These druids meet within sacred circles of trees or standing slones to whisper primai secrets in Druidic, The circle's wisest members preside as the chief priests of communities lhat hold to the Old Faith and serve as advisors to the rulers of those folk, As a member of this circle, your magic is inl1uenced by the land where you were initiated into the circle's mysterious rites."
+        },
+        "Land-Underdark": {
+          "description": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition, These druids meet within sacred circles of trees or standing slones to whisper primai secrets in Druidic, The circle's wisest members preside as the chief priests of communities lhat hold to the Old Faith and serve as advisors to the rulers of those folk, As a member of this circle, your magic is inl1uenced by the land where you were initiated into the circle's mysterious rites."
+        },
+        "Moon": {
+          "description": "Druids of the Circle of the Moon are fierce guardians of the wilds. Their order gathers under the full moon to share news and trade warnings. They haunt the deepest parts of the wilderness, where they might go for weeks on end before crossing paths with another humanoid creature, let alone another druid. Changeable as the moon, a druid of this circle might prowl as a great cat one night, soar over the treetops as an eagle the next day, and crash through the undergrowth in bear form to drive off a trespassing monster. The wild is in the druid's blood."
+        }
       }
     },
     {},
