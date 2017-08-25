@@ -8,6 +8,7 @@ import tools.modules.character_manager as cm
 import tools.modules.monsters as mm
 import tools.modules.dice as dc
 import tools.modules.character_creator as cc
+import tools.modules.levelup as lu
 
 
 class main:
@@ -22,6 +23,8 @@ class main:
                                     command=self.charactermanager)
         self.charcreate = tk.Button(self.playerframe, text='Create\nCharacter',
                                     command=self.character_create)
+        self.levelup = tk.Button(self.playerframe, text='Level up\nCharacter',
+                                 command=self.character_levelup)
         self.monstermanage = tk.Button(self.dmframe, text='Manage\nEncounter',
                                        command=self.monstermanager)
         self.diceroll = tk.Button(self.rollframe, text='Roll\nDice',
@@ -33,6 +36,7 @@ class main:
         self.playerframe.grid(row=0, column=0)
         self.charmanage.pack()
         self.charcreate.pack(pady=5)
+        self.levelup.pack(pady=5)
         self.dmframe.grid(row=0, column=1)
         self.monstermanage.pack()
         self.rollframe.grid(row=0, column=2)
@@ -45,6 +49,10 @@ class main:
     def character_create(self):
         self.f.destroy()
         cc.main(self.window).pack()
+
+    def character_levelup(self):
+        self.f.destroy()
+        lu.main(self.window).pack()
 
     def monstermanager(self):
         self.f.destroy()
