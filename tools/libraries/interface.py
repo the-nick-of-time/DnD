@@ -19,8 +19,10 @@ class JSONInterface:
             return obj
 
     def __init__(self, filename, isabsolute=False):
-        broken = filename.split('/')[-1].split('.')
-        self.shortfilename = ' '.join(reversed(broken[:len(broken) // 2]))
+        # broken = filename.split('/')[-1].split('.')
+        # self.shortfilename = ' '.join(reversed(broken[:len(broken) // 2]))
+        self.shortfilename = filename.split('/')[-1]
+        # self.shortfilename = filename
         # TODO: Unclean filename?
         if (isabsolute):
             self.filename = filename
@@ -46,6 +48,9 @@ class JSONInterface:
         else:
             raise TypeError('You can only add a JSONInterface or a '
                             'LinkedInterface to a JSONInterface')
+
+    def __iter__(self):
+        yield self
 
     def get(self, path):
         if (path == '/'):
