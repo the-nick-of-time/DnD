@@ -1,0 +1,5 @@
+{
+  "Grappler": {
+    "description": "Prerequisite: Strength 13 ar higher\nYou've developed the skills necessary to hold your own in close-quarters grappling. You gain the following benefits:\nYou have advantage on attack rolls against a creature you are grappling.\nYou can use your action to try to pin a creature grappled by you. To do so, make another grapple check. lf you succeed, you and the creature are both restrained until the grapple ends.\nCreatures that are one size larger than you don't automatically succeed on checks to escape your grapple."
+  }
+}
