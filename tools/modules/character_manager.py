@@ -35,6 +35,8 @@ class main:
                                    command=lambda: self.rest('long'))
         self.short_rest = tk.Button(self.buttons, text='Short rest',
                                     command=lambda: self.rest('short'))
+        self.next_turn = tk.Button(self.buttons, text='Next turn',
+                                   command=lambda: self.rest('turn'))
         self.core = ttk.Notebook(window)
         self.core.bind("<<NotebookTabChanged>>", self.tab_update)
         ######
@@ -77,9 +79,10 @@ class main:
         self.spells.grid(row=0, column=0)
         #####
         self.buttons.grid(row=1, column=0)
-        self.short_rest.grid(row=0, column=0)
-        self.long_rest.grid(row=0, column=1)
-        self.QUIT.grid(row=0, column=2)
+        self.next_turn.grid(row=0, column=0)
+        self.short_rest.grid(row=0, column=1)
+        self.long_rest.grid(row=0, column=2)
+        self.QUIT.grid(row=0, column=3)
 
     def startup_begin(self):
         self.charactername = {}

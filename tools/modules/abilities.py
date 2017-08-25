@@ -65,7 +65,7 @@ class AbilityDisplay(gui.Section):
 
     def draw_dynamic(self):
         for (i, a) in enumerate(self.abilnames):
-            self.mods[i]['text'] = h.modifier(self.scores[i].get())
+            self.mods[i]['text'] = h.modifier(self.scores[i].get() or 0)
 
     def roll_check(self, abil):
         # i = self.abilnames.index(abil)
@@ -85,7 +85,8 @@ class AbilityDisplay(gui.Section):
 
     def update_character(self):
         for (i, a) in enumerate(self.abilnames):
-            self.person.abilities[a] = int(self.scores[i].get() if self.scores[i].get() else 0)
+            self.person.abilities[a] = int(self.scores[i].get() or 0)
+        self.draw_dynamic()
 
 
 class SkillDisplay(gui.Section):
