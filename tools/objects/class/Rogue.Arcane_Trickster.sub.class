@@ -15,6 +15,9 @@
     {
       "Mage Hand Legerdemain": {
         "description": "When you cast mage hand, you can make the spectral hand invisible. and you can perform the following additionaltasks with it:\nYou can stow one objectthe hand is holding in a container worn ar carried by another creature.\nYou can retrieve an object in a container worn or carried by another creature.\nYou can use thieves' tools to pick locks and disarm traps at range.\nYou can perform one of these tasks without being noticed by a creature ifyou succeed on a Dexterity (Sleight of Hand) check contested by the creature's Wisdom (Perception) check. In addition, you can use the bonus action granted by your Cunning Action to contralthe hand."
+      },
+      "Spellcasting": {
+        "description": "You get spellcasting abilities at level 3. Your spellcasting ability is Intelligence, so your spell save DC = 8 + your proficiency bonus + your Intelligence modifier and your spell attack modifier = your proficiency bonus + your Intelligence modifier. You can prepare a number of spells equal to your rogue level plus your Intelligence modifier."
       }
     },
     {},

@@ -18,8 +18,8 @@
       "Druidic": {
         "description": "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot lhe message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic."
       },
-      "Ritual Casting": {
-        "description": "You can cast a druid spell as a ritual if that spell has the ritual tag and you have the spell prepared."
+      "Spellcasting": {
+        "description": "You get spellcasting abilities at level 1. Your spellcasting ability is Wisdom, so your spell save DC = 8 + your proficiency bonus + your Wisdom modifier and your spell attack modifier = your proficiency bonus + your Wisdom modifier. You can prepare a number of spells equal to your druid level plus your Wisdom modifier. You can also cast spells that you have prepared as rituals if it has the ritual tag."
       }
     },
     {

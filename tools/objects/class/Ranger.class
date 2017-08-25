@@ -65,6 +65,9 @@
         "Fighting Style: DEFENSE": {
           "description": "At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\nDEFENSE\nWhile you are wearing armor, you gain a +1 bonus to AC."
         }
+      },
+      "Spellcasting": {
+        "description": "You get spellcasting abilities at level 2. Your spellcasting ability is Wisdom, so your spell save DC = 8 + your proficiency bonus + your Wisdom modifier and your spell attack modifier = your proficiency bonus + your Wisdom modifier. You can prepare a number of spells equal to your ranger level plus your Wisdom modifier. You can also cast spells that you have prepared as rituals if it has the ritual tag."
       }
     },
     {

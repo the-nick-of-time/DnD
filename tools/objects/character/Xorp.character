@@ -50,13 +50,23 @@
     "Arcane Trickster": "class/Rogue.class/features/3/subclass/Arcane Trickster"
   },
   "spells_prepared": {
-    "always_prepared": [],
-    "prepared_today": []
+    "always_prepared": [
+      "Dancing Lights",
+      "Mending",
+      "Poison Spray"
+    ],
+    "prepared_today": [
+      "False Life",
+      "Color Spray"
+    ]
   },
-  "spell_slots": [],
+  "spell_slots": [
+    999999,
+    2
+  ],
   "resources": {
     "Sneak Attack": {
-      "number": 0
+      "number": 1
     }
   },
   "conditions": []

@@ -45,6 +45,9 @@
   },
   "features": [ {},
     {
+      "Spellcasting": {
+        "description": "You get spellcasting abilities at level 1. Your spellcasting ability is Charisma, so your spell save DC = 8 + your proficiency bonus + your Charisma modifier and your spell attack modifier = your proficiency bonus + your Charisma modifier. You can prepare a number of spells equal to your bard level plus your Charisma modifier. You can also cast spells that you have prepared as rituals if it has the ritual tag."
+      },
 			"Bardic Inspiration": {
 				"description": "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6. Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide hefore the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled. it is lost. A creature can have only one Bardic Inspiration die at a time. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.",
 				"resource": {

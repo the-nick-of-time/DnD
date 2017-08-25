@@ -1,0 +1,16 @@
+{
+  "name": "Sling",
+  "value": 0.1,
+  "weight": 0.05,
+  "consumes": "Bullet",
+  "description": "This sling throws rocks or bullets.",
+  "effect": "You launch a rock at your enemy.",
+  "damage": "1d4",
+  "damage_type": "Bludgeoning",
+  "ability": [
+    "Dexterity"
+  ],
+  "type": "simple",
+  "hands": "one",
+  "thrown": false
+}
