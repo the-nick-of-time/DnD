@@ -78,6 +78,9 @@ class ClassMap:
                 subclassfound = False
             superclasses = [iface.JSONInterface(super_.format(name))
                             for name in mainclass.get('/superclass')]
+            if (subclassfound and subclass.get('/superclass')):
+                superclasses.extend([iface.JSONInterface(super_.format(name))
+                                     for name in subclass.get('/superclass')])
             if (subclassfound):
                 jf = iface.LinkedInterface(*superclasses, mainclass,
                                            subclass)
@@ -90,7 +93,26 @@ class ClassMap:
                 # self.classes.update(
                 #     {str(mainclass): iface.LinkedInterface(*superclasses,
                 #                                            mainclass)})
-            self.classes.update({str(mainclass): c.Class(jf, L)})
+            self.classes.update({C: c.Class(jf, L)})
+
+    def level_up(self, name, subclassname=''):
+        if (name in self._classes):
+            i = self._classes.index(name)
+            self.levels[i] += 1
+            lev = self.levels[i]
+            self.classes[name].level += 1
+        else:
+            self._classes.append(name)
+            self.levels.append(1)
+            lev = 1
+            self._subclasses.append(subclassname)
+            self.hook()
+        return (self.classes[name], lev)
+
+    def apply_subclass(self, mainclass, subclass):
+        i = self._classes.index(mainclass)
+        self._subclasses[i] = subclass
+        self.hook()
 
 
 class RaceMap:

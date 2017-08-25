@@ -300,6 +300,12 @@ class Character:
             return cl.level
         return self.record.get('/' + key)
 
+    def get(self, key):
+        return self.record.get(key)
+
+    def set(self, path, value):
+        return self.record.set(path, value)
+
     def add_condition(self, name):
         if (name == 'exhaustion'):
             for i in range(6):
@@ -427,7 +433,11 @@ class Character:
                 else:
                     newval = self.parse_vars(amount)
                     existing = self.parse_vars(bonuses[var])
-                    bonuses[var] = newval + existing
+                    if (isinstance(amount, dict)):
+                        # should only happen for skills?
+                        bonuses[var].update(newval)
+                    else:
+                        bonuses[var] = newval + existing
         bonuses = {}
         for item in self.inventory:
             if (item.equipped):
@@ -633,6 +643,10 @@ class Character:
                 return new
         elif (isinstance(s, (int, list)) or s is None):
             return s
+        elif (isinstance(s, dict)):
+            for n in s:
+                s[n] = self.parse_vars(s[n], mathIt)
+            return s
         else:
             raise TypeError('This should work on anything directly grabbed '
                             'from an object file')
@@ -640,6 +654,7 @@ class Character:
     def write(self):
         self.record.set('/abilities', self.abilities)
         self.record.set('/conditions', list(self.conditions))
+        self.record.set('/level', str(self.classes))
         # self.record.set('/spell_slots', self.spell_slots)
         self.record.write()
 

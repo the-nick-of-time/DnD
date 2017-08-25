@@ -52,6 +52,12 @@ class Section:
         except AttributeError as e:
             self.f.pack(**kwargs)
 
+    def destroy(self):
+        try:
+            self.wrapper.destroy()
+        except AttributeError:
+            self.f.destroy()
+
 
 class InfoButton:
     def __init__(self, container, poptext, title=''):

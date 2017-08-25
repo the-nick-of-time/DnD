@@ -15,6 +15,7 @@ import classes as c
 import interface as iface
 import helpers as h
 import ClassMap as cm
+from levelup import FeaturesAtLevel
 
 # sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 # import abilities
@@ -96,6 +97,7 @@ class main(gui.Section):
         gui.Section.__init__(self, window)
         # self.data = {}
         self.data = collections.OrderedDict()
+        self.NEXT = tk.Button(self.f, text='Select Features', command=self.select_features)
         self.QUIT = tk.Button(self.f, text='QUIT', fg='red', command=self.writequit)
         self.startup_begin()
 
@@ -103,7 +105,11 @@ class main(gui.Section):
         self.basic.grid(row=0, column=0)
         self.abils.grid(row=1, column=0)
         self.skills.grid(row=1, column=1)
+        self.NEXT.grid(row=5, column=2)
         self.QUIT.grid(row=5, column=3)
+
+    def draw_dynamic(self):
+        self.features.grid(row=2, column=1)
 
     def startup_begin(self):
         self.charactername = {}
@@ -129,32 +135,42 @@ class main(gui.Section):
         ######
         self.draw_static()
 
-    def writequit(self):
+    def select_features(self):
         self.data['name'] = self.name
         self.basic.export(self.data)
+        classes = cm.ClassMap(self.data['level'])
+        # classname = classes._classes[0]
+        # classjf = iface.JSONInterface('class/' + h.clean(classname) + '.class')
+        classjf = classes[0].record
+        self.features = FeaturesAtLevel(self.f, classjf, 1)
+        self.draw_dynamic()
+
+    def writequit(self):
+        # self.data['name'] = self.name
+        # self.basic.export(self.data)
         self.abils.export(self.data)
         self.skills.export(self.data)
         self.data['inventory'] = {}
-        # print(self.data)
         ######
         classes = cm.ClassMap(self.data['level'])
         classname = classes._classes[0]
         pathtoclass = 'class/' + h.clean(classname) + '.class'
         mainclass = iface.JSONInterface(pathtoclass)
-        mainfeatures = mainclass.get('/features/1')
-        features = {n: (pathtoclass + '/features/1/' + n) for n in mainfeatures}
+        # mainfeatures = mainclass.get('/features/1')
+        # features = {n: (pathtoclass + '/features/1/' + n) for n in mainfeatures}
+        features = self.features.export()
         HD = mainclass.get('/hit_dice')
         maxhp = int(HD[2:]) + h.modifier(self.data['abilities']['Constitution'])
         HP = {'max': maxhp, 'current': maxhp, 'temp': 0, 'HD': {HD: {'number': 1, 'maxnumber': 1}}}
         self.data['HP'] = HP
         if (classes._subclasses[0] != ''):
-            subclassname = classes._subclasses[0]
+            subclassname = h.clean(classes._subclasses[0])
             formatstr = 'class/{}.{}.sub.class'
             pathtosubclass = formatstr.format(classname, subclassname)
             'class/' + classname + '.' + h.clean(subclassname) + '.class'
             subclass = iface.JSONInterface(pathtosubclass)
             subfeatures = subclass.get('/features/1')
-            features.update({n: (pathtosubclass + '/features/1/' + n) for n in subfeatures})
+            # features.update({n: (pathtosubclass + '/features/1/' + n) for n in subfeatures})
         ######
         race = cm.RaceMap(self.data['race'])
         pathtorace = 'race/{}.race'.format(race.race)
