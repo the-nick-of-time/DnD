@@ -1,0 +1,63 @@
+{
+  "name": "Xorp",
+  "race": "Elf",
+  "level": "Rogue (Arcane Trickster) 3",
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "abilities": {
+    "Intelligence": 16,
+    "Wisdom": 10,
+    "Constitution": 14,
+    "Dexterity": 19,
+    "Strength": 9,
+    "Charisma": 10
+  },
+  "saves": [
+    "Dexterity",
+    "Intelligence"
+  ],
+  "skills": [
+    "Acrobatics",
+    "Arcana",
+    "Investigation",
+    "Stealth"
+  ],
+  "inventory": {},
+  "HP": {
+    "current": 10,
+    "HD": {
+      "1d8": {
+        "number": 1,
+        "maxnumber": 1
+      }
+    },
+    "max": 10,
+    "temp": 0
+  },
+  "features": {
+    "Trance": "race/Elf.race/features/Trance",
+    "Expertise: Acrobatics": "class/Rogue.class/features/1/choose/Expertise: Acrobatics",
+    "Low-Light Vision": "race/Elf.race/features/Low-Light Vision",
+    "Thieves' Cant": "class/Rogue.class/features/1/Thieves' Cant",
+    "Expertise: Stealth": "class/Rogue.class/features/1/choose/Expertise: Stealth",
+    "Fey Ancestry": "race/Elf.race/features/Fey Ancestry",
+    "Sneak Attack": "class/Rogue.class/features/3/Sneak Attack",
+    "Keen Senses": "race/Elf.race/features/Keen Senses",
+    "Cunning Action": "class/Rogue.class/features/2/Cunning Action",
+    "Mage Hand Legerdemain": "class/Rogue.Arcane_Trickster.sub.class/features/3/Mage Hand Legerdemain",
+    "Arcane Trickster": "class/Rogue.class/features/3/subclass/Arcane Trickster"
+  },
+  "spells_prepared": {
+    "always_prepared": [],
+    "prepared_today": []
+  },
+  "spell_slots": [],
+  "resources": {
+    "Sneak Attack": {
+      "number": 0
+    }
+  },
+  "conditions": []
+}

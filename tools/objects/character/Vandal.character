@@ -1,0 +1,71 @@
+{
+  "name": "Vandal",
+  "race": "Gnome",
+  "level": "Fighter 2",
+  "languages": [
+    "Common",
+    "Gnomish",
+    "Infernal"
+  ],
+  "abilities": {
+    "Constitution": 13,
+    "Dexterity": 11,
+    "Wisdom": 7,
+    "Strength": 15,
+    "Charisma": 12,
+    "Intelligence": 14
+  },
+  "saves": [
+    "Strength",
+    "Constitution"
+  ],
+  "skills": [
+    "Deception",
+    "Intimidation",
+    "Performance"
+  ],
+  "inventory": {
+    "Longsword": {
+      "type": "weapon",
+      "quantity": 1,
+      "equipped": null
+    },
+    "Scale Armor": {
+      "type": "apparel",
+      "quantity": 1,
+      "equipped": "mediumarmor"
+    }
+  },
+  "HP": {
+    "HD": {
+      "1d10": {
+        "maxnumber": 1,
+        "number": 1
+      }
+    },
+    "temp": 0,
+    "max": 11,
+    "current": 11
+  },
+  "features": {
+    "Fighting Style: DUELING": "class/Fighter.class/features/1/choose/Fighting Style: DUELING",
+    "Second Wind": "class/Fighter.class/features/1/Second Wind",
+    "Low-Light Vision": "race/Gnome.race/features/Low-Light Vision",
+    "Gnome Cunning": "race/Gnome.race/features/Gnome Cunning",
+    "Action Surge": "class/Fighter.class/features/2/Action Surge"
+  },
+  "spells_prepared": {
+    "prepared_today": [],
+    "always_prepared": []
+  },
+  "spell_slots": [],
+  "resources": {
+    "Second Wind": {
+      "number": 1
+    },
+    "Action Surge": {
+      "number": 0
+    }
+  },
+  "conditions": []
+}

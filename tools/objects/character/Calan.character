@@ -1,10 +1,10 @@
 {
   "name": "Calan",
-  "level": "Paladin 2, Cleric (Light) 11",
+  "level": "Paladin 2, Cleric (Light) 18",
   "race": "Human",
   "HP": {
-    "max": 134,
-    "current": 134,
+    "max": 211,
+    "current": 211,
     "temp": 0,
     "HD": {
       "1d10": {
@@ -12,8 +12,8 @@
         "number": 2
       },
       "1d8": {
-        "maxnumber": 11,
-        "number": 11
+        "maxnumber": 18,
+        "number": 18
       }
     }
   },
@@ -22,7 +22,7 @@
     "Dexterity": 9,
     "Constitution": 16,
     "Intelligence": 12,
-    "Wisdom": 18,
+    "Wisdom": 20,
     "Charisma": 16
   },
   "saves": [
@@ -111,15 +111,18 @@
     3,
     3,
     3,
+    3,
     2,
+    1,
+    1,
     1
   ],
   "features": {
-    "Channel Divinity": "class/Cleric.class/features/6/Channel Divinity",
+    "Channel Divinity": "class/Cleric.class/features/18/Channel Divinity",
     "Channel Divinity: Turn Undead": "class/Cleric.class/features/2/Channel Divinity: Turn Undead",
     "Divine Intervention": "class/Cleric.class/features/10/Divine Intervention",
-    "Destroy Undead": "class/Cleric.class/features/11/Destroy Undead",
-    "Ability Score Improvement": "class/Cleric.class/features/8/Ability Score Improvement",
+    "Destroy Undead": "class/Cleric.class/features/17/Destroy Undead",
+    "Ability Score Improvement": "class/Cleric.class/features/16/Ability Score Improvement",
     "Fighting Style: PROTECTION": "class/Paladin.class/features/2/choose/Fighting Style: PROTECTION",
     "Divine Smite": "class/Paladin.class/features/2/Divine Smite",
     "Lay on Hands": "class/Paladin.class/features/1/Lay on Hands",
@@ -128,11 +131,15 @@
     "Warding Flare": "class/Cleric.Light.sub.class/features/6/Warding Flare",
     "Channel Divinity: Radiance of the Dawn": "class/Cleric.Light.sub.class/features/2/Channel Divinity: Radiance of the Dawn",
     "Potent Spellcasting": "class/Cleric.Light.sub.class/features/8/Potent Spellcasting",
-    "Domain Spells": "class/Cleric.Light.sub.class/features/9/Domain Spells"
+    "Domain Spells": "class/Cleric.Light.sub.class/features/9/Domain Spells",
+    "Corona of Light": "class/Cleric.Light.sub.class/features/17/Corona of Light",
+    "Heavy Armor Master": "feat/Heavy_Armor_Master.feat/Heavy Armor Master",
+    "Shield Master": "feat/Shield_Master.feat/Shield Master",
+    "Tough": "feat/Tough.feat/Tough"
   },
   "resources": {
     "Channel Divinity": {
-      "number": 2
+      "number": 3
     },
     "Lay on Hands": {
       "number": 10
@@ -141,7 +148,7 @@
       "number": 4
     },
     "Warding Flare": {
-      "number": 4
+      "number": 5
     },
     "Divine Intervention": {
       "number": 1

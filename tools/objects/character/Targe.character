@@ -1,0 +1,64 @@
+{
+  "name": "Targe",
+  "race": "Human",
+  "level": "Fighter (Battle Master) 3",
+  "languages": [
+    "Common",
+    "Human"
+  ],
+  "abilities": {
+    "Charisma": 10,
+    "Strength": 17,
+    "Wisdom": 12,
+    "Dexterity": 13,
+    "Constitution": 17,
+    "Intelligence": 12
+  },
+  "saves": [
+    "Strength",
+    "Constitution"
+  ],
+  "skills": [
+    "Athletics",
+    "Intimidation",
+    "Religion"
+  ],
+  "inventory": {},
+  "HP": {
+    "temp": 0,
+    "HD": {
+      "1d10": {
+        "number": 1,
+        "maxnumber": 1
+      }
+    },
+    "max": 13,
+    "current": 13
+  },
+  "features": {
+    "Skill Proficiency": "race/Human.race/features/Skill Proficiency",
+    "Fighting Style: PROTECTION": "class/Fighter.class/features/1/choose/Fighting Style: PROTECTION",
+    "Second Wind": "class/Fighter.class/features/1/Second Wind",
+    "Action Surge": "class/Fighter.class/features/2/Action Surge",
+    "Parry": "class/Fighter.Battle_Master.sub.class/features/3/choose/Parry",
+    "Combat Superiority": "class/Fighter.Battle_Master.sub.class/features/3/Combat Superiority",
+    "Student of War": "class/Fighter.Battle_Master.sub.class/features/3/Student of War",
+    "Battle Master": "class/Fighter.class/features/3/subclass/Battle Master",
+    "Goading Attack": "class/Fighter.Battle_Master.sub.class/features/3/choose/Goading Attack",
+    "Commander's Strike": "class/Fighter.Battle_Master.sub.class/features/3/choose/Commander's Strike"
+  },
+  "spells_prepared": {
+    "always_prepared": [],
+    "prepared_today": []
+  },
+  "spell_slots": [],
+  "resources": {
+    "Second Wind": {
+      "number": 0
+    },
+    "Action Surge": {
+      "number": 0
+    }
+  },
+  "conditions": []
+}
