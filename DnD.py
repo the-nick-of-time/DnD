@@ -9,6 +9,7 @@ import tools.modules.monsters as mm
 import tools.modules.dice as dc
 import tools.modules.character_creator as cc
 import tools.modules.levelup as lu
+import tools.modules.item_creator as ic
 
 
 class main:
@@ -29,6 +30,8 @@ class main:
                                        command=self.monstermanager)
         self.diceroll = tk.Button(self.rollframe, text='Roll\nDice',
                                   command=self.dice)
+        self.itemcreator = tk.Button(self.rollframe, text='Create\nItem',
+                                     command=self.create_item)
         self.draw_static()
 
     def draw_static(self):
@@ -41,6 +44,7 @@ class main:
         self.monstermanage.pack()
         self.rollframe.grid(row=0, column=2)
         self.diceroll.pack()
+        self.itemcreator.pack(pady=5)
 
     def charactermanager(self):
         self.f.destroy()
@@ -61,6 +65,10 @@ class main:
     def dice(self):
         self.f.destroy()
         dc.DiceRoll(self.window).pack()
+
+    def create_item(self):
+        self.f.destroy()
+        ic.main(self.window).pack()
 
 
 win = tk.Tk()

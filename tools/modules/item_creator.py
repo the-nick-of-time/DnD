@@ -1,91 +1,281 @@
 #! /usr/bin/env python3
 
 import tkinter as tk
+import os
 from os.path import isfile
 from collections import OrderedDict
 import json
+import re
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import GUIbasics as gui
 import interface as iface
 import helpers as h
+import tkUtility as util
 
 
-class ItemCreator(gui.Section):
-    def __init__(self, container):
+class AskLine(gui.Section):
+    def __init__(self, container, name, description, widgetmaker, puller=None):
+        # widgetmaker is a function that takes one argument, the widget's master, and returns the widget
+        # puller is either None, which makes the puller the widget's .get() method, or a function that takes the widget as its only argument and returns the data from it
         gui.Section.__init__(self, container)
-        self.nameL = tk.Label(self.f, text='Name')
-        self.name = tk.Entry(self.f)
-        self.typeL = tk.Label(self.f, text='Type')
-        self.type = tk.Entry(self.f)
-        self.valueL = tk.Label(self.f, text='Value')
-        self.value = tk.Entry(self.f)
-        self.weightL = tk.Label(self.f, text='Weight')
-        self.weight = tk.Entry(self.f)
-        self.consumableL = tk.Label(self.f, text='Consumable')
-        self.consumable = tk.BooleanVar()
-        self.consumableE = tk.Checkbutton(self.f, variable=self.consumable)
-        self.descriptionL = tk.Label(self.f, text='Description')
-        self.description = tk.Text(self.f, height=4, width=50, wrap='word')
-        self.effectL = tk.Label(self.f, text='Effect')
-        self.effect = tk.Text(self.f, height=4, width=50, wrap='word')
-        ##########
-        self.draw_static()
+        self.nameL = tk.Label(self.f, text=name)
+        self.widget = widgetmaker(self.f)
+        self.describer = gui.InfoButton(self.f, description, name)
+        if (puller is not None):
+            self.puller = lambda: puller(self.widget)
+        else:
+            self.puller = self.widget.get
+        __class__.draw_static(self)
 
     def draw_static(self):
         self.nameL.grid(row=0, column=0)
-        self.name.grid(row=0, column=1)
-        self.typeL.grid(row=1, column=0)
-        self.type.grid(row=1, column=1)
-        self.valueL.grid(row=2, column=0)
-        self.value.grid(row=2, column=1)
-        self.weightL.grid(row=3, column=0)
-        self.weight.grid(row=3, column=1)
-        self.consumableL.grid(row=4, column=0)
-        self.consumableE.grid(row=4, column=1)
-        self.descriptionL.grid(row=5, column=0)
-        self.description.grid(row=5, column=1)
-        self.effectL.grid(row=6, column=0)
-        self.effect.grid(row=6, column=1)
+        self.widget.grid(row=0, column=1)
+        self.describer.grid(row=0, column=2)
+
+    def get(self):
+        return self.puller()
+
+
+class Creator(gui.Section):
+    """Subclasses must implement:
+        basepath: str, formatted to create the path to the item
+        """
+    def __init__(self, container):
+        gui.Section.__init__(self, container)
+        self.basepath = ''
+        self.name = AskLine(self.f, 'Name', "The item's name.",
+                            lambda m: tk.Entry(m))
+        __class__.draw_static(self)
+
+    def draw_static(self):
+        self.name.pack()
+
+    def export(self):
+        return OrderedDict([('name', self.name.get())])
 
     def write(self):
-        data = OrderedDict((('name', self.name.get()),
-                ('value', self.value.get()),
-                ('weight', self.weight.get()),
-                ('consumable', self.consumable.get()),
-                ('description', self.description.get('1.0', 'end')),
-                ('effect', self.effect.get('1.0', 'end')),
-                ))
-        t = self.type.get().split()[-1]
-        path = '{b}{t}/{n}.{t}'.format(b=iface.JSONInterface.OBJECTSPATH,
-                                       t=t, n=h.clean(data['name']))
+        data = self.export()
+        name = h.clean(data['name'])
+        if (not name):
+            raise FileNotFoundError
+        path = iface.JSONInterface.OBJECTSPATH + self.basepath.format(name)
         if (isfile(path)):
-            raise FileExistsError
+            proceed = tk.messagebox.askyesno(message='You are overwriting an'
+                                             ' existing file.\nContinue'
+                                             ' anyway?')
+            if (not proceed):
+                raise FileExistsError(path)
         with open(path, 'w') as outfile:
             json.dump(data, outfile, indent=2)
+
+
+class ItemCreator(Creator):
+    def __init__(self, container):
+        Creator.__init__(self, container)
+        self.basepath = 'item/{}.item'
+        self.value = AskLine(self.f, 'Value', "The item's value, in gp"
+                             " (decimals okay, fractions not).",
+                             lambda m: tk.Entry(m))
+        self.weight = AskLine(self.f, 'Weight', "The item's weight, in pounds"
+                              "(decimals okay, fractions not).",
+                              lambda m: tk.Entry(m))
+        d = ("If using this item consumes some item, put that name here. For"
+             " instance, if you are making an item for ale, you would put 'ale'"
+             " here because using it means that you are consuming the ale."
+             " Alternatively, a lantern would consume 'oil', and a bow would "
+             "consume 'arrow's.")
+        self.consumes = AskLine(self.f, 'Consumes', d, lambda m: tk.Entry(m))
+        desc = lambda m: tk.Text(m, height=4, width=50, wrap='word')
+        pull = lambda w: w.get('1.0', 'end').strip()
+        self.description = AskLine(self.f, 'Description', "A description of the"
+                                   " item.", desc, pull)
+        effc = lambda m: tk.Text(m, height=4, width=50, wrap='word')
+        pull = lambda w: w.get('1.0', 'end').strip()
+        self.effect = AskLine(self.f, 'Effect', "What happens when you use the"
+                              " item.", effc, pull)
+        __class__.draw_static(self)
+
+    def draw_static(self):
+        Creator.draw_static(self)
+        self.value.pack()
+        self.weight.pack()
+        self.consumes.pack()
+        self.description.pack()
+        self.effect.pack()
+
+    def export(self):
+        rv = Creator.export(self)
+        rv.update([('value', float(self.value.get())),
+                   ('weight', float(self.weight.get())),
+                   ('description', self.description.get()),
+                   ('effect', self.effect.get()),
+                   ])
+        con = self.consumes.get()
+        if (con):
+            rv.update((('consumes', con)))
+        return rv
+
+
+class WeaponCreator(ItemCreator):
+    def __init__(self, container):
+        ItemCreator.__init__(self, container)
+        self.basepath = 'weapon/{}.weapon'
+        self.damage = AskLine(self.f, 'Damage', "The weapon's damage roll.", lambda m: tk.Entry(m))
+        self.damagetype = AskLine(self.f, 'Damage type', "The weapon's damage type.", lambda m: tk.Entry(m))
+        abils = ['Strength', 'Dexterity', 'Dexterity or Strength']
+        self.ability = tk.StringVar()
+        self.abilityM = AskLine(self.f, 'Ability', "The ability used to make"
+                                " attack and damage rolls.",
+                                lambda m: tk.OptionMenu(m, self.ability,
+                                                        *abils),
+                                lambda w: self.ability.get().split(' or '))
+        self.weapontype = tk.StringVar()
+        self.wptypeM = AskLine(self.f, 'Weapon class', "Simple or martial.",
+                               lambda m: tk.OptionMenu(m, self.weapontype,
+                                                       *['Simple', 'Martial']),
+                               lambda w: self.weapontype.get())
+        self.hands = tk.StringVar()
+        h = ['one', 'two', 'versatile']
+        self.handsM = AskLine(self.f, 'Hands', "One-handed, two-handed, or "
+                              "versatile weapon.",
+                              lambda m: tk.OptionMenu(m, self.hands, *h),
+                              lambda w: self.hands.get())
+        __class__.draw_static(self)
+
+    def draw_static(self):
+        ItemCreator.draw_static(self)
+        self.damage.pack()
+        self.damagetype.pack()
+        self.abilityM.pack()
+        self.wptypeM.pack()
+        self.handsM.pack()
+
+    def export(self):
+        rv = ItemCreator.export(self)
+        rv.update([('damage', self.damage.get()),
+                   ('damage_type', self.damagetype.get()),
+                   ('ability', self.abilityM.get()),
+                   ('weapon_type', self.wptypeM.get()),
+                   ('hands', self.handsM.get())
+                   ])
+        return rv
+
+
+class RangedWeaponCreator(WeaponCreator):
+    def __init__(self, container):
+        WeaponCreator.__init__(self, container)
+        self.basepath = 'weapon/{}.ranged.weapon'
+        self.range = AskLine(self.f, 'Range', "The weapon's range.",
+                             lambda m: tk.Entry(m))
+        __class__.draw_static(self)
+
+    def draw_static(self):
+        WeaponCreator.draw_static(self)
+        self.range.pack()
+
+    def export(self):
+        rv = WeaponCreator.export(self)
+        rv.update([('range', self.range.get())])
+        return rv
+
+
+class ApparelCreator(ItemCreator):
+    def __init__(self, container):
+        ItemCreator.__init__(self, container)
+        self.basepath = 'apparel/{}.apparel'
+        self.slot = tk.StringVar()
+        slots = ['Glove', 'Belt', 'LightArmor', 'MediumArmor', 'HeavyArmor',
+                 'Clothes', 'Headwear', 'Boots', 'Necklace', 'Cloak',
+                 'Shield']
+        self.slotM = AskLine(self.f, 'Apparel slot occupied', "Where do you "
+                             "wear this item?",
+                             lambda m: tk.OptionMenu(m, self.slot, *slots),
+                             lambda w: self.slot.get())
+        __class__.draw_static(self)
+
+    def draw_static(self):
+        ItemCreator.draw_static(self)
+        self.slotM.pack()
+
+    def export(self):
+        rv = ItemCreator.export(self)
+        rv.update([('type', self.slotM.get())])
+        return rv
+
+
+class ArmorCreator(ApparelCreator):
+    def __init__(self, container):
+        ApparelCreator.__init__(self, container)
+        self.basepath = 'apparel/{}.apparel'
+        self.baseAC = AskLine(self.f, 'Base AC', "The base number (do not "
+                              "include the dex mod addition) read from the AC "
+                              "column of the Armor table.",
+                              lambda m: tk.Entry(m))
+        __class__.draw_static(self)
+
+    def draw_static(self):
+        ApparelCreator.draw_static(self)
+        self.baseAC.pack()
+
+    def export(self):
+        rv = ApparelCreator.export(self)
+        rv.update([('base_AC', int(self.baseAC.get()))])
+        return rv
+
+
+class ShieldCreator(ApparelCreator):
+    def __init__(self, container):
+        ApparelCreator.__init__(self, container)
+        self.basepath = 'apparel/{}.apparel'
+        self.slot.set('Shield')
+        __class__.draw_static(self)
+
+    def draw_static(self):
+        ApparelCreator.draw_static(self)
+
+    def export(self):
+        rv = ApparelCreator.export(self)
+        rv.update([('bonus', {'AC': 2})])
+        return rv
 
 
 class main(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
-        self.handler = ItemCreator(self.f)
+        types = ['item', 'treasure', 'weapon', 'ranged weapon', 'apparel',
+                 'armor', 'shield']
+        self.type = tk.StringVar()
+        self.type.trace('w', lambda a, b, c: self.type_select(self.type.get()))
+        self.typeselector = tk.OptionMenu(self.f, self.type, *types)
         self.another = tk.Button(self.f, text='Another', command=self.another)
         self.QUIT = tk.Button(self.f, text='QUIT', command=self.quit)
         self.draw_static()
-        self.draw_dynamic()
 
     def draw_static(self):
+        self.typeselector.grid(row=1, column=0)
         self.another.grid(row=1, column=1)
         self.QUIT.grid(row=2, column=1)
 
     def draw_dynamic(self):
         self.handler.grid(0, 0)
 
+    def type_select(self, t):
+        tpmap = {'item': ItemCreator, 'treasure': ItemCreator,
+                 'weapon': WeaponCreator, 'ranged weapon': RangedWeaponCreator,
+                 'apparel': ApparelCreator, 'armor': ArmorCreator,
+                 'shield': ShieldCreator}
+        try:
+            self.handler.destroy()
+        except AttributeError:
+            pass
+        self.handler = tpmap[t](self.f)
+        self.draw_dynamic()
+
     def another(self):
         self.handler.write()
-        self.handler.f.destroy()
-        self.handler = ItemCreator(self.f)
+        self.type_select(self.type.get())
         self.draw_dynamic()
 
     def quit(self):

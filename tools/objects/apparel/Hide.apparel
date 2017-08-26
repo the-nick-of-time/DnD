@@ -1,0 +1,9 @@
+{
+  "name": "Hide",
+  "value": 10.0,
+  "weight": 12.0,
+  "description": "This crude armor consists of thick furs and pelts. It is commonly worn by barbarian tribes, evil humanoids, and other folk who lack access to the tools and materials needed to create better armor.",
+  "effect": "It takes 5 minutes to don this armor, or 1 minute to doff it.",
+  "type": "MediumArmor",
+  "base_AC": "12"
+}

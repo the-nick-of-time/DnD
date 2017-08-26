@@ -1,0 +1,14 @@
+{
+  "name": "Quarterstaff",
+  "value": 0.2,
+  "weight": 4.0,
+  "description": "This simple, straight piece of wood can be used as an effective weapon.",
+  "effect": "You strike with your staff.",
+  "damage": "1d6",
+  "damage_type": "Bludgeoning",
+  "ability": [
+    "Strength"
+  ],
+  "weapon_type": "Simple",
+  "hands": "versatile"
+}
