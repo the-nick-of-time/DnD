@@ -572,9 +572,11 @@ class Character:
             t = cl.get('/spellcasting/slots')
             if (t is None):
                 return []
+            lv = self.level
         else:
             t = 'full'
-        path = '/slots/{}/{}'.format(t, self.caster_level)
+            lv = self.caster_level
+        path = '/slots/{}/{}'.format(t, lv)
         return cl.get(path)
 
     @property
@@ -1049,10 +1051,11 @@ class Spell:
         return self.effect
 
     def is_available(self, character):
-        for (c, obj, lv) in character.classes:
-            if c in self.classes:
-                return True
-        return False
+        return True
+        # for (c, obj, lv) in character.classes:
+        #     if c in self.classes:
+        #         return True
+        # return False
 
     def setowner(self, character):
         if (isinstance(character, Character)):
@@ -1339,11 +1342,12 @@ class RangedWeapon(Weapon):
 
     def __init__(self, jf):
         Weapon.__init__(self, jf)
-        self.ammunition = jf.get('/ammunition')
-        self.thrown = (self.ammunition == self.name)
-        self.shortrange = jf.get('/range')
-        self.longrange = self.shortrange * (3 if self.thrown else 4)
-        self.range = '{}/{}'.format(self.shortrange, self.longrange)
+        # self.ammunition = jf.get('/ammunition')
+        # self.thrown = (self.ammunition == self.name)
+        # self.shortrange = jf.get('/range')
+        # self.longrange = self.shortrange * (3 if self.thrown else 4)
+        # self.range = '{}/{}'.format(self.shortrange, self.longrange)
+        self.range = jf.get('/range')
 
     def spend_ammo(self):
         try:
