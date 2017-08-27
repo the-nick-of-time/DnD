@@ -245,6 +245,11 @@ class main(gui.Section):
         # desc should be a class and possibly a subclass name
         (rec, level) = self.character.classes.level_up(*desc)
         self.core = FeaturesAtLevel(self.f, rec.record, level)
+        # Set new number of hit dice
+        size = rec.hit_dice
+        hdpath = '/HP/HD/' + size + '/maxnumber'
+        hdn = self.character.get(hdpath)
+        self.character.set(hdpath, hdn + 1)
         self.draw_static()
         self.container.deiconify()
 
