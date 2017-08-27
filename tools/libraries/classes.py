@@ -1,13 +1,9 @@
 import re
 import os
-from collections import OrderedDict, defaultdict
-# SO I'm seriously considering not using a defaultdict as such, as it inserts its default values into the dict itself
-# If these are ever actually written to a file, it will be cluttered
+from collections import OrderedDict
 from functools import wraps
 from math import ceil
 
-# import tools.libraries.rolling as r
-# import tools.forge.helpers as h
 import rolling as r
 import helpers as h
 import interface as iface
@@ -17,21 +13,12 @@ import ClassMap as cm
 class Class:
     """Nonspecific representation of a D&D class.
 
-    Contained data:
-    name: the name of the class
-    skills: Tuple of strings detailing the skill proficiencies
-    saves: Tuple of strings detailing the save proficiencies
+    Data:
+    name: The name of the class
+    level: The level you have in this class
 
-    caster_type: '', 'half', 'full', or 'warlock'.
-    caster_abil: An ability name.
-
-    features: a dict mapping names to level: description dicts
-
-    resources: special class-specific resources like sorcerer points
-
-
-    Contained methods:
-    useresource
+    Methods:
+    get: Get from the LinkedInterface that this class reads from
     """
 
     def __init__(self, jf, classlevel):
@@ -39,43 +26,59 @@ class Class:
         self.name = jf.get('/name')
         self.level = classlevel
         self.hit_dice = jf.get('/hit_dice')
-        # self.saves = jf.get('/saves')
-        # self._features = jf.get('*/features')
-        self.features = {}
-        self.get_features()
 
     def get(self, key):
         return self.record.get(key)
 
-    def get_features(self):
-        """Gets the current features given a certain class level."""
-        # featurelist = self.record.get('*/features')
-        for lv in range(self.level, 0, -1):
-            featuresatlevel = self.record.get('*/features/' + str(lv))
-            # for name in featurelist[lv]:
-            #     if (name not in self.features):
-            #         self.features.update(featurelist[lv][name])
-            for name in featuresatlevel:
-                if (name not in self.features):
-                    self.features.update(featuresatlevel[name])
-
 
 class Race:
+    """Representation of a race.
+
+    Data:
+    name: The name of this race
+    features: The features associated with this race
+    """
     def __init__(self, jf, name):
         self.record = jf
         self.name = name
-        self.features = {}
-        self.get_features()
+        self.features = self.get_features()
 
     def get_features(self):
+        rv = {}
         featuredict = self.record.get('*/features')
         for name in featuredict:
-            self.features.update(featuredict[name])
+            rv.update(featuredict[name])
+        return rv
 
 
 class Resource:
+    """A resource with an associated value and recharge
+
+    Data:
+    number: The number of the resource that you currently have. Found in the
+        character file.
+    maxnumber: The maximum number of the resource that you can have. Often
+        found in a separate file from the character. If you set it explicitly
+        at any time, it is written into the character file and will override
+        any other definition of the maximum number.
+    value: The number you get when you use a resource. This can be a number
+        or a roll. For instance, a hit die obviously has a single die as its
+        value.
+
+    Methods:
+    use: Use some number of resources if you have that number remaining. Return
+        the total roll.
+    regain: Regain some number of resources, up to the maximum.
+    rest: Takes the length of rest (short, long, or turn) and resets the number
+        to the maximum number if the rest was long enough.
+    reset: Resets the number to the maximum number. (Generally you want to use
+        the rest interface rather than explicit reset though.)
+    write: Write the major record; most often a character file. (Generally use
+        Character.write if possible.)
+    """
     def __init__(self, jf, path, defjf=None, defpath=None, character=None):
-        # TODO: implement write protection on maxnumber when it is in an external file (ie defjf is not none)?
+        # TODO: implement write protection on maxnumber when it is in an
+        #   external file (ie defjf is not none)?
         self.record = jf
         self.character = character
         self.definition = defjf if (defjf is not None) else jf
@@ -113,7 +116,8 @@ class Resource:
                 return self.character.parse_vars(val)
             return val
         if (self.character is not None):
-            return self.character.parse_vars(self.definition.get(self.defpath + '/maxnumber'))
+            mx = self.definition.get(self.defpath + '/maxnumber')
+            return self.character.parse_vars(mx)
         return self.definition.get(self.defpath + '/maxnumber')
 
     @maxnumber.setter
@@ -159,6 +163,13 @@ class Resource:
 
 
 class Feature:
+    """Represents a feature from a class or race.
+
+    Data:
+    bonuses: Any bonuses that might be conferred by the feature.
+    resource: Any resource that might be provided by the feature.
+    name: The name of the feature.
+    """
     def __init__(self, char, path):
         # char is the Character
         # path is a full path to the feature including its file
@@ -193,57 +204,65 @@ class Feature:
 class Character:
     """Represents a PC or NPC.
 
-    Contained data:
+    Data:
     name: The name of the character.
-    class_levels: A ClassMap object.
-    level: The total level of the character, equivalent to
-        class_levels.sum()
+    classes: A ClassMap object of the total class levels that your character
+        has.
+    race: A RaceMap object of the race of the character.
+    level: The total level of the character.
     caster_level: The total caster level of the character.
-    abilities: A dictionary mapping ability names (abbreviations) to
-        scores.
-    inventory: A list of equipment, tagged with whether they are
-        equipped. In the form [name, count, equipped]
+    abilities: A dictionary mapping ability names to scores.
+    inventory: An Inventory object containing everything that you are carrying.
     AC: The current AC of the character.
-    proficiency: The proficiency bonus of the character. Allowed to
-        use proficiency dice.
+    proficiency: The proficiency bonus of the character.
+    hp: A HPhandler object that deals with the character's HP and also HD.
+    skills: A list of skill names in which you are proficient.
+    saves: A list of ability saves in which you are proficient.
+    features: A list of Feature objects that detail the features found in your
+        character file.
+    bonuses: A dict of bonuses organized as applicability: value.
+    spells: A SpellsPrepared object detailing all the spells that you currently
+        have prepared.
+    attacks: A dict mapping names of weapons or spells to the relevant Attack
+        objects.
+    resources: A list of Resource objects, detailing resources gained from
+        class or race features, or from equipped items.
+    conditions: A set of conditions that are currently active on you.
+    cantrip_scale: An integer of how many times you should roll cantrip damage
+        dice (as it scales with your level).
+    spell_slots: A <= 10-element list of numbers where the number at a certain
+        index is the number of spell slots that you have remaining. At 0th
+        level (cantrips) it should always be 999999.
+    max_spell_slots: A <= 10-element list of numbers where the number at a
+        certain index is the maximum number of spell slots available to you.
 
-    HP: An integer with the character's current hit points.
-    HP_max: An integer with the character's maximum HP.
-    HP_temp: An integer with the character's current temporary HP.
-
-    spell_slots: A list of length <= 10 of the number of spell slots
-        that are currently available.
-    spell_prepared: A list of strings with the names of spells that are
-        currently prepared.
-    spell_save: An integer with the character's spell save DC.
-
-
-    Contained methods:
-    HP_change: Takes the integer value of a change to HP (may be
-        produced by a roll) and alters the character's HP.
-            HP_change(self, amount)
-
-    spell_reset: Resets all spell slots to their maximum values.
-    spell_spend: Takes the level of the spell and deducts it from the
-        character's availability.
-    spell_recover: Takes the level of the spell slot and adds it to
-        the character's available spells.
-
-    abil_get_relevant: When called by a weapon or spell, returns the
-        relevant ability name. For instance, when a multiclass
-        druid/sorcerer casts a spell, it may use either the character's
-        Wisdom or Charisma. When there are multiple options, it returns
-        the one with the best ability score.
-            abil_get_relevant(self, action)
-    abil_check: Performs an ability check with the specified ability.
-        If skill is given, it is a skill check of that type.
-            abil_check(self, abil, skill='')
-    abil_save: Rolls a saving throw for the specified ability.
-            abil_save(self, abil)
-
-    AC_calc: Calculate the AC of the character.
-
-    item_consume: Use up a consumable item.
+    Methods:
+    get: Gets a value from the character file interface.
+    set: Directly sets a value in the character file interface.
+    add_condition: Adds a condition to what the character currently has.
+    remove_condition: Removes a condition from the character.
+    spell_spend: Given a Spell, spends an appropriate spell slot. On failure,
+        raises OutOfSpells.
+    item_consume: Given an item name, tries to deduct that item from the
+        current inventory.
+    ability_check: Rolls an ability check, given advantage, disadvantage, and
+        optionally what skill is being applied.
+    ability_save: Rolls an ability save, given advantage and disadvantage.
+    death_save: Rolls a death saving throw. Tracked in self.death_save_fails.
+    set_ability: Set an ability score.
+    spell_slots_get: Get spell slots left of a given level, or the full list if
+        given '*'.
+    spell_slots_set: Set current spell slots a given level, or the full list if
+        given '*'.
+    save_DC: Given a Spell, calculates the save DC against it.
+    relevant_abil: Given a Spell or Weapon, returns the ability score that
+        applies to the situation. Given multiple options, returns the best one.
+    rest: Takes the length of rest (short, long, or turn) and causes the
+        relevant resources, HP, and the like to recover.
+    parse_vars: Replaces variables plugged into a string (prefixed by $) with
+        the values from the character. Important values would be ${abil}_mod,
+        $proficiency, ${Class}_level, $level, and $caster_level.
+    write: Writes all changes to the file.
     """
     proficiencyDice = False
 
@@ -261,12 +280,10 @@ class Character:
         self.features = self.get_features()
         self.bonuses = self.get_bonuses()
         self.spells = SpellsPrepared(jf, self)
-        self.attacks = {}
-        self.register_attacks()
+        self.attacks = self.register_attacks()
         self.resources = self.get_resources()
         self.death_save_fails = 0
         self.conditions = set(self.record.get('/conditions') or [])
-        # self.lucky = False  # except that halflings get it
 
     def __str__(self):
         return self.name
@@ -337,13 +354,14 @@ class Character:
                 return False
 
     def register_attacks(self):
+        rv = {}
         for item in self.inventory:
             if (isinstance(item.obj, Attack)):
-                self.attacks[item.name] = item
-        # TODO: Work out spells as well; needs classification of spells as attacks
+                rv[item.name] = item
         for sp in self.spells:
             if (isinstance(sp, Attack)):
-                self.attacks[sp.name] = sp
+                rv[sp.name] = sp
+        return rv
 
     def spell_spend(self, spell):
         if (isinstance(spell, int)):
@@ -354,13 +372,13 @@ class Character:
             path = '/spell_slots/' + str(spell.level)
         num = self.record.get(path)
         if (num > 0):
-            self.record.set(path, num-1)
+            self.record.set(path, num - 1)
         else:
             for val in range(lv, len(self.spell_slots)):
                 path = '/spell_slots/' + str(val)
                 num = self.record.get(path)
                 if (num is not None and num > 0):
-                    self.record.set(path, num-1)
+                    self.record.set(path, num - 1)
                     return None
             # If it fails to find a spell slot, you're out of spells
             raise (OutOfSpells(self, spell))
@@ -418,14 +436,15 @@ class Character:
         return val
 
     def get_bonuses(self):
-        # bonuses = defaultdict(lambda: 0)
         def add_bonus(self, new, bonuses):
-            nonstackable = {'base_AC', 'lucky', 'jack_of_all_trades', 'attacks'}
+            nonstackable = {'base_AC', 'lucky', 'jack_of_all_trades',
+                            'attacks'}
             for var, amount in new.items():
                 if (var not in bonuses):
                     bonuses.update({var: amount})
                 elif (var in nonstackable):
-                    # values are evaluated only at creation time, but should hopefully be static
+                    # values are evaluated only at creation time, but should
+                    #   hopefully be static
                     newval = self.parse_vars(amount)
                     existing = self.parse_vars(bonuses[var])
                     if (newval > existing):
@@ -463,11 +482,6 @@ class Character:
 
     def get_resources(self):
         resources = []
-        # for item in self.inventory:
-        #
-        # for n in self.features:
-        #     if ('resource' in self.features[n]):
-        #         resources.append(self.features[n]['resource'])
         for f in self.features:
             if (f.resource):
                 resources.append(f.resource)
@@ -484,7 +498,7 @@ class Character:
                     continue
         return resources
 
-    def set_abilities(self, name, value):
+    def set_ability(self, name, value):
         self.abilities[name] = value
         self.record.set('/abilities/' + name, self.abilities[name])
 
@@ -496,7 +510,7 @@ class Character:
                 continue
             else:
                 # path = '/cantrip_damage/{}'.format(self.caster_level - 1)
-                path = '/cantrip_damage/{}'.format(self.level - 1)  # Which is it?
+                path = '/cantrip_damage/{}'.format(self.level - 1)
                 return cl.get(path)
         return 1
 
@@ -566,7 +580,8 @@ class Character:
 
     @property
     def max_spell_slots(self):
-        # This will fuck up on warlock multiclasses, I think I need to treat those spell slots as a Resource instead
+        # This will fuck up on warlock multiclasses, I think I need to treat
+        #   those spell slots as a Resource instead
         cl = self.classes[0]
         if (len(self.classes) == 1):
             t = cl.get('/spellcasting/slots')
@@ -609,10 +624,6 @@ class Character:
                     if (score > candidate):
                         candidate = score
             return candidate
-            # else:
-                # At this point it should be established that you have the
-                #   spell available
-                # raise AttributeError('You don\'t have that spell available.')
 
         elif (isinstance(forwhat, Weapon)):
             candidate = 0
@@ -662,14 +673,25 @@ class Character:
 
 
 class Inventory:
-    """Handles an inventory. Does not depend on a Character."""
+    """Handles the inventory from a character file.
+
+    Data:
+    items: A dictionary of name: ItemEntry object.
+
+    Methods:
+    __getitem__: Allows treating this object as a dict of ItemEntry objects.
+    getq: Given a name, get the number of that item that you have.
+    setq: Given a name and new number, sets the number of that item that you
+        have.
+    newslot: Given name, quantity, item type, and whether it is equipped,
+        create a new slot in the inventory for that item.
+    """
 
     def __init__(self, jf):
         """
         Parameters
         ----------
         jf: a JSONInterface to the character file
-        data: the equipment portion of said file
         items: a dict of name: ItemEntry
         """
         self.record = jf
@@ -713,6 +735,22 @@ class Inventory:
 
 
 class ItemEntry:
+    """Handles an item as it exists in a character's inventory.
+
+    Data:
+    name: The item's name.
+    number: How many of the item you have.
+    weight: How much one of the item weighs.
+    value: How much one of the item is worth, in gp.
+    equipped: Where the item is equipped, if anywhere.
+    type: The type of the item: weapon, ranged weapon, item, etc.
+    consumes: If this item consumes some item when used, it returns that.
+
+    Methods:
+    get: Get directly from the object's JSONInterface.
+    use: Use the item. Returns a string with the effects of the item.
+    describe: Returns the item's description.
+    """
     def __init__(self, jf, path, character=None):
         self.record = jf
         self.path = path
@@ -810,10 +848,6 @@ class ItemEntry:
         return None
 
     def use(self):
-        # if (self.consumable):
-        #     self.number -= 1
-        # if (self.consumes):
-        #     self.person.item_consume(self.consumes)
         if (self.obj is not None):
             return self.obj.use()
         else:
@@ -832,6 +866,22 @@ class ItemEntry:
 
 
 class HPhandler:
+    """Handles the HP and HD from a character file.
+
+    Data:
+    hd: A dictionary of the hit dice sizes corresponding to HDHandlers.
+    current: How many hit points you currently have.
+    max: Your hit point maximum.
+    temp: The number of temporary hit points you currently have.
+
+    Methods:
+    change_HP: Change your HP by a specified amount. If the amount is negative,
+        this is damage.
+    temp_HP: Add to your temp HP.
+    use_HD: Use a hit die and regain those HP.
+    rest: If rest is 'long', reset HP and regain half of all HD.
+    write: Write all changes to the file.
+    """
     def __init__(self, jf):
         self.record = jf
         self.hd = {size: HDHandler(jf, size) for size in jf.get('/HP/HD')}
@@ -926,6 +976,18 @@ class HPhandler:
 
 
 class HDHandler(Resource):
+    """Handles one set of hit dice for a character.
+
+    Data:
+    As Resource, but with the assumptions made that it recharges on a long
+        rest, its name is 'Hit Die', and its value is its size
+
+    Methods:
+    use_HD: Returns the result of rolling itself + the character's Constitution
+        modifier.
+    rest: Overrides Resource.rest, it only regains half of its maximum number
+        of HD.
+    """
     def __init__(self, jf, size):
         Resource.__init__(self, jf, '/HP/HD/' + size)
         self.name = 'Hit Die'
@@ -938,7 +1000,7 @@ class HDHandler(Resource):
         except LowOnResource as e:
             return 0
         conmod = h.modifier(self.record.get('/abilities/Constitution'))
-        return roll+conmod if (roll+conmod > 1) else 1
+        return roll + conmod if (roll + conmod > 1) else 1
 
     def rest(self, what):
         if (what == 'long'):
@@ -962,12 +1024,12 @@ class Damage:
 class Attack:
     """Base for other attacks.
 
-    Contained data:
-    damage_dice
+    Data:
+    damage_dice: The damage dice of this attack.
     num_targets: How many targets can be hit by this attack. If the
         attack is AOE, just use a reasonable upper bound.
 
-    Contained methods:
+    Methods:
     @staticmethod
     display_result: Display the result of an attack.
 
@@ -1008,17 +1070,23 @@ class Attack:
 class Spell:
     """Represents any spell.
 
-    Contained data:
-    name
+    Data:
+    name: The spell's name.
     owner: The character associated with this spell. May be unset
         until you try to cast it.
     level: The spell's level. 0 indicates a cantrip.
-    effects: A string (often long) containing a full description of the
+    effect: A string (often long) containing a full description of the
         spell's effects.
-    classes: A tuple with the names of all classes that have this spell
+    classes: A list of the names of all classes that have this spell
         available.
+    casting_time: "Action", "Bonus action", etc.
+    duration: "Instantaneous", etc.
+    range: The spell's range as a string.
+    components: The components that go into the spell.
+    isconcentration: If the spell takes concentration or not.
+    isritual: If the spell can be cast as a ritual.
 
-    Contained methods:
+    Methods:
     cast: Handles the casting of the spell, including whether you can
         cast it with the spell slots you have remaining.
     """
@@ -1065,6 +1133,21 @@ class Spell:
 
 
 class SpellsPrepared:
+    """Handles what spells you have prepared at any given time.
+
+    Data:
+    spells: A dict of spell name: Spell object
+    prepared: A set of all spell names you have prepared.
+    prepared_today: A set of spell names that you prepared for today.
+    always_prepared: A set of spell names that you always have prepared (domain
+        spells and the like.)
+
+
+    Methods:
+    prepare: Prepare a spell given its name. Can prepare permanently (adding to
+        always_prepared) if perma=True.
+    unprepare: Unprepares a spell given its name.
+    """
     def __init__(self, jf, character):
         self.record = jf
         self.char = character
@@ -1149,15 +1232,14 @@ class SpellAttack(Spell, Attack):
 
     These lists are "As Spell, plus..."
 
-    Contained data:
+    Data:
     attack_roll: If True, make an attack roll when attacking with this
         spell. Otherwise targets make a saving throw.
     attack_save: The name of the ability that the target makes a save
         with.
-    abil_add: Do you add your spellcasting ability modifier to the
-        damage of this spell?
 
-    Contained methods:
+    Methods:
+    attack: Make an attack with this spell.
     """
 
     def __init__(self, jf):
@@ -1166,13 +1248,11 @@ class SpellAttack(Spell, Attack):
         self.attack_roll = jf.get('/attack_roll')
         if (not self.attack_roll):
             self.save = jf.get('/save')
-        # self.add_abil = jf.get('/add_abil')
 
     def setowner(self, character):
         Spell.setowner(self, character)
         if (self.level == 0):
-            # self.damage_dice = '+'.join([self.damage_dice] *
-            #                             self.owner.cantrip_scale)
+            # Apply cantrip damage scaling
             rep = lambda m: str(int(m.group(0)) * self.owner.cantrip_scale)
             self.damage_dice = re.sub('\d+', rep, self.damage_dice, count=1)
 
@@ -1189,13 +1269,15 @@ class SpellAttack(Spell, Attack):
             extradamage = character.parse_vars(s)
         else:
             extradamage = 0
+        o = 'multipass'
+        oc = 'multipass_critical'
         if (self.attack_roll):
             dice = h.d20_roll(adv, dis, character.bonuses.get('lucky', False))
             for each in range(self.num_targets):
-                attack_roll = r.roll(dice, option='multipass')
-                attack_mods = r.roll(attack_bonus, option='multipass') \
-                              + r.roll(character.proficiency, option='multipass') \
-                              + h.modifier(character.relevant_abil(self))
+                attack_roll = r.roll(dice, option=o)
+                attack_mods = (r.roll(attack_bonus, option=o)
+                               + r.roll(character.proficiency, option=o)
+                               + h.modifier(character.relevant_abil(self)))
                 if (attack_roll == 1):
                     # Crit fail
                     attack_roll = 'Crit fail.'
@@ -1203,22 +1285,25 @@ class SpellAttack(Spell, Attack):
                 elif (attack_roll == 20):
                     # Critical hit
                     attack_roll = 'Critical hit!'
-                    damage_mods = r.roll(damage_bonus, option='multipass_critical') \
-                                  + extradamage
-                    damage_roll = r.roll(self.damage_dice, option='multipass_critical') \
-                                  + damage_mods
+                    damage_mods = (r.roll(damage_bonus, option=oc)
+                                   + extradamage)
+                    damage_roll = (r.roll(self.damage_dice, option=oc)
+                                   + damage_mods)
                 else:
                     # Normal attack
                     attack_roll += attack_mods
-                    damage_mods = r.roll(damage_bonus, option='multipass') + extradamage
-                    damage_roll = r.roll(self.damage_dice, option='multipass') + damage_mods
+                    damage_mods = (r.roll(damage_bonus, option=o)
+                                   + extradamage)
+                    damage_roll = (r.roll(self.damage_dice, option=o)
+                                   + damage_mods)
                 attacks.append(attack_roll)
                 damages.append(damage_roll)
         else:
             formatstr = 'Targets make a DC {n} {t} save.'
-            attacks.append(formatstr.format(n=character.save_DC(self), t=self.save))
-            damage_mods = r.roll(damage_bonus, option='multipass') + extradamage
-            damage = r.roll(self.damage_dice, option='multipass') + damage_mods
+            attacks.append(formatstr.format(n=character.save_DC(self),
+                                            t=self.save))
+            damage_mods = r.roll(damage_bonus, option=o) + extradamage
+            damage = r.roll(self.damage_dice, option=o) + damage_mods
             damages.append(damage)
         return (attacks, damages, self.effect)
 
@@ -1226,12 +1311,18 @@ class SpellAttack(Spell, Attack):
 class Item:
     """Represents any item that you could own.
 
-    Contained data:
-    name
-    consumable: True if the item is consumed by being used.
+    Data:
+    name: The item's name.
+    weight: How much one of the item weighs.
+    value: How much one of the item is worth, in gp.
+    consumes: If this item consumes some item when used, it returns that.
+    effect: A description of the effects of the item when used.
+    description: A description of the item.
 
-    Contained methods:
-    use: Decrement count if consumable and return the effect.
+    Methods:
+    use: Consume an item if applicable and return the effect.
+    get: Get a value from the object's file.
+    describe: Return the description of the item.
     """
 
     def __init__(self, jf):
@@ -1249,7 +1340,7 @@ class Item:
         return self.name
 
     def __getattr__(self, key):
-        return self.record.get(key)
+        return self.record.get('/' + key)
 
     def get(self, key):
         return self.__getattr__(key)
@@ -1272,10 +1363,11 @@ class Item:
 class Weapon(Attack, Item):
     """Represents a weapon.
 
-    Contained data:
-    owner: The character who is using this weapon.
+    Data:
+    Only inherited
 
-    Contained methods:
+    Methods:
+    attack: Make an attack with this weapon.
     """
 
     def __init__(self, jf):
@@ -1293,12 +1385,15 @@ class Weapon(Attack, Item):
         attack = []
         damage = []
         abil = h.modifier(character.relevant_abil(self))
-        for all in range(self.num_targets + character.bonuses.get('attacks', 0)):
-            attack_roll = r.roll(dice, option='multipass')
-            attack_mods = r.roll(attack_bonus, option='multipass') \
-                          + r.roll(character.proficiency, option='multipass') \
+        o = 'multipass'
+        oc = 'multipass_critical'
+        for all in range(self.num_targets
+                         + character.bonuses.get('attacks', 0)):
+            attack_roll = r.roll(dice, option=o)
+            attack_mods = r.roll(attack_bonus, option=o) \
+                          + r.roll(character.proficiency, option=o) \
                           + abil \
-                          + r.roll(self.magic_bonus.get('attack', 0), option='multipass')
+                          + r.roll(self.magic_bonus.get('attack', 0), option=o)
 
             if (attack_roll == 1):
                 # Crit fail
@@ -1307,19 +1402,19 @@ class Weapon(Attack, Item):
             elif (attack_roll == 20):
                 # Critical hit
                 attack_roll = 'Critical hit!'
-                # damage_mods = abil \
-                #               + r.roll(damage_bonus, option='critical')
-                # damage_roll = r.roll(self.damage_dice, option='critical') \
-                #               + damage_mods
-                damage_mods = abil + r.roll(damage_bonus, option='multipass_critical') + r.roll(self.magic_bonus.get('attack', 0), option='multipass_critical')
-                damage_roll = r.roll(self.damage_dice, option='multipass_critical') + damage_mods
+                damage_mods = (abil
+                               + r.roll(damage_bonus, option=oc)
+                               + r.roll(self.magic_bonus.get('attack', 0),
+                                        option=oc))
+                damage_roll = r.roll(self.damage_dice, option=oc) + damage_mods
             else:
                 # Normal attack
                 attack_roll += attack_mods
                 damage_mods = abil \
-                              + r.roll(damage_bonus, option='multipass') \
-                              + r.roll(self.magic_bonus.get('damage', 0), option='multipass')
-                damage_roll = r.roll(self.damage_dice, option='multipass') + damage_mods
+                              + r.roll(damage_bonus, option=o) \
+                              + r.roll(self.magic_bonus.get('damage', 0),
+                                       option=o)
+                damage_roll = r.roll(self.damage_dice, option=o) + damage_mods
             attack.append(attack_roll)
             damage.append(damage_roll)
         return (attack, damage, self.effect)
@@ -1330,14 +1425,12 @@ class RangedWeapon(Weapon):
 
     These lists are "As Weapon, plus..."
 
-    Contained data:
-    ammunition: Which type of ammunition it uses. May be bolt, arrow,
-        bullet, or its own name (if thrown).
+    Data:
+    range: A string with the range of the weapon.
 
-    Contained methods:
+    Methods:
     spendAmmo: Expends a piece of ammunition by telling the character
         to decrement their ammunition count.
-    recoverAmmo: Recovers a piece of ammunition.
     """
 
     def __init__(self, jf):
@@ -1351,7 +1444,6 @@ class RangedWeapon(Weapon):
 
     def spend_ammo(self):
         try:
-            # self.owner.item_consume(self.ammunition)
             self.owner.item_consume(self.consumes)
         except OutOfItems:
             raise
@@ -1369,11 +1461,14 @@ class RangedWeapon(Weapon):
 class Armor(Item):
     """Represents a set of armor.
 
-    Contained data:
+    Data:
     base_AC: Your base AC when wearing this armor.
+    bonus_AC: Any AC bonus conferred by this armor (most commonly a shield).
     type: Light, Medium, Heavy, or Shield.
 
-    Contained methods:
+    Methods:
+    get_AC: Given the character's dex mod, return what base AC this armor gives
+        them.
     """
     def __init__(self, jf):
         Item.__init__(self, jf)
@@ -1396,7 +1491,7 @@ class Armor(Item):
 class MagicItem(Item):
     """Represents an arbitrary magic item.
 
-    Contained data:
+    Data:
     magic_bonus: A dict mapping applicability (such as damage or AC)
         to rollable strings. For instance, a magic weapon could have a
         +1 to attack rolls and +1d4 to damage, which would be shown as
@@ -1404,7 +1499,7 @@ class MagicItem(Item):
     effects: A (often long) string describing the effects of using
         this item.
 
-    Contained methods:
+    Methods:
     activate: Builds on Item.use() and returns a description of the
         effects of the magic item.
     """
@@ -1417,6 +1512,14 @@ class MagicItem(Item):
 
 
 class MagicCharge(Resource):
+    """Magic item charge is a special kind of resource.
+
+    Data:
+    regains: How many charges are regained when it recharges.
+
+    Methods:
+    rest: Roll self.regain and get back that many charges.
+    """
     def __init__(self, jf, path, defjf=None, defpath=None):
         Resource.__init__(self, jf, path, defjf, defpath)
         self.regains = self.definition.get(self.defpath + '/regains')
@@ -1425,7 +1528,7 @@ class MagicCharge(Resource):
         # Overrides the base method because that assumes it will fully
         #   recharge on a long rest, which is usually reasonable but not here
         if (what == 'long'):
-            if (self.recharge == 'long rest' or self.recharge == 'short rest' or self.recharge == 'turn'):
+            if (self.recharge in ['long rest', 'short rest', 'turn']):
                 self.regain(r.roll(self.regains))
                 return self.number
         if (what == 'short'):
@@ -1476,7 +1579,9 @@ class OutOfSpells(MyError):
 
     def __str__(self):
         formatstr = '{char} has no spell slots of level {lv} remaining.'
-        return formatstr.format(char=self.character.name, lv=(self.spell if isinstance(self.spell, int) else self.spell.level))
+        return formatstr.format(char=self.character.name,
+                                lv=(self.spell if isinstance(self.spell, int)
+                                    else self.spell.level))
 
 
 class OutOfItems(MyError):
