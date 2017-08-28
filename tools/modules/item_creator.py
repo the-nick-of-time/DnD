@@ -7,35 +7,13 @@ from collections import OrderedDict
 import json
 import re
 import sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
+sys.path.insert(0,
+                os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import GUIbasics as gui
 import interface as iface
 import helpers as h
 import tkUtility as util
-
-
-class AskLine(gui.Section):
-    def __init__(self, container, name, description, widgetmaker, puller=None):
-        # widgetmaker is a function that takes one argument, the widget's master, and returns the widget
-        # puller is either None, which makes the puller the widget's .get() method, or a function that takes the widget as its only argument and returns the data from it
-        gui.Section.__init__(self, container)
-        self.nameL = tk.Label(self.f, text=name)
-        self.widget = widgetmaker(self.f)
-        self.describer = gui.InfoButton(self.f, description, name)
-        if (puller is not None):
-            self.puller = lambda: puller(self.widget)
-        else:
-            self.puller = self.widget.get
-        __class__.draw_static(self)
-
-    def draw_static(self):
-        self.nameL.grid(row=0, column=0)
-        self.widget.grid(row=0, column=1)
-        self.describer.grid(row=0, column=2)
-
-    def get(self):
-        return self.puller()
 
 
 class Creator(gui.Section):
@@ -45,8 +23,8 @@ class Creator(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
         self.basepath = ''
-        self.name = AskLine(self.f, 'Name', "The item's name.",
-                            lambda m: tk.Entry(m))
+        self.name = gui.AskLine(self.f, 'Name', "The item's name.",
+                                lambda m: tk.Entry(m))
         __class__.draw_static(self)
 
     def draw_static(self):
@@ -75,26 +53,27 @@ class ItemCreator(Creator):
     def __init__(self, container):
         Creator.__init__(self, container)
         self.basepath = 'item/{}.item'
-        self.value = AskLine(self.f, 'Value', "The item's value, in gp"
-                             " (decimals okay, fractions not).",
-                             lambda m: tk.Entry(m))
-        self.weight = AskLine(self.f, 'Weight', "The item's weight, in pounds"
-                              "(decimals okay, fractions not).",
-                              lambda m: tk.Entry(m))
+        self.value = gui.AskLine(self.f, 'Value', "The item's value, in gp"
+                                 " (decimals okay, fractions not).",
+                                 lambda m: tk.Entry(m))
+        self.weight = gui.AskLine(self.f, 'Weight', "The item's weight, in "
+                                  "pounds (decimals okay, fractions not).",
+                                  lambda m: tk.Entry(m))
         d = ("If using this item consumes some item, put that name here. For"
-             " instance, if you are making an item for ale, you would put 'ale'"
-             " here because using it means that you are consuming the ale."
-             " Alternatively, a lantern would consume 'oil', and a bow would "
-             "consume 'arrow's.")
-        self.consumes = AskLine(self.f, 'Consumes', d, lambda m: tk.Entry(m))
+             " instance, if you are making an item for ale, you would put "
+             "'ale' here because using it means that you are consuming the "
+             "ale. Alternatively, a lantern would consume 'oil', and a bow "
+             "would consume 'arrow's.")
+        self.consumes = gui.AskLine(self.f, 'Consumes', d,
+                                    lambda m: tk.Entry(m))
         desc = lambda m: tk.Text(m, height=4, width=50, wrap='word')
         pull = lambda w: w.get('1.0', 'end').strip()
-        self.description = AskLine(self.f, 'Description', "A description of the"
-                                   " item.", desc, pull)
+        self.description = gui.AskLine(self.f, 'Description', "A description "
+                                       "of the item.", desc, pull)
         effc = lambda m: tk.Text(m, height=4, width=50, wrap='word')
         pull = lambda w: w.get('1.0', 'end').strip()
-        self.effect = AskLine(self.f, 'Effect', "What happens when you use the"
-                              " item.", effc, pull)
+        self.effect = gui.AskLine(self.f, 'Effect', "What happens when you "
+                                  "use the item.", effc, pull)
         __class__.draw_static(self)
 
     def draw_static(self):
@@ -114,7 +93,7 @@ class ItemCreator(Creator):
                    ])
         con = self.consumes.get()
         if (con):
-            rv.update((('consumes', con)))
+            rv.update([('consumes', con)])
         return rv
 
 
@@ -122,26 +101,31 @@ class WeaponCreator(ItemCreator):
     def __init__(self, container):
         ItemCreator.__init__(self, container)
         self.basepath = 'weapon/{}.weapon'
-        self.damage = AskLine(self.f, 'Damage', "The weapon's damage roll.", lambda m: tk.Entry(m))
-        self.damagetype = AskLine(self.f, 'Damage type', "The weapon's damage type.", lambda m: tk.Entry(m))
+        self.damage = gui.AskLine(self.f, 'Damage',
+                                  "The weapon's damage roll.",
+                                  lambda m: tk.Entry(m))
+        self.damagetype = gui.AskLine(self.f, 'Damage type', "The weapon's "
+                                      "damage type.", lambda m: tk.Entry(m))
         abils = ['Strength', 'Dexterity', 'Dexterity or Strength']
         self.ability = tk.StringVar()
-        self.abilityM = AskLine(self.f, 'Ability', "The ability used to make"
-                                " attack and damage rolls.",
-                                lambda m: tk.OptionMenu(m, self.ability,
-                                                        *abils),
-                                lambda w: self.ability.get().split(' or '))
+        self.abilityM = gui.AskLine(self.f, 'Ability', "The ability used to "
+                                    "make attack and damage rolls.",
+                                    lambda m: tk.OptionMenu(m, self.ability,
+                                                            *abils),
+                                    lambda w: self.ability.get().split(' or '))
         self.weapontype = tk.StringVar()
-        self.wptypeM = AskLine(self.f, 'Weapon class', "Simple or martial.",
-                               lambda m: tk.OptionMenu(m, self.weapontype,
-                                                       *['Simple', 'Martial']),
-                               lambda w: self.weapontype.get())
+        tps = ['Simple', 'Martial']
+        self.wptypeM = gui.AskLine(self.f, 'Weapon class',
+                                   "Simple or martial.",
+                                   lambda m: tk.OptionMenu(m, self.weapontype,
+                                                           *tps),
+                                   lambda w: self.weapontype.get())
         self.hands = tk.StringVar()
         h = ['one', 'two', 'versatile']
-        self.handsM = AskLine(self.f, 'Hands', "One-handed, two-handed, or "
-                              "versatile weapon.",
-                              lambda m: tk.OptionMenu(m, self.hands, *h),
-                              lambda w: self.hands.get())
+        self.handsM = gui.AskLine(self.f, 'Hands', "One-handed, two-handed, "
+                                  "or versatile weapon.",
+                                  lambda m: tk.OptionMenu(m, self.hands, *h),
+                                  lambda w: self.hands.get())
         __class__.draw_static(self)
 
     def draw_static(self):
@@ -167,8 +151,8 @@ class RangedWeaponCreator(WeaponCreator):
     def __init__(self, container):
         WeaponCreator.__init__(self, container)
         self.basepath = 'weapon/{}.ranged.weapon'
-        self.range = AskLine(self.f, 'Range', "The weapon's range.",
-                             lambda m: tk.Entry(m))
+        self.range = gui.AskLine(self.f, 'Range', "The weapon's range.",
+                                 lambda m: tk.Entry(m))
         __class__.draw_static(self)
 
     def draw_static(self):
@@ -189,10 +173,10 @@ class ApparelCreator(ItemCreator):
         slots = ['Glove', 'Belt', 'LightArmor', 'MediumArmor', 'HeavyArmor',
                  'Clothes', 'Headwear', 'Boots', 'Necklace', 'Cloak',
                  'Shield']
-        self.slotM = AskLine(self.f, 'Apparel slot occupied', "Where do you "
-                             "wear this item?",
-                             lambda m: tk.OptionMenu(m, self.slot, *slots),
-                             lambda w: self.slot.get())
+        self.slotM = gui.AskLine(self.f, 'Apparel slot occupied', "Where do "
+                                 "you wear this item?",
+                                 lambda m: tk.OptionMenu(m, self.slot, *slots),
+                                 lambda w: self.slot.get())
         __class__.draw_static(self)
 
     def draw_static(self):
@@ -209,10 +193,10 @@ class ArmorCreator(ApparelCreator):
     def __init__(self, container):
         ApparelCreator.__init__(self, container)
         self.basepath = 'apparel/{}.apparel'
-        self.baseAC = AskLine(self.f, 'Base AC', "The base number (do not "
-                              "include the dex mod addition) read from the AC "
-                              "column of the Armor table.",
-                              lambda m: tk.Entry(m))
+        self.baseAC = gui.AskLine(self.f, 'Base AC', "The base number (do not "
+                                  "include the dex mod addition) read from "
+                                  "the AC column of the Armor table.",
+                                  lambda m: tk.Entry(m))
         __class__.draw_static(self)
 
     def draw_static(self):
@@ -239,6 +223,12 @@ class ShieldCreator(ApparelCreator):
         rv = ApparelCreator.export(self)
         rv.update([('bonus', {'AC': 2})])
         return rv
+
+
+class TreasureCreator(ItemCreator):
+    def __init__(self, container):
+        ItemCreator.__init__(self, container)
+        self.basepath = 'treasure/{}.treasure'
 
 
 class main(gui.Section):
