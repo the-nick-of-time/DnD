@@ -1,0 +1,8 @@
+{
+  "name": "Traveler's Clothes",
+  "value": 2.0,
+  "weight": 4.0,
+  "description": "These clothes are plain and filled with pockets.",
+  "effect": "",
+  "type": "Clothes"
+}

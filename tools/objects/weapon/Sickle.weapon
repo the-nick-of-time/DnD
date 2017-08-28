@@ -1,15 +1,14 @@
 {
   "name": "Sickle",
-  "value": 1,
-  "weight": 2,
-  "consumable": "",
-  "description": "This curved blade is intended to harvest crops.\n",
-  "effect": "\n",
+  "value": 1.0,
+  "weight": 2.0,
+  "description": "This curved blade is intended to harvest crops.",
+  "effect": "You slash your enemy with the blade.",
   "damage": "1d4",
   "damage_type": "Slashing",
   "ability": [
     "Strength"
   ],
-  "type": "simple",
+  "weapon_type": "Simple",
   "hands": "one"
 }

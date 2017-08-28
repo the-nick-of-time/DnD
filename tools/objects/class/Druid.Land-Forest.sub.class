@@ -11,7 +11,7 @@
     },
     {
       "Circle Spells": {
-        "description": "Your mystical connection to the land infuses you with lhe ability lo cast certa in spells, At 3rd, 5th, 7th, and 9th level you gain access to circle spells connecled to the land where you became a drllid, Choose that land-arctic, coast, desert, forest, grassland. mountain, swamp, or Underdark-and consult the associated list of spells, Once you gain access lo a circle spell. you always have il prepared, and it doesn't count against the nllmber of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
+        "description": "Your mystical connection to the land infuses you with lhe ability lo cast certa in spells, At 3rd, 5th, 7th, and 9th level you gain access to circle spells connecled to the land where you became a drllid, Choose that land-arctic, coast, desert, forest, grassland. mountain, swamp, or Underdark-and consult the associated list of spells, Once you gain access lo a circle spell. you always have il prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
         "bonus": {
           "always_prepared": ["Barkskin", "Spider Climb"]
         }
@@ -20,7 +20,7 @@
     {},
     {
       "Circle Spells": {
-        "description": "Your mystical connection to the land infuses you with lhe ability lo cast certa in spells, At 3rd, 5th, 7th, and 9th level you gain access to circle spells connecled to the land where you became a drllid, Choose that land-arctic, coast, desert, forest, grassland. mountain, swamp, or Underdark-and consult the associated list of spells, Once you gain access lo a circle spell. you always have il prepared, and it doesn't count against the nllmber of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
+        "description": "Your mystical connection to the land infuses you with lhe ability lo cast certa in spells, At 3rd, 5th, 7th, and 9th level you gain access to circle spells connecled to the land where you became a drllid, Choose that land-arctic, coast, desert, forest, grassland. mountain, swamp, or Underdark-and consult the associated list of spells, Once you gain access lo a circle spell. you always have il prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
         "bonus": {
           "always_prepared": ["Barkskin", "Spider Climb", "Call Lightning", "Plant Growth"]
         }
@@ -33,7 +33,7 @@
     },
     {
       "Circle Spells": {
-        "description": "Your mystical connection to the land infuses you with lhe ability lo cast certa in spells, At 3rd, 5th, 7th, and 9th level you gain access to circle spells connecled to the land where you became a drllid, Choose that land-arctic, coast, desert, forest, grassland. mountain, swamp, or Underdark-and consult the associated list of spells, Once you gain access lo a circle spell. you always have il prepared, and it doesn't count against the nllmber of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
+        "description": "Your mystical connection to the land infuses you with lhe ability lo cast certa in spells, At 3rd, 5th, 7th, and 9th level you gain access to circle spells connecled to the land where you became a drllid, Choose that land-arctic, coast, desert, forest, grassland. mountain, swamp, or Underdark-and consult the associated list of spells, Once you gain access lo a circle spell. you always have il prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
         "bonus": {
           "always_prepared": ["Barkskin", "Spider Climb", "Call Lightning", "Plant Growth", "Divination", "Freedom of Movement"]
         }
@@ -42,7 +42,7 @@
     {},
     {
       "Circle Spells": {
-        "description": "Your mystical connection to the land infuses you with lhe ability lo cast certa in spells, At 3rd, 5th, 7th, and 9th level you gain access to circle spells connecled to the land where you became a drllid, Choose that land-arctic, coast, desert, forest, grassland. mountain, swamp, or Underdark-and consult the associated list of spells, Once you gain access lo a circle spell. you always have il prepared, and it doesn't count against the nllmber of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
+        "description": "Your mystical connection to the land infuses you with lhe ability lo cast certa in spells, At 3rd, 5th, 7th, and 9th level you gain access to circle spells connecled to the land where you became a drllid, Choose that land-arctic, coast, desert, forest, grassland. mountain, swamp, or Underdark-and consult the associated list of spells, Once you gain access lo a circle spell. you always have il prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
         "bonus": {
           "always_prepared": ["Barkskin", "Spider Climb", "Call Lightning", "Plant Growth", "Divination", "Freedom of Movement", "Commune with Nature", "Tree Stride"]
         }

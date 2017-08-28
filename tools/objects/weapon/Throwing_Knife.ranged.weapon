@@ -1,19 +1,17 @@
 {
   "name": "Throwing Knife",
+  "value": 2.0,
+  "weight": 1.0,
+  "description": "This knife is specially weighted for throwing.",
+  "effect": "The knife flies from your hand, spinning towards your target.",
+  "consumes": "Throwing Knife",
   "damage": "1d4",
   "damage_type": "Piercing",
-  "effect": "The knife flies from your hand, spinning towards your target.",
-  "description": "This knife is specially weighted for throwing.",
-  "attacks": 1,
-  "hands": "one",
-  "weapon_type": "Simple",
   "ability": [
     "Dexterity",
     "Strength"
   ],
-  "value": 1,
-  "weight": 1.5,
-  "consumes": "Throwing Knife",
-  "range": 30,
-  "thrown": true
+  "weapon_type": "Simple",
+  "hands": "one",
+  "range": "25/75"
 }

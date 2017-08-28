@@ -1,0 +1,16 @@
+{
+  "name": "Handaxe",
+  "value": 5.0,
+  "weight": 2.0,
+  "description": "This small axe is weighted for throwing.",
+  "effect": "You send this axe spinning towards its target.",
+  "consumes": "Handaxe",
+  "damage": "1d6",
+  "damage_type": "Slashing",
+  "ability": [
+    "Strength"
+  ],
+  "weapon_type": "Simple",
+  "hands": "one",
+  "range": "20/60"
+}

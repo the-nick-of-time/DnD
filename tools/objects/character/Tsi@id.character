@@ -1,15 +1,15 @@
 {
   "name": "Tsi'id",
-  "level": "Barbarian 1",
+  "level": "Barbarian 2",
   "race": "Dragonborn (Black)",
   "HP": {
-    "max": 13,
-    "current": 13,
+    "max": 21,
+    "current": 21,
     "temp": 0,
     "HD": {
       "1d12": {
-        "number": 1,
-        "maxnumber": 1
+        "number": 2,
+        "maxnumber": 2
       }
     }
   },
@@ -40,72 +40,72 @@
     "Maul": {
       "type": "weapon",
       "quantity": 1,
-      "equipped": true
+      "equipped": null
     },
     "Javelin": {
-      "type": "weapon",
+      "type": "ranged weapon",
       "quantity": 4,
-      "equipped": true
+      "equipped": null
     },
     "Handaxe": {
-      "type": "weapon",
+      "type": "ranged weapon",
       "quantity": 2,
-      "equipped": true
+      "equipped": null
     },
     "Belt Pouch": {
       "type": "item",
       "quantity": 1,
-      "equipped": true
+      "equipped": null
     },
     "Wolf Fur Half-cape": {
-      "type": "item",
+      "type": "apparel",
       "quantity": 1,
-      "equipped": true
+      "equipped": null
     },
     "Traveler's Clothes": {
-      "type": "item",
+      "type": "apparel",
       "quantity": 1,
-      "equipped": true
+      "equipped": null
     },
     "Backpack": {
       "type": "item",
       "quantity": 1,
-      "equipped": true
+      "equipped": null
     },
     "Bedroll": {
       "type": "item",
       "quantity": 1,
-      "equipped": true
+      "equipped": null
     },
     "Mess Kit": {
       "type": "item",
       "quantity": 1,
-      "equipped": true
+      "equipped": null
     },
     "Tinderbox": {
       "type": "item",
       "quantity": 1,
-      "equipped": true
+      "equipped": null
     },
     "Torch": {
       "type": "item",
       "quantity": 10,
-      "equipped": true
+      "equipped": null
     },
     "Trail Rations": {
       "type": "item",
       "quantity": 10,
-      "equipped": true
+      "equipped": null
     },
     "Waterskin": {
       "type": "item",
       "quantity": 1,
-      "equipped": true
+      "equipped": null
     },
     "Hemp Rope": {
       "type": "item",
       "quantity": 50,
-      "equipped": true
+      "equipped": null
     },
     "gp": {
       "type": "treasure",
@@ -132,7 +132,9 @@
     "Rage": "class/Barbarian.class/features/1/Rage",
     "Unarmored Defense": "class/Barbarian.class/features/1/Unarmored Defense",
     "Breath Weapon": "race/Dragonborn.Black.sub.race/features/Breath Weapon",
-    "Damage Resistance": "race/Dragonborn.Black.sub.race/features/Damage Resistance"
+    "Damage Resistance": "race/Dragonborn.Black.sub.race/features/Damage Resistance",
+    "Danger Sense": "class/Barbarian.class/features/2/Danger Sense",
+    "Reckless Attack": "class/Barbarian.class/features/2/Reckless Attack"
   },
   "resources": {
     "Rage": {

@@ -1,0 +1,16 @@
+{
+  "name": "Javelin",
+  "value": 0.5,
+  "weight": 2.0,
+  "description": "This spear is meant for throwing.",
+  "effect": "You toss this spear in an arc towards your enemy.",
+  "consumes": "Javelin",
+  "damage": "1d6",
+  "damage_type": "Piercing",
+  "ability": [
+    "Strength"
+  ],
+  "weapon_type": "Simple",
+  "hands": "one",
+  "range": "30/120"
+}
