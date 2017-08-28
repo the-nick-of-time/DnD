@@ -16,10 +16,9 @@ class main:
     def __init__(self, window):
         self.window = window
         self.f = tk.Frame(window)
-        self.playerframe = tk.LabelFrame(self.f, text='Player', padx=10,
-                                         pady=5)
-        self.dmframe = tk.LabelFrame(self.f, text='DM', padx=10, pady=5)
-        self.rollframe = tk.LabelFrame(self.f, text='Any', padx=10, pady=5)
+        self.playerframe = tk.LabelFrame(self.f, text='Player', padx=10)
+        self.dmframe = tk.LabelFrame(self.f, text='DM', padx=10)
+        self.rollframe = tk.LabelFrame(self.f, text='Any', padx=10)
         self.charmanage = tk.Button(self.playerframe, text='Manage\nCharacter',
                                     command=self.charactermanager)
         self.charcreate = tk.Button(self.playerframe, text='Create\nCharacter',
@@ -37,13 +36,13 @@ class main:
     def draw_static(self):
         self.f.pack()
         self.playerframe.grid(row=0, column=0)
-        self.charmanage.pack()
+        self.charmanage.pack(pady=5)
         self.charcreate.pack(pady=5)
         self.levelup.pack(pady=5)
         self.dmframe.grid(row=0, column=1)
-        self.monstermanage.pack()
+        self.monstermanage.pack(pady=5)
         self.rollframe.grid(row=0, column=2)
-        self.diceroll.pack()
+        self.diceroll.pack(pady=5)
         self.itemcreator.pack(pady=5)
 
     def charactermanager(self):
