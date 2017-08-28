@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import tkinter as tk
 import re
 import os
@@ -180,6 +182,20 @@ class module(gui.Section):
     def __init__(self, container, character):
         gui.Section.__init__(self, container)
         self.character = character
+        self.choice = tk.StringVar()
+
+    def ask_level_begin(self):
+        win = tk.Toplevel()
+        classes = ['Bard', 'Barbarian', 'Cleric', 'Druid', 'Fighter', 'Monk',
+                   'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock',
+                   'Wizard']
+        menu = tk.OptionMenu(win, self.choice, *classes)
+        menu.grid(row=0, column=0)
+        accept = tk.Button(win, text='Continue', command=self.ask_level_end)
+        accept.grid(row=0, column=1)
+
+    def ask_level_end(self):
+        cl = self.choice.get()
         # ask for class name to level up
         pattern = r'\s*([a-zA-Z\']+)\s*(\(([a-zA-Z\'\s]+)\))?'
         desc_ = re.match(pattern, cl).groups()
@@ -217,7 +233,11 @@ class main(gui.Section):
 
     def startup_begin(self):
         self.levelgain = {}
-        gui.Query(self.levelgain, self.startup_end, 'Character Name?', 'Class to gain a level in?')
+        classes = ['Bard', 'Barbarian', 'Cleric', 'Druid', 'Fighter', 'Monk',
+                   'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock',
+                   'Wizard']
+        gui.Query(self.levelgain, self.startup_end, 'Character Name?',
+                  ['Class to gain a level in?', classes])
         self.container.withdraw()
 
     def startup_end(self):
