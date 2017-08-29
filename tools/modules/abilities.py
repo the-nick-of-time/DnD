@@ -3,7 +3,8 @@
 import tkinter as tk
 import os
 import sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
+sys.path.insert(0,
+                os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 from classes import Character
 import helpers as h
@@ -12,9 +13,11 @@ import rolling as r
 import tkUtility as util
 import interface as iface
 
+
 class AbilityDisplay(gui.Section):
     abilnames = ['Strength', 'Dexterity', 'Constitution',
                  'Intelligence', 'Wisdom', 'Charisma']
+
     def __init__(self, master, character):
         gui.Section.__init__(self, master)
         self.person = character
@@ -30,12 +33,16 @@ class AbilityDisplay(gui.Section):
                                 textvariable=self.abiltexts[i])
                        for (i, a) in enumerate(self.abilnames)]
         self.mods = [tk.Label(self.subf, width=2) for a in self.abilnames]
-        self.saves = [tk.Button(self.subf, text='SAVE', width=4, command=lambda x=a: self.roll_save(x)) for a in self.abilnames]
+        self.saves = [tk.Button(self.subf, text='SAVE', width=4,
+                                command=lambda x=a: self.roll_save(x))
+                      for a in self.abilnames]
         ######
         self.adv = tk.BooleanVar()
-        self.advbutton = tk.Checkbutton(self.f, text='Advantage?', variable=self.adv)
+        self.advbutton = tk.Checkbutton(self.f, text='Advantage?',
+                                        variable=self.adv)
         self.dis = tk.BooleanVar()
-        self.disbutton = tk.Checkbutton(self.f, text='Disadvantage?', variable=self.dis)
+        self.disbutton = tk.Checkbutton(self.f, text='Disadvantage?',
+                                        variable=self.dis)
         self.rolldisplay = tk.Label(self.f)
         ######
         self.skills = SkillDisplay(self.thisf, self.person, self.rolldisplay,
@@ -68,19 +75,17 @@ class AbilityDisplay(gui.Section):
             self.mods[i]['text'] = h.modifier(self.scores[i].get() or 0)
 
     def roll_check(self, abil):
-        # i = self.abilnames.index(abil)
-        # mod = h.modifier(self.scores[i].get())
         advantage = self.adv.get()
         disadvantage = self.dis.get()
-        # roll = '2d20h1' if (advantage and not disadvantage) else '2d20l1' if (disadvantage and not advantage) else '1d20'
-        # result = r.roll(roll)
-        result = self.person.ability_check(abil, adv=advantage, dis=disadvantage)
+        result = self.person.ability_check(abil, adv=advantage,
+                                           dis=disadvantage)
         self.rolldisplay['text'] = '{}+{}={}'.format(*reversed(result))
 
     def roll_save(self, abil):
         advantage = self.adv.get()
         disadvantage = self.dis.get()
-        result = self.person.ability_save(abil, adv=advantage, dis=disadvantage)
+        result = self.person.ability_save(abil, adv=advantage,
+                                          dis=disadvantage)
         self.rolldisplay['text'] = '{}+{}={}'.format(*reversed(result))
 
     def update_character(self):
@@ -98,12 +103,14 @@ class SkillDisplay(gui.Section):
         self.dis = dis
         sk = iface.JSONInterface('skill/SKILLS.skill')
         self.skillmap = sk.get('/')
-        self.buttons = [tk.Button(self.f, text=n, command=lambda x=n: self.roll_check(x)) for n in sorted(self.skillmap)]
+        self.buttons = [tk.Button(self.f, text=n,
+                                  command=lambda x=n: self.roll_check(x))
+                        for n in sorted(self.skillmap)]
         self.draw_static()
 
     def draw_static(self):
         for (i, obj) in enumerate(self.buttons):
-            obj.grid(row=i//3, column=i%3)
+            obj.grid(row=i // 3, column=i % 3)
             if (obj['text'] in self.person.skills):
                 obj.config(bg='green', fg='white')
 
@@ -136,7 +143,8 @@ class main(gui.Section):
 
     def startup_end(self):
         name = self.charactername['Character Name?']
-        path = iface.JSONInterface.OBJECTSPATH + 'character/' + name + '.character'
+        path = (iface.JSONInterface.OBJECTSPATH
+                + 'character/' + name + '.character')
         if (os.path.exists(path)):
             jf = iface.JSONInterface('character/' + name + '.character')
         else:

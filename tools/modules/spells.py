@@ -26,14 +26,14 @@ Duration: {dur}
 class LongEffectDisplay(gui.Section):
     def __init__(self, container, text):
         gui.Section.__init__(self, container)
-        self.l = tk.Label(self.f, text=text, width=30, wraplength=200)
+        self.L = tk.Label(self.f, text=text, width=30, wraplength=200)
         self.draw_static()
 
     def draw_static(self):
-        self.l.grid(row=0, column=0)
+        self.L.grid(row=0, column=0)
 
     def update(self, dummy, text):
-        self.l['text'] = text
+        self.L['text'] = text
 
 
 class NumberDisplay(gui.Section):
@@ -45,12 +45,16 @@ class NumberDisplay(gui.Section):
         self.labels = []
         self.incs = []
         self.decs = []
-        for i in range(1, len(character.spell_slots)):
+        for i in range(1, len(character.max_spell_slots)):
             self.values.append(tk.StringVar())
-            self.entries.append(tk.Entry(self.f, textvariable=self.values[i-1], width=2))
+            self.entries.append(tk.Entry(self.f,
+                                         textvariable=self.values[i - 1],
+                                         width=2))
             self.labels.append(tk.Label(self.f, text=i))
-            self.incs.append(tk.Button(self.f, text='+', command=lambda x=i: self.change(x, 1)))
-            self.decs.append(tk.Button(self.f, text='-', command=lambda x=i: self.change(x, -1)))
+            self.incs.append(tk.Button(self.f, text='+',
+                                       command=lambda x=i: self.change(x, 1)))
+            self.decs.append(tk.Button(self.f, text='-',
+                                       command=lambda x=i: self.change(x, -1)))
         self.rest = tk.Button(self.f, text='Long Rest', command=self.long_rest)
         ############
         self.draw_static()
@@ -170,7 +174,7 @@ class SpellSection(gui.Section):
         s = int(sqrt(len(self.displays)))
         if (s):
             for (i, d) in enumerate(sorted(self.displays.values())):
-                d.grid(row=i%s, column=i//s)
+                d.grid(row=i % s, column=i // s)
             i = len(self.displays)
 
     def prepare(self, name):
@@ -193,6 +197,8 @@ class SpellSection(gui.Section):
             self.displays[name] = SpellDisplay(self.f, self.handler[name],
                                                self.effects, self.numbers)
             self.draw_dynamic()
+        else:
+            print('Failed to prepare ' + name)
 
 
 class module(gui.Section):
@@ -255,10 +261,11 @@ class module(gui.Section):
 
     def always_prepare_start(self):
         self.toprepare = {}
-        gui.Query(self.toprepare, self.prepare_end, 'Spell to always prepare?')
+        gui.Query(self.toprepare, self.always_prepare_end,
+                  'Spell to always prepare?')
 
     def always_prepare_end(self):
-        name = self.toprepare['Spell to prepare?']
+        name = self.toprepare['Spell to always prepare?']
         self.detail.always_prepare(name)
 
 
