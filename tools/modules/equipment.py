@@ -11,6 +11,9 @@ import classes as c
 import interface as iface
 
 
+# TODO: Add held items with corresponding frames; somehow deal with versatile weapons
+# TODO: only show apparel and weapons in buttons for the module
+
 class EquipmentDisplay(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
@@ -87,7 +90,7 @@ class EquipmentDisplay(gui.Section):
                    'heavyarmor': ['clothes', 'pants'],
                    'clothes': ['clothes', 'pants'],
                    'headwear': ['head'],
-                   'boot': ['leftboot', 'rightboot'],
+                   'boots': ['leftboot', 'rightboot'],
                    'necklace': ['neck'],
                    'cloak': ['cloak'],
                    'shield': [],

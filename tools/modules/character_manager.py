@@ -27,7 +27,6 @@ import equipment
 class main:
     def __init__(self, window):
         self.container = window
-        # self.core = tk.ttk.Notebook(window)
         self.buttons = tk.Frame(window)
         self.QUIT = tk.Button(self.buttons, text='QUIT', fg='red',
                               command=self.writequit)
@@ -60,6 +59,7 @@ class main:
         ######
         # Attacks
         self.core.add(self.attackpage, text='Attacks')
+        self.attacktop.grid(row=0, column=0)
         self.attacks.grid(row=0, column=0, sticky='n')
         self.conditions.grid(row=0, column=1, sticky='n')
         self.equipment.grid(row=1, column=0)
@@ -108,8 +108,9 @@ class main:
         self.abils = abilities.module(self.frontpage, self.character)
         ######
         # Attacks
-        self.attacks = attacks.module(self.attackpage, self.character)
-        self.conditions = conditions.module(self.attackpage, self.character)
+        self.attacktop = tk.Frame(self.attackpage)
+        self.attacks = attacks.module(self.attacktop, self.character)
+        self.conditions = conditions.module(self.attacktop, self.character)
         self.equipment = equipment.module(self.attackpage, self.character)
         ######
         # Features
