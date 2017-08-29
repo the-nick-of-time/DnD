@@ -121,6 +121,7 @@ class RaceMap:
         res = re.match(pattern, s).groups()
         self.race = res[0]
         self.subrace = res[1] or ''
+        self.hook()
 
     def __getattr__(self, key):
         return self.core.__getattribute__(key)
@@ -139,3 +140,16 @@ class RaceMap:
         else:
             # For the sake of having a consistent API it needs to be a LinkedInterface
             self.core = c.Race(iface.LinkedInterface(mainjf), str(self))
+
+    def get_feature_links(self):
+        rv = collections.OrderedDict()
+        main = 'race/{}.race'.format(self.race)
+        sub = 'race/{}.{}.sub.race'.format(self.race, self.subrace)
+        mainjf = iface.JSONInterface(main)
+        for name in (mainjf.get('/features') or []):
+            rv[name] = main + '/features/' + name
+        if (self.subrace):
+            subjf = iface.JSONInterface(sub)
+            for name in (subjf.get('/features') or []):
+                rv[name] = sub + '/features/' + name
+        return rv

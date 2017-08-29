@@ -44,11 +44,8 @@ class Race:
         self.features = self.get_features()
 
     def get_features(self):
-        rv = {}
         featuredict = self.record.get('*/features')
-        for name in featuredict:
-            rv.update(featuredict[name])
-        return rv
+        return featuredict
 
 
 class Resource:
