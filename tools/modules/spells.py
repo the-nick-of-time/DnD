@@ -133,6 +133,9 @@ class SpellDisplay(gui.Section):
         # return self.handler.level < other.handler.level
         return self.handler.level < other.handler.level
 
+    def __str__(self):
+        return str(self.handler)
+
     def draw_static(self):
         self.namelevel.grid(row=0, column=0)
         self.nameL.grid(row=0, column=0)
@@ -177,6 +180,9 @@ class SpellSection(gui.Section):
                                                    self.numbers)
         self.draw_static()
         self.draw_dynamic()
+
+    def __iter__(self):
+        return (display for display in self.displays)
 
     def draw_static(self):
         # self.thisf.grid(row=0, column=0)
@@ -264,7 +270,9 @@ class module(gui.Section):
 
     def unprepare_start(self):
         self.tounprepare = {}
-        gui.Query(self.tounprepare, self.unprepare_end, 'Spell to unprepare?')
+        p = [n for n in self.detail.handler.prepared_today]
+        gui.Query(self.tounprepare, self.unprepare_end,
+                  ['Spell to unprepare?', p])
 
     def unprepare_end(self):
         name = self.tounprepare['Spell to unprepare?']

@@ -165,7 +165,8 @@ class Query:
                      else self.questions[0][0])
         if (isinstance(self.answers[lastname], tk.Entry)):
             self.answers[lastname].bind("<Return>", lambda e: self.finish())
-        self.answers[firstname].focus_set()
+        if (isinstance(self.answers[firstname], tk.Entry)):
+            self.answers[firstname].focus_set()
         self.accept.grid(row=2*i+1, column=1)
 
     def finish(self):
