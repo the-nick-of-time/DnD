@@ -124,10 +124,7 @@
     }
   },
   "spells_prepared": {
-    "always_prepared": [
-      "Beast Sense",
-      "Speak With Animals"
-    ],
+    "always_prepared": [],
     "prepared_today": []
   },
   "spell_slots": [],
