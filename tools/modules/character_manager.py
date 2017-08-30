@@ -2,6 +2,7 @@
 
 import tkinter as tk
 import tkinter.ttk as ttk
+import re
 import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
@@ -86,7 +87,13 @@ class main:
 
     def startup_begin(self):
         self.charactername = {}
-        gui.Query(self.charactername, self.startup_end, 'Character Name?')
+        possibilities = []
+        for f in os.scandir(iface.JSONInterface.OBJECTSPATH + 'character'):
+            m = re.match('(.*)\.character', f.name)
+            name = m.group(1)
+            possibilities.append(h.unclean(name))
+        gui.Query(self.charactername, self.startup_end,
+                  ['Character Name?', possibilities])
         self.container.withdraw()
 
     def startup_end(self):
