@@ -1115,6 +1115,11 @@ class Spell:
                 raise e
         return self.effect
 
+    def ritual_cast(self):
+        if (self.isritual):
+            return self.effect
+        return ''
+
     def is_available(self, character):
         return True
         # for (c, obj, lv) in character.classes:

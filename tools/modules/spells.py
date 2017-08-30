@@ -102,8 +102,10 @@ class SpellDisplay(gui.Section):
                                else args))
         self.leveltype = tk.Label(self.namelevel, text=lev)
         self.timeanddisplay = tk.Frame(self.f)
+        bct = self.handler.casting_time
+        ct = bct + (' (R: +10 minutes)' if self.handler.isritual else '')
         self.castingtime = tk.Label(self.timeanddisplay,
-                                    text=self.handler.casting_time)
+                                    text=ct)
         info = longdescription.format(name=self.handler.name,
                                       lvschool=lev,
                                       cast=self.handler.casting_time,
@@ -118,7 +120,11 @@ class SpellDisplay(gui.Section):
                                                   self.handler.isconcentration
                                                   else '')
         self.duration = tk.Label(self.f, text=d)
-        self.CAST = tk.Button(self.f, text='Cast', command=self.cast)
+        self.buttons = tk.Frame(self.f)
+        self.CAST = tk.Button(self.buttons, text='Cast', command=self.cast)
+        if (self.handler.isritual):
+            self.RITUAL = tk.Button(self.buttons, text='Cast as Ritual',
+                                    command=self.ritual_cast)
         ######
         self.draw_static()
 
@@ -138,7 +144,10 @@ class SpellDisplay(gui.Section):
         #######
         self.range.grid(row=2, column=0)
         self.duration.grid(row=3, column=0)
-        self.CAST.grid(row=4, column=0)
+        self.buttons.grid(row=4, column=0)
+        self.CAST.grid(row=0, column=0)
+        if (self.handler.isritual):
+            self.RITUAL.grid(row=0, column=1)
 
     def cast(self):
         try:
@@ -147,6 +156,10 @@ class SpellDisplay(gui.Section):
             effect = str(e)
         self.output.update(h.shorten(effect), effect)
         self.numbers.draw_dynamic()
+
+    def ritual_cast(self):
+        effect = self.handler.ritual_cast()
+        self.output.update(h.shorten(effect), effect)
 
 
 class SpellSection(gui.Section):
