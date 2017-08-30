@@ -100,6 +100,8 @@ class main:
             raise FileNotFoundError
         self.character = c.Character(self.record)
         self.container.title(str(self.character))
+        self.settingmenu = Settings(self.container, self.character)
+        self.container.config(menu=self.settingmenu.core)
         ######
         # Front page
         self.info = Information(self.frontpage, self.character)
@@ -175,6 +177,49 @@ class Information(gui.Section):
 
     def draw_dynamic(self):
         self.AC.config(text='AC: ' + str(self.character.AC))
+
+
+class Settings:
+    def __init__(self, window, character):
+        self.character = character
+        if (not self.character.get('/SETTINGS')):
+            self.character.set('/SETTINGS', {})
+        self.core = tk.Menu(window)
+        self.healingchoice = tk.Menu(self.core, tearoff=False)
+        self.healing = tk.StringVar()
+        self.healing.set(self.character.get('/SETTINGS/HEALING') or 'vanilla')
+        self.healingchoice.add_radiobutton(label='Vanilla',
+                                           variable=self.healing,
+                                           command=self.set_healing,
+                                           value='vanilla')
+        self.healingchoice.add_radiobutton(label='Slow (DMG 267)',
+                                           variable=self.healing,
+                                           command=self.set_healing,
+                                           value='slow')
+        self.healingchoice.add_radiobutton(label='Healing Surge (DMG 266)',
+                                           variable=self.healing,
+                                           command=self.set_healing,
+                                           value='fast')
+        self.core.add_cascade(label='Healing', menu=self.healingchoice)
+        self.profdice = tk.BooleanVar()
+        self.profdice.set(self.character.get('/SETTINGS/PROFICIENCY_DICE')
+                          or False)
+        self.profdicechoice = tk.Menu(self.core, tearoff=False)
+        self.profdicechoice.add_checkbutton(label='Use proficiency dice? '
+                                            '(DMG 263)',
+                                            variable=self.profdice,
+                                            command=self.set_prof)
+        self.core.add_cascade(label='Proficiency Dice',
+                              menu=self.profdicechoice)
+
+    def set_healing(self):
+        c.Character.HEALING = self.healing.get()
+        self.character.set('/SETTINGS/HEALING', c.Character.HEALING)
+
+    def set_prof(self):
+        c.Character.PROFICIENCY_DICE = self.profdice.get()
+        self.character.set('/SETTINGS/PROFICIENCY_DICE',
+                           c.Character.PROFICIENCY_DICE)
 
 
 if (__name__ == '__main__'):

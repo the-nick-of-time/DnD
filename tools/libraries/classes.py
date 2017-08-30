@@ -261,7 +261,12 @@ class Character:
         $proficiency, ${Class}_level, $level, and $caster_level.
     write: Writes all changes to the file.
     """
-    proficiencyDice = False
+    PROFICIENCY_DICE = False
+    # Options:
+    #   'fast': regain all HD on long rest
+    #   'vanilla': regain all HP and half HD on long rest
+    #   'slow': regain half HD on long rest
+    HEALING = 'vanilla'
 
     def __init__(self, jf):
         self.record = jf
@@ -594,7 +599,8 @@ class Character:
     @property
     def proficiency(self):
         c = self.classes[0]
-        return c.get('/proficiency')[int(self.proficiencyDice)][self.level - 1]
+        val = c.get('/proficiency')[int(self.PROFICIENCY_DICE)][self.level - 1]
+        return r.roll(val)
 
     def save_DC(self, spell):
         return (8
@@ -961,10 +967,11 @@ class HPhandler:
         if (what == 'long'):
             # mx = self.record.get('/HP/max')
             # self.record.set('/HP/current', mx)
-            self.current = self.max
+            if (Character.HEALING in ['vanilla', 'fast']):
+                self.current = self.max
             self.temp = 0
-            for obj in self.hd.values():
-                obj.rest('long')
+        for obj in self.hd.values():
+            obj.rest(what)
 
     def write(self):
         for item in self.hd.values():
@@ -1001,7 +1008,13 @@ class HDHandler(Resource):
 
     def rest(self, what):
         if (what == 'long'):
-            self.regain(ceil(self.maxnumber / 2))
+            if (Character.HEALING == 'fast'):
+                self.reset()
+            else:
+                self.regain(ceil(self.maxnumber / 2))
+        if (what == 'short'):
+            if (Character.HEALING == 'fast'):
+                self.regain(ceil(self.maxnumber / 4))
 
 
 class Damage:

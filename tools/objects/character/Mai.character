@@ -142,5 +142,9 @@
       "number": 4
     }
   },
-  "conditions": []
+  "conditions": [],
+  "SETTINGS": {
+    "PROFICIENCY_DICE": true,
+    "HEALING": "slow"
+  }
 }

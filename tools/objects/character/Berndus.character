@@ -134,7 +134,6 @@
     "Fighting Style: TWO-WEAPON FIGHTING": "class/Fighter.class/features/1/choose/Fighting Style: TWO-WEAPON FIGHTING",
     "Second Wind": "class/Fighter.class/features/1/Second Wind",
     "Action Surge": "class/Fighter.class/features/2/Action Surge",
-    "Martial Archetype: Battle Master": "class/Fighter.class/features/3/choose/Martial Archetype: Battle Master",
     "Combat Superiority": "class/Fighter.Battle_Master.sub.class/features/3/Combat Superiority",
     "Student of War": "class/Fighter.Battle_Master.sub.class/features/3/Student of War",
     "Disarming Attack": "class/Fighter.Battle_Master.sub.class/features/3/choose/Disarming Attack",
@@ -152,5 +151,8 @@
       "number": 1
     }
   },
-  "conditions": []
+  "conditions": [],
+  "SETTINGS": {
+    "HEALING": "slow"
+  }
 }
