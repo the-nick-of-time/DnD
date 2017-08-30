@@ -1,15 +1,15 @@
 {
   "name": "Tsi'id",
-  "level": "Barbarian 2",
+  "level": "Barbarian (Totem Warrior) 3",
   "race": "Dragonborn (Black)",
   "HP": {
-    "max": 21,
-    "current": 21,
+    "max": 29,
+    "current": 29,
     "temp": 0,
     "HD": {
       "1d12": {
-        "number": 2,
-        "maxnumber": 2
+        "number": 3,
+        "maxnumber": 3
       }
     }
   },
@@ -60,12 +60,12 @@
     "Wolf Fur Half-cape": {
       "type": "apparel",
       "quantity": 1,
-      "equipped": null
+      "equipped": "cloak"
     },
     "Traveler's Clothes": {
       "type": "apparel",
       "quantity": 1,
-      "equipped": null
+      "equipped": "clothes"
     },
     "Backpack": {
       "type": "item",
@@ -124,21 +124,27 @@
     }
   },
   "spells_prepared": {
-    "always_prepared": [],
+    "always_prepared": [
+      "Beast Sense",
+      "Speak With Animals"
+    ],
     "prepared_today": []
   },
   "spell_slots": [],
   "features": {
-    "Rage": "class/Barbarian.class/features/1/Rage",
+    "Rage": "class/Barbarian.class/features/3/Rage",
     "Unarmored Defense": "class/Barbarian.class/features/1/Unarmored Defense",
     "Breath Weapon": "race/Dragonborn.Black.sub.race/features/Breath Weapon",
     "Damage Resistance": "race/Dragonborn.Black.sub.race/features/Damage Resistance",
     "Danger Sense": "class/Barbarian.class/features/2/Danger Sense",
-    "Reckless Attack": "class/Barbarian.class/features/2/Reckless Attack"
+    "Reckless Attack": "class/Barbarian.class/features/2/Reckless Attack",
+    "Spirit Seeker": "class/Barbarian.Totem_Warrior.sub.class/features/3/Spirit Seeker",
+    "Totem Warrior": "class/Barbarian.class/features/3/subclass/Totem Warrior",
+    "Totem Spirit: Wolf": "class/Barbarian.Totem_Warrior.sub.class/features/3/choose/Totem Spirit: Wolf"
   },
   "resources": {
     "Rage": {
-      "number": 2
+      "number": 3
     },
     "Breath Weapon": {
       "number": 1

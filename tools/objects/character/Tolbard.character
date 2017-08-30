@@ -3,81 +3,51 @@
   "race": "Dragonborn (Blue)",
   "level": "Sorcerer (Storm) 1",
   "languages": [
-    "Dwarvish",
-    "Draconic"
+    "Draconic",
+    "Supernal"
   ],
   "abilities": {
-    "Strength": 15,
-    "Dexterity": 12,
-    "Intelligence": 15,
-    "Constitution": 11,
-    "Wisdom": 14,
-    "Charisma": 12
+    "Strength": 12,
+    "Constitution": 15,
+    "Dexterity": 14,
+    "Intelligence": 11,
+    "Wisdom": 12,
+    "Charisma": 15
   },
   "saves": [
     "Constitution",
     "Charisma"
   ],
-  "skills": [
-    "Athletics",
-    "History",
-    "Performance"
-  ],
-  "inventory": {
-    "Backpack": {
-      "type": "item",
-      "quantity": 1,
-      "equipped": false
-    },
-    "gp": {
-      "type": "treasure",
-      "quantity": 5,
-      "equipped": false
-    },
-    "Dagger": {
-      "type": "weapon",
-      "quantity": 1,
-      "equipped": true
-    },
-    "Waterskin": {
-      "type": "item",
-      "quantity": 1,
-      "equipped": false
-    },
-    "Good Clothes": {
-      "type": "apparel",
-      "quantity": 1,
-      "equipped": true
-    }
-  },
   "HP": {
+    "max": 8,
+    "current": 8,
+    "temp": 0,
     "HD": {
       "1d6": {
         "number": 1,
         "maxnumber": 1
       }
-    },
-    "current": 6,
-    "max": 6,
-    "temp": 0
+    }
   },
+  "skills": [
+    "Acrobatics",
+    "Medicine",
+    "Persuasion"
+  ],
+  "inventory": {},
+  "spell_slots": [],
   "spells_prepared": {
     "always_prepared": [],
-    "prepared_today": [
-      "Shocking Grasp"
-    ]
+    "prepared_today": []
   },
-  "spell_slots": [
-    999999,
-    2
-  ],
   "features": {
-    "Damage Resistance": "race/Dragonborn.Blue.sub.race/features/Damage Resistance",
     "Spellcasting": "class/Sorcerer.class/features/1/Spellcasting",
-    "Wind Speaker": "class/Sorcerer.Storm.sub.class/features/1/Wind Speaker",
     "Sorcerous Origin": "class/Sorcerer.class/features/1/Sorcerous Origin",
+    "Tempestuous Magic": "class/Sorcerer.Storm.sub.class/features/1/Tempestuous Magic",
+    "Storm": "class/Sorcerer.class/features/1/subclass/Storm",
+    "Wind Speaker": "class/Sorcerer.Storm.sub.class/features/1/Wind Speaker",
     "Breath Weapon": "race/Dragonborn.Blue.sub.race/features/Breath Weapon",
-    "Tempestuous Magic": "class/Sorcerer.Storm.sub.class/features/1/Tempestuous Magic"
+    "Damage Resistance": "race/Dragonborn.Blue.sub.race/features/Damage Resistance"
   },
   "resources": {
     "Breath Weapon": {

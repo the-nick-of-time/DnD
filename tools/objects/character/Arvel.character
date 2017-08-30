@@ -4,59 +4,53 @@
   "level": "Paladin 1",
   "languages": [
     "Common",
-    "Elven"
+    "Human"
   ],
   "abilities": {
-    "Strength": 15,
-    "Intelligence": 8,
     "Wisdom": 13,
+    "Intelligence": 8,
     "Charisma": 16,
+    "Constitution": 15,
     "Dexterity": 8,
-    "Constitution": 15
+    "Strength": 15
   },
   "saves": [
     "Wisdom",
     "Charisma"
   ],
-  "skills": [
-    "Athletics",
-    "Insight",
-    "Religion"
-  ],
-  "inventory": {
-    "Chain Mail": {
-      "type": "apparel",
-      "quantity": 1,
-      "equipped": true
-    }
-  },
   "HP": {
+    "max": 12,
     "current": 12,
     "temp": 0,
     "HD": {
       "1d10": {
-        "number": 1,
-        "maxnumber": 1
+        "maxnumber": 1,
+        "number": 1
       }
-    },
-    "max": 12
+    }
+  },
+  "skills": [
+    "Intimidation",
+    "Medicine",
+    "Religion"
+  ],
+  "inventory": {},
+  "spell_slots": [],
+  "spells_prepared": {
+    "prepared_today": [],
+    "always_prepared": []
   },
   "features": {
     "Divine Sense": "class/Paladin.class/features/1/Divine Sense",
-    "Skill Proficiency": "race/Human.race/features/Skill Proficiency",
-    "Lay on Hands": "class/Paladin.class/features/1/Lay on Hands"
+    "Lay on Hands": "class/Paladin.class/features/1/Lay on Hands",
+    "Skill Proficiency": "race/Human.race/features/Skill Proficiency"
   },
-  "spells_prepared": {
-    "always_prepared": [],
-    "prepared_today": []
-  },
-  "spell_slots": [],
   "resources": {
-    "Lay on Hands": {
-      "number": 0
-    },
     "Divine Sense": {
-      "number": 0
+      "number": 4
+    },
+    "Lay on Hands": {
+      "number": 5
     }
   },
   "conditions": []
