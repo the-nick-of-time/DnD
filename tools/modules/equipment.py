@@ -157,9 +157,10 @@ class module(gui.Section):
         self.display = EquipmentDisplay(self.f)
         self.buttons = []
         for item in self.handler:
-            self.buttons.append(tk.Button(self.buttonframe, text=item.name, command=lambda x=item: self.display.toggle_equip(x)))
-            if (item.equipped):
-                self.display.equip(item)
+            if (item.type in ['weapon', 'ranged weapon', 'apparel']):
+                self.buttons.append(tk.Button(self.buttonframe, text=item.name, command=lambda x=item: self.display.toggle_equip(x)))
+                if (item.equipped):
+                    self.display.equip(item)
         self.draw_static()
 
     def draw_static(self):
