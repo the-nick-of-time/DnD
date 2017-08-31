@@ -28,8 +28,8 @@
     "temp": 0,
     "HD": {
       "1d10": {
-        "number": 1,
-        "maxnumber": 1
+        "number": 3,
+        "maxnumber": 3
       }
     },
     "max": 13,
@@ -54,11 +54,17 @@
   "spell_slots": [],
   "resources": {
     "Second Wind": {
-      "number": 0
+      "number": 1
     },
     "Action Surge": {
-      "number": 0
+      "number": 1
+    },
+    "Superiority Dice": {
+      "number": 4
     }
   },
-  "conditions": []
+  "conditions": [],
+  "SETTINGS": {
+    "PROFICIENCY_DICE": true
+  }
 }

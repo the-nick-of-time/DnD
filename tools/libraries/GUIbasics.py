@@ -269,7 +269,7 @@ class AskLine(Section):
         # puller is either None, which makes the puller the widget's .get()
         #   method, or a function that takes the widget as its only argument
         #   and returns the data from it
-        gui.Section.__init__(self, container)
+        Section.__init__(self, container)
         self.nameL = tk.Label(self.f, text=name)
         self.widget = widgetmaker(self.f)
         if (description):
