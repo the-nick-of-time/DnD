@@ -1,0 +1,11 @@
+{
+  "name": "Kite Shield",
+  "value": 10.0,
+  "weight": 6.0,
+  "description": "This steel shield tapers to a bottom point.",
+  "effect": "Equipping or stowing a shield takes an action.",
+  "type": "Shield",
+  "bonus": {
+    "AC": 2
+  }
+}

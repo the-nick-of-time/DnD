@@ -64,5 +64,7 @@
     }
   },
   "conditions": [],
-  "SETTINGS": {}
+  "SETTINGS": {
+    "PROFICIENCY_DICE": true
+  }
 }

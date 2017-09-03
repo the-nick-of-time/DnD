@@ -589,6 +589,10 @@ class MultipassResult:
             self.final += other
             return self
 
+    def __format__(self, arg):
+        # does not respond to format specification yet
+        return str(self)
+
 
 def display_multipass(T, operators):
     result = multipass(T, operators)
