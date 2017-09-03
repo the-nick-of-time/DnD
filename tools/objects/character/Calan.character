@@ -154,5 +154,6 @@
       "number": 1
     }
   },
-  "conditions": []
+  "conditions": [],
+  "SETTINGS": {}
 }
