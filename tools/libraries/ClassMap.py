@@ -7,9 +7,22 @@ import interface as iface
 
 
 class ClassMap:
+    """Represents the total list of class levels that a character has.
+
+    Data:
+    classes: a dictionary mapping class names to Class objects.
+
+    Methods:
+    sum: Returns the total level of the character.
+    names: Returns a list of class names that that the character has.
+    level_up: Given a main class name and an optional subclass name, add a
+        level in that class. If a subclass is given, add that subclass to the
+        main class. Returns a tuple of the Class object and the final level.
+    apply_subclass: Given the main class name and subclass name, add a subclass
+        to the main class named.
+    """
     def __init__(self, s):
         # Takes in a string of the form Class [(Subclass)] Level,...
-        # TODO: _classes should be a list of Class objects
         self._classes = []
         self._subclasses = []
         self.levels = []
@@ -116,8 +129,17 @@ class ClassMap:
 
 
 class RaceMap:
+    """Represents a race and possibly subrace.
+
+    Data:
+    core: A Race object.
+
+    Methods:
+    get_feature_links: Returns a dict of race features as they show up in a
+        character file.
+    """
     def __init__(self, s):
-        pattern = '\s*(\w+)\s*\(?(\w+)?\)?\s*'
+        pattern = '\s*([\w-]+)\s*\(?([\w-]+)?\)?\s*'
         res = re.match(pattern, s).groups()
         self.race = res[0]
         self.subrace = res[1] or ''
