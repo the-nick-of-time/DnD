@@ -236,8 +236,8 @@ class main(gui.Section):
         classes = ['Bard', 'Barbarian', 'Cleric', 'Druid', 'Fighter', 'Monk',
                    'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock',
                    'Wizard']
-        gui.Query(self.levelgain, self.startup_end, 'Character Name?',
-                  ['Class to gain a level in?', classes])
+        gui.CharacterQuery(self.levelgain, self.startup_end,
+                           ['Class to gain a level in?', classes])
         self.container.withdraw()
 
     def startup_end(self):

@@ -87,13 +87,7 @@ class main:
 
     def startup_begin(self):
         self.charactername = {}
-        possibilities = []
-        for f in os.scandir(iface.JSONInterface.OBJECTSPATH + 'character'):
-            m = re.match('(.*)\.character', f.name)
-            name = m.group(1)
-            possibilities.append(h.unclean(name))
-        gui.Query(self.charactername, self.startup_end,
-                  ['Character Name?', possibilities])
+        gui.CharacterQuery(self.charactername, self.startup_end)
         self.container.withdraw()
 
     def startup_end(self):

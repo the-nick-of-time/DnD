@@ -290,3 +290,19 @@ class AskLine(Section):
 
     def get(self):
         return self.puller()
+
+
+class CharacterQuery(Query):
+    def __init__(self, data, callbackfun, *extraquestions):
+        import os
+        import interface as iface
+        import re
+        import helpers as h
+        possibilities = []
+        for f in os.scandir(iface.JSONInterface.OBJECTSPATH + 'character'):
+            m = re.match('(.*)\.character', f.name)
+            name = m.group(1)
+            possibilities.append(h.unclean(name))
+        Query.__init__(self, data, callbackfun,
+                       ['Character Name?', sorted(possibilities)],
+                       *extraquestions)
