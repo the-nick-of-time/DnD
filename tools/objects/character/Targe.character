@@ -32,8 +32,8 @@
         "maxnumber": 3
       }
     },
-    "max": 13,
-    "current": 13
+    "max": 32,
+    "current": 32
   },
   "features": {
     "Skill Proficiency": "race/Human.race/features/Skill Proficiency",

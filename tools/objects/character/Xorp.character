@@ -26,14 +26,14 @@
   ],
   "inventory": {},
   "HP": {
-    "current": 10,
+    "current": 24,
     "HD": {
       "1d8": {
-        "number": 1,
-        "maxnumber": 1
+        "number": 3,
+        "maxnumber": 3
       }
     },
-    "max": 10,
+    "max": 24,
     "temp": 0
   },
   "features": {
@@ -69,5 +69,6 @@
       "number": 1
     }
   },
-  "conditions": []
+  "conditions": [],
+  "SETTINGS": {}
 }

@@ -66,17 +66,17 @@
       "equipped": "lightarmor"
     },
     "cp": {
-      "quantity": 35,
-      "type": "treasure",
-      "equipped": false
-    },
-    "sp": {
       "quantity": 10,
       "type": "treasure",
       "equipped": false
     },
+    "sp": {
+      "quantity": 0,
+      "type": "treasure",
+      "equipped": false
+    },
     "gp": {
-      "quantity": 517,
+      "quantity": 97,
       "type": "treasure",
       "equipped": false
     },

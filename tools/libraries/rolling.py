@@ -66,6 +66,9 @@ class Operator:
         nums.append(self.operation(*operands))
         return nums
 
+    def __hash__(self):
+        return hash(self.op)
+
 
 class Roll(list):
     def __init__(self, *args, **kwargs):
@@ -134,46 +137,45 @@ class Roll(list):
 
 def roll(s, modifiers=0, option='execute'):
     """Roll dice and do arithmetic."""
-    # global operators
 
-    operators = (Operator('d', 7, 2, roll_basic, 'l'),
-                 Operator('da', 7, 2, roll_average, 'l'),
-                 Operator('dc', 7, 2, roll_critical, 'l'),
-                 Operator('dm', 7, 2, roll_max, 'l'),
-                 Operator('h', 6, 2, take_high, 'r'),
-                 Operator('l', 6, 2, take_low, 'r'),
-                 Operator('f', 6, 2, floor_val, 'r'),
-                 Operator('c', 6, 2, ceil_val, 'r'),
-                 Operator('r', 6, 2, reroll_once_on, 'r'),
-                 Operator('R', 6, 2, reroll_unconditional_on, 'r'),
-                 Operator('r<', 6, 2, reroll_once_lower, 'r'),
-                 Operator('R<', 6, 2, reroll_unconditional_lower, 'r'),
-                 Operator('rl', 6, 2, reroll_once_lower, 'r'),
-                 Operator('Rl', 6, 2, reroll_unconditional_lower, 'r'),
-                 Operator('r>', 6, 2, reroll_once_higher, 'r'),
-                 Operator('R>', 6, 2, reroll_unconditional_higher, 'r'),
-                 Operator('rh', 6, 2, reroll_once_higher, 'r'),
-                 Operator('Rh', 6, 2, reroll_unconditional_higher, 'r'),
-                 Operator('^', 5, 2, lambda x, y: x ** y, 'lr'),
-                 Operator('m', 4, 1, lambda x: -x, 'r'),
-                 Operator('p', 4, 1, lambda x: x, 'r'),
-                 Operator('*', 3, 2, lambda x, y: x * y, 'lr'),
-                 Operator('/', 3, 2, lambda x, y: x / y, 'lr'),
-                 Operator('%', 3, 2, lambda x, y: x % y, 'lr'),
-                 Operator('-', 2, 2, lambda x, y: x - y, 'lr'),
-                 Operator('+', 2, 2, lambda x, y: x + y, 'lr'),
-                 Operator('>', 1, 2, lambda x, y: x > y, 'lr'),
-                 Operator('gt', 1, 2, lambda x, y: x > y, 'lr'),
-                 Operator('>=', 1, 2, lambda x, y: x >= y, 'lr'),
-                 Operator('ge', 1, 2, lambda x, y: x >= y, 'lr'),
-                 Operator('<', 1, 2, lambda x, y: x < y, 'lr'),
-                 Operator('lt', 1, 2, lambda x, y: x < y, 'lr'),
-                 Operator('<=', 1, 2, lambda x, y: x <= y, 'lr'),
-                 Operator('le', 1, 2, lambda x, y: x <= y, 'lr'),
-                 Operator('=', 1, 2, lambda x, y: x == y, 'lr'),
-                 Operator('|', 1, 2, lambda x, y: x or y, 'lr'),
-                 Operator('&', 1, 2, lambda x, y: x and y, 'lr'),
-                 )
+    operators = {'d': Operator('d', 7, 2, roll_basic, 'l'),
+                 'da': Operator('da', 7, 2, roll_average, 'l'),
+                 'dc': Operator('dc', 7, 2, roll_critical, 'l'),
+                 'dm': Operator('dm', 7, 2, roll_max, 'l'),
+                 'h': Operator('h', 6, 2, take_high, 'r'),
+                 'l': Operator('l', 6, 2, take_low, 'r'),
+                 'f': Operator('f', 6, 2, floor_val, 'r'),
+                 'c': Operator('c', 6, 2, ceil_val, 'r'),
+                 'r': Operator('r', 6, 2, reroll_once_on, 'r'),
+                 'R': Operator('R', 6, 2, reroll_unconditional_on, 'r'),
+                 'r<': Operator('r<', 6, 2, reroll_once_lower, 'r'),
+                 'R<': Operator('R<', 6, 2, reroll_unconditional_lower, 'r'),
+                 'rl': Operator('rl', 6, 2, reroll_once_lower, 'r'),
+                 'Rl': Operator('Rl', 6, 2, reroll_unconditional_lower, 'r'),
+                 'r>': Operator('r>', 6, 2, reroll_once_higher, 'r'),
+                 'R>': Operator('R>', 6, 2, reroll_unconditional_higher, 'r'),
+                 'rh': Operator('rh', 6, 2, reroll_once_higher, 'r'),
+                 'Rh': Operator('Rh', 6, 2, reroll_unconditional_higher, 'r'),
+                 '^': Operator('^', 5, 2, lambda x, y: x ** y, 'lr'),
+                 'm': Operator('m', 4, 1, lambda x: -x, 'r'),
+                 'p': Operator('p', 4, 1, lambda x: x, 'r'),
+                 '*': Operator('*', 3, 2, lambda x, y: x * y, 'lr'),
+                 '/': Operator('/', 3, 2, lambda x, y: x / y, 'lr'),
+                 '%': Operator('%', 3, 2, lambda x, y: x % y, 'lr'),
+                 '-': Operator('-', 2, 2, lambda x, y: x - y, 'lr'),
+                 '+': Operator('+', 2, 2, lambda x, y: x + y, 'lr'),
+                 '>': Operator('>', 1, 2, lambda x, y: x > y, 'lr'),
+                 'gt': Operator('gt', 1, 2, lambda x, y: x > y, 'lr'),
+                 '>=': Operator('>=', 1, 2, lambda x, y: x >= y, 'lr'),
+                 'ge': Operator('ge', 1, 2, lambda x, y: x >= y, 'lr'),
+                 '<': Operator('<', 1, 2, lambda x, y: x < y, 'lr'),
+                 'lt': Operator('lt', 1, 2, lambda x, y: x < y, 'lr'),
+                 '<=': Operator('<=', 1, 2, lambda x, y: x <= y, 'lr'),
+                 'le': Operator('le', 1, 2, lambda x, y: x <= y, 'lr'),
+                 '=': Operator('=', 1, 2, lambda x, y: x == y, 'lr'),
+                 '|': Operator('|', 1, 2, lambda x, y: x or y, 'lr'),
+                 '&': Operator('&', 1, 2, lambda x, y: x and y, 'lr'),
+                 }
 
     if (isinstance(s, (float, int))):
         # If you're naughty and pass a number in...
@@ -337,10 +339,10 @@ def deep_sum(l, starting=0):
 
 
 def string_to_operator(s, operators):
-    for op in operators:
-        if (op == s):
-            return op
-    return s
+    try:
+        return operators[s]
+    except KeyError:
+        return s
 
 
 def read_list(s, mode='float'):
@@ -532,9 +534,9 @@ def ceil_val(original, top):
 def multipass(T, operators):
     out = [T]
     working = T.copy()
-    pmax = max(operators).precedence
-    pmin = min(operators).precedence
-    for p in range(max(operators).precedence, min(operators).precedence-1, -1):
+    pmax = max(operators.values()).precedence
+    pmin = min(operators.values()).precedence
+    for p in range(pmax, pmin-1, -1):
         i = 0
         while (i < len(working)):
             if (isinstance(working[i], Operator) and working[i].precedence == p):
