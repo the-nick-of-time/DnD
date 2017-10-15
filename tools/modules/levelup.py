@@ -13,6 +13,7 @@ import helpers as h
 import tkUtility as util
 import ClassMap as cm
 import classes as c
+import rolling as r
 
 
 class LimitedQueue:
@@ -237,7 +238,8 @@ class main(gui.Section):
                    'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock',
                    'Wizard']
         gui.CharacterQuery(self.levelgain, self.startup_end,
-                           ['Class to gain a level in?', classes])
+                           ['Class to gain a level in?', classes],
+                           ['Average or roll for HP?', ['average', 'roll']])
         self.container.withdraw()
 
     def startup_end(self):
@@ -252,13 +254,6 @@ class main(gui.Section):
         if (not os.path.exists(iface.JSONInterface.OBJECTSPATH + path)):
             gui.ErrorMessage('A class with that name was not found.')
         self.character = c.Character(self.record)
-        # if (name in self.character.classes):
-        #     currentlevel = self.character.classes[name].level
-        #     self.character.classes[name].level += 1
-        #     rec = self.character.classes[name].record
-        # else:
-        #     currentlevel = 0
-        #     rec = iface.JSONInterface(clpath)
         pattern = r'\s*([a-zA-Z\']+)\s*(\(([a-zA-Z\'\s]+)\))?'
         desc_ = re.match(pattern, cl).groups()
         desc = [str(item) for item in desc_ if item is not None]
@@ -270,6 +265,14 @@ class main(gui.Section):
         hdpath = '/HP/HD/' + size + '/maxnumber'
         hdn = self.character.get(hdpath)
         self.character.set(hdpath, hdn + 1)
+        # Set new number of hit points
+        conmod = h.modifier(self.character.get('/abilities/Constitution'))
+        if (self.levelgain['Average or roll for HP?'] == 'average'):
+            gain = r.roll(size, 'average') + .5
+        elif (self.levelgain['Average or roll for HP?'] == 'roll'):
+            gain = r.roll(size)
+        current = self.character.get('/HP/max')
+        self.character.set('/HP/max', current + gain + conmod)
         self.draw_static()
         self.container.deiconify()
 
