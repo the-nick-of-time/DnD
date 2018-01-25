@@ -25,6 +25,8 @@ Number of rolls:
 def main():
     width = 16
     args = sys.argv[1:]
+    if (len(args) == 0):
+        print('{0:2}'.format(r.roll('1d20')))
     opt = 'execute'
     num = 1
     i = 0
