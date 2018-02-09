@@ -368,16 +368,16 @@ class Character:
     def spell_spend(self, spell):
         if (isinstance(spell, int)):
             lv = spell
-            path = '/spell_slots/' + str(spell)
+            path = '/spellcasting/spell_slots/' + str(spell)
         else:
             lv = spell.level
-            path = '/spell_slots/' + str(spell.level)
+            path = '/spellcasting/spell_slots/' + str(spell.level)
         num = self.record.get(path)
         if (num > 0):
             self.record.set(path, num - 1)
         else:
             for val in range(lv, len(self.spell_slots)):
-                path = '/spell_slots/' + str(val)
+                path = '/spellcasting/spell_slots/' + str(val)
                 num = self.record.get(path)
                 if (num is not None and num > 0):
                     self.record.set(path, num - 1)
@@ -511,7 +511,6 @@ class Character:
             if (caster_type is None):
                 continue
             else:
-                # path = '/cantrip_damage/{}'.format(self.caster_level - 1)
                 path = '/cantrip_damage/{}'.format(self.level - 1)
                 return cl.get(path)
         return 1
@@ -566,19 +565,19 @@ class Character:
 
     @property
     def spell_slots(self):
-        return self.record.get('/spell_slots')
+        return self.record.get('/spellcasting/spell_slots')
 
     def spell_slots_get(self, level):
-        block = self.record.get('/spell_slots')
+        block = self.record.get('/spellcasting/spell_slots')
         if (level == '*'):
             return block
         return block[level]
 
     def spell_slots_set(self, level, value):
         if (level == '*'):
-            self.record.set('/spell_slots', value)
+            self.record.set('/spellcasting/spell_slots', value)
         elif (isinstance(level, int)):
-            self.record.set('/spell_slots/' + str(level), value)
+            self.record.set('/spellcasting/spell_slots/' + str(level), value)
 
     @property
     def max_spell_slots(self):
@@ -1163,6 +1162,7 @@ class SpellsPrepared:
         always_prepared) if perma=True.
     unprepare: Unprepares a spell given its name.
     """
+    ROOT = '/spellcasting/spells_prepared'
     def __init__(self, jf, character):
         self.record = jf
         self.char = character
@@ -1178,27 +1178,27 @@ class SpellsPrepared:
 
     @property
     def prepared(self):
-        today = set(self.record.get('/spells_prepared/prepared_today'))
-        always = set(self.record.get('/spells_prepared/always_prepared'))
+        today = set(self.record.get(SpellsPrepared.ROOT + '/prepared_today'))
+        always = set(self.record.get(SpellsPrepared.ROOT + '/always_prepared'))
         bonuses = set(self.char.bonuses.get('always_prepared', []))
         return today | always | bonuses
 
     @property
     def prepared_today(self):
-        return set(self.record.get('/spells_prepared/prepared_today'))
+        return set(self.record.get(SpellsPrepared.ROOT + '/prepared_today'))
 
     @prepared_today.setter
     def prepared_today(self, value):
         # value is expected to be a set
-        self.record.set('/spells_prepared/prepared_today', list(value))
+        self.record.set(SpellsPrepared.ROOT + '/prepared_today', list(value))
 
     @property
     def always_prepared(self):
-        return set(self.record.get('/spells_prepared/always_prepared'))
+        return set(self.record.get(SpellsPrepared.ROOT + '/always_prepared'))
 
     @always_prepared.setter
     def always_prepared(self, value):
-        self.record.set('/spells_prepared/always_prepared', list(value))
+        self.record.set(SpellsPrepared.ROOT + '/always_prepared', list(value))
 
     def objects(self):
         return self.spells.values()
@@ -1216,10 +1216,6 @@ class SpellsPrepared:
         return obj
 
     def unprepare(self, name):
-        # if (name in self.prepared):
-        #     path = '/spells_prepared/{}'.format(name)
-        #     if (not self.record.get(path + '/always_prepared')):
-        #         self.record.delete(path)
         if (name in self.prepared_today):
             self.prepared_today -= {name}
             del self.spells[name]

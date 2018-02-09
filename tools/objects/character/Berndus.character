@@ -1,15 +1,15 @@
 {
   "name": "Berndus",
-  "level": "Fighter (Battle Master) 4",
+  "level": "Fighter (Battle Master) 5",
   "race": "Halfling (Stout)",
   "HP": {
-    "max": 37,
+    "max": 43,
     "current": 37,
     "temp": 0,
     "HD": {
       "1d10": {
         "number": 4,
-        "maxnumber": 4
+        "maxnumber": 5
       }
     }
   },
@@ -39,10 +39,12 @@
     "Common",
     "Halfling"
   ],
-  "spell_slots": [],
-  "spells_prepared": {
-    "always_prepared": [],
-    "prepared_today": []
+  "spellcasting": {
+    "spell_slots": [],
+    "spells_prepared": {
+      "always_prepared": [],
+      "prepared_today": []
+    }
   },
   "inventory": {
     "Dagger": {
@@ -138,7 +140,8 @@
     "Student of War": "class/Fighter.Battle_Master.sub.class/features/3/Student of War",
     "Disarming Attack": "class/Fighter.Battle_Master.sub.class/features/3/choose/Disarming Attack",
     "Parry": "class/Fighter.Battle_Master.sub.class/features/3/choose/Parry",
-    "Trip Attack": "class/Fighter.Battle_Master.sub.class/features/3/choose/Trip Attack"
+    "Trip Attack": "class/Fighter.Battle_Master.sub.class/features/3/choose/Trip Attack",
+    "Extra Attack": "class/Fighter.class/features/5/Extra Attack"
   },
   "resources": {
     "Superiority Dice": {

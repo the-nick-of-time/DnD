@@ -35,10 +35,12 @@
     "Religion"
   ],
   "inventory": {},
-  "spell_slots": [],
-  "spells_prepared": {
-    "prepared_today": [],
-    "always_prepared": []
+  "spellcasting": {
+    "spell_slots": [],
+    "spells_prepared": {
+      "prepared_today": [],
+      "always_prepared": []
+    }
   },
   "features": {
     "Divine Sense": "class/Paladin.class/features/1/Divine Sense",

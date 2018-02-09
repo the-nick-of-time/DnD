@@ -54,11 +54,13 @@
     "Gnome Cunning": "race/Gnome.race/features/Gnome Cunning",
     "Action Surge": "class/Fighter.class/features/2/Action Surge"
   },
-  "spells_prepared": {
-    "prepared_today": [],
-    "always_prepared": []
+  "spellcasting": {
+    "spells_prepared": {
+      "prepared_today": [],
+      "always_prepared": []
+    },
+    "spell_slots": []
   },
-  "spell_slots": [],
   "resources": {
     "Second Wind": {
       "number": 1

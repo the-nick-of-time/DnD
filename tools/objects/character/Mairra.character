@@ -54,21 +54,23 @@
       "equipped": null
     }
   },
-  "spells_prepared": {
-    "always_prepared": [
-      "Message",
-      "Dancing Lights",
-      "Sleep",
-      "Heroism",
-      "Bane",
-      "Comprehend Languages"
-    ],
-    "prepared_today": []
+  "spellcasting": {
+    "spells_prepared": {
+      "always_prepared": [
+        "Message",
+        "Dancing Lights",
+        "Sleep",
+        "Heroism",
+        "Bane",
+        "Comprehend Languages"
+      ],
+      "prepared_today": []
+    },
+    "spell_slots": [
+      999999,
+      2
+    ]
   },
-  "spell_slots": [
-    999999,
-    2
-  ],
   "features": {
     "Bardic Inspiration": "class/Bard.class/features/1/Bardic Inspiration",
     "Seal Skin": "race/Selkie.race/features/Seal Skin"

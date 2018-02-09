@@ -37,13 +37,27 @@
     "Dwarvish",
     "Primordial"
   ],
-  "spell_slots": [
-    999999,
-    4,
-    3
-  ],
-  "spells_prepared": {
-    "always_prepared": [
+  "spellcasting": {
+    "spell_slots": [
+      999999,
+      4,
+      3
+    ],
+    "spells_prepared": {
+      "always_prepared": [
+        "Gust",
+        "Thunderclap",
+        "Mending",
+        "Prestidigitation",
+        "Shocking Grasp",
+        "Shield",
+        "Thunderwave",
+        "Witch Bolt",
+        "Shatter"
+      ],
+      "prepared_today": []
+    },
+    "spells_known": [
       "Gust",
       "Thunderclap",
       "Mending",
@@ -53,20 +67,8 @@
       "Thunderwave",
       "Witch Bolt",
       "Shatter"
-    ],
-    "prepared_today": []
+    ]
   },
-  "spells_known": [
-    "Gust",
-    "Thunderclap",
-    "Mending",
-    "Prestidigitation",
-    "Shocking Grasp",
-    "Shield",
-    "Thunderwave",
-    "Witch Bolt",
-    "Shatter"
-  ],
   "inventory": {
     "Mirror": {
       "quantity": 1,

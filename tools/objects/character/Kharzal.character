@@ -49,11 +49,13 @@
       "equipped": "heavyarmor"
     }
   },
-  "spells_prepared": {
-    "prepared_today": [],
-    "always_prepared": []
+  "spellcasting": {
+    "spells_prepared": {
+      "prepared_today": [],
+      "always_prepared": []
+    },
+    "spell_slots": []
   },
-  "spell_slots": [],
   "features": {
     "Lay on Hands": "class/Paladin.class/features/1/Lay on Hands",
     "Divine Sense": "class/Paladin.class/features/1/Divine Sense",
@@ -70,5 +72,6 @@
       "number": 3
     }
   },
-  "conditions": []
+  "conditions": [],
+  "SETTINGS": {}
 }

@@ -1,22 +1,22 @@
 {
   "name": "Tsi'id",
-  "level": "Barbarian (Totem Warrior) 3",
+  "level": "Barbarian (Totem Warrior) 4",
   "race": "Dragonborn (Black)",
   "HP": {
-    "max": 29,
-    "current": 29,
+    "max": 43,
+    "current": 43,
     "temp": 0,
     "HD": {
       "1d12": {
-        "number": 3,
-        "maxnumber": 3
+        "number": 4,
+        "maxnumber": 4
       }
     }
   },
   "abilities": {
     "Strength": 16,
-    "Dexterity": 13,
-    "Constitution": 13,
+    "Dexterity": 14,
+    "Constitution": 14,
     "Intelligence": 10,
     "Wisdom": 12,
     "Charisma": 9
@@ -123,11 +123,13 @@
       "equipped": false
     }
   },
-  "spells_prepared": {
-    "always_prepared": [],
-    "prepared_today": []
+  "spellcasting": {
+    "spells_prepared": {
+      "always_prepared": [],
+      "prepared_today": []
+    },
+    "spell_slots": []
   },
-  "spell_slots": [],
   "features": {
     "Rage": "class/Barbarian.class/features/3/Rage",
     "Unarmored Defense": "class/Barbarian.class/features/1/Unarmored Defense",
@@ -137,7 +139,8 @@
     "Reckless Attack": "class/Barbarian.class/features/2/Reckless Attack",
     "Spirit Seeker": "class/Barbarian.Totem_Warrior.sub.class/features/3/Spirit Seeker",
     "Totem Warrior": "class/Barbarian.class/features/3/subclass/Totem Warrior",
-    "Totem Spirit: Wolf": "class/Barbarian.Totem_Warrior.sub.class/features/3/choose/Totem Spirit: Wolf"
+    "Totem Spirit: Wolf": "class/Barbarian.Totem_Warrior.sub.class/features/3/choose/Totem Spirit: Wolf",
+    "Ability Score Improvement": "class/Barbarian.class/features/4/Ability Score Improvement"
   },
   "resources": {
     "Rage": {

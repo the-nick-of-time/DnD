@@ -35,10 +35,12 @@
     "Persuasion"
   ],
   "inventory": {},
-  "spell_slots": [],
-  "spells_prepared": {
-    "always_prepared": [],
-    "prepared_today": []
+  "spellcasting": {
+    "spell_slots": [],
+    "spells_prepared": {
+      "always_prepared": [],
+      "prepared_today": []
+    }
   },
   "features": {
     "Spellcasting": "class/Sorcerer.class/features/1/Spellcasting",

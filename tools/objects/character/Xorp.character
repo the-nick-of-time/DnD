@@ -49,21 +49,23 @@
     "Mage Hand Legerdemain": "class/Rogue.Arcane_Trickster.sub.class/features/3/Mage Hand Legerdemain",
     "Arcane Trickster": "class/Rogue.class/features/3/subclass/Arcane Trickster"
   },
-  "spells_prepared": {
-    "always_prepared": [
-      "Dancing Lights",
-      "Mending",
-      "Poison Spray"
-    ],
-    "prepared_today": [
-      "False Life",
-      "Color Spray"
+  "spellcasting": {
+    "spells_prepared": {
+      "always_prepared": [
+        "Dancing Lights",
+        "Mending",
+        "Poison Spray"
+      ],
+      "prepared_today": [
+        "False Life",
+        "Color Spray"
+      ]
+    },
+    "spell_slots": [
+      999999,
+      2
     ]
   },
-  "spell_slots": [
-    999999,
-    2
-  ],
   "resources": {
     "Sneak Attack": {
       "number": 1

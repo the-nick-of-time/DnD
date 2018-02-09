@@ -47,11 +47,13 @@
     "Goading Attack": "class/Fighter.Battle_Master.sub.class/features/3/choose/Goading Attack",
     "Commander's Strike": "class/Fighter.Battle_Master.sub.class/features/3/choose/Commander's Strike"
   },
-  "spells_prepared": {
-    "always_prepared": [],
-    "prepared_today": []
+  "spellcasting": {
+    "spells_prepared": {
+      "always_prepared": [],
+      "prepared_today": []
+    },
+    "spell_slots": []
   },
-  "spell_slots": [],
   "resources": {
     "Second Wind": {
       "number": 1

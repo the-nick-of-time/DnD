@@ -79,44 +79,46 @@
       }
     }
   },
-  "spells_prepared": {
-    "prepared_today": [
-      "Spirit Guardians",
-      "Guiding Bolt",
-      "Freedom of Movement",
-      "Bless",
-      "Beacon of Hope",
-      "Enhance Ability",
-      "Heal",
-      "Remove Curse",
-      "Protection from Evil and Good",
-      "Death Ward",
-      "Cure Wounds",
-      "Mass Cure Wounds",
-      "Mass Healing Word",
-      "Shield of Faith",
-      "Protection from Energy"
-    ],
-    "always_prepared": [
-      "Sacred Flame",
-      "Light",
-      "Guidance",
-      "Thaumaturgy",
-      "Spare the Dying"
+  "spellcasting": {
+    "spells_prepared": {
+      "prepared_today": [
+        "Spirit Guardians",
+        "Guiding Bolt",
+        "Freedom of Movement",
+        "Bless",
+        "Beacon of Hope",
+        "Enhance Ability",
+        "Heal",
+        "Remove Curse",
+        "Protection from Evil and Good",
+        "Death Ward",
+        "Cure Wounds",
+        "Mass Cure Wounds",
+        "Mass Healing Word",
+        "Shield of Faith",
+        "Protection from Energy"
+      ],
+      "always_prepared": [
+        "Sacred Flame",
+        "Light",
+        "Guidance",
+        "Thaumaturgy",
+        "Spare the Dying"
+      ]
+    },
+    "spell_slots": [
+      999999,
+      4,
+      3,
+      3,
+      3,
+      3,
+      2,
+      1,
+      1,
+      1
     ]
   },
-  "spell_slots": [
-    999999,
-    4,
-    3,
-    3,
-    3,
-    3,
-    2,
-    1,
-    1,
-    1
-  ],
   "features": {
     "Channel Divinity": "class/Cleric.class/features/18/Channel Divinity",
     "Channel Divinity: Turn Undead": "class/Cleric.class/features/2/Channel Divinity: Turn Undead",
