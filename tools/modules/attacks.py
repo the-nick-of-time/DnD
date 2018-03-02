@@ -138,7 +138,7 @@ class main(gui.Section):
 
 if (__name__ == '__main__'):
     win = tk.Tk(screenName='Attacks')
-    iface.JSONInterface.OBJECTSPATH = '../objects/'
+    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = main(win)
     app.pack()
     win.mainloop()

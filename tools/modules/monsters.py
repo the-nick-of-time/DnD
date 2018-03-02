@@ -362,8 +362,8 @@ class main(gui.Section):
 
 
 if (__name__ == '__main__'):
-    iface.JSONInterface.OBJECTSPATH = '../objects/'
-    window = tk.Tk()
+    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
+    win = gui.MainWindow()
     app = main(window)
     app.pack()
     window.mainloop()

@@ -164,10 +164,8 @@ class main(gui.Section):
 
 
 if __name__ == '__main__':
-    win = tk.Tk()
-    iface.JSONInterface.OBJECTSPATH = '../objects/'
-    # jf = iface.JSONInterface('character/Calan.character')
-    # app = AbilityDisplay(win, Character(jf))
+    win = gui.MainWindow();
+    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = main(win)
     app.pack()
     win.mainloop()

@@ -256,8 +256,8 @@ def pluralize(name):
 
 
 if __name__ == '__main__':
-    window = tk.Tk()
-    JSONInterface.OBJECTSPATH = '../objects/'
+    win = gui.MainWindow()
+    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = main(window)
     app.pack()
     window.mainloop()
