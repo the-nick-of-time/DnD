@@ -35,7 +35,7 @@ class module(DiceRoll):
 
 
 if (__name__ == '__main__'):
-    win = tk.Tk()
+    win = gui.MainWindow()
     win.title('Dice')
     app = DiceRoll(win)
     app.pack()

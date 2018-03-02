@@ -4,6 +4,7 @@ import tkinter as tk
 import os
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
+import tools.libraries.GUIbasics as gui
 import tools.modules.character_manager as cm
 import tools.modules.monsters as mm
 import tools.modules.dice as dc
@@ -70,7 +71,7 @@ class main:
         ic.main(self.window).pack()
 
 
-win = tk.Tk()
+win = gui.MainWindow()
 win.title('D&D')
 app = main(win)
 win.mainloop()

@@ -356,10 +356,8 @@ class main(gui.Section):
 
 
 if (__name__ == '__main__'):
-    win = tk.Tk()
-    # scroller = tk.ScrolledWindow(win)
-    # scroller.pack()
-    iface.JSONInterface.OBJECTSPATH = '../objects/'
+    win = gui.MainWindow()
+    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = main(win)
     app.pack()
     win.mainloop()
