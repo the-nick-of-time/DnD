@@ -312,6 +312,7 @@ class CharacterBuilder:
 class main(gui.Section):
     def __init__(self, window):
         gui.Section.__init__(self, window, height=770, width=965)
+        self.container.title('Combat Encounter')
         self.monsterdata = {}
         self.prevmonster = {}
         self.characterdata = {}
@@ -366,4 +367,4 @@ if (__name__ == '__main__'):
     win = gui.MainWindow()
     app = main(win)
     app.pack()
-    window.mainloop()
+    win.mainloop()
