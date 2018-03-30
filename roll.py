@@ -70,18 +70,18 @@ if (__name__ == '__main__'):
     (options, args) = parser.parse_args()
     fmt = "{0:2}"
     width = 16
-    if len(args) == 0:
-        print(fmt.format(r.roll("1d20")))
-    else:
-        if options.verbose:
-            if options.crit:
-                op = "multipass_critical"
-            else:
-                op = "multipass"
-        elif options.average:
-            op = "average"
+    if options.verbose:
+        if options.crit:
+            op = "multipass_critical"
         else:
-            op = "execute"
+            op = "multipass"
+    elif options.average:
+        op = "average"
+    else:
+        op = "execute"
+    if len(args) == 0:
+        print(fmt.format(r.roll("1d20", option=op)))
+    else:
         for expr in args:
             for i in range(options.number):
                 if (i%width == 0 and i != 0):
