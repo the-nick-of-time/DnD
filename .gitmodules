@@ -1,0 +1,3 @@
+[submodule "tools/libraries/rolling"]
+	path = tools/libraries/rolling
+	url = https://github.com/the-nick-of-time/rolling
