@@ -1,21 +1,36 @@
 {
   "name": "Shivered Dagger",
   "damage": "1d4",
-  "damage_type":"Piercing",
   "weapon_type": "Simple",
-  "attacks": 1,
-  "hands": 1,
-  "ability": [
-    "Strength",
-    "Dexterity"
+  "attacks": [
+    {
+      "attack_type": "ROLL",
+      "attack": {
+        "base_roll": "1d20",
+        "roll_suffix": [],
+        "modifiers": ["$proficiency", ["$dex_mod", "$str_mod"]]
+      },
+      "damage": {
+        "base_roll": "1d4",
+        "roll_suffix": [],
+        "damage_type": "Piercing",
+        "modifiers": [["$dex_mod", "$str_mod"]]
+      }
+    },
+    {
+      "attack_type": "AUTO",
+      "attack": {},
+      "damage": {
+        "base_roll": "1d4",
+        "roll_suffix": [],
+        "damage_type": "Cold",
+        "modifiers": []
+      }
+    }
   ],
+  "hands": 1,
   "weight": 1,
   "value": 200,
-  "bonus": {
-    "attack": 1,
-    "damage": "1d4",
-    "damage_type": "Cold"
-  },
   "description": "This wooden shard is forever rimed with frost.",
   "effect": "This dagger sucks all the heat from anything it touches.",
   "charges": {
