@@ -14,8 +14,45 @@
   "level": 2,
   "name": "Scorching Ray",
   "casting_time": "1 action",
-  "attack_roll": true,
-  "damage": "2d6",
-  "attacks": 3,
-  "damage_type": "fire"
+  "attacks": [
+    {
+      "attack_type": "ROLL",
+      "attack": {
+        "base_roll": "1d20",
+        "modifiers": ["$spellcasting_mod"]
+      },
+      "damage": {
+        "roll": "2d6",
+        "type": "Fire",
+        "roll_suffix": "",
+        "modifiers": []
+      }
+    },
+    {
+      "attack_type": "ROLL",
+      "attack": {
+        "base_roll": "1d20",
+        "modifiers": ["$spellcasting_mod"]
+      },
+      "damage": {
+        "roll": "2d6",
+        "type": "Fire",
+        "roll_suffix": "",
+        "modifiers": []
+      }
+    },
+    {
+      "attack_type": "ROLL",
+      "attack": {
+        "base_roll": "1d20",
+        "modifiers": ["$spellcasting_mod"]
+      },
+      "damage": {
+        "roll": "2d6",
+        "type": "Fire",
+        "roll_suffix": "",
+        "modifiers": []
+      }
+    }
+  ]
 }

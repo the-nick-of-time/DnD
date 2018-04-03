@@ -13,7 +13,20 @@
   "level": 0,
   "name": "Sacred Flame",
   "casting_time": "1 action",
-  "save": "Dexterity",
-  "damage": "1d8",
-  "damage_type": "radiant"
+  "attacks": [
+    {
+      "attack_type": "SAVE",
+      "attack": {
+        "ability": "Dexterity",
+        "base_dc": 8,
+        "modifiers": ["$spellcasting_mod"]
+      },
+      "damage": {
+        "roll": "1d8",
+        "type": "Radiant",
+        "roll_suffix": "",
+        "modifiers": []
+      }
+    }
+  ]
 }
