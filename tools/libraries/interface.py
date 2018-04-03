@@ -1,6 +1,7 @@
 import json
 import collections
 import re
+import dpath
 from os.path import abspath
 
 
@@ -55,103 +56,28 @@ class JSONInterface:
     def get(self, path):
         if (path == '/'):
             return self.info
-        if (not path.startswith('/')):
-            return self._get(path, self.info)
-        return self._get(path)
+        try:
+            return dpath.get(self.info, path)
+        except KeyError:
+            return None
 
     def delete(self, path):
         if (path == '/'):
             del self.info
             return True
-        if (not path.startswith('/')):
-            return self._delete(path, self.info)
-        return self._delete(path)
+        try:
+            return dpath.delete(self.info, path)
+        except dpath.exceptions.PathNotFound:
+            return False
 
     def set(self, path, value):
         if (path == '/'):
             return False
-        if (not path.startswith('/')):
-            return self._set(path, value, self.info)
-        return self._set(path, value)
+        return dpath.new(self.info, path, value)
 
     def write(self):
         with open(self.filename, 'w') as f:
             json.dump(obj=self.info, fp=f, indent=2)
-
-    def _get(self, path, root=None):
-        try:
-            if (root is None):
-                return self._get(path, self.info)
-            comp = path.split(sep='/', maxsplit=1)
-            if (len(comp) == 1):
-                # Terminal
-                if (isinstance(root, list)):
-                    return root[int(comp[0])]
-                else:
-                    return root[comp[0]]
-            if (comp[0] == ''):
-                # Intitial
-                return self._get(comp[1], self.info)
-            # Recurse
-            if(isinstance(root, list)):
-                return self._get(comp[1], root[int(comp[0])])
-            else:
-                return self._get(comp[1], root[comp[0]])
-        except (KeyError, IndexError):
-            return None
-
-    def _set(self, path, value, root=None):
-        try:
-            if (root is None):
-                return self._set(path, value, self.info)
-            comp = path.split(sep='/', maxsplit=1)
-            if (len(comp) == 1):
-                # Terminal
-                if (isinstance(root, list)):
-                    i = int(comp[0])
-                    if (i >= len(root)):
-                        # Writing beyond end of list, pad with None
-                        root = root + [None for each in range(len(root), i)] + [value]
-                    else:
-                        # Valid
-                        root[i] = value
-                else:
-                    root[comp[0]] = value
-                return True
-            if (comp[0] == ''):
-                # Intitial
-                return self._set(comp[1], value, self.info)
-            # Recurse
-            if(isinstance(root, list)):
-                return self._set(comp[1], value, root[int(comp[0])])
-            else:
-                return self._set(comp[1], value, root[comp[0]])
-        except (KeyError, IndexError):
-            return False
-
-    def _delete(self, path, root=None):
-        try:
-            if (root is None):
-                return self.delete(path, self.info)
-            comp = path.split(sep='/', maxsplit=1)
-            if (len(comp) == 1):
-                # Terminal
-                if (isinstance(root, list)):
-                    del root[int(comp[0])]
-                else:
-                    del root[comp[0]]
-                return True
-            if (comp[0] == ''):
-                # Intitial
-                return self._delete(comp[1], self.info)
-            # Recurse
-            if(isinstance(root, list)):
-                return self._delete(comp[1], root[int(comp[0])])
-            else:
-                return self._delete(comp[1], root[comp[0]])
-        except (KeyError, IndexError):
-            return False
-
 
 
 class LinkedInterface:
