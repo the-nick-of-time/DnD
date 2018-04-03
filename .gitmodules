@@ -1,3 +1,6 @@
 [submodule "tools/libraries/rolling"]
 	path = tools/libraries/rolling
 	url = https://github.com/the-nick-of-time/rolling
+[submodule "tools/libraries/dpath-python"]
+	path = tools/libraries/dpath-python
+	url = https://github.com/akesterson/dpath-python
