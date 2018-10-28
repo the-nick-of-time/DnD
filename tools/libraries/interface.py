@@ -1,8 +1,6 @@
 import json
 import collections
-import re
-import dpath
-from os.path import abspath
+import jsonpointer
 
 
 class JSONInterface:
@@ -54,26 +52,13 @@ class JSONInterface:
         yield self
 
     def get(self, path):
-        if (path == '/'):
-            return self.info
-        try:
-            return dpath.get(self.info, path)
-        except KeyError:
-            return None
+        return jsonpointer.resolve_pointer(self.info, path, None)
 
     def delete(self, path):
-        if (path == '/'):
-            del self.info
-            return True
-        try:
-            return dpath.delete(self.info, path)
-        except dpath.exceptions.PathNotFound:
-            return False
+        jsonpointer.set_pointer(self.info, path, None)
 
     def set(self, path, value):
-        if (path == '/'):
-            return False
-        return dpath.new(self.info, path, value)
+        jsonpointer.set_pointer(self.info, path, value)
 
     def write(self):
         with open(self.filename, 'w') as f:
