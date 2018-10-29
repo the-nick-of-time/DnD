@@ -4,7 +4,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import interface as iface
 import classes as c
-import ClassMap as cm
+import classmap as cm
 
 iface.JSONInterface.OBJECTSPATH = '../objects/'
 

@@ -2,6 +2,7 @@
 
 import tkinter as tk
 import os
+
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 import tools.libraries.GUIbasics as gui
@@ -13,7 +14,7 @@ import tools.modules.levelup as lu
 import tools.modules.item_creator as ic
 
 
-class main:
+class Main:
     def __init__(self, window):
         self.window = window
         self.f = tk.Frame(window)
@@ -21,13 +22,13 @@ class main:
         self.dmframe = tk.LabelFrame(self.f, text='DM', padx=10)
         self.rollframe = tk.LabelFrame(self.f, text='Any', padx=10)
         self.charmanage = tk.Button(self.playerframe, text='Manage\nCharacter',
-                                    command=self.charactermanager)
+                                    command=self.character_manager)
         self.charcreate = tk.Button(self.playerframe, text='Create\nCharacter',
                                     command=self.character_create)
         self.levelup = tk.Button(self.playerframe, text='Level up\nCharacter',
                                  command=self.character_levelup)
         self.monstermanage = tk.Button(self.dmframe, text='Manage\nEncounter',
-                                       command=self.monstermanager)
+                                       command=self.monster_manager)
         self.diceroll = tk.Button(self.rollframe, text='Roll\nDice',
                                   command=self.dice)
         self.itemcreator = tk.Button(self.rollframe, text='Create\nItem',
@@ -46,21 +47,21 @@ class main:
         self.diceroll.pack(pady=5)
         self.itemcreator.pack(pady=5)
 
-    def charactermanager(self):
+    def character_manager(self):
         self.f.destroy()
-        cm.main(self.window)
+        cm.Main(self.window)
 
     def character_create(self):
         self.f.destroy()
-        cc.main(self.window).pack()
+        cc.Main(self.window).pack()
 
     def character_levelup(self):
         self.f.destroy()
-        lu.main(self.window).pack()
+        lu.Main(self.window).pack()
 
-    def monstermanager(self):
+    def monster_manager(self):
         self.f.destroy()
-        mm.main(self.window).pack()
+        mm.Main(self.window).pack()
 
     def dice(self):
         self.f.destroy()
@@ -68,10 +69,10 @@ class main:
 
     def create_item(self):
         self.f.destroy()
-        ic.main(self.window).pack()
+        ic.Main(self.window).pack()
 
 
 win = gui.MainWindow()
 win.title('D&D')
-app = main(win)
+app = Main(win)
 win.mainloop()

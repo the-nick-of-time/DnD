@@ -2,7 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/tools/libraries/dpath-python" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tools/libraries/rolling" vcs="Git" />
   </component>
 </project>

@@ -1,21 +1,20 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
-import tkinter.ttk as ttk
-import tkinter.messagebox as messagebox
 import json
-import re
-from collections import OrderedDict
 import os
+import re
 import sys
+import tkinter as tk
+import tkinter.messagebox as messagebox
+from collections import OrderedDict
+
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                 '/../libraries'))
 
 import GUIbasics as gui
-import classes as c
 import interface as iface
 import helpers as h
-import ClassMap as cm
+import classmap as cm
 from levelup import FeaturesAtLevel
 
 
@@ -25,8 +24,8 @@ class BasicInfoSelector(gui.Section):
         # TODO: make listboxes that automatically show options for races and
         #   classes that have files associated with them
         self.raceL = tk.Label(self.f, text='Race?')
-        self.racename = tk.StringVar()
-        self.racename.trace('w', lambda a, b, c: raceupdated(self.racename))
+        self.raceName = tk.StringVar()
+        self.raceName.trace('w', lambda a, b, c: raceupdated(self.raceName))
         # self.race = tk.Entry(self.f)
         races = ['Dwarf (Hill)', 'Dwarf (Mountain)', 'Elf (High)',
                  'Elf (Wood)', 'Gnome (Forest)', 'Gnome (Rock)', 'Half-Elf',
@@ -37,7 +36,7 @@ class BasicInfoSelector(gui.Section):
                  'Dragonborn (Copper)', 'Dragonborn (Gold)',
                  'Dragonborn (Green)', 'Dragonborn (Red)',
                  'Dragonborn (Silver)', 'Dragonborn (White)']
-        self.race = tk.OptionMenu(self.f, self.racename, *races)
+        self.race = tk.OptionMenu(self.f, self.raceName, *races)
         self.clL = tk.Label(self.f, text='Class?')
         # self.cl = tk.Entry(self.f)
         classes = ['Bard', 'Barbarian', 'Cleric', 'Druid', 'Fighter', 'Monk',
@@ -58,7 +57,7 @@ class BasicInfoSelector(gui.Section):
     def export(self):
         data = OrderedDict()
         # data['race'] = self.race.get()
-        data['race'] = self.racename.get()
+        data['race'] = self.raceName.get()
         # data['level'] = self.cl.get() + ' 1'
         data['level'] = self.classname.get() + ' 1'
         data['languages'] = re.split(',\s*', self.lang.get())
@@ -73,8 +72,8 @@ class AbilitySelector(gui.Section):
         gui.Section.__init__(self, container)
         self.names = [tk.Label(self.f, text=n[:3].upper())
                       for n in self.abilnames]
-        self.scores = [tk.Entry(self.f, width=3) for n in self.abilnames]
-        self.savebools = [tk.BooleanVar() for a in self.abilnames]
+        self.scores = [tk.Entry(self.f, width=3) for _ in self.abilnames]
+        self.savebools = [tk.BooleanVar() for _ in self.abilnames]
         self.saves = [tk.Checkbutton(self.f, text='Save Proficiency?',
                                      variable=self.savebools[i])
                       for (i, a) in enumerate(self.abilnames)]
@@ -92,7 +91,7 @@ class AbilitySelector(gui.Section):
         data['saves'] = []
         for (i, a) in enumerate(self.abilnames):
             data['abilities'][a] = int(self.scores[i].get())
-            if (self.savebools[i].get()):
+            if self.savebools[i].get():
                 data['saves'].append(a)
         return data
 
@@ -101,24 +100,24 @@ class SkillSelector(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
         sk = iface.JSONInterface('skill/SKILLS.skill')
-        self.skillmap = sk.get('/')
-        self.proficiencies = [tk.StringVar() for n in self.skillmap]
+        self.skillMap = sk.get('/')
+        self.proficiencies = [tk.StringVar() for _ in self.skillMap]
         self.buttons = [tk.Checkbutton(self.f, text=n,
                                        variable=self.proficiencies[i],
                                        onvalue=n, offvalue='')
-                        for (i, n) in enumerate(sorted(self.skillmap))]
+                        for (i, n) in enumerate(sorted(self.skillMap))]
         self.draw_static()
 
     def draw_static(self):
         for (i, obj) in enumerate(self.buttons):
-            obj.grid(row=i//3, column=i%3)
+            obj.grid(row=i // 3, column=i % 3)
 
     def export(self):
         data = OrderedDict()
         data['skills'] = []
-        for (i, s) in enumerate(self.skillmap):
+        for (i, s) in enumerate(self.skillMap):
             prof = self.proficiencies[i].get()
-            if (prof != ''):
+            if prof != '':
                 data['skills'].append(prof)
         return data
 
@@ -138,7 +137,8 @@ class RaceFeaturesDisplay(gui.Section):
             d.short_display.config(width=15, wraplength=100)
 
 
-class main(gui.Section):
+# noinspection PyAttributeOutsideInit
+class Main(gui.Section):
     def __init__(self, window):
         gui.Section.__init__(self, window)
         # self.data = {}
@@ -147,7 +147,7 @@ class main(gui.Section):
         # self.NEXT = tk.Button(self.f, text='Select Features',
         #                       command=self.select_features)
         self.QUIT = tk.Button(self.f, text='QUIT', fg='red',
-                              command=self.writequit)
+                              command=self.write_and_quit)
         self.startup_begin()
 
     def draw_static(self):
@@ -169,20 +169,22 @@ class main(gui.Section):
         except AttributeError:
             pass
 
+    # noinspection PyAttributeOutsideInit
     def startup_begin(self):
         self.charactername = {}
         gui.Query(self.charactername, self.startup_end, 'Character Name?')
         self.container.withdraw()
 
+    # noinspection PyAttributeOutsideInit
     def startup_end(self):
         self.name = self.charactername['Character Name?']
         self.container.title(self.name)
         path = 'character/' + h.clean(self.name) + '.character'
         self.filename = iface.JSONInterface.OBJECTSPATH + path
-        if (os.path.exists(iface.JSONInterface.OBJECTSPATH + path)):
+        if os.path.exists(iface.JSONInterface.OBJECTSPATH + path):
             ok = messagebox.askokcancel(message='You are overwriting an '
-                                        'existing file. Continue?')
-            if (not ok):
+                                                'existing file. Continue?')
+            if not ok:
                 self.container.destroy()
 
         f = open(self.filename, 'w')
@@ -195,14 +197,6 @@ class main(gui.Section):
         ######
         self.draw_static()
         self.container.deiconify()
-
-    # def select_features(self):
-    #     self.data['name'] = self.name
-    #     self.data.update(self.basic.export())
-    #     classes = cm.ClassMap(self.data['level'])
-    #     classjf = classes[0].record
-    #     self.features = FeaturesAtLevel(self.f, classjf, 1)
-    #     self.draw_dynamic()
 
     def class_features(self, var):
         classname = var.get()
@@ -222,7 +216,7 @@ class main(gui.Section):
     def export_features(self):
         # classfeatures = self.features.export()
         classfeatures = self.classfeatures.export()
-        if ('SUBCLASS' in classfeatures):
+        if 'SUBCLASS' in classfeatures:
             name = classfeatures.pop('SUBCLASS')
             other = classfeatures.pop('MAIN CLASS')
             classobj = cm.ClassMap(self.data['level'])
@@ -235,42 +229,28 @@ class main(gui.Section):
         features.update(racefeatures)
         return {'features': features}
 
+    # noinspection PyPep8Naming
     def export_hp(self):
         classobj = cm.ClassMap(self.data['level'])
         rec = classobj[0]
         HD = rec.get('/hit_dice')
-        maxhp = (int(HD[2:])
+        maxHP = (int(HD[2:])
                  + h.modifier(self.data['abilities']['Constitution']))
-        data = OrderedDict((('max', maxhp),
-                            ('current', maxhp),
+        data = OrderedDict((('max', maxHP),
+                            ('current', maxHP),
                             ('temp', 0),
                             ('HD', {HD: {'number': 1, 'maxnumber': 1}})))
         return {'HP': data}
 
-    def export_empties(self):
+    @staticmethod
+    def export_empties():
         data = OrderedDict((('inventory', {}),
                             ('spell_slots', []),
                             ('spells_prepared', {'prepared_today': [],
                                                  'always_prepared': []})))
         return data
 
-    # def writequit(self):
-    #     # self.data['name'] = self.name
-    #     # self.basic.export(self.data)
-    #     self.abils.export(self.data)
-    #     self.skills.export(self.data)
-    #     self.data['inventory'] = {}
-    #     ######
-    #     self.data['spells_prepared'] = {}
-    #     self.data['spells_prepared']['prepared_today'] = []
-    #     self.data['spells_prepared']['always_prepared'] = []
-    #     self.data['spell_slots'] = []
-    #     #####
-    #     with open(self.filename, 'w') as outfile:
-    #         json.dump(self.data, outfile, indent=2)
-    #     self.container.destroy()
-
-    def writequit(self):
+    def write_and_quit(self):
         self.data['name'] = self.name
         self.data.update(self.basic.export())
         self.data.update(self.abils.export())
@@ -283,9 +263,9 @@ class main(gui.Section):
         self.container.destroy()
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
     win = gui.MainWindow()
     iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(win)
+    app = Main(win)
     app.pack()
     win.mainloop()

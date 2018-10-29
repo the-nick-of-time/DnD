@@ -1,10 +1,10 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
-import tkinter.ttk as ttk
-import re
 import os
 import sys
+import tkinter as tk
+import tkinter.ttk as ttk
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import GUIbasics as gui
@@ -25,12 +25,12 @@ import conditions
 import equipment
 
 
-class main:
+class Main:
     def __init__(self, window):
         self.container = window
         self.buttons = tk.Frame(window)
         self.QUIT = tk.Button(self.buttons, text='QUIT', fg='red',
-                              command=self.writequit)
+                              command=self.write_quit)
         self.long_rest = tk.Button(self.buttons, text='Long rest',
                                    command=lambda: self.rest('long'))
         self.short_rest = tk.Button(self.buttons, text='Short rest',
@@ -40,11 +40,11 @@ class main:
         self.core = ttk.Notebook(window)
         self.core.bind("<<NotebookTabChanged>>", self.tab_update)
         ######
-        self.frontpage = tk.Frame(self.core)
-        self.featurespage = tk.Frame(self.core)
-        self.attackpage = tk.Frame(self.core)
-        self.inventorypage = tk.Frame(self.core)
-        self.spellspage = tk.Frame(self.core)
+        self.frontPage = tk.Frame(self.core)
+        self.featuresPage = tk.Frame(self.core)
+        self.attackPage = tk.Frame(self.core)
+        self.inventoryPage = tk.Frame(self.core)
+        self.spellsPage = tk.Frame(self.core)
         # self.draw_static()
         self.startup_begin()
 
@@ -52,31 +52,31 @@ class main:
         self.core.grid(row=0, column=0)
         ######
         # Front page
-        self.core.add(self.frontpage, text='Main')
+        self.core.add(self.frontPage, text='Main')
         self.info.grid(row=0, column=0)
         self.HP.grid(row=0, column=1)
         self.roller.grid(row=1, column=0)
         self.abils.grid(row=1, column=1)
         ######
         # Attacks
-        self.core.add(self.attackpage, text='Attacks')
-        self.attacktop.grid(row=0, column=0)
+        self.core.add(self.attackPage, text='Attacks')
+        self.attackTop.grid(row=0, column=0)
         self.attacks.grid(row=0, column=0, sticky='n')
         self.conditions.grid(row=0, column=1, sticky='n')
         self.equipment.grid(row=1, column=0)
         ######
         # Features
-        self.core.add(self.featurespage, text='Features')
+        self.core.add(self.featuresPage, text='Features')
         self.features.grid(row=0, column=0)
         self.resources.grid(row=0, column=1)
-        self.featureroller.grid(row=1, column=1)
+        self.featureRoller.grid(row=1, column=1)
         ######
         # Inventory
-        self.core.add(self.inventorypage, text='Inventory')
+        self.core.add(self.inventoryPage, text='Inventory')
         self.inventory.grid(row=0, column=0)
         ######
         # Spells
-        self.core.add(self.spellspage, text='Spells')
+        self.core.add(self.spellsPage, text='Spells')
         self.spells.grid(row=0, column=0)
         #####
         self.buttons.grid(row=1, column=0)
@@ -85,15 +85,17 @@ class main:
         self.long_rest.grid(row=0, column=2)
         self.QUIT.grid(row=0, column=3)
 
+    # noinspection PyAttributeOutsideInit
     def startup_begin(self):
         self.charactername = {}
         gui.CharacterQuery(self.charactername, self.startup_end)
         self.container.withdraw()
 
+    # noinspection PyAttributeOutsideInit
     def startup_end(self):
         name = self.charactername['Character Name?']
         path = 'character/' + h.clean(name) + '.character'
-        if (os.path.exists(iface.JSONInterface.OBJECTSPATH + path)):
+        if os.path.exists(iface.JSONInterface.OBJECTSPATH + path):
             self.record = iface.JSONInterface(path)
         else:
             gui.ErrorMessage('A character with that name was not found.')
@@ -101,36 +103,36 @@ class main:
             raise FileNotFoundError
         self.character = c.Character(self.record)
         self.container.title(str(self.character))
-        self.settingmenu = Settings(self.container, self.character)
-        self.container.config(menu=self.settingmenu.core)
+        self.settingMenu = Settings(self.container, self.character)
+        self.container.config(menu=self.settingMenu.core)
         ######
         # Front page
-        self.info = Information(self.frontpage, self.character)
-        self.HP = hp.module(self.frontpage, self.character)
-        self.roller = dice.module(self.frontpage, self.character)
-        self.abils = abilities.module(self.frontpage, self.character)
+        self.info = Information(self.frontPage, self.character)
+        self.HP = hp.Module(self.frontPage, self.character)
+        self.roller = dice.Module(self.frontPage, self.character)
+        self.abils = abilities.Module(self.frontPage, self.character)
         ######
         # Attacks
-        self.attacktop = tk.Frame(self.attackpage)
-        self.attacks = attacks.module(self.attacktop, self.character)
-        self.conditions = conditions.module(self.attacktop, self.character)
-        self.equipment = equipment.module(self.attackpage, self.character)
+        self.attackTop = tk.Frame(self.attackPage)
+        self.attacks = attacks.module(self.attackTop, self.character)
+        self.conditions = conditions.Module(self.attackTop, self.character)
+        self.equipment = equipment.Module(self.attackPage, self.character)
         ######
         # Features
-        self.features = features.module(self.featurespage, self.character)
-        self.resources = resources.module(self.featurespage, self.character)
-        self.featureroller = dice.module(self.featurespage, self.character)
+        self.features = features.Module(self.featuresPage, self.character)
+        self.resources = resources.Module(self.featuresPage, self.character)
+        self.featureRoller = dice.Module(self.featuresPage, self.character)
         ######
         # Inventory
-        self.inventory = inventory.module(self.inventorypage, self.character)
+        self.inventory = inventory.Module(self.inventoryPage, self.character)
         ######
         # Spells
-        self.spells = spells.module(self.spellspage, self.character)
+        self.spells = spells.Module(self.spellsPage, self.character)
         ######
         self.container.deiconify()
         self.draw_static()
 
-    def writequit(self):
+    def write_quit(self):
         self.character.write()
         self.container.destroy()
 
@@ -143,16 +145,16 @@ class main:
 
     def tab_update(self, event):
         index = event.widget.index('current')
-        if (index == 0):
+        if index == 0:
             self.info.draw_dynamic()
             self.HP.draw_dynamic()
-        elif (index == 1):
+        elif index == 1:
             self.conditions.draw_dynamic()
-        elif (index == 2):
+        elif index == 2:
             self.resources.draw_dynamic()
-        elif (index == 3):
+        elif index == 3:
             self.inventory.draw_dynamic()
-        elif (index == 4):
+        elif index == 4:
             self.spells.draw_dynamic()
 
 
@@ -183,48 +185,48 @@ class Information(gui.Section):
 class Settings:
     def __init__(self, window, character):
         self.character = character
-        if (not self.character.get('/SETTINGS')):
+        if not self.character.get('/SETTINGS'):
             self.character.set('/SETTINGS', {})
         self.core = tk.Menu(window)
-        self.healingchoice = tk.Menu(self.core, tearoff=False)
+        self.healingChoice = tk.Menu(self.core, tearoff=False)
         self.healing = tk.StringVar()
         self.healing.set(self.character.get('/SETTINGS/HEALING') or 'vanilla')
-        self.healingchoice.add_radiobutton(label='Vanilla',
+        self.healingChoice.add_radiobutton(label='Vanilla',
                                            variable=self.healing,
                                            command=self.set_healing,
                                            value='vanilla')
-        self.healingchoice.add_radiobutton(label='Slow (DMG 267)',
+        self.healingChoice.add_radiobutton(label='Slow (DMG 267)',
                                            variable=self.healing,
                                            command=self.set_healing,
                                            value='slow')
-        self.healingchoice.add_radiobutton(label='Healing Surge (DMG 266)',
+        self.healingChoice.add_radiobutton(label='Healing Surge (DMG 266)',
                                            variable=self.healing,
                                            command=self.set_healing,
                                            value='fast')
-        self.core.add_cascade(label='Healing', menu=self.healingchoice)
-        self.profdice = tk.BooleanVar()
-        self.profdice.set(self.character.get('/SETTINGS/PROFICIENCY_DICE')
+        self.core.add_cascade(label='Healing', menu=self.healingChoice)
+        self.profDice = tk.BooleanVar()
+        self.profDice.set(self.character.get('/SETTINGS/PROFICIENCY_DICE')
                           or False)
-        self.profdicechoice = tk.Menu(self.core, tearoff=False)
-        self.profdicechoice.add_checkbutton(label='Use proficiency dice? '
+        self.profDiceChoice = tk.Menu(self.core, tearoff=False)
+        self.profDiceChoice.add_checkbutton(label='Use proficiency dice? '
                                             '(DMG 263)',
-                                            variable=self.profdice,
+                                            variable=self.profDice,
                                             command=self.set_prof)
         self.core.add_cascade(label='Proficiency Dice',
-                              menu=self.profdicechoice)
+                              menu=self.profDiceChoice)
 
     def set_healing(self):
         c.Character.HEALING = self.healing.get()
         self.character.set('/SETTINGS/HEALING', c.Character.HEALING)
 
     def set_prof(self):
-        c.Character.PROFICIENCY_DICE = self.profdice.get()
+        c.Character.PROFICIENCY_DICE = self.profDice.get()
         self.character.set('/SETTINGS/PROFICIENCY_DICE',
                            c.Character.PROFICIENCY_DICE)
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
     win = gui.MainWindow()
     iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(win)
+    app = Main(win)
     win.mainloop()

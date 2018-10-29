@@ -1,12 +1,12 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
 import os
 import sys
+import tkinter as tk
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import GUIbasics as gui
-import helpers as h
 import classes as c
 import interface as iface
 
@@ -22,16 +22,16 @@ class FeaturesDisplay(gui.Section):
     def draw_static(self):
         s = 10
         for (i, d) in enumerate(self.displays):
-            d.grid(row=i%s, column=i//s)
+            d.grid(row=i % s, column=i // s)
 
 
-class module(FeaturesDisplay):
+class Module(FeaturesDisplay):
     def __init__(self, container, character):
         FeaturesDisplay.__init__(self, container, character)
         self.f.config(bd=2, relief='groove')
 
 
-class main(gui.Section):
+class Main(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
         self.QUIT = tk.Button(self.f, text='QUIT', fg='red', command=self.quit)
@@ -41,15 +41,17 @@ class main(gui.Section):
         self.core.grid(row=0, column=0)
         self.QUIT.grid(row=1, column=1)
 
+    # noinspection PyAttributeOutsideInit
     def startup_begin(self):
         self.charactername = {}
         gui.Query(self.charactername, self.startup_end, 'Character Name?')
         self.container.withdraw()
 
+    # noinspection PyAttributeOutsideInit
     def startup_end(self):
         name = self.charactername['Character Name?']
         path = 'character/' + name + '.character'
-        if (os.path.exists(iface.JSONInterface.OBJECTSPATH + path)):
+        if os.path.exists(iface.JSONInterface.OBJECTSPATH + path):
             self.record = iface.JSONInterface(path)
         else:
             raise FileNotFoundError
@@ -62,9 +64,9 @@ class main(gui.Section):
         self.container.destroy()
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
     win = gui.MainWindow()
     iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(win)
+    app = Main(win)
     app.pack()
     win.mainloop()

@@ -1,15 +1,13 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
 import os
 import sys
+import tkinter as tk
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import classes as c
-import helpers as h
 import GUIbasics as gui
-import tkUtility as util
-import rolling as r
 import interface as iface
 
 
@@ -36,48 +34,49 @@ class HitPointDisplay(gui.Section):
         self.numbers = tk.Frame(self.hpsection)
         self.hplabel = tk.Label(self.numbers, text='HP')
         self.currentvalue = tk.StringVar()
-        self.currentvalue.trace('w', lambda a,b,c: self.update_hp())
+        self.currentvalue.trace('w', lambda x, y, z: self.update_hp())
         self.current = tk.Entry(self.numbers, textvariable=self.currentvalue,
                                 width=7)
         self.plus = tk.Label(self.numbers, text='+')
-        self.templabel = tk.Label(self.numbers, text='Temp HP')
-        self.tempvalue = tk.StringVar()
-        self.tempvalue.trace('w', lambda a,b,c: self.update_temp())
-        self.temp = tk.Entry(self.numbers, textvariable=self.tempvalue,
+        self.tempLabel = tk.Label(self.numbers, text='Temp HP')
+        self.tempValue = tk.StringVar()
+        self.tempValue.trace('w', lambda x, y, z: self.update_temp())
+        self.temp = tk.Entry(self.numbers, textvariable=self.tempValue,
                              width=7)
         self.slash = tk.Label(self.numbers, text='/')
-        self.mxlabel = tk.Label(self.numbers, text='Max HP')
-        self.mxvalue = tk.StringVar()
-        self.mxvalue.trace('w', lambda a,b,c: self.update_maxhp())
-        self.mx = tk.Entry(self.numbers, textvariable=self.mxvalue, width=7)
+        self.maxLabel = tk.Label(self.numbers, text='Max HP')
+        self.maxValue = tk.StringVar()
+        self.maxValue.trace('w', lambda x, y, z: self.update_maxhp())
+        self.mx = tk.Entry(self.numbers, textvariable=self.maxValue, width=7)
         ################
-        self.buttonframe = tk.Frame(self.hpsection)
-        self.deltavalue = tk.StringVar()
-        self.delta = tk.Entry(self.buttonframe, textvariable=self.deltavalue,
+        self.buttonFrame = tk.Frame(self.hpsection)
+        self.deltaValue = tk.StringVar()
+        self.delta = tk.Entry(self.buttonFrame, textvariable=self.deltaValue,
                               width=10)
         self.delta.bind('<Return>', lambda event: self.change_HP())
-        self.change = tk.Button(self.buttonframe, text='Change HP',
+        self.change = tk.Button(self.buttonFrame, text='Change HP',
                                 command=lambda: self.change_HP())
-        self.tempchange = tk.Button(self.buttonframe, text='Add Temp HP',
+        self.tempChange = tk.Button(self.buttonFrame, text='Add Temp HP',
                                     command=lambda: self.change_temp())
         ###############
-        self.hdsection = tk.Frame(self.f)
-        self.hddisplays = [HitDiceDisplay(self.hdsection, self.handler.hd[key], self.handler, self) for key in self.handler.hd]
+        self.hdSection = tk.Frame(self.f)
+        self.hdDisplays = [HitDiceDisplay(self.hdSection, self.handler.hd[key], self.handler, self) for key in
+                           self.handler.hd]
         ###############
-        self.restframe = tk.Frame(self.f)
+        self.restFrame = tk.Frame(self.f)
         # does nothing intentionally
-        self.shortrest = tk.Button(self.restframe, text='Short rest')
-        self.longrest = tk.Button(self.restframe, text='Long rest', command=self.long_rest)
+        self.shortRest = tk.Button(self.restFrame, text='Short rest')
+        self.longRest = tk.Button(self.restFrame, text='Long rest', command=self.long_rest)
         ###############
         self.draw_static()
         self.draw_dynamic()
 
     def change_HP(self):
-        self.handler.change_HP(self.deltavalue.get())
+        self.handler.change_HP(self.deltaValue.get())
         self.draw_dynamic()
 
     def change_temp(self):
-        self.handler.temp_HP(self.deltavalue.get())
+        self.handler.temp_HP(self.deltaValue.get())
         self.draw_dynamic()
 
     def draw_static(self):
@@ -87,100 +86,101 @@ class HitPointDisplay(gui.Section):
         self.hplabel.grid(row=0, column=0)
         self.current.grid(row=1, column=0)
         self.plus.grid(row=1, column=1)
-        self.templabel.grid(row=0, column=2)
+        self.tempLabel.grid(row=0, column=2)
         self.temp.grid(row=1, column=2)
         self.slash.grid(row=1, column=3)
-        self.mxlabel.grid(row=0, column=4)
+        self.maxLabel.grid(row=0, column=4)
         self.mx.grid(row=1, column=4)
         #############
-        self.buttonframe.grid(row=1, column=0)
+        self.buttonFrame.grid(row=1, column=0)
         self.delta.grid(row=0, column=0)
         self.change.grid(row=0, column=1)
-        self.tempchange.grid(row=0, column=2)
+        self.tempChange.grid(row=0, column=2)
         #############
-        self.hdsection.grid(row=0, column=1)
-        for (i, item) in enumerate(self.hddisplays):
+        self.hdSection.grid(row=0, column=1)
+        for (i, item) in enumerate(self.hdDisplays):
             item.grid(row=0, column=i)
         ############
-        self.buttonframe.grid(row=1, column=0)
-        self.shortrest.grid(row=0, column=0)
-        self.longrest.grid(row=0, column=1)
+        self.buttonFrame.grid(row=1, column=0)
+        self.shortRest.grid(row=0, column=0)
+        self.longRest.grid(row=0, column=1)
 
     def draw_dynamic(self):
         self.currentvalue.set(self.handler.current)
-        self.mxvalue.set(self.handler.max)
-        self.tempvalue.set(self.handler.temp)
-        for d in self.hddisplays:
+        self.maxValue.set(self.handler.max)
+        self.tempValue.set(self.handler.temp)
+        for d in self.hdDisplays:
             d.draw_dynamic()
 
     def update_maxhp(self):
-        self.handler.max = int(self.mxvalue.get() or 0)
+        self.handler.max = int(self.maxValue.get() or 0)
 
     def update_hp(self):
         self.handler.current = int(self.currentvalue.get() or 0)
 
     def update_temp(self):
-        self.handler.temp = int(self.tempvalue.get() or 0)
+        self.handler.temp = int(self.tempValue.get() or 0)
 
     def long_rest(self):
         self.handler.rest('long')
-        for item in self.hddisplays:
+        for item in self.hdDisplays:
             item.draw_dynamic()
         self.draw_dynamic()
 
 
-class module(HitPointDisplay):
+class Module(HitPointDisplay):
     def __init__(self, container, character):
         HitPointDisplay.__init__(self, container, character.hp)
         self.f.config(bd=2, relief='groove', pady=5)
 
 
-class main(gui.Section):
+class Main(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
         self.charactername = {}
-        self.QUIT = tk.Button(self.f, command=self.writequit, text='QUIT')
+        self.QUIT = tk.Button(self.f, command=self.write_quit, text='QUIT')
         self.buttons = tk.Frame(self.f)
-        self.longrest = tk.Button(self.buttons, text='Long Rest',
+        self.longRest = tk.Button(self.buttons, text='Long Rest',
                                   command=self.long_rest)
         # Does nothing on purpose
-        self.shortrest = tk.Button(self.buttons, text='Short Rest')
+        self.shortRest = tk.Button(self.buttons, text='Short Rest')
         self.startup_begin()
 
     def startup_begin(self):
         gui.Query(self.charactername, self.startup_finish, 'Character Name?')
         self.container.withdraw()
 
+    # noinspection PyAttributeOutsideInit
     def startup_finish(self):
         name = self.charactername['Character Name?']
         path = iface.JSONInterface.OBJECTSPATH + 'character/' + name + '.character'
-        if (os.path.exists(path)):
+        if os.path.exists(path):
             self.record = iface.JSONInterface(path)
         else:
             raise FileNotFoundError
-        self.corehandler = c.HPhandler(self.record)
-        self.hpdisplay = HitPointDisplay(self.f, self.corehandler)
+        self.coreHandler = c.HPHandler(self.record)
+        self.hpDisplay = HitPointDisplay(self.f, self.coreHandler)
         self.draw_static()
         self.container.deiconify()
 
     def draw_static(self):
-        self.hpdisplay.grid(row=0, column=0)
+        self.hpDisplay.grid(row=0, column=0)
         self.buttons.grid(row=1, column=0)
-        self.shortrest.grid(row=0, column=0)
-        self.longrest.grid(row=0, column=1)
+        self.shortRest.grid(row=0, column=0)
+        self.longRest.grid(row=0, column=1)
         self.QUIT.grid(row=1, column=1)
 
     def long_rest(self):
-        self.hpdisplay.long_rest()
+        self.hpDisplay.long_rest()
 
-    def writequit(self):
-        self.corehandler.write()
+    def write_quit(self):
+        self.coreHandler.write()
         self.container.destroy()
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
     win = gui.MainWindow()
     iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(win)
+    app = Main(win)
     app.pack()
     win.mainloop()

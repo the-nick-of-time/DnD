@@ -1,16 +1,15 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
 import os
 import sys
+import tkinter as tk
+
 sys.path.insert(0,
                 os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 from classes import Character
 import helpers as h
 import GUIbasics as gui
-import rolling as r
-import tkUtility as util
 import interface as iface
 
 
@@ -21,19 +20,19 @@ class AbilityDisplay(gui.Section):
     def __init__(self, master, character):
         gui.Section.__init__(self, master)
         self.person = character
-        self.thisf = tk.Frame(self.f)
-        self.subf = tk.Frame(self.thisf)
+        self.thisFrame = tk.Frame(self.f)
+        self.subFrame = tk.Frame(self.thisFrame)
         #############
-        self.abilchecks = [tk.Button(self.subf, text=a[:3].upper(),
+        self.abilchecks = [tk.Button(self.subFrame, text=a[:3].upper(),
                                      command=lambda x=a: self.roll_check(x),
                                      width=4)
                            for a in self.abilnames]
         self.abiltexts = [tk.StringVar() for a in self.abilnames]
-        self.scores = [tk.Entry(self.subf, width=4,
+        self.scores = [tk.Entry(self.subFrame, width=4,
                                 textvariable=self.abiltexts[i])
                        for (i, a) in enumerate(self.abilnames)]
-        self.mods = [tk.Label(self.subf, width=2) for a in self.abilnames]
-        self.saves = [tk.Button(self.subf, text='SAVE', width=4,
+        self.mods = [tk.Label(self.subFrame, width=2) for a in self.abilnames]
+        self.saves = [tk.Button(self.subFrame, text='SAVE', width=4,
                                 command=lambda x=a: self.roll_save(x))
                       for a in self.abilnames]
         ######
@@ -45,16 +44,16 @@ class AbilityDisplay(gui.Section):
                                         variable=self.dis)
         self.rolldisplay = tk.Label(self.f)
         ######
-        self.skills = SkillDisplay(self.thisf, self.person, self.rolldisplay,
+        self.skills = SkillDisplay(self.thisFrame, self.person, self.rolldisplay,
                                    self.adv, self.dis)
         ######
         self.draw_static()
         self.draw_dynamic()
 
     def draw_static(self):
-        self.thisf.grid(row=0, column=0)
+        self.thisFrame.grid(row=0, column=0)
         self.skills.grid(row=0, column=1)
-        self.subf.grid(row=0, column=0)
+        self.subFrame.grid(row=0, column=0)
         for (i, a) in enumerate(self.abilnames):
             self.abilchecks[i].grid(row=i, column=0)
             # util.replaceEntry(self.scores[i], self.person.abilities[a])
@@ -62,10 +61,10 @@ class AbilityDisplay(gui.Section):
             self.scores[i].grid(row=i, column=1)
             self.mods[i].grid(row=i, column=2)
             self.saves[i].grid(row=i, column=3)
-            if (a in self.person.saves):
+            if a in self.person.saves:
                 self.saves[i].config(bg='green', fg='white')
             self.abiltexts[i].trace('w',
-                                    lambda a, b, c: self.update_character())
+                                    lambda x, y, z: self.update_character())
         self.advbutton.grid(row=1, column=0)
         self.disbutton.grid(row=2, column=0)
         self.rolldisplay.grid(row=3, column=0)
@@ -102,20 +101,20 @@ class SkillDisplay(gui.Section):
         self.adv = adv
         self.dis = dis
         sk = iface.JSONInterface('skill/SKILLS.skill')
-        self.skillmap = sk.get('/')
+        self.skillMap = sk.get('/')
         self.buttons = [tk.Button(self.f, text=n,
                                   command=lambda x=n: self.roll_check(x))
-                        for n in sorted(self.skillmap)]
+                        for n in sorted(self.skillMap)]
         self.draw_static()
 
     def draw_static(self):
         for (i, obj) in enumerate(self.buttons):
             obj.grid(row=i // 3, column=i % 3)
-            if (obj['text'] in self.person.skills):
+            if obj['text'] in self.person.skills:
                 obj.config(bg='green', fg='white')
 
     def roll_check(self, name):
-        abil = self.skillmap[name]
+        abil = self.skillMap[name]
         # mod = h.modifier(self.person.)
         advantage = self.adv.get()
         disadvantage = self.dis.get()
@@ -124,13 +123,13 @@ class SkillDisplay(gui.Section):
         self.display['text'] = '{}+{}={}'.format(*reversed(result))
 
 
-class module(AbilityDisplay):
+class Module(AbilityDisplay):
     def __init__(self, container, character):
         AbilityDisplay.__init__(self, container, character)
         self.f.config(pady=5)
 
 
-class main(gui.Section):
+class Main(gui.Section):
     def __init__(self, window):
         gui.Section.__init__(self, window)
         self.charactername = {}
@@ -145,11 +144,12 @@ class main(gui.Section):
         name = self.charactername['Character Name?']
         path = (iface.JSONInterface.OBJECTSPATH
                 + 'character/' + name + '.character')
-        if (os.path.exists(path)):
+        if os.path.exists(path):
             jf = iface.JSONInterface('character/' + name + '.character')
         else:
             raise FileNotFoundError
         character = Character(jf)
+        # noinspection PyAttributeOutsideInit
         self.block = AbilityDisplay(self.f, character)
         self.draw_static()
         self.container.deiconify()
@@ -164,8 +164,8 @@ class main(gui.Section):
 
 
 if __name__ == '__main__':
-    win = gui.MainWindow();
+    win = gui.MainWindow()
     iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(win)
+    app = Main(win)
     app.pack()
     win.mainloop()

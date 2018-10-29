@@ -1,6 +1,7 @@
 import tkinter as tk
 import sys
 from os.path import abspath, dirname
+
 sys.path.insert(0, dirname(abspath(__file__)))
 
 import tkUtility as util
@@ -10,9 +11,10 @@ class Section:
     """A placeable collection of widgets, that can have a scrollbar.
     From the outside it acts like a frame, as its central portion is a frame
     """
+
     def __init__(self, container, **kwargs):
         self.container = container
-        if ('height' in kwargs or 'width' in kwargs):
+        if 'height' in kwargs or 'width' in kwargs:
             # only intended for use with both arguments currently
             # might separate into defined height -> vertical scroll, defined
             #   width -> horizontal scroll
@@ -50,7 +52,7 @@ class Section:
             self.hscroll.grid(row=1, column=0, sticky='ew')
             self.canvas.create_window((0, 0), window=self.f, anchor='nw')
             self.f.bind("<Configure>", lambda event: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
-        except AttributeError as e:
+        except AttributeError:
             self.f.pack(**kwargs)
 
     def destroy(self):
@@ -62,6 +64,7 @@ class Section:
 
 class InfoButton:
     """A small button that spawns a popup window with detailed information."""
+
     def __init__(self, container, poptext, title=''):
         self.container = container
         self.poptext = poptext
@@ -71,7 +74,7 @@ class InfoButton:
 
     def popup(self):
         win = tk.Toplevel()
-        if (self.title):
+        if self.title:
             win.title(self.title)
         disp = tk.Label(win, text=self.poptext, wraplength=250)
         disp.grid(row=0, column=0)
@@ -89,6 +92,7 @@ class ErrorMessage:
     """An error message popup.
     Maybe replaceable with tk.messageBox.showerror
     """
+
     def __init__(self, message):
         self.win = tk.Toplevel()
         tell = tk.Label(self.win, text=message)
@@ -100,6 +104,7 @@ class ErrorMessage:
 class EffectPane(Section):
     """Has a short label and an InfoButton with the full text.
     """
+
     def __init__(self, container, short, long):
         Section.__init__(self, container)
 
@@ -137,6 +142,7 @@ class EffectPane(Section):
 
 class Query:
     """Asks a series of questions of the user and writes into a given dict."""
+
     def __init__(self, data, callbackfun, *questions):
         """Ask a series of questions of the user.
         questions is made of strings that will label the entries and identify
@@ -152,29 +158,30 @@ class Query:
 
     def draw(self):
         for (i, q) in enumerate(self.questions):
-            if (isinstance(q, (list, tuple)) and len(q) == 2):
+            if isinstance(q, (list, tuple)) and len(q) == 2:
                 # Explicit list of options, so have an optionmenu instead
-                L = tk.Label(self.win, text=q[0])
-                L.grid(row=2*i, column=0)
+                label = tk.Label(self.win, text=q[0])
+                label.grid(row=2 * i, column=0)
                 self.answers[q[0]] = tk.StringVar()
-                M = tk.OptionMenu(self.win, self.answers[q[0]], *q[1])
-                M.grid(row=2*i+1, column=0)
-            elif (isinstance(q, str)):
+                menu = tk.OptionMenu(self.win, self.answers[q[0]], *q[1])
+                menu.grid(row=2 * i + 1, column=0)
+            elif isinstance(q, str):
                 # Just an entry
-                self.answers[q] = util.labeledEntry(self.win, q, 2*i, 0)
+                self.answers[q] = util.labeled_entry(self.win, q, 2 * i, 0)
         lastname = (self.questions[-1] if isinstance(self.questions[-1], str)
                     else self.questions[-1][0])
         firstname = (self.questions[0] if isinstance(self.questions[0], str)
                      else self.questions[0][0])
-        if (isinstance(self.answers[lastname], tk.Entry)):
+        if isinstance(self.answers[lastname], tk.Entry):
             self.answers[lastname].bind("<Return>", lambda e: self.finish())
-        if (isinstance(self.answers[firstname], tk.Entry)):
+        if isinstance(self.answers[firstname], tk.Entry):
             self.answers[firstname].focus_set()
-        self.accept.grid(row=2*i+1, column=1)
+        # noinspection PyUnboundLocalVariable
+        self.accept.grid(row=2 * i + 1, column=1)
 
     def finish(self):
         for q in self.questions:
-            if (isinstance(q, str)):
+            if isinstance(q, str):
                 self.data.update({q: self.answers[q].get()})
             else:
                 self.data.update({q[0]: self.answers[q[0]].get()})
@@ -184,36 +191,38 @@ class Query:
 
 class ResourceDisplay(Section):
     """Displays a resource like sorcery points or Hit Dice."""
+
+    # noinspection PyPep8Naming
     def __init__(self, container, resource, lockMax=False):
         Section.__init__(self, container)
         self.resource = resource
         self.lockMax = lockMax
         self.name = tk.Label(self.f, text=self.resource.name)
         self.numbers = tk.Frame(self.f)
-        self.currentvalue = tk.StringVar()
-        self.currentvalue.trace('w', lambda a, b, c: self.update_number())
-        self.current = tk.Entry(self.numbers, textvariable=self.currentvalue,
+        self.currentValue = tk.StringVar()
+        self.currentValue.trace('w', lambda a, b, c: self.update_number())
+        self.current = tk.Entry(self.numbers, textvariable=self.currentValue,
                                 width=5)
         self.slash = tk.Label(self.numbers, text='/')
-        if (lockMax):
+        if lockMax:
             self.mx = tk.Label(self.numbers, width=5,
                                text=str(self.resource.maxnumber))
         else:
-            self.mxvalue = tk.StringVar()
-            self.mxvalue.trace('w', lambda a, b, c: self.update_maxnumber())
-            self.mx = tk.Entry(self.numbers, textvariable=self.mxvalue,
+            self.maxvalue = tk.StringVar()
+            self.maxvalue.trace('w', lambda a, b, c: self.update_maxnumber())
+            self.mx = tk.Entry(self.numbers, textvariable=self.maxvalue,
                                width=5)
         v = self.resource.value
         self.value = tk.Label(self.numbers, text='*' + v if isinstance(v, str)
                               else '')
-        self.buttonframe = tk.Frame(self.f)
-        self.inc = tk.Button(self.buttonframe, text='+',
+        self.buttonFrame = tk.Frame(self.f)
+        self.inc = tk.Button(self.buttonFrame, text='+',
                              command=self.increment)
-        self.dec = tk.Button(self.buttonframe, text='-',
+        self.dec = tk.Button(self.buttonFrame, text='-',
                              command=self.decrement)
-        self.resetbutton = tk.Button(self.buttonframe, text='Reset',
+        self.resetButton = tk.Button(self.buttonFrame, text='Reset',
                                      command=self.reset)
-        self.display = tk.Label(self.buttonframe, width=3)
+        self.display = tk.Label(self.buttonFrame, width=3)
         self.draw_static()
         self.draw_dynamic()
 
@@ -224,24 +233,24 @@ class ResourceDisplay(Section):
         self.slash.grid(row=0, column=1)
         self.mx.grid(row=0, column=2)
         self.value.grid(row=0, column=3)
-        self.buttonframe.grid(row=2, column=0)
+        self.buttonFrame.grid(row=2, column=0)
         self.display.grid(row=0, column=0)
         self.inc.grid(row=0, column=1)
         self.dec.grid(row=0, column=2)
-        self.resetbutton.grid(row=0, column=3)
+        self.resetButton.grid(row=0, column=3)
 
     def draw_dynamic(self):
-        if (not self.lockMax):
-            self.mxvalue.set(str(self.resource.maxnumber))
-        self.currentvalue.set(str(self.resource.number))
+        if not self.lockMax:
+            self.maxvalue.set(str(self.resource.maxnumber))
+        self.currentValue.set(str(self.resource.number))
 
     def update_number(self):
-        val = self.currentvalue.get()
-        if (val.isnumeric()):
+        val = self.currentValue.get()
+        if val.isnumeric():
             self.resource.number = int(val)
 
     def update_maxnumber(self):
-        self.resource.maxnumber = int(self.mxvalue.get() or 0)
+        self.resource.maxnumber = int(self.maxvalue.get() or 0)
 
     def increment(self):
         self.resource.regain(1)
@@ -266,6 +275,7 @@ class AskLine(Section):
     Methods:
     get: Get the data from the entry widget.
     """
+
     def __init__(self, container, name, description, widgetmaker, puller=None):
         # widgetmaker is a function that takes one argument, the widget's
         #   master, and returns the widget
@@ -275,12 +285,12 @@ class AskLine(Section):
         Section.__init__(self, container)
         self.nameL = tk.Label(self.f, text=name)
         self.widget = widgetmaker(self.f)
-        if (description):
+        if description:
             self.describer = InfoButton(self.f, description, name)
         else:
             # Have a zero-size widget as a dummy
             self.describer = tk.Label(self.f)
-        if (puller is not None):
+        if puller is not None:
             self.puller = lambda: puller(self.widget)
         else:
             self.puller = self.widget.get

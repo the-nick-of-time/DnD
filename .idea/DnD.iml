@@ -5,7 +5,6 @@
       <sourceFolder url="file://$MODULE_DIR$/tools" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tools/libraries" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tools/modules" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/tools/objects" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tools/scripts" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Pipenv (DnD)" jdkType="Python SDK" />

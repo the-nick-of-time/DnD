@@ -21,29 +21,28 @@ def modifier(score):
 
 
 def d20_roll(adv=False, dis=False, luck=False):
-    if (adv and not dis):
-        if (luck):
+    if adv and not dis:
+        if luck:
             return ADV_LUCK
         else:
             return ADV
-    elif (dis and not adv):
-        if (luck):
+    elif dis and not adv:
+        if luck:
             return DIS_LUCK
         else:
             return DIS
     else:
-        if (luck):
+        if luck:
             return D20_LUCK
         else:
             return D20
 
 
-
 def shorten(effect):
     """Takes an effects string and returns the first sentence."""
-    if (effect):
-        match = re.match('^.*?[\.\n]', effect)
-        if (match is not None):
+    if effect:
+        match = re.match('^.*?[.\n]', effect)
+        if match is not None:
             return match.group()
         return ""
     else:
@@ -61,11 +60,14 @@ def unclean(name):
 def pull_from(*args):
     """args is a tuple of tkinter widgets with .get() methods."""
     data = tuple(widget.get() for widget in args)
+
     def decorator(func):
         def decorated():
             return func(*data)
+
         decorated.__name__ = func.__name__
         return decorated
+
     return decorator
 
 
@@ -100,12 +102,9 @@ def find_file(name, type_):
     from interface import JSONInterface
     directory = '{direc}/{name}'
     location = type_.split(sep='.')
-    if (location[0] == ''):
+    if location[0] == '':
         # Leading . indicates name of object is included in path
         location[0] = clean(name)
-        deeper = False
-    else:
-        deeper = True
     filename = directory.format(
         direc=location[-1], name='.'.join(location))
     try:
@@ -124,14 +123,14 @@ def path_follower(path, alltheway=False):
     except IndexError:
         raise ValueError('Needs to be given as a path to a file then within'
                          'the file to the desired data')
-    if (os.path.isfile(JSONInterface.OBJECTSPATH + tofile)):
+    if os.path.isfile(JSONInterface.OBJECTSPATH + tofile):
         jf = JSONInterface(tofile)
-        if (alltheway):
+        if alltheway:
             # The data within the sought file
             return jf.get(infile)
         else:
             # The file and path within the file separately, to work with
             #   classes.Resource
-            return (jf, infile)
+            return jf, infile
     else:
         raise FileNotFoundError

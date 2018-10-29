@@ -11,19 +11,16 @@ class JSONInterface:
     def __new__(cls, filename, **kwargs):
         # If there is already an interface to the file open, return that
         #   instead of opening a new one
-        if (JSONInterface.OBJECTSPATH + filename in JSONInterface.EXTANT):
+        if JSONInterface.OBJECTSPATH + filename in JSONInterface.EXTANT:
             return JSONInterface.EXTANT[JSONInterface.OBJECTSPATH + filename]
         else:
             obj = super().__new__(cls)
             return obj
 
     def __init__(self, filename, isabsolute=False):
-        # broken = filename.split('/')[-1].split('.')
-        # self.shortfilename = ' '.join(reversed(broken[:len(broken) // 2]))
         self.shortfilename = filename.split('/')[-1]
-        # self.shortfilename = filename
         # TODO: Unclean filename?
-        if (isabsolute):
+        if isabsolute:
             self.filename = filename
         else:
             self.filename = self.OBJECTSPATH + filename
@@ -39,9 +36,9 @@ class JSONInterface:
         return "<JSONInterface to {}>".format(self.filename)
 
     def __add__(self, other):
-        if (isinstance(other, JSONInterface)):
+        if isinstance(other, JSONInterface):
             return LinkedInterface(self, other)
-        if (isinstance(other, LinkedInterface)):
+        if isinstance(other, LinkedInterface):
             # Use LinkedInterface's add method
             return other + self
         else:
@@ -71,10 +68,10 @@ class LinkedInterface:
             ((str(iface), iface) for iface in ifaces))
 
     def __add__(self, other):
-        if (isinstance(other, LinkedInterface)):
+        if isinstance(other, LinkedInterface):
             self.searchpath.update(other.searchpath)
             return self
-        elif (isinstance(other, JSONInterface)):
+        elif isinstance(other, JSONInterface):
             self.searchpath.update({str(other): other})
             return self
         else:
@@ -94,31 +91,32 @@ class LinkedInterface:
         s = path.split('/')
         filename, remaining = (s[0], s[1:]) if s[0] else (s[1], s[2:])
         remaining = '/'.join(remaining)
-        if (filename in self.searchpath):
+        if filename in self.searchpath:
             # find the result in the specified file
-            return self.searchpath[filename]._get(remaining)
-        elif (filename == '*'):
+            return self.searchpath[filename].get(remaining)
+        elif filename == '*':
             # Find all results in all files
             # Search in more general files then override with more specific
             first = True
             for name, iface in self.searchpath.items():
                 found = iface.get(remaining)
-                if (found is not None):
-                    if (first):
+                if found is not None:
+                    if first:
                         rv = found
                         first = False
-                        if (isinstance(rv, list)):
+                        if isinstance(rv, list):
                             add = list.extend
-                        elif (isinstance(rv, dict)):
+                        elif isinstance(rv, dict):
                             add = dict.update
                     else:
+                        # noinspection PyUnboundLocalVariable
                         add(rv, found)
             return rv
         else:
             # Find one result in the most specific file you can find it in
             for name, iface in reversed(self.searchpath.items()):
                 rv = iface.get(path)
-                if (rv is not None):
+                if rv is not None:
                     return rv
             return None
 
@@ -126,11 +124,11 @@ class LinkedInterface:
         s = path.split('/')
         filename, remaining = (s[0], s[1:]) if s[0] else (s[1], s[2:])
         remaining = '/'.join(remaining)
-        if (filename in self.searchpath):
-            return self.searchpath[filename]._set(remaining, value)
+        if filename in self.searchpath:
+            return self.searchpath[filename].set(remaining, value)
         else:
             for name, iface in reversed(self.searchpath.items()):
-                rv = iface._set(path, value)
-                if (rv):
+                rv = iface.set(path, value)
+                if rv:
                     return rv
             return False
