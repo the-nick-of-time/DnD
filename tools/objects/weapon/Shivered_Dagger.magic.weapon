@@ -4,12 +4,13 @@
   "weapon_type": "Simple",
   "attacks": [
     {
-      "attack_type": "ROLL",
-      "attack": {
-        "base_roll": "1d20",
+      "to_hit": {
+        "type": "ATTACKROLL",
+        "against": "AC",
         "roll_suffix": [],
-        "modifiers": ["$proficiency", ["$dex_mod", "$str_mod"]]
+        "modifiers": [["$dex_mod", "$str_mod"], 1]
       },
+      "attack_type": "ROLL",
       "damage": {
         "base_roll": "1d4",
         "roll_suffix": [],
@@ -18,8 +19,9 @@
       }
     },
     {
-      "attack_type": "AUTO",
-      "attack": {},
+      "to_hit": {
+        "type": "AUTO"
+      },
       "damage": {
         "base_roll": "1d4",
         "roll_suffix": [],

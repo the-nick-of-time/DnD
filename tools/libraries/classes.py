@@ -664,7 +664,11 @@ class Character:
                 return r.roll(new)
             else:
                 return new
-        elif isinstance(s, (int, list)) or s is None:
+        elif isinstance(s, (list, tuple)):
+            for i, item in enumerate(s):
+                s[i] = self.parse_vars(item, mathIt)
+            return s
+        elif isinstance(s, int) or s is None:
             return s
         elif isinstance(s, dict):
             for n in s:

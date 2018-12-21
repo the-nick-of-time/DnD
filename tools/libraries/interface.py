@@ -48,14 +48,18 @@ class JSONInterface:
     def __iter__(self):
         yield self
 
-    def get(self, path):
-        return jsonpointer.resolve_pointer(self.info, path, None)
+    def get(self, path: str):
+        return jsonpointer.resolve_pointer(self.info, self.__normalize_path(path), None)
 
     def delete(self, path):
-        jsonpointer.set_pointer(self.info, path, None)
+        jsonpointer.set_pointer(self.info, self.__normalize_path(path), None)
 
     def set(self, path, value):
-        jsonpointer.set_pointer(self.info, path, value)
+        jsonpointer.set_pointer(self.info, self.__normalize_path(path), value)
+
+    @staticmethod
+    def __normalize_path(path: str):
+        return path if path.startswith('/') else '/' + path
 
     def write(self):
         with open(self.filename, 'w') as f:

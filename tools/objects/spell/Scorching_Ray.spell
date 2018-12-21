@@ -16,35 +16,9 @@
   "casting_time": "1 action",
   "attacks": [
     {
-      "attack_type": "ROLL",
-      "attack": {
-        "base_roll": "1d20",
-        "modifiers": ["$spellcasting_mod"]
-      },
-      "damage": {
-        "roll": "2d6",
-        "type": "Fire",
-        "roll_suffix": "",
-        "modifiers": []
-      }
-    },
-    {
-      "attack_type": "ROLL",
-      "attack": {
-        "base_roll": "1d20",
-        "modifiers": ["$spellcasting_mod"]
-      },
-      "damage": {
-        "roll": "2d6",
-        "type": "Fire",
-        "roll_suffix": "",
-        "modifiers": []
-      }
-    },
-    {
-      "attack_type": "ROLL",
-      "attack": {
-        "base_roll": "1d20",
+      "toHit": {
+        "type": "ATTACKROLL",
+        "against": "AC",
         "modifiers": ["$spellcasting_mod"]
       },
       "damage": {
