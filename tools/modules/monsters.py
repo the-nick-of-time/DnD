@@ -38,7 +38,7 @@ class Monster:
         self.maxHP = self.HP
         self.AC = data['AC']
         self.abilities = data['abilities']
-        self.initiative = (r.roll('1d20') +
+        self.initiative = (r.roll(h.d20_roll()) +
                            h.modifier(data['abilities']['Dexterity']))
         self.saves = data.get('saves', {})
 

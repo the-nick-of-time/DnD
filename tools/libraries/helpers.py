@@ -3,17 +3,18 @@ import json
 import os
 
 import classes as c
+import rolling as r
 
 d = os.path.dirname(os.path.abspath(__file__))
 with open(d + '/conditions.json') as f:
     condition_defs = json.load(f)
 
-D20 = '1d20'
-D20_LUCK = '1d20r1'
-ADV = '2d20h1'
-ADV_LUCK = '2d20r1h1'
-DIS = '2d20l1'
-DIS_LUCK = '2d20r1l1'
+D20 = r.roll('1d20', option='compile')
+D20_LUCK = r.roll('1d20r1', option='compile')
+ADV = r.roll('2d20h1', option='compile')
+ADV_LUCK = r.roll('2d20r1h1', option='compile')
+DIS = r.roll('2d20l1', option='compile')
+DIS_LUCK = r.roll('2d20r1l1', option='compile')
 
 
 def modifier(score):
