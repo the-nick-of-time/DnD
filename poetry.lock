@@ -1,0 +1,23 @@
+[[package]]
+category = "main"
+description = "An engine to parse and evaluate D&D-inspired roll expressions"
+name = "dndice"
+optional = false
+python-versions = ">=3.6,<4.0"
+version = "2.1.0.post0"
+
+[[package]]
+category = "main"
+description = "Identify specific nodes in a JSON document (RFC 6901)"
+name = "jsonpointer"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "2.0"
+
+[metadata]
+content-hash = "e92a7dc0da83e5392d91c7c6debf35df1a7eb294ff74439378cf04c0666598a6"
+python-versions = "^3.6"
+
+[metadata.hashes]
+dndice = ["14c4b1d2d4106cc9fd22e4ebe9d9e920ca8f4b4a4a62a991d82d706942b98457", "e7ec0b71ad53d3ebe377aea620f67fc73b204f3ca8d00c3360d103132820d1de"]
+jsonpointer = ["c192ba86648e05fdae4f08a17ec25180a9aef5008d973407b581798a83975362", "ff379fa021d1b81ab539f5ec467c7745beb1a5671463f9dcc2b2d458bd361c1e"]
