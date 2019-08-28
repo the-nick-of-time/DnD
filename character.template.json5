@@ -1,0 +1,85 @@
+{
+  // Constant, basic type values
+  "name": "The character's name, in plain text",
+  "languages": [
+    "A list of language names"
+  ],
+  "abilities": {
+    "Titlecased ability name": 10
+  },
+  "saves": [
+    "List of ability names",
+    // Is this even necessary because this list could be picked up from the primary class?
+  ],
+  "skills": [
+    "List of strings"
+  ],
+
+  // Complex data
+  "classes": [
+    // In order of acquiring, so the first one that appears here is the character's starting class
+    // These will be instantiated into Class objects at character load
+    {
+      "class": "The class name",
+      "[subclass]": "The subclass name",
+      "level": 0
+    }
+  ],
+  "race": {
+    // hooked into a Race instance
+    "base": "The base race name",
+    "[subrace]": "Subrace name, if applicable"
+  },
+  "HP": {
+    // Hooked into an HP object
+    "max": 0,
+    "current": 0,
+    "temp": 0,
+    "HD": {
+      "die": {
+        // Each are hooked into HD objects
+        // Does max really need to be here? it could be figured out from classes fairly easily
+        "max": 0,
+        "current": 0
+      }
+    }
+  },
+  "inventory": {
+    // hooked into an Inventory object
+    // Inventory knows about quantity and equip slot
+    // name and type go to instantiating an Item
+    "name": {
+      "type": "object type, as it appears in the file system",
+      "quantity": 0,
+      "equipped": "slot"
+    }
+  },
+  "[spellcasting]": {
+    // This is a redesign, and TBD still.
+    "prepared": {
+      // Every spell in these lists will be instantiated into Spell objects at character load
+      "prepared_today": [
+        "Spell name"
+      ],
+      "prepared_permanently": [
+        "Spell name"
+      ]
+    },
+    // CHOOSE ONE OF:
+    "slots": [
+      // Ordered list of spell slots, index = spell level
+    ],
+    "points": 0,
+    // Points are the optional rule that I like
+  },
+
+
+
+  // Transient storage
+  "conditions": [
+    "list of condition names"
+  ],
+  "SETTINGS": {"GUI settings": "values"}
+}
+
+//

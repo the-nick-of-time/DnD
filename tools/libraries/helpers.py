@@ -39,6 +39,24 @@ def d20_roll(adv=False, dis=False, luck=False):
             return D20
 
 
+def d20_string(adv=False, dis=False, luck=False):
+    if adv and not dis:
+        if luck:
+            return '2d20r1h1'
+        else:
+            return '2d20h1'
+    elif dis and not adv:
+        if luck:
+            return '2d20r1l1'
+        else:
+            return '2d20l1'
+    else:
+        if luck:
+            return '1d20r1'
+        else:
+            return '1d20'
+
+
 def shorten(effect):
     """Takes an effects string and returns the first sentence."""
     if effect:
@@ -117,7 +135,7 @@ def find_file(name, type_):
 
 def path_follower(path, alltheway=False):
     from interface import JSONInterface
-    match = re.match('/*(\w*.*\.[a-z]*)(/.*)', path)
+    match = re.match(r'/*(\w*.*\.[a-z]*)(/.*)', path)
     try:
         tofile = match.group(1)
         infile = match.group(2)

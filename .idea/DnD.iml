@@ -6,8 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/tools/libraries" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tools/modules" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tools/scripts" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Pipenv (DnD)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (DnD)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">

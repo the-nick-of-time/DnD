@@ -18,8 +18,8 @@ These were written in Python 3.5.2 and I do not guarantee that they will work co
 ## Rolling
 
 | Operator | Format | Meaning |
-| :------------- | :------------- | :----- |
-| d       | *x*d*y*       | Take a *y*-sided die and roll *x* of them. *y* can be an integer, and works just as you would expect. It can also be a list of arbitrary numbers, in which case it works as a die with one side labeled with each number in the list.  |
+| :------- | :----- | :------ |
+| d        | *x*d*y*       | Take a *y*-sided die and roll *x* of them. *y* can be an integer, and works just as you would expect. It can also be a list of arbitrary numbers, in which case it works as a die with one side labeled with each number in the list.  |
 | da | *x*da*y* | Take a *y*-sided die and return the average as if *x* of them had been rolled. This returns an unrounded number. |
 | dc | *x*dc*y* | Roll a critical hit, where the number of dice rolled is doubled. |
 | dm | *x*dm*y* | Roll the maximum on every die rolled. |

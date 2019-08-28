@@ -22,7 +22,6 @@
       "to_hit": {
         "type": "SPELLSAVE",
         "against": "Dexterity",
-        "roll_suffix": [],
         "modifiers": []
       },
       "on_hit": {
