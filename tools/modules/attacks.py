@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 import dndice as d
 
 import classes as c
-import GUIbasics as gui
+import components as gui
 import interface as iface
 import helpers as h
 

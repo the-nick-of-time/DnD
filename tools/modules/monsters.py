@@ -10,28 +10,28 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import dndice as d
 
-import tkUtility as util
 import helpers as h
 from dice import DiceRoll
-import GUIbasics as gui
+import components as gui
 import interface as iface
 
 
 def all_children(frame):
-    return childrenrecursive(frame)
+    return children_recursive(frame)
 
 
-def childrenrecursive(current):
-    l = []
+def children_recursive(current):
+    children = []
     for c in current.winfo_children():
-        l.extend(childrenrecursive(c))
-    l.append(current)
-    return l
+        children.extend(children_recursive(c))
+    children.append(current)
+    return children
 
 
 class Monster:
     abilnames = ['Strength', 'Dexterity', 'Constitution', 'Intelligence',
                  'Wisdom', 'Charisma']
+
     def __init__(self, data):
         self.name = data['name']
         self.HP = int(d.basic(data['HP'], mode=d.Mode.from_string('average' if data.get('average') else 'normal')))
@@ -45,7 +45,7 @@ class Monster:
     def __lt__(self, other):
         return self.initiative < other.initiative
 
-    def alterHP(self, amount):
+    def alter_HP(self, amount):
         self.HP += d.basic(amount)
         self.HP = 0 if self.HP < 0 else self.maxHP if self.HP > self.maxHP else self.HP
 
@@ -79,7 +79,9 @@ class MonsterDisplay(gui.Section):
         ###########
         self.abilsec = tk.Frame(self.infopanel)
         self.abilnames = [tk.Label(self.abilsec, text=name[:3].upper()) for name in Monster.abilnames]
-        self.abils = [tk.Label(self.abilsec, text='{s} ({m})'.format(s=self.creature.abilities[name], m=h.modifier(self.creature.abilities[name]))) for name in Monster.abilnames]
+        self.abils = [tk.Label(self.abilsec, text='{s} ({m})'.format(s=self.creature.abilities[name],
+                                                                     m=h.modifier(self.creature.abilities[name]))) for
+                      name in Monster.abilnames]
         ###############
         self.attacksec = tk.Frame(self.f)
         self.attacknotresult = tk.Frame(self.attacksec)
@@ -122,8 +124,8 @@ class MonsterDisplay(gui.Section):
         #####
         self.abilsec.grid(row=1, column=0)
         for i in range(6):
-            self.abilnames[i].grid(row=(i//3)*2, column=i%3)
-            self.abils[i].grid(row=(i//3)*2+1, column=i%3)
+            self.abilnames[i].grid(row=(i // 3) * 2, column=i % 3)
+            self.abils[i].grid(row=(i // 3) * 2 + 1, column=i % 3)
         #######
         self.hpsec.grid(row=1, column=1)
         self.deltaL.grid(row=0, column=0)
@@ -152,7 +154,7 @@ class MonsterDisplay(gui.Section):
                 w['bg'] = 'red'
 
     def change_HP(self):
-        self.creature.alterHP(self.delta.get())
+        self.creature.alter_HP(self.delta.get())
         self.draw_dynamic()
 
     def do_attack(self):
@@ -202,8 +204,8 @@ class CharacterDisplay(gui.Section):
 
 
 class Builder:
-    #this will create a popup window that allows you to create new monsters and
-    #add them to the main window
+    # this will create a popup window that allows you to create new monsters and
+    # add them to the main window
     def __init__(self, data, parent, prevmonster=None):
         # self.master = master
         self.data = data
@@ -217,11 +219,14 @@ class Builder:
         self.mainframe = tk.Frame(self.win, bd=2, relief='ridge')
         self.mainframe.grid(row=1, column=0)
 
-        self.name = util.labeledEntry(self.mainframe, 'Enter name', 0, 0)
+        self.name = gui.LabeledEntry(self.mainframe, 'Enter name')
+        self.name.grid(0, 0)
 
-        self.ac = util.labeledEntry(self.mainframe, 'Enter AC', 2, 0)
+        self.ac = gui.LabeledEntry(self.mainframe, 'Enter AC')
+        self.ac.grid(1, 0)
 
-        self.hp = util.labeledEntry(self.mainframe, 'Enter HP as valid roll', 4, 0)
+        self.hp = gui.LabeledEntry(self.mainframe, 'Enter HP as valid roll')
+        self.hp.grid(2, 0)
 
         self.av = tk.BooleanVar()
         self.average = tk.Checkbutton(self.mainframe, text="Take average?",
@@ -231,11 +236,11 @@ class Builder:
         self.abil = tk.Frame(self.mainframe)
         self.abil.grid(row=6, column=0)
         abilities = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']
-        self.entries = []
+        self.abilities = []
         labels = []
         for (i, n) in enumerate(abilities):
-            self.entries.append(util.labeledEntry(self.abil, n, (i // 3) * 2,
-                                                  i % 3, width=4))
+            self.abilities.append(gui.LabeledEntry(self.mainframe, n, width=4))
+            self.abilities[-1].grid(i // 3, i % 3)
 
         self.resolve = tk.Button(self.mainframe,
                                  text='Finish',
@@ -246,28 +251,15 @@ class Builder:
 
     def pick_file(self):
         self.mainframe.destroy()
-        # self.choosefile.destroy()
-        # self.filequery = util.labeledEntry(self.win, 'Monster Name', 0, 0)
-        # self.average = tk.Checkbutton(self.win,
-        #                               text="Take average\nvalue of HP?",
-        #                               variable=self.av)
-        # self.average.grid(row=1, column=1)
-        # self.confirm = tk.Button(self.win, text='Load', command=self.load_file)
-        # self.confirm.grid(row=2, column=0)
         d = os.path.abspath(iface.JSONInterface.OBJECTSPATH) + '/monster/'
         self.filename = filedialog.askopenfilename(initialdir=d, filetypes=[('monster file', '*.monster')])
-        # print(self.filename)
         self.load_file()
 
     def load_file(self):
-        base = iface.JSONInterface.OBJECTSPATH
-        # filename = 'monster/' + h.clean(self.filequery.get().casefold()) + '.monster'
         filename = self.filename
-        # if (os.path.isfile(base + filename)):
         if (os.path.isfile(filename)):
             interface = iface.JSONInterface(filename, isabsolute=True)
             self.data.update(interface.get('/'))
-            # self.data.update({'average': self.av.get()})
             av = messagebox.askyesno(message='Take average HP?')
             self.data.update({'average': av})
             self.finish(fromfile=True)
@@ -276,19 +268,19 @@ class Builder:
 
     def copy(self):
         if (self.prevmonster):
-            util.replaceEntry(self.name, self.prevmonster['name'])
-            util.replaceEntry(self.ac, self.prevmonster['AC'])
-            util.replaceEntry(self.hp, self.prevmonster['HP'])
+            self.name.replace_text(self.prevmonster['name'])
+            self.ac.replace_text(self.prevmonster['AC'])
+            self.hp.replace_text(self.prevmonster['HP'])
             self.av.set(self.prevmonster['average'])
             for (i, a) in enumerate(Monster.abilnames):
-                util.replaceEntry(self.entries[i],
-                                  self.prevmonster['abilities'][a])
+                self.abilities[i].replace_text(self.prevmonster['abilities'][a])
 
     def finish(self, fromfile=False):
         if (not fromfile):
             self.data.update({'name': self.name.get(), 'AC': self.ac.get(),
                               'HP': self.hp.get(), 'average': self.av.get(),
-                              'abilities': {a: int(self.entries[i].get()) for (i, a) in enumerate(Monster.abilnames)}})
+                              'abilities': {a: int(self.abilities[i].get()) for (i, a) in
+                                            enumerate(Monster.abilnames)}})
         self.parent.new_monster_finish()
         self.win.destroy()
 
@@ -299,8 +291,10 @@ class CharacterBuilder:
         self.master = parent
         self.data = data
         self.master = parent
-        self.name = util.labeledEntry(self.win, 'Character Name', 0, 0)
-        self.initiative = util.labeledEntry(self.win, 'Initiative roll', 2, 0)
+        self.name = gui.LabeledEntry(self.win, 'Character Name')
+        self.name.grid(0, 0)
+        self.initiative = gui.LabeledEntry(self.win, 'Initiative roll')
+        self.initiative.grid(1, 0)
         self.quit = tk.Button(self.win, text='Finish', command=self.finish)
         self.quit.grid(row=4, column=0)
 
@@ -331,9 +325,9 @@ class main(gui.Section):
     def draw(self):
         self.frames.sort(reverse=True)
         for (i, f) in enumerate(self.frames):
-            f.grid(row=i%3, column=i//3)
+            f.grid(row=i % 3, column=i // 3)
         i = len(self.frames)
-        self.addons.grid(row=i%3, column=i//3)
+        self.addons.grid(row=i % 3, column=i // 3)
         self.roller.grid(row=0, column=0)
         self.buttons.grid(row=1, column=0)
         self.newmonster.grid(row=0, column=0)

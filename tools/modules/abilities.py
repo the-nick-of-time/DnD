@@ -9,7 +9,7 @@ sys.path.insert(0,
 
 from classes import Character
 import helpers as h
-import GUIbasics as gui
+import components as gui
 import interface as iface
 
 

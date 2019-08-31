@@ -10,7 +10,7 @@ sys.path.insert(0,
 
 import dndice as d
 
-import GUIbasics as gui
+import components as gui
 import interface as iface
 import helpers as h
 import classes as c

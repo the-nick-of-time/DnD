@@ -1,9 +1,15 @@
 import tkinter as tk
+import enum
 import sys
 from os.path import abspath, dirname
 sys.path.insert(0, dirname(abspath(__file__)))
 
-import tkUtility as util
+
+class Direction(enum.Enum):
+    V = 'vertical'
+    VERTICAL = 'vertical'
+    H = 'horizontal'
+    HORIZONTAL = 'horizontal'
 
 
 class Section:
@@ -142,6 +148,7 @@ class Query:
         questions is made of strings that will label the entries and identify
             outputs
         data is an empty dictionary"""
+        # TODO: make callbackfun take one argument so it can take the data and remove the data parameter
         self.data = data
         self.callback = callbackfun
         self.questions = questions
@@ -151,26 +158,24 @@ class Query:
         self.draw()
 
     def draw(self):
-        for (i, q) in enumerate(self.questions):
-            if (isinstance(q, (list, tuple)) and len(q) == 2):
-                # Explicit list of options, so have an optionmenu instead
-                L = tk.Label(self.win, text=q[0])
-                L.grid(row=2*i, column=0)
-                self.answers[q[0]] = tk.StringVar()
-                M = tk.OptionMenu(self.win, self.answers[q[0]], *q[1])
-                M.grid(row=2*i+1, column=0)
-            elif (isinstance(q, str)):
-                # Just an entry
-                self.answers[q] = util.labeledEntry(self.win, q, 2*i, 0)
+        i = 0
+        for i, q in enumerate(self.questions):
+            if isinstance(q, (list, tuple)) and len(q) == 2:
+                # an explicit list of options
+                menu = LabeledMenu(self.win, q[0], q[1])
+                self.answers[q[0]] = menu
+                menu.grid(i, 0)
+            elif isinstance(q, str):
+                entry = LabeledEntry(self.win, q)
+                self.answers[q] = entry
+                entry.grid(i, 0)
         lastname = (self.questions[-1] if isinstance(self.questions[-1], str)
                     else self.questions[-1][0])
         firstname = (self.questions[0] if isinstance(self.questions[0], str)
                      else self.questions[0][0])
-        if (isinstance(self.answers[lastname], tk.Entry)):
-            self.answers[lastname].bind("<Return>", lambda e: self.finish())
-        if (isinstance(self.answers[firstname], tk.Entry)):
-            self.answers[firstname].focus_set()
-        self.accept.grid(row=2*i+1, column=1)
+        self.answers[firstname].focus()
+        self.answers[lastname].bind("<Return>", lambda e: self.finish())
+        self.accept.grid(row=i+1, column=1)
 
     def finish(self):
         for q in self.questions:
@@ -303,12 +308,65 @@ class CharacterQuery(Query):
         import helpers as h
         possibilities = []
         for f in os.scandir(iface.JSONInterface.OBJECTSPATH + 'character'):
-            m = re.match('(.*)\.character', f.name)
+            m = re.match(r'(.*)\.character', f.name)
             name = m.group(1)
             possibilities.append(h.unclean(name))
         Query.__init__(self, data, callbackfun,
                        ['Character Name?', sorted(possibilities)],
                        *extraquestions)
+
+
+class LabeledEntry(Section):
+    def __init__(self, parent, name, orient=Direction.VERTICAL, width=20, pos=''):
+        super().__init__(parent)
+        self.label = tk.Label(self.f, text=name)
+        self.label.grid(row=0, column=0)
+        self.entry = tk.Entry(self.f, width=width)
+        if orient == Direction.VERTICAL:
+            self.entry.grid(row=1, column=0, sticky=pos)
+        elif orient == Direction.HORIZONTAL:
+            self.entry.grid(row=0, column=1, sticky=pos)
+
+    def relabel(self, label):
+        self.label['text'] = label
+
+    def clear(self):
+        self.entry.delete(0, 'end')
+
+    def replace_text(self, new):
+        self.clear()
+        self.entry.insert(0, new)
+
+    def focus(self):
+        self.entry.focus_set()
+
+    def bind(self, event, callback):
+        self.entry.bind(event, callback)
+
+    def get(self):
+        return self.entry.get()
+
+
+class LabeledMenu(Section):
+    def __init__(self, parent, name, values, orient=Direction.VERTICAL):
+        super().__init__(parent)
+        self.label = tk.Label(self.f, text=name)
+        self.label.grid(row=0, column=0)
+        self.value = tk.StringVar()
+        self.menu = tk.OptionMenu(self.f, self.value, name, *values)
+        if orient == Direction.VERTICAL:
+            self.menu.grid(row=1, column=0)
+        elif orient == Direction.HORIZONTAL:
+            self.menu.grid(row=0, column=1)
+
+    def get(self):
+        return self.value.get()
+
+    def focus(self):
+        pass
+
+    def bind(self, event, callback):
+        self.menu.bind(event, callback)
 
 
 class MainWindow(tk.Tk):

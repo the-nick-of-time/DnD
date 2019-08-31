@@ -11,7 +11,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                 '/../libraries'))
 
-import GUIbasics as gui
+import components as gui
 import classes as c
 import interface as iface
 import helpers as h
