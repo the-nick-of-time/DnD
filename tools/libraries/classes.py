@@ -1,13 +1,14 @@
-import re
 import os
+import re
 from collections import OrderedDict
 from functools import wraps
 from math import ceil
 
 import dndice as r
+
+import ClassMap as cm
 import helpers as h
 import interface as iface
-import ClassMap as cm
 
 
 class Class:
@@ -597,7 +598,7 @@ class Character:
         else:
             t = 'full'
             lv = self.caster_level
-        path = '/slots/{}/{}'.format(t, lv)
+        path = '/max_spell_slots/{}/{}'.format(t, lv)
         return cl.get(path)
 
     @property
