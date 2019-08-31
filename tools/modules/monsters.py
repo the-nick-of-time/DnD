@@ -1,13 +1,15 @@
 #! /usr/bin/env python3
 
+import os
+import sys
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
-import os
-import sys
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
-import rolling as r
+import dndice as d
+
 import tkUtility as util
 import helpers as h
 from dice import DiceRoll
@@ -32,11 +34,11 @@ class Monster:
                  'Wisdom', 'Charisma']
     def __init__(self, data):
         self.name = data['name']
-        self.HP = int(r.roll(data['HP'], option='average' if data['average'] else 'execute'))
+        self.HP = int(d.basic(data['HP'], mode=d.Mode.from_string('average' if data.get('average') else 'normal')))
         self.maxHP = self.HP
         self.AC = data['AC']
         self.abilities = data['abilities']
-        self.initiative = (r.roll('1d20') +
+        self.initiative = (h.d20_roll() +
                            h.modifier(data['abilities']['Dexterity']))
         self.saves = data.get('saves', {})
 
@@ -44,7 +46,7 @@ class Monster:
         return self.initiative < other.initiative
 
     def alterHP(self, amount):
-        self.HP += r.roll(amount)
+        self.HP += d.basic(amount)
         self.HP = 0 if self.HP < 0 else self.maxHP if self.HP > self.maxHP else self.HP
 
 
@@ -156,28 +158,27 @@ class MonsterDisplay(gui.Section):
     def do_attack(self):
         adv = self.advantage.get()
         dis = self.disadvantage.get()
-        attstring = h.d20_roll(adv, dis)
-        attroll = r.roll(attstring, option='multipass')
+        attack = h.d20_roll(adv, dis)
+        attack += d.compile(self.attack.get())
+        attroll = d.verbose(attack)
         ###
-        if (attroll == 20):
-            attresult = 'Critical Hit'
-            damresult = str(r.roll(self.damage.get(), option='multipass_critical'))
-        elif (attroll == 1):
-            attresult = 'Critical Miss'
+        if (attack.is_critical()):
+            attroll = 'Critical Hit'
+            damresult = d.verbose(self.damage.get(), d.Mode.CRIT)
+        elif (attack.is_fail()):
+            attroll = 'Critical Miss'
             damresult = '0'
         else:
-            attmodifiers = r.roll(self.attack.get())
-            attresult = str(attroll + attmodifiers)
-            damresult = str(r.call(self.damage.get(), option='multipass'))
+            damresult = d.verbose(self.damage.get())
         ###
-        self.attackresult['text'] = 'Attack result: ' + attresult
+        self.attackresult['text'] = 'Attack result: ' + attroll
         self.damageresult['text'] = 'Damage done: ' + damresult
 
 
 class Character:
     def __init__(self, data):
         self.name = data['name']
-        self.initiative = r.call(data['init'])
+        self.initiative = d.basic(data['init'])
 
     def __lt__(self, other):
         return self.initiative < other.initiative
@@ -197,7 +198,7 @@ class CharacterDisplay(gui.Section):
         self.init.grid(row=1, column=0)
 
     def __lt__(self, other):
-            return self.creature < other.creature
+        return self.creature < other.creature
 
 
 class Builder:

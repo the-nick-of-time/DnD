@@ -1,19 +1,18 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
-import os
-from os.path import isfile
-from collections import OrderedDict
 import json
-import re
+import os
 import sys
+import tkinter as tk
+from collections import OrderedDict
+from os.path import isfile
+
 sys.path.insert(0,
                 os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import GUIbasics as gui
 import interface as iface
 import helpers as h
-import tkUtility as util
 
 
 class Creator(gui.Section):

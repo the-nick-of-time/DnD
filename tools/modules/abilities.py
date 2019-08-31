@@ -1,16 +1,15 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
 import os
 import sys
+import tkinter as tk
+
 sys.path.insert(0,
                 os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 from classes import Character
 import helpers as h
 import GUIbasics as gui
-import rolling as r
-import tkUtility as util
 import interface as iface
 
 
@@ -164,7 +163,7 @@ class main(gui.Section):
 
 
 if __name__ == '__main__':
-    win = gui.MainWindow();
+    win = gui.MainWindow()
     iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = main(win)
     app.pack()

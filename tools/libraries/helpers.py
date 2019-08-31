@@ -3,17 +3,18 @@ import json
 import os
 
 import classes as c
+import dndice as r
 
 d = os.path.dirname(os.path.abspath(__file__))
 with open(d + '/conditions.json') as f:
     condition_defs = json.load(f)
 
-D20 = '1d20'
-D20_LUCK = '1d20r1'
-ADV = '2d20h1'
-ADV_LUCK = '2d20r1h1'
-DIS = '2d20l1'
-DIS_LUCK = '2d20r1l1'
+D20 = r.compile('1d20')
+D20_LUCK = r.compile('1d20r1')
+ADV = r.compile('2d20h1')
+ADV_LUCK = r.compile('2d20r1h1')
+DIS = r.compile('2d20l1')
+DIS_LUCK = r.compile('2d20r1l1')
 
 
 def modifier(score):
@@ -38,11 +39,10 @@ def d20_roll(adv=False, dis=False, luck=False):
             return D20
 
 
-
 def shorten(effect):
     """Takes an effects string and returns the first sentence."""
     if (effect):
-        match = re.match('^.*?[\.\n]', effect)
+        match = re.match(r'^.*?[.\n]', effect)
         if (match is not None):
             return match.group()
         return ""
@@ -61,11 +61,14 @@ def unclean(name):
 def pull_from(*args):
     """args is a tuple of tkinter widgets with .get() methods."""
     data = tuple(widget.get() for widget in args)
+
     def decorator(func):
         def decorated():
             return func(*data)
+
         decorated.__name__ = func.__name__
         return decorated
+
     return decorator
 
 
@@ -103,9 +106,6 @@ def find_file(name, type_):
     if (location[0] == ''):
         # Leading . indicates name of object is included in path
         location[0] = clean(name)
-        deeper = False
-    else:
-        deeper = True
     filename = directory.format(
         direc=location[-1], name='.'.join(location))
     try:
@@ -117,7 +117,7 @@ def find_file(name, type_):
 
 def path_follower(path, alltheway=False):
     from interface import JSONInterface
-    match = re.match('/*(\w*.*\.[a-z]*)(/.*)', path)
+    match = re.match(r'/*(\w*.*\.[a-z]*)(/.*)', path)
     try:
         tofile = match.group(1)
         infile = match.group(2)

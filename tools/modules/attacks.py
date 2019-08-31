@@ -5,11 +5,12 @@ import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
+import dndice as d
+
 import classes as c
 import GUIbasics as gui
 import interface as iface
 import helpers as h
-import rolling as r
 
 
 class Definer:
@@ -78,21 +79,21 @@ class Attacks(gui.Section):
         attack_bonus = self.character.parse_vars(self.atkbonus.get(), False)
         damage_bonus = self.character.parse_vars(self.dambonus.get(), False)
         if (which is None):
-            atkroll = r.roll(h.d20_roll(advantage, disadvantage, self.character.bonuses.get('lucky', False)), option='multipass')
-            atkbon = r.roll(attack_bonus, option='multipass')
-            if (atkroll == 20):
-                # mode = 'critical'
-                mode = 'multipass_critical'
-                atk = 'Critical Hit!'
-            elif (atkroll == 1):
-                mode = 'zero'
-                atk = 'Critical Miss.'
+            attack = h.d20_roll(advantage, disadvantage, self.character.bonuses.get('lucky', False))
+            attack += d.compile(attack_bonus)
+            attackRoll = attack.evaluate()
+            if (attack.is_critical()):
+                mode = d.Mode.CRIT
+                attackRoll = 'Critical Hit!'
+            elif (attack.is_fail()):
+                attackRoll = 'Critical Miss.'
+                # Make it return 0
             else:
                 # mode = 'execute'
-                mode = 'multipass'
-                atk = atkroll + atkbon
-            dam = r.roll(damage_bonus, option=mode)
-            result = ('Attack Roll: ' + str(atk), 'Damage Roll: ' + str(dam), '')
+                mode = d.Mode.NORMAL
+                attackRoll = attack.verbose_result()
+            damageRoll = d.basic(damage_bonus, mode=mode)
+            result = ('Attack Roll: ' + str(attackRoll), 'Damage Roll: ' + str(damageRoll), '')
             # result = ('Attack Roll: ' + str(atk), 'Damage Roll: ' + str(dam), '')
         else:
             result = which.attack(self.character, advantage, disadvantage, attack_bonus, damage_bonus)

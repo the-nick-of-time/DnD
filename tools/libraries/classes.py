@@ -4,7 +4,7 @@ from collections import OrderedDict
 from functools import wraps
 from math import ceil
 
-import rolling as r
+import dndice as r
 import helpers as h
 import interface as iface
 import ClassMap as cm
@@ -38,6 +38,7 @@ class Race:
     name: The name of this race
     features: The features associated with this race
     """
+
     def __init__(self, jf, name):
         self.record = jf
         self.name = name
@@ -73,6 +74,7 @@ class Resource:
     write: Write the major record; most often a character file. (Generally use
         Character.write if possible.)
     """
+
     def __init__(self, jf, path, defjf=None, defpath=None, character=None):
         # TODO: implement write protection on maxnumber when it is in an
         #   external file (ie defjf is not none)?
@@ -87,8 +89,8 @@ class Resource:
         if (self.character is not None):
             val = self.character.parse_vars(v, mathIt=False)
             if (isinstance(val, str)):
-                pattern = '\(.*\)'
-                rep = lambda m: str(r.roll(m.group(0)))
+                pattern = r'\(.*\)'
+                rep = lambda m: str(r.basic(m.group(0)))
                 new = re.sub(pattern, rep, val)
                 self.value = new
             else:
@@ -126,7 +128,7 @@ class Resource:
             raise LowOnResource(self)
         self.number -= howmany
         if (isinstance(self.value, str)):
-            return r.roll('+'.join([self.value] * howmany))
+            return r.basic('+'.join([self.value] * howmany))
         elif (isinstance(self.value, int)):
             return howmany * self.value
         else:
@@ -167,6 +169,7 @@ class Feature:
     resource: Any resource that might be provided by the feature.
     name: The name of the feature.
     """
+
     def __init__(self, char, path):
         # char is the Character
         # path is a full path to the feature including its file
@@ -277,7 +280,7 @@ class Character:
         lv = jf.get('/level')
         self.classes = cm.ClassMap(lv)
         self.race = cm.RaceMap(jf.get('/race'))
-        self.hp = HPhandler(self.record)
+        self.hp = HPHandler(self.record)
         self.inventory = Inventory(self.record)
         self.features = self.get_features()
         self.bonuses = self.get_bonuses()
@@ -361,7 +364,7 @@ class Character:
             if (isinstance(item.obj, Attack)):
                 rv[item.name] = item
         for sp in self.spells:
-            if (isinstance(sp, Attack)):
+            if (isinstance(sp, SpellAttack)):
                 rv[sp.name] = sp
         return rv
 
@@ -400,15 +403,15 @@ class Character:
         applyskill = skill in self.skills
         ability = h.modifier(self.abilities[which])
         rollstr = h.d20_roll(adv, dis, self.bonuses.get('lucky', False))
-        roll = r.roll(rollstr)
+        roll = r.basic(rollstr)
         if (applyskill):
             prof = self.proficiency
-        elif(self.bonuses.get('jack_of_all_trades', False)):
+        elif (self.bonuses.get('jack_of_all_trades', False)):
             prof = self.proficiency // 2
         else:
             prof = 0
-        bon = self.parse_vars(self.bonuses.get('check', {}).get(which, 0)) \
-              + self.parse_vars(self.bonuses.get('skill', {}).get(skill, 0))
+        bon = (self.parse_vars(self.bonuses.get('check', {}).get(which, 0))
+               + self.parse_vars(self.bonuses.get('skill', {}).get(skill, 0)))
         return (roll + prof + ability + bon, prof + ability + bon, roll)
 
     def ability_save(self, which, adv=False, dis=False):
@@ -419,12 +422,12 @@ class Character:
             prof = 0
         ability = h.modifier(self.abilities[which])
         rollstr = h.d20_roll(adv, dis, self.bonuses.get('lucky', False))
-        roll = r.roll(rollstr)
+        roll = r.basic(rollstr)
         bon = self.parse_vars(self.bonuses.get('save', {}).get(which, 0))
         return (roll + prof + ability + bon, prof + ability + bon, roll)
 
     def death_save(self):
-        val = r.roll(h.d20_roll(luck=self.bonuses.get('lucky', False)))
+        val = r.basic(h.d20_roll(luck=self.bonuses.get('lucky', False)))
         if (val == 1):
             self.death_save_fails += 2
         elif (val == 20):
@@ -459,6 +462,7 @@ class Character:
                         bonuses[var].update(newval)
                     else:
                         bonuses[var] = newval + existing
+
         bonuses = {}
         for item in self.inventory:
             if (item.equipped):
@@ -600,7 +604,7 @@ class Character:
     def proficiency(self):
         c = self.classes[0]
         val = c.get('/proficiency')[int(self.PROFICIENCY_DICE)][self.level - 1]
-        return r.roll(val)
+        return r.basic(val)
 
     def save_DC(self, spell):
         return (8
@@ -650,11 +654,10 @@ class Character:
 
     def parse_vars(self, s, mathIt=True):
         if (isinstance(s, str)):
-            pattern = '\$[a-zA-Z_]+'
-            rep = lambda m: str(self.__getattr__(m.group(0)))
-            new = re.sub(pattern, rep, s)
+            pattern = r'\$[a-zA-Z_]+'
+            new = re.sub(pattern, lambda m: str(self.__getattr__(m.group(0))), s)
             if (mathIt):
-                return r.roll(new)
+                return r.basic(new)
             else:
                 return new
         elif (isinstance(s, (int, list)) or s is None):
@@ -695,7 +698,6 @@ class Inventory:
         Parameters
         ----------
         jf: a JSONInterface to the character file
-        items: a dict of name: ItemEntry
         """
         self.record = jf
         self.items = {}
@@ -754,6 +756,7 @@ class ItemEntry:
     use: Use the item. Returns a string with the effects of the item.
     describe: Returns the item's description.
     """
+
     def __init__(self, jf, path, character=None):
         self.record = jf
         self.path = path
@@ -868,7 +871,7 @@ class ItemEntry:
             return ''
 
 
-class HPhandler:
+class HPHandler:
     """Handles the HP and HD from a character file.
 
     Data:
@@ -885,6 +888,7 @@ class HPhandler:
     rest: If rest is 'long', reset HP and regain half of all HD.
     write: Write all changes to the file.
     """
+
     def __init__(self, jf):
         self.record = jf
         self.hd = {size: HDHandler(jf, size) for size in jf.get('/HP/HD')}
@@ -895,7 +899,7 @@ class HPhandler:
 
     @current.setter
     def current(self, value):
-        return self.record.set('/HP/current', value)
+        self.record.set('/HP/current', value)
 
     @property
     def max(self):
@@ -903,7 +907,7 @@ class HPhandler:
 
     @max.setter
     def max(self, value):
-        return self.record.set('/HP/max', value)
+        self.record.set('/HP/max', value)
 
     @property
     def temp(self):
@@ -911,11 +915,11 @@ class HPhandler:
 
     @temp.setter
     def temp(self, value):
-        return self.record.set('/HP/temp', value)
+        self.record.set('/HP/temp', value)
 
     def change_HP(self, amount):
         """Changes HP by any valid roll as the amount."""
-        delta = r.roll(amount)
+        delta = r.basic(amount)
         if (delta == 0):
             return 0
         # current = self.record.get('/HP/current')
@@ -948,7 +952,7 @@ class HPhandler:
 
     def temp_HP(self, amount):
         """Adds a rollable amount to your temp HP"""
-        delta = r.roll(amount)
+        delta = r.basic(amount)
         if (delta == 0):
             return 0
         temp = self.record.get('/HP/temp')
@@ -992,6 +996,7 @@ class HDHandler(Resource):
     rest: Overrides Resource.rest, it only regains half of its maximum number
         of HD.
     """
+
     def __init__(self, jf, size):
         Resource.__init__(self, jf, '/HP/HD/' + size)
         self.name = 'Hit Die'
@@ -1001,7 +1006,7 @@ class HDHandler(Resource):
     def use_HD(self):
         try:
             roll = self.use(1)
-        except LowOnResource as e:
+        except LowOnResource:
             return 0
         conmod = h.modifier(self.record.get('/abilities/Constitution'))
         return roll + conmod if (roll + conmod > 1) else 1
@@ -1015,20 +1020,6 @@ class HDHandler(Resource):
         if (what == 'short'):
             if (Character.HEALING == 'fast'):
                 self.regain(ceil(self.maxnumber / 4))
-
-
-class Damage:
-    def __init__(self, data):
-        self.data = data
-
-    def get1h(self):
-        return self.data['one hand']
-
-    def get2h(self):
-        return self.data['two hands']
-
-    def getlevel(self):
-        pass
 
 
 class Attack:
@@ -1163,6 +1154,7 @@ class SpellsPrepared:
         always_prepared) if perma=True.
     unprepare: Unprepares a spell given its name.
     """
+
     def __init__(self, jf, character):
         self.record = jf
         self.char = character
@@ -1269,7 +1261,7 @@ class SpellAttack(Spell, Attack):
         if (self.level == 0):
             # Apply cantrip damage scaling
             rep = lambda m: str(int(m.group(0)) * self.owner.cantrip_scale)
-            self.damage_dice = re.sub('\d+', rep, self.damage_dice, count=1)
+            self.damage_dice = re.sub(r'\d+', rep, self.damage_dice, count=1)
 
     @Attack.attackwrap
     def attack(self, character, adv, dis, attack_bonus, damage_bonus):
@@ -1284,41 +1276,42 @@ class SpellAttack(Spell, Attack):
             extradamage = character.parse_vars(s)
         else:
             extradamage = 0
-        o = 'multipass'
-        oc = 'multipass_critical'
         if (self.attack_roll):
             dice = h.d20_roll(adv, dis, character.bonuses.get('lucky', False))
             for each in range(self.num_targets):
-                attack_roll = r.roll(dice, option=o)
-                attack_mods = (r.roll(attack_bonus, option=o)
-                               + r.roll(character.proficiency, option=o)
-                               + h.modifier(character.relevant_abil(self)))
-                if (attack_roll == 1):
+                # using += because it's hella faster
+                attack = r.compile(dice)
+                attack += r.compile(attack_bonus)
+                attack += r.compile(character.proficiency)
+                attack += r.compile(character.relevant_abil(self))
+                final = attack.evaluate()
+                if (attack.is_fail()):
                     # Crit fail
                     attack_roll = 'Crit fail.'
-                    damage_roll = 0
-                elif (attack_roll == 20):
+                    damage_roll = r.compile(0)
+                elif (attack.is_critical()):
                     # Critical hit
                     attack_roll = 'Critical hit!'
-                    damage_mods = (r.roll(damage_bonus, option=oc)
-                                   + extradamage)
-                    damage_roll = (r.roll(self.damage_dice, option=oc)
-                                   + damage_mods)
+                    damage = r.compile(self.damage_dice)
+                    damage += r.compile(damage_bonus)
+                    damage += r.compile(extradamage)
+                    damage.critify()
+                    damage_roll = damage.evaluate()
                 else:
                     # Normal attack
-                    attack_roll += attack_mods
-                    damage_mods = (r.roll(damage_bonus, option=o)
-                                   + extradamage)
-                    damage_roll = (r.roll(self.damage_dice, option=o)
-                                   + damage_mods)
+                    attack_roll = attack.evaluate()
+                    damage = r.compile(self.damage_dice)
+                    damage += r.compile(damage_bonus)
+                    damage += r.compile(extradamage)
+                    damage_roll = damage.evaluate()
                 attacks.append(attack_roll)
                 damages.append(damage_roll)
         else:
             formatstr = 'Targets make a DC {n} {t} save.'
             attacks.append(formatstr.format(n=character.save_DC(self),
                                             t=self.save))
-            damage_mods = r.roll(damage_bonus, option=o) + extradamage
-            damage = r.roll(self.damage_dice, option=o) + damage_mods
+            damage_mods = r.basic(damage_bonus) + extradamage
+            damage = r.basic(self.damage_dice) + damage_mods
             damages.append(damage)
         return (attacks, damages, self.effect)
 
@@ -1397,42 +1390,44 @@ class Weapon(Attack, Item):
     def attack(self, character, adv, dis, attack_bonus, damage_bonus):
         dice = h.d20_roll(adv, dis, character.bonuses.get('lucky', False))
 
-        attack = []
-        damage = []
+        attacks = []
+        damages = []
         abil = h.modifier(character.relevant_abil(self))
-        o = 'multipass'
-        oc = 'multipass_critical'
         for all in range(self.num_targets
                          + character.bonuses.get('attacks', 0)):
-            attack_roll = r.roll(dice, option=o)
-            attack_mods = r.roll(attack_bonus, option=o) \
-                          + r.roll(character.proficiency, option=o) \
-                          + abil \
-                          + r.roll(self.magic_bonus.get('attack', 0), option=o)
+            # attack_roll = r.roll(dice, option=o)
+            # attack_mods = (r.roll(attack_bonus, option=o)
+            #                + r.roll(character.proficiency, option=o)
+            #                + abil
+            #                + r.roll(self.magic_bonus.get('attack', 0), option=o))
+            attack = r.compile(dice)
+            attack += r.compile(attack_bonus)
+            attack += r.compile(character.proficiency)
+            attack += r.compile(abil)
+            attack += r.compile(self.magic_bonus.get('attack', 0))
+            attack_roll = attack.evaluate()
 
-            if (attack_roll == 1):
+            if (attack.is_fail()):
                 # Crit fail
                 attack_roll = 'Crit fail.'
                 damage_roll = 0
-            elif (attack_roll == 20):
+            elif (attack.is_critical()):
                 # Critical hit
                 attack_roll = 'Critical hit!'
-                damage_mods = (abil
-                               + r.roll(damage_bonus, option=oc)
-                               + r.roll(self.magic_bonus.get('attack', 0),
-                                        option=oc))
-                damage_roll = r.roll(self.damage_dice, option=oc) + damage_mods
+                damage = r.compile(self.damage_dice)
+                damage += r.compile(self.magic_bonus.get('attack', 0))
+                damage += r.compile(damage_bonus)
+                damage.critify()
+                damage_roll = damage.evaluate()
             else:
                 # Normal attack
-                attack_roll += attack_mods
-                damage_mods = abil \
-                              + r.roll(damage_bonus, option=o) \
-                              + r.roll(self.magic_bonus.get('damage', 0),
-                                       option=o)
-                damage_roll = r.roll(self.damage_dice, option=o) + damage_mods
-            attack.append(attack_roll)
-            damage.append(damage_roll)
-        return (attack, damage, self.effect)
+                damage = r.compile(self.damage_dice)
+                damage += r.compile(self.magic_bonus.get('attack', 0))
+                damage += r.compile(damage_bonus)
+                damage_roll = damage.evaluate()
+            attacks.append(attack_roll)
+            damages.append(damage_roll)
+        return (attacks, damages, self.effect)
 
 
 class RangedWeapon(Weapon):
@@ -1485,6 +1480,7 @@ class Armor(Item):
     get_AC: Given the character's dex mod, return what base AC this armor gives
         them.
     """
+
     def __init__(self, jf):
         Item.__init__(self, jf)
         self.base_AC = self.record.get('/base_AC') or 10
@@ -1518,6 +1514,7 @@ class MagicItem(Item):
     activate: Builds on Item.use() and returns a description of the
         effects of the magic item.
     """
+
     def __init__(self, jf):
         Item.__init__(self, jf)
         self.magic_bonus = jf.get('/bonus')
@@ -1535,6 +1532,7 @@ class MagicCharge(Resource):
     Methods:
     rest: Roll self.regain and get back that many charges.
     """
+
     def __init__(self, jf, path, defjf=None, defpath=None):
         Resource.__init__(self, jf, path, defjf, defpath)
         self.regains = self.definition.get(self.defpath + '/regains')
@@ -1544,15 +1542,15 @@ class MagicCharge(Resource):
         #   recharge on a long rest, which is usually reasonable but not here
         if (what == 'long'):
             if (self.recharge in ['long rest', 'short rest', 'turn']):
-                self.regain(r.roll(self.regains))
+                self.regain(r.basic(self.regains))
                 return self.number
         if (what == 'short'):
             if (self.recharge == 'short rest' or self.recharge == 'turn'):
-                self.regain(r.roll(self.regains))
+                self.regain(r.basic(self.regains))
                 return self.number
         if (what == 'turn'):
             if (self.recharge == 'turn'):
-                self.regain(r.roll(self.regains))
+                self.regain(r.basic(self.regains))
                 return self.number
 
 

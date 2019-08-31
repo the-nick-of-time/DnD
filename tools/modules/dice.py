@@ -5,9 +5,11 @@ import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
-import rolling as r
+import dndice as d
+
 import tkUtility as util
 import GUIbasics as gui
+
 
 class DiceRoll(gui.Section):
     def __init__(self, master):
@@ -20,7 +22,7 @@ class DiceRoll(gui.Section):
         self.result.grid(row=2, column=0)
 
     def do_roll(self):
-        self.result["text"] = r.roll(self.generalRoll.get(), option='multipass')
+        self.result["text"] = d.verbose(self.generalRoll.get())
 
 
 class module(DiceRoll):
@@ -31,7 +33,7 @@ class module(DiceRoll):
     def do_roll(self):
         s = self.generalRoll.get()
         parsed = self.character.parse_vars(s, mathIt=False)
-        self.result["text"] = r.roll(parsed, option='multipass')
+        self.result["text"] = d.verbose(parsed)
 
 
 if (__name__ == '__main__'):

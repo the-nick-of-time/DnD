@@ -1,19 +1,16 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
-import re
-from collections import OrderedDict
 import itertools
-import sys
 import os
+import sys
+import tkinter as tk
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import helpers as h
 import GUIbasics as gui
 from interface import JSONInterface
 import classes as c
-import tkUtility as util
-from helpers import clean
 
 
 class ItemDisplay(gui.Section):
@@ -257,7 +254,7 @@ def pluralize(name):
 
 if __name__ == '__main__':
     win = gui.MainWindow()
-    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(window)
+    JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
+    app = main(win)
     app.pack()
-    window.mainloop()
+    win.mainloop()

@@ -1,12 +1,12 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
 import os
 import sys
+import tkinter as tk
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import GUIbasics as gui
-import helpers as h
 import classes as c
 import interface as iface
 

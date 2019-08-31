@@ -1,15 +1,13 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
 import os
 import sys
+import tkinter as tk
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import classes as c
-import helpers as h
 import GUIbasics as gui
-import tkUtility as util
-import rolling as r
 import interface as iface
 
 
@@ -158,7 +156,7 @@ class main(gui.Section):
             self.record = iface.JSONInterface(path)
         else:
             raise FileNotFoundError
-        self.corehandler = c.HPhandler(self.record)
+        self.corehandler = c.HPHandler(self.record)
         self.hpdisplay = HitPointDisplay(self.f, self.corehandler)
         self.draw_static()
         self.container.deiconify()

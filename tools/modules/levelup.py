@@ -1,19 +1,19 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
-import re
 import os
+import re
 import sys
+import tkinter as tk
+
 sys.path.insert(0,
                 os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
+
+import dndice as d
 
 import GUIbasics as gui
 import interface as iface
 import helpers as h
-import tkUtility as util
-import ClassMap as cm
 import classes as c
-import rolling as r
 
 
 class LimitedQueue:
@@ -268,9 +268,9 @@ class main(gui.Section):
         # Set new number of hit points
         conmod = h.modifier(self.character.get('/abilities/Constitution'))
         if (self.levelgain['Average or roll for HP?'] == 'average'):
-            gain = r.roll(size, 'average') + .5
+            gain = d.basic(size, d.Mode.AVERAGE) + .5
         elif (self.levelgain['Average or roll for HP?'] == 'roll'):
-            gain = r.roll(size)
+            gain = d.basic(size)
         current = self.character.get('/HP/max')
         self.character.set('/HP/max', current + gain + conmod)
         self.draw_static()
