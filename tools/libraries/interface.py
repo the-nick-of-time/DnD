@@ -52,12 +52,20 @@ class JSONInterface:
         yield self
 
     def get(self, path):
+        if path == '/':
+            return self.info
         return jsonpointer.resolve_pointer(self.info, path, None)
 
     def delete(self, path):
-        jsonpointer.set_pointer(self.info, path, None)
+        if path == '/':
+            self.info = {}
+        obj = jsonpointer.resolve_pointer(self.info, path, None)
+        if obj is not None:
+            del obj
 
     def set(self, path, value):
+        if path == '/':
+            self.info = value
         jsonpointer.set_pointer(self.info, path, value)
 
     def write(self):
@@ -102,7 +110,7 @@ class LinkedInterface:
             # Search in more general files then override with more specific
             first = True
             for name, iface in self.searchpath.items():
-                found = iface.get(remaining)
+                found = iface.get("/" + remaining)
                 if (found is not None):
                     if (first):
                         rv = found
