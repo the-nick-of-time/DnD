@@ -1,12 +1,12 @@
-import json
 import collections
+import json
+
 import jsonpointer
 
 
 class JSONInterface:
     OBJECTSPATH = './tools/objects/'
     EXTANT = {}
-    # OBJECTSPATH = abspath('.') + '/tools/objects/'
 
     def __new__(cls, filename, **kwargs):
         # If there is already an interface to the file open, return that
@@ -17,12 +17,9 @@ class JSONInterface:
             obj = super().__new__(cls)
             return obj
 
-    def __init__(self, filename, isabsolute=False):
-        # broken = filename.split('/')[-1].split('.')
-        # self.shortfilename = ' '.join(reversed(broken[:len(broken) // 2]))
+    def __init__(self, filename, readonly=False, isabsolute=False):
+        self.readonly = readonly
         self.shortfilename = filename.split('/')[-1]
-        # self.shortfilename = filename
-        # TODO: Unclean filename?
         if (isabsolute):
             self.filename = filename
         else:
@@ -57,6 +54,8 @@ class JSONInterface:
         return jsonpointer.resolve_pointer(self.info, path, None)
 
     def delete(self, path):
+        if self.readonly:
+            raise ReadonlyError('{} is a readonly file'.format(self.filename))
         if path == '/':
             self.info = {}
         obj = jsonpointer.resolve_pointer(self.info, path, None)
@@ -64,11 +63,15 @@ class JSONInterface:
             del obj
 
     def set(self, path, value):
+        if self.readonly:
+            raise ReadonlyError('{} is a readonly file'.format(self.filename))
         if path == '/':
             self.info = value
         jsonpointer.set_pointer(self.info, path, value)
 
     def write(self):
+        if self.readonly:
+            return
         with open(self.filename, 'w') as f:
             json.dump(obj=self.info, fp=f, indent=2)
 
@@ -104,21 +107,25 @@ class LinkedInterface:
         remaining = '/'.join(remaining)
         if (filename in self.searchpath):
             # find the result in the specified file
-            return self.searchpath[filename]._get(remaining)
+            return self.searchpath[filename].get(remaining)
         elif (filename == '*'):
             # Find all results in all files
             # Search in more general files then override with more specific
-            first = True
+            rv = None
             for name, iface in self.searchpath.items():
                 found = iface.get("/" + remaining)
                 if (found is not None):
-                    if (first):
-                        rv = found
-                        first = False
+                    if (rv is None):
                         if (isinstance(rv, list)):
                             add = list.extend
+                            rv = found
                         elif (isinstance(rv, dict)):
                             add = dict.update
+                            rv = found
+                        else:
+                            # Aggregate individual values into a list
+                            rv = [found]
+                            add = list.append
                     else:
                         add(rv, found)
             return rv
@@ -135,10 +142,14 @@ class LinkedInterface:
         filename, remaining = (s[0], s[1:]) if s[0] else (s[1], s[2:])
         remaining = '/'.join(remaining)
         if (filename in self.searchpath):
-            return self.searchpath[filename]._set(remaining, value)
+            return self.searchpath[filename].set(remaining, value)
         else:
             for name, iface in reversed(self.searchpath.items()):
-                rv = iface._set(path, value)
+                rv = iface.set(path, value)
                 if (rv):
                     return rv
             return False
+
+
+class ReadonlyError(Exception):
+    pass

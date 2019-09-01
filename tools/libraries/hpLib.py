@@ -1,0 +1,2 @@
+class HPHandler:
+    pass
