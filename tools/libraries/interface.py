@@ -151,5 +151,23 @@ class LinkedInterface:
             return False
 
 
+class SubInterface(JSONInterface):
+    def __init__(self, filename, path: str, readonly=False, isabsolute=False):
+        super().__init__(filename, readonly=readonly, isabsolute=isabsolute)
+        self.path = path.rstrip('/')
+
+    def _total_path(self, path):
+        return self.path + '/' + path
+
+    def get(self, path):
+        return super().get(self._total_path(path))
+
+    def set(self, path, value):
+        super().set(self._total_path(path), value)
+
+    def delete(self, path):
+        super().delete(self._total_path(path))
+
+
 class ReadonlyError(Exception):
     pass
