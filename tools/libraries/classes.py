@@ -9,6 +9,8 @@ import dndice as r
 import ClassMap as cm
 import helpers as h
 import interface as iface
+from exceptionsLib import OutOfSpells, OutOfItems, LowOnResource
+from settingsLib import Settings
 
 
 class Class:
@@ -77,8 +79,6 @@ class Resource:
     """
 
     def __init__(self, jf, path, defjf=None, defpath=None, character=None):
-        # TODO: implement write protection on maxnumber when it is in an
-        #   external file (ie defjf is not none)?
         self.record = jf
         self.character = character
         self.definition = defjf if (defjf is not None) else jf
@@ -290,6 +290,7 @@ class Character:
         self.resources = self.get_resources()
         self.death_save_fails = 0
         self.conditions = set(self.record.get('/conditions') or [])
+        Settings.initialize(self.record.get('/SETTINGS'))
 
     def __str__(self):
         return self.name
@@ -1573,46 +1574,3 @@ class MagicRangedWeapon(MagicItem, RangedWeapon):
         RangedWeapon.__init__(self, jf)
 
 
-class MyError(Exception):
-    pass
-
-
-class LowOnResource(MyError):
-    def __init__(self, resource):
-        self.resource = resource
-
-    def __str__(self):
-        formatstr = 'You have no {rs} remaining.'
-        return formatstr.format(rs=self.resource.name)
-
-
-class OutOfSpells(MyError):
-    def __init__(self, character, spell):
-        self.character = character
-        self.spell = spell
-
-    def __str__(self):
-        formatstr = '{char} has no spell slots of level {lv} remaining.'
-        return formatstr.format(char=self.character.name,
-                                lv=(self.spell if isinstance(self.spell, int)
-                                    else self.spell.level))
-
-
-class OutOfItems(MyError):
-    def __init__(self, character, name):
-        self.character = character
-        self.name = name
-
-    def __str__(self):
-        formatstr = '{char} has no {item}s remaining.'
-        return formatstr.format(char=self.character.name, item=self.name)
-
-
-class OverflowSpells(MyError):
-    def __init__(self, character, spell):
-        self.character = character
-        self.spell = spell
-
-    def __str__(self):
-        formatstr = '{char} has full spell slots of level {lv} already.'
-        return formatstr.format(char=self.character.name, lv=self.spell.level)
