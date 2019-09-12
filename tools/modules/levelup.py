@@ -22,16 +22,16 @@ class LimitedQueue:
         self.data = []
 
     def append(self, var):
-        if (var in self.data):
+        if var in self.data:
             return None
-        if (len(self.data) >= self.num):
+        if len(self.data) >= self.num:
             obj = self.data.pop(0)
             obj.set('')
         self.data.append(var)
 
     def remove(self, var):
         for (i, item) in enumerate(self.data):
-            if (item == var):
+            if item == var:
                 del self.data[i]
                 return True
         return False
@@ -49,7 +49,7 @@ class FeaturePicker(gui.Section):
         self.nameL = tk.Label(self.f, text=self.name)
         self.desc = gui.InfoButton(self.f, data['description'], self.name)
         self.selected = tk.StringVar()
-        if (not self.locked):
+        if not self.locked:
             clb = lambda: self.callback(self.selected)
             self.selector = tk.Checkbutton(self.f, variable=self.selected,
                                            command=clb, onvalue=self.name,
@@ -59,13 +59,13 @@ class FeaturePicker(gui.Section):
         self.draw_static()
 
     def draw_static(self):
-        if (not self.locked):
+        if not self.locked:
             self.selector.grid(row=0, column=0)
         self.nameL.grid(row=0, column=1)
         self.desc.grid(row=0, column=2)
 
     def export(self):
-        if (self.selected.get()):
+        if self.selected.get():
             return {self.name: self.fullpath}
         else:
             return {}
@@ -83,7 +83,7 @@ class Chooser(gui.Section):
         self.queue = LimitedQueue(num)
         self.selectors = []
         for n in self.data:
-            if (n != 'number'):
+            if n != 'number':
                 self.selectors.append(FeaturePicker(self.wrapper,
                                                     self.fullpath + '/' + n,
                                                     self.register_change))
@@ -95,7 +95,7 @@ class Chooser(gui.Section):
             item.grid(row=i, column=0)
 
     def register_change(self, var):
-        if (var.get()):
+        if var.get():
             self.queue.append(var)
         else:
             self.queue.remove(var)
@@ -116,13 +116,13 @@ class SubclassChooser(Chooser):
     def register_change(self, var):
         Chooser.register_change(self, var)
         self.subclassname = var.get()
-        if (self.subclassname):
+        if self.subclassname:
             # Add the subclass and display extra options
             clm = re.search('(\w+)\.class', self.fullpath)
             self.classname = clm.group(1)
             name = 'class/{}.{}.sub.class'.format(h.clean(self.classname),
                                                   h.clean(self.subclassname))
-            if (os.path.isfile(iface.JSONInterface.OBJECTSPATH + name)):
+            if os.path.isfile(iface.JSONInterface.OBJECTSPATH + name):
                 self.clear_subframe()
                 rec = iface.JSONInterface(name)
                 lvm = re.search('/(\d+)/.*$', self.fullpath)
@@ -155,12 +155,12 @@ class FeaturesAtLevel(gui.Section):
         self.subframes = []
         for item in jf:
             val = item.get(self.genpath.format(''))
-            if (val is not None):
+            if val is not None:
                 for n in val:
                     fullpath = self.genpath.format('class/' + str(item))
-                    if (n == 'choose'):
+                    if n == 'choose':
                         obj = Chooser(self.f, fullpath + '/choose')
-                    elif (n == 'subclass'):
+                    elif n == 'subclass':
                         obj = SubclassChooser(self.f, fullpath + '/subclass')
                     else:
                         obj = FeaturePicker(self.f, fullpath + '/' + n,
@@ -179,20 +179,20 @@ class FeaturesAtLevel(gui.Section):
         return rv
 
 
-class module(gui.Section):
+class Module(gui.Section):
     def __init__(self, container, character):
         gui.Section.__init__(self, container)
         self.character = character
         self.choice = tk.StringVar()
 
     def ask_level_begin(self):
-        win = tk.Toplevel()
+        window = tk.Toplevel()
         classes = ['Bard', 'Barbarian', 'Cleric', 'Druid', 'Fighter', 'Monk',
                    'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock',
                    'Wizard']
-        menu = tk.OptionMenu(win, self.choice, *classes)
+        menu = tk.OptionMenu(window, self.choice, *classes)
         menu.grid(row=0, column=0)
-        accept = tk.Button(win, text='Continue', command=self.ask_level_end)
+        accept = tk.Button(window, text='Continue', command=self.ask_level_end)
         accept.grid(row=0, column=1)
 
     def ask_level_end(self):
@@ -213,7 +213,7 @@ class module(gui.Section):
         # Not really sure how to modularize this as it should have a common interface?
         # Or maybe not; it will have to take over from character manager anyway
         features = self.core.export()
-        if ('SUBCLASS' in features):
+        if 'SUBCLASS' in features:
             name = features.pop('SUBCLASS')
             other = features.pop('MAIN CLASS')
             self.character.classes.apply_subclass(other, name)
@@ -224,11 +224,11 @@ class module(gui.Section):
         self.character.write()
 
 
-class main(gui.Section):
+class Main(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
         self.QUIT = tk.Button(self.f, text='QUIT', fg='red',
-                              command=self.writequit)
+                              command=self.write_quit)
         # self.draw_static()
         self.startup_begin()
 
@@ -246,12 +246,12 @@ class main(gui.Section):
         name = self.levelgain['Character Name?']
         cl = self.levelgain['Class to gain a level in?']
         path = 'character/' + h.clean(name) + '.character'
-        if (os.path.exists(iface.JSONInterface.OBJECTSPATH + path)):
+        if os.path.exists(iface.JSONInterface.OBJECTSPATH + path):
             self.record = iface.JSONInterface(path)
         else:
             gui.ErrorMessage('A character with that name was not found.')
         clpath = 'class/' + h.clean(cl) + '.class'
-        if (not os.path.exists(iface.JSONInterface.OBJECTSPATH + path)):
+        if not os.path.exists(iface.JSONInterface.OBJECTSPATH + path):
             gui.ErrorMessage('A class with that name was not found.')
         self.character = c.Character(self.record)
         pattern = r'\s*([a-zA-Z\']+)\s*(\(([a-zA-Z\'\s]+)\))?'
@@ -267,9 +267,9 @@ class main(gui.Section):
         self.character.set(hdpath, hdn + 1)
         # Set new number of hit points
         conmod = h.modifier(self.character.get('/abilities/Constitution'))
-        if (self.levelgain['Average or roll for HP?'] == 'average'):
+        if self.levelgain['Average or roll for HP?'] == 'average':
             gain = d.basic(size, d.Mode.AVERAGE) + .5
-        elif (self.levelgain['Average or roll for HP?'] == 'roll'):
+        elif self.levelgain['Average or roll for HP?'] == 'roll':
             gain = d.basic(size)
         current = self.character.get('/HP/max')
         self.character.set('/HP/max', current + gain + conmod)
@@ -280,9 +280,9 @@ class main(gui.Section):
         self.core.grid(0, 0)
         self.QUIT.grid(row=1, column=0)
 
-    def writequit(self):
+    def write_quit(self):
         features = self.core.export()
-        if ('SUBCLASS' in features):
+        if 'SUBCLASS' in features:
             name = features.pop('SUBCLASS')
             other = features.pop('MAIN CLASS')
             self.character.classes.apply_subclass(other, name)
@@ -293,9 +293,9 @@ class main(gui.Section):
         self.character.write()
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
     win = gui.MainWindow()
     iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(win)
+    app = Main(win)
     app.pack()
     win.mainloop()

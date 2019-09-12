@@ -1,5 +1,5 @@
-import re
 import collections
+import re
 
 import classes as c
 import helpers as h
@@ -28,12 +28,12 @@ class ClassMap:
         self.levels = []
         self.classes = collections.OrderedDict()
 
-        L = s.split(',')
-        for substr in L:
+        split = s.split(',')
+        for substr in split:
             pattern = r'\s*([a-zA-Z\']+)\s*(\(([a-zA-Z\'\s]+)\))?\s*([0-9]+)'
             desc_ = re.match(pattern, substr).groups()
             desc = [str(item) for item in desc_ if item is not None]
-            if (len(desc) == 2):
+            if len(desc) == 2:
                 self._classes.append(desc[0])
                 self._subclasses.append('')
                 self.levels.append(int(desc[1]))
@@ -59,11 +59,11 @@ class ClassMap:
                                    self.levels))
 
     def __getitem__(self, key):
-        if (isinstance(key, str)):
+        if isinstance(key, str):
             return self.classes[key]
-        elif (isinstance(key, int)):
+        elif isinstance(key, int):
             for i, v in enumerate(self.classes.values()):
-                if (i == key):
+                if i == key:
                     return v
             raise IndexError
         raise TypeError
@@ -78,11 +78,11 @@ class ClassMap:
         main = 'class/{}.class'
         sub = 'class/{}.{}.sub.class'
         super_ = 'class/{}.super.class'
-        for (C, S, L) in zip(self._classes, self._subclasses, self.levels):
-            C = h.clean(C)
-            S = h.clean(S)
-            file_ = main.format(C)
-            subfile_ = sub.format(C, S)
+        for (class_, subclass, L) in zip(self._classes, self._subclasses, self.levels):
+            class_ = h.clean(class_)
+            subclass = h.clean(subclass)
+            file_ = main.format(class_)
+            subfile_ = sub.format(class_, subclass)
             mainclass = iface.JSONInterface(file_)
             try:
                 subclass = iface.JSONInterface(subfile_)
@@ -91,10 +91,11 @@ class ClassMap:
                 subclassfound = False
             superclasses = [iface.JSONInterface(super_.format(name))
                             for name in mainclass.get('/superclass')]
-            if (subclassfound and subclass.get('/superclass')):
+            # noinspection PyUnboundLocalVariable
+            if subclassfound and subclass.get('/superclass'):
                 superclasses.extend([iface.JSONInterface(super_.format(name))
                                      for name in subclass.get('/superclass')])
-            if (subclassfound):
+            if subclassfound:
                 jf = iface.LinkedInterface(*superclasses, mainclass,
                                            subclass)
                 # self.classes.update(
@@ -106,10 +107,10 @@ class ClassMap:
                 # self.classes.update(
                 #     {str(mainclass): iface.LinkedInterface(*superclasses,
                 #                                            mainclass)})
-            self.classes.update({C: c.Class(jf, L)})
+            self.classes.update({class_: c.Class(jf, L)})
 
     def level_up(self, name, subclassname=''):
-        if (name in self._classes):
+        if name in self._classes:
             i = self._classes.index(name)
             self.levels[i] += 1
             lev = self.levels[i]
@@ -120,7 +121,7 @@ class ClassMap:
             lev = 1
             self._subclasses.append(subclassname)
             self.hook()
-        return (self.classes[name], lev)
+        return self.classes[name], lev
 
     def apply_subclass(self, mainclass, subclass):
         i = self._classes.index(mainclass)
@@ -156,11 +157,12 @@ class RaceMap:
         main = 'race/{}.race'.format(self.race)
         sub = 'race/{}.{}.sub.race'.format(self.race, self.subrace)
         mainjf = iface.JSONInterface(main)
-        if (self.subrace):
+        if self.subrace:
             subjf = iface.JSONInterface(sub)
             self.core = c.Race(iface.LinkedInterface(mainjf, subjf), str(self))
         else:
             # For the sake of having a consistent API it needs to be a LinkedInterface
+            # noinspection PyAttributeOutsideInit
             self.core = c.Race(iface.LinkedInterface(mainjf), str(self))
 
     def get_feature_links(self):
@@ -170,7 +172,7 @@ class RaceMap:
         mainjf = iface.JSONInterface(main)
         for name in (mainjf.get('/features') or []):
             rv[name] = main + '/features/' + name
-        if (self.subrace):
+        if self.subrace:
             subjf = iface.JSONInterface(sub)
             for name in (subjf.get('/features') or []):
                 rv[name] = sub + '/features/' + name

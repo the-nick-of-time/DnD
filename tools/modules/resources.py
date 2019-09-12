@@ -22,10 +22,10 @@ class ResourcesDisplay(gui.Section):
     def draw_static(self):
         s = 4
         for (i, d) in enumerate(self.displays):
-            d.grid(row=i%s, column=i//s)
+            d.grid(row=i % s, column=i // s)
 
 
-class module(ResourcesDisplay):
+class Module(ResourcesDisplay):
     def __init__(self, container, character):
         ResourcesDisplay.__init__(self, container, character)
         self.f.config(pady=5)
@@ -35,7 +35,7 @@ class module(ResourcesDisplay):
             d.draw_dynamic()
 
 
-class main(gui.Section):
+class Main(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
         self.QUIT = tk.Button(self.f, text='QUIT', fg='red', command=self.quit)
@@ -53,7 +53,7 @@ class main(gui.Section):
     def startup_end(self):
         name = self.charactername['Character Name?']
         path = 'character/' + name + '.character'
-        if (os.path.exists(iface.JSONInterface.OBJECTSPATH + path)):
+        if os.path.exists(iface.JSONInterface.OBJECTSPATH + path):
             self.record = iface.JSONInterface(path)
         else:
             raise FileNotFoundError
@@ -67,9 +67,9 @@ class main(gui.Section):
         self.container.destroy()
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
     win = gui.MainWindow()
     iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(win)
+    app = Main(win)
     app.pack()
     win.mainloop()

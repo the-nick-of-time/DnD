@@ -127,17 +127,17 @@ class HitPointDisplay(gui.Section):
         self.draw_dynamic()
 
 
-class module(HitPointDisplay):
+class Module(HitPointDisplay):
     def __init__(self, container, character):
         HitPointDisplay.__init__(self, container, character.hp)
         self.f.config(bd=2, relief='groove', pady=5)
 
 
-class main(gui.Section):
+class Main(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
         self.charactername = {}
-        self.QUIT = tk.Button(self.f, command=self.writequit, text='QUIT')
+        self.QUIT = tk.Button(self.f, command=self.write_quit, text='QUIT')
         self.buttons = tk.Frame(self.f)
         self.longrest = tk.Button(self.buttons, text='Long Rest',
                                   command=self.long_rest)
@@ -152,7 +152,7 @@ class main(gui.Section):
     def startup_finish(self):
         name = self.charactername['Character Name?']
         path = iface.JSONInterface.OBJECTSPATH + 'character/' + name + '.character'
-        if (os.path.exists(path)):
+        if os.path.exists(path):
             self.record = iface.JSONInterface(path)
         else:
             raise FileNotFoundError
@@ -171,14 +171,14 @@ class main(gui.Section):
     def long_rest(self):
         self.hpdisplay.long_rest()
 
-    def writequit(self):
+    def write_quit(self):
         self.corehandler.write()
         self.container.destroy()
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
     win = gui.MainWindow()
     iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(win)
+    app = Main(win)
     app.pack()
     win.mainloop()

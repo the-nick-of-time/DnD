@@ -56,15 +56,14 @@ class AbilityDisplay(gui.Section):
         self.subf.grid(row=0, column=0)
         for (i, a) in enumerate(self.abilnames):
             self.abilchecks[i].grid(row=i, column=0)
-            # util.replaceEntry(self.scores[i], self.person.abilities[a])
             self.abiltexts[i].set(self.person.abilities[a])
             self.scores[i].grid(row=i, column=1)
             self.mods[i].grid(row=i, column=2)
             self.saves[i].grid(row=i, column=3)
-            if (a in self.person.saves):
+            if a in self.person.saves:
                 self.saves[i].config(bg='green', fg='white')
             self.abiltexts[i].trace('w',
-                                    lambda a, b, c: self.update_character())
+                                    lambda x, y, z: self.update_character())
         self.advbutton.grid(row=1, column=0)
         self.disbutton.grid(row=2, column=0)
         self.rolldisplay.grid(row=3, column=0)
@@ -110,7 +109,7 @@ class SkillDisplay(gui.Section):
     def draw_static(self):
         for (i, obj) in enumerate(self.buttons):
             obj.grid(row=i // 3, column=i % 3)
-            if (obj['text'] in self.person.skills):
+            if obj['text'] in self.person.skills:
                 obj.config(bg='green', fg='white')
 
     def roll_check(self, name):
@@ -123,13 +122,13 @@ class SkillDisplay(gui.Section):
         self.display['text'] = '{}+{}={}'.format(*reversed(result))
 
 
-class module(AbilityDisplay):
+class Module(AbilityDisplay):
     def __init__(self, container, character):
         AbilityDisplay.__init__(self, container, character)
         self.f.config(pady=5)
 
 
-class main(gui.Section):
+class Main(gui.Section):
     def __init__(self, window):
         gui.Section.__init__(self, window)
         self.charactername = {}
@@ -144,7 +143,7 @@ class main(gui.Section):
         name = self.charactername['Character Name?']
         path = (iface.JSONInterface.OBJECTSPATH
                 + 'character/' + name + '.character')
-        if (os.path.exists(path)):
+        if os.path.exists(path):
             jf = iface.JSONInterface('character/' + name + '.character')
         else:
             raise FileNotFoundError
@@ -165,6 +164,6 @@ class main(gui.Section):
 if __name__ == '__main__':
     win = gui.MainWindow()
     iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(win)
+    app = Main(win)
     app.pack()
     win.mainloop()

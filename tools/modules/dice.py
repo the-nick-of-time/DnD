@@ -1,8 +1,9 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
 import os
 import sys
+import tkinter as tk
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import dndice as d
@@ -13,7 +14,6 @@ import components as gui
 class DiceRoll(gui.Section):
     def __init__(self, master):
         gui.Section.__init__(self, master)
-        # self.generalRoll = util.labeledEntry(self.f, 'Dice to roll?', 0, 0)
         self.generalRoll = gui.LabeledEntry(self.f, 'Dice to roll?')
         self.generalRoll.grid(0, 0)
         self.generalRoll.bind("<Return>", lambda event: self.do_roll())
@@ -26,7 +26,7 @@ class DiceRoll(gui.Section):
         self.result["text"] = d.verbose(self.generalRoll.get())
 
 
-class module(DiceRoll):
+class Module(DiceRoll):
     def __init__(self, container, character):
         DiceRoll.__init__(self, container)
         self.character = character
@@ -37,7 +37,7 @@ class module(DiceRoll):
         self.result["text"] = d.verbose(parsed)
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
     win = gui.MainWindow()
     win.title('Dice')
     app = DiceRoll(win)

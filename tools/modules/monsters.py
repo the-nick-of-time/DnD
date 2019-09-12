@@ -38,6 +38,7 @@ class Monster:
         self.maxHP = self.HP
         self.AC = data['AC']
         self.abilities = data['abilities']
+        # TODO: actually roll this thing
         self.initiative = (h.d20_roll() +
                            h.modifier(data['abilities']['Dexterity']))
         self.saves = data.get('saves', {})
@@ -56,54 +57,54 @@ class MonsterDisplay(gui.Section):
 
         self.creature = monster
         ###########
-        self.infopanel = tk.Frame(self.f)
+        self.infoPanel = tk.Frame(self.f)
         ###########
-        self.namesec = tk.Frame(self.infopanel)
-        self.nameL = tk.Label(self.namesec, text=monster.name, font="Calibri 18")
-        self.initL = tk.Label(self.namesec, text='Initiative:  ' + str(self.creature.initiative))
+        self.nameSec = tk.Frame(self.infoPanel)
+        self.nameL = tk.Label(self.nameSec, text=monster.name, font="Calibri 18")
+        self.initL = tk.Label(self.nameSec, text='Initiative:  ' + str(self.creature.initiative))
         ###########
-        self.hpsec = tk.Frame(self.infopanel)
-        self.deltaL = tk.Label(self.hpsec, text='Change in HP')
-        self.delta = tk.Entry(self.hpsec)
+        self.hpSec = tk.Frame(self.infoPanel)
+        self.deltaL = tk.Label(self.hpSec, text='Change in HP')
+        self.delta = tk.Entry(self.hpSec)
         self.delta.bind('<Return>', lambda callback: self.change_HP)
-        self.change = tk.Button(self.hpsec, text='Change', command=self.change_HP)
+        self.change = tk.Button(self.hpSec, text='Change', command=self.change_HP)
         ##########
-        self.acsec = tk.Frame(self.infopanel)
-        self.hpL = tk.Label(self.acsec,
+        self.acSec = tk.Frame(self.infoPanel)
+        self.hpL = tk.Label(self.acSec,
                             text='HP:  ' + str(monster.HP),
                             font='Calibri 18')
-        self.acL = tk.Label(self.acsec,
+        self.acL = tk.Label(self.acSec,
                             text='   AC:  ' + str(monster.AC),
                             font='Calibri 16')
 
         ###########
-        self.abilsec = tk.Frame(self.infopanel)
-        self.abilnames = [tk.Label(self.abilsec, text=name[:3].upper()) for name in Monster.abilnames]
-        self.abils = [tk.Label(self.abilsec, text='{s} ({m})'.format(s=self.creature.abilities[name],
+        self.abilSec = tk.Frame(self.infoPanel)
+        self.abilnames = [tk.Label(self.abilSec, text=name[:3].upper()) for name in Monster.abilnames]
+        self.abils = [tk.Label(self.abilSec, text='{s} ({m})'.format(s=self.creature.abilities[name],
                                                                      m=h.modifier(self.creature.abilities[name]))) for
                       name in Monster.abilnames]
         ###############
-        self.attacksec = tk.Frame(self.f)
-        self.attacknotresult = tk.Frame(self.attacksec)
+        self.attackSec = tk.Frame(self.f)
+        self.attackNotResult = tk.Frame(self.attackSec)
 
-        self.attackL = tk.Label(self.attacknotresult, text='Attack Modifiers')
-        self.attack = tk.Entry(self.attacknotresult, width=15)
-        self.damageL = tk.Label(self.attacknotresult, text='Damage')
-        self.damage = tk.Entry(self.attacknotresult, width=15)
+        self.attackL = tk.Label(self.attackNotResult, text='Attack Modifiers')
+        self.attack = tk.Entry(self.attackNotResult, width=15)
+        self.damageL = tk.Label(self.attackNotResult, text='Damage')
+        self.damage = tk.Entry(self.attackNotResult, width=15)
         self.damage.bind('<Return>', lambda event: self.do_attack())
-        self.perform = tk.Button(self.attacknotresult, text='Attack',
+        self.perform = tk.Button(self.attackNotResult, text='Attack',
                                  command=self.do_attack)
-        self.advsec = tk.Frame(self.attacknotresult)
+        self.advSec = tk.Frame(self.attackNotResult)
         self.advantage = tk.BooleanVar()
         self.disadvantage = tk.BooleanVar()
-        self.hasAdvantage = tk.Checkbutton(self.advsec,
+        self.hasAdvantage = tk.Checkbutton(self.advSec,
                                            text="Advantage?",
                                            variable=self.advantage)
-        self.hasDisadvantage = tk.Checkbutton(self.advsec,
+        self.hasDisadvantage = tk.Checkbutton(self.advSec,
                                               text="Disadvantage?",
                                               variable=self.disadvantage)
-        self.attackresult = tk.Label(self.attacksec)
-        self.damageresult = tk.Label(self.attacksec)
+        self.attackResult = tk.Label(self.attackSec)
+        self.damageResult = tk.Label(self.attackSec)
         ###########
         self.draw_static()
         self.draw_dynamic()
@@ -112,42 +113,42 @@ class MonsterDisplay(gui.Section):
         return self.creature < other.creature
 
     def draw_static(self):
-        self.infopanel.grid(row=0, column=0)
+        self.infoPanel.grid(row=0, column=0)
         ########
-        self.namesec.grid(row=0, column=0)
+        self.nameSec.grid(row=0, column=0)
         self.nameL.grid(row=0, column=0, sticky='w')
         self.initL.grid(row=1, column=0, sticky='e')
         ####
-        self.acsec.grid(row=0, column=1)
+        self.acSec.grid(row=0, column=1)
         self.hpL.grid(row=0, column=0, sticky='w')
         self.acL.grid(row=0, column=1, sticky='e')
         #####
-        self.abilsec.grid(row=1, column=0)
+        self.abilSec.grid(row=1, column=0)
         for i in range(6):
             self.abilnames[i].grid(row=(i // 3) * 2, column=i % 3)
             self.abils[i].grid(row=(i // 3) * 2 + 1, column=i % 3)
         #######
-        self.hpsec.grid(row=1, column=1)
+        self.hpSec.grid(row=1, column=1)
         self.deltaL.grid(row=0, column=0)
         self.delta.grid(row=1, column=0)
         self.change.grid(row=1, column=1)
         ########
-        self.attacksec.grid(row=1, column=0)
-        self.attacknotresult.grid(row=0, column=0)
+        self.attackSec.grid(row=1, column=0)
+        self.attackNotResult.grid(row=0, column=0)
         self.attackL.grid(row=0, column=0)
         self.attack.grid(row=0, column=1)
-        self.advsec.grid(row=0, column=2)
+        self.advSec.grid(row=0, column=2)
         self.hasAdvantage.grid(row=0, column=0, sticky='w')
         self.hasDisadvantage.grid(row=1, column=0, sticky='w')
         self.damageL.grid(row=1, column=0)
         self.damage.grid(row=1, column=1)
         self.perform.grid(row=1, column=2)
-        self.attackresult.grid(row=1, column=0)
-        self.damageresult.grid(row=2, column=0)
+        self.attackResult.grid(row=1, column=0)
+        self.damageResult.grid(row=2, column=0)
 
     def draw_dynamic(self):
         self.hpL['text'] = 'HP:  ' + str(self.creature.HP)
-        if (self.creature.HP <= 0):
+        if self.creature.HP <= 0:
             every = all_children(self.f)
             every.append(self.f)
             for w in every:
@@ -164,17 +165,17 @@ class MonsterDisplay(gui.Section):
         attack += d.compile(self.attack.get())
         attroll = d.verbose(attack)
         ###
-        if (attack.is_critical()):
+        if attack.is_critical():
             attroll = 'Critical Hit'
             damresult = d.verbose(self.damage.get(), d.Mode.CRIT)
-        elif (attack.is_fail()):
+        elif attack.is_fail():
             attroll = 'Critical Miss'
             damresult = '0'
         else:
             damresult = d.verbose(self.damage.get())
         ###
-        self.attackresult['text'] = 'Attack result: ' + attroll
-        self.damageresult['text'] = 'Damage done: ' + damresult
+        self.attackResult['text'] = 'Attack result: ' + attroll
+        self.damageResult['text'] = 'Damage done: ' + damresult
 
 
 class Character:
@@ -206,15 +207,15 @@ class CharacterDisplay(gui.Section):
 class Builder:
     # this will create a popup window that allows you to create new monsters and
     # add them to the main window
-    def __init__(self, data, parent, prevmonster=None):
+    def __init__(self, data, parent, prevMonster=None):
         # self.master = master
         self.data = data
         self.parent = parent
-        self.prevmonster = prevmonster
+        self.prevMonster = prevMonster
         self.win = tk.Toplevel()
 
-        self.choosefile = tk.Button(self.win, text='Choose from file', command=self.pick_file)
-        self.choosefile.grid(row=0, column=0)
+        self.chooseFile = tk.Button(self.win, text='Choose from file', command=self.pick_file)
+        self.chooseFile.grid(row=0, column=0)
 
         self.mainframe = tk.Frame(self.win, bd=2, relief='ridge')
         self.mainframe.grid(row=1, column=0)
@@ -237,7 +238,6 @@ class Builder:
         self.abil.grid(row=6, column=0)
         abilities = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']
         self.abilities = []
-        labels = []
         for (i, n) in enumerate(abilities):
             self.abilities.append(gui.LabeledEntry(self.mainframe, n, width=4))
             self.abilities[-1].grid(i // 3, i % 3)
@@ -257,7 +257,7 @@ class Builder:
 
     def load_file(self):
         filename = self.filename
-        if (os.path.isfile(filename)):
+        if os.path.isfile(filename):
             interface = iface.JSONInterface(filename, isabsolute=True)
             self.data.update(interface.get('/'))
             av = messagebox.askyesno(message='Take average HP?')
@@ -267,16 +267,16 @@ class Builder:
             gui.ErrorMessage('That file does not exist. Check your spelling.')
 
     def copy(self):
-        if (self.prevmonster):
-            self.name.replace_text(self.prevmonster['name'])
-            self.ac.replace_text(self.prevmonster['AC'])
-            self.hp.replace_text(self.prevmonster['HP'])
-            self.av.set(self.prevmonster['average'])
+        if self.prevMonster:
+            self.name.replace_text(self.prevMonster['name'])
+            self.ac.replace_text(self.prevMonster['AC'])
+            self.hp.replace_text(self.prevMonster['HP'])
+            self.av.set(self.prevMonster['average'])
             for (i, a) in enumerate(Monster.abilnames):
-                self.abilities[i].replace_text(self.prevmonster['abilities'][a])
+                self.abilities[i].replace_text(self.prevMonster['abilities'][a])
 
     def finish(self, fromfile=False):
-        if (not fromfile):
+        if not fromfile:
             self.data.update({'name': self.name.get(), 'AC': self.ac.get(),
                               'HP': self.hp.get(), 'average': self.av.get(),
                               'abilities': {a: int(self.abilities[i].get()) for (i, a) in
@@ -304,19 +304,19 @@ class CharacterBuilder:
         self.win.destroy()
 
 
-class main(gui.Section):
+class Main(gui.Section):
     def __init__(self, window):
         gui.Section.__init__(self, window, height=770, width=965)
         self.container.title('Combat Encounter')
-        self.monsterdata = {}
-        self.prevmonster = {}
-        self.characterdata = {}
+        self.monsterData = {}
+        self.prevMonster = {}
+        self.characterData = {}
         self.frames = []
         self.addons = tk.Frame(self.f)
         self.buttons = tk.Frame(self.addons)
-        self.newmonster = tk.Button(self.buttons, text='New Monster',
+        self.newMonster = tk.Button(self.buttons, text='New Monster',
                                     command=self.new_monster_start)
-        self.newcharacter = tk.Button(self.buttons, text='New Character',
+        self.newCharacter = tk.Button(self.buttons, text='New Character',
                                       command=self.new_character_start)
         self.QUIT = tk.Button(self.buttons, text='Quit', command=self.quit)
         self.roller = DiceRoll(self.addons)
@@ -330,26 +330,26 @@ class main(gui.Section):
         self.addons.grid(row=i % 3, column=i // 3)
         self.roller.grid(row=0, column=0)
         self.buttons.grid(row=1, column=0)
-        self.newmonster.grid(row=0, column=0)
-        self.newcharacter.grid(row=0, column=1)
+        self.newMonster.grid(row=0, column=0)
+        self.newCharacter.grid(row=0, column=1)
         self.QUIT.grid(row=0, column=2)
 
     def new_character_start(self):
-        self.characterdata = {}
-        CharacterBuilder(self.characterdata, self)
+        self.characterData = {}
+        CharacterBuilder(self.characterData, self)
 
     def new_character_finish(self):
-        c = Character(self.characterdata)
+        c = Character(self.characterData)
         self.frames.append(CharacterDisplay(self.f, c))
         self.draw()
 
     def new_monster_start(self):
-        self.monsterdata = {}
-        Builder(self.monsterdata, self, self.prevmonster)
+        self.monsterData = {}
+        Builder(self.monsterData, self, self.prevMonster)
 
     def new_monster_finish(self):
-        self.prevmonster = self.monsterdata
-        m = Monster(self.monsterdata)
+        self.prevMonster = self.monsterData
+        m = Monster(self.monsterData)
         self.frames.append(MonsterDisplay(self.f, m))
         self.draw()
 
@@ -357,9 +357,9 @@ class main(gui.Section):
         self.container.destroy()
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
     iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     win = gui.MainWindow()
-    app = main(win)
+    app = Main(win)
     app.pack()
     win.mainloop()

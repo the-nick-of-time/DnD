@@ -67,14 +67,14 @@ class ItemDisplay(gui.Section):
 
     def use(self):
         effect = self.item.use()
-        if (effect):
+        if effect:
             self.effect = gui.EffectPane(self.f, h.shorten(effect), effect)
             self.effect.grid(row=4, column=0)
         self.numbervalue.set(self.item.number)
 
     def describe(self):
         desc = self.item.describe()
-        if (desc):
+        if desc:
             self.description = gui.EffectPane(self.f, h.shorten(desc), desc)
             self.description.grid(row=3, column=0)
 
@@ -135,8 +135,8 @@ class InventoryHandler(gui.Section):
         for block in self.objectblocks.values():
             i = 0
             for item in block:
-                if (item.get_number() > 0):
-                    item.grid(row=i%s, column=i//s)
+                if item.get_number() > 0:
+                    item.grid(row=i % s, column=i // s)
                     i += 1
                     item.draw_dynamic()
         self.update_encumbrance()
@@ -180,65 +180,58 @@ class InventoryHandler(gui.Section):
                       sys.maxsize]
         carryWeight = self.total_weight()
         for s, t in zip(stages, thresholds):
-            if (carryWeight <= t):
+            if carryWeight <= t:
                 return s
 
-    def setowner(self, character):
+    def set_owner(self, character):
         self.owner = character
         for item in self.handler:
-            item.setowner(character)
+            item.set_owner(character)
 
     def write(self):
         self.handler.write()
 
 
-class module(gui.Section):
+class Module(gui.Section):
     def __init__(self, container, character):
         gui.Section.__init__(self, container, width=900, height=500)
         self.character = character
         self.core = InventoryHandler(self.f, character.inventory,
                                      character.record)
-        self.core.setowner(character)
+        self.core.set_owner(character)
         self.draw_static()
 
     def draw_dynamic(self):
         self.core.draw_dynamic()
-        # for itemblock
 
     def draw_static(self):
         self.core.grid(row=0, column=0)
 
 
-class main(gui.Section):
+class Main(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
         self.characterdata = {}
-        # self.inv = InventoryHandler(self.f)
-        # self.inv.grid(0, 0)
         self.QUIT = tk.Button(self.f, text='QUIT', command=self.quit)
         self.QUIT.grid(row=1, column=1)
         self.load_character_start()
 
     def load_character_start(self):
-        popup = gui.Query(self.characterdata, self.load_character_end,
-                          'Character name?')
+        gui.Query(self.characterdata, self.load_character_end,
+                  'Character name?')
         self.container.withdraw()
 
     def load_character_end(self):
         name = self.characterdata['Character name?']
         path = JSONInterface.OBJECTSPATH + 'character/' + name + '.character'
-        if (os.path.exists(path)):
+        if os.path.exists(path):
             character = JSONInterface('character/' + name + '.character')
         else:
             raise FileNotFoundError
         handler = c.Inventory(character)
         self.inv = InventoryHandler(self.f, handler, character)
         self.inv.grid(row=0, column=0)
-        # for (name, item) in self.handler:
-        #     t = item.type.split()[-1]
-        #     self.objectblocks[t].append(ItemDisplay(self.coreframes[t], item, self.update_encumbrance))
         self.container.deiconify()
-        # self.draw_dynamic()
 
     def quit(self):
         self.inv.write()
@@ -246,7 +239,7 @@ class main(gui.Section):
 
 
 def pluralize(name):
-    if (name == 'item' or name == 'weapon'):
+    if name == 'item' or name == 'weapon':
         return name + 's'
     else:
         return name
@@ -255,6 +248,6 @@ def pluralize(name):
 if __name__ == '__main__':
     win = gui.MainWindow()
     JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(win)
+    app = Main(win)
     app.pack()
     win.mainloop()

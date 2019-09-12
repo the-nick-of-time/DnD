@@ -50,10 +50,7 @@ class EquipmentDisplay(gui.Section):
         # self.rightbootF.pack_propagate(0)
         self.rightboot = tk.Label(self.rightbootF)
         #####
-        self.basecolor = self.headF.cget('bg')
-        # self.buttons = tk.Frame(self.f)
-        # self.do_equip = tk.Button(self.buttons, text='Equip', command=lambda: self.equip(slot='necklace', name='Amulet'))
-        # self.un_equip = tk.Button(self.buttons, text='Unequip', command=lambda: self.unequip(name='Amulet'))
+        self.baseColor = self.headF.cget('bg')
         self.draw_static()
 
     def draw_static(self):
@@ -83,7 +80,7 @@ class EquipmentDisplay(gui.Section):
         # self.un_equip.grid(row=0, column=1)
 
     def equip(self, item=None, **kwargs):
-        slotmap = {'glove': ['lefthand', 'righthand'],
+        slotMap = {'glove': ['lefthand', 'righthand'],
                    'belt': ['belt'],
                    'lightarmor': ['clothes', 'pants'],
                    'mediumarmor': ['clothes', 'pants'],
@@ -95,9 +92,9 @@ class EquipmentDisplay(gui.Section):
                    'cloak': ['cloak'],
                    'shield': [],
                    None: []}
-        if (item):
+        if item:
             t = item.get('type')
-            if (isinstance(t, str)):
+            if isinstance(t, str):
                 t = t.lower()
             n = item.name
             # Change the item to register as equipped
@@ -108,24 +105,24 @@ class EquipmentDisplay(gui.Section):
                 n = kwargs['name']
             except KeyError:
                 raise
-        if t not in slotmap:
+        if t not in slotMap:
             print(t)
             raise KeyError
         for (key, val) in self.registry.items():
-            if (val == slotmap[t]):
+            if val == slotMap[t]:
                 # if the slot is occupied,
                 # automatically replace the existing item (maybe change this)
                 del self.registry[key]
                 break
-        for i in slotmap[t]:
-            l = self.__getattribute__(i)
-            f = self.__getattribute__(i + 'F')
-            l.config(text=n, bg='#FFAAAA')
-            f.config(bg='#FFAAAA')
-        self.registry[n] = slotmap[t]
+        for i in slotMap[t]:
+            label = self.__getattribute__(i)
+            frame = self.__getattribute__(i + 'F')
+            label.config(text=n, bg='#FFAAAA')
+            frame.config(bg='#FFAAAA')
+        self.registry[n] = slotMap[t]
 
     def unequip(self, item=None, **kwargs):
-        if (item):
+        if item:
             n = item.name
             item.equipped = ''
         else:
@@ -133,83 +130,87 @@ class EquipmentDisplay(gui.Section):
                 n = kwargs['name']
             except KeyError:
                 raise
-        if (n in self.registry):
+        if n in self.registry:
             for i in self.registry[n]:
-                l = self.__getattribute__(i)
-                f = self.__getattribute__(i + 'F')
-                l.config(text='', bg=self.basecolor)
-                f.config(bg=self.basecolor)
+                label = self.__getattribute__(i)
+                frame = self.__getattribute__(i + 'F')
+                label.config(text='', bg=self.baseColor)
+                frame.config(bg=self.baseColor)
             del self.registry[n]
 
     def toggle_equip(self, item):
-        if (item.name in self.registry):
+        if item.name in self.registry:
             self.unequip(item)
         else:
             self.equip(item)
 
 
-class module(gui.Section):
+class Module(gui.Section):
     def __init__(self, container, character):
         gui.Section.__init__(self, container)
         self.character = character
-        self.buttonframe = tk.Frame(self.f)
+        self.buttonFrame = tk.Frame(self.f)
         self.handler = self.character.inventory
         self.display = EquipmentDisplay(self.f)
         self.buttons = []
         for item in self.handler:
-            if (item.type in ['weapon', 'ranged weapon', 'apparel']):
-                self.buttons.append(tk.Button(self.buttonframe, text=item.name, command=lambda x=item: self.display.toggle_equip(x)))
-                if (item.equipped):
+            if item.type in ['weapon', 'ranged weapon', 'apparel']:
+                self.buttons.append(
+                    tk.Button(self.buttonFrame, text=item.name, command=lambda x=item: self.display.toggle_equip(x)))
+                if item.equipped:
                     self.display.equip(item)
         self.draw_static()
 
     def draw_static(self):
-        self.buttonframe.grid(row=0, column=0)
+        self.buttonFrame.grid(row=0, column=0)
         s = 5
         for i, b in enumerate(self.buttons):
-            b.grid(row=i%s, column=i//s)
+            b.grid(row=i % s, column=i // s)
         self.display.grid(row=0, column=1)
 
 
-class main(gui.Section):
+class Main(gui.Section):
     def __init__(self, window):
         gui.Section.__init__(self, window)
         self.display = EquipmentDisplay(self.f)
-        self.buttonframe = tk.Frame(self.f)
-        self.QUIT = tk.Button(self.f, text='QUIT', command=self.writequit,
+        self.buttonFrame = tk.Frame(self.f)
+        self.QUIT = tk.Button(self.f, text='QUIT', command=self.write_quit,
                               fg='red')
         self.startup_begin()
 
     def draw_static(self):
-        self.buttonframe.grid(row=0, column=0)
+        self.buttonFrame.grid(row=0, column=0)
         s = 5
         for i, b in enumerate(self.buttons):
-            b.grid(row=i%s, column=i//s)
+            b.grid(row=i % s, column=i // s)
         self.display.grid(row=0, column=1)
         self.QUIT.grid(row=1, column=2)
 
+    # noinspection PyAttributeOutsideInit
     def startup_begin(self):
         self.charactername = {}
         gui.Query(self.charactername, self.startup_finish, 'Character Name?')
         self.container.withdraw()
 
+    # noinspection PyAttributeOutsideInit
     def startup_finish(self):
         name = self.charactername['Character Name?']
         path = iface.JSONInterface.OBJECTSPATH + 'character/' + name + '.character'
-        if (os.path.exists(path)):
+        if os.path.exists(path):
             self.record = iface.JSONInterface(path)
         else:
             raise FileNotFoundError
         self.handler = c.Inventory(self.record)
         self.buttons = []
         for item in self.handler:
-            self.buttons.append(tk.Button(self.buttonframe, text=item.name, command=lambda x=item: self.display.toggle_equip(x)))
-            if (item.equipped):
+            self.buttons.append(
+                tk.Button(self.buttonFrame, text=item.name, command=lambda x=item: self.display.toggle_equip(x)))
+            if item.equipped:
                 self.display.equip(item)
         self.draw_static()
         self.container.deiconify()
 
-    def writequit(self):
+    def write_quit(self):
         self.record.write()
         self.container.destroy()
 
@@ -217,6 +218,6 @@ class main(gui.Section):
 if __name__ == '__main__':
     win = gui.MainWindow()
     iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(win)
+    app = Main(win)
     app.pack()
     win.mainloop()
