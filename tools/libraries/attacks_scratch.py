@@ -1,6 +1,6 @@
 from typing import Union, List
 
-import dndice as r
+from dndice import basic
 
 import classes as c
 import helpers as h
@@ -52,10 +52,10 @@ class AttackRoll(ToHit):
     def __init__(self, jf: interface.JSONInterface, path: str, character: c.Character):
         super().__init__(jf, path, character)
 
-    def rollToHit(self, verbose=False, adv=False, dis=False, luck=False):
+    def rollToHit(self, adv=False, dis=False, luck=False):
         rollstr = h.d20_string(adv, dis, luck) + ''.join(self.jf.get(self.path + '/roll_suffix'))
         mod = self.modifiers.get_value()
-        return r.roll(rollstr, modifiers=mod, option='multipass' if verbose else 'execute')
+        return basic(rollstr, modifiers=mod)
 
 
 class SpellSave(ToHit):
@@ -81,7 +81,7 @@ class Modifiers:
                 if '$' in mod:
                     # this contains character variables
                     mod = self.character.parse_vars(mod, False)
-                value += r.roll(mod)
+                value += basic(mod)
             elif isinstance(mod, list):
                 if len(mod) == 0:
                     # Add zero to the value
@@ -92,7 +92,7 @@ class Modifiers:
                         if '$' in mod:
                             # this contains character variables
                             mod = self.character.parse_vars(mod, False)
-                        candidate = r.roll(candidate)
+                        candidate = basic(candidate)
                     # Take largest seen so far
                     if largest is None:
                         largest = candidate

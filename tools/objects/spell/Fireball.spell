@@ -20,7 +20,7 @@
   "attacks": [
     {
       "to_hit": {
-        "type": "SPELLSAVE",
+        "test": "SPELLSAVE",
         "against": "Dexterity",
         "modifiers": []
       },
