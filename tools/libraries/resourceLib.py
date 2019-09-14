@@ -32,7 +32,7 @@ class Resource:
         self.owner = character
         if character is not None:
             val = character.parse_vars(self.value, mathIt=False)
-            if (isinstance(val, str)):
+            if isinstance(val, str):
                 pattern = r'\(.*\)'
                 rep = lambda m: str(basic(m.group(0)))
                 new = re.sub(pattern, rep, val)
@@ -51,11 +51,11 @@ class Resource:
     @property
     def maxnumber(self):
         val = self._get('maxnumber')
-        if (val is not None):
-            if (self.owner is not None):
+        if val is not None:
+            if self.owner is not None:
                 return self.owner.parse_vars(val)
             return val
-        if (self.owner is not None):
+        if self.owner is not None:
             mx = self._def_get('maxnumber')
             return self.owner.parse_vars(mx)
         return self._def_get('maxnumber')
@@ -65,18 +65,18 @@ class Resource:
         self.record.set(self.path + '/maxnumber', value)
 
     def use(self, number):
-        if (self.number < number):
+        if self.number < number:
             raise LowOnResource(self)
         self.number -= number
-        if (isinstance(self.value, str)):
+        if isinstance(self.value, str):
             return basic('+'.join([self.value] * number))
-        elif (isinstance(self.value, int)):
+        elif isinstance(self.value, int):
             return number * self.value
         else:
             return 0
 
     def regain(self, number):
-        if (self.number + number > self.maxnumber):
+        if self.number + number > self.maxnumber:
             self.reset()
         else:
             self.number += number
