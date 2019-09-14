@@ -2,12 +2,13 @@ from interface import JSONInterface
 
 
 class Race:
-    def __init__(self, spec):
-        file = 'race/{}.race'.format(spec['race'])
+    def __init__(self, jf: JSONInterface):
+        spec = jf.get('/')
+        file = 'race/{}.race'.format(spec['base'])
         self.interface = JSONInterface(file, readonly=True)
-        self.name = spec['race']
+        self.name = spec['base']
         if 'subrace' in spec:
-            file = 'race/{}.{}.sub.race'.format(spec['race'], spec['subrace'])
+            file = 'race/{}.{}.sub.race'.format(spec['base'], spec['subrace'])
             sub = JSONInterface(file, readonly=True)
             self.subrace = Subrace(sub)
             self.interface += sub

@@ -371,7 +371,7 @@ class LabeledMenu(Section):
         return self.value.get()
 
     def focus(self):
-        pass
+        self.menu.focus_set()
 
     def bind(self, event, callback):
         self.menu.bind(event, callback)

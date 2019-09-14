@@ -1,5 +1,7 @@
 import enum
+from typing import Union, Dict
 
+from characterLib import Character
 from interface import JSONInterface, LinkedInterface
 
 
@@ -71,28 +73,43 @@ class Subclass:
 
 
 class Classes:
-    def __init__(self, specs, settings):
-        self.classes = [Class(spec) for spec in specs]
-        self.settings = settings
+    def __init__(self, jf: JSONInterface, character: Character):
+        self.classes = [Class(spec) for spec in jf.get('/')]
+        self.owner = character
+
+    def __getitem__(self, item):
+        if isinstance(item, int):
+            return self.classes[item]
+        if isinstance(item, str):
+            for cls in self.classes:
+                if cls.name == item:
+                    return cls
+            raise KeyError('The named class was not found')
+
+    def __iter__(self):
+        yield from self.classes
 
     @property
     def features(self):
         pass
 
     @property
-    def proficiency(self):
-        pass
+    def proficiency(self) -> Union[int, str]:
+        source = JSONInterface('class/ALL.super.class')
+        if self.owner.settings.proficiencyDice:
+            return source.get('/proficiency/1/' + str(self.level))
+        return source.get('/proficiency/0/' + str(self.level))
 
     @property
-    def casterLevel(self):
+    def casterLevel(self) -> int:
         return sum(c.casterLevel for c in self.classes)
 
     @property
-    def level(self):
+    def level(self) -> int:
         return sum(c.level for c in self.classes)
 
     @property
-    def maxHD(self):
+    def maxHD(self) -> Dict[str, int]:
         rv = {}
         for c in self.classes:
             hd = c.HD
