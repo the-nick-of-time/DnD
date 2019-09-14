@@ -1,3 +1,4 @@
+import functools
 import json
 import os
 import re
@@ -5,10 +6,6 @@ import re
 import dndice as r
 
 import classes as c
-
-d = os.path.dirname(os.path.abspath(__file__))
-with open(d + '/conditions.json') as f:
-    condition_defs = json.load(f)
 
 D20 = r.compile('1d20')
 D20_LUCK = r.compile('1d20r1')
@@ -51,12 +48,12 @@ def shorten(effect):
         return ""
 
 
-def clean(name):
-    return name.replace(' ', '_').replace('\'', '@').replace('/', '&')
+def clean(name: str) -> str:
+    return name.translate(str.maketrans(" '/:", "_@&$"))
 
 
-def unclean(name):
-    return name.replace('_', ' ').replace('@', '\'').replace('&', '/')
+def unclean(name: str) -> str:
+    return name.translate(str.maketrans("_@&$", " '/:"))
 
 
 def pull_from(*args):
@@ -64,10 +61,9 @@ def pull_from(*args):
     data = tuple(widget.get() for widget in args)
 
     def decorator(func):
+        @functools.wraps(func)
         def decorated():
             return func(*data)
-
-        decorated.__name__ = func.__name__
         return decorated
 
     return decorator
@@ -136,3 +132,23 @@ def path_follower(path, alltheway=False):
             return jf, infile
     else:
         raise FileNotFoundError
+
+
+def cache(f):
+    """Decorator that caches the result of a function without keyword arguments."""
+    f.__cache = {}
+
+    @functools.wraps(f)
+    def cached(*args):
+        ret = f(*args)
+        f.__cache[args] = ret
+        return ret
+
+    return cached
+
+
+@cache
+def get_conditions():
+    d = os.path.dirname(os.path.abspath(__file__))
+    with open(d + '/conditions.json') as f:
+        return json.load(f)

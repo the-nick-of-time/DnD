@@ -20,7 +20,7 @@ class ConditionsDisplay(gui.Section):
         self.buttons = {}
         noninteractable = ('exhaustion1', 'exhaustion2', 'exhaustion3',
                            'exhaustion4', 'exhaustion5', 'exhaustion6')
-        for name in set(h.condition_defs) - set(noninteractable):
+        for name in set(h.get_conditions()) - set(noninteractable):
             self.buttons[name] = tk.Button(self.block, text=name.capitalize(),
                                            command=lambda x=name: self.toggle_condition(x))
         self.ex = tk.Frame(self.block)
@@ -66,7 +66,7 @@ class ConditionsDisplay(gui.Section):
                 pass
 
     def draw_dynamic(self):
-        fullconditions = '\n'.join(h.condition_defs[name]
+        fullconditions = '\n'.join(h.get_conditions()[name]
                                    for name in self.character.conditions)
         self.display.config(text=fullconditions)
         amount = 0
