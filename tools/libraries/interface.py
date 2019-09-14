@@ -69,6 +69,11 @@ class JSONInterface:
             self.info = value
         jsonpointer.set_pointer(self.info, path, value)
 
+    def cd(self, path):
+        # TODO: should subinterfaces be forced readonly? or configurable?
+        return SubInterface(self, path, readonly=self.readonly,
+                            isabsolute=self.filename.startswith(self.OBJECTSPATH))
+
     def write(self):
         if self.readonly:
             return
@@ -152,12 +157,14 @@ class LinkedInterface:
 
 
 class SubInterface(JSONInterface):
-    def __init__(self, filename, path: str, readonly=False, isabsolute=False):
-        super().__init__(filename, readonly=readonly, isabsolute=isabsolute)
+    def __init__(self, parent: JSONInterface, path: str, readonly=False, isabsolute=False):
+        # Calling it with parent.filename feels a little hacky but worth it to get the inheritance
+        # and it works because two `JSONInterface`s with the same filename will be the same object
+        super().__init__(parent.filename, readonly=readonly, isabsolute=isabsolute)
         self.path = path.rstrip('/')
 
     def _total_path(self, path):
-        return self.path + '/' + path
+        return self.path + path
 
     def get(self, path):
         return super().get(self._total_path(path))
@@ -167,6 +174,10 @@ class SubInterface(JSONInterface):
 
     def delete(self, path):
         super().delete(self._total_path(path))
+
+    def cd(self, path) -> 'SubInterface':
+        return SubInterface(self, self.path + path, readonly=self.readonly,
+                            isabsolute=self.filename.startswith(self.OBJECTSPATH))
 
 
 class ReadonlyError(Exception):
