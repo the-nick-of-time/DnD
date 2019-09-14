@@ -1,29 +1,36 @@
 import enum
 
+from interface import JSONInterface
+
 
 class Settings:
-    def __init__(self):
-        raise NotImplementedError
+    def __init__(self, jf: JSONInterface):
+        self.record = jf
+        self.healing = property(
+            lambda: self.record.get('/HEALING') or HealingMode.VANILLA,
+            lambda value: self.record.set('/HEALING', value),
+            lambda: self.record.delete('/HEALING')
+        )
+        self.spellPoints = property(
+            lambda: self.record.get('/SPELL_POINTS') or False,
+            lambda value: self.record.set('/SPELL_POINTS', value),
+            lambda: self.record.delete('/SPELL_POINTS')
+        )
+        self.proficiencyDice = property(
+            lambda: self.record.get('/PROFICIENCY_DICE') or False,
+            lambda value: self.record.set('/PROFICIENCY_DICE', value),
+            lambda: self.record.delete('/PROFICIENCY_DICE')
+        )
 
-    @classmethod
-    def initialize(cls, spec):
-        cls.healing = spec.get('HEALING', HealingMode.VANILLA)
-        cls.proficiencyDice = spec.get('PROFICIENCY_DICE', False)
-        cls.spellPoints = spec.get('SPELL_POINTS', False)
-
-    @classmethod
-    def serialize(cls):
+    def serialize(self):
         rv = {}
-        try:
-            if cls.healing != HealingMode.VANILLA:
-                rv['HEALING'] = cls.healing
-            if cls.proficiencyDice:
-                rv['PROFICIENCY_DICE'] = True
-            if cls.spellPoints:
-                rv['SPELL_POINTS'] = True
-            return rv
-        except AttributeError:
-            return {}
+        if self.healing != HealingMode.VANILLA:
+            rv['HEALING'] = self.healing
+        if self.spellPoints:
+            rv['SPELL_POINTS'] = True
+        if self.proficiencyDice:
+            rv['PROFICIENCY_DICE'] = True
+        return rv
 
 
 class HealingMode(enum.Enum):

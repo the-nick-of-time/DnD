@@ -7,11 +7,12 @@ from exceptionsLib import LowOnResource
 from helpers import modifier
 from interface import JSONInterface
 from resourceLib import Resource
-from settingsLib import Settings, RestLengths, HealingMode
+from settingsLib import RestLengths, HealingMode
 
 
 class HP:
     def __init__(self, character: Character):
+        # TODO: take SubInterface for consistency and division of responsibility
         self.owner = character
         self.record = character.record
         self.hd = {size: HD(self.record, size, character) for size in self.record.get('/HP/HD')}
@@ -83,7 +84,7 @@ class HP:
 
     def rest(self, length):
         if length == RestLengths.LONG:
-            if Settings.healing in (HealingMode.VANILLA, HealingMode.FAST):
+            if self.owner.settings.healing in (HealingMode.VANILLA, HealingMode.FAST):
                 self.current = self.max
             self.temp = 0
         for size in self.hd.values():
@@ -111,10 +112,10 @@ class HD(Resource):
 
     def rest(self, length):
         if length == RestLengths.LONG:
-            if Settings.healing == HealingMode.FAST:
+            if self.owner.settings.healing == HealingMode.FAST:
                 self.reset()
             else:
                 self.regain(ceil(self.maxnumber / 2))
         if length == RestLengths.SHORT:
-            if Settings.healing == HealingMode.FAST:
+            if self.owner.settings.healing == HealingMode.FAST:
                 self.regain(ceil(self.maxnumber / 4))

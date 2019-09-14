@@ -290,7 +290,7 @@ class Character:
         self.resources = self.get_resources()
         self.death_save_fails = 0
         self.conditions = set(self.record.get('/conditions') or [])
-        Settings.initialize(self.record.get('/SETTINGS'))
+        self.settings = Settings(self.record.get('/SETTINGS'))
 
     def __str__(self):
         return self.name
