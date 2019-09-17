@@ -60,6 +60,15 @@ class JsonInterface(DataInterface):
             super().__init__(data, readonly)
         self.EXTANT[self.filename] = self
 
+    def __add__(self, other):
+        if isinstance(other, JsonInterface):
+            return MultiInterface(self, other)
+        elif isinstance(other, MultiInterface):
+            return other.__add__(self)
+        else:
+            raise TypeError("You can only add a JsonInterface or a "
+                            "MultiInterface to a JsonInterface")
+
     def __repr__(self):
         return "<JSONInterface to {}>".format(self.filename)
 
