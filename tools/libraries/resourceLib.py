@@ -2,14 +2,14 @@ import re
 
 from dndice import basic
 
-from classes import Character
+from characterLib import Character
 from exceptionsLib import LowOnResource
 from interface import JSONInterface
 from settingsLib import RestLengths
 
 
 class Resource:
-    def __init__(self, jf: JSONInterface, path: str, defjf=None, defpath=None, character=None):
+    def __init__(self, jf: JSONInterface, path: str, defjf=None, defpath=None):
         self.record = jf
         self.path = path
         self.value = self._get('value')
@@ -17,7 +17,6 @@ class Resource:
         self.definition = defjf if defjf is not None else jf
         self.defpath = defpath if defpath is not None else path
         self.name = self._def_get('name')
-        self._set_owner(character)
 
     def _get(self, path):
         return self.record.get(self.path + '/' + path)
@@ -27,18 +26,6 @@ class Resource:
 
     def _def_get(self, path):
         return self.definition.get(self.defpath + '/' + path)
-
-    def _set_owner(self, character: Character):
-        self.owner = character
-        if character is not None:
-            val = character.parse_vars(self.value, mathIt=False)
-            if isinstance(val, str):
-                pattern = r'\(.*\)'
-                rep = lambda m: str(basic(m.group(0)))
-                new = re.sub(pattern, rep, val)
-                self.value = new
-            else:
-                self.value = val
 
     @property
     def number(self):
@@ -89,3 +76,17 @@ class Resource:
             self.reset()
             return self.number
         return -1
+
+
+class OwnedResource(Resource):
+    def __init__(self, jf: JSONInterface, path: str, character: Character, defjf=None, defpath=None):
+        super().__init__(jf, path, defjf, defpath)
+        self.owner = character
+        val = character.parse_vars(self.value, mathIt=False)
+        if isinstance(val, str):
+            pattern = r'\(.*\)'
+            rep = lambda m: str(basic(m.group(0)))
+            new = re.sub(pattern, rep, val)
+            self.value = new
+        else:
+            self.value = val

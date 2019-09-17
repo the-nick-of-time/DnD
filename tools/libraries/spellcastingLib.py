@@ -1,12 +1,14 @@
-import classes as c
+from characterLib import Character
 from exceptionsLib import OverflowSpells, OutOfSpells
+from helpers import clean
 from interface import JSONInterface
 from settingsLib import RestLengths
 
 
 class SpellResource:
-    def __init__(self, character: c.Character):
+    def __init__(self, character: Character):
         self.character = character
+        self.record = character.record.cd('/spellcasting')
 
     def cast(self, level: int):
         raise NotImplementedError
@@ -31,15 +33,15 @@ class SpellSlots(SpellResource):
             t = cl.get('/spellcasting/slots')
             if t is None:
                 self.max_spell_slots = []
-            lv = self.character.level
+            lv = self.character.classes.level
         else:
             t = 'full'
-            lv = self.character.caster_level
+            lv = self.character.classes.caster_level
         path = '/max_spell_slots/{}/{}'.format(t, lv)
         self.max_spell_slots = caster.get(path)
 
     def cast(self, level: int):
-        slots = self.character.get("/spellcasting/slots")
+        slots = self.record.get('/slots')
         if slots[level] < 1:
             # TODO: genericize LowOnResource to accommodate spells
             raise OutOfSpells(self.character, level)
@@ -47,13 +49,13 @@ class SpellSlots(SpellResource):
         slots[level] -= 1
 
     def regain(self, level: int):
-        slots = self.character.get("/spellcasting/slots")
+        slots = self.record.get('/slots')
         if slots[level] >= self.max_spell_slots[level]:
             raise OverflowSpells(self.character, level)
         slots[level] += 1
 
     def reset(self):
-        self.character.set("/spellcasting/slots", self.max_spell_slots)
+        self.record.set('/slots', self.max_spell_slots)
 
 
 class SpellPoints(SpellResource):
@@ -65,20 +67,20 @@ class SpellPoints(SpellResource):
 
     def cast(self, level: int):
         cost = self.costs[level]
-        current = self.character.get('/spellcasting/points')
+        current = self.record.get('/points')
         if current < cost:
             raise OutOfSpells(self.character, level)
-        self.character.set('/spellcasting/points', current - cost)
+        self.record.set('/points', current - cost)
 
     def regain(self, level: int):
         points = self.costs[level]
-        current = self.character.get('/spellcasting/points')
+        current = self.record.get('/points')
         if points + current > self.max_points:
             raise OverflowSpells(self.character, level)
-        self.character.set('/spellcasting/points', points + current)
+        self.record.set('/points', points + current)
 
     def reset(self):
-        self.character.set('/spellcasting/points', self.max_points)
+        self.record.set('/points', self.max_points)
 
 
 class WarlockSlots(SpellSlots):
@@ -96,4 +98,17 @@ class WarlockSlots(SpellSlots):
 
 
 class SpellsPrepared:
-    pass
+    def __init__(self, jf: JSONInterface, character: Character):
+        self.record = jf
+        self.owner = character
+        self.preparedToday = []
+        self.preparedPermanently = []
+        for name in jf.get('/prepared_today'):
+            pass
+
+    def prepare(self, name: str):
+        self.preparedToday
+
+    def __open_spell(self, name: str):
+        filename = f"spell/{clean(name)}.spell"
+        return JSONInterface(filename, readonly=True)

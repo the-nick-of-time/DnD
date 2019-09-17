@@ -1,5 +1,5 @@
 import enum
-from typing import Union, Dict
+from typing import Union, Dict, List
 
 from characterLib import Character
 from interface import JSONInterface, LinkedInterface
@@ -51,6 +51,12 @@ class Class:
             return self.level // 3
         if typ == 'warlock':
             return self.level
+
+    @property
+    def spells_available(self) -> Dict[int, List[str]]:
+        # TODO: Update /spellcasting/known for every spellcasting class
+        #  with their spell lists in the format level: ["spells"]
+        return self.interface.get('/spellcasting/known')
 
 
 class Superclass:
@@ -117,4 +123,12 @@ class Classes:
                 rv[hd] += c.level
             else:
                 rv[hd] = c.level
+        return rv
+
+    @property
+    def spells_available(self):
+        rv = {lv: [] for lv in range(10)}
+        for c in self.classes:
+            for lv, spells in c.spells_available.items():
+                rv[lv].extend(spells)
         return rv
