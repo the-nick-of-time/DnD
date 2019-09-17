@@ -2,7 +2,7 @@ import enum
 from typing import Union, Dict, List
 
 from characterLib import Character
-from interface import JSONInterface, LinkedInterface
+from interface import JsonInterface, LinkedInterface
 
 
 class CasterType(enum.Enum):
@@ -18,17 +18,17 @@ class Class:
     def __init__(self, spec):
         self.name = spec['class']
         self.level = spec['level']
-        base = JSONInterface('class/{}.class'.format(self.name), readonly=True)
+        base = JsonInterface('class/{}.class'.format(self.name), readonly=True)
         supers = base.get('/superclass')
         self.superclasses = []
         for name in supers:
             filename = 'class/{}.super.class'.format(name)
-            file = JSONInterface(filename, readonly=True)
+            file = JsonInterface(filename, readonly=True)
             self.superclasses.append(Superclass(file))
         self.interface = LinkedInterface(*map(lambda sc: sc.interface, self.superclasses), base)
         if 'subclass' in spec:
             filename = 'class/{}.{}.sub.class'.format(self.name, spec['subclass'])
-            file = JSONInterface(filename, readonly=True)
+            file = JsonInterface(filename, readonly=True)
             self.subclass = Subclass(spec['subclass'], file)
             self.interface += file
 
@@ -79,7 +79,7 @@ class Subclass:
 
 
 class Classes:
-    def __init__(self, jf: JSONInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: Character):
         self.classes = [Class(spec) for spec in jf.get('/')]
         self.owner = character
 
@@ -101,7 +101,7 @@ class Classes:
 
     @property
     def proficiency(self) -> Union[int, str]:
-        source = JSONInterface('class/ALL.super.class')
+        source = JsonInterface('class/ALL.super.class')
         if self.owner.settings.proficiencyDice:
             return source.get('/proficiency/1/' + str(self.level))
         return source.get('/proficiency/0/' + str(self.level))

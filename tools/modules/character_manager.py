@@ -94,12 +94,12 @@ class Main:
     # noinspection PyAttributeOutsideInit
     def startup_end(self):
         name = self.charactername['Character Name?']
-        path = 'character/' + h.clean(name) + '.character'
-        if os.path.exists(iface.JSONInterface.OBJECTSPATH + path):
-            self.record = iface.JSONInterface(path)
+        path = Path('character/') / h.clean(name) / '.character'
+        if os.path.exists(iface.JsonInterface.OBJECTSPATH / path):
+            self.record = iface.JsonInterface(path)
         else:
             gui.ErrorMessage('A character with that name was not found.')
-            print(iface.JSONInterface.OBJECTSPATH + path)
+            print(iface.JsonInterface.OBJECTSPATH / path)
             raise FileNotFoundError
         self.character = c.Character(self.record)
         self.container.title(str(self.character))
@@ -114,7 +114,7 @@ class Main:
         ######
         # Attacks
         self.attackTop = tk.Frame(self.attackPage)
-        self.attacks = attacks.module(self.attackTop, self.character)
+        self.attacks = attacks.Module(self.attackTop, self.character)
         self.conditions = conditions.Module(self.attackTop, self.character)
         self.equipment = equipment.Module(self.attackPage, self.character)
         ######
@@ -226,7 +226,9 @@ class Settings:
 
 
 if __name__ == '__main__':
+    from pathlib import Path
+
+    iface.JsonInterface.OBJECTSPATH = Path(os.path.dirname(os.path.abspath(__file__)) + '/../objects/')
     win = gui.MainWindow()
-    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = Main(win)
     win.mainloop()

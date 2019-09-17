@@ -1,12 +1,11 @@
 import os
-import re
 import sys
+from pathlib import Path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import interface as iface
-import helpers as h
 
-iface.JSONInterface.OBJECTSPATH = '../objects/'
+iface.JsonInterface.OBJECTSPATH = Path('../objects/')
 
 # roll_pattern = '(\d+d\d+)\s?\+?\s?\d*'
 # # roll_pattern = '(\d+d\d+)'
@@ -23,7 +22,7 @@ component_pattern = '(V)?(S)?(M)?(gp)?'
 
 for f in os.scandir('../objects/spell/'):
     print(f.name)
-    jf = iface.JSONInterface('spell/' + f.name)
+    jf = iface.JsonInterface('spell/' + f.name)
     # eff = jf.get('/effect')
     # attackroll = re.search(attack_flag_pattern, eff) is not None
     # if (attackroll):

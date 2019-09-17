@@ -4,17 +4,17 @@ from dndice import basic, verbose
 
 from classes import Character
 from helpers import d20_roll
-from interface import JSONInterface
+from interface import JsonInterface
 
 
 class Attack:
-    def __init__(self, jf: JSONInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: Character):
         self.record = jf
         self.character = character
 
 
 class OneAttack:
-    def __init__(self, jf: JSONInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: Character):
         self.record = jf
         self.character = character
         self.onHit = Effect(self.record.cd('/on_hit'), character)
@@ -22,7 +22,7 @@ class OneAttack:
 
 
 class ToHit:
-    def __init__(self, jf: JSONInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: Character):
         self.record = jf
         self.character = character
         self.modifiers = Modifiers(jf.get('/modifiers'), character)
@@ -33,7 +33,7 @@ class ToHit:
 
 
 class AttackRoll(ToHit):
-    def __init__(self, jf: JSONInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: Character):
         super().__init__(jf, character)
         self.against = 'AC'
 
@@ -46,7 +46,7 @@ class AttackRoll(ToHit):
 
 
 class SavingThrow(ToHit):
-    def __init__(self, jf: JSONInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: Character):
         super().__init__(jf, character)
         self.against = jf.get('/against')
 
@@ -56,7 +56,7 @@ class SpellSave(SavingThrow):
 
 
 class AutoHit(ToHit):
-    def __init__(self, jf: JSONInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: Character):
         super().__init__(jf, character)
 
     def value(self, advantage=False, disadvantage=False) -> str:
@@ -68,14 +68,14 @@ class CustomToHit(ToHit):
 
 
 class Effect:
-    def __init__(self, jf: JSONInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: Character):
         self.record = jf
         self.character = character
         self.damage = Damage()
 
 
 class Damage:
-    def __init__(self, jf: JSONInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: Character):
         self.record = jf
         self.character = character
         self.baseRoll = jf.get('/base_roll')

@@ -99,7 +99,7 @@ class AbilitySelector(gui.Section):
 class SkillSelector(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
-        sk = iface.JSONInterface('skill/SKILLS.skill')
+        sk = iface.JsonInterface('skill/SKILLS.skill')
         self.skillmap = sk.get('/')
         self.proficiencies = [tk.StringVar() for _ in self.skillmap]
         self.buttons = [tk.Checkbutton(self.f, text=n,
@@ -177,8 +177,8 @@ class Main(gui.Section):
         self.name = self.charactername['Character Name?']
         self.container.title(self.name)
         path = 'character/' + h.clean(self.name) + '.character'
-        self.filename = iface.JSONInterface.OBJECTSPATH + path
-        if os.path.exists(iface.JSONInterface.OBJECTSPATH + path):
+        self.filename = iface.JsonInterface.OBJECTSPATH / path
+        if self.filename.exists():
             ok = messagebox.askokcancel(message='You are overwriting an '
                                                 'existing file. Continue?')
             if not ok:
@@ -198,7 +198,7 @@ class Main(gui.Section):
     def class_features(self, var):
         classname = var.get()
         path = 'class/' + h.clean(classname) + '.class'
-        classjf = iface.JSONInterface(path)
+        classjf = iface.JsonInterface(path)
         self.classfeatures = FeaturesAtLevel(self.featuresframe, classjf, 1)
         self.draw_dynamic()
 
@@ -260,8 +260,10 @@ class Main(gui.Section):
 
 
 if __name__ == '__main__':
+    from pathlib import Path
+
+    iface.JsonInterface.OBJECTSPATH = Path(os.path.dirname(os.path.abspath(__file__)) + '/../objects/')
     win = gui.MainWindow()
-    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = Main(win)
     app.pack()
     win.mainloop()

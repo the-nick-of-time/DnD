@@ -1,7 +1,7 @@
 import enum
 
 import helpers as h
-from interface import JSONInterface
+from interface import JsonInterface
 
 
 class AbilityName(enum.Enum):
@@ -14,7 +14,7 @@ class AbilityName(enum.Enum):
 
 
 class Abilities:
-    def __init__(self, jf: JSONInterface):
+    def __init__(self, jf: JsonInterface):
         self.record = jf
         self.values = {name: Ability(name, jf.get('/' + name)) for name in AbilityName}
 

@@ -122,9 +122,9 @@ class SubclassChooser(Chooser):
             self.classname = clm.group(1)
             name = 'class/{}.{}.sub.class'.format(h.clean(self.classname),
                                                   h.clean(self.subclassname))
-            if os.path.isfile(iface.JSONInterface.OBJECTSPATH + name):
+            if os.path.isfile(iface.JsonInterface.OBJECTSPATH / name):
                 self.clear_subframe()
-                rec = iface.JSONInterface(name)
+                rec = iface.JsonInterface(name)
                 lvm = re.search('/(\d+)/.*$', self.fullpath)
                 lv = int(lvm.group(1))
                 self.subclassfeatures = FeaturesAtLevel(self.subfeatures, rec, lv)
@@ -246,12 +246,12 @@ class Main(gui.Section):
         name = self.levelgain['Character Name?']
         cl = self.levelgain['Class to gain a level in?']
         path = 'character/' + h.clean(name) + '.character'
-        if os.path.exists(iface.JSONInterface.OBJECTSPATH + path):
-            self.record = iface.JSONInterface(path)
+        if os.path.exists(iface.JsonInterface.OBJECTSPATH / path):
+            self.record = iface.JsonInterface(path)
         else:
             gui.ErrorMessage('A character with that name was not found.')
         clpath = 'class/' + h.clean(cl) + '.class'
-        if not os.path.exists(iface.JSONInterface.OBJECTSPATH + path):
+        if not os.path.exists(iface.JsonInterface.OBJECTSPATH / path):
             gui.ErrorMessage('A class with that name was not found.')
         self.character = c.Character(self.record)
         pattern = r'\s*([a-zA-Z\']+)\s*(\(([a-zA-Z\'\s]+)\))?'
@@ -294,8 +294,10 @@ class Main(gui.Section):
 
 
 if __name__ == '__main__':
+    from pathlib import Path
+
+    iface.JsonInterface.OBJECTSPATH = Path(os.path.dirname(os.path.abspath(__file__)) + '/../objects/')
     win = gui.MainWindow()
-    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = Main(win)
     app.pack()
     win.mainloop()

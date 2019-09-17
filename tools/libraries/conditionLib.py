@@ -3,11 +3,11 @@ from typing import List, Union
 import exceptionsLib as ex
 import helpers as h
 from characterLib import Character
-from interface import JSONInterface
+from interface import JsonInterface
 
 
 class Conditions:
-    def __init__(self, jf: JSONInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: Character):
         self.record = jf
         self.owner = character
         defs = h.get_conditions()

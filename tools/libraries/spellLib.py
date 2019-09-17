@@ -2,11 +2,11 @@ from typing import Set
 
 import exceptionsLib as ex
 from characterLib import Character
-from interface import JSONInterface
+from interface import JsonInterface
 
 
 class Spell:
-    def __init__(self, jf: JSONInterface):
+    def __init__(self, jf: JsonInterface):
         self.record = jf
         self.name: str = jf.get('/name')
         self.level: int = jf.get('/level')
@@ -36,7 +36,7 @@ class Spell:
 
 
 class OwnedSpell(Spell):
-    def __init__(self, jf: JSONInterface, owner: Character):
+    def __init__(self, jf: JsonInterface, owner: Character):
         super().__init__(jf)
         self.owner = owner
 

@@ -702,7 +702,7 @@ class Inventory:
         """
         Parameters
         ----------
-        jf: a JSONInterface to the character file
+        jf: a JsonInterface to the character file
         """
         self.record = jf
         self.items = {}
@@ -757,7 +757,7 @@ class ItemEntry:
     consumes: If this item consumes some item when used, it returns that.
 
     Methods:
-    get: Get directly from the object's JSONInterface.
+    get: Get directly from the object's JsonInterface.
     use: Use the item. Returns a string with the effects of the item.
     describe: Returns the item's description.
     """
@@ -788,9 +788,9 @@ class ItemEntry:
         itemclass = h.type_select('.' + itemtype)
         name = h.clean(self.path.split(sep='/')[-1])
         filename = '{b}/{n}.{t}'.format(b=basetype, t=itemtype, n=name)
-        if (os.path.exists(iface.JSONInterface.OBJECTSPATH
+        if (os.path.exists(iface.JsonInterface.OBJECTSPATH
                            + filename)):
-            jf = iface.JSONInterface(filename)
+            jf = iface.JsonInterface(filename)
             self.obj = itemclass(jf)
         else:
             self.obj = None
@@ -1203,7 +1203,7 @@ class SpellsPrepared:
     def load_from_file(self, name):
         d = 'spell/'
         n = h.clean(name) + '.spell'
-        jf = iface.JSONInterface(d + n)
+        jf = iface.JsonInterface(d + n)
         if jf.get('/damage'):
             tp = SpellAttack
         else:
@@ -1339,7 +1339,7 @@ class Item:
     """
 
     def __init__(self, jf):
-        """jf is a JSONInterface to the item's file, owner is a Character"""
+        """jf is a JsonInterface to the item's file, owner is a Character"""
         self.record = jf
         self.name = jf.get('/name')
         self.value = jf.get('/value')

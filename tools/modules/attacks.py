@@ -1,8 +1,9 @@
 #! /usr/bin/env python3
 
-import tkinter as tk
 import os
 import sys
+import tkinter as tk
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import dndice as d
@@ -100,12 +101,12 @@ class Attacks(gui.Section):
         self.output.update(*result)
 
 
-class module(Attacks):
+class Module(Attacks):
     def __init__(self, container, character):
         Attacks.__init__(self, container, character, bd=2, relief='groove')
 
 
-class main(gui.Section):
+class Main(gui.Section):
     def __init__(self, window):
         gui.Section.__init__(self, window)
         self.charactername = {}
@@ -122,9 +123,9 @@ class main(gui.Section):
 
     def startup_end(self):
         name = self.charactername['Character Name?']
-        path = iface.JSONInterface.OBJECTSPATH + 'character/' + name + '.character'
-        if (os.path.exists(path)):
-            jf = iface.JSONInterface('character/' + name + '.character')
+        path = iface.JsonInterface.OBJECTSPATH / 'character' / (name + '.character')
+        if path.exists():
+            jf = iface.JsonInterface('character/' + name + '.character')
         else:
             raise FileNotFoundError
         character = c.Character(jf)
@@ -137,9 +138,11 @@ class main(gui.Section):
         self.container.destroy()
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
+    from pathlib import Path
+
+    iface.JsonInterface.OBJECTSPATH = Path(os.path.dirname(os.path.abspath(__file__)) + '/../objects/')
     win = tk.Tk(screenName='Attacks')
-    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
-    app = main(win)
+    app = Main(win)
     app.pack()
     win.mainloop()

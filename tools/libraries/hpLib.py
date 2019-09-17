@@ -5,7 +5,7 @@ from dndice import basic
 from classes import Character
 from exceptionsLib import LowOnResource
 from helpers import modifier
-from interface import JSONInterface
+from interface import JsonInterface
 from resourceLib import Resource
 from settingsLib import RestLengths, HealingMode
 
@@ -92,7 +92,7 @@ class HP:
 
 
 class HD(Resource):
-    def __init__(self, jf: JSONInterface, size: str, character: Character):
+    def __init__(self, jf: JsonInterface, size: str, character: Character):
         super().__init__(jf, '/HP/HD/' + size, character=character)
         self.name = 'Hit Die'
         self.value = size

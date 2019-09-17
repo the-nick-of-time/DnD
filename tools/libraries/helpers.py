@@ -97,7 +97,7 @@ def type_select(extension):
 
 
 def find_file(name, type_):
-    from interface import JSONInterface
+    from interface import JsonInterface
     directory = '{direc}/{name}'
     location = type_.split(sep='.')
     if location[0] == '':
@@ -106,14 +106,14 @@ def find_file(name, type_):
     filename = directory.format(
         direc=location[-1], name='.'.join(location))
     try:
-        iface = JSONInterface(filename)
+        iface = JsonInterface(filename)
         return iface
     except FileNotFoundError:
         raise
 
 
 def path_follower(path, alltheway=False):
-    from interface import JSONInterface
+    from interface import JsonInterface
     match = re.match(r'/*(\w*.*\.[a-z]*)(/.*)', path)
     try:
         tofile = match.group(1)
@@ -121,8 +121,8 @@ def path_follower(path, alltheway=False):
     except IndexError:
         raise ValueError('Needs to be given as a path to a file then within'
                          'the file to the desired data')
-    if os.path.isfile(JSONInterface.OBJECTSPATH + tofile):
-        jf = JSONInterface(tofile)
+    if (JsonInterface.OBJECTSPATH / tofile).is_file():
+        jf = JsonInterface(tofile)
         if alltheway:
             # The data within the sought file
             return jf.get(infile)

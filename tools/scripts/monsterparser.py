@@ -1,16 +1,17 @@
-import json
 import re
 import os
 import sys
+from pathlib import Path
+import os
+import re
+import sys
+from pathlib import Path
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
-from interface import JSONInterface
-import helpers as h
+from interface import JsonInterface
 
-JSONInterface.OBJECTSPATH = '../objects/'
-
-from xml.etree import cElementTree as ElementTree
-
+JsonInterface.OBJECTSPATH = Path('../objects/')
 
 monster = {}
 dry = False
@@ -68,15 +69,15 @@ dry = False
 #         print(s)
 #     else:
 #         formatstr = '{}monster/{}.monster'
-#         filename = formatstr.format(JSONInterface.OBJECTSPATH,
+#         filename = formatstr.format(JsonInterface.OBJECTSPATH,
 #                                     h.clean(monster['name']))
 #         with open(filename, 'w') as outfile:
 #             json.dump(data, outfile, indent=2)
 
 
-for f in os.scandir(JSONInterface.OBJECTSPATH + 'monster/'):
+for f in os.scandir(JsonInterface.OBJECTSPATH / 'monster/'):
     print(f.name)
-    jf = JSONInterface('monster/' + f.name)
+    jf = JsonInterface('monster/' + f.name)
     ac = jf.get('/AC')
     if isinstance(ac, str):
         new = re.match('\d+', ac)

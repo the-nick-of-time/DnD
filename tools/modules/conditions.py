@@ -142,8 +142,8 @@ class Main(gui.Section):
     def startup_end(self):
         name = self.charactername['Character Name?']
         path = 'character/' + h.clean(name) + '.character'
-        if os.path.exists(iface.JSONInterface.OBJECTSPATH + path):
-            self.record = iface.JSONInterface(path)
+        if os.path.exists(iface.JsonInterface.OBJECTSPATH / path):
+            self.record = iface.JsonInterface(path)
         else:
             gui.ErrorMessage('A character with that name was not found.')
         self.character = c.Character(self.record)
@@ -153,8 +153,10 @@ class Main(gui.Section):
 
 
 if __name__ == '__main__':
+    from pathlib import Path
+
+    iface.JsonInterface.OBJECTSPATH = Path(os.path.dirname(os.path.abspath(__file__)) + '/../objects/')
     win = gui.MainWindow()
-    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = Main(win)
     app.pack()
     win.mainloop()

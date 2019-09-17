@@ -1,10 +1,10 @@
 import enum
 
-from interface import JSONInterface
+from interface import JsonInterface
 
 
 class Settings:
-    def __init__(self, jf: JSONInterface):
+    def __init__(self, jf: JsonInterface):
         self.record = jf
         self.healing = property(
             lambda: self.record.get('/HEALING') or HealingMode.VANILLA,

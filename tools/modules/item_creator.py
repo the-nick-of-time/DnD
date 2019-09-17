@@ -38,7 +38,7 @@ class Creator(gui.Section):
         name = h.clean(data['name'])
         if not name:
             raise FileNotFoundError
-        path = iface.JSONInterface.OBJECTSPATH + self.basePath.format(name)
+        path = iface.JsonInterface.OBJECTSPATH / self.basePath.format(name)
         if isfile(path):
             proceed = tk.messagebox.askyesno(message='You are overwriting an'
                                                      ' existing file.\nContinue'
@@ -275,8 +275,10 @@ class Main(gui.Section):
 
 
 if __name__ == '__main__':
+    from pathlib import Path
+
+    iface.JsonInterface.OBJECTSPATH = Path(os.path.dirname(os.path.abspath(__file__)) + '/../objects/')
     win = gui.MainWindow()
-    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = Main(win)
     app.pack()
     win.mainloop()

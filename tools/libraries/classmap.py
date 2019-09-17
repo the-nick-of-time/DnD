@@ -83,17 +83,17 @@ class ClassMap:
             subclass = h.clean(subclass)
             file_ = main.format(class_)
             subfile_ = sub.format(class_, subclass)
-            mainclass = iface.JSONInterface(file_)
+            mainclass = iface.JsonInterface(file_)
             try:
-                subclass = iface.JSONInterface(subfile_)
+                subclass = iface.JsonInterface(subfile_)
                 subclassfound = True
             except FileNotFoundError:
                 subclassfound = False
-            superclasses = [iface.JSONInterface(super_.format(name))
+            superclasses = [iface.JsonInterface(super_.format(name))
                             for name in mainclass.get('/superclass')]
             # noinspection PyUnboundLocalVariable
             if subclassfound and subclass.get('/superclass'):
-                superclasses.extend([iface.JSONInterface(super_.format(name))
+                superclasses.extend([iface.JsonInterface(super_.format(name))
                                      for name in subclass.get('/superclass')])
             if subclassfound:
                 jf = iface.LinkedInterface(*superclasses, mainclass,
@@ -156,9 +156,9 @@ class RaceMap:
     def hook(self):
         main = 'race/{}.race'.format(self.race)
         sub = 'race/{}.{}.sub.race'.format(self.race, self.subrace)
-        mainjf = iface.JSONInterface(main)
+        mainjf = iface.JsonInterface(main)
         if self.subrace:
-            subjf = iface.JSONInterface(sub)
+            subjf = iface.JsonInterface(sub)
             self.core = c.Race(iface.LinkedInterface(mainjf, subjf), str(self))
         else:
             # For the sake of having a consistent API it needs to be a LinkedInterface
@@ -169,11 +169,11 @@ class RaceMap:
         rv = collections.OrderedDict()
         main = 'race/{}.race'.format(self.race)
         sub = 'race/{}.{}.sub.race'.format(self.race, self.subrace)
-        mainjf = iface.JSONInterface(main)
+        mainjf = iface.JsonInterface(main)
         for name in (mainjf.get('/features') or []):
             rv[name] = main + '/features/' + name
         if self.subrace:
-            subjf = iface.JSONInterface(sub)
+            subjf = iface.JsonInterface(sub)
             for name in (subjf.get('/features') or []):
                 rv[name] = sub + '/features/' + name
         return rv

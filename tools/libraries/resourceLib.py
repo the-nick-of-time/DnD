@@ -4,12 +4,12 @@ from dndice import basic
 
 from characterLib import Character
 from exceptionsLib import LowOnResource
-from interface import JSONInterface
+from interface import JsonInterface
 from settingsLib import RestLengths
 
 
 class Resource:
-    def __init__(self, jf: JSONInterface, path: str, defjf=None, defpath=None):
+    def __init__(self, jf: JsonInterface, path: str, defjf=None, defpath=None):
         self.record = jf
         self.path = path
         self.value = self._get('value')
@@ -79,7 +79,7 @@ class Resource:
 
 
 class OwnedResource(Resource):
-    def __init__(self, jf: JSONInterface, path: str, character: Character, defjf=None, defpath=None):
+    def __init__(self, jf: JsonInterface, path: str, character: Character, defjf=None, defpath=None):
         super().__init__(jf, path, defjf, defpath)
         self.owner = character
         val = character.parse_vars(self.value, mathIt=False)

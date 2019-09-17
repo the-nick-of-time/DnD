@@ -9,11 +9,11 @@ import hpLib as hp
 import raceLib as race
 import settingsLib as settings
 import spellcastingLib as casting
-from interface import JSONInterface
+from interface import JsonInterface
 
 
 class Character:
-    def __init__(self, jf: JSONInterface):
+    def __init__(self, jf: JsonInterface):
         self.record = jf
         # settings initialization has to happen first, as several things
         # depend on it

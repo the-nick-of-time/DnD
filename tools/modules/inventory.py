@@ -9,7 +9,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + '/../libraries')
 
 import helpers as h
 import components as gui
-from interface import JSONInterface
+from interface import JsonInterface
 import classes as c
 
 
@@ -223,9 +223,9 @@ class Main(gui.Section):
 
     def load_character_end(self):
         name = self.characterdata['Character name?']
-        path = JSONInterface.OBJECTSPATH + 'character/' + name + '.character'
-        if os.path.exists(path):
-            character = JSONInterface('character/' + name + '.character')
+        path = JsonInterface.OBJECTSPATH / 'character' / (name + '.character')
+        if path.exists():
+            character = JsonInterface(path, isabsolute=True)
         else:
             raise FileNotFoundError
         handler = c.Inventory(character)
@@ -246,8 +246,10 @@ def pluralize(name):
 
 
 if __name__ == '__main__':
+    from pathlib import Path
+
+    JsonInterface.OBJECTSPATH = Path(os.path.dirname(os.path.abspath(__file__)) + '/../objects/')
     win = gui.MainWindow()
-    JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = Main(win)
     app.pack()
     win.mainloop()

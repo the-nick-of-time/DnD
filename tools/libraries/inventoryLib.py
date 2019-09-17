@@ -1,10 +1,10 @@
 from exceptionsLib import OutOfItems
-from interface import JSONInterface
+from interface import JsonInterface
 from itemLib import Item
 
 
 class Inventory:
-    def __init__(self, jf: JSONInterface):
+    def __init__(self, jf: JsonInterface):
         self.record = jf
         self.entries = {name: ItemEntry(name, jf.cd('/' + name)) for name in jf.get('/')}
 
@@ -21,7 +21,7 @@ class Inventory:
 
 
 class ItemEntry:
-    def __init__(self, name: str, jf: JSONInterface):
+    def __init__(self, name: str, jf: JsonInterface):
         self.record = jf
         self.item = Item(name, jf.get('/'))
 

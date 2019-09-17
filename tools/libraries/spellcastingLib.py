@@ -1,7 +1,7 @@
 from characterLib import Character
 from exceptionsLib import OverflowSpells, OutOfSpells
 from helpers import clean
-from interface import JSONInterface
+from interface import JsonInterface
 from settingsLib import RestLengths
 
 
@@ -27,7 +27,7 @@ class SpellResource:
 class SpellSlots(SpellResource):
     def __init__(self, character):
         super().__init__(character)
-        caster = JSONInterface('class/CASTER.super.class')
+        caster = JsonInterface('class/CASTER.super.class')
         cl = self.character.classes[0]
         if len(self.character.classes) == 1:
             t = cl.get('/spellcasting/slots')
@@ -61,7 +61,7 @@ class SpellSlots(SpellResource):
 class SpellPoints(SpellResource):
     def __init__(self, character):
         super().__init__(character)
-        caster = JSONInterface('class/CASTER.super.class')
+        caster = JsonInterface('class/CASTER.super.class')
         self.max_points = caster.get('/max_spell_points')
         self.costs = caster.get('/spell_point_cost')
 
@@ -89,7 +89,7 @@ class WarlockSlots(SpellSlots):
         # Intentionally avoid SpellSlots initialization because that
         # determines caster type by the character's classes which would
         # conflict with the warlock's spell slots
-        caster = JSONInterface('class/CASTER.super.class')
+        caster = JsonInterface('class/CASTER.super.class')
         self.max_slots = caster.get('/max_spell_slots/warlock')
 
     def rest(self, length: RestLengths):
@@ -98,7 +98,7 @@ class WarlockSlots(SpellSlots):
 
 
 class SpellsPrepared:
-    def __init__(self, jf: JSONInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: Character):
         self.record = jf
         self.owner = character
         self.preparedToday = []
@@ -111,4 +111,4 @@ class SpellsPrepared:
 
     def __open_spell(self, name: str):
         filename = f"spell/{clean(name)}.spell"
-        return JSONInterface(filename, readonly=True)
+        return JsonInterface(filename, readonly=True)

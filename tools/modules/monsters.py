@@ -251,14 +251,14 @@ class Builder:
 
     def pick_file(self):
         self.mainframe.destroy()
-        d = os.path.abspath(iface.JSONInterface.OBJECTSPATH) + '/monster/'
+        d = os.path.abspath(iface.JsonInterface.OBJECTSPATH) / 'monster/'
         self.filename = filedialog.askopenfilename(initialdir=d, filetypes=[('monster file', '*.monster')])
         self.load_file()
 
     def load_file(self):
         filename = self.filename
         if os.path.isfile(filename):
-            interface = iface.JSONInterface(filename, isabsolute=True)
+            interface = iface.JsonInterface(filename, isabsolute=True)
             self.data.update(interface.get('/'))
             av = messagebox.askyesno(message='Take average HP?')
             self.data.update({'average': av})
@@ -358,7 +358,9 @@ class Main(gui.Section):
 
 
 if __name__ == '__main__':
-    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
+    from pathlib import Path
+
+    iface.JsonInterface.OBJECTSPATH = Path(os.path.dirname(os.path.abspath(__file__)) + '/../objects/')
     win = gui.MainWindow()
     app = Main(win)
     app.pack()

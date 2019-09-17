@@ -99,7 +99,7 @@ class SkillDisplay(gui.Section):
         self.display = output
         self.adv = adv
         self.dis = dis
-        sk = iface.JSONInterface('skill/SKILLS.skill')
+        sk = iface.JsonInterface('skill/SKILLS.skill')
         self.skillmap = sk.get('/')
         self.buttons = [tk.Button(self.f, text=n,
                                   command=lambda x=n: self.roll_check(x))
@@ -141,10 +141,10 @@ class Main(gui.Section):
 
     def startup_end(self):
         name = self.charactername['Character Name?']
-        path = (iface.JSONInterface.OBJECTSPATH
-                + 'character/' + name + '.character')
+        path = (iface.JsonInterface.OBJECTSPATH
+                / 'character' / (name + '.character'))
         if os.path.exists(path):
-            jf = iface.JSONInterface('character/' + name + '.character')
+            jf = iface.JsonInterface('character/' + name + '.character')
         else:
             raise FileNotFoundError
         character = Character(jf)
@@ -162,8 +162,10 @@ class Main(gui.Section):
 
 
 if __name__ == '__main__':
+    from pathlib import Path
+
+    iface.JsonInterface.OBJECTSPATH = Path(os.path.dirname(os.path.abspath(__file__)) + '/../objects/')
     win = gui.MainWindow()
-    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = Main(win)
     app.pack()
     win.mainloop()

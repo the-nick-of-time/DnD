@@ -8,7 +8,7 @@ import interface
 
 
 # class SingleAttack:
-#     def __init__(self, jf: interface.JSONInterface, index: int):
+#     def __init__(self, jf: interface.JsonInterface, index: int):
 #         self.jf = jf
 #         self.path = '/attacks/' + str(index)
 #         self.character = None
@@ -41,7 +41,7 @@ import interface
 
 
 class ToHit:
-    def __init__(self, jf: interface.JSONInterface, path: str, character: c.Character):
+    def __init__(self, jf: interface.JsonInterface, path: str, character: c.Character):
         self.jf = jf
         self.path = path
         self.character = character
@@ -49,7 +49,7 @@ class ToHit:
 
 
 class AttackRoll(ToHit):
-    def __init__(self, jf: interface.JSONInterface, path: str, character: c.Character):
+    def __init__(self, jf: interface.JsonInterface, path: str, character: c.Character):
         super().__init__(jf, path, character)
 
     def rollToHit(self, adv=False, dis=False, luck=False):
@@ -59,7 +59,7 @@ class AttackRoll(ToHit):
 
 
 class SpellSave(ToHit):
-    def __init__(self, jf: interface.JSONInterface, path: str, character: c.Character):
+    def __init__(self, jf: interface.JsonInterface, path: str, character: c.Character):
         super().__init__(jf, path, character)
         self.target = jf.get(self.path + '/against')
 

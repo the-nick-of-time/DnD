@@ -315,7 +315,7 @@ class CharacterQuery(Query):
         import re
         import helpers as h
         possibilities = []
-        for f in os.scandir(iface.JSONInterface.OBJECTSPATH + 'character'):
+        for f in os.scandir(iface.JsonInterface.OBJECTSPATH / 'character'):
             m = re.match(r'(.*)\.character', f.name)
             name = m.group(1)
             possibilities.append(h.unclean(name))

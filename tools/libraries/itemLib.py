@@ -1,4 +1,4 @@
-from interface import JSONInterface
+from interface import JsonInterface
 
 
 class Item:
@@ -6,7 +6,7 @@ class Item:
         types = spec['type'].split()
         fmt = '{}/{}.{}'
         filename = fmt.format(types[-1], name, '.'.join(types))
-        self.record = JSONInterface(filename, readonly=True)
+        self.record = JsonInterface(filename, readonly=True)
         self.name = self.record.get('/name')
         self.value = self.record.get('/value')
         self.weight = self.record.get('/weight')

@@ -151,9 +151,9 @@ class Main(gui.Section):
 
     def startup_finish(self):
         name = self.charactername['Character Name?']
-        path = iface.JSONInterface.OBJECTSPATH + 'character/' + name + '.character'
-        if os.path.exists(path):
-            self.record = iface.JSONInterface(path)
+        path = iface.JsonInterface.OBJECTSPATH / 'character' / (name + '.character')
+        if path.exists():
+            self.record = iface.JsonInterface(path, isabsolute=True)
         else:
             raise FileNotFoundError
         self.corehandler = c.HPHandler(self.record)
@@ -177,8 +177,10 @@ class Main(gui.Section):
 
 
 if __name__ == '__main__':
+    from pathlib import Path
+
+    iface.JsonInterface.OBJECTSPATH = Path(os.path.dirname(os.path.abspath(__file__)) + '/../objects/')
     win = gui.MainWindow()
-    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = Main(win)
     app.pack()
     win.mainloop()

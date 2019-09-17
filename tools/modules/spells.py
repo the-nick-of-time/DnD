@@ -328,7 +328,7 @@ class Main(gui.Section):
     def begin_end(self):
         name = self.charactername['Character name?']
         filename = 'character/{}.character'.format(h.clean(name))
-        self.record = iface.JSONInterface(filename)
+        self.record = iface.JsonInterface(filename)
         self.character = c.Character(self.record)
         self.numbers = NumberDisplay(self.f, self.character)
         self.handler = SpellSection(self.f, self.record, self.character,
@@ -370,8 +370,10 @@ class Main(gui.Section):
 
 
 if __name__ == '__main__':
+    from pathlib import Path
+
+    iface.JsonInterface.OBJECTSPATH = Path(os.path.dirname(os.path.abspath(__file__)) + '/../objects/')
     win = gui.MainWindow()
-    iface.JSONInterface.OBJECTSPATH = os.path.dirname(os.path.abspath(__file__)) + '/../objects/'
     app = Main(win)
     app.pack()
     win.mainloop()
