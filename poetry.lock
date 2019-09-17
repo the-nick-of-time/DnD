@@ -8,16 +8,16 @@ version = "2.1.2"
 
 [[package]]
 category = "main"
-description = "Identify specific nodes in a JSON document (RFC 6901)"
-name = "jsonpointer"
+description = "Filesystem-like pathing and searching for dictionaries"
+name = "dpath"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "2.0"
+python-versions = "*"
+version = "1.4.2"
 
 [metadata]
-content-hash = "e92a7dc0da83e5392d91c7c6debf35df1a7eb294ff74439378cf04c0666598a6"
+content-hash = "e271c40e049e77a68145b673fbf3b077950871be0e661fb0ce764038c168cef3"
 python-versions = "^3.6"
 
 [metadata.hashes]
 dndice = ["c9e58f38ec1e0b225ae1494edaa9c50c8db110b7ca72b0a1046f35551fb97de1", "dd5139c5b9958118827254edce65c19f241e8f21818d4652e43a948318d17f5c"]
-jsonpointer = ["c192ba86648e05fdae4f08a17ec25180a9aef5008d973407b581798a83975362", "ff379fa021d1b81ab539f5ec467c7745beb1a5671463f9dcc2b2d458bd361c1e"]
+dpath = ["0f635f49e88843a4a519aca1c599faee271730f818a81860827e7d7b4d40273f"]
