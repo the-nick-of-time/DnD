@@ -1,7 +1,8 @@
-from dndice import basic
+from dndice import basic, Mode
 
 from abilitiesLib import Abilities, AbilityName
 from helpers import d20_roll
+from interface import DataInterface
 
 
 class Actor:
@@ -20,10 +21,22 @@ class Actor:
 
 
 class Monster(Actor):
-    def __init__(self, name: str, abilities: Abilities, AC: int, ):
+    def __init__(self, data: dict):
         super().__init__()
-        self.abilities = abilities
+        self.record = DataInterface(data)
+        self.abilities = Abilities(self.record.cd('/abilities'))
         self.initiative += self.abilities.modifier(AbilityName.DEX)
+        mode = Mode.from_string('average' if data.get('average') else 'normal')
+        self.HP = basic(data['HP'], mode=mode)
+        self.maxHP = self.HP
+        self.AC = data['AC']
+
+    def alter_HP(self, amount):
+        self.HP += basic(amount)
+        if self.HP < 0:
+            self.HP = 0
+        elif self.HP > self.maxHP:
+            self.HP = self.maxHP
 
 
 class CharacterStub(Actor):
