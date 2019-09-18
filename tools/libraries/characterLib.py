@@ -21,7 +21,7 @@ class Character:
         self.abilities = abil.Abilities(jf.cd("/abilities"))
         self.race = race.Race(jf.cd("/race"))
         self.classes = classes.Classes(jf.cd("/classes"), self)
-        self.hp = hp.HP(self)
+        self.hp = hp.HP(jf.cd('/HP'), self)
         if self.settings.spellPoints:
             self.spellPower = casting.SpellPoints(self)
         else:
@@ -43,6 +43,9 @@ class Character:
             self.deathSaveFailures += 1
         if self.deathSaveFailures >= 3:
             raise ex.CharacterDead()
+
+    def parse_vars(self, string) -> str:
+        pass
 
     def write(self):
         self.record.write()

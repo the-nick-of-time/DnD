@@ -1,55 +1,37 @@
 import re
+from typing import Optional
 
 from dndice import basic
 
-from characterLib import Character
+import characterLib as char
 from exceptionsLib import LowOnResource
-from interface import JsonInterface
+from interface import DataInterface
 from settingsLib import RestLengths
 
 
 class Resource:
-    def __init__(self, jf: JsonInterface, path: str, defjf=None, defpath=None):
+    def __init__(self, jf: Optional[DataInterface], definition: DataInterface = None):
         self.record = jf
-        self.path = path
-        self.value = self._get('value')
-        self.recharge = RestLengths.from_string(self._get('recharge'))
-        self.definition = defjf if defjf is not None else jf
-        self.defpath = defpath if defpath is not None else path
-        self.name = self._def_get('name')
-
-    def _get(self, path):
-        return self.record.get(self.path + '/' + path)
-
-    def _set(self, path, value):
-        self.record.set(self.path + '/' + path, value)
-
-    def _def_get(self, path):
-        return self.definition.get(self.defpath + '/' + path)
+        self.definition = definition or jf
+        self.recharge = RestLengths.from_string(self.definition.get('/recharge'))
+        self.value = self.definition.get('/value')
+        self.name = self.definition.get('/name')
 
     @property
     def number(self):
-        return self._get('number')
+        return self.record.get('/number')
 
     @number.setter
     def number(self, value):
-        self._set('number', value)
+        self.record.set('/number', value)
 
     @property
     def maxnumber(self):
-        val = self._get('maxnumber')
-        if val is not None:
-            if self.owner is not None:
-                return self.owner.parse_vars(val)
-            return val
-        if self.owner is not None:
-            mx = self._def_get('maxnumber')
-            return self.owner.parse_vars(mx)
-        return self._def_get('maxnumber')
+        return self.record.get('/maxnumber') or self.definition.get('/maxnumber')
 
     @maxnumber.setter
     def maxnumber(self, value):
-        self.record.set(self.path + '/maxnumber', value)
+        self.record.set('/maxnumber', value)
 
     def use(self, number):
         if self.number < number:
@@ -79,14 +61,20 @@ class Resource:
 
 
 class OwnedResource(Resource):
-    def __init__(self, jf: JsonInterface, path: str, character: Character, defjf=None, defpath=None):
-        super().__init__(jf, path, defjf, defpath)
+    def __init__(self, jf: DataInterface, character: 'char.Character', definition: DataInterface = None):
+        super().__init__(jf, definition)
         self.owner = character
-        val = character.parse_vars(self.value, mathIt=False)
+        val = character.parse_vars(self.value)
         if isinstance(val, str):
+            # Evaluate parenthetical expressions for ease & clean expression later
             pattern = r'\(.*\)'
             rep = lambda m: str(basic(m.group(0)))
             new = re.sub(pattern, rep, val)
             self.value = new
         else:
             self.value = val
+
+    @property
+    def maxnumber(self):
+        base = super().maxnumber
+        return self.owner.parse_vars(base)
