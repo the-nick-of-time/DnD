@@ -1,7 +1,10 @@
 import enum
 
+from dndice import verbose, compile
+
+import characterLib as char
 import helpers as h
-from interface import JsonInterface
+from interface import DataInterface
 
 
 class AbilityName(enum.Enum):
@@ -14,17 +17,17 @@ class AbilityName(enum.Enum):
 
 
 class Abilities:
-    def __init__(self, jf: JsonInterface):
-        self.record = jf
-        self.values = {name: Ability(name, jf.get('/' + name)) for name in AbilityName}
+    def __init__(self, inter: DataInterface):
+        self.record = inter
+        self.values = {name: Ability(name, inter.get('/' + name)) for name in AbilityName}
 
-    def __getitem__(self, ability: AbilityName):
+    def __getitem__(self, ability: AbilityName) -> 'Ability':
         return self.values[ability].score
 
     def __setitem__(self, key: AbilityName, value: int):
         if not isinstance(value, int):
             raise TypeError('Ability scores are integers')
-        self.values[key] = value
+        self.values[key].score = value
 
     def modifier(self, ability: AbilityName):
         return self.values[ability].modifier
@@ -39,3 +42,19 @@ class Ability:
     @property
     def modifier(self):
         return h.modifier(self.score)
+
+    def save(self, advantage=False, disadvantage=False, luck=False):
+        roll = h.d20_roll(advantage, disadvantage, luck)
+        return verbose(roll, modifiers=self.modifier)
+
+
+class OwnedAbility(Ability):
+    def __init__(self, name: AbilityName, score: int, character: 'char.Character'):
+        super().__init__(name, score)
+        self.owner = character
+
+    def save(self, advantage=False, disadvantage=False, luck=False):
+        roll = h.d20_roll(advantage, disadvantage, self.owner.bonuses.get('luck'))
+        roll += compile(self.owner.bonuses.get(self.name + '_save', 0))
+        roll += compile(self.modifier)
+        return verbose(roll)

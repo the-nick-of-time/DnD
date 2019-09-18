@@ -1,7 +1,7 @@
 import enum
 from typing import Union, Dict, List
 
-from characterLib import Character
+import characterLib as char
 from interface import JsonInterface, LinkedInterface
 
 
@@ -79,7 +79,7 @@ class Subclass:
 
 
 class Classes:
-    def __init__(self, jf: JsonInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: 'char.Character'):
         self.classes = [Class(spec) for spec in jf.get('/')]
         self.owner = character
 

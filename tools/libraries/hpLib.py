@@ -2,47 +2,47 @@ from math import ceil
 
 from dndice import basic
 
-from classes import Character
+import abilitiesLib as abil
+import characterLib as char
+import resourceLib as res
 from exceptionsLib import LowOnResource
-from helpers import modifier
-from interface import JsonInterface
-from resourceLib import Resource
+from interface import DataInterface
 from settingsLib import RestLengths, HealingMode
 
 
 class HP:
-    def __init__(self, character: Character):
-        # TODO: take SubInterface for consistency and division of responsibility
+    def __init__(self, jf: DataInterface, character: 'char.Character'):
         self.owner = character
-        self.record = character.record
-        self.hd = {size: HD(self.record, size, character) for size in self.record.get('/HP/HD')}
+        self.record = jf
+        self.hd = {size: HD(self.record.cd('/' + size), size, character)
+                   for size in self.record.get('/HD')}
 
     @property
     def current(self):
-        return self.record.get('/HP/current')
+        return self.record.get('/current')
 
     @current.setter
     def current(self, value):
         if isinstance(value, int):
-            self.record.set('/HP/current', value)
+            self.record.set('/current', value)
         else:
             raise TypeError('Trying to set HP to not a number')
 
     @property
     def max(self):
-        return self.record.get('/HP/max')
+        return self.record.get('/max')
 
     @max.setter
     def max(self, value):
-        self.record.set('/HP/max', value)
+        self.record.set('/max', value)
 
     @property
     def temp(self):
-        return self.record.get('/HP/temp')
+        return self.record.get('/temp')
 
     @temp.setter
     def temp(self, value):
-        self.record.set('/HP/temp', value)
+        self.record.set('/temp', value)
 
     def change(self, amount):
         """Change the HP
@@ -91,9 +91,9 @@ class HP:
             size.rest(length)
 
 
-class HD(Resource):
-    def __init__(self, jf: JsonInterface, size: str, character: Character):
-        super().__init__(jf, '/HP/HD/' + size, character=character)
+class HD(res.OwnedResource):
+    def __init__(self, jf: DataInterface, size: str, character: 'char.Character'):
+        super().__init__(jf, character=character)
         self.name = 'Hit Die'
         self.value = size
         self.recharge = RestLengths.LONG
@@ -107,7 +107,7 @@ class HD(Resource):
             roll = super().use(1)
         except LowOnResource:
             return 0
-        conmod = modifier(self.record.get('/abilities/Constitution'))
+        conmod = self.owner.abilities[abil.AbilityName.CON].modifier
         return roll + conmod if (roll + conmod > 1) else 1
 
     def rest(self, length):

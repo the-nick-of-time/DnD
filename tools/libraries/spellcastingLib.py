@@ -1,4 +1,4 @@
-from characterLib import Character
+import characterLib as char
 from exceptionsLib import OverflowSpells, OutOfSpells
 from helpers import clean
 from interface import JsonInterface
@@ -6,7 +6,7 @@ from settingsLib import RestLengths
 
 
 class SpellResource:
-    def __init__(self, character: Character):
+    def __init__(self, character: 'char.Character'):
         self.character = character
         self.record = character.record.cd('/spellcasting')
 
@@ -98,7 +98,7 @@ class WarlockSlots(SpellSlots):
 
 
 class SpellsPrepared:
-    def __init__(self, jf: JsonInterface, character: Character):
+    def __init__(self, jf: JsonInterface, character: 'char.Character'):
         self.record = jf
         self.owner = character
         self.preparedToday = []
