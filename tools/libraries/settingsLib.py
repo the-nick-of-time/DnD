@@ -47,9 +47,9 @@ class RestLengths(enum.Enum):
 
     @classmethod
     def from_string(cls, value):
-        if value == 'long':
+        if value == 'long' or value == 'long rest':
             return RestLengths.LONG
-        elif value == 'short':
+        elif value == 'short' or value == 'short rest':
             return RestLengths.SHORT
         elif value == 'turn':
             return RestLengths.TURN
