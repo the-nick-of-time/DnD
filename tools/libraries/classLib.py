@@ -1,6 +1,7 @@
 import enum
 from typing import Union, Dict, List
 
+import abilitiesLib as abil
 import characterLib as char
 from interface import JsonInterface, LinkedInterface
 
@@ -53,7 +54,7 @@ class Class:
             return self.level
 
     @property
-    def spells_available(self) -> Dict[int, List[str]]:
+    def spellsAvailable(self) -> Dict[int, List[str]]:
         # TODO: Update /spellcasting/known for every spellcasting class
         #  with their spell lists in the format level: ["spells"]
         return self.interface.get('/spellcasting/known')
@@ -126,9 +127,14 @@ class Classes:
         return rv
 
     @property
-    def spells_available(self):
+    def spellsAvailable(self):
         rv = {lv: [] for lv in range(10)}
         for c in self.classes:
-            for lv, spells in c.spells_available.items():
+            for lv, spells in c.spellsAvailable.items():
                 rv[lv].extend(spells)
         return rv
+
+    @property
+    def saveProficiencies(self):
+        names = self.classes[0].interface.get('/proficiencies/saves')
+        return [abil.AbilityName(name) for name in names]

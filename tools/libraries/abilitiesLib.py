@@ -19,7 +19,8 @@ class AbilityName(enum.Enum):
 class Abilities:
     def __init__(self, inter: DataInterface):
         self.record = inter
-        self.values = {name: Ability(name, inter.get('/' + name)) for name in AbilityName}
+        self.values = {name: Ability(name, inter.get('/' + name.value))
+                       for name in AbilityName}
 
     def __getitem__(self, ability: AbilityName) -> 'Ability':
         return self.values[ability].score
@@ -41,7 +42,7 @@ class Ability:
 
     @property
     def modifier(self):
-        return h.modifier(self.score)
+        return int((self.score - 10) // 2)
 
     def save(self, advantage=False, disadvantage=False, luck=False):
         roll = h.d20_roll(advantage, disadvantage, luck)
