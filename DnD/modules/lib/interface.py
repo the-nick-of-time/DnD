@@ -3,16 +3,26 @@ import json
 from pathlib import Path
 from typing import Dict, Any, Union
 
-import dpath.path
+import jsonpointer
 
 from . import helpers as h
 
 
 class DataInterface:
+    class JsonPointerCache:
+        def __init__(self):
+            self.cache = {}
+
+        def __getitem__(self, key: str) -> jsonpointer.JsonPointer:
+            if key not in self.cache:
+                self.cache[key] = jsonpointer.JsonPointer(key)
+            return self.cache[key]
+
     def __init__(self, data: Union[list, Dict[str, Any]], readonly=False, basepath=""):
         self.data = data
         self.basepath = basepath.rstrip('/')
         self.readonly = readonly
+        self._cache = type(self).JsonPointerCache()
 
     def __iter__(self):
         yield from self.data.items()
@@ -22,16 +32,20 @@ class DataInterface:
             return self.data
         if path == '/':
             path = ''
-        return dpath.get(self.data, self.basepath + path)
+        pointer = self._cache[self.basepath + path]
+        return pointer.resolve(self.data, None)
 
     def delete(self, path):
         if self.readonly:
             raise ReadonlyError('{} is readonly'.format(self.data))
         if self.basepath + path == '/':
             self.data = {}
+            return
         if path == '/':
             path = ''
-        dpath.delete(self.data, self.basepath + path)
+        pointer = self._cache[self.basepath + path]
+        subdoc, key = pointer.to_last(self.data)
+        del subdoc[key]
 
     def set(self, path, value):
         if self.readonly:
@@ -41,10 +55,8 @@ class DataInterface:
             return
         if path == '/':
             path = ''
-        changed = dpath.set(self.data, self.basepath + path, value)
-        if changed == 0:
-            # It didn't set anything, meaning the key didn't exist and needs to be created instead
-            dpath.new(self.data, self.basepath + path, value)
+        pointer = self._cache[self.basepath + path]
+        pointer.set(self.data, value)
 
     def cd(self, path, readonly=False):
         return DataInterface(self.data, readonly=self.readonly or readonly, basepath=path)

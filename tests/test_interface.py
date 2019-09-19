@@ -45,7 +45,7 @@ class TestDataInterface(unittest.TestCase):
         inter.delete('/list/1')
         self.assertEqual(self.data['list'], ['string', None, True])
         inter.delete('/')
-        self.assertEqual(inter.get('/'), '')
+        self.assertEqual(inter.get('/'), {})
 
     def test_cd(self):
         inter = interface.DataInterface(self.data)
