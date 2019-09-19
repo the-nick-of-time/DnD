@@ -786,7 +786,7 @@ class ItemEntry:
         itemtype = self.record.get(self.path + '/type').replace(' ', '.')
         basetype = itemtype.split(sep='.')[-1]
         itemclass = h.type_select('.' + itemtype)
-        name = h.clean(self.path.split(sep='/')[-1])
+        name = h.sanitize_filename(self.path.split(sep='/')[-1])
         filename = '{b}/{n}.{t}'.format(b=basetype, t=itemtype, n=name)
         if (os.path.exists(iface.JsonInterface.OBJECTSPATH
                            + filename)):
@@ -1202,7 +1202,7 @@ class SpellsPrepared:
 
     def load_from_file(self, name):
         d = 'spell/'
-        n = h.clean(name) + '.spell'
+        n = h.sanitize_filename(name) + '.spell'
         jf = iface.JsonInterface(d + n)
         if jf.get('/damage'):
             tp = SpellAttack

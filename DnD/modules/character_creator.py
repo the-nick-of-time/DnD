@@ -176,7 +176,7 @@ class Main(gui.Section):
     def startup_end(self):
         self.name = self.charactername['Character Name?']
         self.container.title(self.name)
-        path = 'character/' + h.clean(self.name) + '.character'
+        path = 'character/' + h.sanitize_filename(self.name) + '.character'
         self.filename = iface.JsonInterface.OBJECTSPATH / path
         if self.filename.exists():
             ok = messagebox.askokcancel(message='You are overwriting an '
@@ -197,7 +197,7 @@ class Main(gui.Section):
 
     def class_features(self, var):
         classname = var.get()
-        path = 'class/' + h.clean(classname) + '.class'
+        path = 'class/' + h.sanitize_filename(classname) + '.class'
         classjf = iface.JsonInterface(path)
         self.classfeatures = FeaturesAtLevel(self.featuresframe, classjf, 1)
         self.draw_dynamic()

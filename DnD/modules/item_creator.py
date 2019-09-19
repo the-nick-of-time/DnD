@@ -31,7 +31,7 @@ class Creator(gui.Section):
 
     def write(self):
         data = self.export()
-        name = h.clean(data['name'])
+        name = h.sanitize_filename(data['name'])
         if not name:
             raise FileNotFoundError
         path = iface.JsonInterface.OBJECTSPATH / self.basePath.format(name)

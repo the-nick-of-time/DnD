@@ -138,7 +138,7 @@ class Main(gui.Section):
     # noinspection PyAttributeOutsideInit
     def startup_end(self):
         name = self.charactername['Character Name?']
-        path = 'character/' + h.clean(name) + '.character'
+        path = 'character/' + h.sanitize_filename(name) + '.character'
         if os.path.exists(iface.JsonInterface.OBJECTSPATH / path):
             self.record = iface.JsonInterface(path)
         else:

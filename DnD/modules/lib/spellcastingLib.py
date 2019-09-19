@@ -1,6 +1,6 @@
 from . import characterLib as char
 from .exceptionsLib import OverflowSpells, OutOfSpells
-from .helpers import clean
+from .helpers import sanitize_filename
 from .interface import JsonInterface
 from .settingsLib import RestLengths
 
@@ -110,5 +110,5 @@ class SpellsPrepared:
         self.preparedToday
 
     def __open_spell(self, name: str):
-        filename = f"spell/{clean(name)}.spell"
+        filename = f"spell/{sanitize_filename(name)}.spell"
         return JsonInterface(filename, readonly=True)

@@ -79,8 +79,8 @@ class ClassMap:
         sub = 'class/{}.{}.sub.class'
         super_ = 'class/{}.super.class'
         for (class_, subclass, L) in zip(self._classes, self._subclasses, self.levels):
-            class_ = h.clean(class_)
-            subclass = h.clean(subclass)
+            class_ = h.sanitize_filename(class_)
+            subclass = h.sanitize_filename(subclass)
             file_ = main.format(class_)
             subfile_ = sub.format(class_, subclass)
             mainclass = iface.JsonInterface(file_)

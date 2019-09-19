@@ -324,7 +324,7 @@ class Main(gui.Section):
     # noinspection PyAttributeOutsideInit
     def begin_end(self):
         name = self.charactername['Character name?']
-        filename = 'character/{}.character'.format(h.clean(name))
+        filename = 'character/{}.character'.format(h.sanitize_filename(name))
         self.record = iface.JsonInterface(filename)
         self.character = c.Character(self.record)
         self.numbers = NumberDisplay(self.f, self.character)

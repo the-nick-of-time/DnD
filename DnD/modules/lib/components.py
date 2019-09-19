@@ -318,7 +318,7 @@ class CharacterQuery(Query):
         for f in os.scandir(iface.JsonInterface.OBJECTSPATH / 'character'):
             m = re.match(r'(.*)\.character', f.name)
             name = m.group(1)
-            possibilities.append(h.unclean(name))
+            possibilities.append(h.readable_filename(name))
         Query.__init__(self, data, callbackfun,
                        ['Character Name?', sorted(possibilities)],
                        *extraquestions)

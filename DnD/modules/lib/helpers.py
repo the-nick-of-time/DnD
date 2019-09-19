@@ -46,11 +46,13 @@ def shorten(effect):
         return ""
 
 
-def clean(name: str) -> str:
+def sanitize_filename(name: str) -> str:
+    """Translates problematic characters in a filename into happier ones."""
     return name.translate(str.maketrans(" '/:", "_@&$"))
 
 
-def unclean(name: str) -> str:
+def readable_filename(name: str) -> str:
+    """Translates back into the actual, problematic characters."""
     return name.translate(str.maketrans("_@&$", " '/:"))
 
 
@@ -100,7 +102,7 @@ def find_file(name, type_):
     location = type_.split(sep='.')
     if location[0] == '':
         # Leading . indicates name of object is included in path
-        location[0] = clean(name)
+        location[0] = sanitize_filename(name)
     filename = directory.format(
         direc=location[-1], name='.'.join(location))
     try:

@@ -116,8 +116,8 @@ class SubclassChooser(Chooser):
             # Add the subclass and display extra options
             clm = re.search('(\w+)\.class', self.fullpath)
             self.classname = clm.group(1)
-            name = 'class/{}.{}.sub.class'.format(h.clean(self.classname),
-                                                  h.clean(self.subclassname))
+            name = 'class/{}.{}.sub.class'.format(h.sanitize_filename(self.classname),
+                                                  h.sanitize_filename(self.subclassname))
             if os.path.isfile(iface.JsonInterface.OBJECTSPATH / name):
                 self.clear_subframe()
                 rec = iface.JsonInterface(name)
@@ -241,12 +241,12 @@ class Main(gui.Section):
     def startup_end(self):
         name = self.levelgain['Character Name?']
         cl = self.levelgain['Class to gain a level in?']
-        path = 'character/' + h.clean(name) + '.character'
+        path = 'character/' + h.sanitize_filename(name) + '.character'
         if os.path.exists(iface.JsonInterface.OBJECTSPATH / path):
             self.record = iface.JsonInterface(path)
         else:
             gui.ErrorMessage('A character with that name was not found.')
-        clpath = 'class/' + h.clean(cl) + '.class'
+        clpath = 'class/' + h.sanitize_filename(cl) + '.class'
         if not os.path.exists(iface.JsonInterface.OBJECTSPATH / path):
             gui.ErrorMessage('A class with that name was not found.')
         self.character = c.Character(self.record)

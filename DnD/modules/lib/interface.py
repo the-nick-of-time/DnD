@@ -81,7 +81,7 @@ class JsonInterface(DataInterface):
             return obj
 
     def __init__(self, filename, readonly=False, isabsolute=False):
-        self.shortFilename = h.unclean(filename)
+        self.shortFilename = h.readable_filename(filename)
         if isabsolute:
             self.filename = filename
         else:
