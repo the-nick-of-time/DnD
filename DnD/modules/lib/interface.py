@@ -25,7 +25,10 @@ class DataInterface:
         self._cache = type(self).JsonPointerCache()
 
     def __iter__(self):
-        yield from self.data.items()
+        if isinstance(self.data, dict):
+            yield from self.data.items()
+        elif isinstance(self.data, list):
+            yield from self.data
 
     def get(self, path: str):
         if self.basepath + path == '/':
@@ -114,7 +117,7 @@ class LinkedInterface:
     def __init__(self, *interfaces: JsonInterface):
         """interfaces should come in order from least to most specific"""
         self.searchpath = collections.OrderedDict(
-            (inter.filename, inter) for inter in interfaces)
+            (str(inter.filename), inter) for inter in interfaces)
 
     def __add__(self, other):
         if isinstance(other, LinkedInterface):
@@ -134,7 +137,7 @@ class LinkedInterface:
         return self.searchpath.values()
 
     def get(self, path: str):
-        split = path.split(':')
+        split = path.split(':', maxsplit=1)
         if len(split) == 1:
             filename = None
             path = split[0]
@@ -149,14 +152,14 @@ class LinkedInterface:
             # Find all results in all files
             # Search in more general files then override with more specific
             rv = None
-            for name, iface in self._least_to_most():
-                found = iface.get("/" + path)
+            for iface in self._least_to_most():
+                found = iface.get(path)
                 if found is not None:
                     if rv is None:
-                        if isinstance(rv, list):
+                        if isinstance(found, list):
                             add = list.extend
                             rv = found
-                        elif isinstance(rv, dict):
+                        elif isinstance(found, dict):
                             add = dict.update
                             rv = found
                         else:
@@ -166,13 +169,16 @@ class LinkedInterface:
                     else:
                         add(rv, found)
             return rv
-        else:
+        elif filename is None:
             # Find one result in the most specific file you can find it in
-            for name, iface in self._most_to_least():
+            for iface in self._most_to_least():
                 rv = iface.get(path)
                 if rv is not None:
                     return rv
             return None
+        else:
+            raise PathError('If you supply a filename, it must be one in this '
+                            'LinkedInterface or "*"')
 
 
 class ReadonlyError(Exception):
