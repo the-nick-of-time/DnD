@@ -18,17 +18,33 @@ class DataInterface:
         yield from self.data.items()
 
     def get(self, path: str):
+        if self.basepath + path == '/':
+            return self.data
+        if path == '/':
+            path = ''
         return dpath.get(self.data, self.basepath + path)
 
     def delete(self, path):
         if self.readonly:
             raise ReadonlyError('{} is readonly'.format(self.data))
+        if self.basepath + path == '/':
+            self.data = {}
+        if path == '/':
+            path = ''
         dpath.delete(self.data, self.basepath + path)
 
     def set(self, path, value):
         if self.readonly:
             raise ReadonlyError('{} is readonly'.format(self.data))
-        dpath.set(self.data, self.basepath + path, value)
+        if self.basepath + path == '/':
+            self.data = value
+            return
+        if path == '/':
+            path = ''
+        changed = dpath.set(self.data, self.basepath + path, value)
+        if changed == 0:
+            # It didn't set anything, meaning the key didn't exist and needs to be created instead
+            dpath.new(self.data, self.basepath + path, value)
 
     def cd(self, path, readonly=False):
         return DataInterface(self.data, readonly=self.readonly or readonly, basepath=path)
