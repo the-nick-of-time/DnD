@@ -10,9 +10,9 @@ from DnD.modules.lib.helpers import sanitize_filename
 
 def parse_one(elem: Tag) -> dict:
     return {
-        'name': elem.find('name').text.rstrip('()E '),
+        'name': elem.find('name').text.rstrip('()ESCAG '),
         'level': int(elem.level.text),
-        'school': elem.school.text,
+        'school': parse_school(elem.school.text),
         'casting_time': elem.time.text,
         'range': elem.range.text,
         'components': elem.components.text,
@@ -27,18 +27,32 @@ def parse_one(elem: Tag) -> dict:
 
 
 def parse_classes(classes: str) -> list:
-    names = re.findall(r"(\w+)(?:\s*\(([\w\s]+)\))", classes)
+    names = re.findall(r"(\w+)(?:\s*\(([\w\s]+)\))?", classes)
     return [
         {
             "class": spec[0],
             "subclass": spec[1],
         }
-        if len(spec) > 1 else
+        if spec[1] else
         {
             "class": spec[0]
         }
         for spec in names
     ]
+
+
+def parse_school(school: str) -> str:
+    mapping = {
+        'A': 'Abjuration',
+        'N': 'Necromancy',
+        'C': 'Conjuration',
+        'EV': 'Evocation',
+        'D': 'Divination',
+        'T': 'Transmutation',
+        'EN': 'Enchantment',
+        'I': 'Illusion',
+    }
+    return mapping[school]
 
 
 def parse_body(body: List[Tag]) -> Tuple[str, str]:
@@ -60,7 +74,7 @@ def write_one(data: dict, outputdir: Path):
 
 def main(filename: Path, outputdir: Path):
     with filename.open('r') as f:
-        document = BeautifulSoup(f, 'lxml-xml')
+        document = BeautifulSoup(f, 'lxml')
         for spell in document('spell'):
             write_one(parse_one(spell), outputdir)
 
