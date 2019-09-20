@@ -1,13 +1,50 @@
 {
   "name": "Rictavio",
+  "alignment": "lawful good",
+  "AC": 12,
+  "HP": "14d8+14",
   "abilities": {
+    "Strength": 9,
+    "Dexterity": 12,
     "Constitution": 13,
     "Intelligence": 16,
-    "Charisma": 16,
     "Wisdom": 18,
-    "Dexterity": 12,
-    "Strength": 9
+    "Charisma": 16
   },
-  "HP": "14d8+14",
-  "AC": 12
+  "saves": [
+    {
+      "Constitution": 4
+    },
+    {
+      "Wisdom": 7
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 9
+    },
+    {
+      " Insight": 7
+    },
+    {
+      " Medicine": 7
+    },
+    {
+      " Perception": 7
+    },
+    {
+      " Religion": 6
+    },
+    {
+      " Sleight of Hand": 4
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 17,
+  "language": "Abyssal, Common, Elvish, Infernal",
+  "CR": "5"
 }

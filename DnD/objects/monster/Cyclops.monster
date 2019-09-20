@@ -1,0 +1,24 @@
+{
+  "name": "Cyclops",
+  "alignment": "chaotic neutral",
+  "AC": 14,
+  "HP": "12d12+60",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 11,
+    "Constitution": 20,
+    "Intelligence": 8,
+    "Wisdom": 6,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 8,
+  "language": "Giant",
+  "CR": "6"
+}

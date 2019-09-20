@@ -1,13 +1,38 @@
 {
-  "HP": "8d8+24",
-  "AC": 18,
   "name": "Orc Blade of Ilneval",
+  "alignment": "chaotic evil",
+  "AC": 18,
+  "HP": "8d8+24",
   "abilities": {
+    "Strength": 17,
     "Dexterity": 11,
     "Constitution": 17,
-    "Charisma": 14,
-    "Wisdom": 12,
     "Intelligence": 10,
-    "Strength": 17
-  }
+    "Wisdom": 12,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Wisdom": 3
+    }
+  ],
+  "skills": [
+    {
+      "Insight": 3
+    },
+    {
+      " Intimidation": 4
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Common, Orc",
+  "CR": "4"
 }

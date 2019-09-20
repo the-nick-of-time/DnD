@@ -1,13 +1,34 @@
 {
   "name": "Lamia",
-  "HP": "13d10",
+  "alignment": "chaotic evil",
   "AC": 13,
+  "HP": "13d10+26",
   "abilities": {
-    "Charisma": 16,
     "Strength": 16,
-    "Constitution": 15,
-    "Wisdom": 15,
     "Dexterity": 13,
-    "Intelligence": 14
-  }
+    "Constitution": 15,
+    "Intelligence": 14,
+    "Wisdom": 15,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 7
+    },
+    {
+      " Insight": 4
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Abyssal, Common",
+  "CR": "4"
 }

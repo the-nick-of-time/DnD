@@ -1,13 +1,24 @@
 {
   "name": "Grick",
-  "HP": "6d8",
+  "alignment": "neutral",
   "AC": 14,
+  "HP": "6d8",
   "abilities": {
-    "Charisma": 5,
     "Strength": 14,
-    "Constitution": 11,
-    "Wisdom": 14,
     "Dexterity": 14,
-    "Intelligence": 3
-  }
+    "Constitution": 11,
+    "Intelligence": 3,
+    "Wisdom": 14,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": null,
+  "CR": "2"
 }

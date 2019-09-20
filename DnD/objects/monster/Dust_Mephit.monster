@@ -1,13 +1,31 @@
 {
   "name": "Dust Mephit",
-  "HP": "5d6",
+  "alignment": "neutral evil",
   "AC": 12,
+  "HP": "5d6",
   "abilities": {
-    "Charisma": 10,
     "Strength": 5,
-    "Constitution": 10,
-    "Wisdom": 11,
     "Dexterity": 14,
-    "Intelligence": 9
-  }
+    "Constitution": 10,
+    "Intelligence": 9,
+    "Wisdom": 11,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "fire",
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Auran, Terran",
+  "CR": "1/2"
 }

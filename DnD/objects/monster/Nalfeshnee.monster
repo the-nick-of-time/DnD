@@ -1,13 +1,37 @@
 {
   "name": "Nalfeshnee",
-  "HP": "16d10",
+  "alignment": "chaotic evil",
   "AC": 18,
+  "HP": "16d10+96",
   "abilities": {
-    "Charisma": 15,
     "Strength": 21,
-    "Constitution": 22,
-    "Wisdom": 12,
     "Dexterity": 10,
-    "Intelligence": 19
-  }
+    "Constitution": 22,
+    "Intelligence": 19,
+    "Wisdom": 12,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Constitution": 11
+    },
+    {
+      "Intelligence": 9
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [],
+  "resistances": "cold, fire, lightning, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 11,
+  "language": "Abyssal, telepathy 120 ft.",
+  "CR": "13"
 }

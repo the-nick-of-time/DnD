@@ -1,13 +1,24 @@
 {
+  "name": "Duergar Kavalrachni",
+  "alignment": "lawful evil",
   "AC": 16,
   "HP": "4d8+4",
-  "name": "Duergar Kavalrachni",
   "abilities": {
     "Strength": 14,
-    "Constitution": 14,
     "Dexterity": 11,
-    "Wisdom": 10,
+    "Constitution": 14,
     "Intelligence": 11,
+    "Wisdom": 10,
     "Charisma": 9
-  }
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": "Dwarvish, Undercommon",
+  "CR": "2"
 }

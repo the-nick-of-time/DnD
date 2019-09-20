@@ -1,0 +1,35 @@
+{
+  "name": "Shadow Demon",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "12d8+12",
+  "abilities": {
+    "Strength": 1,
+    "Dexterity": 17,
+    "Constitution": 12,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      "Stealth": 7
+    }
+  ],
+  "resistances": "acid, fire, necrotic, thunder, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "radiant",
+  "immunities": "cold, lightning, poison",
+  "condition immunities": "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 11,
+  "language": "Abyssal, telepathy 120 ft.",
+  "CR": "4"
+}

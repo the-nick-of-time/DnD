@@ -1,13 +1,44 @@
 {
   "name": "Young White Dragon",
-  "HP": "14d10",
+  "alignment": "chaotic evil",
   "AC": 17,
+  "HP": "14d10+56",
   "abilities": {
-    "Charisma": 12,
     "Strength": 18,
-    "Constitution": 18,
-    "Wisdom": 11,
     "Dexterity": 10,
-    "Intelligence": 6
-  }
+    "Constitution": 18,
+    "Intelligence": 6,
+    "Wisdom": 11,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 3
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 6
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 16,
+  "language": "Common, Draconic",
+  "CR": "6"
 }

@@ -1,13 +1,38 @@
 {
-  "HP": "9d8+27",
-  "AC": 15,
   "name": "Gauth",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "9d8+27",
   "abilities": {
+    "Strength": 10,
     "Dexterity": 14,
     "Constitution": 16,
-    "Charisma": 13,
-    "Wisdom": 15,
     "Intelligence": 15,
-    "Strength": 10
-  }
+    "Wisdom": 15,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 5
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 5
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "prone",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 15,
+  "language": "Deep Speech, Undercommon",
+  "CR": "6"
 }

@@ -1,13 +1,41 @@
 {
-  "AC": 11,
   "name": "Nezznar the Black Spider",
+  "alignment": "neutral evil",
+  "AC": 11,
+  "HP": "6d8",
   "abilities": {
+    "Strength": 9,
+    "Dexterity": 13,
+    "Constitution": 10,
     "Intelligence": 16,
     "Wisdom": 14,
-    "Constitution": 10,
-    "Charisma": 13,
-    "Strength": 9,
-    "Dexterity": 13
+    "Charisma": 13
   },
-  "HP": "6d8"
+  "saves": [
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 14,
+  "language": "Elvish, Undercommon",
+  "CR": "2"
 }

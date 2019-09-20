@@ -1,13 +1,24 @@
 {
   "name": "Ogre",
-  "HP": "7d10",
+  "alignment": "chaotic evil",
   "AC": 11,
+  "HP": "7d10+21",
   "abilities": {
-    "Charisma": 7,
     "Strength": 19,
-    "Constitution": 16,
-    "Wisdom": 7,
     "Dexterity": 8,
-    "Intelligence": 5
-  }
+    "Constitution": 16,
+    "Intelligence": 5,
+    "Wisdom": 7,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 8,
+  "language": "Common, Giant",
+  "CR": "2"
 }

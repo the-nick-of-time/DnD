@@ -1,13 +1,28 @@
 {
-  "HP": "4d12+4",
-  "AC": 13,
   "name": "Quetzalcoatlus",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "4d12+4",
   "abilities": {
+    "Strength": 15,
     "Dexterity": 13,
     "Constitution": 13,
-    "Charisma": 5,
-    "Wisdom": 10,
     "Intelligence": 2,
-    "Strength": 15
-  }
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 12,
+  "language": "",
+  "CR": "2"
 }

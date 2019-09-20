@@ -1,13 +1,44 @@
 {
+  "name": "The Pudding King",
+  "alignment": "chaotic evil",
   "AC": 13,
   "HP": "9d6+18",
-  "name": "The Pudding King",
   "abilities": {
     "Strength": 10,
-    "Constitution": 14,
     "Dexterity": 16,
-    "Wisdom": 8,
+    "Constitution": 14,
     "Intelligence": 12,
+    "Wisdom": 8,
     "Charisma": 17
-  }
+  },
+  "saves": [
+    {
+      "Constitution": 5
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 4
+    },
+    {
+      " Perception": 2
+    },
+    {
+      " Stealth": 6
+    },
+    {
+      " Survival": 2
+    }
+  ],
+  "resistances": "acid, poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Abyssal, Gnomish, Terran, Undercommon",
+  "CR": "4"
 }

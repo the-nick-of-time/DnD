@@ -1,13 +1,44 @@
 {
   "name": "Mummy Lord",
-  "HP": "13d8",
+  "alignment": "lawful evil",
   "AC": 17,
+  "HP": "13d8+39",
   "abilities": {
-    "Charisma": 16,
     "Strength": 18,
-    "Constitution": 17,
-    "Wisdom": 18,
     "Dexterity": 10,
-    "Intelligence": 11
-  }
+    "Constitution": 17,
+    "Intelligence": 11,
+    "Wisdom": 18,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Constitution": 8
+    },
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      "History": 5
+    },
+    {
+      " Religion": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "bludgeoning",
+  "immunities": "necrotic, poison, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "the languages it knew in life",
+  "CR": "15"
 }

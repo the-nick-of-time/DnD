@@ -1,13 +1,28 @@
 {
   "name": "Giant Spider",
-  "HP": "4d10",
+  "alignment": "unaligned",
   "AC": 14,
+  "HP": "4d10+4",
   "abilities": {
-    "Charisma": 4,
     "Strength": 14,
-    "Constitution": 12,
-    "Wisdom": 11,
     "Dexterity": 16,
-    "Intelligence": 2
-  }
+    "Constitution": 12,
+    "Intelligence": 2,
+    "Wisdom": 11,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "1"
 }

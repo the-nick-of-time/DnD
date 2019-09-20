@@ -1,13 +1,53 @@
 {
   "name": "Adult Green Dragon",
-  "HP": "18d12",
+  "alignment": "lawful evil",
   "AC": 19,
+  "HP": "18d12+90",
   "abilities": {
-    "Charisma": 17,
     "Strength": 23,
-    "Constitution": 21,
-    "Wisdom": 15,
     "Dexterity": 12,
-    "Intelligence": 18
-  }
+    "Constitution": 21,
+    "Intelligence": 18,
+    "Wisdom": 15,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 8
+    },
+    {
+      " Insight": 7
+    },
+    {
+      " Perception": 12
+    },
+    {
+      " Persuasion": 8
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 22,
+  "language": "Common, Draconic",
+  "CR": "15"
 }

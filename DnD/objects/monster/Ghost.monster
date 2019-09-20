@@ -1,13 +1,24 @@
 {
   "name": "Ghost",
-  "HP": "10d8",
+  "alignment": "any alignment",
   "AC": 11,
+  "HP": "10d8",
   "abilities": {
-    "Charisma": 17,
     "Strength": 7,
-    "Constitution": 10,
-    "Wisdom": 12,
     "Dexterity": 13,
-    "Intelligence": 10
-  }
+    "Constitution": 10,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 17
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "acid, fire, lightning, thunder, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "cold, necrotic, poison",
+  "condition immunities": "charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "any languages it knew in life",
+  "CR": "4"
 }

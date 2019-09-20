@@ -1,13 +1,31 @@
 {
   "name": "Rakshasa",
-  "HP": "13d8",
+  "alignment": "lawful evil",
   "AC": 16,
+  "HP": "13d8+52",
   "abilities": {
-    "Charisma": 20,
     "Strength": 14,
-    "Constitution": 18,
-    "Wisdom": 16,
     "Dexterity": 17,
-    "Intelligence": 13
-  }
+    "Constitution": 18,
+    "Intelligence": 13,
+    "Wisdom": 16,
+    "Charisma": 20
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 10
+    },
+    {
+      " Insight": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "piercing from magic weapons wielded by good creatures",
+  "immunities": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Common, Infernal",
+  "CR": "13"
 }

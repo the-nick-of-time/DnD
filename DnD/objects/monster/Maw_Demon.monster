@@ -1,13 +1,24 @@
 {
-  "HP": "6d8+6",
-  "AC": 13,
   "name": "Maw Demon",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "6d8+6",
   "abilities": {
+    "Strength": 14,
     "Dexterity": 8,
     "Constitution": 13,
-    "Charisma": 5,
-    "Wisdom": 8,
     "Intelligence": 5,
-    "Strength": 14
-  }
+    "Wisdom": 8,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "charmed, frightened, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "understands Abyssal but can't speak",
+  "CR": "1"
 }

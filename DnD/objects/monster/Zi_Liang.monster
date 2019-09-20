@@ -1,13 +1,37 @@
 {
+  "name": "Zi Liang",
+  "alignment": "chaotic good",
   "AC": 15,
   "HP": "5d8",
-  "name": "Zi Liang",
   "abilities": {
-    "Dexterity": 15,
-    "Wisdom": 16,
-    "Charisma": 11,
     "Strength": 12,
+    "Dexterity": 15,
     "Constitution": 11,
-    "Intelligence": 14
-  }
+    "Intelligence": 14,
+    "Wisdom": 16,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Acrobatics": 4
+    },
+    {
+      " Athletics": 3
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 15,
+  "language": "Common, Elvish, Goblin",
+  "CR": "0"
 }

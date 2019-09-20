@@ -1,13 +1,28 @@
 {
-  "HP": "9d8+36",
-  "AC": 10,
   "name": "Spawn of Kyuss",
+  "alignment": "chaotic evil",
+  "AC": 10,
+  "HP": "9d8+36",
   "abilities": {
+    "Strength": 16,
     "Dexterity": 11,
     "Constitution": 18,
-    "Charisma": 3,
-    "Wisdom": 7,
     "Intelligence": 5,
-    "Strength": 16
-  }
+    "Wisdom": 7,
+    "Charisma": 3
+  },
+  "saves": [
+    {
+      "Wisdom": 1
+    }
+  ],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "exhaustion, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 8,
+  "language": "understands the languages it knew in life but can't speak",
+  "CR": "5"
 }

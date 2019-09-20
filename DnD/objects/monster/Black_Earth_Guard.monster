@@ -1,13 +1,31 @@
 {
+  "name": "Black Earth Guard",
+  "alignment": "neutral evil",
   "AC": 18,
   "HP": "6d8+12",
-  "name": "Black Earth Guard",
   "abilities": {
-    "Intelligence": 10,
-    "Charisma": 9,
-    "Constitution": 14,
-    "Dexterity": 11,
     "Strength": 17,
-    "Wisdom": 10
-  }
+    "Dexterity": 11,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 1
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common",
+  "CR": "2"
 }

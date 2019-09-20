@@ -1,13 +1,38 @@
 {
-  "HP": "15d8",
-  "AC": 12,
   "name": "Diviner",
+  "alignment": "any alignment",
+  "AC": 12,
+  "HP": "15d8",
   "abilities": {
+    "Strength": 9,
     "Dexterity": 14,
     "Constitution": 11,
-    "Charisma": 11,
-    "Wisdom": 12,
     "Intelligence": 18,
-    "Strength": 9
-  }
+    "Wisdom": 12,
+    "Charisma": 11
+  },
+  "saves": [
+    {
+      "Intelligence": 7
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 7
+    },
+    {
+      " History": 7
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 11,
+  "language": "any four languages",
+  "CR": "8"
 }

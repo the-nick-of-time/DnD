@@ -1,13 +1,28 @@
 {
   "name": "Wereboar",
-  "HP": "12d8",
+  "alignment": "neutral evil",
   "AC": 10,
+  "HP": "12d8+24",
   "abilities": {
-    "Charisma": 8,
     "Strength": 17,
-    "Constitution": 15,
-    "Wisdom": 11,
     "Dexterity": 10,
-    "Intelligence": 10
-  }
+    "Constitution": 15,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common (can't speak in boar form)",
+  "CR": "4"
 }

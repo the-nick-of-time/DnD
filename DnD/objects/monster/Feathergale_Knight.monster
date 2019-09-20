@@ -1,13 +1,31 @@
 {
+  "name": "Feathergale Knight",
+  "alignment": "lawful evil",
   "AC": 16,
   "HP": "6d8+6",
-  "name": "Feathergale Knight",
   "abilities": {
-    "Intelligence": 11,
-    "Charisma": 14,
-    "Constitution": 12,
-    "Dexterity": 14,
     "Strength": 14,
-    "Wisdom": 10
-  }
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Animal Handling": 2
+    },
+    {
+      " History": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Auran, Common",
+  "CR": "1"
 }

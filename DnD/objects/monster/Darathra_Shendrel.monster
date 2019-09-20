@@ -1,13 +1,40 @@
 {
+  "name": "Darathra Shendrel",
+  "alignment": "lawfull good",
   "AC": 14,
   "HP": "8d8+16",
-  "name": "Darathra Shendrel",
   "abilities": {
-    "Dexterity": 11,
-    "Wisdom": 11,
-    "Charisma": 15,
     "Strength": 16,
+    "Dexterity": 11,
     "Constitution": 14,
-    "Intelligence": 11
-  }
+    "Intelligence": 11,
+    "Wisdom": 11,
+    "Charisma": 15
+  },
+  "saves": [],
+  "skills": [
+    {
+      "History": 2
+    },
+    {
+      " Intimidation": 4
+    },
+    {
+      " Investigation": 2
+    },
+    {
+      " Perception": 2
+    },
+    {
+      " Presuasion": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common",
+  "CR": "0"
 }

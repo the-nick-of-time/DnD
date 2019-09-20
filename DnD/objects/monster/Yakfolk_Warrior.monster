@@ -1,13 +1,31 @@
 {
+  "name": "Yakfolk Warrior",
+  "alignment": "neutral evil",
   "AC": 11,
   "HP": "8d10+16",
-  "name": "Yakfolk Warrior",
   "abilities": {
-    "Dexterity": 11,
-    "Wisdom": 15,
-    "Charisma": 14,
     "Strength": 18,
+    "Dexterity": 11,
     "Constitution": 15,
-    "Intelligence": 14
-  }
+    "Intelligence": 14,
+    "Wisdom": 15,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 4
+    },
+    {
+      " Survival": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common, Yikaria",
+  "CR": "3"
 }

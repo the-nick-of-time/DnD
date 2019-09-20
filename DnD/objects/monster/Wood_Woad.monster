@@ -1,13 +1,34 @@
 {
-  "HP": "10d8+30",
-  "AC": 18,
   "name": "Wood Woad",
+  "alignment": "lawful neutral",
+  "AC": 18,
+  "HP": "10d8+30",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 12,
     "Constitution": 16,
-    "Charisma": 8,
-    "Wisdom": 13,
     "Intelligence": 10,
-    "Strength": 18
-  }
+    "Wisdom": 13,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 7
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "bludgeoning, piercing",
+  "vulnerabilities": "fire",
+  "immunities": "",
+  "condition immunities": "charmed, frightened",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Sylvan",
+  "CR": "5"
 }

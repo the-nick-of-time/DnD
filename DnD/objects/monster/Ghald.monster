@@ -1,13 +1,44 @@
 {
+  "name": "Ghald",
+  "alignment": "lawful evil",
   "AC": 15,
   "HP": "12d10+36",
-  "name": "Ghald",
   "abilities": {
-    "Intelligence": 14,
-    "Charisma": 17,
-    "Constitution": 16,
-    "Dexterity": 17,
     "Strength": 19,
-    "Wisdom": 13
-  }
+    "Dexterity": 17,
+    "Constitution": 16,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 6
+    },
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      "Insight": 4
+    },
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 17,
+  "language": "Common, Sahuagin",
+  "CR": "7"
 }

@@ -1,13 +1,31 @@
 {
-  "HP": "4d6+4",
-  "AC": 14,
   "name": "Chitine",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "4d6+4",
   "abilities": {
+    "Strength": 10,
     "Dexterity": 14,
     "Constitution": 12,
-    "Charisma": 7,
-    "Wisdom": 10,
     "Intelligence": 10,
-    "Strength": 10
-  }
+    "Wisdom": 10,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Undercommon",
+  "CR": "1/2"
 }

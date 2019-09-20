@@ -1,13 +1,28 @@
 {
   "name": "Giant Eagle",
-  "HP": "4d10",
+  "alignment": "neutral good",
   "AC": 13,
+  "HP": "4d10+4",
   "abilities": {
-    "Charisma": 10,
     "Strength": 16,
-    "Constitution": 13,
-    "Wisdom": 14,
     "Dexterity": 17,
-    "Intelligence": 8
-  }
+    "Constitution": 13,
+    "Intelligence": 8,
+    "Wisdom": 14,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": "Giant Eagle, understands Common and Auran but can't speak",
+  "CR": "1"
 }

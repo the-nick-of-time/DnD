@@ -1,13 +1,24 @@
 {
+  "name": "Earth Elemental Myrmidon",
+  "alignment": "neutral",
   "AC": 18,
   "HP": "17d8+51",
-  "name": "Earth Elemental Myrmidon",
   "abilities": {
-    "Intelligence": 8,
-    "Charisma": 10,
-    "Constitution": 17,
-    "Dexterity": 10,
     "Strength": 18,
-    "Wisdom": 10
-  }
+    "Dexterity": 10,
+    "Constitution": 17,
+    "Intelligence": 8,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "paralyzed, petrified, poisoned, prone",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Terran, one language of its creator's choice",
+  "CR": "7"
 }

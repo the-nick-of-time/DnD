@@ -1,13 +1,28 @@
 {
-  "HP": "5d6+5",
-  "AC": 12,
   "name": "Xvart Warlock of Raxivort",
+  "alignment": "chaotic evil",
+  "AC": 12,
+  "HP": "5d6+5",
   "abilities": {
+    "Strength": 8,
     "Dexterity": 14,
     "Constitution": 12,
-    "Charisma": 12,
-    "Wisdom": 11,
     "Intelligence": 8,
-    "Strength": 8
-  }
+    "Wisdom": 11,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 30 ft.",
+  "passive perception": 10,
+  "language": "Abyssal",
+  "CR": "1"
 }

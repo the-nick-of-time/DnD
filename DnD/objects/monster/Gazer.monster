@@ -1,13 +1,35 @@
 {
-  "HP": "3d4+6",
-  "AC": 13,
   "name": "Gazer",
+  "alignment": "neutral evil",
+  "AC": 13,
+  "HP": "3d4+6",
   "abilities": {
+    "Strength": 3,
     "Dexterity": 17,
     "Constitution": 14,
-    "Charisma": 7,
-    "Wisdom": 10,
     "Intelligence": 3,
-    "Strength": 3
-  }
+    "Wisdom": 10,
+    "Charisma": 7
+  },
+  "saves": [
+    {
+      "Wisdom": 2
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 2
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "prone",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "",
+  "CR": "1/2"
 }

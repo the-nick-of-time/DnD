@@ -1,13 +1,44 @@
 {
-  "HP": "12d8+24",
-  "AC": 12,
   "name": "Warlock of the Fiend",
+  "alignment": "any alignment",
+  "AC": 12,
+  "HP": "12d8+24",
   "abilities": {
+    "Strength": 10,
     "Dexterity": 14,
     "Constitution": 15,
-    "Charisma": 18,
-    "Wisdom": 12,
     "Intelligence": 12,
-    "Strength": 10
-  }
+    "Wisdom": 12,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 4
+    },
+    {
+      " Deception": 7
+    },
+    {
+      " Persuasion": 7
+    },
+    {
+      " Religion": 4
+    }
+  ],
+  "resistances": "slashing damage from nonmagical attacks not made with silvered weapons",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "any two languages (usually Abyssal or Infernal)",
+  "CR": "7"
 }

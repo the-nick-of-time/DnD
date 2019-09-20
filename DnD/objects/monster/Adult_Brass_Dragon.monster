@@ -1,13 +1,50 @@
 {
   "name": "Adult Brass Dragon",
-  "HP": "15d12",
+  "alignment": "chaotic good",
   "AC": 18,
+  "HP": "15d12+75",
   "abilities": {
-    "Charisma": 17,
     "Strength": 23,
-    "Constitution": 21,
-    "Wisdom": 13,
     "Dexterity": 10,
-    "Intelligence": 14
-  }
+    "Constitution": 21,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      "History": 7
+    },
+    {
+      " Perception": 11
+    },
+    {
+      " Persuasion": 8
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 21,
+  "language": "Common, Draconic",
+  "CR": "13"
 }

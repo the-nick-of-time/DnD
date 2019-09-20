@@ -1,13 +1,34 @@
 {
   "name": "Satyr",
-  "HP": "7d8",
+  "alignment": "chaotic neutral",
   "AC": 14,
+  "HP": "7d8",
   "abilities": {
-    "Charisma": 14,
     "Strength": 12,
-    "Constitution": 11,
-    "Wisdom": 10,
     "Dexterity": 16,
-    "Intelligence": 12
-  }
+    "Constitution": 11,
+    "Intelligence": 12,
+    "Wisdom": 10,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    },
+    {
+      " Performance": 6
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common, Elvish, Sylvan",
+  "CR": "1/2"
 }

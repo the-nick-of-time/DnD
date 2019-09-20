@@ -1,13 +1,37 @@
 {
   "name": "Horned Devil",
-  "HP": "17d10",
+  "alignment": "lawful evil",
   "AC": 18,
+  "HP": "17d10+85",
   "abilities": {
-    "Charisma": 17,
     "Strength": 22,
-    "Constitution": 21,
-    "Wisdom": 16,
     "Dexterity": 17,
-    "Intelligence": 12
-  }
+    "Constitution": 21,
+    "Intelligence": 12,
+    "Wisdom": 16,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Strength": 10
+    },
+    {
+      "Dexterity": 7
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [],
+  "resistances": "cold, bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 13,
+  "language": "Infernal, telepathy 120 ft.",
+  "CR": "11"
 }

@@ -1,13 +1,37 @@
 {
   "name": "Spirit Naga",
-  "HP": "10d10",
+  "alignment": "chaotic evil",
   "AC": 15,
+  "HP": "10d10+20",
   "abilities": {
-    "Charisma": 16,
     "Strength": 18,
-    "Constitution": 14,
-    "Wisdom": 15,
     "Dexterity": 17,
-    "Intelligence": 16
-  }
+    "Constitution": 14,
+    "Intelligence": 16,
+    "Wisdom": 15,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 5
+    },
+    {
+      "Wisdom": 5
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "charmed, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Abyssal, Common",
+  "CR": "8"
 }

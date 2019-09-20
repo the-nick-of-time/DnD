@@ -1,13 +1,31 @@
 {
   "name": "Octopus",
-  "HP": "1d6",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "1d6",
   "abilities": {
-    "Charisma": 4,
     "Strength": 4,
-    "Constitution": 11,
-    "Wisdom": 10,
     "Dexterity": 15,
-    "Intelligence": 3
-  }
+    "Constitution": 11,
+    "Intelligence": 3,
+    "Wisdom": 10,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 30 ft.",
+  "passive perception": 12,
+  "language": null,
+  "CR": "0"
 }

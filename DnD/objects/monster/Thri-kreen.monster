@@ -1,0 +1,34 @@
+{
+  "name": "Thri-kreen",
+  "alignment": "chaotic neutral",
+  "AC": 15,
+  "HP": "6d8+6",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 15,
+    "Constitution": 13,
+    "Intelligence": 8,
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    },
+    {
+      " Stealth": 4
+    },
+    {
+      " Survival": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Thri-kreen",
+  "CR": "1"
+}

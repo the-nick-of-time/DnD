@@ -1,0 +1,28 @@
+{
+  "name": "Hook Horror",
+  "alignment": "neutral",
+  "AC": 15,
+  "HP": "10d10+20",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 10,
+    "Constitution": 15,
+    "Intelligence": 6,
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 10 ft.",
+  "passive perception": 13,
+  "language": "Hook Horror",
+  "CR": "3"
+}

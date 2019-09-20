@@ -1,13 +1,24 @@
 {
   "name": "Rug of Smothering",
-  "HP": "6d10",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "6d10",
   "abilities": {
-    "Charisma": 1,
     "Strength": 17,
-    "Constitution": 10,
-    "Wisdom": 3,
     "Dexterity": 14,
-    "Intelligence": 1
-  }
+    "Constitution": 10,
+    "Intelligence": 1,
+    "Wisdom": 3,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison, psychic",
+  "condition immunities": "blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 6,
+  "language": null,
+  "CR": "2"
 }

@@ -1,13 +1,31 @@
 {
   "name": "Veteran",
-  "HP": "9d8",
+  "alignment": "any alignment",
   "AC": 17,
+  "HP": "9d8+18",
   "abilities": {
-    "Charisma": 10,
     "Strength": 16,
-    "Constitution": 14,
-    "Wisdom": 11,
     "Dexterity": 13,
-    "Intelligence": 10
-  }
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 5
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "any one language (usually Common)",
+  "CR": "3"
 }

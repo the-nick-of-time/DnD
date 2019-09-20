@@ -1,13 +1,24 @@
 {
   "name": "Giant Lizard",
-  "HP": "3d10",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "3d10+3",
   "abilities": {
-    "Charisma": 5,
     "Strength": 15,
-    "Constitution": 13,
-    "Wisdom": 10,
     "Dexterity": 12,
-    "Intelligence": 2
-  }
+    "Constitution": 13,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 30 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "1/4"
 }

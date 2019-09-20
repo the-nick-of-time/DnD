@@ -1,13 +1,28 @@
 {
   "name": "Bulette",
-  "HP": "9d10",
+  "alignment": "unaligned",
   "AC": 17,
+  "HP": "9d10+45",
   "abilities": {
-    "Charisma": 5,
     "Strength": 19,
-    "Constitution": 21,
-    "Wisdom": 10,
     "Dexterity": 11,
-    "Intelligence": 2
-  }
+    "Constitution": 21,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 60 ft.",
+  "passive perception": 16,
+  "language": null,
+  "CR": "5"
 }

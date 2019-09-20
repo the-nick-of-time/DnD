@@ -1,13 +1,41 @@
 {
-  "HP": "5d6+10",
-  "AC": 13,
   "name": "Grung Wildling",
+  "alignment": "lawful evil",
+  "AC": 13,
+  "HP": "5d6+10",
   "abilities": {
+    "Strength": 7,
     "Dexterity": 16,
     "Constitution": 15,
-    "Charisma": 11,
-    "Wisdom": 15,
     "Intelligence": 10,
-    "Strength": 7
-  }
+    "Wisdom": 15,
+    "Charisma": 11
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 2
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 5
+    },
+    {
+      " Survival": 4
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "",
+  "passive perception": 14,
+  "language": "Grung",
+  "CR": "1"
 }

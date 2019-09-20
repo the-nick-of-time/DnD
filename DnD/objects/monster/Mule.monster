@@ -1,13 +1,24 @@
 {
   "name": "Mule",
-  "HP": "2d8",
+  "alignment": "unaligned",
   "AC": 10,
+  "HP": "2d8+2",
   "abilities": {
-    "Charisma": 5,
     "Strength": 14,
-    "Constitution": 13,
-    "Wisdom": 10,
     "Dexterity": 10,
-    "Intelligence": 2
-  }
+    "Constitution": 13,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": null,
+  "CR": "1/8"
 }

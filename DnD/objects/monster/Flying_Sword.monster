@@ -1,13 +1,28 @@
 {
   "name": "Flying Sword",
-  "HP": "5d6",
+  "alignment": "unaligned",
   "AC": 17,
+  "HP": "5d6",
   "abilities": {
-    "Charisma": 1,
     "Strength": 12,
-    "Constitution": 11,
-    "Wisdom": 5,
     "Dexterity": 15,
-    "Intelligence": 1
-  }
+    "Constitution": 11,
+    "Intelligence": 1,
+    "Wisdom": 5,
+    "Charisma": 1
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison, psychic",
+  "condition immunities": "blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 7,
+  "language": null,
+  "CR": "1/4"
 }

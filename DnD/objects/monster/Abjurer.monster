@@ -1,13 +1,38 @@
 {
-  "HP": "13d8+26",
-  "AC": 12,
   "name": "Abjurer",
+  "alignment": "any alignment",
+  "AC": 12,
+  "HP": "13d8+26",
   "abilities": {
+    "Strength": 9,
     "Dexterity": 14,
     "Constitution": 14,
-    "Charisma": 11,
-    "Wisdom": 12,
     "Intelligence": 18,
-    "Strength": 9
-  }
+    "Wisdom": 12,
+    "Charisma": 11
+  },
+  "saves": [
+    {
+      "Intelligence": 8
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 8
+    },
+    {
+      " History": 8
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 11,
+  "language": "any four languages",
+  "CR": "9"
 }

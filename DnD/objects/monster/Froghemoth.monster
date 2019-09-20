@@ -1,13 +1,38 @@
 {
-  "HP": "16d12+80",
-  "AC": 14,
   "name": "Froghemoth",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "16d12+80",
   "abilities": {
+    "Strength": 23,
     "Dexterity": 13,
     "Constitution": 20,
-    "Charisma": 5,
-    "Wisdom": 12,
     "Intelligence": 2,
-    "Strength": 23
-  }
+    "Wisdom": 12,
+    "Charisma": 5
+  },
+  "saves": [
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 9
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "fire, lightning",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 19,
+  "language": "",
+  "CR": "10"
 }

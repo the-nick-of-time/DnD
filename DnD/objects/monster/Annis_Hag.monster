@@ -1,13 +1,35 @@
 {
-  "HP": "10d10+20",
-  "AC": 17,
   "name": "Annis Hag",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "10d10+20",
   "abilities": {
+    "Strength": 21,
     "Dexterity": 12,
     "Constitution": 14,
-    "Charisma": 15,
-    "Wisdom": 14,
     "Intelligence": 13,
-    "Strength": 21
-  }
+    "Wisdom": 14,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Constitution": 5
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Perception": 5
+    }
+  ],
+  "resistances": "cold; bludgeoning, piercing, and slashing from nonmagical attacks",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": "Common, Giant, Sylvan",
+  "CR": "6"
 }

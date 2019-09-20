@@ -1,13 +1,24 @@
 {
   "name": "Giant Boar",
-  "HP": "5d10",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "5d10+5",
   "abilities": {
-    "Charisma": 5,
     "Strength": 17,
-    "Constitution": 16,
-    "Wisdom": 7,
     "Dexterity": 10,
-    "Intelligence": 2
-  }
+    "Constitution": 16,
+    "Intelligence": 2,
+    "Wisdom": 7,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 8,
+  "language": null,
+  "CR": "2"
 }

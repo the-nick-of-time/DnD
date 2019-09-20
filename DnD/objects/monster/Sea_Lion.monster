@@ -1,13 +1,31 @@
 {
-  "AC": 15,
   "name": "Sea Lion",
+  "alignment": "unaligned",
+  "AC": 15,
   "HP": "12d10+24",
   "abilities": {
+    "Strength": 17,
     "Dexterity": 15,
-    "Charisma": 8,
     "Constitution": 15,
     "Intelligence": 3,
-    "Strength": 17,
-    "Wisdom": 12
-  }
+    "Wisdom": 12,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 14,
+  "language": "",
+  "CR": "5"
 }

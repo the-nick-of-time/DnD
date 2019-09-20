@@ -1,13 +1,31 @@
 {
+  "name": "Narrak",
+  "alignment": "chaotic evil",
   "AC": 12,
   "HP": "9d6+9",
-  "name": "Narrak",
   "abilities": {
     "Strength": 9,
-    "Constitution": 13,
     "Dexterity": 14,
-    "Wisdom": 5,
+    "Constitution": 13,
     "Intelligence": 14,
+    "Wisdom": 5,
     "Charisma": 16
-  }
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 7,
+  "language": "Dwarvish, Undercommon",
+  "CR": "2"
 }

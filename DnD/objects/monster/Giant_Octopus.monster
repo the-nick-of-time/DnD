@@ -1,13 +1,31 @@
 {
   "name": "Giant Octopus",
-  "HP": "8d10",
+  "alignment": "unaligned",
   "AC": 11,
+  "HP": "8d10+8",
   "abilities": {
-    "Charisma": 4,
     "Strength": 17,
-    "Constitution": 13,
-    "Wisdom": 10,
     "Dexterity": 13,
-    "Intelligence": 4
-  }
+    "Constitution": 13,
+    "Intelligence": 4,
+    "Wisdom": 10,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": null,
+  "CR": "1"
 }

@@ -1,13 +1,24 @@
 {
   "name": "Unicorn",
-  "HP": "9d10",
+  "alignment": "lawful good",
   "AC": 12,
+  "HP": "9d10+18",
   "abilities": {
-    "Charisma": 16,
     "Strength": 18,
-    "Constitution": 15,
-    "Wisdom": 17,
     "Dexterity": 14,
-    "Intelligence": 11
-  }
+    "Constitution": 15,
+    "Intelligence": 11,
+    "Wisdom": 17,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "charmed, paralyzed, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Celestial, Elvish, Sylvan, telepathy 60 ft.",
+  "CR": "5"
 }

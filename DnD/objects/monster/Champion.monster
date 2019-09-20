@@ -1,13 +1,41 @@
 {
-  "HP": "22d8+44",
-  "AC": 18,
   "name": "Champion",
+  "alignment": "any alignment",
+  "AC": 18,
+  "HP": "22d8+44",
   "abilities": {
+    "Strength": 20,
     "Dexterity": 15,
     "Constitution": 14,
-    "Charisma": 12,
-    "Wisdom": 14,
     "Intelligence": 10,
-    "Strength": 20
-  }
+    "Wisdom": 14,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Strength": 9
+    },
+    {
+      "Constitution": 6
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 9
+    },
+    {
+      " Intimidation": 5
+    },
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 16,
+  "language": "any one language (usually Common)",
+  "CR": "9"
 }

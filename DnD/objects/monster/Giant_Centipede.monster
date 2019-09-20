@@ -1,13 +1,24 @@
 {
   "name": "Giant Centipede",
-  "HP": "1d6",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "1d6+1",
   "abilities": {
-    "Charisma": 3,
     "Strength": 5,
-    "Constitution": 12,
-    "Wisdom": 7,
     "Dexterity": 14,
-    "Intelligence": 1
-  }
+    "Constitution": 12,
+    "Intelligence": 1,
+    "Wisdom": 7,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 30 ft.",
+  "passive perception": 8,
+  "language": null,
+  "CR": "1/4"
 }

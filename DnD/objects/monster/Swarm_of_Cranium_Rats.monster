@@ -1,13 +1,24 @@
 {
-  "HP": "8d8",
-  "AC": 12,
   "name": "Swarm of Cranium Rats",
+  "alignment": "lawful evil",
+  "AC": 12,
+  "HP": "8d8",
   "abilities": {
+    "Strength": 9,
     "Dexterity": 14,
     "Constitution": 10,
-    "Charisma": 14,
-    "Wisdom": 11,
     "Intelligence": 15,
-    "Strength": 9
-  }
+    "Wisdom": 11,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgenoning, piercing, slashing",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned",
+  "senses": "darkvision 30 ft.",
+  "passive perception": 10,
+  "language": "telepathy 30 ft.",
+  "CR": "5"
 }

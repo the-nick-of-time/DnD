@@ -1,13 +1,34 @@
 {
+  "name": "Crushing Wave Priest",
+  "alignment": "neutral evil",
   "AC": 13,
   "HP": "8d8+16",
-  "name": "Crushing Wave Priest",
   "abilities": {
-    "Intelligence": 10,
-    "Charisma": 16,
-    "Constitution": 14,
-    "Dexterity": 11,
     "Strength": 15,
-    "Wisdom": 11
-  }
+    "Dexterity": 11,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Religion": 2
+    },
+    {
+      " Stealth": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Aquan, Common",
+  "CR": "2"
 }

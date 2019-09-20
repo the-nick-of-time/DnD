@@ -1,13 +1,28 @@
 {
-  "HP": "2d6",
-  "AC": 13,
   "name": "Nilbog",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "2d6",
   "abilities": {
+    "Strength": 8,
     "Dexterity": 14,
     "Constitution": 10,
-    "Charisma": 15,
-    "Wisdom": 8,
     "Intelligence": 10,
-    "Strength": 8
-  }
+    "Wisdom": 8,
+    "Charisma": 15
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 6
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "Common, Goblin",
+  "CR": "1"
 }

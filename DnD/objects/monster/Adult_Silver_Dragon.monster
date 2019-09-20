@@ -1,13 +1,50 @@
 {
   "name": "Adult Silver Dragon",
-  "HP": "18d12",
+  "alignment": "lawful good",
   "AC": 19,
+  "HP": "18d12+126",
   "abilities": {
-    "Charisma": 21,
     "Strength": 27,
-    "Constitution": 25,
-    "Wisdom": 13,
     "Dexterity": 10,
-    "Intelligence": 16
-  }
+    "Constitution": 25,
+    "Intelligence": 16,
+    "Wisdom": 13,
+    "Charisma": 21
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 12
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 10
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 8
+    },
+    {
+      " History": 8
+    },
+    {
+      " Perception": 11
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 21,
+  "language": "Common, Draconic",
+  "CR": "16"
 }

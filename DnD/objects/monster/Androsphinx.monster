@@ -1,13 +1,47 @@
 {
   "name": "Androsphinx",
-  "HP": "19d10",
+  "alignment": "lawful neutral",
   "AC": 17,
+  "HP": "19d10+95",
   "abilities": {
-    "Charisma": 23,
     "Strength": 22,
-    "Constitution": 20,
-    "Wisdom": 18,
     "Dexterity": 10,
-    "Intelligence": 16
-  }
+    "Constitution": 20,
+    "Intelligence": 16,
+    "Wisdom": 18,
+    "Charisma": 23
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 11
+    },
+    {
+      "Intelligence": 9
+    },
+    {
+      "Wisdom": 10
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 9
+    },
+    {
+      " Perception": 10
+    },
+    {
+      " Religion": 15
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "psychic, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": "charmed, frightened",
+  "senses": "truesight 120 ft.",
+  "passive perception": 20,
+  "language": "Common, Sphinx",
+  "CR": "17"
 }

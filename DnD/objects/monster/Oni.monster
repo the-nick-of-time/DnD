@@ -1,13 +1,47 @@
 {
   "name": "Oni",
-  "HP": "13d10",
+  "alignment": "lawful evil",
   "AC": 16,
+  "HP": "13d10+39",
   "abilities": {
-    "Charisma": 15,
     "Strength": 19,
-    "Constitution": 16,
-    "Wisdom": 12,
     "Dexterity": 11,
-    "Intelligence": 14
-  }
+    "Constitution": 16,
+    "Intelligence": 14,
+    "Wisdom": 12,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Dexterity": 3
+    },
+    {
+      "Constitution": 6
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " Deception": 8
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Common, Giant",
+  "CR": "7"
 }

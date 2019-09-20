@@ -1,13 +1,28 @@
 {
   "name": "Giant Elk",
-  "HP": "5d12",
+  "alignment": "unaligned",
   "AC": 15,
+  "HP": "5d12+10",
   "abilities": {
-    "Charisma": 10,
     "Strength": 19,
-    "Constitution": 14,
-    "Wisdom": 14,
     "Dexterity": 16,
-    "Intelligence": 7
-  }
+    "Constitution": 14,
+    "Intelligence": 7,
+    "Wisdom": 14,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": "Giant Elk, understands Common, Elvish, and Sylvan but can't speak",
+  "CR": "2"
 }

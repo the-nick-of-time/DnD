@@ -1,13 +1,41 @@
 {
+  "name": "Baphomet",
+  "alignment": "chaotic evil",
   "AC": 22,
   "HP": "23d12+184",
-  "name": "Baphomet",
   "abilities": {
     "Strength": 30,
-    "Constitution": 26,
     "Dexterity": 14,
-    "Wisdom": 24,
+    "Constitution": 26,
     "Intelligence": 18,
+    "Wisdom": 24,
     "Charisma": 16
-  }
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 15
+    },
+    {
+      "Wisdom": 14
+    }
+  ],
+  "skills": [
+    {
+      "Intimidation": 17
+    },
+    {
+      " Perception": 14
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, piercing, and slashing that is nonmagical",
+  "condition immunities": "charmed, exhaustion, frightened, poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 24,
+  "language": "all, telepathy 120 ft.",
+  "CR": "23"
 }

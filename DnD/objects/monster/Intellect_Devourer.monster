@@ -1,0 +1,31 @@
+{
+  "name": "Intellect Devourer",
+  "alignment": "lawful evil",
+  "AC": 12,
+  "HP": "6d4+6",
+  "abilities": {
+    "Strength": 6,
+    "Dexterity": 14,
+    "Constitution": 13,
+    "Intelligence": 12,
+    "Wisdom": 11,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "blinded",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 12,
+  "language": "understands Deep Speech but can't speak, telepathy 60 ft.",
+  "CR": "2"
+}

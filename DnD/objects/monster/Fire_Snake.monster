@@ -1,0 +1,24 @@
+{
+  "name": "Fire Snake",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "5d8",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 14,
+    "Constitution": 11,
+    "Intelligence": 7,
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "cold",
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "understands Ignan but can't speak",
+  "CR": "1"
+}

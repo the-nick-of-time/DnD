@@ -1,13 +1,28 @@
 {
   "name": "Killer Whale",
-  "HP": "12d12",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "12d12+12",
   "abilities": {
-    "Charisma": 7,
     "Strength": 19,
-    "Constitution": 13,
-    "Wisdom": 12,
     "Dexterity": 10,
-    "Intelligence": 3
-  }
+    "Constitution": 13,
+    "Intelligence": 3,
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 120 ft.",
+  "passive perception": 13,
+  "language": null,
+  "CR": "3"
 }

@@ -1,13 +1,31 @@
 {
+  "name": "Miros Xelbrin",
+  "alignment": "neutral good",
   "AC": 10,
   "HP": "4d8+4",
-  "name": "Miros Xelbrin",
   "abilities": {
-    "Dexterity": 10,
-    "Wisdom": 12,
-    "Charisma": 14,
     "Strength": 16,
+    "Dexterity": 10,
     "Constitution": 15,
-    "Intelligence": 11
-  }
+    "Intelligence": 11,
+    "Wisdom": 12,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 4
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": "Common",
+  "CR": "0"
 }

@@ -1,13 +1,41 @@
 {
   "name": "Cloud Giant",
-  "HP": "16d12",
+  "alignment": "neutral good (50%) or neutral evil (50%)",
   "AC": 14,
+  "HP": "16d12+96",
   "abilities": {
-    "Charisma": 16,
     "Strength": 27,
-    "Constitution": 22,
-    "Wisdom": 16,
     "Dexterity": 10,
-    "Intelligence": 12
-  }
+    "Constitution": 22,
+    "Intelligence": 12,
+    "Wisdom": 16,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      "Insight": 7
+    },
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 17,
+  "language": "Common, Giant",
+  "CR": "9"
 }

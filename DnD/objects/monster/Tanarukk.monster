@@ -1,13 +1,31 @@
 {
-  "HP": "10d8+50",
-  "AC": 14,
   "name": "Tanarukk",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "10d8+50",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 13,
     "Constitution": 20,
-    "Charisma": 9,
-    "Wisdom": 9,
     "Intelligence": 9,
-    "Strength": 18
-  }
+    "Wisdom": 9,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 2
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": "fire, poison",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Abyssal, Common, Orc",
+  "CR": "5"
 }

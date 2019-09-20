@@ -1,13 +1,38 @@
 {
+  "name": "Grisha",
+  "alignment": "chaotic evil",
   "AC": 18,
   "HP": "6d8+6",
-  "name": "Grisha",
   "abilities": {
     "Strength": 14,
-    "Constitution": 12,
     "Dexterity": 12,
-    "Wisdom": 14,
+    "Constitution": 12,
     "Intelligence": 11,
+    "Wisdom": 14,
     "Charisma": 16
-  }
+  },
+  "saves": [
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      "Persuasion": 5
+    },
+    {
+      " Religion": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common, Undercommon",
+  "CR": "2"
 }

@@ -1,13 +1,31 @@
 {
+  "name": "Bastian Thermandar",
+  "alignment": "neutral evil",
   "AC": 12,
   "HP": "12d8+24",
-  "name": "Bastian Thermandar",
   "abilities": {
-    "Intelligence": 11,
-    "Charisma": 18,
-    "Constitution": 15,
-    "Dexterity": 14,
     "Strength": 12,
-    "Wisdom": 9
-  }
+    "Dexterity": 14,
+    "Constitution": 15,
+    "Intelligence": 11,
+    "Wisdom": 9,
+    "Charisma": 18
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 3
+    },
+    {
+      " Deception": 7
+    }
+  ],
+  "resistances": "fire",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "Common, Ignan",
+  "CR": "8"
 }

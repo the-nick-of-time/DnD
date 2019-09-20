@@ -1,13 +1,47 @@
 {
   "name": "Rahadin",
+  "alignment": "lawful evil",
+  "AC": 18,
+  "HP": "18d8+54",
   "abilities": {
+    "Strength": 14,
+    "Dexterity": 22,
     "Constitution": 17,
     "Intelligence": 15,
-    "Charisma": 18,
     "Wisdom": 16,
-    "Dexterity": 22,
-    "Strength": 14
+    "Charisma": 18
   },
-  "HP": "18d8+54",
-  "AC": 18
+  "saves": [
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 7
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 8
+    },
+    {
+      " Insight": 7
+    },
+    {
+      " Intimidation": 12
+    },
+    {
+      " Perception": 11
+    },
+    {
+      " Stealth": 14
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 21,
+  "language": "Common, Elvish",
+  "CR": "10"
 }

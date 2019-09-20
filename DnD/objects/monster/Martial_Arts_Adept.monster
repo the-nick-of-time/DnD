@@ -1,13 +1,34 @@
 {
-  "HP": "11d8+11",
-  "AC": 16,
   "name": "Martial Arts Adept",
+  "alignment": "any alignment",
+  "AC": 16,
+  "HP": "11d8+11",
   "abilities": {
+    "Strength": 11,
     "Dexterity": 17,
     "Constitution": 13,
-    "Charisma": 10,
-    "Wisdom": 16,
     "Intelligence": 11,
-    "Strength": 11
-  }
+    "Wisdom": 16,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Acrobatics": 5
+    },
+    {
+      " Insight": 5
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 13,
+  "language": "any one language (usually Common)",
+  "CR": "3"
 }

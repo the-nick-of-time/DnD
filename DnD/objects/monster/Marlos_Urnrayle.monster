@@ -1,13 +1,34 @@
 {
+  "name": "Marlos Urnrayle",
+  "alignment": "neutral evil",
   "AC": 15,
   "HP": "16d8+64",
-  "name": "Marlos Urnrayle",
   "abilities": {
-    "Intelligence": 12,
-    "Charisma": 17,
-    "Constitution": 18,
-    "Dexterity": 11,
     "Strength": 17,
-    "Wisdom": 13
-  }
+    "Dexterity": 11,
+    "Constitution": 18,
+    "Intelligence": 12,
+    "Wisdom": 13,
+    "Charisma": 17
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 4
+    },
+    {
+      " Deception": 6
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": "acid",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 60 ft.",
+  "passive perception": 14,
+  "language": "Common, Terran",
+  "CR": "8"
 }

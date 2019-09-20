@@ -1,13 +1,44 @@
 {
   "name": "Adult Red Dragon",
-  "HP": "19d12",
+  "alignment": "chaotic evil",
   "AC": 19,
+  "HP": "19d12+133",
   "abilities": {
-    "Charisma": 21,
     "Strength": 27,
-    "Constitution": 25,
-    "Wisdom": 13,
     "Dexterity": 10,
-    "Intelligence": 16
-  }
+    "Constitution": 25,
+    "Intelligence": 16,
+    "Wisdom": 13,
+    "Charisma": 21
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 13
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 13
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 23,
+  "language": "Common, Draconic",
+  "CR": "17"
 }

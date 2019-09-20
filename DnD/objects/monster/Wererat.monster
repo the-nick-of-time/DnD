@@ -1,13 +1,31 @@
 {
   "name": "Wererat",
-  "HP": "6d8",
+  "alignment": "lawful evil",
   "AC": 12,
+  "HP": "6d8+6",
   "abilities": {
-    "Charisma": 8,
     "Strength": 10,
-    "Constitution": 12,
-    "Wisdom": 10,
     "Dexterity": 15,
-    "Intelligence": 11
-  }
+    "Constitution": 12,
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft. (rat form only)",
+  "passive perception": 12,
+  "language": "Common (can't speak in rat form)",
+  "CR": "2"
 }

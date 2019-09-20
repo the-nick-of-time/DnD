@@ -1,13 +1,31 @@
 {
   "name": "Pseudodragon",
-  "HP": "2d4",
+  "alignment": "neutral good",
   "AC": 13,
+  "HP": "2d4+2",
   "abilities": {
-    "Charisma": 10,
     "Strength": 6,
-    "Constitution": 13,
-    "Wisdom": 12,
     "Dexterity": 15,
-    "Intelligence": 10
-  }
+    "Constitution": 13,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "understands Common and Draconic but can't speak",
+  "CR": "1/4"
 }

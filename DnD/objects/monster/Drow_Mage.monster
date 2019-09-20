@@ -1,0 +1,37 @@
+{
+  "name": "Drow Mage",
+  "alignment": "neutral evil",
+  "AC": 12,
+  "HP": "10d8",
+  "abilities": {
+    "Strength": 9,
+    "Dexterity": 14,
+    "Constitution": 10,
+    "Intelligence": 17,
+    "Wisdom": 13,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 6
+    },
+    {
+      " Deception": 5
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 14,
+  "language": "Elvish, Undercommon",
+  "CR": "7"
+}

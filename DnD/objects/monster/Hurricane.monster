@@ -1,13 +1,28 @@
 {
+  "name": "Hurricane",
+  "alignment": "lawful evil",
   "AC": 14,
   "HP": "6d8+6",
-  "name": "Hurricane",
   "abilities": {
-    "Intelligence": 10,
-    "Charisma": 10,
-    "Constitution": 13,
-    "Dexterity": 16,
     "Strength": 12,
-    "Wisdom": 12
-  }
+    "Dexterity": 16,
+    "Constitution": 13,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Acrobatics": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 11,
+  "language": "Auran, Common",
+  "CR": "2"
 }

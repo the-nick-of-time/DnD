@@ -1,13 +1,41 @@
 {
+  "name": "Orcus",
+  "alignment": "chaotic evil",
   "AC": 17,
   "HP": "30d12+210",
-  "name": "Orcus",
   "abilities": {
     "Strength": 27,
-    "Constitution": 25,
     "Dexterity": 14,
-    "Wisdom": 20,
+    "Constitution": 25,
     "Intelligence": 20,
+    "Wisdom": 20,
     "Charisma": 25
-  }
+  },
+  "saves": [
+    {
+      "Dexterity": 10
+    },
+    {
+      "Constitution": 15
+    },
+    {
+      "Wisdom": 13
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 12
+    },
+    {
+      " Perception": 12
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison; bludgeoning, piercing, and slashing that is nonmagical",
+  "condition immunities": "charmed, exhaustion, frightened, poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 22,
+  "language": "all, telepathy 120 ft.",
+  "CR": "26"
 }

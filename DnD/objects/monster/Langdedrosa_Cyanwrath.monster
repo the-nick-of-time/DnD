@@ -1,13 +1,41 @@
 {
-  "HP": "6d12+18",
   "name": "Langdedrosa Cyanwrath",
+  "alignment": "lawful evil",
   "AC": 17,
+  "HP": "6d12+18",
   "abilities": {
-    "Wisdom": 14,
-    "Charisma": 12,
-    "Dexterity": 13,
-    "Intelligence": 10,
     "Strength": 19,
-    "Constitution": 16
-  }
+    "Dexterity": 13,
+    "Constitution": 16,
+    "Intelligence": 10,
+    "Wisdom": 14,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Strength": 6
+    },
+    {
+      "Constitution": 5
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 6
+    },
+    {
+      " Intimidation": 3
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": "lightning",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Common, Draconic",
+  "CR": "4"
 }

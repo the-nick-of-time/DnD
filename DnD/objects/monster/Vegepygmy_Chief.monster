@@ -1,13 +1,31 @@
 {
-  "HP": "6d6+12",
-  "AC": 14,
   "name": "Vegepygmy Chief",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "6d6+12",
   "abilities": {
+    "Strength": 14,
     "Dexterity": 14,
     "Constitution": 14,
-    "Charisma": 9,
-    "Wisdom": 12,
     "Intelligence": 7,
-    "Strength": 14
-  }
+    "Wisdom": 12,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "lightning, piercing",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Vegepygmy",
+  "CR": "2"
 }

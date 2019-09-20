@@ -1,13 +1,40 @@
 {
   "name": "Guardian Naga",
-  "HP": "15d10",
+  "alignment": "lawful good",
   "AC": 18,
+  "HP": "15d10+45",
   "abilities": {
-    "Charisma": 18,
     "Strength": 19,
-    "Constitution": 16,
-    "Wisdom": 19,
     "Dexterity": 18,
-    "Intelligence": 16
-  }
+    "Constitution": 16,
+    "Intelligence": 16,
+    "Wisdom": 19,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Intelligence": 7
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "charmed, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Celestial, Common",
+  "CR": "10"
 }

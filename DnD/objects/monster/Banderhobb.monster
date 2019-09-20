@@ -1,13 +1,31 @@
 {
-  "HP": "8d10+40",
-  "AC": 15,
   "name": "Banderhobb",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "8d10+40",
   "abilities": {
+    "Strength": 20,
     "Dexterity": 12,
     "Constitution": 20,
-    "Charisma": 8,
-    "Wisdom": 14,
     "Intelligence": 11,
-    "Strength": 20
-  }
+    "Wisdom": 14,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 8
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "charmed, frightened",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 12,
+  "language": "understands Common and the languages of its creator, but can't speak",
+  "CR": "5"
 }

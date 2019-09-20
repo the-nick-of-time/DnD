@@ -1,13 +1,28 @@
 {
+  "name": "Ice Toad",
+  "alignment": "neutral",
+  "AC": 12,
   "HP": "5d8+10",
   "abilities": {
-    "Dexterity": 10,
-    "Wisdom": 10,
     "Strength": 13,
-    "Charisma": 6,
+    "Dexterity": 10,
     "Constitution": 14,
-    "Intelligence": 8
+    "Intelligence": 8,
+    "Wisdom": 10,
+    "Charisma": 6
   },
-  "name": "Ice Toad",
-  "AC": 12
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Ice Toad",
+  "CR": "1"
 }

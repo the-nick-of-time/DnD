@@ -1,13 +1,28 @@
 {
   "name": "Chimera",
-  "HP": "12d10",
+  "alignment": "chaotic evil",
   "AC": 14,
+  "HP": "12d10+48",
   "abilities": {
-    "Charisma": 10,
     "Strength": 19,
-    "Constitution": 19,
-    "Wisdom": 14,
     "Dexterity": 11,
-    "Intelligence": 3
-  }
+    "Constitution": 19,
+    "Intelligence": 3,
+    "Wisdom": 14,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 18,
+  "language": "understands Draconic but can't speak",
+  "CR": "6"
 }

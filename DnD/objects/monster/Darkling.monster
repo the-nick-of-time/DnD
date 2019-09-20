@@ -1,13 +1,37 @@
 {
-  "HP": "3d6+3",
-  "AC": 14,
   "name": "Darkling",
+  "alignment": "chaotic neutral",
+  "AC": 14,
+  "HP": "3d6+3",
   "abilities": {
+    "Strength": 9,
     "Dexterity": 16,
     "Constitution": 112,
-    "Charisma": 10,
-    "Wisdom": 12,
     "Intelligence": 10,
-    "Strength": 9
-  }
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Acrobatics": 5
+    },
+    {
+      " Deception": 2
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 15,
+  "language": "Elvish, Sylvan",
+  "CR": "1/2"
 }

@@ -1,13 +1,28 @@
 {
   "name": "Cloaker",
-  "HP": "12d10",
+  "alignment": "chaotic neutral",
   "AC": 14,
+  "HP": "12d10+12",
   "abilities": {
-    "Charisma": 14,
     "Strength": 17,
-    "Constitution": 12,
-    "Wisdom": 12,
     "Dexterity": 15,
-    "Intelligence": 13
-  }
+    "Constitution": 12,
+    "Intelligence": 13,
+    "Wisdom": 12,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Deep Speech, Undercommon",
+  "CR": "8"
 }

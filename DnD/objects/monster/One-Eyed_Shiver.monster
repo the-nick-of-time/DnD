@@ -1,13 +1,34 @@
 {
+  "name": "One-Eyed Shiver",
+  "alignment": "chaotic evil",
   "AC": 12,
   "HP": "9d8+9",
-  "name": "One-Eyed Shiver",
   "abilities": {
-    "Intelligence": 13,
-    "Charisma": 17,
-    "Constitution": 12,
-    "Dexterity": 14,
     "Strength": 10,
-    "Wisdom": 13
-  }
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Intelligence": 13,
+    "Wisdom": 13,
+    "Charisma": 17
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 3
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Intimidation": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": "Common",
+  "CR": "3"
 }

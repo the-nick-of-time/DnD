@@ -1,13 +1,44 @@
 {
-  "HP": "9d8+18",
   "name": "Talis the White",
+  "alignment": "lawful evil",
   "AC": 18,
+  "HP": "9d8+18",
   "abilities": {
-    "Wisdom": 16,
-    "Charisma": 16,
-    "Dexterity": 12,
-    "Intelligence": 10,
     "Strength": 14,
-    "Constitution": 14
-  }
+    "Dexterity": 12,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 16,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 6
+    },
+    {
+      " Insight": 6
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Persuasion": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": "Common, Draconic, Elvish, Infernal",
+  "CR": "5"
 }

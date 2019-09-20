@@ -1,13 +1,44 @@
 {
   "name": "Adult Black Dragon",
-  "HP": "17d12",
+  "alignment": "chaotic evil",
   "AC": 19,
+  "HP": "17d12+85",
   "abilities": {
-    "Charisma": 17,
     "Strength": 23,
-    "Constitution": 21,
-    "Wisdom": 13,
     "Dexterity": 14,
-    "Intelligence": 14
-  }
+    "Constitution": 21,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 11
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 21,
+  "language": "Common, Draconic",
+  "CR": "14"
 }

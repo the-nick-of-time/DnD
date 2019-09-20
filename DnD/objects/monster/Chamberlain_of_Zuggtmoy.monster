@@ -1,13 +1,24 @@
 {
+  "name": "Chamberlain of Zuggtmoy",
+  "alignment": "chaotic evil",
   "AC": 13,
   "HP": "6d10+12",
-  "name": "Chamberlain of Zuggtmoy",
   "abilities": {
     "Strength": 17,
-    "Constitution": 14,
     "Dexterity": 7,
-    "Wisdom": 8,
+    "Constitution": 14,
     "Intelligence": 11,
+    "Wisdom": 8,
     "Charisma": 12
-  }
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "Abywssal, Undercommon",
+  "CR": "2"
 }

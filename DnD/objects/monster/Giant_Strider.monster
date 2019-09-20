@@ -1,13 +1,24 @@
 {
-  "HP": "3d10+6",
-  "AC": 14,
   "name": "Giant Strider",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "3d10+6",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 13,
     "Constitution": 14,
-    "Charisma": 6,
-    "Wisdom": 12,
     "Intelligence": 4,
-    "Strength": 18
-  }
+    "Wisdom": 12,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "fire",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 11,
+  "language": "",
+  "CR": "1"
 }

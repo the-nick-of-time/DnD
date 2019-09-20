@@ -1,13 +1,41 @@
 {
   "name": "Frost Giant",
-  "HP": "12d12",
+  "alignment": "neutral evil",
   "AC": 15,
+  "HP": "12d12+60",
   "abilities": {
-    "Charisma": 12,
     "Strength": 23,
-    "Constitution": 21,
-    "Wisdom": 10,
     "Dexterity": 9,
-    "Intelligence": 9
-  }
+    "Constitution": 21,
+    "Intelligence": 9,
+    "Wisdom": 10,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 9
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": "Giant",
+  "CR": "8"
 }

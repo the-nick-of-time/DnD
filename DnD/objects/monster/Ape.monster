@@ -1,13 +1,31 @@
 {
   "name": "Ape",
-  "HP": "3d8",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "3d8+6",
   "abilities": {
-    "Charisma": 7,
     "Strength": 16,
-    "Constitution": 14,
-    "Wisdom": 12,
     "Dexterity": 14,
-    "Intelligence": 6
-  }
+    "Constitution": 14,
+    "Intelligence": 6,
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 5
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": null,
+  "CR": "1/2"
 }

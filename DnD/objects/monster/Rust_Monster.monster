@@ -1,13 +1,24 @@
 {
   "name": "Rust Monster",
-  "HP": "5d8",
+  "alignment": "unaligned",
   "AC": 14,
+  "HP": "5d8+5",
   "abilities": {
-    "Charisma": 6,
     "Strength": 13,
-    "Constitution": 13,
-    "Wisdom": 13,
     "Dexterity": 12,
-    "Intelligence": 2
-  }
+    "Constitution": 13,
+    "Intelligence": 2,
+    "Wisdom": 13,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": null,
+  "CR": "1/2"
 }

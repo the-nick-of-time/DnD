@@ -1,13 +1,34 @@
 {
   "name": "Ettercap",
-  "HP": "8d8",
+  "alignment": "neutral evil",
   "AC": 13,
+  "HP": "8d8+8",
   "abilities": {
-    "Charisma": 8,
     "Strength": 14,
-    "Constitution": 13,
-    "Wisdom": 12,
     "Dexterity": 15,
-    "Intelligence": 7
-  }
+    "Constitution": 13,
+    "Intelligence": 7,
+    "Wisdom": 12,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    },
+    {
+      " Stealth": 4
+    },
+    {
+      " Survival": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": null,
+  "CR": "2"
 }

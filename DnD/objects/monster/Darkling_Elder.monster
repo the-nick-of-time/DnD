@@ -1,13 +1,37 @@
 {
-  "HP": "5d8+5",
-  "AC": 15,
   "name": "Darkling Elder",
+  "alignment": "chaotic neutral",
+  "AC": 15,
+  "HP": "5d8+5",
   "abilities": {
+    "Strength": 13,
     "Dexterity": 17,
     "Constitution": 12,
-    "Charisma": 13,
-    "Wisdom": 14,
     "Intelligence": 10,
-    "Strength": 13
-  }
+    "Wisdom": 14,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Acrobatics": 5
+    },
+    {
+      " Deception": 3
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 16,
+  "language": "Elvish, Sylvan",
+  "CR": "2"
 }

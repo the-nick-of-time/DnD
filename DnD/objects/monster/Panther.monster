@@ -1,13 +1,31 @@
 {
   "name": "Panther",
-  "HP": "3d8",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "3d8",
   "abilities": {
-    "Charisma": 7,
     "Strength": 14,
-    "Constitution": 10,
-    "Wisdom": 14,
     "Dexterity": 15,
-    "Intelligence": 3
-  }
+    "Constitution": 10,
+    "Intelligence": 3,
+    "Wisdom": 14,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": null,
+  "CR": "1/4"
 }

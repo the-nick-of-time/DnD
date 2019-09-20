@@ -1,13 +1,24 @@
 {
   "name": "Gargoyle",
-  "HP": "7d8",
+  "alignment": "chaotic evil",
   "AC": 15,
+  "HP": "7d8+21",
   "abilities": {
-    "Charisma": 7,
     "Strength": 15,
-    "Constitution": 16,
-    "Wisdom": 11,
     "Dexterity": 11,
-    "Intelligence": 6
-  }
+    "Constitution": 16,
+    "Intelligence": 6,
+    "Wisdom": 11,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "exhaustion, petrified, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Terran",
+  "CR": "2"
 }

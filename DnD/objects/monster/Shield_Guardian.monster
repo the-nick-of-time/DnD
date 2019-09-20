@@ -1,13 +1,24 @@
 {
   "name": "Shield Guardian",
-  "HP": "15d10",
+  "alignment": "unaligned",
   "AC": 17,
+  "HP": "15d10+60",
   "abilities": {
-    "Charisma": 3,
     "Strength": 18,
-    "Constitution": 18,
-    "Wisdom": 10,
     "Dexterity": 8,
-    "Intelligence": 7
-  }
+    "Constitution": 18,
+    "Intelligence": 7,
+    "Wisdom": 10,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "understands commands given in any language but can't speak",
+  "CR": "7"
 }

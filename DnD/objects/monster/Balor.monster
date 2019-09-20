@@ -1,13 +1,37 @@
 {
   "name": "Balor",
-  "HP": "21d12",
+  "alignment": "chaotic evil",
   "AC": 19,
+  "HP": "21d12+126",
   "abilities": {
-    "Charisma": 22,
     "Strength": 26,
-    "Constitution": 22,
-    "Wisdom": 16,
     "Dexterity": 15,
-    "Intelligence": 20
-  }
+    "Constitution": 22,
+    "Intelligence": 20,
+    "Wisdom": 16,
+    "Charisma": 22
+  },
+  "saves": [
+    {
+      "Strength": 14
+    },
+    {
+      "Constitution": 12
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 12
+    }
+  ],
+  "skills": [],
+  "resistances": "cold, lightning, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 13,
+  "language": "Abyssal, telepathy 120 ft.",
+  "CR": "19"
 }

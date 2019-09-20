@@ -1,13 +1,44 @@
 {
   "name": "Gold Dragon Wyrmling",
-  "HP": "8d8",
+  "alignment": "lawful good",
   "AC": 17,
+  "HP": "8d8+24",
   "abilities": {
-    "Charisma": 16,
     "Strength": 19,
-    "Constitution": 17,
-    "Wisdom": 11,
     "Dexterity": 14,
-    "Intelligence": 14
-  }
+    "Constitution": 17,
+    "Intelligence": 14,
+    "Wisdom": 11,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 5
+    },
+    {
+      "Wisdom": 2
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Draconic",
+  "CR": "3"
 }

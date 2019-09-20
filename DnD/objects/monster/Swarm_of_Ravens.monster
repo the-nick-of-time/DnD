@@ -1,13 +1,24 @@
 {
   "name": "Swarm of Ravens",
-  "HP": "7d8",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "7d8-7",
   "abilities": {
-    "Charisma": 6,
     "Strength": 6,
-    "Constitution": 8,
-    "Wisdom": 12,
     "Dexterity": 14,
-    "Intelligence": 3
-  }
+    "Constitution": 8,
+    "Intelligence": 3,
+    "Wisdom": 12,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, slashing",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned",
+  "senses": null,
+  "passive perception": 15,
+  "language": null,
+  "CR": "1/4"
 }

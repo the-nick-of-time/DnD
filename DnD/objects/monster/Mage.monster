@@ -1,13 +1,38 @@
 {
   "name": "Mage",
-  "HP": "9d8",
+  "alignment": "any alignment",
   "AC": 12,
+  "HP": "9d8",
   "abilities": {
-    "Charisma": 11,
     "Strength": 9,
-    "Constitution": 11,
-    "Wisdom": 12,
     "Dexterity": 14,
-    "Intelligence": 17
-  }
+    "Constitution": 11,
+    "Intelligence": 17,
+    "Wisdom": 12,
+    "Charisma": 11
+  },
+  "saves": [
+    {
+      "Intelligence": 6
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 6
+    },
+    {
+      " History": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 11,
+  "language": "any four languages",
+  "CR": "6"
 }

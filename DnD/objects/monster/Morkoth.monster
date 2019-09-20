@@ -1,13 +1,47 @@
 {
-  "HP": "20d8+40",
-  "AC": 17,
   "name": "Morkoth",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "20d8+40",
   "abilities": {
+    "Strength": 14,
     "Dexterity": 14,
     "Constitution": 14,
-    "Charisma": 13,
-    "Wisdom": 15,
     "Intelligence": 20,
-    "Strength": 14
-  }
+    "Wisdom": 15,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Intelligence": 9
+    },
+    {
+      "Wisdom": 6
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 9
+    },
+    {
+      " History": 9
+    },
+    {
+      " Perception": 10
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical attacks",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 20,
+  "language": "telepathy 120 ft.",
+  "CR": "11"
 }

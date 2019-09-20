@@ -1,0 +1,37 @@
+{
+  "name": "Revenant",
+  "alignment": "neutral",
+  "AC": 13,
+  "HP": "16d8+64",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 14,
+    "Constitution": 18,
+    "Intelligence": 13,
+    "Wisdom": 16,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Strength": 7
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [],
+  "resistances": "necrotic, psychic",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "charmed, exhaustion, frightened, paralyzed, poisoned, stunned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "the languages it knew in life",
+  "CR": "5"
+}

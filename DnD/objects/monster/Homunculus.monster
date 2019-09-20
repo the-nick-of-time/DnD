@@ -1,13 +1,24 @@
 {
   "name": "Homunculus",
-  "HP": "2d4",
+  "alignment": "neutral",
   "AC": 13,
+  "HP": "2d4",
   "abilities": {
-    "Charisma": 7,
     "Strength": 4,
-    "Constitution": 11,
-    "Wisdom": 10,
     "Dexterity": 15,
-    "Intelligence": 10
-  }
+    "Constitution": 11,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "charmed, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "understands the languages of its creator but can't speak",
+  "CR": "0"
 }

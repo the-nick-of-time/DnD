@@ -1,13 +1,24 @@
 {
   "name": "Hobgoblin",
-  "HP": "2d8",
+  "alignment": "lawful evil",
   "AC": 18,
+  "HP": "2d8+2",
   "abilities": {
-    "Charisma": 9,
     "Strength": 13,
-    "Constitution": 12,
-    "Wisdom": 10,
     "Dexterity": 12,
-    "Intelligence": 10
-  }
+    "Constitution": 12,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Common, Goblin",
+  "CR": "1/2"
 }

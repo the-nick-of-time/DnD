@@ -1,0 +1,28 @@
+{
+  "name": "Helmed Horror",
+  "alignment": "unaligned",
+  "AC": 20,
+  "HP": "8d8+24",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 13,
+    "Constitution": 16,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
+  "vulnerabilities": null,
+  "immunities": "force, necrotic, poison",
+  "condition immunities": "blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned, stunned",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 14,
+  "language": "understands the languages of its creator but can't speak",
+  "CR": "4"
+}

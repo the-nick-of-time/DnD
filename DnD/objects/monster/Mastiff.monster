@@ -1,13 +1,28 @@
 {
   "name": "Mastiff",
-  "HP": "1d8",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "1d8+1",
   "abilities": {
-    "Charisma": 7,
     "Strength": 13,
-    "Constitution": 12,
-    "Wisdom": 12,
     "Dexterity": 14,
-    "Intelligence": 3
-  }
+    "Constitution": 12,
+    "Intelligence": 3,
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": null,
+  "CR": "1/8"
 }

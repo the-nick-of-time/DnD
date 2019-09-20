@@ -1,13 +1,24 @@
 {
   "name": "Salamander",
-  "HP": "12d10",
+  "alignment": "neutral evil",
   "AC": 15,
+  "HP": "12d10+24",
   "abilities": {
-    "Charisma": 12,
     "Strength": 18,
-    "Constitution": 15,
-    "Wisdom": 10,
     "Dexterity": 14,
-    "Intelligence": 11
-  }
+    "Constitution": 15,
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "cold",
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Ignan",
+  "CR": "5"
 }

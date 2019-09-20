@@ -1,13 +1,28 @@
 {
   "name": "Zombie",
-  "HP": "3d8",
+  "alignment": "neutral evil",
   "AC": 8,
+  "HP": "3d8+9",
   "abilities": {
-    "Charisma": 5,
     "Strength": 13,
-    "Constitution": 16,
-    "Wisdom": 6,
     "Dexterity": 6,
-    "Intelligence": 3
-  }
+    "Constitution": 16,
+    "Intelligence": 3,
+    "Wisdom": 6,
+    "Charisma": 5
+  },
+  "saves": [
+    {
+      "Wisdom": 0
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 8,
+  "language": "understands all languages it spoke in life but can't speak",
+  "CR": "1/4"
 }

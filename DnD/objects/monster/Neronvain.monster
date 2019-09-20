@@ -1,13 +1,38 @@
 {
+  "name": "Neronvain",
+  "alignment": "neutral evil",
+  "AC": 17,
   "HP": "18d8+36",
   "abilities": {
-    "Dexterity": 17,
-    "Wisdom": 13,
     "Strength": 8,
-    "Charisma": 18,
+    "Dexterity": 17,
     "Constitution": 15,
-    "Intelligence": 16
+    "Intelligence": 16,
+    "Wisdom": 13,
+    "Charisma": 18
   },
-  "name": "Neronvain",
-  "AC": 17
+  "saves": [
+    {
+      "Constitution": 6
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 7
+    },
+    {
+      " Perception": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "charmed, frightened, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": "Common, Draconic, Elvish, Infernal",
+  "CR": "9"
 }

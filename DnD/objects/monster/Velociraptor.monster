@@ -1,13 +1,28 @@
 {
-  "HP": "3d4+3",
-  "AC": 13,
   "name": "Velociraptor",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "3d4+3",
   "abilities": {
+    "Strength": 6,
     "Dexterity": 14,
     "Constitution": 13,
-    "Charisma": 6,
-    "Wisdom": 12,
     "Intelligence": 4,
-    "Strength": 6
-  }
+    "Wisdom": 12,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 13,
+  "language": "",
+  "CR": "1/4"
 }

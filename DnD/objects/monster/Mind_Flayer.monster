@@ -1,0 +1,53 @@
+{
+  "name": "Mind Flayer",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "13d8+13",
+  "abilities": {
+    "Strength": 11,
+    "Dexterity": 12,
+    "Constitution": 12,
+    "Intelligence": 19,
+    "Wisdom": 17,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Intelligence": 7
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 7
+    },
+    {
+      " Deception": 6
+    },
+    {
+      " Insight": 6
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Persuasion": 6
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 16,
+  "language": "Deep Speech, Undercommon, telepathy 120 ft.",
+  "CR": "7"
+}

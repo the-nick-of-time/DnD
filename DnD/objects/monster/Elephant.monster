@@ -1,13 +1,24 @@
 {
   "name": "Elephant",
-  "HP": "8d12",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "8d12+24",
   "abilities": {
-    "Charisma": 6,
     "Strength": 22,
-    "Constitution": 17,
-    "Wisdom": 11,
     "Dexterity": 9,
-    "Intelligence": 3
-  }
+    "Constitution": 17,
+    "Intelligence": 3,
+    "Wisdom": 11,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": null,
+  "CR": "4"
 }

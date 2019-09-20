@@ -1,13 +1,24 @@
 {
+  "name": "Hook Horror Spore Servant",
+  "alignment": "unaligned",
   "AC": 15,
   "HP": "10d10+10",
-  "name": "Hook Horror Spore Servant",
   "abilities": {
     "Strength": 18,
-    "Constitution": 15,
     "Dexterity": 10,
-    "Wisdom": 6,
+    "Constitution": 15,
     "Intelligence": 2,
+    "Wisdom": 6,
     "Charisma": 1
-  }
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "blinded, charmed, frightened, paralyzed",
+  "senses": "blindsight 30 ft. (blind beyond this radius)",
+  "passive perception": 8,
+  "language": "-",
+  "CR": "3"
 }

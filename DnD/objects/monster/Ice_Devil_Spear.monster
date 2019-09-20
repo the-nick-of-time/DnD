@@ -1,0 +1,37 @@
+{
+  "name": "Ice Devil Spear",
+  "alignment": "lawful evil",
+  "AC": 18,
+  "HP": "19d10+76",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 14,
+    "Constitution": 18,
+    "Intelligence": 18,
+    "Wisdom": 15,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 12,
+  "language": "Infernal, telepathy 120 ft.",
+  "CR": "14"
+}

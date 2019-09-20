@@ -1,13 +1,47 @@
 {
-  "HP": "12d12+60",
   "name": "Blagothkus",
+  "alignment": "neutral evil",
   "AC": 17,
+  "HP": "12d12+60",
   "abilities": {
-    "Wisdom": 15,
-    "Charisma": 15,
-    "Dexterity": 13,
-    "Intelligence": 16,
     "Strength": 26,
-    "Constitution": 20
-  }
+    "Dexterity": 13,
+    "Constitution": 20,
+    "Intelligence": 16,
+    "Wisdom": 15,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 7
+    },
+    {
+      " Insight": 6
+    },
+    {
+      " Intimidation": 6
+    },
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 16,
+  "language": "Common, Draconic, Giant",
+  "CR": "9"
 }

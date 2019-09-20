@@ -1,13 +1,37 @@
 {
+  "name": "Sir Baric Nylef",
+  "alignment": "lawful good",
   "AC": 18,
   "HP": "8d8+16",
-  "name": "Sir Baric Nylef",
   "abilities": {
-    "Dexterity": 11,
-    "Wisdom": 15,
-    "Charisma": 15,
     "Strength": 18,
+    "Dexterity": 11,
     "Constitution": 14,
-    "Intelligence": 11
-  }
+    "Intelligence": 11,
+    "Wisdom": 15,
+    "Charisma": 15
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Insight": 4
+    },
+    {
+      " Investigation": 2
+    },
+    {
+      " Medicine": 4
+    },
+    {
+      " Survival": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common",
+  "CR": "0"
 }

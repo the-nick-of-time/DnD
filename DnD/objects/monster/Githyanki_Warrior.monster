@@ -1,0 +1,34 @@
+{
+  "name": "Githyanki Warrior",
+  "alignment": "lawful evil",
+  "AC": 17,
+  "HP": "9d8+9",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Intelligence": 13,
+    "Wisdom": 13,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Constitution": 3
+    },
+    {
+      "Intelligence": 3
+    },
+    {
+      "Wisdom": 3
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 11,
+  "language": "Gith",
+  "CR": "3"
+}

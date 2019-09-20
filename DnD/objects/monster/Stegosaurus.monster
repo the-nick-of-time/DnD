@@ -1,13 +1,24 @@
 {
-  "HP": "8d12+24",
-  "AC": 13,
   "name": "Stegosaurus",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "8d12+24",
   "abilities": {
+    "Strength": 20,
     "Dexterity": 9,
     "Constitution": 17,
-    "Charisma": 5,
-    "Wisdom": 11,
     "Intelligence": 2,
-    "Strength": 20
-  }
+    "Wisdom": 11,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 10,
+  "language": "",
+  "CR": "4"
 }

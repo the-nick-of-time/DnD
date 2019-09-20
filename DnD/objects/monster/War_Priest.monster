@@ -1,13 +1,38 @@
 {
-  "HP": "18d8+36",
-  "AC": 18,
   "name": "War Priest",
+  "alignment": "any alignment",
+  "AC": 18,
+  "HP": "18d8+36",
   "abilities": {
+    "Strength": 16,
     "Dexterity": 10,
     "Constitution": 14,
-    "Charisma": 13,
-    "Wisdom": 17,
     "Intelligence": 11,
-    "Strength": 16
-  }
+    "Wisdom": 17,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Constitution": 6
+    },
+    {
+      "Wisdom": 7
+    }
+  ],
+  "skills": [
+    {
+      "Intimidation": 5
+    },
+    {
+      " Religion": 4
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 13,
+  "language": "any two languages",
+  "CR": "9"
 }

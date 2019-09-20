@@ -1,13 +1,28 @@
 {
-  "HP": "9d20+27",
-  "AC": 15,
   "name": "Brontosaurus",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "9d20+27",
   "abilities": {
+    "Strength": 21,
     "Dexterity": 9,
     "Constitution": 17,
-    "Charisma": 7,
-    "Wisdom": 10,
     "Intelligence": 2,
-    "Strength": 21
-  }
+    "Wisdom": 10,
+    "Charisma": 7
+  },
+  "saves": [
+    {
+      "Constitution": 6
+    }
+  ],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 10,
+  "language": "",
+  "CR": "5"
 }

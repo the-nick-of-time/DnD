@@ -1,0 +1,28 @@
+{
+  "name": "Piercer",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "3d8+9",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 13,
+    "Constitution": 16,
+    "Intelligence": 1,
+    "Wisdom": 7,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 60 ft.",
+  "passive perception": 8,
+  "language": null,
+  "CR": "1/2"
+}

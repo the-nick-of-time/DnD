@@ -1,13 +1,24 @@
 {
   "name": "Berserker",
-  "HP": "9d8",
+  "alignment": "any chaotic alignment",
   "AC": 13,
+  "HP": "9d8+27",
   "abilities": {
-    "Charisma": 9,
     "Strength": 16,
-    "Constitution": 17,
-    "Wisdom": 11,
     "Dexterity": 12,
-    "Intelligence": 9
-  }
+    "Constitution": 17,
+    "Intelligence": 9,
+    "Wisdom": 11,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "any one language (usually Common)",
+  "CR": "2"
 }

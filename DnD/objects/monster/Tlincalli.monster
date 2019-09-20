@@ -1,13 +1,34 @@
 {
-  "HP": "10d10+30",
-  "AC": 15,
   "name": "Tlincalli",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "10d10+30",
   "abilities": {
+    "Strength": 16,
     "Dexterity": 13,
     "Constitution": 16,
-    "Charisma": 8,
-    "Wisdom": 12,
     "Intelligence": 8,
-    "Strength": 16
-  }
+    "Wisdom": 12,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 4
+    },
+    {
+      " Survival": 4
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Tlincalli",
+  "CR": "5"
 }

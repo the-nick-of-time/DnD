@@ -1,13 +1,24 @@
 {
-  "HP": "5d8+10",
-  "AC": 11,
   "name": "Sea Spawn",
+  "alignment": "neutral evil",
+  "AC": 11,
+  "HP": "5d8+10",
   "abilities": {
+    "Strength": 15,
     "Dexterity": 8,
     "Constitution": 15,
-    "Charisma": 8,
-    "Wisdom": 10,
     "Intelligence": 6,
-    "Strength": 15
-  }
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": "understands Aquan and Common but can't speak",
+  "CR": "1"
 }

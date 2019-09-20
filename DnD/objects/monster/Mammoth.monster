@@ -1,13 +1,24 @@
 {
   "name": "Mammoth",
-  "HP": "11d12",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "11d12+55",
   "abilities": {
-    "Charisma": 6,
     "Strength": 24,
-    "Constitution": 21,
-    "Wisdom": 11,
     "Dexterity": 9,
-    "Intelligence": 3
-  }
+    "Constitution": 21,
+    "Intelligence": 3,
+    "Wisdom": 11,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": null,
+  "CR": "6"
 }

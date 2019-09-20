@@ -1,13 +1,24 @@
 {
   "name": "Treant",
-  "HP": "12d12",
+  "alignment": "chaotic good",
   "AC": 16,
+  "HP": "12d12+60",
   "abilities": {
-    "Charisma": 12,
     "Strength": 23,
-    "Constitution": 21,
-    "Wisdom": 16,
     "Dexterity": 8,
-    "Intelligence": 12
-  }
+    "Constitution": 21,
+    "Intelligence": 12,
+    "Wisdom": 16,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing",
+  "vulnerabilities": "fire",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": "Common, Druidic, Elvish, Sylvan",
+  "CR": "9"
 }

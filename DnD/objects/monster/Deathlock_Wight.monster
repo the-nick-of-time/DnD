@@ -1,13 +1,35 @@
 {
-  "AC": 12,
   "name": "Deathlock Wight",
+  "alignment": "neutral evil",
+  "AC": 12,
   "HP": "5d8+15",
   "abilities": {
+    "Strength": 11,
     "Dexterity": 14,
-    "Charisma": 16,
     "Constitution": 16,
     "Intelligence": 12,
-    "Strength": 11,
-    "Wisdom": 14
-  }
+    "Wisdom": 14,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 3
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical attacks",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "exhaustion, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "the languages it knew in life",
+  "CR": "3"
 }

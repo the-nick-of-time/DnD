@@ -1,13 +1,31 @@
 {
   "name": "Bugbear",
-  "HP": "5d8",
+  "alignment": "chaotic evil",
   "AC": 16,
+  "HP": "5d8+5",
   "abilities": {
-    "Charisma": 9,
     "Strength": 15,
-    "Constitution": 13,
-    "Wisdom": 11,
     "Dexterity": 14,
-    "Intelligence": 8
-  }
+    "Constitution": 13,
+    "Intelligence": 8,
+    "Wisdom": 11,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 6
+    },
+    {
+      " Survival": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Common, Goblin",
+  "CR": "1"
 }

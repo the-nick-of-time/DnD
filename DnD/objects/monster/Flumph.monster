@@ -1,0 +1,34 @@
+{
+  "name": "Flumph",
+  "alignment": "lawful good",
+  "AC": 12,
+  "HP": "2d6",
+  "abilities": {
+    "Strength": 6,
+    "Dexterity": 15,
+    "Constitution": 10,
+    "Intelligence": 14,
+    "Wisdom": 14,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 4
+    },
+    {
+      " History": 4
+    },
+    {
+      " Religion": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "psychic",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "understands Undercommon but can't speak, telepathy 60 ft.",
+  "CR": "1/8"
+}

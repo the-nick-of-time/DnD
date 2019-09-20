@@ -1,0 +1,44 @@
+{
+  "name": "Empyrean",
+  "alignment": "chaotic good (75%) or neutral evil (25%)",
+  "AC": 22,
+  "HP": "19d12+190",
+  "abilities": {
+    "Strength": 30,
+    "Dexterity": 21,
+    "Constitution": 30,
+    "Intelligence": 21,
+    "Wisdom": 22,
+    "Charisma": 27
+  },
+  "saves": [
+    {
+      "Strength": 17
+    },
+    {
+      "Intelligence": 12
+    },
+    {
+      "Wisdom": 13
+    },
+    {
+      "Charisma": 15
+    }
+  ],
+  "skills": [
+    {
+      "Insight": 13
+    },
+    {
+      " Persuasion": 15
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 16,
+  "language": "all",
+  "CR": "23"
+}

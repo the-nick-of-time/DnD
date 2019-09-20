@@ -1,13 +1,28 @@
 {
   "name": "Werebear",
-  "HP": "18d8",
+  "alignment": "neutral good",
   "AC": 10,
+  "HP": "18d8+54",
   "abilities": {
-    "Charisma": 12,
     "Strength": 19,
-    "Constitution": 17,
-    "Wisdom": 12,
     "Dexterity": 10,
-    "Intelligence": 11
-  }
+    "Constitution": 17,
+    "Intelligence": 11,
+    "Wisdom": 12,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 17,
+  "language": "Common (can't speak in bear form)",
+  "CR": "5"
 }

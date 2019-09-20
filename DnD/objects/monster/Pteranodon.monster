@@ -1,0 +1,28 @@
+{
+  "name": "Pteranodon",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "3d8",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 15,
+    "Constitution": 10,
+    "Intelligence": 2,
+    "Wisdom": 9,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 1
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 11,
+  "language": null,
+  "CR": "1/4"
+}

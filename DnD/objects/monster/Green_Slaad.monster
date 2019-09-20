@@ -1,0 +1,31 @@
+{
+  "name": "Green Slaad",
+  "alignment": "chaotic neutral",
+  "AC": 16,
+  "HP": "15d10+45",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 15,
+    "Constitution": 16,
+    "Intelligence": 11,
+    "Wisdom": 8,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 3
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning, thunder",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Slaad, telepathy 60 ft.",
+  "CR": "8"
+}

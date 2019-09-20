@@ -1,13 +1,28 @@
 {
   "name": "Giant Constrictor Snake",
-  "HP": "8d12",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "8d12+8",
   "abilities": {
-    "Charisma": 3,
     "Strength": 19,
-    "Constitution": 12,
-    "Wisdom": 10,
     "Dexterity": 14,
-    "Intelligence": 1
-  }
+    "Constitution": 12,
+    "Intelligence": 1,
+    "Wisdom": 10,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 10 ft.",
+  "passive perception": 12,
+  "language": null,
+  "CR": "2"
 }

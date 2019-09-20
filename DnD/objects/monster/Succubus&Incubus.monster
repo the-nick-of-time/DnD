@@ -1,13 +1,40 @@
 {
   "name": "Succubus/Incubus",
-  "HP": "12d8",
+  "alignment": "neutral evil",
   "AC": 15,
+  "HP": "12d8+12",
   "abilities": {
-    "Charisma": 20,
     "Strength": 8,
-    "Constitution": 13,
-    "Wisdom": 12,
     "Dexterity": 17,
-    "Intelligence": 15
-  }
+    "Constitution": 13,
+    "Intelligence": 15,
+    "Wisdom": 12,
+    "Charisma": 20
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 9
+    },
+    {
+      " Insight": 5
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Persuasion": 9
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "cold, fire, lightning, poison, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": "Abyssal, Common, Infernal, telepathy 60 ft.",
+  "CR": "4"
 }

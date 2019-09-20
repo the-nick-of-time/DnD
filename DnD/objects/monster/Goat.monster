@@ -1,13 +1,24 @@
 {
   "name": "Goat",
-  "HP": "1d8",
+  "alignment": "unaligned",
   "AC": 10,
+  "HP": "1d8",
   "abilities": {
-    "Charisma": 5,
     "Strength": 12,
-    "Constitution": 11,
-    "Wisdom": 10,
     "Dexterity": 10,
-    "Intelligence": 2
-  }
+    "Constitution": 11,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": null,
+  "CR": "0"
 }

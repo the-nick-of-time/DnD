@@ -1,13 +1,34 @@
 {
   "name": "Mongrelfolk",
+  "alignment": "any alignment",
+  "AC": 11,
+  "HP": "4d8+8",
   "abilities": {
+    "Strength": 12,
+    "Dexterity": 9,
     "Constitution": 15,
     "Intelligence": 9,
-    "Charisma": 6,
     "Wisdom": 10,
-    "Dexterity": 9,
-    "Strength": 12
+    "Charisma": 6
   },
-  "HP": "4d8+8",
-  "AC": 11
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 2
+    },
+    {
+      " Perception": 2
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 12,
+  "language": "Common",
+  "CR": "1/4"
 }

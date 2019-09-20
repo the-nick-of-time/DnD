@@ -1,0 +1,24 @@
+{
+  "name": "Displacer Beast",
+  "alignment": "lawful evil",
+  "AC": 13,
+  "HP": "10d10+30",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 15,
+    "Constitution": 16,
+    "Intelligence": 6,
+    "Wisdom": 12,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": null,
+  "CR": "3"
+}

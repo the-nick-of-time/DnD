@@ -1,13 +1,47 @@
 {
   "name": "Strahd von Zarovich",
+  "alignment": "lawful evil",
+  "AC": 16,
+  "HP": "17d8+68",
   "abilities": {
+    "Strength": 18,
+    "Dexterity": 18,
     "Constitution": 18,
     "Intelligence": 20,
-    "Charisma": 18,
     "Wisdom": 15,
-    "Dexterity": 18,
-    "Strength": 18
+    "Charisma": 18
   },
-  "HP": "17d8+68",
-  "AC": 16
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 15
+    },
+    {
+      " Perception": 12
+    },
+    {
+      " Religion": 10
+    },
+    {
+      " Stealth": 14
+    }
+  ],
+  "resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical attacks",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 22,
+  "language": "Abyssal, Common, Draconic, Elvish, Giant, Infernal",
+  "CR": "15"
 }

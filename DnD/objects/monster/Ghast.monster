@@ -1,13 +1,24 @@
 {
   "name": "Ghast",
-  "HP": "8d8",
+  "alignment": "chaotic evil",
   "AC": 13,
+  "HP": "8d8",
   "abilities": {
-    "Charisma": 8,
     "Strength": 16,
-    "Constitution": 10,
-    "Wisdom": 10,
     "Dexterity": 17,
-    "Intelligence": 11
-  }
+    "Constitution": 10,
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "necrotic",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Common",
+  "CR": "2"
 }

@@ -1,13 +1,35 @@
 {
+  "name": "Dragonsoul",
+  "alignment": "neutral evil",
+  "AC": 16,
   "HP": "17d8+34",
   "abilities": {
-    "Dexterity": 18,
-    "Wisdom": 12,
     "Strength": 11,
-    "Charisma": 16,
+    "Dexterity": 18,
     "Constitution": 14,
-    "Intelligence": 13
+    "Intelligence": 13,
+    "Wisdom": 12,
+    "Charisma": 16
   },
-  "name": "Dragonsoul",
-  "AC": 16
+  "saves": [
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 6
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "one of the following: acid, cold, fire, lightning or poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 11,
+  "language": "Common, Draconic, Infernal",
+  "CR": "7"
 }

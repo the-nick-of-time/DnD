@@ -1,13 +1,31 @@
 {
   "name": "Cultist",
-  "HP": "2d8",
+  "alignment": "any non-good alignment",
   "AC": 12,
+  "HP": "2d8",
   "abilities": {
-    "Charisma": 10,
     "Strength": 11,
-    "Constitution": 10,
-    "Wisdom": 11,
     "Dexterity": 12,
-    "Intelligence": 10
-  }
+    "Constitution": 10,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 2
+    },
+    {
+      " Religion": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "any one language (usually Common)",
+  "CR": "1/8"
 }

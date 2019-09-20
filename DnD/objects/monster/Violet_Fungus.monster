@@ -1,13 +1,24 @@
 {
   "name": "Violet Fungus",
-  "HP": "4d8",
+  "alignment": "unaligned",
   "AC": 5,
+  "HP": "4d8",
   "abilities": {
-    "Charisma": 1,
     "Strength": 3,
-    "Constitution": 10,
-    "Wisdom": 3,
     "Dexterity": 1,
-    "Intelligence": 1
-  }
+    "Constitution": 10,
+    "Intelligence": 1,
+    "Wisdom": 3,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "blinded, deafened, frightened",
+  "senses": "blindsight 30 ft. (blind beyond this radius)",
+  "passive perception": 6,
+  "language": null,
+  "CR": "1/4"
 }

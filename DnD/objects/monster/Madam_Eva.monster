@@ -1,13 +1,47 @@
 {
   "name": "Madam Eva",
+  "alignment": "chaotic neutral",
+  "AC": 10,
+  "HP": "16d8+16",
   "abilities": {
+    "Strength": 8,
+    "Dexterity": 11,
     "Constitution": 12,
     "Intelligence": 17,
-    "Charisma": 18,
     "Wisdom": 20,
-    "Dexterity": 11,
-    "Strength": 8
+    "Charisma": 18
   },
-  "HP": "16d8+16",
-  "AC": 10
+  "saves": [
+    {
+      "Constitution": 5
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 7
+    },
+    {
+      " Deception": 8
+    },
+    {
+      " Insight": 13
+    },
+    {
+      " Intimidation": 8
+    },
+    {
+      " Perception": 9
+    },
+    {
+      " Religion": 7
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 19,
+  "language": "Abyssal, Common, Elvish, Infernal",
+  "CR": "10"
 }

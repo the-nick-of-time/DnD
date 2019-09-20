@@ -1,0 +1,24 @@
+{
+  "name": "Water Weird",
+  "alignment": "neutral",
+  "AC": 13,
+  "HP": "9d10+9",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 16,
+    "Constitution": 13,
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "fire, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "exhaustion, grappled, paralyzed, poisoned, restrained, prone, unconscious",
+  "senses": "blindsight 30 ft.",
+  "passive perception": 10,
+  "language": "understands Aquan but doesn't speak",
+  "CR": "3"
+}

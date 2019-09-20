@@ -1,13 +1,38 @@
 {
+  "name": "Severin",
+  "alignment": "neutral evil",
+  "AC": 16,
   "HP": "20d8+60",
   "abilities": {
-    "Dexterity": 13,
-    "Wisdom": 12,
     "Strength": 10,
-    "Charisma": 20,
+    "Dexterity": 13,
     "Constitution": 16,
-    "Intelligence": 17
+    "Intelligence": 17,
+    "Wisdom": 12,
+    "Charisma": 20
   },
-  "name": "Severin",
-  "AC": 16
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 7
+    },
+    {
+      " Religion": 7
+    }
+  ],
+  "resistances": "While wearing the mask of the Dragon Queen: acid, cold, lightning, poison; bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "While wearing the mask of the Dragon Queen: fire",
+  "condition immunities": "While wearing the mask of the Dragon Queen: charmed, frightened, poisoned",
+  "senses": "While wearing the Mask of the Dragon Queen: darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Common, Draconic, Infernal",
+  "CR": "11"
 }

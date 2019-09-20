@@ -1,13 +1,24 @@
 {
   "name": "Deer",
-  "HP": "1d8",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "1d8",
   "abilities": {
-    "Charisma": 5,
     "Strength": 11,
-    "Constitution": 11,
-    "Wisdom": 14,
     "Dexterity": 16,
-    "Intelligence": 2
-  }
+    "Constitution": 11,
+    "Intelligence": 2,
+    "Wisdom": 14,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": null,
+  "CR": "0"
 }

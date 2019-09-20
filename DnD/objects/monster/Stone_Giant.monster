@@ -1,13 +1,41 @@
 {
   "name": "Stone Giant",
-  "HP": "11d12",
+  "alignment": "neutral",
   "AC": 17,
+  "HP": "11d12+55",
   "abilities": {
-    "Charisma": 9,
     "Strength": 23,
-    "Constitution": 20,
-    "Wisdom": 12,
     "Dexterity": 15,
-    "Intelligence": 10
-  }
+    "Constitution": 20,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 9
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 12
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Giant",
+  "CR": "7"
 }

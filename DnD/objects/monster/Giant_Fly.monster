@@ -1,0 +1,24 @@
+{
+  "name": "Giant Fly",
+  "alignment": "unaligned",
+  "AC": 11,
+  "HP": "3d10+3",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 13,
+    "Constitution": 13,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "0"
+}

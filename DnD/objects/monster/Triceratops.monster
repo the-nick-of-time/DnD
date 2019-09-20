@@ -1,13 +1,24 @@
 {
   "name": "Triceratops",
-  "HP": "10d12",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "10d12+30",
   "abilities": {
-    "Charisma": 5,
     "Strength": 22,
-    "Constitution": 17,
-    "Wisdom": 11,
     "Dexterity": 9,
-    "Intelligence": 2
-  }
+    "Constitution": 17,
+    "Intelligence": 2,
+    "Wisdom": 11,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": null,
+  "CR": "5"
 }

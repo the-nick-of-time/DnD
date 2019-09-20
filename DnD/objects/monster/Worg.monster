@@ -1,13 +1,28 @@
 {
   "name": "Worg",
-  "HP": "4d10",
+  "alignment": "neutral evil",
   "AC": 13,
+  "HP": "4d10+4",
   "abilities": {
-    "Charisma": 8,
     "Strength": 16,
-    "Constitution": 13,
-    "Wisdom": 11,
     "Dexterity": 13,
-    "Intelligence": 7
-  }
+    "Constitution": 13,
+    "Intelligence": 7,
+    "Wisdom": 11,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Goblin, Worg",
+  "CR": "1/2"
 }

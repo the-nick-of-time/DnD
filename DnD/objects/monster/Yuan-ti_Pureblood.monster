@@ -1,0 +1,34 @@
+{
+  "name": "Yuan-ti Pureblood",
+  "alignment": "neutral evil",
+  "AC": 11,
+  "HP": "9d8",
+  "abilities": {
+    "Strength": 11,
+    "Dexterity": 12,
+    "Constitution": 11,
+    "Intelligence": 13,
+    "Wisdom": 12,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 6
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Abyssal, Common, Draconic",
+  "CR": "1"
+}

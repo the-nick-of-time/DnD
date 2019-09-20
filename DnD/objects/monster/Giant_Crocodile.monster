@@ -1,13 +1,28 @@
 {
   "name": "Giant Crocodile",
-  "HP": "9d12",
+  "alignment": "unaligned",
   "AC": 14,
+  "HP": "9d12+27",
   "abilities": {
-    "Charisma": 7,
     "Strength": 21,
-    "Constitution": 17,
-    "Wisdom": 10,
     "Dexterity": 9,
-    "Intelligence": 2
-  }
+    "Constitution": 17,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": null,
+  "CR": "5"
 }

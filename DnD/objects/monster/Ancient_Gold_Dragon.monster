@@ -1,13 +1,50 @@
 {
   "name": "Ancient Gold Dragon",
-  "HP": "28d20",
+  "alignment": "lawful good",
   "AC": 22,
+  "HP": "28d20+252",
   "abilities": {
-    "Charisma": 28,
     "Strength": 30,
-    "Constitution": 29,
-    "Wisdom": 17,
     "Dexterity": 14,
-    "Intelligence": 18
-  }
+    "Constitution": 29,
+    "Intelligence": 18,
+    "Wisdom": 17,
+    "Charisma": 28
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 16
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 16
+    }
+  ],
+  "skills": [
+    {
+      "Insight": 10
+    },
+    {
+      " Perception": 17
+    },
+    {
+      " Persuasion": 16
+    },
+    {
+      " Stealth": 9
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 27,
+  "language": "Common, Draconic",
+  "CR": "24"
 }

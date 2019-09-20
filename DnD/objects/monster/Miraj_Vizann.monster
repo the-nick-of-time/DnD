@@ -1,13 +1,31 @@
 {
+  "name": "Miraj Vizann",
+  "alignment": "neutral evil",
   "AC": 10,
   "HP": "11d8+33",
-  "name": "Miraj Vizann",
   "abilities": {
-    "Intelligence": 13,
-    "Charisma": 18,
-    "Constitution": 17,
-    "Dexterity": 10,
     "Strength": 12,
-    "Wisdom": 11
-  }
+    "Dexterity": 10,
+    "Constitution": 17,
+    "Intelligence": 13,
+    "Wisdom": 11,
+    "Charisma": 18
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 4
+    },
+    {
+      " Deception": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Common, Primordial",
+  "CR": "6"
 }

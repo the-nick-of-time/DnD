@@ -10,9 +10,11 @@ python = "^3.6"
 dndice = "^2.1"
 dpath = "^1.4"
 jsonpointer = "^2.0"
+lxml = "^4.4"
 
 [tool.poetry.dev-dependencies]
 nose2 = "^0.9.1"
+beautifulsoup4 = "^4.8"
 
 [build-system]
 requires = ["poetry>=0.12"]

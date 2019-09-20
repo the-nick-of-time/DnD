@@ -1,13 +1,41 @@
 {
-  "HP": "7d8+28",
   "name": "Pharblex Spattergoo",
+  "alignment": "chaotic evil",
   "AC": 15,
+  "HP": "7d8+28",
   "abilities": {
-    "Wisdom": 16,
-    "Charisma": 7,
-    "Dexterity": 12,
-    "Intelligence": 11,
     "Strength": 15,
-    "Constitution": 18
-  }
+    "Dexterity": 12,
+    "Constitution": 18,
+    "Intelligence": 11,
+    "Wisdom": 16,
+    "Charisma": 7
+  },
+  "saves": [
+    {
+      "Strength": 4
+    },
+    {
+      "Constitution": 6
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 5
+    },
+    {
+      " Religion": 2
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 15,
+  "language": "Common, Bullywug",
+  "CR": "3"
 }

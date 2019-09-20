@@ -1,13 +1,24 @@
 {
   "name": "Minotaur Skeleton",
-  "HP": "9d10",
+  "alignment": "lawful evil",
   "AC": 12,
+  "HP": "9d10+18",
   "abilities": {
-    "Charisma": 5,
     "Strength": 18,
-    "Constitution": 15,
-    "Wisdom": 8,
     "Dexterity": 11,
-    "Intelligence": 6
-  }
+    "Constitution": 15,
+    "Intelligence": 6,
+    "Wisdom": 8,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": "bludgeoning",
+  "immunities": "poison",
+  "condition immunities": "exhaustion, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "understands Abyssal but can't speak",
+  "CR": "2"
 }

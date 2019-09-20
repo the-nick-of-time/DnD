@@ -1,13 +1,47 @@
 {
+  "name": "Graz'zt",
+  "alignment": "chaotic evil",
   "AC": 20,
   "HP": "36d10+180",
-  "name": "Graz'zt",
   "abilities": {
     "Strength": 22,
-    "Constitution": 21,
     "Dexterity": 15,
-    "Wisdom": 21,
+    "Constitution": 21,
     "Intelligence": 23,
+    "Wisdom": 21,
     "Charisma": 26
-  }
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 12
+    },
+    {
+      "Wisdom": 12
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 15
+    },
+    {
+      " Insight": 12
+    },
+    {
+      " Perception": 12
+    },
+    {
+      " Persuasion": 15
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, piercing, and slashing that is nonmagical",
+  "condition immunities": "charmed, exhaustion, frightened, poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 22,
+  "language": "all, telepathy 120 ft.",
+  "CR": "24"
 }

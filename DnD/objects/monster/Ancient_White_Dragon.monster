@@ -1,13 +1,44 @@
 {
   "name": "Ancient White Dragon",
-  "HP": "18d20",
+  "alignment": "chaotic evil",
   "AC": 20,
+  "HP": "18d20+144",
   "abilities": {
-    "Charisma": 14,
     "Strength": 26,
-    "Constitution": 26,
-    "Wisdom": 13,
     "Dexterity": 10,
-    "Intelligence": 10
-  }
+    "Constitution": 26,
+    "Intelligence": 10,
+    "Wisdom": 13,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 14
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 13
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 23,
+  "language": "Common, Draconic",
+  "CR": "20"
 }

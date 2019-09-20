@@ -1,13 +1,28 @@
 {
+  "name": "Female Steeder",
+  "alignment": "unaligned",
   "AC": 14,
   "HP": "4d10+8",
-  "name": "Female Steeder",
   "abilities": {
     "Strength": 15,
-    "Constitution": 14,
     "Dexterity": 16,
-    "Wisdom": 10,
+    "Constitution": 14,
     "Intelligence": 2,
+    "Wisdom": 10,
     "Charisma": 3
-  }
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": "-",
+  "CR": "1"
 }

@@ -1,13 +1,28 @@
 {
-  "HP": "2d8+2",
-  "AC": 12,
   "name": "Dolphin",
+  "alignment": "unaligned",
+  "AC": 12,
+  "HP": "2d8+2",
   "abilities": {
+    "Strength": 14,
     "Dexterity": 13,
     "Constitution": 13,
-    "Charisma": 7,
-    "Wisdom": 12,
     "Intelligence": 6,
-    "Strength": 14
-  }
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "blindsight 60 ft.",
+  "passive perception": 13,
+  "language": "",
+  "CR": "1/8"
 }

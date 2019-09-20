@@ -1,13 +1,40 @@
 {
-  "AC": 17,
   "name": "Malformed Kraken",
+  "alignment": "chaotic evil",
+  "AC": 17,
   "HP": "15d12+75",
   "abilities": {
+    "Strength": 25,
     "Dexterity": 11,
-    "Charisma": 15,
     "Constitution": 20,
     "Intelligence": 11,
-    "Strength": 25,
-    "Wisdom": 15
-  }
+    "Wisdom": 15,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Strength": 11
+    },
+    {
+      "Constitution": 9
+    },
+    {
+      "Intelligence": 4
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical attacks",
+  "vulnerabilities": "",
+  "immunities": "lightning",
+  "condition immunities": "frightened, paralyzed",
+  "senses": "truesight 60 ft.",
+  "passive perception": 12,
+  "language": "understands Common but can't speak; telepathy 60 ft.",
+  "CR": "10"
 }

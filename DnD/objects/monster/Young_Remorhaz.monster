@@ -1,0 +1,24 @@
+{
+  "name": "Young Remorhaz",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "11d10+33",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 13,
+    "Constitution": 17,
+    "Intelligence": 3,
+    "Wisdom": 10,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold, fire",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 60 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "5"
+}

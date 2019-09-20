@@ -1,13 +1,24 @@
 {
+  "name": "Bridesmaid of Zuggtmoy",
+  "alignment": "chaotic evil",
   "AC": 13,
   "HP": "5d8",
-  "name": "Bridesmaid of Zuggtmoy",
   "abilities": {
     "Strength": 14,
-    "Constitution": 11,
     "Dexterity": 11,
-    "Wisdom": 8,
+    "Constitution": 11,
     "Intelligence": 14,
+    "Wisdom": 8,
     "Charisma": 18
-  }
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "understands Abyssal but can't speak",
+  "CR": "1/8"
 }

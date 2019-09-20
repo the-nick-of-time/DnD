@@ -1,13 +1,28 @@
 {
   "name": "Darkmantle",
-  "HP": "5d6",
+  "alignment": "unaligned",
   "AC": 11,
+  "HP": "5d6+5",
   "abilities": {
-    "Charisma": 5,
     "Strength": 16,
-    "Constitution": 13,
-    "Wisdom": 10,
     "Dexterity": 12,
-    "Intelligence": 2
-  }
+    "Constitution": 13,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "1/2"
 }

@@ -1,0 +1,28 @@
+{
+  "name": "Quaggoth Thonot",
+  "alignment": "chaotic neutral",
+  "AC": 13,
+  "HP": "6d8+18",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 12,
+    "Constitution": 16,
+    "Intelligence": 6,
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": "Undercommon",
+  "CR": "3"
+}

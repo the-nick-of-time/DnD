@@ -1,13 +1,37 @@
 {
   "name": "Erinyes",
-  "HP": "18d8",
+  "alignment": "lawful evil",
   "AC": 18,
+  "HP": "18d8+72",
   "abilities": {
-    "Charisma": 18,
     "Strength": 18,
-    "Constitution": 18,
-    "Wisdom": 14,
     "Dexterity": 16,
-    "Intelligence": 14
-  }
+    "Constitution": 18,
+    "Intelligence": 14,
+    "Wisdom": 14,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [],
+  "resistances": "cold, bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 12,
+  "language": "Infernal, telepathy 120 ft.",
+  "CR": "12"
 }

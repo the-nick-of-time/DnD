@@ -1,13 +1,24 @@
 {
   "name": "Elk",
-  "HP": "2d10",
+  "alignment": "unaligned",
   "AC": 10,
+  "HP": "2d10+2",
   "abilities": {
-    "Charisma": 6,
     "Strength": 16,
-    "Constitution": 12,
-    "Wisdom": 10,
     "Dexterity": 10,
-    "Intelligence": 2
-  }
+    "Constitution": 12,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": null,
+  "CR": "1/4"
 }

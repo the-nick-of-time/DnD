@@ -1,13 +1,47 @@
 {
   "name": "Ancient Copper Dragon",
-  "HP": "20d20",
+  "alignment": "chaotic good",
   "AC": 21,
+  "HP": "20d20+140",
   "abilities": {
-    "Charisma": 19,
     "Strength": 27,
-    "Constitution": 25,
-    "Wisdom": 17,
     "Dexterity": 12,
-    "Intelligence": 20
-  }
+    "Constitution": 25,
+    "Intelligence": 20,
+    "Wisdom": 17,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 14
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 11
+    },
+    {
+      " Perception": 17
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 27,
+  "language": "Common, Draconic",
+  "CR": "21"
 }

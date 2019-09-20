@@ -1,13 +1,31 @@
 {
   "name": "Plesiosaurus",
-  "HP": "8d10",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "8d10+24",
   "abilities": {
-    "Charisma": 5,
     "Strength": 18,
-    "Constitution": 16,
-    "Wisdom": 12,
     "Dexterity": 15,
-    "Intelligence": 2
-  }
+    "Constitution": 16,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": null,
+  "CR": "2"
 }

@@ -1,13 +1,31 @@
 {
   "name": "Behir",
-  "HP": "16d12",
+  "alignment": "neutral evil",
   "AC": 17,
+  "HP": "16d12+64",
   "abilities": {
-    "Charisma": 12,
     "Strength": 23,
-    "Constitution": 18,
-    "Wisdom": 14,
     "Dexterity": 16,
-    "Intelligence": 7
-  }
+    "Constitution": 18,
+    "Intelligence": 7,
+    "Wisdom": 14,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 6
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": null,
+  "senses": "darkvision 90 ft.",
+  "passive perception": 16,
+  "language": "Draconic",
+  "CR": "11"
 }

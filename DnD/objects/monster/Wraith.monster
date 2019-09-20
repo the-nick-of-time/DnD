@@ -1,13 +1,24 @@
 {
   "name": "Wraith",
-  "HP": "9d8",
+  "alignment": "neutral evil",
   "AC": 13,
+  "HP": "9d8+27",
   "abilities": {
-    "Charisma": 15,
     "Strength": 6,
-    "Constitution": 16,
-    "Wisdom": 14,
     "Dexterity": 16,
-    "Intelligence": 12
-  }
+    "Constitution": 16,
+    "Intelligence": 12,
+    "Wisdom": 14,
+    "Charisma": 15
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "acid, cold, fire, lightning, thunder, bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison",
+  "condition immunities": "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "the languages it knew in life",
+  "CR": "5"
 }

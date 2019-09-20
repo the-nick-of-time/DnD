@@ -1,13 +1,35 @@
 {
-  "HP": "10d10+20",
-  "AC": 15,
   "name": "Mindwitness",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "10d10+20",
   "abilities": {
+    "Strength": 10,
     "Dexterity": 14,
     "Constitution": 14,
-    "Charisma": 10,
-    "Wisdom": 15,
     "Intelligence": 15,
-    "Strength": 10
-  }
+    "Wisdom": 15,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 8
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "prone",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 18,
+  "language": "Deep Speech, Undercommon, telepathy 600 ft.",
+  "CR": "5"
 }

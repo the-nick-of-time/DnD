@@ -1,13 +1,24 @@
 {
   "name": "Giant Bat",
-  "HP": "4d10",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "4d10",
   "abilities": {
-    "Charisma": 6,
     "Strength": 15,
-    "Constitution": 11,
-    "Wisdom": 12,
     "Dexterity": 16,
-    "Intelligence": 2
-  }
+    "Constitution": 11,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft.",
+  "passive perception": 11,
+  "language": null,
+  "CR": "1/4"
 }

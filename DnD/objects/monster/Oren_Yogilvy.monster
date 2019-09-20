@@ -1,13 +1,34 @@
 {
+  "name": "Oren Yogilvy",
+  "alignment": "chaotic good",
   "AC": 11,
   "HP": "2d6+2",
-  "name": "Oren Yogilvy",
   "abilities": {
-    "Dexterity": 13,
-    "Wisdom": 10,
-    "Charisma": 16,
     "Strength": 8,
+    "Dexterity": 13,
     "Constitution": 12,
-    "Intelligence": 11
-  }
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    },
+    {
+      " Performance": 7
+    },
+    {
+      " Persuasion": 5
+    }
+  ],
+  "resistances": "poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common, Halfling",
+  "CR": "0"
 }

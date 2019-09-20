@@ -1,13 +1,47 @@
 {
-  "HP": "21d12+128",
-  "AC": 15,
   "name": "Cloud Giant Smiling One",
+  "alignment": "chaotic neutral",
+  "AC": 15,
+  "HP": "21d12+128",
   "abilities": {
+    "Strength": 26,
     "Dexterity": 12,
     "Constitution": 22,
-    "Charisma": 17,
-    "Wisdom": 16,
     "Intelligence": 15,
-    "Strength": 26
-  }
+    "Wisdom": 16,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Constitution": 10
+    },
+    {
+      "Intelligence": 6
+    },
+    {
+      "Wisdom": 7
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 11
+    },
+    {
+      " Insight": 7
+    },
+    {
+      " Perception": 7
+    },
+    {
+      " Sleight of Hand": 9
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 17,
+  "language": "Common, Giant",
+  "CR": "11"
 }

@@ -1,0 +1,31 @@
+{
+  "name": "Grell",
+  "alignment": "neutral evil",
+  "AC": 12,
+  "HP": "10d8+10",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 14,
+    "Constitution": 13,
+    "Intelligence": 12,
+    "Wisdom": 11,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": "blinded, prone",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 14,
+  "language": "Grell",
+  "CR": "3"
+}

@@ -1,13 +1,31 @@
 {
   "name": "Purple Worm",
-  "HP": "15d20",
+  "alignment": "unaligned",
   "AC": 18,
+  "HP": "15d20+90",
   "abilities": {
-    "Charisma": 4,
     "Strength": 28,
-    "Constitution": 22,
-    "Wisdom": 8,
     "Dexterity": 7,
-    "Intelligence": 1
-  }
+    "Constitution": 22,
+    "Intelligence": 1,
+    "Wisdom": 8,
+    "Charisma": 4
+  },
+  "saves": [
+    {
+      "Constitution": 11
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., tremorsense 60 ft.",
+  "passive perception": 9,
+  "language": null,
+  "CR": "15"
 }

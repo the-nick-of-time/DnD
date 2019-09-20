@@ -1,13 +1,44 @@
 {
   "name": "Adult White Dragon",
-  "HP": "16d12",
+  "alignment": "chaotic evil",
   "AC": 18,
+  "HP": "16d12+96",
   "abilities": {
-    "Charisma": 12,
     "Strength": 22,
-    "Constitution": 22,
-    "Wisdom": 12,
     "Dexterity": 10,
-    "Intelligence": 8
-  }
+    "Constitution": 22,
+    "Intelligence": 8,
+    "Wisdom": 12,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 11
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 11
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 21,
+  "language": "Common, Draconic",
+  "CR": "13"
 }

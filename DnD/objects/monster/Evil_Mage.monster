@@ -1,13 +1,38 @@
 {
-  "AC": 12,
   "name": "Evil Mage",
+  "alignment": "lawful evil",
+  "AC": 12,
+  "HP": "5d8",
   "abilities": {
+    "Strength": 9,
+    "Dexterity": 14,
+    "Constitution": 11,
     "Intelligence": 17,
     "Wisdom": 12,
-    "Constitution": 11,
-    "Charisma": 11,
-    "Strength": 9,
-    "Dexterity": 14
+    "Charisma": 11
   },
-  "HP": "5d8"
+  "saves": [
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 3
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " History": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 11,
+  "language": "Common, Draconic, Dwarvish, Elvish",
+  "CR": "1"
 }

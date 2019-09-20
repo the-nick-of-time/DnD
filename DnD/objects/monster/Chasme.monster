@@ -1,0 +1,35 @@
+{
+  "name": "Chasme",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "13d10+13",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 15,
+    "Constitution": 12,
+    "Intelligence": 11,
+    "Wisdom": 14,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 5
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "blindsight 10 ft., darkvision 120 ft.",
+  "passive perception": 15,
+  "language": "Abyssal, telepathy 120 ft.",
+  "CR": "6"
+}

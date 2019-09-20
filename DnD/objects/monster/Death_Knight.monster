@@ -1,0 +1,34 @@
+{
+  "name": "Death Knight",
+  "alignment": "chaotic evil",
+  "AC": 20,
+  "HP": "19d8+95",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 11,
+    "Constitution": 20,
+    "Intelligence": 12,
+    "Wisdom": 16,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 10
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison",
+  "condition immunities": "exhaustion, frightened, poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 13,
+  "language": "Abyssal, Common",
+  "CR": "17"
+}

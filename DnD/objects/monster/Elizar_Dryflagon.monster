@@ -1,13 +1,31 @@
 {
+  "name": "Elizar Dryflagon",
+  "alignment": "neutral evil",
   "AC": 14,
   "HP": "11d8+22",
-  "name": "Elizar Dryflagon",
   "abilities": {
-    "Intelligence": 11,
-    "Charisma": 10,
-    "Constitution": 14,
-    "Dexterity": 15,
     "Strength": 13,
-    "Wisdom": 18
-  }
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Intelligence": 11,
+    "Wisdom": 18,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 3
+    },
+    {
+      " Deception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": "Common, Druidic",
+  "CR": "5"
 }

@@ -1,13 +1,31 @@
 {
   "name": "Winter Wolf",
-  "HP": "10d10",
+  "alignment": "neutral evil",
   "AC": 13,
+  "HP": "10d10+20",
   "abilities": {
-    "Charisma": 8,
     "Strength": 18,
-    "Constitution": 14,
-    "Wisdom": 12,
     "Dexterity": 13,
-    "Intelligence": 7
-  }
+    "Constitution": 14,
+    "Intelligence": 7,
+    "Wisdom": 12,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 5
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 15,
+  "language": "Common, Giant, Winter Wolf",
+  "CR": "3"
 }

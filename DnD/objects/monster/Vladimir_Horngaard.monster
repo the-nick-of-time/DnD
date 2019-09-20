@@ -1,13 +1,37 @@
 {
   "name": "Vladimir Horngaard",
+  "alignment": "lawful evil",
+  "AC": 17,
+  "HP": "16d8+64",
   "abilities": {
+    "Strength": 18,
+    "Dexterity": 14,
     "Constitution": 18,
     "Intelligence": 13,
-    "Charisma": 18,
     "Wisdom": 16,
-    "Dexterity": 14,
-    "Strength": 18
+    "Charisma": 18
   },
-  "HP": "16d8+64",
-  "AC": 17
+  "saves": [
+    {
+      "Strength": 7
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [],
+  "resistances": "necrotic, psychic",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "charmed, exhaustion, frightened, paralyzed, poisoned, stunned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Common, Draconic",
+  "CR": "7"
 }

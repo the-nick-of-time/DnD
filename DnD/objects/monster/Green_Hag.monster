@@ -1,13 +1,37 @@
 {
   "name": "Green Hag",
-  "HP": "11d8",
+  "alignment": "neutral evil",
   "AC": 17,
+  "HP": "11d8+33",
   "abilities": {
-    "Charisma": 14,
     "Strength": 18,
-    "Constitution": 16,
-    "Wisdom": 14,
     "Dexterity": 12,
-    "Intelligence": 13
-  }
+    "Constitution": 16,
+    "Intelligence": 13,
+    "Wisdom": 14,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 3
+    },
+    {
+      " Deception": 4
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Common, Draconic, Sylvan",
+  "CR": "3"
 }

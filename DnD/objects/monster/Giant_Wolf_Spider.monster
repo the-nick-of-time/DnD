@@ -1,13 +1,31 @@
 {
   "name": "Giant Wolf Spider",
-  "HP": "2d8",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "2d8+2",
   "abilities": {
-    "Charisma": 4,
     "Strength": 12,
-    "Constitution": 13,
-    "Wisdom": 12,
     "Dexterity": 16,
-    "Intelligence": 3
-  }
+    "Constitution": 13,
+    "Intelligence": 3,
+    "Wisdom": 12,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 13,
+  "language": null,
+  "CR": "1/4"
 }

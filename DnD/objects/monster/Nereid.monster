@@ -1,13 +1,24 @@
 {
-  "AC": 13,
   "name": "Nereid",
+  "alignment": "any chaotic alignment",
+  "AC": 13,
   "HP": "8d8+8",
   "abilities": {
+    "Strength": 10,
     "Dexterity": 17,
-    "Charisma": 16,
     "Constitution": 12,
     "Intelligence": 13,
-    "Strength": 10,
-    "Wisdom": 14
-  }
+    "Wisdom": 14,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Aquan, Common, Elvish, Sylvan",
+  "CR": "2"
 }

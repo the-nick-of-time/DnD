@@ -1,13 +1,37 @@
 {
   "name": "Scout",
-  "HP": "3d8",
+  "alignment": "any alignment",
   "AC": 13,
+  "HP": "3d8+3",
   "abilities": {
-    "Charisma": 11,
     "Strength": 11,
-    "Constitution": 12,
-    "Wisdom": 13,
     "Dexterity": 14,
-    "Intelligence": 11
-  }
+    "Constitution": 12,
+    "Intelligence": 11,
+    "Wisdom": 13,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Nature": 4
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 6
+    },
+    {
+      " Survival": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 15,
+  "language": "any one language (usually Common)",
+  "CR": "1/2"
 }

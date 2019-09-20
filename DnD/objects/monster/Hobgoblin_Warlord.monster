@@ -1,0 +1,34 @@
+{
+  "name": "Hobgoblin Warlord",
+  "alignment": "lawful evil",
+  "AC": 20,
+  "HP": "13d8+39",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 14,
+    "Constitution": 16,
+    "Intelligence": 14,
+    "Wisdom": 11,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Common, Goblin",
+  "CR": "6"
+}

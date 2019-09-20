@@ -1,13 +1,31 @@
 {
   "name": "Barovian Witch",
+  "alignment": "chaotic evil",
+  "AC": 10,
+  "HP": "3d8+3",
   "abilities": {
+    "Strength": 7,
+    "Dexterity": 11,
     "Constitution": 13,
     "Intelligence": 14,
-    "Charisma": 12,
     "Wisdom": 11,
-    "Dexterity": 11,
-    "Strength": 7
+    "Charisma": 12
   },
-  "HP": "3d8+3",
-  "AC": 10
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 4
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Common",
+  "CR": "1/2"
 }

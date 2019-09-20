@@ -1,13 +1,24 @@
 {
-  "HP": "4d8+4",
-  "AC": 16,
   "name": "Firenewt Warrior",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "4d8+4",
   "abilities": {
+    "Strength": 10,
     "Dexterity": 13,
     "Constitution": 12,
-    "Charisma": 8,
-    "Wisdom": 11,
     "Intelligence": 7,
-    "Strength": 10
-  }
+    "Wisdom": 11,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "fire",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 10,
+  "language": "Draconic, Ignan",
+  "CR": "1/2"
 }

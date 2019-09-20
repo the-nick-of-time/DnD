@@ -1,0 +1,28 @@
+{
+  "name": "Goblin Boss",
+  "alignment": "neutral evil",
+  "AC": 17,
+  "HP": "6d6",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
+    "Constitution": 10,
+    "Intelligence": 10,
+    "Wisdom": 8,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "Common, Goblin",
+  "CR": "1"
+}

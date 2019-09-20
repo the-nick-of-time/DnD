@@ -1,13 +1,40 @@
 {
+  "name": "Beldora",
+  "alignment": "chaotic good",
   "AC": 12,
   "HP": "4d8",
-  "name": "Beldora",
   "abilities": {
-    "Dexterity": 14,
-    "Wisdom": 12,
-    "Charisma": 16,
     "Strength": 10,
+    "Dexterity": 14,
     "Constitution": 10,
-    "Intelligence": 16
-  }
+    "Intelligence": 16,
+    "Wisdom": 12,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Insight": 3
+    },
+    {
+      " Investigation": 5
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Persuasion": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": "Common, Draconic, Dwarvish, Halfling",
+  "CR": "0"
 }

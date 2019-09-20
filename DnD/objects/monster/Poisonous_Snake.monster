@@ -1,13 +1,24 @@
 {
   "name": "Poisonous Snake",
-  "HP": "1d4",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "1d4",
   "abilities": {
-    "Charisma": 3,
     "Strength": 2,
-    "Constitution": 11,
-    "Wisdom": 10,
     "Dexterity": 16,
-    "Intelligence": 1
-  }
+    "Constitution": 11,
+    "Intelligence": 1,
+    "Wisdom": 10,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 10 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "1/8"
 }

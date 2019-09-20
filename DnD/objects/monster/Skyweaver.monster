@@ -1,13 +1,31 @@
 {
+  "name": "Skyweaver",
+  "alignment": "chaotic evil",
   "AC": 12,
   "HP": "8d8+8",
-  "name": "Skyweaver",
   "abilities": {
-    "Intelligence": 11,
-    "Charisma": 16,
-    "Constitution": 12,
-    "Dexterity": 14,
     "Strength": 8,
-    "Wisdom": 10
-  }
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Persuasion": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Auran, Common",
+  "CR": "3"
 }

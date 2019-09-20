@@ -1,0 +1,34 @@
+{
+  "name": "Dao",
+  "alignment": "neutral evil",
+  "AC": 18,
+  "HP": "15d10+105",
+  "abilities": {
+    "Strength": 23,
+    "Dexterity": 12,
+    "Constitution": 24,
+    "Intelligence": 12,
+    "Wisdom": 13,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 5
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "petrified",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 11,
+  "language": "Terran",
+  "CR": "11"
+}

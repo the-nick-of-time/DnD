@@ -1,13 +1,24 @@
 {
-  "AC": 13,
   "name": "Mormesk the Wraith",
+  "alignment": "neutral evil",
+  "AC": 13,
+  "HP": "6d8+18",
   "abilities": {
+    "Strength": 6,
+    "Dexterity": 16,
+    "Constitution": 16,
     "Intelligence": 12,
     "Wisdom": 14,
-    "Constitution": 16,
-    "Charisma": 15,
-    "Strength": 6,
-    "Dexterity": 16
+    "Charisma": 15
   },
-  "HP": "6d8+18"
+  "saves": [],
+  "skills": [],
+  "resistances": "acid, cold, fire, lightning, thunder, bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison",
+  "condition immunities": "charmed, grappled, paralyzed, petrified, poisoned, prone, restrained",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Common, Infernal",
+  "CR": "3"
 }

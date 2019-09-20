@@ -1,13 +1,46 @@
 {
   "name": "Spy",
-  "HP": "6d8",
+  "alignment": "any alignment",
   "AC": 12,
+  "HP": "6d8",
   "abilities": {
-    "Charisma": 16,
     "Strength": 10,
-    "Constitution": 10,
-    "Wisdom": 14,
     "Dexterity": 15,
-    "Intelligence": 12
-  }
+    "Constitution": 10,
+    "Intelligence": 12,
+    "Wisdom": 14,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Insight": 4
+    },
+    {
+      " Investigation": 5
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Persuasion": 5
+    },
+    {
+      " Sleight of Hand": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 16,
+  "language": "any two languages",
+  "CR": "1"
 }

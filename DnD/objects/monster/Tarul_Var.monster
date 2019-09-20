@@ -1,13 +1,47 @@
 {
-  "AC": 16,
   "name": "Tarul Var",
+  "alignment": "neutral evil",
+  "AC": 16,
   "HP": "14d8+42",
   "abilities": {
+    "Strength": 11,
     "Dexterity": 16,
-    "Charisma": 16,
     "Constitution": 16,
     "Intelligence": 19,
-    "Strength": 11,
-    "Wisdom": 14
-  }
+    "Wisdom": 14,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Constitution": 8
+    },
+    {
+      "Intelligence": 9
+    },
+    {
+      "Wisdom": 7
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 9
+    },
+    {
+      " History": 9
+    },
+    {
+      " Insight": 7
+    },
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": "cold, lightning, necrotic; bludgeoning, piercing, and slashing from nonmagical attacks",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 17,
+  "language": "Abyssal, Common, Infernal, Primordial, Thayan",
+  "CR": "13"
 }

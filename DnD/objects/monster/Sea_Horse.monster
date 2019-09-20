@@ -1,13 +1,24 @@
 {
   "name": "Sea Horse",
-  "HP": "1d4",
+  "alignment": "unaligned",
   "AC": 11,
+  "HP": "1d4-1",
   "abilities": {
-    "Charisma": 2,
     "Strength": 1,
-    "Constitution": 8,
-    "Wisdom": 10,
     "Dexterity": 12,
-    "Intelligence": 1
-  }
+    "Constitution": 8,
+    "Intelligence": 1,
+    "Wisdom": 10,
+    "Charisma": 2
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": null,
+  "CR": "0"
 }

@@ -1,13 +1,28 @@
 {
+  "name": "Droki",
+  "alignment": "chaotic evil",
   "AC": 15,
   "HP": "7d6+7",
-  "name": "Droki",
   "abilities": {
     "Strength": 11,
-    "Constitution": 13,
     "Dexterity": 16,
-    "Wisdom": 5,
+    "Constitution": 13,
     "Intelligence": 10,
+    "Wisdom": 5,
     "Charisma": 16
-  }
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 7,
+  "language": "Dwarvish, Undercommon",
+  "CR": "2"
 }

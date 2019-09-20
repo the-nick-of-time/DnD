@@ -1,13 +1,28 @@
 {
-  "HP": "10d12+40",
-  "AC": 14,
   "name": "Mouth of Grolantor",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "10d12+40",
   "abilities": {
+    "Strength": 21,
     "Dexterity": 10,
     "Constitution": 18,
-    "Charisma": 5,
-    "Wisdom": 7,
     "Intelligence": 5,
-    "Strength": 21
-  }
+    "Wisdom": 7,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 1
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "frightened",
+  "senses": "",
+  "passive perception": 11,
+  "language": "Giant",
+  "CR": "6"
 }

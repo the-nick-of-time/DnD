@@ -1,13 +1,28 @@
 {
   "name": "Mummy",
-  "HP": "9d8",
+  "alignment": "lawful evil",
   "AC": 11,
+  "HP": "9d8+18",
   "abilities": {
-    "Charisma": 12,
     "Strength": 16,
-    "Constitution": 15,
-    "Wisdom": 10,
     "Dexterity": 8,
-    "Intelligence": 6
-  }
+    "Constitution": 15,
+    "Intelligence": 6,
+    "Wisdom": 10,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Wisdom": 2
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": "fire",
+  "immunities": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": "necrotic, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "the languages it knew in life",
+  "CR": "3"
 }

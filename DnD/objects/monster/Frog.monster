@@ -1,13 +1,31 @@
 {
   "name": "Frog",
-  "HP": "1d4",
+  "alignment": "unaligned",
   "AC": 11,
+  "HP": "1d4-1",
   "abilities": {
-    "Charisma": 3,
     "Strength": 1,
-    "Constitution": 8,
-    "Wisdom": 8,
     "Dexterity": 13,
-    "Intelligence": 1
-  }
+    "Constitution": 8,
+    "Intelligence": 1,
+    "Wisdom": 8,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 1
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 30 ft.",
+  "passive perception": 11,
+  "language": null,
+  "CR": "0"
 }

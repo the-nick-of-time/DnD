@@ -1,0 +1,24 @@
+{
+  "name": "Gnoll Pack Lord",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "9d8+9",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 14,
+    "Constitution": 13,
+    "Intelligence": 8,
+    "Wisdom": 11,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Gnoll",
+  "CR": "2"
+}

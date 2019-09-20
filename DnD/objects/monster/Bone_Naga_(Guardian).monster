@@ -1,0 +1,24 @@
+{
+  "name": "Bone Naga (Guardian)",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "9d10+9",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 15,
+    "Wisdom": 15,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "charmed, exhaustion, paralyzed, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Common plus one other language",
+  "CR": "4"
+}

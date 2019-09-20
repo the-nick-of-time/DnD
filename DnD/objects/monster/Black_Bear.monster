@@ -1,13 +1,24 @@
 {
   "name": "Black Bear",
-  "HP": "3d8",
+  "alignment": "unaligned",
   "AC": 11,
+  "HP": "3d8+6",
   "abilities": {
-    "Charisma": 7,
     "Strength": 15,
-    "Constitution": 14,
-    "Wisdom": 12,
     "Dexterity": 10,
-    "Intelligence": 2
-  }
+    "Constitution": 14,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": null,
+  "CR": "1/2"
 }

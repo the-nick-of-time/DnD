@@ -1,13 +1,35 @@
 {
-  "AC": 18,
   "name": "Dread Warrior",
+  "alignment": "neutral evil",
+  "AC": 18,
   "HP": "5d8+15",
   "abilities": {
+    "Strength": 15,
     "Dexterity": 11,
-    "Charisma": 10,
     "Constitution": 16,
     "Intelligence": 10,
-    "Strength": 15,
-    "Wisdom": 12
-  }
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Wisdom": 3
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 4
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "exhaustion, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Common",
+  "CR": "l"
 }

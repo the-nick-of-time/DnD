@@ -1,13 +1,38 @@
 {
-  "HP": "7d8+14",
-  "AC": 14,
   "name": "Yuan-ti Broodguard",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "7d8+14",
   "abilities": {
+    "Strength": 15,
     "Dexterity": 14,
     "Constitution": 14,
-    "Charisma": 4,
-    "Wisdom": 11,
     "Intelligence": 6,
-    "Strength": 15
-  }
+    "Wisdom": 11,
+    "Charisma": 4
+  },
+  "saves": [
+    {
+      "Strength": 4
+    },
+    {
+      "Dexterity": 4
+    },
+    {
+      "Wisdom": 2
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 2
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Abyssal, Common, Draconic",
+  "CR": "2"
 }

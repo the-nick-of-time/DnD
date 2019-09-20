@@ -1,13 +1,24 @@
 {
   "name": "Sea Hag",
-  "HP": "7d8",
+  "alignment": "chaotic evil",
   "AC": 14,
+  "HP": "7d8+21",
   "abilities": {
-    "Charisma": 13,
     "Strength": 16,
-    "Constitution": 16,
-    "Wisdom": 12,
     "Dexterity": 13,
-    "Intelligence": 12
-  }
+    "Constitution": 16,
+    "Intelligence": 12,
+    "Wisdom": 12,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Aquan, Common, Giant",
+  "CR": "2"
 }

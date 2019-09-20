@@ -1,13 +1,38 @@
 {
+  "name": "Oreioth",
+  "alignment": "chaotic evil",
   "AC": 11,
   "HP": "6d8+12",
-  "name": "Oreioth",
   "abilities": {
-    "Intelligence": 16,
-    "Charisma": 11,
-    "Constitution": 14,
-    "Dexterity": 13,
     "Strength": 8,
-    "Wisdom": 9
-  }
+    "Dexterity": 13,
+    "Constitution": 14,
+    "Intelligence": 16,
+    "Wisdom": 9,
+    "Charisma": 11
+  },
+  "saves": [
+    {
+      "Wisdom": 1
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " Investigation": 5
+    },
+    {
+      " Medicine": 1
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 9,
+  "language": "Abyssal, Common",
+  "CR": "2"
 }

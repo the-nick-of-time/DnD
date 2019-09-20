@@ -1,13 +1,47 @@
 {
   "name": "Barbed Devil",
-  "HP": "13d8",
+  "alignment": "lawful evil",
   "AC": 15,
+  "HP": "13d8+52",
   "abilities": {
-    "Charisma": 14,
     "Strength": 16,
-    "Constitution": 18,
-    "Wisdom": 14,
     "Dexterity": 17,
-    "Intelligence": 12
-  }
+    "Constitution": 18,
+    "Intelligence": 12,
+    "Wisdom": 14,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Strength": 6
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 5
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Insight": 5
+    },
+    {
+      " Perception": 8
+    }
+  ],
+  "resistances": "cold, bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 18,
+  "language": "Infernal, telepathy 120 ft.",
+  "CR": "5"
 }

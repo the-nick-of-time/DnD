@@ -1,13 +1,31 @@
 {
+  "name": "Dark Tide Knight",
+  "alignment": "lawful evil",
   "AC": 13,
   "HP": "9d8+18",
-  "name": "Dark Tide Knight",
   "abilities": {
-    "Intelligence": 10,
-    "Charisma": 11,
-    "Constitution": 14,
-    "Dexterity": 16,
     "Strength": 17,
-    "Wisdom": 11
-  }
+    "Dexterity": 16,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 7
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Common",
+  "CR": "3"
 }

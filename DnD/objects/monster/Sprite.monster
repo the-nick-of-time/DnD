@@ -1,13 +1,31 @@
 {
   "name": "Sprite",
-  "HP": "1d4",
+  "alignment": "neutral good",
   "AC": 15,
+  "HP": "1d4",
   "abilities": {
-    "Charisma": 11,
     "Strength": 3,
-    "Constitution": 10,
-    "Wisdom": 13,
     "Dexterity": 18,
-    "Intelligence": 14
-  }
+    "Constitution": 10,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": "Common, Elvish, Sylvan",
+  "CR": "1/4"
 }

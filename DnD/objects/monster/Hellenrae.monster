@@ -1,13 +1,37 @@
 {
+  "name": "Hellenrae",
+  "alignment": "lawful evil",
   "AC": 16,
   "HP": "12d8+24",
-  "name": "Hellenrae",
   "abilities": {
-    "Intelligence": 10,
-    "Charisma": 13,
-    "Constitution": 14,
-    "Dexterity": 18,
     "Strength": 13,
-    "Wisdom": 15
-  }
+    "Dexterity": 18,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 15,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Acrobatics": 7
+    },
+    {
+      " Athletics": 4
+    },
+    {
+      " Insight": 5
+    },
+    {
+      " Perception": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "blinded, poisoned",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 15,
+  "language": "Common, Terran",
+  "CR": "5"
 }

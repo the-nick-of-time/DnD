@@ -1,13 +1,41 @@
 {
-  "HP": "18d8+72",
-  "AC": 18,
   "name": "Blackguard",
+  "alignment": "any non-good alignment",
+  "AC": 18,
+  "HP": "18d8+72",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 11,
     "Constitution": 18,
-    "Charisma": 15,
-    "Wisdom": 14,
     "Intelligence": 11,
-    "Strength": 18
-  }
+    "Wisdom": 14,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Wisdom": 5
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 7
+    },
+    {
+      " Deception": 5
+    },
+    {
+      " Intimidation": 5
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 12,
+  "language": "any one language (usually Common)",
+  "CR": "8"
 }

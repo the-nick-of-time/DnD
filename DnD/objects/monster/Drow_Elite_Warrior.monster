@@ -1,0 +1,41 @@
+{
+  "name": "Drow Elite Warrior",
+  "alignment": "neutral evil",
+  "AC": 18,
+  "HP": "11d8+22",
+  "abilities": {
+    "Strength": 13,
+    "Dexterity": 18,
+    "Constitution": 14,
+    "Intelligence": 11,
+    "Wisdom": 13,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 5
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 10
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 14,
+  "language": "Elvish, Undercommon",
+  "CR": "5"
+}

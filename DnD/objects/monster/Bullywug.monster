@@ -1,0 +1,28 @@
+{
+  "name": "Bullywug",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "2d8+2",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 12,
+    "Constitution": 13,
+    "Intelligence": 7,
+    "Wisdom": 10,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Bullywug",
+  "CR": "1/4"
+}

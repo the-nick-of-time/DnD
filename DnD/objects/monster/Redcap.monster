@@ -1,13 +1,31 @@
 {
-  "HP": "6d6+24",
-  "AC": 13,
   "name": "Redcap",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "6d6+24",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 13,
     "Constitution": 18,
-    "Charisma": 9,
-    "Wisdom": 12,
     "Intelligence": 10,
-    "Strength": 18
-  }
+    "Wisdom": 12,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 6
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Common, Sylvan",
+  "CR": "3"
 }

@@ -1,13 +1,35 @@
 {
-  "HP": "6d8+6",
   "name": "Dragonwing",
+  "alignment": "neutral evil",
   "AC": 14,
+  "HP": "6d8+6",
   "abilities": {
-    "Wisdom": 11,
-    "Charisma": 13,
-    "Dexterity": 16,
-    "Intelligence": 11,
     "Strength": 11,
-    "Constitution": 13
-  }
+    "Dexterity": 16,
+    "Constitution": 13,
+    "Intelligence": 11,
+    "Wisdom": 11,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Wisdom": 2
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 3
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "one of the following: acid, cold, fire, lightning, or poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Common, Draconic",
+  "CR": "2"
 }

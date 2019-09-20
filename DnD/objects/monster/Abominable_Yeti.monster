@@ -1,0 +1,31 @@
+{
+  "name": "Abominable Yeti",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "11d12+66",
+  "abilities": {
+    "Strength": 24,
+    "Dexterity": 10,
+    "Constitution": 22,
+    "Intelligence": 9,
+    "Wisdom": 13,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 5
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": "Yeti",
+  "CR": "9"
+}

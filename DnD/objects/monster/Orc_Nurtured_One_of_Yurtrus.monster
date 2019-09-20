@@ -1,13 +1,24 @@
 {
-  "HP": "4d8+12",
-  "AC": 9,
   "name": "Orc Nurtured One of Yurtrus",
+  "alignment": "chaotic evil",
+  "AC": 9,
+  "HP": "4d8+12",
   "abilities": {
+    "Strength": 15,
     "Dexterity": 8,
     "Constitution": 16,
-    "Charisma": 7,
-    "Wisdom": 11,
     "Intelligence": 7,
-    "Strength": 15
-  }
+    "Wisdom": 11,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Common, Orc",
+  "CR": "1/2"
 }

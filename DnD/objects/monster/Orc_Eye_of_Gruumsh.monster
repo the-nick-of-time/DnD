@@ -1,0 +1,31 @@
+{
+  "name": "Orc Eye of Gruumsh",
+  "alignment": "chaotic evil",
+  "AC": 16,
+  "HP": "6d8+18",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 12,
+    "Constitution": 17,
+    "Intelligence": 9,
+    "Wisdom": 13,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 3
+    },
+    {
+      " Religion": 1
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Common, Orc",
+  "CR": "2"
+}

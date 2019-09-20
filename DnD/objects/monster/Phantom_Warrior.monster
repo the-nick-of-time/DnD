@@ -1,13 +1,31 @@
 {
   "name": "Phantom Warrior",
+  "alignment": "any alignment",
+  "AC": 16,
+  "HP": "6d8+18",
   "abilities": {
+    "Strength": 16,
+    "Dexterity": 11,
     "Constitution": 16,
     "Intelligence": 8,
-    "Charisma": 15,
     "Wisdom": 10,
-    "Dexterity": 11,
-    "Strength": 16
+    "Charisma": 15
   },
-  "HP": "6d8+18",
-  "AC": 16
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical attacks",
+  "vulnerabilities": "",
+  "immunities": "cold, necrotic, poison",
+  "condition immunities": "charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "any languages it knew in life",
+  "CR": "1"
 }

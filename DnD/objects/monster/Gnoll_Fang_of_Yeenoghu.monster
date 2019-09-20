@@ -1,0 +1,34 @@
+{
+  "name": "Gnoll Fang of Yeenoghu",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "10d8+20",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 15,
+    "Constitution": 15,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Constitution": 4
+    },
+    {
+      "Wisdom": 2
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Abyssal, Gnoll",
+  "CR": "4"
+}

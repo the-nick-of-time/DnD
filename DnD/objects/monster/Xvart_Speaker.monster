@@ -1,13 +1,28 @@
 {
-  "HP": "2d6",
-  "AC": 13,
   "name": "Xvart Speaker",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "2d6",
   "abilities": {
+    "Strength": 8,
     "Dexterity": 14,
     "Constitution": 10,
-    "Charisma": 7,
-    "Wisdom": 7,
     "Intelligence": 11,
-    "Strength": 8
-  }
+    "Wisdom": 7,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 4
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 30 ft.",
+  "passive perception": 8,
+  "language": "Abyssal plus one other language, usually Common or Goblin",
+  "CR": "1/8"
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Gas Spore",
+  "alignment": "unaligned",
+  "AC": 5,
+  "HP": "1d10-4",
+  "abilities": {
+    "Strength": 5,
+    "Dexterity": 1,
+    "Constitution": 3,
+    "Intelligence": 1,
+    "Wisdom": 1,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "blinded, deafened, frightened, paralyzed, poisoned, prone",
+  "senses": "blindsight 30 ft. (blind beyond this radius)",
+  "passive perception": 5,
+  "language": null,
+  "CR": "1/2"
+}

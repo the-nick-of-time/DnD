@@ -1,13 +1,31 @@
 {
   "name": "Giant Ape",
-  "HP": "15d12",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "15d12+60",
   "abilities": {
-    "Charisma": 7,
     "Strength": 23,
-    "Constitution": 18,
-    "Wisdom": 12,
     "Dexterity": 14,
-    "Intelligence": 7
-  }
+    "Constitution": 18,
+    "Intelligence": 7,
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 9
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": null,
+  "CR": "7"
 }

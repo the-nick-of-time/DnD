@@ -1,13 +1,44 @@
 {
   "name": "Black Dragon Wyrmling",
-  "HP": "6d8",
+  "alignment": "chaotic evil",
   "AC": 17,
+  "HP": "6d8+6",
   "abilities": {
-    "Charisma": 13,
     "Strength": 15,
-    "Constitution": 13,
-    "Wisdom": 11,
     "Dexterity": 14,
-    "Intelligence": 10
-  }
+    "Constitution": 13,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 3
+    },
+    {
+      "Wisdom": 2
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Draconic",
+  "CR": "2"
 }

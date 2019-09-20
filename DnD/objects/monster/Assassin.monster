@@ -1,13 +1,44 @@
 {
   "name": "Assassin",
-  "HP": "12d8",
+  "alignment": "any non-good alignment",
   "AC": 15,
+  "HP": "12d8+24",
   "abilities": {
-    "Charisma": 10,
     "Strength": 11,
-    "Constitution": 14,
-    "Wisdom": 11,
     "Dexterity": 16,
-    "Intelligence": 13
-  }
+    "Constitution": 14,
+    "Intelligence": 13,
+    "Wisdom": 11,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Intelligence": 4
+    }
+  ],
+  "skills": [
+    {
+      "Acrobatics": 6
+    },
+    {
+      " Deception": 3
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 9
+    }
+  ],
+  "resistances": "poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": "Thieves' cant plus any two languages",
+  "CR": "8"
 }

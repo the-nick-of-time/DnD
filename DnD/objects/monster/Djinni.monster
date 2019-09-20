@@ -1,13 +1,34 @@
 {
   "name": "Djinni",
-  "HP": "14d10",
+  "alignment": "chaotic good",
   "AC": 17,
+  "HP": "14d10+84",
   "abilities": {
-    "Charisma": 20,
     "Strength": 21,
-    "Constitution": 22,
-    "Wisdom": 16,
     "Dexterity": 15,
-    "Intelligence": 15
-  }
+    "Constitution": 22,
+    "Intelligence": 15,
+    "Wisdom": 16,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning, thunder",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 13,
+  "language": "Auran",
+  "CR": "11"
 }

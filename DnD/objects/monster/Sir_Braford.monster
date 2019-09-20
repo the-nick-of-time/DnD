@@ -1,13 +1,28 @@
 {
-  "AC": 18,
   "name": "Sir Braford",
+  "alignment": "neutral evil",
+  "AC": 18,
   "HP": "3d8+6",
   "abilities": {
+    "Strength": 16,
     "Dexterity": 9,
-    "Charisma": 14,
     "Constitution": 14,
     "Intelligence": 10,
-    "Strength": 16,
-    "Wisdom": 13
-  }
+    "Wisdom": 13,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 13,
+  "language": "Common",
+  "CR": "1/2"
 }

@@ -1,13 +1,35 @@
 {
   "name": "Baba Lysaga",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "16d8+48",
   "abilities": {
+    "Strength": 18,
+    "Dexterity": 10,
     "Constitution": 16,
     "Intelligence": 20,
-    "Charisma": 13,
     "Wisdom": 17,
-    "Dexterity": 10,
-    "Strength": 18
+    "Charisma": 13
   },
-  "HP": "16d8+48",
-  "AC": 15
+  "saves": [
+    {
+      "Wisdom": 7
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 13
+    },
+    {
+      " Religion": 13
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 13,
+  "language": "Abyssal, Common, Draconic, Dwarvish, Giant",
+  "CR": "11"
 }

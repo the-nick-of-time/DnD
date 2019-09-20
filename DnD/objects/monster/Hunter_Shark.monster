@@ -1,13 +1,28 @@
 {
   "name": "Hunter Shark",
-  "HP": "6d10",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "6d10+12",
   "abilities": {
-    "Charisma": 4,
     "Strength": 18,
-    "Constitution": 15,
-    "Wisdom": 10,
     "Dexterity": 13,
-    "Intelligence": 1
-  }
+    "Constitution": 15,
+    "Intelligence": 1,
+    "Wisdom": 10,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 30 ft.",
+  "passive perception": 12,
+  "language": null,
+  "CR": "2"
 }

@@ -1,13 +1,31 @@
 {
+  "name": "Razerblast",
+  "alignment": "chaotic evil",
   "AC": 17,
   "HP": "15d8+75",
-  "name": "Razerblast",
   "abilities": {
-    "Intelligence": 9,
-    "Charisma": 13,
-    "Constitution": 16,
-    "Dexterity": 11,
     "Strength": 16,
-    "Wisdom": 10
-  }
+    "Dexterity": 11,
+    "Constitution": 16,
+    "Intelligence": 9,
+    "Wisdom": 10,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 4
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": "Common, Ignan",
+  "CR": "5"
 }

@@ -1,13 +1,28 @@
 {
+  "name": "Crag Cat",
+  "alignment": "unaligned",
   "AC": 13,
   "HP": "4d10+12",
-  "name": "Crag Cat",
   "abilities": {
-    "Dexterity": 17,
-    "Wisdom": 14,
-    "Charisma": 8,
     "Strength": 16,
+    "Dexterity": 17,
     "Constitution": 16,
-    "Intelligence": 4
-  }
+    "Intelligence": 4,
+    "Wisdom": 14,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "--",
+  "CR": "1"
 }

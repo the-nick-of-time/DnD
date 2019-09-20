@@ -1,13 +1,35 @@
 {
+  "name": "Dragonfang",
+  "alignment": "neutral evil",
+  "AC": 15,
   "HP": "12d8+24",
   "abilities": {
-    "Dexterity": 16,
-    "Wisdom": 12,
     "Strength": 11,
-    "Charisma": 14,
+    "Dexterity": 16,
     "Constitution": 14,
-    "Intelligence": 12
+    "Intelligence": 12,
+    "Wisdom": 12,
+    "Charisma": 14
   },
-  "name": "Dragonfang",
-  "AC": 15
+  "saves": [
+    {
+      "Wisdom": 3
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 4
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "one of the following: acid, cold, fire, lightning or poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 11,
+  "language": "Common, Draconic, Infernal",
+  "CR": "5"
 }

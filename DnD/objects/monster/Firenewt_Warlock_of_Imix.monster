@@ -1,13 +1,24 @@
 {
-  "HP": "6d8+6",
-  "AC": 10,
   "name": "Firenewt Warlock of Imix",
+  "alignment": "neutral evil",
+  "AC": 10,
+  "HP": "6d8+6",
   "abilities": {
+    "Strength": 13,
     "Dexterity": 11,
     "Constitution": 12,
-    "Charisma": 14,
-    "Wisdom": 11,
     "Intelligence": 9,
-    "Strength": 13
-  }
+    "Wisdom": 11,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "fire",
+  "condition immunities": "",
+  "senses": "darkvision 120 ft. (penetrates magical darkness)",
+  "passive perception": 10,
+  "language": "Draconic, Ignan",
+  "CR": "1"
 }

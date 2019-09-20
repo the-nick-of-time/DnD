@@ -1,0 +1,28 @@
+{
+  "name": "Slaad Tadpole",
+  "alignment": "chaotic neutral",
+  "AC": 12,
+  "HP": "4d4",
+  "abilities": {
+    "Strength": 7,
+    "Dexterity": 15,
+    "Constitution": 10,
+    "Intelligence": 3,
+    "Wisdom": 5,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 4
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning, thunder",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 7,
+  "language": "understands Slaad but can't speak",
+  "CR": "1/8"
+}

@@ -1,13 +1,34 @@
 {
+  "name": "Eternal Flame Priest",
+  "alignment": "neutral evil",
   "AC": 12,
   "HP": "8d8+16",
-  "name": "Eternal Flame Priest",
   "abilities": {
-    "Intelligence": 10,
-    "Charisma": 16,
-    "Constitution": 14,
-    "Dexterity": 15,
     "Strength": 12,
-    "Wisdom": 11
-  }
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Intimidation": 5
+    },
+    {
+      " Religion": 2
+    }
+  ],
+  "resistances": "fire",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Common, Ignan",
+  "CR": "3"
 }

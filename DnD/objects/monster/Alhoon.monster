@@ -1,13 +1,56 @@
 {
-  "HP": "16d8+48",
-  "AC": 15,
   "name": "Alhoon",
+  "alignment": "any evil alignment",
+  "AC": 15,
+  "HP": "16d8+48",
   "abilities": {
+    "Strength": 11,
     "Dexterity": 12,
     "Constitution": 16,
-    "Charisma": 17,
-    "Wisdom": 17,
     "Intelligence": 19,
-    "Strength": 11
-  }
+    "Wisdom": 17,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Constitution": 7
+    },
+    {
+      "Intelligence": 8
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 8
+    },
+    {
+      " Deception": 7
+    },
+    {
+      " History": 8
+    },
+    {
+      " Insight": 7
+    },
+    {
+      " Perception": 7
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "cold, lightning, necrotic",
+  "vulnerabilities": "",
+  "immunities": "poison; bludgeoning, piercing, and slashing from nonmagical attacks",
+  "condition immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 17,
+  "language": "Deep Speech, Undercommon, telepathy 120 ft.",
+  "CR": "10"
 }

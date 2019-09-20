@@ -1,13 +1,24 @@
 {
+  "name": "Chuul Spore Servant",
+  "alignment": "unaligned",
   "AC": 16,
   "HP": "11d10+33",
-  "name": "Chuul Spore Servant",
   "abilities": {
     "Strength": 19,
-    "Constitution": 16,
     "Dexterity": 10,
-    "Wisdom": 6,
+    "Constitution": 16,
     "Intelligence": 2,
+    "Wisdom": 6,
     "Charisma": 1
-  }
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "blinded, charmed, frightened, paralyzed, poisoned",
+  "senses": "blindsight 30 ft. (blind beyond this radius)",
+  "passive perception": 8,
+  "language": "-",
+  "CR": "4"
 }

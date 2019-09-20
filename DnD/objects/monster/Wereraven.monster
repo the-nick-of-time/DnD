@@ -1,13 +1,31 @@
 {
   "name": "Wereraven",
+  "alignment": "lawful good",
+  "AC": 12,
+  "HP": "7d8",
   "abilities": {
+    "Strength": 10,
+    "Dexterity": 15,
     "Constitution": 11,
     "Intelligence": 13,
-    "Charisma": 14,
     "Wisdom": 15,
-    "Dexterity": 15,
-    "Strength": 10
+    "Charisma": 14
   },
-  "HP": "7d8",
-  "AC": 12
+  "saves": [],
+  "skills": [
+    {
+      "Insight": 4
+    },
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 16,
+  "language": "Common (can't speak in raven form)",
+  "CR": "2"
 }

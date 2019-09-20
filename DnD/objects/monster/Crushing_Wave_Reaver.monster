@@ -1,13 +1,31 @@
 {
+  "name": "Crushing Wave Reaver",
+  "alignment": "neutral evil",
   "AC": 14,
   "HP": "4d8+4",
-  "name": "Crushing Wave Reaver",
   "abilities": {
-    "Intelligence": 10,
-    "Charisma": 8,
-    "Constitution": 13,
-    "Dexterity": 14,
     "Strength": 15,
-    "Wisdom": 11
-  }
+    "Dexterity": 14,
+    "Constitution": 13,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Common",
+  "CR": "1/2"
 }

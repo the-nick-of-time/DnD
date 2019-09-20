@@ -1,13 +1,24 @@
 {
   "name": "Awakened Shrub",
-  "HP": "3d6",
+  "alignment": "unaligned",
   "AC": 9,
+  "HP": "3d6",
   "abilities": {
-    "Charisma": 6,
     "Strength": 3,
-    "Constitution": 11,
-    "Wisdom": 10,
     "Dexterity": 8,
-    "Intelligence": 10
-  }
+    "Constitution": 11,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "piercing",
+  "vulnerabilities": "fire",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "one language known by its creator",
+  "CR": "0"
 }

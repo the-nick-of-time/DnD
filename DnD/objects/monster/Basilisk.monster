@@ -1,13 +1,24 @@
 {
   "name": "Basilisk",
-  "HP": "8d8",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "8d8+16",
   "abilities": {
-    "Charisma": 7,
     "Strength": 16,
-    "Constitution": 15,
-    "Wisdom": 8,
     "Dexterity": 8,
-    "Intelligence": 2
-  }
+    "Constitution": 15,
+    "Intelligence": 2,
+    "Wisdom": 8,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": null,
+  "CR": "3"
 }

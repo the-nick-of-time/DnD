@@ -1,0 +1,38 @@
+{
+  "name": "Barlgura",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "8d10+24",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 15,
+    "Constitution": 16,
+    "Intelligence": 7,
+    "Wisdom": 14,
+    "Charisma": 9
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 6
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 5
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 15,
+  "language": "Abyssal, telepathy 120 ft.",
+  "CR": "5"
+}

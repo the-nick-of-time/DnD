@@ -1,13 +1,24 @@
 {
-  "HP": "6d10+18",
-  "AC": 14,
   "name": "Yeth Hound",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "6d10+18",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 17,
     "Constitution": 16,
-    "Charisma": 7,
-    "Wisdom": 12,
     "Intelligence": 5,
-    "Strength": 18
-  }
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "charmed, exhaustion, frightened",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "understands Common, Elvish, and Sylvan but can't speak",
+  "CR": "4"
 }

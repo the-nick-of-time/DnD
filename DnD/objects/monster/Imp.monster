@@ -1,13 +1,37 @@
 {
   "name": "Imp",
-  "HP": "3d4",
+  "alignment": "lawful evil",
   "AC": 13,
+  "HP": "3d4+3",
   "abilities": {
-    "Charisma": 14,
     "Strength": 6,
-    "Constitution": 13,
-    "Wisdom": 12,
     "Dexterity": 17,
-    "Intelligence": 11
-  }
+    "Constitution": 13,
+    "Intelligence": 11,
+    "Wisdom": 12,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 4
+    },
+    {
+      " Insight": 3
+    },
+    {
+      " Persuasion": 4
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "cold, bludgeoning, piercing, and slashing from nonmagical/nonsilver weapons",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 11,
+  "language": "Infernal, Common",
+  "CR": "1"
 }

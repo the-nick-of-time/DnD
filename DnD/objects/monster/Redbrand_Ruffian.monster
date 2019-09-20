@@ -1,13 +1,28 @@
 {
-  "AC": 14,
   "name": "Redbrand Ruffian",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "3d8+3",
   "abilities": {
+    "Strength": 11,
+    "Dexterity": 14,
+    "Constitution": 12,
     "Intelligence": 9,
     "Wisdom": 9,
-    "Constitution": 12,
-    "Charisma": 11,
-    "Strength": 11,
-    "Dexterity": 14
+    "Charisma": 11
   },
-  "HP": "3d8+3"
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 9,
+  "language": "Common",
+  "CR": "1/2"
 }

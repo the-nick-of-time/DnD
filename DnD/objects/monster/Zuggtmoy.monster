@@ -1,13 +1,38 @@
 {
+  "name": "Zuggtmoy",
+  "alignment": "chaotic evil",
   "AC": 18,
   "HP": "32d10+128",
-  "name": "Zuggtmoy",
   "abilities": {
     "Strength": 22,
-    "Constitution": 18,
     "Dexterity": 15,
-    "Wisdom": 19,
+    "Constitution": 18,
     "Intelligence": 20,
+    "Wisdom": 19,
     "Charisma": 24
-  }
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 11
+    },
+    {
+      "Wisdom": 11
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 11
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, piercing, and slashing that is nonmagical",
+  "condition immunities": "charmed, exhaustion, frightened, poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 21,
+  "language": "all, telepathy 120 ft.",
+  "CR": "23"
 }

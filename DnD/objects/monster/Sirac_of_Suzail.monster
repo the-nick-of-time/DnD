@@ -1,13 +1,34 @@
 {
+  "name": "Sirac of Suzail",
+  "alignment": "lawful good",
   "AC": 14,
   "HP": "5d8",
-  "name": "Sirac of Suzail",
   "abilities": {
-    "Dexterity": 17,
-    "Wisdom": 13,
-    "Charisma": 16,
     "Strength": 14,
+    "Dexterity": 17,
     "Constitution": 11,
-    "Intelligence": 12
-  }
+    "Intelligence": 12,
+    "Wisdom": 13,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 4
+    },
+    {
+      " Insight": 3
+    },
+    {
+      " Survival": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 11,
+  "language": "Common, Orc",
+  "CR": "0"
 }

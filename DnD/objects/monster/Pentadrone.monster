@@ -1,0 +1,28 @@
+{
+  "name": "Pentadrone",
+  "alignment": "construct",
+  "AC": 16,
+  "HP": "5d10+5",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 14,
+  "language": "Modron",
+  "CR": "2"
+}

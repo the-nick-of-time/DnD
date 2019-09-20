@@ -1,13 +1,28 @@
 {
   "name": "Hyena",
-  "HP": "1d8",
+  "alignment": "unaligned",
   "AC": 11,
+  "HP": "1d8+1",
   "abilities": {
-    "Charisma": 5,
     "Strength": 11,
-    "Constitution": 12,
-    "Wisdom": 12,
     "Dexterity": 13,
-    "Intelligence": 2
-  }
+    "Constitution": 12,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": null,
+  "CR": "0"
 }

@@ -1,0 +1,34 @@
+{
+  "name": "Githyanki Knight",
+  "alignment": "lawful evil",
+  "AC": 18,
+  "HP": "14d8+28",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 14,
+    "Constitution": 15,
+    "Intelligence": 14,
+    "Wisdom": 14,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Constitution": 5
+    },
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Gith",
+  "CR": "8"
+}

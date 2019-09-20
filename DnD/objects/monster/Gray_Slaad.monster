@@ -1,0 +1,31 @@
+{
+  "name": "Gray Slaad",
+  "alignment": "chaotic neutral",
+  "AC": 18,
+  "HP": "17d8+51",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 17,
+    "Constitution": 16,
+    "Intelligence": 13,
+    "Wisdom": 8,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning, thunder",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 60 ft.",
+  "passive perception": 16,
+  "language": "Slaad, telepathy 60 ft.",
+  "CR": "9"
+}

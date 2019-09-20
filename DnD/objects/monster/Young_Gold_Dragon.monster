@@ -1,13 +1,50 @@
 {
   "name": "Young Gold Dragon",
-  "HP": "17d10",
+  "alignment": "lawful good",
   "AC": 18,
+  "HP": "17d10+85",
   "abilities": {
-    "Charisma": 20,
     "Strength": 23,
-    "Constitution": 21,
-    "Wisdom": 13,
     "Dexterity": 14,
-    "Intelligence": 16
-  }
+    "Constitution": 21,
+    "Intelligence": 16,
+    "Wisdom": 13,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 5
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      "Insight": 5
+    },
+    {
+      " Perception": 9
+    },
+    {
+      " Persuasion": 9
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 19,
+  "language": "Common, Draconic",
+  "CR": "10"
 }

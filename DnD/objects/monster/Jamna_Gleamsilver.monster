@@ -1,13 +1,50 @@
 {
-  "HP": "4d6+8",
   "name": "Jamna Gleamsilver",
+  "alignment": "neutral",
   "AC": 15,
+  "HP": "4d6+8",
   "abilities": {
-    "Wisdom": 10,
-    "Charisma": 12,
-    "Dexterity": 17,
-    "Intelligence": 15,
     "Strength": 8,
-    "Constitution": 14
-  }
+    "Dexterity": 17,
+    "Constitution": 14,
+    "Intelligence": 15,
+    "Wisdom": 10,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Intelligence": 4
+    }
+  ],
+  "skills": [
+    {
+      "Acrobatics": 5
+    },
+    {
+      " Deception": 3
+    },
+    {
+      " Insight": 2
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Persuasion": 3
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Common, Gnomish, Goblin, Sylvan",
+  "CR": "1"
 }

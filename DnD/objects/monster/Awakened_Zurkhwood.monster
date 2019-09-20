@@ -1,13 +1,24 @@
 {
+  "name": "Awakened Zurkhwood",
+  "alignment": "unaligned",
   "AC": 13,
   "HP": "7d12+14",
-  "name": "Awakened Zurkhwood",
   "abilities": {
     "Strength": 19,
-    "Constitution": 15,
     "Dexterity": 6,
-    "Wisdom": 10,
+    "Constitution": 15,
     "Intelligence": 10,
+    "Wisdom": 10,
     "Charisma": 7
-  }
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing",
+  "vulnerabilities": "fire",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": "one language known by its creator",
+  "CR": "2"
 }

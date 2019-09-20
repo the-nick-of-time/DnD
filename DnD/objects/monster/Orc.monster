@@ -1,13 +1,28 @@
 {
   "name": "Orc",
-  "HP": "2d8",
+  "alignment": "chaotic evil",
   "AC": 13,
+  "HP": "2d8+6",
   "abilities": {
-    "Charisma": 10,
     "Strength": 16,
-    "Constitution": 16,
-    "Wisdom": 11,
     "Dexterity": 12,
-    "Intelligence": 7
-  }
+    "Constitution": 16,
+    "Intelligence": 7,
+    "Wisdom": 11,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Common, Orc",
+  "CR": "1/2"
 }

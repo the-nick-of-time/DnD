@@ -1,13 +1,41 @@
 {
+  "name": "Yeenoghu",
+  "alignment": "chaotic evil",
   "AC": 22,
   "HP": "24d12+192",
-  "name": "Yeenoghu",
   "abilities": {
     "Strength": 29,
-    "Constitution": 23,
     "Dexterity": 16,
-    "Wisdom": 24,
+    "Constitution": 23,
     "Intelligence": 15,
+    "Wisdom": 24,
     "Charisma": 15
-  }
+  },
+  "saves": [
+    {
+      "Dexterity": 10
+    },
+    {
+      "Constitution": 15
+    },
+    {
+      "Wisdom": 14
+    }
+  ],
+  "skills": [
+    {
+      "Intimidation": 9
+    },
+    {
+      " Perception": 14
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, piercing, and slashing that is nonmagical",
+  "condition immunities": "charmed, exhaustion, frightened, poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 24,
+  "language": "all, telepathy 120 ft.",
+  "CR": "24"
 }

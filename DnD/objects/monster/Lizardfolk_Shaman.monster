@@ -1,0 +1,34 @@
+{
+  "name": "Lizardfolk Shaman",
+  "alignment": "neutral",
+  "AC": 13,
+  "HP": "5d8+5",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 10,
+    "Constitution": 13,
+    "Intelligence": 10,
+    "Wisdom": 15,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 4
+    },
+    {
+      " Survival": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": "Draconic",
+  "CR": "2"
+}

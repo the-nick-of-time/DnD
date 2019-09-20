@@ -1,13 +1,28 @@
 {
   "name": "Quasit",
-  "HP": "3d4",
+  "alignment": "chaotic evil",
   "AC": 13,
+  "HP": "3d4",
   "abilities": {
-    "Charisma": 10,
     "Strength": 5,
-    "Constitution": 10,
-    "Wisdom": 10,
     "Dexterity": 17,
-    "Intelligence": 7
-  }
+    "Constitution": 10,
+    "Intelligence": 7,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 5
+    }
+  ],
+  "resistances": "cold, fire, lightning, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": "Abyssal, Common",
+  "CR": "1"
 }

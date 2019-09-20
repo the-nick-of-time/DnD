@@ -1,13 +1,31 @@
 {
   "name": "Death Dog",
-  "HP": "6d8",
+  "alignment": "neutral evil",
   "AC": 12,
+  "HP": "6d8+12",
   "abilities": {
-    "Charisma": 6,
     "Strength": 15,
-    "Constitution": 14,
-    "Wisdom": 13,
     "Dexterity": 14,
-    "Intelligence": 3
-  }
+    "Constitution": 14,
+    "Intelligence": 3,
+    "Wisdom": 13,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 5
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 15,
+  "language": null,
+  "CR": "1"
 }

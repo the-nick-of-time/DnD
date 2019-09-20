@@ -1,13 +1,31 @@
 {
+  "name": "Drannin Splithelm",
+  "alignment": "neutral evil",
   "AC": 18,
   "HP": "11d8+44",
-  "name": "Drannin Splithelm",
   "abilities": {
-    "Intelligence": 11,
-    "Charisma": 12,
-    "Constitution": 18,
-    "Dexterity": 10,
     "Strength": 19,
-    "Wisdom": 8
-  }
+    "Dexterity": 10,
+    "Constitution": 18,
+    "Intelligence": 11,
+    "Wisdom": 8,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 7
+    },
+    {
+      " Intimidation": 4
+    }
+  ],
+  "resistances": "cold, poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "Common, Dwarvish",
+  "CR": "7"
 }

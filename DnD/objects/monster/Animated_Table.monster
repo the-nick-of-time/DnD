@@ -1,13 +1,24 @@
 {
-  "AC": 15,
   "name": "Animated Table",
+  "alignment": "unaligned",
+  "AC": 15,
   "HP": "6d10+6",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 8,
-    "Charisma": 1,
     "Constitution": 13,
     "Intelligence": 1,
-    "Strength": 18,
-    "Wisdom": 3
-  }
+    "Wisdom": 3,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "poison, psychic",
+  "condition immunities": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 6,
+  "language": "",
+  "CR": "2"
 }

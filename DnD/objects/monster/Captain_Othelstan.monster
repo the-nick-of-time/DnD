@@ -1,13 +1,44 @@
 {
-  "HP": "11d10+33",
   "name": "Captain Othelstan",
+  "alignment": "lawful evil",
   "AC": 19,
+  "HP": "11d10+33",
   "abilities": {
-    "Wisdom": 14,
-    "Charisma": 12,
-    "Dexterity": 10,
-    "Intelligence": 13,
     "Strength": 19,
-    "Constitution": 16
-  }
+    "Dexterity": 10,
+    "Constitution": 16,
+    "Intelligence": 13,
+    "Wisdom": 14,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Strength": 7
+    },
+    {
+      "Constitution": 6
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 7
+    },
+    {
+      " Intimidation": 7
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Religion": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 15,
+  "language": "Common, Draconic, Giant",
+  "CR": "5"
 }

@@ -1,13 +1,47 @@
 {
   "name": "Adult Bronze Dragon",
-  "HP": "17d12",
+  "alignment": "lawful good",
   "AC": 19,
+  "HP": "17d12+102",
   "abilities": {
-    "Charisma": 19,
     "Strength": 25,
-    "Constitution": 23,
-    "Wisdom": 15,
     "Dexterity": 10,
-    "Intelligence": 16
-  }
+    "Constitution": 23,
+    "Intelligence": 16,
+    "Wisdom": 15,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 11
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      "Insight": 7
+    },
+    {
+      " Perception": 12
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 22,
+  "language": "Common, Draconic",
+  "CR": "15"
 }

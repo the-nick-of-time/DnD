@@ -1,13 +1,28 @@
 {
-  "HP": "4d8+8",
-  "AC": 13,
   "name": "Deinonychus",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "4d8+8",
   "abilities": {
+    "Strength": 15,
     "Dexterity": 15,
     "Constitution": 14,
-    "Charisma": 6,
-    "Wisdom": 12,
     "Intelligence": 4,
-    "Strength": 15
-  }
+    "Wisdom": 12,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 13,
+  "language": "",
+  "CR": "1"
 }

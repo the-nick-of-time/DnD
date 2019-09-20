@@ -1,13 +1,24 @@
 {
   "name": "Gibbering Mouther",
-  "HP": "9d8",
+  "alignment": "neutral",
   "AC": 9,
+  "HP": "9d8+27",
   "abilities": {
-    "Charisma": 6,
     "Strength": 10,
-    "Constitution": 16,
-    "Wisdom": 10,
     "Dexterity": 8,
-    "Intelligence": 3
-  }
+    "Constitution": 16,
+    "Intelligence": 3,
+    "Wisdom": 10,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "prone",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "2"
 }

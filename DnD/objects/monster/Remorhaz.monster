@@ -1,13 +1,24 @@
 {
   "name": "Remorhaz",
-  "HP": "17d12",
+  "alignment": "unaligned",
   "AC": 17,
+  "HP": "17d12+85",
   "abilities": {
-    "Charisma": 5,
     "Strength": 24,
-    "Constitution": 21,
-    "Wisdom": 10,
     "Dexterity": 13,
-    "Intelligence": 4
-  }
+    "Constitution": 21,
+    "Intelligence": 4,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold, fire",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 60 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "11"
 }

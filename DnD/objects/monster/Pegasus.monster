@@ -1,13 +1,38 @@
 {
   "name": "Pegasus",
-  "HP": "7d10",
+  "alignment": "chaotic good",
   "AC": 12,
+  "HP": "7d10+21",
   "abilities": {
-    "Charisma": 13,
     "Strength": 18,
-    "Constitution": 16,
-    "Wisdom": 15,
     "Dexterity": 15,
-    "Intelligence": 10
-  }
+    "Constitution": 16,
+    "Intelligence": 10,
+    "Wisdom": 15,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 16,
+  "language": "understands Celestial, Common, Elvish, and Sylvan but can't speak",
+  "CR": "2"
 }

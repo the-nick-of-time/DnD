@@ -1,13 +1,24 @@
 {
-  "AC": 11,
   "name": "Thorn Slinger",
+  "alignment": "unaligned",
+  "AC": 11,
   "HP": "5d10+5",
   "abilities": {
+    "Strength": 13,
     "Dexterity": 12,
-    "Charisma": 1,
     "Constitution": 12,
     "Intelligence": 1,
-    "Strength": 13,
-    "Wisdom": 10
-  }
+    "Wisdom": 10,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "blinded, deafened, frightened",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 10,
+  "language": "",
+  "CR": "1/2"
 }

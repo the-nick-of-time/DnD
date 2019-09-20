@@ -1,13 +1,24 @@
 {
-  "HP": "8d10+40",
-  "AC": 14,
   "name": "Catoblepas",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "8d10+40",
   "abilities": {
+    "Strength": 19,
     "Dexterity": 12,
     "Constitution": 21,
-    "Charisma": 8,
-    "Wisdom": 14,
     "Intelligence": 3,
-    "Strength": 19
-  }
+    "Wisdom": 14,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "",
+  "CR": "5"
 }

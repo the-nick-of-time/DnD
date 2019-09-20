@@ -1,13 +1,24 @@
 {
-  "AC": 15,
   "name": "Greater Zombie",
+  "alignment": "neutral evil",
+  "AC": 15,
   "HP": "13d8+39",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 10,
-    "Charisma": 6,
     "Constitution": 17,
     "Intelligence": 4,
-    "Strength": 18,
-    "Wisdom": 6
-  }
+    "Wisdom": 6,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "cold, necrotic",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 8,
+  "language": "understands the languages it knew in life but can't speak",
+  "CR": "5"
 }

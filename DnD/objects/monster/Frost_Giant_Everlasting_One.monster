@@ -1,13 +1,41 @@
 {
-  "HP": "14d12+98",
-  "AC": 15,
   "name": "Frost Giant Everlasting One",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "14d12+98",
   "abilities": {
+    "Strength": 25,
     "Dexterity": 9,
     "Constitution": 24,
-    "Charisma": 12,
-    "Wisdom": 10,
     "Intelligence": 9,
-    "Strength": 25
-  }
+    "Wisdom": 10,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Strength": 11
+    },
+    {
+      "Constitution": 11
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 11
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "cold",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Giant",
+  "CR": "12"
 }

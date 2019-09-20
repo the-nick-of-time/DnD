@@ -1,13 +1,28 @@
 {
   "name": "Blood Hawk",
-  "HP": "2d6",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "2d6",
   "abilities": {
-    "Charisma": 5,
     "Strength": 6,
-    "Constitution": 10,
-    "Wisdom": 14,
     "Dexterity": 14,
-    "Intelligence": 3
-  }
+    "Constitution": 10,
+    "Intelligence": 3,
+    "Wisdom": 14,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": null,
+  "CR": "1/8"
 }

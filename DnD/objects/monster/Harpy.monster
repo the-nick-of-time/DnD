@@ -1,13 +1,24 @@
 {
   "name": "Harpy",
-  "HP": "7d8",
+  "alignment": "chaotic evil",
   "AC": 11,
+  "HP": "7d8+7",
   "abilities": {
-    "Charisma": 13,
     "Strength": 12,
-    "Constitution": 12,
-    "Wisdom": 10,
     "Dexterity": 13,
-    "Intelligence": 7
-  }
+    "Constitution": 12,
+    "Intelligence": 7,
+    "Wisdom": 10,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Common",
+  "CR": "1"
 }

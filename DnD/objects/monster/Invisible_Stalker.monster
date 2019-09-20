@@ -1,13 +1,31 @@
 {
   "name": "Invisible Stalker",
-  "HP": "16d8",
+  "alignment": "neutral",
   "AC": 14,
+  "HP": "16d8+32",
   "abilities": {
-    "Charisma": 11,
     "Strength": 16,
-    "Constitution": 14,
-    "Wisdom": 15,
     "Dexterity": 19,
-    "Intelligence": 10
-  }
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 15,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 8
+    },
+    {
+      " Stealth": 10
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 18,
+  "language": "Auran, understands Common but doesn't speak it",
+  "CR": "6"
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Crawling Claw",
+  "alignment": "neutral evil",
+  "AC": 12,
+  "HP": "1d4",
+  "abilities": {
+    "Strength": 13,
+    "Dexterity": 14,
+    "Constitution": 11,
+    "Intelligence": 5,
+    "Wisdom": 10,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "blindsight 30 ft. (blind beyond this radius)",
+  "passive perception": 10,
+  "language": "understands Common but can't speak",
+  "CR": "0"
+}

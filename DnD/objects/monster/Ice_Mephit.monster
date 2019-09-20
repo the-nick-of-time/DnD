@@ -1,13 +1,31 @@
 {
   "name": "Ice Mephit",
-  "HP": "6d6",
+  "alignment": "neutral evil",
   "AC": 11,
+  "HP": "6d6",
   "abilities": {
-    "Charisma": 12,
     "Strength": 7,
-    "Constitution": 10,
-    "Wisdom": 11,
     "Dexterity": 13,
-    "Intelligence": 9
-  }
+    "Constitution": 10,
+    "Intelligence": 9,
+    "Wisdom": 11,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "bludgeoning, fire",
+  "immunities": "cold, poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Aquan, Auran",
+  "CR": "1/2"
 }

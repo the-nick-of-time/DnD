@@ -1,13 +1,28 @@
 {
   "name": "Giant Crab",
-  "HP": "3d8",
+  "alignment": "unaligned",
   "AC": 15,
+  "HP": "3d8",
   "abilities": {
-    "Charisma": 3,
     "Strength": 13,
-    "Constitution": 11,
-    "Wisdom": 9,
     "Dexterity": 15,
-    "Intelligence": 1
-  }
+    "Constitution": 11,
+    "Intelligence": 1,
+    "Wisdom": 9,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 30 ft.",
+  "passive perception": 9,
+  "language": null,
+  "CR": "1/8"
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Myconid Adult",
+  "alignment": "lawful neutral",
+  "AC": 12,
+  "HP": "4d8+4",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 10,
+    "Constitution": 12,
+    "Intelligence": 10,
+    "Wisdom": 13,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 11,
+  "language": null,
+  "CR": "1/2"
+}

@@ -1,13 +1,37 @@
 {
   "name": "Medusa",
-  "HP": "17d8",
+  "alignment": "lawful evil",
   "AC": 15,
+  "HP": "17d8+51",
   "abilities": {
-    "Charisma": 15,
     "Strength": 10,
-    "Constitution": 16,
-    "Wisdom": 13,
     "Dexterity": 15,
-    "Intelligence": 12
-  }
+    "Constitution": 16,
+    "Intelligence": 12,
+    "Wisdom": 13,
+    "Charisma": 15
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Insight": 4
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Common",
+  "CR": "6"
 }

@@ -1,13 +1,44 @@
 {
-  "HP": "13d6+26",
-  "AC": 15,
   "name": "Neogi Master",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "13d6+26",
   "abilities": {
+    "Strength": 6,
     "Dexterity": 16,
     "Constitution": 14,
-    "Charisma": 18,
-    "Wisdom": 12,
     "Intelligence": 16,
-    "Strength": 6
-  }
+    "Wisdom": 12,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Wisdom": 3
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " Deception": 6
+    },
+    {
+      " Intimidation": 6
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Persuasion": 6
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 120 ft. (penetrates magical darkness)",
+  "passive perception": 13,
+  "language": "Common, Deep Speech, Undercommon, telepathy 30 ft.",
+  "CR": "4"
 }

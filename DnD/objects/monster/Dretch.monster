@@ -1,13 +1,24 @@
 {
   "name": "Dretch",
-  "HP": "4d6",
+  "alignment": "chaotic evil",
   "AC": 11,
+  "HP": "4d6+4",
   "abilities": {
-    "Charisma": 3,
     "Strength": 11,
-    "Constitution": 12,
-    "Wisdom": 8,
     "Dexterity": 11,
-    "Intelligence": 5
-  }
+    "Constitution": 12,
+    "Intelligence": 5,
+    "Wisdom": 8,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "Abyssal, telepathy 60 ft. (works only with creatures that understand Abyssal)",
+  "CR": "1/4"
 }

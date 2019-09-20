@@ -1,13 +1,34 @@
 {
   "name": "Chain Devil",
-  "HP": "10d8",
+  "alignment": "lawful evil",
   "AC": 16,
+  "HP": "10d8+40",
   "abilities": {
-    "Charisma": 14,
     "Strength": 18,
-    "Constitution": 18,
-    "Wisdom": 12,
     "Dexterity": 15,
-    "Intelligence": 11
-  }
+    "Constitution": 18,
+    "Intelligence": 11,
+    "Wisdom": 12,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [],
+  "resistances": "cold, bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 8,
+  "language": "Infernal, telepathy 120 ft.",
+  "CR": "11"
 }

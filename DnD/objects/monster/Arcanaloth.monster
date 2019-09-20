@@ -1,0 +1,50 @@
+{
+  "name": "Arcanaloth",
+  "alignment": "neutral evil",
+  "AC": 17,
+  "HP": "16d8+32",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 12,
+    "Constitution": 14,
+    "Intelligence": 20,
+    "Wisdom": 16,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Intelligence": 9
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 13
+    },
+    {
+      " Deception": 9
+    },
+    {
+      " Insight": 9
+    },
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": "cold, fire, lightning, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "acid, poison",
+  "condition immunities": "charmed, poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 17,
+  "language": "all, telepathy 120 ft.",
+  "CR": "12"
+}

@@ -1,13 +1,28 @@
 {
-  "AC": 16,
   "name": "Thayan Warrior",
+  "alignment": "any non-good alignment",
+  "AC": 16,
   "HP": "8d8+16",
   "abilities": {
+    "Strength": 16,
     "Dexterity": 13,
-    "Charisma": 11,
     "Constitution": 14,
     "Intelligence": 10,
-    "Strength": 16,
-    "Wisdom": 11
-  }
+    "Wisdom": 11,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 12,
+  "language": "Common, Thayan",
+  "CR": "2"
 }

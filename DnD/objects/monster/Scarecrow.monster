@@ -1,0 +1,24 @@
+{
+  "name": "Scarecrow",
+  "alignment": "chaotic evil",
+  "AC": 11,
+  "HP": "8d8",
+  "abilities": {
+    "Strength": 11,
+    "Dexterity": 13,
+    "Constitution": 11,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "fire",
+  "immunities": "poison",
+  "condition immunities": "charmed, exhaustion, frightened, paralyzed, poisoned, unconscious",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "understands the languages of its creator but can't speak",
+  "CR": "1"
+}

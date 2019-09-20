@@ -1,13 +1,34 @@
 {
   "name": "Grimlock",
-  "HP": "2d8",
+  "alignment": "neutral evil",
   "AC": 11,
+  "HP": "2d8+2",
   "abilities": {
-    "Charisma": 6,
     "Strength": 16,
-    "Constitution": 12,
-    "Wisdom": 8,
     "Dexterity": 12,
-    "Intelligence": 9
-  }
+    "Constitution": 12,
+    "Intelligence": 9,
+    "Wisdom": 8,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 5
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "blinded",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft. or 10 ft. while deafened (blind beyond this radius)",
+  "passive perception": 13,
+  "language": "Undercommon",
+  "CR": "1/4"
 }

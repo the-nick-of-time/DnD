@@ -1,0 +1,28 @@
+{
+  "name": "Kuo-Toa",
+  "alignment": "neutral evil",
+  "AC": 13,
+  "HP": "4d8",
+  "abilities": {
+    "Strength": 13,
+    "Dexterity": 10,
+    "Constitution": 11,
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 14,
+  "language": "Undercommon",
+  "CR": "1/4"
+}

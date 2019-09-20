@@ -1,13 +1,34 @@
 {
+  "name": "Yakfolk Priest",
+  "alignment": "neutral evil",
   "AC": 12,
   "HP": "7d10+14",
-  "name": "Yakfolk Priest",
   "abilities": {
-    "Dexterity": 11,
-    "Wisdom": 18,
-    "Charisma": 14,
     "Strength": 16,
+    "Dexterity": 11,
     "Constitution": 15,
-    "Intelligence": 14
-  }
+    "Intelligence": 14,
+    "Wisdom": 18,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 4
+    },
+    {
+      " Medicine": 6
+    },
+    {
+      " Survival": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": "Common, Yikaria",
+  "CR": "4"
 }

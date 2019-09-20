@@ -1,13 +1,38 @@
 {
-  "HP": "13d8+13",
-  "AC": 14,
   "name": "Yuan-ti Mind Whisperer",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "13d8+13",
   "abilities": {
+    "Strength": 16,
     "Dexterity": 14,
     "Constitution": 13,
-    "Charisma": 16,
-    "Wisdom": 12,
     "Intelligence": 14,
-    "Strength": 16
-  }
+    "Wisdom": 12,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 120 ft. (penetrates magical darkness)",
+  "passive perception": 12,
+  "language": "Abyssal, Common, Draconic",
+  "CR": "4"
 }

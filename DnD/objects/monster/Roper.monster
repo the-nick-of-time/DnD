@@ -1,13 +1,31 @@
 {
   "name": "Roper",
-  "HP": "11d10",
+  "alignment": "neutral evil",
   "AC": 20,
+  "HP": "11d10+33",
   "abilities": {
-    "Charisma": 6,
     "Strength": 18,
-    "Constitution": 17,
-    "Wisdom": 16,
     "Dexterity": 8,
-    "Intelligence": 7
-  }
+    "Constitution": 17,
+    "Intelligence": 7,
+    "Wisdom": 16,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 6
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": null,
+  "CR": "5"
 }

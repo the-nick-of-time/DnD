@@ -1,0 +1,28 @@
+{
+  "name": "Mud Mephit",
+  "alignment": "neutral evil",
+  "AC": 11,
+  "HP": "6d6+6",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 12,
+    "Constitution": 12,
+    "Intelligence": 9,
+    "Wisdom": 11,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Aquan, Terran",
+  "CR": "1/4"
+}

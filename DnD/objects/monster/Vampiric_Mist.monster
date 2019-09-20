@@ -1,13 +1,28 @@
 {
-  "AC": 13,
   "name": "Vampiric Mist",
+  "alignment": "chaotic evil",
+  "AC": 13,
   "HP": "6d8+18",
   "abilities": {
+    "Strength": 6,
     "Dexterity": 16,
-    "Charisma": 7,
     "Constitution": 16,
     "Intelligence": 6,
-    "Strength": 6,
-    "Wisdom": 12
-  }
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [
+    {
+      "Wisdom": 3
+    }
+  ],
+  "skills": [],
+  "resistances": "acid, cold, lightning, necrotic, thunder; bludgeoning, piercing, and slashing from nonmagical attacks",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "",
+  "CR": "3"
 }

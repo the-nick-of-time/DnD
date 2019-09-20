@@ -1,0 +1,31 @@
+{
+  "name": "Fomorian",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "13d12+65",
+  "abilities": {
+    "Strength": 23,
+    "Dexterity": 10,
+    "Constitution": 20,
+    "Intelligence": 9,
+    "Wisdom": 14,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 8
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 18,
+  "language": "Giant, Undercommon",
+  "CR": "8"
+}

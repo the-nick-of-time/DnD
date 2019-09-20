@@ -1,13 +1,47 @@
 {
-  "HP": "17d10+34",
-  "AC": 15,
   "name": "Ulitharid",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "17d10+14",
   "abilities": {
+    "Strength": 15,
     "Dexterity": 12,
     "Constitution": 15,
-    "Charisma": 21,
-    "Wisdom": 19,
     "Intelligence": 21,
-    "Strength": 15
-  }
+    "Wisdom": 19,
+    "Charisma": 21
+  },
+  "saves": [
+    {
+      "Intelligence": 9
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 9
+    },
+    {
+      " Insight": 8
+    },
+    {
+      " Perception": 8
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 18,
+  "language": "Deep Speech, Undercommon, telepathy 2 miles",
+  "CR": "9"
 }

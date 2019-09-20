@@ -1,13 +1,41 @@
 {
   "name": "Roc",
-  "HP": "16d20",
+  "alignment": "unaligned",
   "AC": 15,
+  "HP": "16d20+80",
   "abilities": {
-    "Charisma": 9,
     "Strength": 28,
-    "Constitution": 20,
-    "Wisdom": 10,
     "Dexterity": 10,
-    "Intelligence": 3
-  }
+    "Constitution": 20,
+    "Intelligence": 3,
+    "Wisdom": 10,
+    "Charisma": 9
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": null,
+  "CR": "11"
 }

@@ -1,13 +1,34 @@
 {
   "name": "Baba Lysaga's Creeping Hut",
+  "alignment": "unaligned",
+  "AC": 16,
+  "HP": "17d10+85",
   "abilities": {
+    "Strength": 26,
+    "Dexterity": 7,
     "Constitution": 20,
     "Intelligence": 1,
-    "Charisma": 3,
     "Wisdom": 3,
-    "Dexterity": 7,
-    "Strength": 26
+    "Charisma": 3
   },
-  "HP": "17d10+85",
-  "AC": 16
+  "saves": [
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 0
+    },
+    {
+      "Charisma": 0
+    }
+  ],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "poison, psychic",
+  "condition immunities": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, prone",
+  "senses": "blindsight 120 ft. (blind beyond this radius)",
+  "passive perception": 6,
+  "language": "-",
+  "CR": "11"
 }

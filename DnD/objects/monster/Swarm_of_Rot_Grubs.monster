@@ -1,13 +1,24 @@
 {
-  "HP": "5d8",
-  "AC": 8,
   "name": "Swarm of Rot Grubs",
+  "alignment": "unaligned",
+  "AC": 8,
+  "HP": "5d8",
   "abilities": {
+    "Strength": 2,
     "Dexterity": 7,
     "Constitution": 10,
-    "Charisma": 1,
-    "Wisdom": 2,
     "Intelligence": 1,
-    "Strength": 2
-  }
+    "Wisdom": 2,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "piercing, slashing",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "charmed, frightened, grappled, paralyzed, petrified, prone, restrained",
+  "senses": "blindsight 10 ft.",
+  "passive perception": 6,
+  "language": "",
+  "CR": "1/2"
 }

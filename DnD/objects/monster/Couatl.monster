@@ -1,13 +1,34 @@
 {
   "name": "Couatl",
-  "HP": "13d8",
+  "alignment": "lawful good",
   "AC": 19,
+  "HP": "13d8+39",
   "abilities": {
-    "Charisma": 18,
     "Strength": 16,
-    "Constitution": 17,
-    "Wisdom": 20,
     "Dexterity": 20,
-    "Intelligence": 18
-  }
+    "Constitution": 17,
+    "Intelligence": 18,
+    "Wisdom": 20,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Constitution": 5
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [],
+  "resistances": "radiant",
+  "vulnerabilities": null,
+  "immunities": "psychic, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 15,
+  "language": "all, telepathy 120 ft.",
+  "CR": "4"
 }

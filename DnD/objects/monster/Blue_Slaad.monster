@@ -1,0 +1,28 @@
+{
+  "name": "Blue Slaad",
+  "alignment": "chaotic neutral",
+  "AC": 15,
+  "HP": "13d10+52",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 15,
+    "Constitution": 18,
+    "Intelligence": 7,
+    "Wisdom": 7,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 1
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning, thunder",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Slaad, telepathy 60 ft.",
+  "CR": "7"
+}

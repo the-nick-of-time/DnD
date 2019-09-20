@@ -1,13 +1,34 @@
 {
+  "name": "Vanifer",
+  "alignment": "neutral evil",
   "AC": 15,
   "HP": "15d8+45",
-  "name": "Vanifer",
   "abilities": {
-    "Intelligence": 12,
-    "Charisma": 19,
-    "Constitution": 17,
-    "Dexterity": 16,
     "Strength": 11,
-    "Wisdom": 13
-  }
+    "Dexterity": 16,
+    "Constitution": 17,
+    "Intelligence": 12,
+    "Wisdom": 13,
+    "Charisma": 19
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " Deception": 8
+    },
+    {
+      " Performance": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Common, Ignan, Infernal",
+  "CR": "9"
 }

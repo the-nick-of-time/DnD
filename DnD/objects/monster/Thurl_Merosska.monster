@@ -1,13 +1,37 @@
 {
+  "name": "Thurl Merosska",
+  "alignment": "lawful evil",
   "AC": 16,
   "HP": "11d8+21",
-  "name": "Thurl Merosska",
   "abilities": {
-    "Intelligence": 11,
-    "Charisma": 15,
-    "Constitution": 14,
-    "Dexterity": 14,
     "Strength": 16,
-    "Wisdom": 10
-  }
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 15
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Animal Handling": 2
+    },
+    {
+      " Athletics": 5
+    },
+    {
+      " Deception": 4
+    },
+    {
+      " Persuasion": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Auran, Common",
+  "CR": "3"
 }

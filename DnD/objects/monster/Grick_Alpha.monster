@@ -1,0 +1,24 @@
+{
+  "name": "Grick Alpha",
+  "alignment": "neutral",
+  "AC": 18,
+  "HP": "10d10+20",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 16,
+    "Constitution": 15,
+    "Intelligence": 4,
+    "Wisdom": 14,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": null,
+  "CR": "7"
+}

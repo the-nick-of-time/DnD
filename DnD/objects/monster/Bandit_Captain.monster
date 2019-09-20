@@ -1,13 +1,41 @@
 {
   "name": "Bandit Captain",
-  "HP": "10d8",
+  "alignment": "any non-lawful alignment",
   "AC": 15,
+  "HP": "10d8+20",
   "abilities": {
-    "Charisma": 14,
     "Strength": 15,
-    "Constitution": 14,
-    "Wisdom": 11,
     "Dexterity": 16,
-    "Intelligence": 14
-  }
+    "Constitution": 14,
+    "Intelligence": 14,
+    "Wisdom": 11,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Strength": 4
+    },
+    {
+      "Dexterity": 5
+    },
+    {
+      "Wisdom": 2
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 4
+    },
+    {
+      " Deception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "any two languages",
+  "CR": "2"
 }

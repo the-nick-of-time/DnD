@@ -1,13 +1,31 @@
 {
   "name": "Doppelganger",
-  "HP": "8d8",
+  "alignment": "unaligned",
   "AC": 14,
+  "HP": "8d8+16",
   "abilities": {
-    "Charisma": 14,
     "Strength": 11,
-    "Constitution": 14,
-    "Wisdom": 12,
     "Dexterity": 18,
-    "Intelligence": 11
-  }
+    "Constitution": 14,
+    "Intelligence": 11,
+    "Wisdom": 12,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 6
+    },
+    {
+      " Insight": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "charmed",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Common",
+  "CR": "3"
 }

@@ -1,13 +1,47 @@
 {
   "name": "Young Copper Dragon",
-  "HP": "14d10",
+  "alignment": "chaotic good",
   "AC": 17,
+  "HP": "14d10+42",
   "abilities": {
-    "Charisma": 15,
     "Strength": 19,
-    "Constitution": 17,
-    "Wisdom": 13,
     "Dexterity": 12,
-    "Intelligence": 16
-  }
+    "Constitution": 17,
+    "Intelligence": 16,
+    "Wisdom": 13,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 6
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Perception": 7
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 17,
+  "language": "Common, Draconic",
+  "CR": "7"
 }

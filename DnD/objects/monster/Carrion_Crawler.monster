@@ -1,13 +1,28 @@
 {
   "name": "Carrion Crawler",
-  "HP": "6d10",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "6d10+18",
   "abilities": {
-    "Charisma": 5,
     "Strength": 14,
-    "Constitution": 16,
-    "Wisdom": 12,
     "Dexterity": 13,
-    "Intelligence": 1
-  }
+    "Constitution": 16,
+    "Intelligence": 1,
+    "Wisdom": 12,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": null,
+  "CR": "2"
 }

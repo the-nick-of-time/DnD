@@ -1,13 +1,47 @@
 {
   "name": "Ancient Bronze Dragon",
-  "HP": "24d20",
+  "alignment": "lawful good",
   "AC": 22,
+  "HP": "24d20+192",
   "abilities": {
-    "Charisma": 21,
     "Strength": 29,
-    "Constitution": 27,
-    "Wisdom": 17,
     "Dexterity": 10,
-    "Intelligence": 18
-  }
+    "Constitution": 27,
+    "Intelligence": 18,
+    "Wisdom": 17,
+    "Charisma": 21
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 15
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 12
+    }
+  ],
+  "skills": [
+    {
+      "Insight": 10
+    },
+    {
+      " Perception": 17
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 27,
+  "language": "Common, Draconic",
+  "CR": "22"
 }

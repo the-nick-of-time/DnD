@@ -1,13 +1,24 @@
 {
+  "name": "Vampiric Ixitxachitl Cleric",
+  "alignment": "chaotic evil",
   "AC": 16,
   "HP": "8d8+8",
-  "name": "Vampiric Ixitxachitl Cleric",
   "abilities": {
     "Strength": 14,
-    "Constitution": 13,
     "Dexterity": 18,
-    "Wisdom": 13,
+    "Constitution": 13,
     "Intelligence": 12,
+    "Wisdom": 13,
     "Charisma": 7
-  }
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Abyssal, Ixitxachitl",
+  "CR": "2"
 }

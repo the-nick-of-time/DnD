@@ -1,13 +1,44 @@
 {
   "name": "Green Dragon Wyrmling",
-  "HP": "7d8",
+  "alignment": "lawful evil",
   "AC": 17,
+  "HP": "7d8+7",
   "abilities": {
-    "Charisma": 13,
     "Strength": 15,
-    "Constitution": 13,
-    "Wisdom": 11,
     "Dexterity": 12,
-    "Intelligence": 14
-  }
+    "Constitution": 13,
+    "Intelligence": 14,
+    "Wisdom": 11,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Dexterity": 3
+    },
+    {
+      "Constitution": 3
+    },
+    {
+      "Wisdom": 2
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Draconic",
+  "CR": "2"
 }

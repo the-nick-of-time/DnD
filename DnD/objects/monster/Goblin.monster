@@ -1,0 +1,28 @@
+{
+  "name": "Goblin",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "2d6",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 14,
+    "Constitution": 10,
+    "Intelligence": 10,
+    "Wisdom": 8,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "Common, Goblin",
+  "CR": "1/4"
+}

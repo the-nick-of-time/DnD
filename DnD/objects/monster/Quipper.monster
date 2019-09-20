@@ -1,13 +1,24 @@
 {
   "name": "Quipper",
-  "HP": "1d4",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "1d4-1",
   "abilities": {
-    "Charisma": 2,
     "Strength": 2,
-    "Constitution": 9,
-    "Wisdom": 7,
     "Dexterity": 16,
-    "Intelligence": 1
-  }
+    "Constitution": 9,
+    "Intelligence": 1,
+    "Wisdom": 7,
+    "Charisma": 2
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 8,
+  "language": null,
+  "CR": "0"
 }

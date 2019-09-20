@@ -1,13 +1,24 @@
 {
+  "name": "Yestabrod",
+  "alignment": "chaotic evil",
   "AC": 15,
   "HP": "10d10+20",
-  "name": "Yestabrod",
   "abilities": {
     "Strength": 12,
-    "Constitution": 14,
     "Dexterity": 10,
-    "Wisdom": 15,
+    "Constitution": 14,
     "Intelligence": 13,
+    "Wisdom": 15,
     "Charisma": 10
-  }
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 12,
+  "language": "Abyssal, telepathy 60 ft.",
+  "CR": "4"
 }

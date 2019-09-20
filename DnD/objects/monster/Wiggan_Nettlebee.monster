@@ -1,13 +1,31 @@
 {
+  "name": "Wiggan Nettlebee",
+  "alignment": "neutral evil",
   "AC": 11,
   "HP": "8d6+8",
-  "name": "Wiggan Nettlebee",
   "abilities": {
-    "Intelligence": 14,
-    "Charisma": 13,
-    "Constitution": 12,
-    "Dexterity": 12,
     "Strength": 8,
-    "Wisdom": 15
-  }
+    "Dexterity": 12,
+    "Constitution": 12,
+    "Intelligence": 14,
+    "Wisdom": 15,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 3
+    },
+    {
+      " Insight": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common, Halfling",
+  "CR": "2"
 }

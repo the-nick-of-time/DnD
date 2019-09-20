@@ -1,13 +1,31 @@
 {
-  "HP": "9d8+18",
-  "AC": 15,
   "name": "Bodak",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "9d8+18",
   "abilities": {
+    "Strength": 15,
     "Dexterity": 16,
     "Constitution": 15,
-    "Charisma": 12,
-    "Wisdom": 12,
     "Intelligence": 7,
-    "Strength": 15
-  }
+    "Wisdom": 12,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": "cold, fire, necrotic; bludgeoning, piercing, and slashing from nonmagical attacks",
+  "vulnerabilities": "",
+  "immunities": "lightning, poison",
+  "condition immunities": "charmed, frightened, poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 14,
+  "language": "Abyssal, the languages it knew in life",
+  "CR": "6"
 }

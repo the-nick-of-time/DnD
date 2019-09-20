@@ -1,13 +1,38 @@
 {
   "name": "Planetar",
-  "HP": "16d10",
+  "alignment": "lawful good",
   "AC": 19,
+  "HP": "16d10+112",
   "abilities": {
-    "Charisma": 25,
     "Strength": 24,
-    "Constitution": 24,
-    "Wisdom": 22,
     "Dexterity": 20,
-    "Intelligence": 19
-  }
+    "Constitution": 24,
+    "Intelligence": 19,
+    "Wisdom": 22,
+    "Charisma": 25
+  },
+  "saves": [
+    {
+      "Constitution": 12
+    },
+    {
+      "Wisdom": 11
+    },
+    {
+      "Charisma": 12
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 11
+    }
+  ],
+  "resistances": "radiant, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "charmed, exhaustion, frightened",
+  "senses": "truesight 120 ft.",
+  "passive perception": 21,
+  "language": "all, telepathy 120 ft.",
+  "CR": "16"
 }

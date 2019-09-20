@@ -1,13 +1,34 @@
 {
-  "HP": "13d10+39",
-  "AC": 14,
   "name": "Shoosuva",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "13d10+39",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 13,
     "Constitution": 17,
-    "Charisma": 9,
-    "Wisdom": 14,
     "Intelligence": 7,
-    "Strength": 18
-  }
+    "Wisdom": 14,
+    "Charisma": 9
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 6
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [],
+  "resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical attacks",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "charmed, frightened, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Abyssal, Gnoll, telepathy 120 ft.",
+  "CR": "8"
 }

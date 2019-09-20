@@ -1,13 +1,24 @@
 {
-  "HP": "4d10+16",
-  "AC": 11,
   "name": "Aurochs",
+  "alignment": "unaligned",
+  "AC": 11,
+  "HP": "4d10+16",
   "abilities": {
+    "Strength": 20,
     "Dexterity": 10,
     "Constitution": 19,
-    "Charisma": 5,
-    "Wisdom": 12,
     "Intelligence": 2,
-    "Strength": 20
-  }
+    "Wisdom": 12,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 11,
+  "language": "",
+  "CR": "2"
 }

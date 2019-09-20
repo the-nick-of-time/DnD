@@ -1,13 +1,28 @@
 {
-  "HP": "3d8+6",
-  "AC": 12,
   "name": "Dimetrodon",
+  "alignment": "unaligned",
+  "AC": 12,
+  "HP": "3d8+6",
   "abilities": {
+    "Strength": 14,
     "Dexterity": 10,
     "Constitution": 15,
-    "Charisma": 5,
-    "Wisdom": 10,
     "Intelligence": 2,
-    "Strength": 14
-  }
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 12,
+  "language": "",
+  "CR": "1/4"
 }

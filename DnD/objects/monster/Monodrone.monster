@@ -1,0 +1,24 @@
+{
+  "name": "Monodrone",
+  "alignment": "construct",
+  "AC": 15,
+  "HP": "1d8+1",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 13,
+    "Constitution": 12,
+    "Intelligence": 4,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 10,
+  "language": "Modron",
+  "CR": "1/8"
+}

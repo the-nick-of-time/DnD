@@ -1,0 +1,41 @@
+{
+  "name": "Sahuagin Baron",
+  "alignment": "lawful evil",
+  "AC": 16,
+  "HP": "9d10+27",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 15,
+    "Constitution": 16,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 6
+    },
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 17,
+  "language": "Sahuagin",
+  "CR": "5"
+}

@@ -1,13 +1,38 @@
 {
   "name": "Archmage",
-  "HP": "18d8",
+  "alignment": "any alignment",
   "AC": 12,
+  "HP": "18d8+18",
   "abilities": {
-    "Charisma": 16,
     "Strength": 10,
-    "Constitution": 12,
-    "Wisdom": 15,
     "Dexterity": 14,
-    "Intelligence": 20
-  }
+    "Constitution": 12,
+    "Intelligence": 20,
+    "Wisdom": 15,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Intelligence": 9
+    },
+    {
+      "Wisdom": 6
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 13
+    },
+    {
+      " History": 13
+    }
+  ],
+  "resistances": "damage from spells; non magical bludgeoning, piercing, and slashing (from stoneskin)",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "any six languages",
+  "CR": "12"
 }

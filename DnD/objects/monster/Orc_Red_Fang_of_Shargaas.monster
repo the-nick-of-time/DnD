@@ -1,13 +1,34 @@
 {
-  "HP": "8d8+16",
-  "AC": 15,
   "name": "Orc Red Fang of Shargaas",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "8d8+16",
   "abilities": {
+    "Strength": 11,
     "Dexterity": 16,
     "Constitution": 15,
-    "Charisma": 9,
-    "Wisdom": 11,
     "Intelligence": 9,
-    "Strength": 11
-  }
+    "Wisdom": 11,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 1
+    },
+    {
+      " Perception": 2
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Common, Orc",
+  "CR": "3"
 }

@@ -1,13 +1,24 @@
 {
   "name": "Ochre Jelly",
-  "HP": "6d10",
+  "alignment": "unaligned",
   "AC": 8,
+  "HP": "6d10+12",
   "abilities": {
-    "Charisma": 1,
     "Strength": 15,
-    "Constitution": 14,
-    "Wisdom": 6,
     "Dexterity": 6,
-    "Intelligence": 2
-  }
+    "Constitution": 14,
+    "Intelligence": 2,
+    "Wisdom": 6,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "acid",
+  "vulnerabilities": null,
+  "immunities": "lightning, slashing",
+  "condition immunities": "blinded, charmed, deafened, exhaustion, frightened, prone",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 8,
+  "language": null,
+  "CR": "2"
 }

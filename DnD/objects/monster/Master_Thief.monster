@@ -1,13 +1,47 @@
 {
-  "HP": "13d8+26",
-  "AC": 16,
   "name": "Master Thief",
+  "alignment": "any alignment",
+  "AC": 16,
+  "HP": "13d8+26",
   "abilities": {
+    "Strength": 11,
     "Dexterity": 18,
     "Constitution": 14,
-    "Charisma": 12,
-    "Wisdom": 11,
     "Intelligence": 11,
-    "Strength": 11
-  }
+    "Wisdom": 11,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Intelligence": 3
+    }
+  ],
+  "skills": [
+    {
+      "Acrobatics": 7
+    },
+    {
+      " Athletics": 3
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Sleight of Hand": 7
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 13,
+  "language": "any one language (usually Common) plus thieves' cant",
+  "CR": "5"
 }

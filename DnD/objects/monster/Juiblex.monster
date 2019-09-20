@@ -1,13 +1,38 @@
 {
+  "name": "Juiblex",
+  "alignment": "chaotic evil",
   "AC": 18,
   "HP": "28d12+168",
-  "name": "Juiblex",
   "abilities": {
     "Strength": 24,
-    "Constitution": 23,
     "Dexterity": 10,
-    "Wisdom": 20,
+    "Constitution": 23,
     "Intelligence": 20,
+    "Wisdom": 20,
     "Charisma": 16
-  }
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 13
+    },
+    {
+      "Wisdom": 12
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 12
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, piercing, and slashing that is nonmagical",
+  "condition immunities": "blinded, charmed, deafened, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained, stunned, unconscious",
+  "senses": "truesight 120 ft.",
+  "passive perception": 22,
+  "language": "all, telepathy 120 ft.",
+  "CR": "23"
 }

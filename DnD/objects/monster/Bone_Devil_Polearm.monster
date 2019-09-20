@@ -1,0 +1,41 @@
+{
+  "name": "Bone Devil Polearm",
+  "alignment": "lawful evil",
+  "AC": 19,
+  "HP": "15d10+60",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 16,
+    "Constitution": 18,
+    "Intelligence": 13,
+    "Wisdom": 14,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 7
+    },
+    {
+      " Insight": 6
+    }
+  ],
+  "resistances": "cold, bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 9,
+  "language": "Infernal, telepathy 120 ft.",
+  "CR": "12"
+}

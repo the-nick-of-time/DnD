@@ -1,13 +1,43 @@
 {
+  "name": "Shalvus Martholio",
+  "alignment": "neutral",
   "AC": 13,
   "HP": "6d8",
-  "name": "Shalvus Martholio",
   "abilities": {
-    "Dexterity": 15,
-    "Wisdom": 14,
-    "Charisma": 14,
     "Strength": 10,
+    "Dexterity": 15,
     "Constitution": 10,
-    "Intelligence": 12
-  }
+    "Intelligence": 12,
+    "Wisdom": 14,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 4
+    },
+    {
+      " Insight": 4
+    },
+    {
+      " Investigation": 3
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Sleight of Hand": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common, Elvish",
+  "CR": "0"
 }

@@ -1,13 +1,28 @@
 {
   "name": "Shadow",
-  "HP": "3d8",
+  "alignment": "chaotic evil",
   "AC": 12,
+  "HP": "3d8+3",
   "abilities": {
-    "Charisma": 8,
     "Strength": 6,
-    "Constitution": 13,
-    "Wisdom": 10,
     "Dexterity": 14,
-    "Intelligence": 6
-  }
+    "Constitution": 13,
+    "Intelligence": 6,
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 4
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning, thunder, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "radiant",
+  "immunities": "necrotic, poison",
+  "condition immunities": "exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "1/2"
 }

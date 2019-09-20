@@ -1,13 +1,31 @@
 {
+  "name": "Markham Southwell",
+  "alignment": "lawful good",
   "AC": 17,
   "HP": "9d8+18",
-  "name": "Markham Southwell",
   "abilities": {
-    "Dexterity": 13,
-    "Wisdom": 16,
-    "Charisma": 14,
     "Strength": 15,
+    "Dexterity": 13,
     "Constitution": 14,
-    "Intelligence": 11
-  }
+    "Intelligence": 11,
+    "Wisdom": 16,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 5
+    },
+    {
+      " Survival": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 16,
+  "language": "Common",
+  "CR": "0"
 }

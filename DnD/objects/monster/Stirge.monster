@@ -1,13 +1,24 @@
 {
   "name": "Stirge",
-  "HP": "1d4",
+  "alignment": "unaligned",
   "AC": 14,
+  "HP": "1d4",
   "abilities": {
-    "Charisma": 6,
     "Strength": 4,
-    "Constitution": 11,
-    "Wisdom": 8,
     "Dexterity": 16,
-    "Intelligence": 2
-  }
+    "Constitution": 11,
+    "Intelligence": 2,
+    "Wisdom": 8,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": null,
+  "CR": "1/8"
 }

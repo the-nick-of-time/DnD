@@ -1,13 +1,47 @@
 {
-  "HP": "20d12+100",
-  "AC": 12,
   "name": "Storm Giant Quintessent",
+  "alignment": "chaotic good",
+  "AC": 12,
+  "HP": "20d12+100",
   "abilities": {
+    "Strength": 29,
     "Dexterity": 14,
     "Constitution": 20,
-    "Charisma": 19,
-    "Wisdom": 30,
     "Intelligence": 17,
-    "Strength": 29
-  }
+    "Wisdom": 30,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Strength": 14
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 8
+    },
+    {
+      " History": 8
+    },
+    {
+      " Perception": 10
+    }
+  ],
+  "resistances": "cold; bludgeoning, piercing, and slashing from nonmagical attacks",
+  "vulnerabilities": "",
+  "immunities": "lightning, thunder",
+  "condition immunities": "",
+  "senses": "truesight 60 ft.",
+  "passive perception": 20,
+  "language": "Common, Giant",
+  "CR": "16"
 }

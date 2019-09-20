@@ -1,13 +1,47 @@
 {
+  "name": "Fraz-Urb'luu",
+  "alignment": "chaotic evil",
   "AC": 18,
   "HP": "28d10+196",
-  "name": "Fraz-Urb'luu",
   "abilities": {
     "Strength": 29,
-    "Constitution": 25,
     "Dexterity": 12,
-    "Wisdom": 24,
+    "Constitution": 25,
     "Intelligence": 26,
+    "Wisdom": 24,
     "Charisma": 26
-  }
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 15
+    },
+    {
+      "Intelligence": 15
+    },
+    {
+      "Wisdom": 14
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 15
+    },
+    {
+      " Perception": 14
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, piercing, and slashing that is nonmagical",
+  "condition immunities": "charmed, exhaustion, frightened, poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 24,
+  "language": "all, telepathy 120 ft.",
+  "CR": "23"
 }

@@ -1,0 +1,28 @@
+{
+  "name": "Mezzoloth",
+  "alignment": "neutral evil",
+  "AC": 18,
+  "HP": "10d8+30",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 11,
+    "Constitution": 16,
+    "Intelligence": 7,
+    "Wisdom": 10,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": "cold, fire, lightning, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "acid, poison",
+  "condition immunities": "poisoned",
+  "senses": "blindsight 60 ft., darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Abyssal, Infernal, telepathy 60 ft.",
+  "CR": "5"
+}

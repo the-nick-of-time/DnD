@@ -1,13 +1,35 @@
 {
-  "HP": "3d8+3",
   "name": "Dragonclaw",
+  "alignment": "neutral evil",
   "AC": 14,
+  "HP": "3d8+3",
   "abilities": {
-    "Wisdom": 10,
-    "Charisma": 12,
-    "Dexterity": 16,
-    "Intelligence": 11,
     "Strength": 9,
-    "Constitution": 13
-  }
+    "Dexterity": 16,
+    "Constitution": 13,
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Wisdom": 2
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 3
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Common, Draconic",
+  "CR": "1"
 }

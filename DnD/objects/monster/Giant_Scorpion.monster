@@ -1,13 +1,24 @@
 {
   "name": "Giant Scorpion",
-  "HP": "7d10",
+  "alignment": "unaligned",
   "AC": 15,
+  "HP": "7d10+14",
   "abilities": {
-    "Charisma": 3,
     "Strength": 15,
-    "Constitution": 15,
-    "Wisdom": 9,
     "Dexterity": 13,
-    "Intelligence": 1
-  }
+    "Constitution": 15,
+    "Intelligence": 1,
+    "Wisdom": 9,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft.",
+  "passive perception": 9,
+  "language": null,
+  "CR": "3"
 }

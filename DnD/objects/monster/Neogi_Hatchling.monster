@@ -1,13 +1,24 @@
 {
-  "HP": "3d4",
-  "AC": 11,
   "name": "Neogi Hatchling",
+  "alignment": "lawful evil",
+  "AC": 11,
+  "HP": "3d4",
   "abilities": {
+    "Strength": 3,
     "Dexterity": 13,
     "Constitution": 10,
-    "Charisma": 9,
-    "Wisdom": 10,
     "Intelligence": 6,
-    "Strength": 3
-  }
+    "Wisdom": 10,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "",
+  "CR": "1/8"
 }

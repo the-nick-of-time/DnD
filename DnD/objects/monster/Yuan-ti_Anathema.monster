@@ -1,13 +1,31 @@
 {
-  "HP": "18d12+72",
-  "AC": 16,
   "name": "Yuan-ti Anathema",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "18d12+72",
   "abilities": {
+    "Strength": 23,
     "Dexterity": 13,
     "Constitution": 19,
-    "Charisma": 20,
-    "Wisdom": 17,
     "Intelligence": 19,
-    "Strength": 23
-  }
+    "Wisdom": 17,
+    "Charisma": 20
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 7
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "acid, fire, lightning",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 17,
+  "language": "Abyssal, Common, Draconic",
+  "CR": "12"
 }

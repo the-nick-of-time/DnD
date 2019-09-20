@@ -1,0 +1,28 @@
+{
+  "name": "Spectator",
+  "alignment": "lawful neutral",
+  "AC": 14,
+  "HP": "6d8+12",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Intelligence": 13,
+    "Wisdom": 14,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "prone",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 16,
+  "language": "Deep Speech, Undercommon, telepathy 120 ft.",
+  "CR": "3"
+}

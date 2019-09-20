@@ -1,13 +1,38 @@
 {
   "name": "Half-Red Dragon Veteran",
-  "HP": "10d8",
+  "alignment": "any alignment",
   "AC": 18,
+  "HP": "10d8+20",
   "abilities": {
-    "Charisma": 10,
     "Strength": 16,
-    "Constitution": 14,
-    "Wisdom": 11,
     "Dexterity": 13,
-    "Intelligence": 10
-  }
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Strength": 5
+    },
+    {
+      "Constitution": 4
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 5
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": "fire",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Common, Draconic",
+  "CR": "5"
 }

@@ -1,0 +1,31 @@
+{
+  "name": "Sahuagin Priestess",
+  "alignment": "lawful evil",
+  "AC": 12,
+  "HP": "6d8+6",
+  "abilities": {
+    "Strength": 13,
+    "Dexterity": 11,
+    "Constitution": 12,
+    "Intelligence": 12,
+    "Wisdom": 14,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 6
+    },
+    {
+      " Religion": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 16,
+  "language": "Sahuagin",
+  "CR": "2"
+}

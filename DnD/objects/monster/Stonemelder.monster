@@ -1,13 +1,31 @@
 {
+  "name": "Stonemelder",
+  "alignment": "neutral evil",
   "AC": 17,
   "HP": "10d8+30",
-  "name": "Stonemelder",
   "abilities": {
-    "Intelligence": 12,
-    "Charisma": 17,
-    "Constitution": 16,
-    "Dexterity": 10,
     "Strength": 15,
-    "Wisdom": 11
-  }
+    "Dexterity": 10,
+    "Constitution": 16,
+    "Intelligence": 12,
+    "Wisdom": 11,
+    "Charisma": 17
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 5
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "tremorsense 30 ft.",
+  "passive perception": 12,
+  "language": "Common, Terran",
+  "CR": "4"
 }

@@ -1,13 +1,41 @@
 {
-  "HP": "14d8+28",
-  "AC": 17,
   "name": "Bheur Hag",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "14d8+28",
   "abilities": {
+    "Strength": 13,
     "Dexterity": 16,
     "Constitution": 14,
-    "Charisma": 16,
-    "Wisdom": 13,
     "Intelligence": 12,
-    "Strength": 13
-  }
+    "Wisdom": 13,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      "Nature": 4
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 6
+    },
+    {
+      " Survival": 4
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "cold",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Auran, Common, Giant",
+  "CR": "7"
 }

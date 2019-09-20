@@ -1,0 +1,24 @@
+{
+  "name": "Duodrone",
+  "alignment": "construct",
+  "AC": 15,
+  "HP": "2d8+2",
+  "abilities": {
+    "Strength": 11,
+    "Dexterity": 13,
+    "Constitution": 12,
+    "Intelligence": 6,
+    "Wisdom": 10,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 10,
+  "language": "Modron",
+  "CR": "1/4"
+}

@@ -1,13 +1,28 @@
 {
   "name": "Reef Shark",
-  "HP": "4d8",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "4d8+4",
   "abilities": {
-    "Charisma": 4,
     "Strength": 14,
-    "Constitution": 13,
-    "Wisdom": 10,
     "Dexterity": 13,
-    "Intelligence": 1
-  }
+    "Constitution": 13,
+    "Intelligence": 1,
+    "Wisdom": 10,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 30 ft.",
+  "passive perception": 12,
+  "language": null,
+  "CR": "1/2"
 }

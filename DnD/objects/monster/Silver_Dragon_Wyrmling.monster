@@ -1,13 +1,44 @@
 {
   "name": "Silver Dragon Wyrmling",
-  "HP": "6d8",
+  "alignment": "lawful good",
   "AC": 17,
+  "HP": "6d8+18",
   "abilities": {
-    "Charisma": 15,
     "Strength": 19,
-    "Constitution": 17,
-    "Wisdom": 11,
     "Dexterity": 10,
-    "Intelligence": 12
-  }
+    "Constitution": 17,
+    "Intelligence": 12,
+    "Wisdom": 11,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Dexterity": 2
+    },
+    {
+      "Constitution": 5
+    },
+    {
+      "Wisdom": 2
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Draconic",
+  "CR": "2"
 }

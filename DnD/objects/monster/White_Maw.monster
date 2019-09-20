@@ -1,13 +1,24 @@
 {
-  "AC": 5,
   "name": "White Maw",
+  "alignment": "chaotic neutral",
+  "AC": 5,
   "HP": "14d20+70",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 1,
-    "Charisma": 3,
     "Constitution": 20,
     "Intelligence": 12,
-    "Strength": 18,
-    "Wisdom": 10
-  }
+    "Wisdom": 10,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "acid, cold, fire",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "blinded, charmed, deafened, exhaustion, frightened, poisoned, prone",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 10,
+  "language": "telepathy 50 ft.",
+  "CR": "10"
 }

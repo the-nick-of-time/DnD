@@ -1,13 +1,44 @@
 {
   "name": "Young Black Dragon",
-  "HP": "15d10",
+  "alignment": "chaotic evil",
   "AC": 18,
+  "HP": "15d10+45",
   "abilities": {
-    "Charisma": 15,
     "Strength": 19,
-    "Constitution": 17,
-    "Wisdom": 11,
     "Dexterity": 14,
-    "Intelligence": 12
-  }
+    "Constitution": 17,
+    "Intelligence": 12,
+    "Wisdom": 11,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 6
+    },
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 6
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 16,
+  "language": "Common, Draconic",
+  "CR": "7"
 }

@@ -1,13 +1,31 @@
 {
+  "name": "Eternal Flame Guardian",
+  "alignment": "chaotic evil",
   "AC": 17,
   "HP": "7d8+14",
-  "name": "Eternal Flame Guardian",
   "abilities": {
-    "Intelligence": 8,
-    "Charisma": 13,
-    "Constitution": 14,
-    "Dexterity": 13,
     "Strength": 15,
-    "Wisdom": 11
-  }
+    "Dexterity": 13,
+    "Constitution": 14,
+    "Intelligence": 8,
+    "Wisdom": 11,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 3
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": "fire",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common",
+  "CR": "2"
 }

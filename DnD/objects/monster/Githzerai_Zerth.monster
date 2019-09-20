@@ -1,0 +1,47 @@
+{
+  "name": "Githzerai Zerth",
+  "alignment": "lawful neutral",
+  "AC": 17,
+  "HP": "13d8+26",
+  "abilities": {
+    "Strength": 13,
+    "Dexterity": 18,
+    "Constitution": 15,
+    "Intelligence": 16,
+    "Wisdom": 17,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Strength": 4
+    },
+    {
+      "Dexterity": 7
+    },
+    {
+      "Intelligence": 6
+    },
+    {
+      "Wisdom": 6
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 6
+    },
+    {
+      " Insight": 6
+    },
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 16,
+  "language": "Gith",
+  "CR": "6"
+}

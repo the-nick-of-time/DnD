@@ -1,13 +1,40 @@
 {
   "name": "Kraken",
-  "HP": "27d20",
+  "alignment": "chaotic evil",
   "AC": 18,
+  "HP": "27d20+189",
   "abilities": {
-    "Charisma": 20,
     "Strength": 30,
-    "Constitution": 25,
-    "Wisdom": 18,
     "Dexterity": 11,
-    "Intelligence": 22
-  }
+    "Constitution": 25,
+    "Intelligence": 22,
+    "Wisdom": 18,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Strength": 17
+    },
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 14
+    },
+    {
+      "Intelligence": 13
+    },
+    {
+      "Wisdom": 11
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": "frightened, paralyzed",
+  "senses": "truesight 120 ft.",
+  "passive perception": 14,
+  "language": "understands Abyssal, Celestial, Infernal, and Primordial but can't speak, telepathy 120 ft.",
+  "CR": "23"
 }

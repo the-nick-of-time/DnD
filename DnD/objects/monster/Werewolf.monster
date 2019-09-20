@@ -1,13 +1,28 @@
 {
   "name": "Werewolf",
-  "HP": "9d8",
+  "alignment": "chaotic evil",
   "AC": 11,
+  "HP": "9d8+18",
   "abilities": {
-    "Charisma": 10,
     "Strength": 15,
-    "Constitution": 14,
-    "Wisdom": 11,
     "Dexterity": 13,
-    "Intelligence": 10
-  }
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": "Common (can't speak in wolf form)",
+  "CR": "3"
 }

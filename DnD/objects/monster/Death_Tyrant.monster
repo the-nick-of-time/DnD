@@ -1,0 +1,44 @@
+{
+  "name": "Death Tyrant",
+  "alignment": "lawful evil",
+  "AC": 19,
+  "HP": "25d10+50",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Intelligence": 19,
+    "Wisdom": 15,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Strength": 5
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Intelligence": 9
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 12
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "charmed, exhaustion, paralyzed, petrified, poisoned, prone",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 22,
+  "language": "Deep Speech, Undercommon",
+  "CR": "14"
+}

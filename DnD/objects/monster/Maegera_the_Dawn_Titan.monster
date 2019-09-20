@@ -1,13 +1,34 @@
 {
+  "name": "Maegera the Dawn Titan",
+  "alignment": "chaotic evil",
   "AC": 16,
   "HP": "22d20+110",
-  "name": "Maegera the Dawn Titan",
   "abilities": {
-    "Dexterity": 22,
-    "Wisdom": 10,
-    "Charisma": 19,
     "Strength": 21,
+    "Dexterity": 22,
     "Constitution": 20,
-    "Intelligence": 10
-  }
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Constitution": 12
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "charmed, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained",
+  "senses": "blindsight 120 ft.",
+  "passive perception": 10,
+  "language": "Ignan",
+  "CR": "23"
 }

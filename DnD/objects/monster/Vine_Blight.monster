@@ -1,0 +1,28 @@
+{
+  "name": "Vine Blight",
+  "alignment": "neutral evil",
+  "AC": 12,
+  "HP": "4d8+4",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 8,
+    "Constitution": 14,
+    "Intelligence": 5,
+    "Wisdom": 10,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 1
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "blinded, deafened",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 10,
+  "language": "Common",
+  "CR": "1/2"
+}

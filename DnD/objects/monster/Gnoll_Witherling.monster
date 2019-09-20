@@ -1,13 +1,24 @@
 {
-  "HP": "2d8+2",
-  "AC": 12,
   "name": "Gnoll Witherling",
+  "alignment": "chaotic evil",
+  "AC": 12,
+  "HP": "2d8+2",
   "abilities": {
+    "Strength": 14,
     "Dexterity": 8,
     "Constitution": 12,
-    "Charisma": 5,
-    "Wisdom": 5,
     "Intelligence": 5,
-    "Strength": 14
-  }
+    "Wisdom": 5,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "exhaustion, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 7,
+  "language": "understands Gnoll but can't speak",
+  "CR": "1/4"
 }

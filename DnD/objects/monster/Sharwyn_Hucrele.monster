@@ -1,13 +1,31 @@
 {
-  "AC": 16,
   "name": "Sharwyn Hucrele",
+  "alignment": "neutral evil",
+  "AC": 16,
   "HP": "2d8+4",
   "abilities": {
+    "Strength": 11,
     "Dexterity": 13,
-    "Charisma": 9,
     "Constitution": 14,
     "Intelligence": 16,
-    "Strength": 11,
-    "Wisdom": 14
-  }
+    "Wisdom": 14,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " Insight": 4
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 12,
+  "language": "Common, Draconic, Goblin",
+  "CR": "1/2"
 }

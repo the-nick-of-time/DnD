@@ -1,13 +1,24 @@
 {
+  "name": "Ixitxachitl Cleric",
+  "alignment": "chaotic evil",
   "AC": 15,
   "HP": "4d6+4",
-  "name": "Ixitxachitl Cleric",
   "abilities": {
     "Strength": 12,
-    "Constitution": 13,
     "Dexterity": 16,
-    "Wisdom": 13,
+    "Constitution": 13,
     "Intelligence": 12,
+    "Wisdom": 13,
     "Charisma": 7
-  }
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Abyssal, Ixitxachitl",
+  "CR": "1/4"
 }

@@ -1,13 +1,24 @@
 {
   "name": "Animated Armor",
-  "HP": "6d8",
+  "alignment": "unaligned",
   "AC": 18,
+  "HP": "6d8+6",
   "abilities": {
-    "Charisma": 1,
     "Strength": 14,
-    "Constitution": 13,
-    "Wisdom": 3,
     "Dexterity": 11,
-    "Intelligence": 1
-  }
+    "Constitution": 13,
+    "Intelligence": 1,
+    "Wisdom": 3,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison, psychic",
+  "condition immunities": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 6,
+  "language": null,
+  "CR": "1"
 }

@@ -1,13 +1,34 @@
 {
+  "name": "Aerisi Kalinoth",
+  "alignment": "neutral evil",
   "AC": 13,
   "HP": "12d8+12",
-  "name": "Aerisi Kalinoth",
   "abilities": {
-    "Intelligence": 17,
-    "Charisma": 16,
-    "Constitution": 12,
-    "Dexterity": 16,
     "Strength": 8,
-    "Wisdom": 10
-  }
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 17,
+    "Wisdom": 10,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 6
+    },
+    {
+      " History": 6
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": "lightning",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Auran, Common, Elvish",
+  "CR": "7"
 }

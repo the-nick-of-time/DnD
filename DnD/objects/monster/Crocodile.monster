@@ -1,13 +1,28 @@
 {
   "name": "Crocodile",
-  "HP": "3d10",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "3d10+3",
   "abilities": {
-    "Charisma": 5,
     "Strength": 15,
-    "Constitution": 13,
-    "Wisdom": 10,
     "Dexterity": 10,
-    "Intelligence": 2
-  }
+    "Constitution": 13,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": null,
+  "CR": "1/2"
 }

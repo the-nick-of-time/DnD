@@ -1,13 +1,50 @@
 {
   "name": "Young Silver Dragon",
-  "HP": "16d10",
+  "alignment": "lawful good",
   "AC": 18,
+  "HP": "16d10+80",
   "abilities": {
-    "Charisma": 19,
     "Strength": 23,
-    "Constitution": 21,
-    "Wisdom": 11,
     "Dexterity": 10,
-    "Intelligence": 14
-  }
+    "Constitution": 21,
+    "Intelligence": 14,
+    "Wisdom": 11,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 6
+    },
+    {
+      " History": 6
+    },
+    {
+      " Perception": 8
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 18,
+  "language": "Common, Draconic",
+  "CR": "9"
 }

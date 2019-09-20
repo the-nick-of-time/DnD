@@ -1,13 +1,28 @@
 {
   "name": "Giant Shark",
-  "HP": "11d12",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "11d12+55",
   "abilities": {
-    "Charisma": 5,
     "Strength": 23,
-    "Constitution": 21,
-    "Wisdom": 10,
     "Dexterity": 11,
-    "Intelligence": 1
-  }
+    "Constitution": 21,
+    "Intelligence": 1,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft.",
+  "passive perception": 13,
+  "language": null,
+  "CR": "5"
 }

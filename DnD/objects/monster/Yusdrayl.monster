@@ -1,13 +1,34 @@
 {
-  "AC": 12,
   "name": "Yusdrayl",
+  "alignment": "lawful evil",
+  "AC": 12,
   "HP": "3d6+6",
   "abilities": {
+    "Strength": 8,
     "Dexterity": 15,
-    "Charisma": 16,
     "Constitution": 14,
     "Intelligence": 10,
-    "Strength": 8,
-    "Wisdom": 10
-  }
+    "Wisdom": 10,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 2
+    },
+    {
+      " Insight": 2
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Common, Draconic",
+  "CR": "1"
 }

@@ -1,0 +1,31 @@
+{
+  "name": "Pixie",
+  "alignment": "neutral good",
+  "AC": 15,
+  "HP": "1d4-1",
+  "abilities": {
+    "Strength": 2,
+    "Dexterity": 20,
+    "Constitution": 8,
+    "Intelligence": 10,
+    "Wisdom": 14,
+    "Charisma": 15
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": "Sylvan",
+  "CR": "1/4"
+}

@@ -1,13 +1,41 @@
 {
-  "HP": "14d12+70",
-  "AC": 18,
   "name": "Stone Giant Dreamwalker",
+  "alignment": "chaotic neutral",
+  "AC": 18,
+  "HP": "14d12+70",
   "abilities": {
+    "Strength": 23,
     "Dexterity": 14,
     "Constitution": 21,
-    "Charisma": 12,
-    "Wisdom": 8,
     "Intelligence": 10,
-    "Strength": 23
-  }
+    "Wisdom": 8,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 3
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 14
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "charmed, frightened",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Common, Giant",
+  "CR": "10"
 }

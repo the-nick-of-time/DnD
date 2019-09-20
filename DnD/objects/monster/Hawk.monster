@@ -1,13 +1,28 @@
 {
   "name": "Hawk",
-  "HP": "1d4",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "1d4-1",
   "abilities": {
-    "Charisma": 6,
     "Strength": 5,
-    "Constitution": 8,
-    "Wisdom": 14,
     "Dexterity": 16,
-    "Intelligence": 2
-  }
+    "Constitution": 8,
+    "Intelligence": 2,
+    "Wisdom": 14,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": null,
+  "CR": "0"
 }

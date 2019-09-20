@@ -1,13 +1,41 @@
 {
   "name": "Fire Giant",
-  "HP": "13d12",
+  "alignment": "lawful evil",
   "AC": 18,
+  "HP": "13d12+78",
   "abilities": {
-    "Charisma": 13,
     "Strength": 25,
-    "Constitution": 23,
-    "Wisdom": 14,
     "Dexterity": 9,
-    "Intelligence": 10
-  }
+    "Constitution": 23,
+    "Intelligence": 10,
+    "Wisdom": 14,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Dexterity": 3
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      "Athletics": 11
+    },
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 16,
+  "language": "Giant",
+  "CR": "9"
 }

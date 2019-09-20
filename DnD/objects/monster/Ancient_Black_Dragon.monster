@@ -1,13 +1,44 @@
 {
   "name": "Ancient Black Dragon",
-  "HP": "21d20",
+  "alignment": "chaotic evil",
   "AC": 22,
+  "HP": "21d20+147",
   "abilities": {
-    "Charisma": 19,
     "Strength": 27,
-    "Constitution": 25,
-    "Wisdom": 15,
     "Dexterity": 14,
-    "Intelligence": 16
-  }
+    "Constitution": 25,
+    "Intelligence": 16,
+    "Wisdom": 15,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 14
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 16
+    },
+    {
+      " Stealth": 9
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 26,
+  "language": "Common, Draconic",
+  "CR": "21"
 }

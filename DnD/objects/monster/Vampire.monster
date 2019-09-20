@@ -1,13 +1,41 @@
 {
   "name": "Vampire",
-  "HP": "17d8",
+  "alignment": "lawful evil",
   "AC": 16,
+  "HP": "17d8+68",
   "abilities": {
-    "Charisma": 18,
     "Strength": 18,
-    "Constitution": 18,
-    "Wisdom": 15,
     "Dexterity": 18,
-    "Intelligence": 17
-  }
+    "Constitution": 18,
+    "Intelligence": 17,
+    "Wisdom": 15,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 7
+    },
+    {
+      " Stealth": 9
+    }
+  ],
+  "resistances": "necrotic, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 17,
+  "language": "the languages it knew in life",
+  "CR": "13"
 }

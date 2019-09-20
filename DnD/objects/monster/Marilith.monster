@@ -1,13 +1,37 @@
 {
   "name": "Marilith",
-  "HP": "18d10",
+  "alignment": "chaotic evil",
   "AC": 18,
+  "HP": "18d10+90",
   "abilities": {
-    "Charisma": 20,
     "Strength": 18,
-    "Constitution": 20,
-    "Wisdom": 16,
     "Dexterity": 20,
-    "Intelligence": 18
-  }
+    "Constitution": 20,
+    "Intelligence": 18,
+    "Wisdom": 16,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Strength": 9
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 10
+    }
+  ],
+  "skills": [],
+  "resistances": "cold, fire, lightning, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 13,
+  "language": "Abyssal, telepathy 120 ft.",
+  "CR": "16"
 }

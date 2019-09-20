@@ -1,13 +1,44 @@
 {
-  "HP": "9d8+27",
-  "AC": 11,
   "name": "Deep Scion",
+  "alignment": "neutral evil",
+  "AC": 11,
+  "HP": "9d8+27",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 13,
     "Constitution": 16,
-    "Charisma": 14,
-    "Wisdom": 12,
     "Intelligence": 10,
-    "Strength": 18
-  }
+    "Wisdom": 12,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 6
+    },
+    {
+      " Insight": 3
+    },
+    {
+      " Sleight of Hand": 3
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 11,
+  "language": "Aquan, Common, thieves' cant",
+  "CR": "3"
 }

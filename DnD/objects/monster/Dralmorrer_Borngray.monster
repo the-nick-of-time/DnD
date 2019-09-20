@@ -1,13 +1,47 @@
 {
-  "HP": "7d10+14",
   "name": "Dralmorrer Borngray",
+  "alignment": "neutral evil",
   "AC": 16,
+  "HP": "7d10+14",
   "abilities": {
-    "Wisdom": 10,
-    "Charisma": 8,
-    "Dexterity": 14,
-    "Intelligence": 16,
     "Strength": 18,
-    "Constitution": 14
-  }
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Intelligence": 16,
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [
+    {
+      "Strength": 6
+    },
+    {
+      "Constitution": 4
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " Deception": 1
+    },
+    {
+      " Insight": 2
+    },
+    {
+      " Perception": 2
+    },
+    {
+      " Religion": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Common, Bullywug, Draconic, Elvish, Goblin, Sylvan",
+  "CR": "3"
 }

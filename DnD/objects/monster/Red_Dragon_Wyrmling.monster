@@ -1,13 +1,44 @@
 {
   "name": "Red Dragon Wyrmling",
-  "HP": "10d8",
+  "alignment": "chaotic evil",
   "AC": 17,
+  "HP": "10d8+30",
   "abilities": {
-    "Charisma": 15,
     "Strength": 19,
-    "Constitution": 17,
-    "Wisdom": 11,
     "Dexterity": 10,
-    "Intelligence": 12
-  }
+    "Constitution": 17,
+    "Intelligence": 12,
+    "Wisdom": 11,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Dexterity": 2
+    },
+    {
+      "Constitution": 5
+    },
+    {
+      "Wisdom": 2
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "Draconic",
+  "CR": "4"
 }

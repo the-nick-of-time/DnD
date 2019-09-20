@@ -1,13 +1,34 @@
 {
-  "HP": "12d8+12",
-  "AC": 17,
   "name": "Swashbuckler",
+  "alignment": "any non-lawful alignment",
+  "AC": 17,
+  "HP": "12d8+12",
   "abilities": {
+    "Strength": 12,
     "Dexterity": 18,
     "Constitution": 12,
-    "Charisma": 15,
-    "Wisdom": 11,
     "Intelligence": 14,
-    "Strength": 12
-  }
+    "Wisdom": 11,
+    "Charisma": 15
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Acrobatics": 8
+    },
+    {
+      " Athletics": 5
+    },
+    {
+      " Persuasion": 6
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 10,
+  "language": "any one language (usually Common)",
+  "CR": "3"
 }

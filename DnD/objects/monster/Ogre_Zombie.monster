@@ -1,13 +1,28 @@
 {
   "name": "Ogre Zombie",
-  "HP": "9d10",
+  "alignment": "neutral evil",
   "AC": 8,
+  "HP": "9d10+36",
   "abilities": {
-    "Charisma": 5,
     "Strength": 19,
-    "Constitution": 18,
-    "Wisdom": 6,
     "Dexterity": 6,
-    "Intelligence": 3
-  }
+    "Constitution": 18,
+    "Intelligence": 3,
+    "Wisdom": 6,
+    "Charisma": 5
+  },
+  "saves": [
+    {
+      "Wisdom": 0
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 8,
+  "language": "understands Common and Giant but can't speak",
+  "CR": "2"
 }

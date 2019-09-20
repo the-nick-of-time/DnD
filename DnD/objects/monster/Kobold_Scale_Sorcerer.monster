@@ -1,13 +1,31 @@
 {
-  "HP": "5d6+10",
-  "AC": 15,
   "name": "Kobold Scale Sorcerer",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "5d6+10",
   "abilities": {
+    "Strength": 7,
     "Dexterity": 15,
     "Constitution": 14,
-    "Charisma": 14,
-    "Wisdom": 9,
     "Intelligence": 10,
-    "Strength": 7
-  }
+    "Wisdom": 9,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 2
+    },
+    {
+      " Medicine": 1
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "Common, Draconic",
+  "CR": "1"
 }

@@ -1,13 +1,37 @@
 {
+  "name": "Uthgardt Shaman",
+  "alignment": "neutral evil",
   "AC": 13,
   "HP": "7d8+7",
-  "name": "Uthgardt Shaman",
   "abilities": {
-    "Dexterity": 12,
-    "Wisdom": 15,
-    "Charisma": 12,
     "Strength": 14,
+    "Dexterity": 12,
     "Constitution": 13,
-    "Intelligence": 10
-  }
+    "Intelligence": 10,
+    "Wisdom": 15,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Medicine": 4
+    },
+    {
+      " Nature": 4
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Survival": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": "Bothii, Common",
+  "CR": "2"
 }

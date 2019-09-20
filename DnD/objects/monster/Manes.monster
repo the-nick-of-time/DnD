@@ -1,0 +1,24 @@
+{
+  "name": "Manes",
+  "alignment": "chaotic evil",
+  "AC": 9,
+  "HP": "2d6+2",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 9,
+    "Constitution": 13,
+    "Intelligence": 3,
+    "Wisdom": 8,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "charmed, frightened, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "understands Abyssal but can't speak",
+  "CR": "1/8"
+}

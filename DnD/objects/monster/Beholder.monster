@@ -1,0 +1,38 @@
+{
+  "name": "Beholder",
+  "alignment": "lawful evil",
+  "AC": 18,
+  "HP": "19d10+76",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
+    "Constitution": 18,
+    "Intelligence": 17,
+    "Wisdom": 15,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Intelligence": 8
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 12
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "prone",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 22,
+  "language": "Deep Speech, Undercommon",
+  "CR": "13"
+}

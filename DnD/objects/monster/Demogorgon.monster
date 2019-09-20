@@ -1,13 +1,44 @@
 {
+  "name": "Demogorgon",
+  "alignment": "chaotic evil",
   "AC": 22,
   "HP": "34d12+272",
-  "name": "Demogorgon",
   "abilities": {
     "Strength": 29,
-    "Constitution": 26,
     "Dexterity": 14,
-    "Wisdom": 17,
+    "Constitution": 26,
     "Intelligence": 20,
+    "Wisdom": 17,
     "Charisma": 25
-  }
+  },
+  "saves": [
+    {
+      "Dexterity": 10
+    },
+    {
+      "Constitution": 16
+    },
+    {
+      "Wisdom": 11
+    },
+    {
+      "Charisma": 15
+    }
+  ],
+  "skills": [
+    {
+      "Insight": 11
+    },
+    {
+      " Perception": 19
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, piercing, and slashing that is nonmagical",
+  "condition immunities": "charmed, exhaustion, frightened, poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 21,
+  "language": "all, telepathy 120 ft.",
+  "CR": "26"
 }

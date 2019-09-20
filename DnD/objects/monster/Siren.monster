@@ -1,13 +1,37 @@
 {
-  "AC": 14,
   "name": "Siren",
+  "alignment": "chaotic good",
+  "AC": 14,
   "HP": "7d8+7",
   "abilities": {
+    "Strength": 10,
     "Dexterity": 18,
-    "Charisma": 16,
     "Constitution": 12,
     "Intelligence": 13,
-    "Strength": 10,
-    "Wisdom": 14
-  }
+    "Wisdom": 14,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Medicine": 4
+    },
+    {
+      " Nature": 3
+    },
+    {
+      " Stealth": 6
+    },
+    {
+      " Survival": 4
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Common, Elvish, Sylvan",
+  "CR": "3"
 }

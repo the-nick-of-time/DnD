@@ -1,13 +1,34 @@
 {
+  "name": "Black Earth Priest",
+  "alignment": "neutral evil",
   "AC": 17,
   "HP": "7d8+14",
-  "name": "Black Earth Priest",
   "abilities": {
-    "Intelligence": 12,
-    "Charisma": 16,
-    "Constitution": 14,
-    "Dexterity": 11,
     "Strength": 15,
-    "Wisdom": 10
-  }
+    "Dexterity": 11,
+    "Constitution": 14,
+    "Intelligence": 12,
+    "Wisdom": 10,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 5
+    },
+    {
+      " Religion": 3
+    },
+    {
+      " Persuasion": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Common, Terran",
+  "CR": "3"
 }

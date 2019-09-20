@@ -1,13 +1,24 @@
 {
   "name": "Air Elemental",
-  "HP": "12d10",
+    "alignment": "neutral",
   "AC": 15,
+    "HP": "12d10+24",
   "abilities": {
-    "Charisma": 6,
     "Strength": 14,
+      "Dexterity": 20,
     "Constitution": 14,
+      "Intelligence": 6,
     "Wisdom": 10,
-    "Dexterity": 20,
-    "Intelligence": 6
-  }
+      "Charisma": 6
+  },
+    "saves": [],
+    "skills": [],
+    "resistances": "lightning, thunder, bludgeoning, piercing, and slashing from nonmagical weapons",
+    "vulnerabilities": null,
+    "immunities": "poison",
+    "condition immunities": "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
+    "senses": "darkvision 60 ft.",
+    "passive perception": 10,
+    "language": "Auran",
+    "CR": "5"
 }

@@ -1,13 +1,28 @@
 {
+  "name": "Derro",
+  "alignment": "chaotic evil",
   "AC": 13,
   "HP": "3d6+3",
-  "name": "Derro",
   "abilities": {
     "Strength": 9,
-    "Constitution": 12,
     "Dexterity": 14,
-    "Wisdom": 5,
+    "Constitution": 12,
     "Intelligence": 11,
+    "Wisdom": 5,
     "Charisma": 9
-  }
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 7,
+  "language": "Dwarvish, Undercommon",
+  "CR": "1/4"
 }

@@ -1,0 +1,34 @@
+{
+  "name": "Ultroloth",
+  "alignment": "neutral evil",
+  "AC": 19,
+  "HP": "18d8+72",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 16,
+    "Constitution": 18,
+    "Intelligence": 18,
+    "Wisdom": 15,
+    "Charisma": 19
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 9
+    },
+    {
+      " Perception": 7
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": "cold, fire, lightning, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "acid, poison",
+  "condition immunities": "charmed, frightened, poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 17,
+  "language": "Abyssal, Infernal, telepathy 120 ft.",
+  "CR": "13"
+}

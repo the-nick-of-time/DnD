@@ -1,13 +1,34 @@
 {
-  "HP": "21d20+105",
-  "AC": 16,
   "name": "Neothelid",
+  "alignment": "chaotic evil",
+  "AC": 16,
+  "HP": "21d20+105",
   "abilities": {
+    "Strength": 27,
     "Dexterity": 7,
     "Constitution": 21,
-    "Charisma": 12,
-    "Wisdom": 16,
     "Intelligence": 3,
-    "Strength": 27
-  }
+    "Wisdom": 16,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Intelligence": 1
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "blindsight 120 ft.",
+  "passive perception": 13,
+  "language": "",
+  "CR": "13"
 }

@@ -1,13 +1,28 @@
 {
   "name": "Vulture",
-  "HP": "1d8",
+  "alignment": "unaligned",
   "AC": 10,
+  "HP": "1d8+1",
   "abilities": {
-    "Charisma": 4,
     "Strength": 7,
-    "Constitution": 13,
-    "Wisdom": 12,
     "Dexterity": 10,
-    "Intelligence": 2
-  }
+    "Constitution": 13,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": null,
+  "CR": "0"
 }

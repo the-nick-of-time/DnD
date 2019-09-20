@@ -1,0 +1,31 @@
+{
+  "name": "Death Slaad",
+  "alignment": "chaotic evil",
+  "AC": 18,
+  "HP": "20d8+80",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 15,
+    "Constitution": 19,
+    "Intelligence": 15,
+    "Wisdom": 10,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 6
+    },
+    {
+      " Perception": 8
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning, thunder",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 60 ft.",
+  "passive perception": 18,
+  "language": "Slaad, telepathy 60 ft.",
+  "CR": "10"
+}

@@ -1,13 +1,28 @@
 {
   "name": "Pidlwick II",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "3d6",
   "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
     "Constitution": 11,
     "Intelligence": 8,
-    "Charisma": 10,
     "Wisdom": 13,
-    "Dexterity": 14,
-    "Strength": 10
+    "Charisma": 10
   },
-  "HP": "3d6",
-  "AC": 14
+  "saves": [],
+  "skills": [
+    {
+      "Performance": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "paralyzed, petrified, poisoned",
+  "senses": "",
+  "passive perception": 11,
+  "language": "understands Common but doesn't speak and can't read or write",
+  "CR": "1/4"
 }

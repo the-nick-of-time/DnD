@@ -1,0 +1,47 @@
+{
+  "name": "Drow Priestess of Lolth",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "13d8+13",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Intelligence": 13,
+    "Wisdom": 17,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Constitution": 4
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      "Insight": 6
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Religion": 4
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 16,
+  "language": "Elvish, Undercommon",
+  "CR": "8"
+}

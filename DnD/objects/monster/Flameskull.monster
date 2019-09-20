@@ -1,0 +1,31 @@
+{
+  "name": "Flameskull",
+  "alignment": "neutral evil",
+  "AC": 13,
+  "HP": "9d4+18",
+  "abilities": {
+    "Strength": 1,
+    "Dexterity": 17,
+    "Constitution": 14,
+    "Intelligence": 16,
+    "Wisdom": 10,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": "lightning, necrotic, piercing",
+  "vulnerabilities": null,
+  "immunities": "cold, fire, poison",
+  "condition immunities": "charmed, frightened, paralyzed, poisoned, prone",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Common",
+  "CR": "4"
+}

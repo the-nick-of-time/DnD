@@ -1,13 +1,28 @@
 {
-  "HP": "10d10+30",
-  "AC": 13,
   "name": "Trapper",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "10d10+30",
   "abilities": {
+    "Strength": 17,
     "Dexterity": 10,
     "Constitution": 17,
-    "Charisma": 4,
-    "Wisdom": 13,
     "Intelligence": 2,
-    "Strength": 17
-  }
+    "Wisdom": 13,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 2
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "blindsight 30 ft., darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "",
+  "CR": "3"
 }

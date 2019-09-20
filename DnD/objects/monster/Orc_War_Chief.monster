@@ -1,0 +1,38 @@
+{
+  "name": "Orc War Chief",
+  "alignment": "chaotic evil",
+  "AC": 16,
+  "HP": "11d8+44",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 12,
+    "Constitution": 18,
+    "Intelligence": 11,
+    "Wisdom": 11,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Strength": 6
+    },
+    {
+      "Constitution": 6
+    },
+    {
+      "Wisdom": 2
+    }
+  ],
+  "skills": [
+    {
+      "Intimidation": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Common, Orc",
+  "CR": "4"
+}

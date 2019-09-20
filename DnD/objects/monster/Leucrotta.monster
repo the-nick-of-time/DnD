@@ -1,13 +1,31 @@
 {
-  "HP": "9d10+18",
-  "AC": 14,
   "name": "Leucrotta",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "9d10+18",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 14,
     "Constitution": 15,
-    "Charisma": 6,
-    "Wisdom": 12,
     "Intelligence": 9,
-    "Strength": 18
-  }
+    "Wisdom": 12,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 2
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Abyssal, Gnoll",
+  "CR": "3"
 }

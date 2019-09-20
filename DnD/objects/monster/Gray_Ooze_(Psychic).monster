@@ -1,0 +1,28 @@
+{
+  "name": "Gray Ooze (Psychic)",
+  "alignment": "unaligned",
+  "AC": 8,
+  "HP": "3d8+9",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 6,
+    "Constitution": 16,
+    "Intelligence": 6,
+    "Wisdom": 6,
+    "Charisma": 2
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 2
+    }
+  ],
+  "resistances": "acid, cold, fire",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "blinded, charmed, deafened, exhaustion, frightened, prone",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 8,
+  "language": null,
+  "CR": "1/2"
+}

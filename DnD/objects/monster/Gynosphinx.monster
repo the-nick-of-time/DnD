@@ -1,13 +1,37 @@
 {
   "name": "Gynosphinx",
-  "HP": "16d10",
+  "alignment": "lawful neutral",
   "AC": 17,
+  "HP": "16d10+48",
   "abilities": {
-    "Charisma": 18,
     "Strength": 18,
-    "Constitution": 16,
-    "Wisdom": 18,
     "Dexterity": 15,
-    "Intelligence": 18
-  }
+    "Constitution": 16,
+    "Intelligence": 18,
+    "Wisdom": 18,
+    "Charisma": 18
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 12
+    },
+    {
+      " History": 12
+    },
+    {
+      " Perception": 8
+    },
+    {
+      " Religion": 8
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "psychic",
+  "condition immunities": "charmed, frightened",
+  "senses": "truesight 120 ft.",
+  "passive perception": 18,
+  "language": "Common, Sphinx",
+  "CR": "11"
 }

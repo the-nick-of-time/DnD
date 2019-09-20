@@ -1,13 +1,28 @@
 {
   "name": "Thug",
-  "HP": "5d8",
+  "alignment": "any non-good alignment",
   "AC": 11,
+  "HP": "5d8+10",
   "abilities": {
-    "Charisma": 11,
     "Strength": 15,
-    "Constitution": 14,
-    "Wisdom": 10,
     "Dexterity": 11,
-    "Intelligence": 10
-  }
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "any one language (usually Common)",
+  "CR": "1/2"
 }

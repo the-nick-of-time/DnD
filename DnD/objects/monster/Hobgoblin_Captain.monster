@@ -1,0 +1,24 @@
+{
+  "name": "Hobgoblin Captain",
+  "alignment": "lawful evil",
+  "AC": 17,
+  "HP": "6d8+12",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Intelligence": 12,
+    "Wisdom": 10,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Common, Goblin",
+  "CR": "3"
+}

@@ -1,13 +1,24 @@
 {
   "name": "Merrow",
-  "HP": "6d10",
+  "alignment": "chaotic evil",
   "AC": 13,
+  "HP": "6d10+12",
   "abilities": {
-    "Charisma": 9,
     "Strength": 18,
-    "Constitution": 15,
-    "Wisdom": 10,
     "Dexterity": 10,
-    "Intelligence": 8
-  }
+    "Constitution": 15,
+    "Intelligence": 8,
+    "Wisdom": 10,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Abyssal, Aquan",
+  "CR": "2"
 }

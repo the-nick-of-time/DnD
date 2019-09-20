@@ -1,13 +1,34 @@
 {
-  "AC": 15,
   "name": "Kalka-Kylla",
+  "alignment": "neutral",
+  "AC": 15,
   "HP": "10d10+30",
   "abilities": {
+    "Strength": 17,
     "Dexterity": 12,
-    "Charisma": 12,
     "Constitution": 16,
     "Intelligence": 15,
-    "Strength": 17,
-    "Wisdom": 16
-  }
+    "Wisdom": 16,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 3
+    },
+    {
+      " Insight": 5
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "blindsight 30 ft.",
+  "passive perception": 13,
+  "language": "Olman",
+  "CR": "3"
 }

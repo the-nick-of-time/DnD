@@ -1,13 +1,38 @@
 {
-  "HP": "12d8+12",
-  "AC": 12,
   "name": "Evoker",
+  "alignment": "any alignment",
+  "AC": 12,
+  "HP": "12d8+12",
   "abilities": {
+    "Strength": 9,
     "Dexterity": 14,
     "Constitution": 12,
-    "Charisma": 11,
-    "Wisdom": 12,
     "Intelligence": 17,
-    "Strength": 9
-  }
+    "Wisdom": 12,
+    "Charisma": 11
+  },
+  "saves": [
+    {
+      "Intelligence": 7
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 7
+    },
+    {
+      " History": 7
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 11,
+  "language": "any four languages",
+  "CR": "9"
 }

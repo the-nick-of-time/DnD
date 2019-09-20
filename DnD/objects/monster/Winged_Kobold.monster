@@ -1,0 +1,24 @@
+{
+  "name": "Winged Kobold",
+  "alignment": "lawful evil",
+  "AC": 13,
+  "HP": "3d6-3",
+  "abilities": {
+    "Strength": 7,
+    "Dexterity": 16,
+    "Constitution": 9,
+    "Intelligence": 8,
+    "Wisdom": 7,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 8,
+  "language": "Common, Draconic",
+  "CR": "1/4"
+}

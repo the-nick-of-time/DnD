@@ -1,13 +1,50 @@
 {
   "name": "Adult Gold Dragon",
-  "HP": "19d12",
+  "alignment": "lawful good",
   "AC": 19,
+  "HP": "19d12+133",
   "abilities": {
-    "Charisma": 24,
     "Strength": 27,
-    "Constitution": 25,
-    "Wisdom": 15,
     "Dexterity": 14,
-    "Intelligence": 16
-  }
+    "Constitution": 25,
+    "Intelligence": 16,
+    "Wisdom": 15,
+    "Charisma": 24
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 13
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 13
+    }
+  ],
+  "skills": [
+    {
+      "Insight": 8
+    },
+    {
+      " Perception": 14
+    },
+    {
+      " Persuasion": 13
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 24,
+  "language": "Common, Draconic",
+  "CR": "17"
 }

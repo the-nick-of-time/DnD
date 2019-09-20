@@ -1,13 +1,37 @@
 {
-  "HP": "3d4+3",
-  "AC": 16,
   "name": "Quickling",
+  "alignment": "chaotic evil",
+  "AC": 16,
+  "HP": "3d4+3",
   "abilities": {
+    "Strength": 4,
     "Dexterity": 23,
     "Constitution": 13,
-    "Charisma": 7,
-    "Wisdom": 12,
     "Intelligence": 10,
-    "Strength": 4
-  }
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Acrobatics": 8
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Sleight of Hand": 8
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": "Common, Sylvan",
+  "CR": "1"
 }

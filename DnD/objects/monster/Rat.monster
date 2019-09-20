@@ -1,13 +1,24 @@
 {
   "name": "Rat",
-  "HP": "1d4",
+  "alignment": "unaligned",
   "AC": 10,
+  "HP": "1d4-1",
   "abilities": {
-    "Charisma": 4,
     "Strength": 2,
-    "Constitution": 9,
-    "Wisdom": 10,
     "Dexterity": 11,
-    "Intelligence": 2
-  }
+    "Constitution": 9,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 30 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "0"
 }

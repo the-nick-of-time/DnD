@@ -1,13 +1,34 @@
 {
   "name": "Bearded Devil",
-  "HP": "8d8",
+  "alignment": "lawful evil",
   "AC": 13,
+  "HP": "8d8+16",
   "abilities": {
-    "Charisma": 11,
     "Strength": 16,
-    "Constitution": 15,
-    "Wisdom": 11,
     "Dexterity": 15,
-    "Intelligence": 9
-  }
+    "Constitution": 15,
+    "Intelligence": 9,
+    "Wisdom": 11,
+    "Charisma": 11
+  },
+  "saves": [
+    {
+      "Strength": 5
+    },
+    {
+      "Constitution": 4
+    },
+    {
+      "Wisdom": 2
+    }
+  ],
+  "skills": [],
+  "resistances": "cold, bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": "Infernal, telepathy 120 ft.",
+  "CR": "3"
 }

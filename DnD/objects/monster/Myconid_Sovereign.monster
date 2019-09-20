@@ -1,0 +1,24 @@
+{
+  "name": "Myconid Sovereign",
+  "alignment": "lawful neutral",
+  "AC": 13,
+  "HP": "8d10+16",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 10,
+    "Constitution": 14,
+    "Intelligence": 13,
+    "Wisdom": 15,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 12,
+  "language": null,
+  "CR": "2"
+}

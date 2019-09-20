@@ -1,13 +1,24 @@
 {
+  "name": "Drow Spore Servant",
+  "alignment": "unaligned",
   "AC": 15,
   "HP": "3d8",
-  "name": "Drow Spore Servant",
   "abilities": {
     "Strength": 10,
-    "Constitution": 10,
     "Dexterity": 14,
-    "Wisdom": 6,
+    "Constitution": 10,
     "Intelligence": 2,
+    "Wisdom": 6,
     "Charisma": 1
-  }
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "blinded, charmed, frightened, paralyzed",
+  "senses": "blindsight 30 ft. (blind beyond this radius)",
+  "passive perception": 8,
+  "language": "-",
+  "CR": "1/8"
 }

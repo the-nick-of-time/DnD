@@ -1,13 +1,24 @@
 {
   "name": "Clay Golem",
-  "HP": "14d10",
+  "alignment": "unaligned",
   "AC": 14,
+  "HP": "14d10+56",
   "abilities": {
-    "Charisma": 1,
     "Strength": 20,
-    "Constitution": 18,
-    "Wisdom": 8,
     "Dexterity": 9,
-    "Intelligence": 3
-  }
+    "Constitution": 18,
+    "Intelligence": 3,
+    "Wisdom": 8,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid, poison, psychic, bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
+  "condition immunities": "charmed, exhaustion, frightened, paralyzed, petrified, poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "understands the languages of its creator but can't speak",
+  "CR": "9"
 }

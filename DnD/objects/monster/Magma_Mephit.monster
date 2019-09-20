@@ -1,13 +1,28 @@
 {
   "name": "Magma Mephit",
-  "HP": "5d6",
+  "alignment": "neutral evil",
   "AC": 11,
+  "HP": "5d6+5",
   "abilities": {
-    "Charisma": 10,
     "Strength": 8,
-    "Constitution": 12,
-    "Wisdom": 10,
     "Dexterity": 12,
-    "Intelligence": 7
-  }
+    "Constitution": 12,
+    "Intelligence": 7,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "cold",
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Ignan, Terran",
+  "CR": "1/2"
 }

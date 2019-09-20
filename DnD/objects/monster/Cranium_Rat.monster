@@ -1,13 +1,24 @@
 {
-  "HP": "1d4",
-  "AC": 12,
   "name": "Cranium Rat",
+  "alignment": "lawful evil",
+  "AC": 12,
+  "HP": "1d4",
   "abilities": {
+    "Strength": 2,
     "Dexterity": 14,
     "Constitution": 10,
-    "Charisma": 8,
-    "Wisdom": 11,
     "Intelligence": 4,
-    "Strength": 2
-  }
+    "Wisdom": 11,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 30 ft.",
+  "passive perception": 10,
+  "language": "telepathy 30 ft.",
+  "CR": "0"
 }

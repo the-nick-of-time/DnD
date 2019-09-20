@@ -1,13 +1,31 @@
 {
-  "HP": "6d6+12",
-  "AC": 15,
   "name": "Neogi",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "6d6+12",
   "abilities": {
+    "Strength": 6,
     "Dexterity": 16,
     "Constitution": 14,
-    "Charisma": 15,
-    "Wisdom": 12,
     "Intelligence": 13,
-    "Strength": 6
-  }
+    "Wisdom": 12,
+    "Charisma": 15
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 4
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Common, Deep Speech, Undercommon",
+  "CR": "3"
 }

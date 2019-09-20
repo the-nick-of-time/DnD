@@ -1,13 +1,24 @@
 {
   "name": "Swarm of Wasps",
-  "HP": "5d8",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "5d8",
   "abilities": {
-    "Charisma": 1,
     "Strength": 3,
-    "Constitution": 10,
-    "Wisdom": 7,
     "Dexterity": 13,
-    "Intelligence": 1
-  }
+    "Constitution": 10,
+    "Intelligence": 1,
+    "Wisdom": 7,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, slashing",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned",
+  "senses": "blindsight 10 ft.",
+  "passive perception": 8,
+  "language": null,
+  "CR": "1/2"
 }

@@ -1,13 +1,34 @@
 {
   "name": "Priest",
-  "HP": "5d8",
+  "alignment": "any alignment",
   "AC": 13,
+  "HP": "5d8+5",
   "abilities": {
-    "Charisma": 13,
     "Strength": 10,
-    "Constitution": 12,
-    "Wisdom": 16,
     "Dexterity": 10,
-    "Intelligence": 13
-  }
+    "Constitution": 12,
+    "Intelligence": 13,
+    "Wisdom": 16,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Medicine": 7
+    },
+    {
+      " Persuasion": 3
+    },
+    {
+      " Religion": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": "any two languages",
+  "CR": "2"
 }

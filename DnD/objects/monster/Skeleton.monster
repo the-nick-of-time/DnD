@@ -1,13 +1,24 @@
 {
   "name": "Skeleton",
-  "HP": "2d8",
+  "alignment": "lawful evil",
   "AC": 13,
+  "HP": "2d8+4",
   "abilities": {
-    "Charisma": 5,
     "Strength": 10,
-    "Constitution": 15,
-    "Wisdom": 8,
     "Dexterity": 14,
-    "Intelligence": 6
-  }
+    "Constitution": 15,
+    "Intelligence": 6,
+    "Wisdom": 8,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": "bludgeoning",
+  "immunities": null,
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": "understands all languages it spoke in life but can't speak",
+  "CR": "1/4"
 }

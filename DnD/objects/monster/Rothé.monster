@@ -1,13 +1,24 @@
 {
-  "HP": "2d10+4",
-  "AC": 10,
   "name": "Roth\u00e9",
+  "alignment": "unaligned",
+  "AC": 10,
+  "HP": "2d10+4",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 10,
     "Constitution": 14,
-    "Charisma": 4,
-    "Wisdom": 10,
     "Intelligence": 2,
-    "Strength": 18
-  }
+    "Wisdom": 10,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 30 ft.",
+  "passive perception": 10,
+  "language": "",
+  "CR": "1/4"
 }

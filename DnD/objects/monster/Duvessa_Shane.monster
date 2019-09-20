@@ -1,13 +1,34 @@
 {
+  "name": "Duvessa Shane",
+  "alignment": "lawful good",
   "AC": 10,
   "HP": "2d8",
-  "name": "Duvessa Shane",
   "abilities": {
-    "Dexterity": 11,
-    "Wisdom": 14,
-    "Charisma": 16,
     "Strength": 10,
+    "Dexterity": 11,
     "Constitution": 10,
-    "Intelligence": 16
-  }
+    "Intelligence": 16,
+    "Wisdom": 14,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Insight": 3
+    },
+    {
+      " Persuasion": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common, Dwarvish, Giant, Orc",
+  "CR": "0"
 }

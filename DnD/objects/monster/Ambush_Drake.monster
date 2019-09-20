@@ -1,13 +1,31 @@
 {
-  "HP": "4d6+8",
   "name": "Ambush Drake",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "4d6+8",
   "abilities": {
-    "Wisdom": 11,
-    "Charisma": 6,
-    "Dexterity": 15,
-    "Intelligence": 4,
     "Strength": 13,
-    "Constitution": 14
-  }
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Intelligence": 4,
+    "Wisdom": 11,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "understands Draconic but can't speak it",
+  "CR": "1/2"
 }

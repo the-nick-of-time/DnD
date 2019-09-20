@@ -1,13 +1,44 @@
 {
   "name": "Young Red Dragon",
-  "HP": "17d10",
+  "alignment": "chaotic evil",
   "AC": 18,
+  "HP": "17d10+85",
   "abilities": {
-    "Charisma": 19,
     "Strength": 23,
-    "Constitution": 21,
-    "Wisdom": 11,
     "Dexterity": 10,
-    "Intelligence": 14
-  }
+    "Constitution": 21,
+    "Intelligence": 14,
+    "Wisdom": 11,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 8
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 18,
+  "language": "Common, Draconic",
+  "CR": "10"
 }

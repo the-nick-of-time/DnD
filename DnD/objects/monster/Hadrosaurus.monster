@@ -1,13 +1,28 @@
 {
-  "HP": "3d10+3",
-  "AC": 11,
   "name": "Hadrosaurus",
+  "alignment": "unaligned",
+  "AC": 11,
+  "HP": "3d10+3",
   "abilities": {
+    "Strength": 15,
     "Dexterity": 10,
     "Constitution": 13,
-    "Charisma": 5,
-    "Wisdom": 10,
     "Intelligence": 2,
-    "Strength": 15
-  }
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 12,
+  "language": "",
+  "CR": "1/4"
 }

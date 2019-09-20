@@ -1,13 +1,28 @@
 {
   "name": "Tyrannosaurus Rex",
-  "HP": "13d12",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "13d12+52",
   "abilities": {
-    "Charisma": 9,
     "Strength": 25,
-    "Constitution": 19,
-    "Wisdom": 12,
     "Dexterity": 10,
-    "Intelligence": 2
-  }
+    "Constitution": 19,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": null,
+  "CR": "8"
 }

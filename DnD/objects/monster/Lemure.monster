@@ -1,13 +1,24 @@
 {
   "name": "Lemure",
-  "HP": "3d8",
+  "alignment": "lawful evil",
   "AC": 7,
+  "HP": "3d8",
   "abilities": {
-    "Charisma": 3,
     "Strength": 10,
-    "Constitution": 11,
-    "Wisdom": 11,
     "Dexterity": 5,
-    "Intelligence": 1
-  }
+    "Constitution": 11,
+    "Intelligence": 1,
+    "Wisdom": 11,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "cold",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "charmed, frightened, poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": "understands infernal but can't speak",
+  "CR": "0"
 }

@@ -1,13 +1,24 @@
 {
   "name": "Swarm of Quippers",
-  "HP": "8d8",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "8d8-8",
   "abilities": {
-    "Charisma": 2,
     "Strength": 13,
-    "Constitution": 9,
-    "Wisdom": 7,
     "Dexterity": 16,
-    "Intelligence": 1
-  }
+    "Constitution": 9,
+    "Intelligence": 1,
+    "Wisdom": 7,
+    "Charisma": 2
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, slashing",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 8,
+  "language": null,
+  "CR": "1"
 }

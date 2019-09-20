@@ -1,13 +1,44 @@
 {
-  "HP": "6d8+12",
   "name": "Azbara Jos",
+  "alignment": "lawful evil",
   "AC": 13,
+  "HP": "6d8+12",
   "abilities": {
-    "Wisdom": 13,
-    "Charisma": 11,
-    "Dexterity": 16,
-    "Intelligence": 16,
     "Strength": 9,
-    "Constitution": 14
-  }
+    "Dexterity": 16,
+    "Constitution": 14,
+    "Intelligence": 16,
+    "Wisdom": 13,
+    "Charisma": 11
+  },
+  "saves": [
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 3
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " Deception": 2
+    },
+    {
+      " Insight": 3
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 11,
+  "language": "Common, Draconic, Infernal, Primordial, Thayan",
+  "CR": "4"
 }

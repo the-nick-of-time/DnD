@@ -1,13 +1,24 @@
 {
   "name": "Black Pudding",
-  "HP": "10d10",
+  "alignment": "unaligned",
   "AC": 7,
+  "HP": "10d10+30",
   "abilities": {
-    "Charisma": 1,
     "Strength": 16,
-    "Constitution": 16,
-    "Wisdom": 6,
     "Dexterity": 5,
-    "Intelligence": 1
-  }
+    "Constitution": 16,
+    "Intelligence": 1,
+    "Wisdom": 6,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid, cold, lightning, slashing",
+  "condition immunities": "blinded, charmed, deafened, exhaustion, frightened, prone",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 8,
+  "language": null,
+  "CR": "4"
 }

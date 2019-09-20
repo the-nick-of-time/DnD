@@ -1,13 +1,24 @@
 {
   "name": "Ghoul",
-  "HP": "5d8",
+  "alignment": "chaotic evil",
   "AC": 12,
+  "HP": "5d8",
   "abilities": {
-    "Charisma": 6,
     "Strength": 13,
-    "Constitution": 10,
-    "Wisdom": 10,
     "Dexterity": 15,
-    "Intelligence": 7
-  }
+    "Constitution": 10,
+    "Intelligence": 7,
+    "Wisdom": 10,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Common",
+  "CR": "1"
 }

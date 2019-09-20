@@ -1,13 +1,31 @@
 {
-  "HP": "6d8+6",
-  "AC": 12,
   "name": "Shadow Mastiff",
+  "alignment": "neutral evil",
+  "AC": 12,
+  "HP": "6d8+6",
   "abilities": {
+    "Strength": 16,
     "Dexterity": 14,
     "Constitution": 13,
-    "Charisma": 5,
-    "Wisdom": 12,
     "Intelligence": 5,
-    "Strength": 16
-  }
+    "Wisdom": 12,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical attacks while in dim light or darkness",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "",
+  "CR": "2"
 }

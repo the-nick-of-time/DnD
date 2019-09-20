@@ -1,13 +1,24 @@
 {
   "name": "Guardian Portrait",
+  "alignment": "unaligned",
+  "AC": 5,
+  "HP": "5d8",
   "abilities": {
+    "Strength": 1,
+    "Dexterity": 1,
     "Constitution": 10,
     "Intelligence": 14,
-    "Charisma": 10,
     "Wisdom": 10,
-    "Dexterity": 1,
-    "Strength": 1
+    "Charisma": 10
   },
-  "HP": "5d8",
-  "AC": 5
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Common, plus up to two other languages",
+  "CR": "1"
 }

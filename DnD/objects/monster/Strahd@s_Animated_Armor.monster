@@ -1,13 +1,28 @@
 {
   "name": "Strahd's Animated Armor",
+  "alignment": "lawful evil",
+  "AC": 21,
+  "HP": "15d8+45",
   "abilities": {
+    "Strength": 17,
+    "Dexterity": 13,
     "Constitution": 16,
     "Intelligence": 9,
-    "Charisma": 9,
     "Wisdom": 10,
-    "Dexterity": 13,
-    "Strength": 17
+    "Charisma": 9
   },
-  "HP": "15d8+45",
-  "AC": 21
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": "cold, fire",
+  "vulnerabilities": "",
+  "immunities": "lightning, poison",
+  "condition immunities": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 13,
+  "language": "understands Common but can't speak",
+  "CR": "6"
 }

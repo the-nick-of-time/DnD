@@ -1,0 +1,24 @@
+{
+  "name": "Spined Devil",
+  "alignment": "lawful evil",
+  "AC": 13,
+  "HP": "5d6+5",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 15,
+    "Constitution": 12,
+    "Intelligence": 11,
+    "Wisdom": 14,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "cold, bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 12,
+  "language": "Infernal, telepathy 120 ft.",
+  "CR": "2"
+}

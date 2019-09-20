@@ -1,0 +1,37 @@
+{
+  "name": "Demilich",
+  "alignment": "neutral evil",
+  "AC": 20,
+  "HP": "20d4",
+  "abilities": {
+    "Strength": 1,
+    "Dexterity": 20,
+    "Constitution": 10,
+    "Intelligence": 20,
+    "Wisdom": 17,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Constitution": 6
+    },
+    {
+      "Intelligence": 11
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from magic weapons",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison, psychic, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": "charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned, prone, stunned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 13,
+  "language": null,
+  "CR": "18"
+}

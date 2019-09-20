@@ -1,13 +1,28 @@
 {
-  "HP": "7d8+21",
-  "AC": 14,
   "name": "Black Guard Drake",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "7d8+21",
   "abilities": {
+    "Strength": 16,
     "Dexterity": 11,
     "Constitution": 16,
-    "Charisma": 7,
-    "Wisdom": 10,
     "Intelligence": 4,
-    "Strength": 16
-  }
+    "Wisdom": 10,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    }
+  ],
+  "resistances": "acid",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "understands Draconic but can't speak it",
+  "CR": "2"
 }

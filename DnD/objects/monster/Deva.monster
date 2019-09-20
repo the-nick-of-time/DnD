@@ -1,13 +1,38 @@
 {
   "name": "Deva",
-  "HP": "16d8",
+  "alignment": "lawful good",
   "AC": 17,
+  "HP": "16d8+64",
   "abilities": {
-    "Charisma": 20,
     "Strength": 18,
-    "Constitution": 18,
-    "Wisdom": 20,
     "Dexterity": 18,
-    "Intelligence": 17
-  }
+    "Constitution": 18,
+    "Intelligence": 17,
+    "Wisdom": 20,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      "Insight": 9
+    },
+    {
+      " Perception": 9
+    }
+  ],
+  "resistances": "radiant, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "charmed, exhaustion, frightened",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 19,
+  "language": "all, telepathy 120 ft.",
+  "CR": "10"
 }

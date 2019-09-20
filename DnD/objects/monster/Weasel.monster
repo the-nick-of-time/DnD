@@ -1,13 +1,31 @@
 {
   "name": "Weasel",
-  "HP": "1d4",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "1d4-1",
   "abilities": {
-    "Charisma": 3,
     "Strength": 3,
-    "Constitution": 8,
-    "Wisdom": 12,
     "Dexterity": 16,
-    "Intelligence": 2
-  }
+    "Constitution": 8,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": null,
+  "CR": "0"
 }

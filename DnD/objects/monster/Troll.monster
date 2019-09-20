@@ -1,13 +1,28 @@
 {
   "name": "Troll",
-  "HP": "8d10",
+  "alignment": "chaotic evil",
   "AC": 15,
+  "HP": "8d10+40",
   "abilities": {
-    "Charisma": 7,
     "Strength": 18,
-    "Constitution": 20,
-    "Wisdom": 9,
     "Dexterity": 13,
-    "Intelligence": 7
-  }
+    "Constitution": 20,
+    "Intelligence": 7,
+    "Wisdom": 9,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "Giant",
+  "CR": "5"
 }

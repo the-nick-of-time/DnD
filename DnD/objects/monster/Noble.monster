@@ -1,13 +1,34 @@
 {
   "name": "Noble",
-  "HP": "2d8",
+  "alignment": "any alignment",
   "AC": 15,
+  "HP": "2d8",
   "abilities": {
-    "Charisma": 16,
     "Strength": 11,
-    "Constitution": 11,
-    "Wisdom": 14,
     "Dexterity": 12,
-    "Intelligence": 12
-  }
+    "Constitution": 11,
+    "Intelligence": 12,
+    "Wisdom": 14,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Insight": 4
+    },
+    {
+      " Persuasion": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "any two languages",
+  "CR": "1/8"
 }

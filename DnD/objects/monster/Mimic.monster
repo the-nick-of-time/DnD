@@ -1,13 +1,28 @@
 {
   "name": "Mimic",
-  "HP": "9d8",
+  "alignment": "neutral",
   "AC": 12,
+  "HP": "9d8+18",
   "abilities": {
-    "Charisma": 8,
     "Strength": 17,
-    "Constitution": 15,
-    "Wisdom": 13,
     "Dexterity": 12,
-    "Intelligence": 5
-  }
+    "Constitution": 15,
+    "Intelligence": 5,
+    "Wisdom": 13,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid",
+  "condition immunities": "prone",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": null,
+  "CR": "2"
 }

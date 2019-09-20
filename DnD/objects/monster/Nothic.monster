@@ -1,0 +1,37 @@
+{
+  "name": "Nothic",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "6d8+18",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 16,
+    "Constitution": 16,
+    "Intelligence": 13,
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 3
+    },
+    {
+      " Insight": 4
+    },
+    {
+      " Perception": 2
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 12,
+  "language": "Undercommon",
+  "CR": "2"
+}

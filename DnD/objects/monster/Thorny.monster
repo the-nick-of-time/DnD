@@ -1,13 +1,31 @@
 {
-  "HP": "5d8+5",
-  "AC": 14,
   "name": "Thorny",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "5d8+5",
   "abilities": {
+    "Strength": 13,
     "Dexterity": 12,
     "Constitution": 13,
-    "Charisma": 6,
-    "Wisdom": 10,
     "Intelligence": 2,
-    "Strength": 13
-  }
+    "Wisdom": 10,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": "lightning, piercing",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "",
+  "CR": "1"
 }

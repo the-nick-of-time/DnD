@@ -1,13 +1,28 @@
 {
   "name": "Azer",
-  "HP": "6d8",
+  "alignment": "lawful neutral",
   "AC": 17,
+  "HP": "6d8+12",
   "abilities": {
-    "Charisma": 10,
     "Strength": 17,
-    "Constitution": 15,
-    "Wisdom": 13,
     "Dexterity": 12,
-    "Intelligence": 12
-  }
+    "Constitution": 15,
+    "Intelligence": 12,
+    "Wisdom": 13,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Constitution": 4
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": null,
+  "passive perception": 11,
+  "language": "Ignan",
+  "CR": "2"
 }

@@ -1,13 +1,28 @@
 {
-  "HP": "4d8+4",
-  "AC": 14,
   "name": "Gnoll Flesh Gnawer",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "4d8+4",
   "abilities": {
+    "Strength": 12,
     "Dexterity": 14,
     "Constitution": 12,
-    "Charisma": 8,
-    "Wisdom": 10,
     "Intelligence": 8,
-    "Strength": 12
-  }
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    }
+  ],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Gnoll",
+  "CR": "1"
 }

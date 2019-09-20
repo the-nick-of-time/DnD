@@ -1,13 +1,35 @@
 {
-  "HP": "17d10+68",
-  "AC": 16,
   "name": "Death Kiss",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "17d10+68",
   "abilities": {
+    "Strength": 18,
     "Dexterity": 14,
     "Constitution": 18,
-    "Charisma": 10,
-    "Wisdom": 12,
     "Intelligence": 10,
-    "Strength": 18
-  }
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 5
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "lightning",
+  "condition immunities": "prone",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 15,
+  "language": "Deep Speech, Undercommon",
+  "CR": "10"
 }

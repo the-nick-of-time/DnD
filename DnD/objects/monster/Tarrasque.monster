@@ -1,13 +1,34 @@
 {
   "name": "Tarrasque",
-  "HP": "33d20",
+  "alignment": "unaligned",
   "AC": 25,
+  "HP": "33d20+330",
   "abilities": {
-    "Charisma": 11,
     "Strength": 30,
-    "Constitution": 30,
-    "Wisdom": 11,
     "Dexterity": 11,
-    "Intelligence": 3
-  }
+    "Constitution": 30,
+    "Intelligence": 3,
+    "Wisdom": 11,
+    "Charisma": 11
+  },
+  "saves": [
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire, poison, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": "charmed, frightened, paralyzed, poisoned",
+  "senses": "blindsight 120 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "30"
 }

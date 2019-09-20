@@ -1,13 +1,44 @@
 {
-  "HP": "11d8+22",
   "name": "Rath Modar",
+  "alignment": "lawful evil",
   "AC": 13,
+  "HP": "11d8+22",
   "abilities": {
-    "Wisdom": 14,
-    "Charisma": 10,
-    "Dexterity": 16,
-    "Intelligence": 18,
     "Strength": 11,
-    "Constitution": 14
-  }
+    "Dexterity": 16,
+    "Constitution": 14,
+    "Intelligence": 18,
+    "Wisdom": 14,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Intelligence": 7
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 7
+    },
+    {
+      " Deception": 3
+    },
+    {
+      " Insight": 5
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common, Draconic, Infernal, Primordial, Thayan",
+  "CR": "6"
 }

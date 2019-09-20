@@ -1,13 +1,24 @@
 {
-  "HP": "5d10+25",
-  "AC": 16,
   "name": "Flail Snail",
+  "alignment": "unaligned",
+  "AC": 16,
+  "HP": "5d10+25",
   "abilities": {
+    "Strength": 17,
     "Dexterity": 5,
     "Constitution": 20,
-    "Charisma": 5,
-    "Wisdom": 10,
     "Intelligence": 3,
-    "Strength": 17
-  }
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft., tremorsense 60 ft.",
+  "passive perception": 10,
+  "language": "",
+  "CR": "3"
 }

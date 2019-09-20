@@ -1,13 +1,28 @@
 {
   "name": "Chuul",
-  "HP": "11d10",
+  "alignment": "chaotic evil",
   "AC": 16,
+  "HP": "11d10+33",
   "abilities": {
-    "Charisma": 5,
     "Strength": 19,
-    "Constitution": 16,
-    "Wisdom": 11,
     "Dexterity": 10,
-    "Intelligence": 5
-  }
+    "Constitution": 16,
+    "Intelligence": 5,
+    "Wisdom": 11,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "understands Deep Speech but can't speak",
+  "CR": "4"
 }

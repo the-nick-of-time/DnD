@@ -1,13 +1,24 @@
 {
+  "name": "Duergar Spore Servant",
+  "alignment": "unaligned",
   "AC": 16,
   "HP": "4d8+8",
-  "name": "Duergar Spore Servant",
   "abilities": {
     "Strength": 14,
-    "Constitution": 14,
     "Dexterity": 11,
-    "Wisdom": 6,
+    "Constitution": 14,
     "Intelligence": 2,
+    "Wisdom": 6,
     "Charisma": 1
-  }
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "blinded, charmed, frightened, paralyzed",
+  "senses": "blindsight 30 ft. (blind beyond this radius)",
+  "passive perception": 8,
+  "language": "-",
+  "CR": "1/2"
 }

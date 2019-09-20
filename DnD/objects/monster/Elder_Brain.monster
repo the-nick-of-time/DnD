@@ -1,13 +1,50 @@
 {
-  "HP": "20d10+100",
-  "AC": 10,
   "name": "Elder Brain",
+  "alignment": "lawful evil",
+  "AC": 10,
+  "HP": "20d10+100",
   "abilities": {
+    "Strength": 15,
     "Dexterity": 10,
     "Constitution": 20,
-    "Charisma": 24,
-    "Wisdom": 19,
     "Intelligence": 21,
-    "Strength": 15
-  }
+    "Wisdom": 19,
+    "Charisma": 24
+  },
+  "saves": [
+    {
+      "Intelligence": 10
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 12
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 10
+    },
+    {
+      " Deception": 12
+    },
+    {
+      " Insight": 14
+    },
+    {
+      " Intimidation": 12
+    },
+    {
+      " Persuasion": 12
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "blindsight 120 ft.",
+  "passive perception": 14,
+  "language": "understands Common, Deep Speech, and Undercommon but can't speak, telepathy 5 miles",
+  "CR": "14"
 }

@@ -1,13 +1,31 @@
 {
+  "name": "Flamewrath",
+  "alignment": "chaotic evil",
   "AC": 12,
   "HP": "14d8+42",
-  "name": "Flamewrath",
   "abilities": {
-    "Intelligence": 11,
-    "Charisma": 16,
-    "Constitution": 16,
-    "Dexterity": 14,
     "Strength": 10,
-    "Wisdom": 10
-  }
+    "Dexterity": 14,
+    "Constitution": 16,
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 3
+    },
+    {
+      " Religion": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 10,
+  "language": "Common, Ignan",
+  "CR": "6"
 }

@@ -1,13 +1,24 @@
 {
   "name": "Swarm of Bats",
-  "HP": "5d8",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "5d8",
   "abilities": {
-    "Charisma": 4,
     "Strength": 5,
-    "Constitution": 10,
-    "Wisdom": 12,
     "Dexterity": 15,
-    "Intelligence": 2
-  }
+    "Constitution": 10,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, slashing",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned",
+  "senses": "blindsight 60 ft.",
+  "passive perception": 11,
+  "language": null,
+  "CR": "1/4"
 }

@@ -1,13 +1,44 @@
 {
-  "HP": "11d8",
-  "AC": 11,
   "name": "Warlock of the Archfey",
+  "alignment": "any alignment",
+  "AC": 11,
+  "HP": "11d8",
   "abilities": {
+    "Strength": 9,
     "Dexterity": 13,
     "Constitution": 11,
-    "Charisma": 18,
-    "Wisdom": 12,
     "Intelligence": 11,
-    "Strength": 9
-  }
+    "Wisdom": 12,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 2
+    },
+    {
+      " Deception": 6
+    },
+    {
+      " Nature": 2
+    },
+    {
+      " Persuasion": 6
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "charmed",
+  "senses": "",
+  "passive perception": 11,
+  "language": "any two languages (usually Sylvan)",
+  "CR": "4"
 }

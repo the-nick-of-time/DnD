@@ -1,0 +1,28 @@
+{
+  "name": "Red Slaad",
+  "alignment": "chaotic neutral",
+  "AC": 14,
+  "HP": "11d10+33",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 12,
+    "Constitution": 16,
+    "Intelligence": 6,
+    "Wisdom": 6,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 1
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning, thunder",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Slaad, telepathy 60 ft.",
+  "CR": "5"
+}

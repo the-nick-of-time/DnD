@@ -1,13 +1,37 @@
 {
-  "HP": "4d8+12",
-  "AC": 12,
   "name": "Orc Hand of Yurtrus",
+  "alignment": "chaotic evil",
+  "AC": 12,
+  "HP": "4d8+12",
   "abilities": {
+    "Strength": 12,
     "Dexterity": 11,
     "Constitution": 16,
-    "Charisma": 9,
-    "Wisdom": 14,
     "Intelligence": 11,
-    "Strength": 12
-  }
+    "Wisdom": 14,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 2
+    },
+    {
+      " Intimidation": 1
+    },
+    {
+      " Medicine": 4
+    },
+    {
+      " Religion": 2
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "understands Common and Orc but can't speak",
+  "CR": "2"
 }

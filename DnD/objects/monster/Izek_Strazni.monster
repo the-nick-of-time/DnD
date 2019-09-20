@@ -1,13 +1,31 @@
 {
   "name": "Izek Strazni",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "15d8+45",
   "abilities": {
+    "Strength": 18,
+    "Dexterity": 15,
     "Constitution": 16,
     "Intelligence": 10,
-    "Charisma": 15,
     "Wisdom": 9,
-    "Dexterity": 15,
-    "Strength": 18
+    "Charisma": 15
   },
-  "HP": "15d8+45",
-  "AC": 14
+  "saves": [],
+  "skills": [
+    {
+      "Intimidation": 8
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 12,
+  "language": "Common",
+  "CR": "5"
 }

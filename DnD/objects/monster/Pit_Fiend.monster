@@ -1,13 +1,34 @@
 {
   "name": "Pit Fiend",
-  "HP": "24d10",
+  "alignment": "lawful evil",
   "AC": 19,
+  "HP": "24d10+168",
   "abilities": {
-    "Charisma": 24,
     "Strength": 26,
-    "Constitution": 24,
-    "Wisdom": 18,
     "Dexterity": 14,
-    "Intelligence": 22
-  }
+    "Constitution": 24,
+    "Intelligence": 22,
+    "Wisdom": 18,
+    "Charisma": 24
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 13
+    },
+    {
+      "Wisdom": 10
+    }
+  ],
+  "skills": [],
+  "resistances": "cold, bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": "poisoned",
+  "senses": "truesight 120 ft.",
+  "passive perception": 14,
+  "language": "Infernal, telepathy 120 ft.",
+  "CR": "20"
 }

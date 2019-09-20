@@ -1,13 +1,24 @@
 {
   "name": "Will-o'-Wisp",
-  "HP": "9d4",
+  "alignment": "chaotic evil",
   "AC": 19,
+  "HP": "9d4",
   "abilities": {
-    "Charisma": 11,
     "Strength": 1,
-    "Constitution": 10,
-    "Wisdom": 14,
     "Dexterity": 28,
-    "Intelligence": 13
-  }
+    "Constitution": 10,
+    "Intelligence": 13,
+    "Wisdom": 14,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "acid, cold, fire, necrotic, thunder, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "lightning, poison",
+  "condition immunities": "exhaustion, grappled, paralyzed, poisoned, prone, restrained, unconscious",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 12,
+  "language": "the languages it knew in life",
+  "CR": "2"
 }

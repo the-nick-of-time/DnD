@@ -1,13 +1,24 @@
 {
   "name": "Kobold",
-  "HP": "2d6",
+  "alignment": "lawful evil",
   "AC": 12,
+  "HP": "2d6-2",
   "abilities": {
-    "Charisma": 8,
     "Strength": 7,
-    "Constitution": 9,
-    "Wisdom": 7,
     "Dexterity": 15,
-    "Intelligence": 8
-  }
+    "Constitution": 9,
+    "Intelligence": 8,
+    "Wisdom": 7,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 8,
+  "language": "Common, Draconic",
+  "CR": "1/8"
 }

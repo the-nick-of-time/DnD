@@ -1,13 +1,50 @@
 {
   "name": "Ancient Silver Dragon",
-  "HP": "25d20",
+  "alignment": "lawful good",
   "AC": 22,
+  "HP": "25d20+225",
   "abilities": {
-    "Charisma": 23,
     "Strength": 30,
-    "Constitution": 29,
-    "Wisdom": 15,
     "Dexterity": 10,
-    "Intelligence": 18
-  }
+    "Constitution": 29,
+    "Intelligence": 18,
+    "Wisdom": 15,
+    "Charisma": 23
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 16
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 13
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 11
+    },
+    {
+      " History": 11
+    },
+    {
+      " Perception": 16
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 26,
+  "language": "Common, Draconic",
+  "CR": "23"
 }

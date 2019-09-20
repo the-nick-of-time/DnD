@@ -1,13 +1,24 @@
 {
   "name": "Specter",
-  "HP": "5d8",
+  "alignment": "chaotic evil",
   "AC": 12,
+  "HP": "5d8",
   "abilities": {
-    "Charisma": 11,
     "Strength": 1,
-    "Constitution": 11,
-    "Wisdom": 10,
     "Dexterity": 14,
-    "Intelligence": 10
-  }
+    "Constitution": 11,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "acid, cold, fire, lightning, thunder, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison",
+  "condition immunities": "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "understands all languages it knew in life but can't speak",
+  "CR": "1"
 }

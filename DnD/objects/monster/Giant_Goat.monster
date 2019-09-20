@@ -1,13 +1,24 @@
 {
   "name": "Giant Goat",
-  "HP": "3d10",
+  "alignment": "unaligned",
   "AC": 11,
+  "HP": "3d10+3",
   "abilities": {
-    "Charisma": 6,
     "Strength": 17,
-    "Constitution": 12,
-    "Wisdom": 12,
     "Dexterity": 11,
-    "Intelligence": 3
-  }
+    "Constitution": 12,
+    "Intelligence": 3,
+    "Wisdom": 12,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 11,
+  "language": null,
+  "CR": "1/2"
 }

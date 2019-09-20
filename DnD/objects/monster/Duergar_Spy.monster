@@ -1,13 +1,46 @@
 {
-  "AC": 15,
   "name": "Duergar Spy",
+  "alignment": "lawful evil",
+  "AC": 15,
   "HP": "6d8+6",
   "abilities": {
+    "Strength": 10,
     "Dexterity": 16,
-    "Charisma": 13,
     "Constitution": 12,
     "Intelligence": 12,
-    "Strength": 10,
-    "Wisdom": 10
-  }
+    "Wisdom": 10,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 5
+    },
+    {
+      " Insight": 2
+    },
+    {
+      " Investigation": 5
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Persuasion": 3
+    },
+    {
+      " Sleight of Hand": 5
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "poison",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 120 ft.",
+  "passive perception": 14,
+  "language": "Dwarvish, Undercommon",
+  "CR": "2"
 }

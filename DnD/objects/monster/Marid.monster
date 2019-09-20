@@ -1,0 +1,34 @@
+{
+  "name": "Marid",
+  "alignment": "chaotic neutral",
+  "AC": 17,
+  "HP": "17d10+136",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 12,
+    "Constitution": 26,
+    "Intelligence": 18,
+    "Wisdom": 17,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [],
+  "resistances": "acid, cold, lightning",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 13,
+  "language": "Aquan",
+  "CR": "11"
+}

@@ -1,13 +1,31 @@
 {
   "name": "Saber-Toothed Tiger",
-  "HP": "7d10",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "7d10+14",
   "abilities": {
-    "Charisma": 8,
     "Strength": 18,
-    "Constitution": 15,
-    "Wisdom": 12,
     "Dexterity": 14,
-    "Intelligence": 3
-  }
+    "Constitution": 15,
+    "Intelligence": 3,
+    "Wisdom": 12,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": null,
+  "CR": "2"
 }

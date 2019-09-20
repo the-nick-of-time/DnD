@@ -1,13 +1,24 @@
 {
   "name": "Giant Rat",
-  "HP": "2d6",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "2d6",
   "abilities": {
-    "Charisma": 4,
     "Strength": 7,
-    "Constitution": 11,
-    "Wisdom": 10,
     "Dexterity": 15,
-    "Intelligence": 2
-  }
+    "Constitution": 11,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "1/8"
 }

@@ -1,13 +1,28 @@
 {
   "name": "Shambling Mound",
-  "HP": "16d10",
+  "alignment": "unaligned",
   "AC": 15,
+  "HP": "16d10+48",
   "abilities": {
-    "Charisma": 5,
     "Strength": 18,
-    "Constitution": 16,
-    "Wisdom": 10,
     "Dexterity": 8,
-    "Intelligence": 5
-  }
+    "Constitution": 16,
+    "Intelligence": 5,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 2
+    }
+  ],
+  "resistances": "cold, fire",
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": "blinded, deafened, exhaustion",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 10,
+  "language": null,
+  "CR": "5"
 }

@@ -1,13 +1,31 @@
 {
   "name": "Acolyte",
-  "HP": "2d8",
+  "alignment": "any alignment",
   "AC": 10,
+  "HP": "2d8",
   "abilities": {
-    "Charisma": 11,
     "Strength": 10,
-    "Constitution": 10,
-    "Wisdom": 14,
     "Dexterity": 10,
-    "Intelligence": 10
-  }
+    "Constitution": 10,
+    "Intelligence": 10,
+    "Wisdom": 14,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Medicine": 4
+    },
+    {
+      " Religion": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "any one language (usually Common)",
+  "CR": "1/4"
 }

@@ -1,13 +1,37 @@
 {
+  "name": "Burrowshark",
+  "alignment": "neutral evil",
   "AC": 18,
   "HP": "11d8+33",
-  "name": "Burrowshark",
   "abilities": {
-    "Intelligence": 10,
-    "Charisma": 13,
-    "Constitution": 16,
-    "Dexterity": 12,
     "Strength": 18,
-    "Wisdom": 11
-  }
+    "Dexterity": 12,
+    "Constitution": 16,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Animal Handling": 2
+    },
+    {
+      " Athletics": 6
+    },
+    {
+      " Intimidation": 3
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "Common",
+  "CR": "4"
 }

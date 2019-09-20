@@ -1,13 +1,37 @@
 {
-  "HP": "12d10+24",
-  "AC": 17,
   "name": "Barghest",
+  "alignment": "neutral evil",
+  "AC": 17,
+  "HP": "12d10+24",
   "abilities": {
+    "Strength": 19,
     "Dexterity": 15,
     "Constitution": 14,
-    "Charisma": 14,
-    "Wisdom": 12,
     "Intelligence": 13,
-    "Strength": 19
-  }
+    "Wisdom": 12,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 4
+    },
+    {
+      " Intimidation": 4
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "",
+  "immunities": "acid, poison",
+  "condition immunities": "poisoned",
+  "senses": "blindsight 60 ft., darkvision 60 ft.",
+  "passive perception": 15,
+  "language": "Abyssal, Common, Goblin, Infernal, telepathy 60 ft.",
+  "CR": "4"
 }

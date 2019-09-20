@@ -1,13 +1,53 @@
 {
   "name": "Ancient Green Dragon",
-  "HP": "22d20",
+  "alignment": "lawful evil",
   "AC": 21,
+  "HP": "22d20+154",
   "abilities": {
-    "Charisma": 19,
     "Strength": 27,
-    "Constitution": 25,
-    "Wisdom": 17,
     "Dexterity": 12,
-    "Intelligence": 20
-  }
+    "Constitution": 25,
+    "Intelligence": 20,
+    "Wisdom": 17,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 14
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 11
+    },
+    {
+      " Insight": 10
+    },
+    {
+      " Perception": 17
+    },
+    {
+      " Persuasion": 11
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 27,
+  "language": "Common, Draconic",
+  "CR": "22"
 }

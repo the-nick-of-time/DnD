@@ -1,13 +1,31 @@
 {
-  "HP": "4d8+4",
-  "AC": 13,
   "name": "Gnoll Hunter",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "4d8+4",
   "abilities": {
+    "Strength": 14,
     "Dexterity": 14,
     "Constitution": 12,
-    "Charisma": 8,
-    "Wisdom": 12,
     "Intelligence": 8,
-    "Strength": 14
-  }
+    "Wisdom": 12,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Gnoll",
+  "CR": "1/2"
 }

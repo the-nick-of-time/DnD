@@ -1,13 +1,38 @@
 {
-  "HP": "7d8+7",
-  "AC": 12,
   "name": "Illusionist",
+  "alignment": "any alignment",
+  "AC": 12,
+  "HP": "7d8+7",
   "abilities": {
+    "Strength": 9,
     "Dexterity": 14,
     "Constitution": 13,
-    "Charisma": 12,
-    "Wisdom": 11,
     "Intelligence": 16,
-    "Strength": 9
-  }
+    "Wisdom": 11,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 2
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " History": 5
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 10,
+  "language": "any four languages",
+  "CR": "3"
 }

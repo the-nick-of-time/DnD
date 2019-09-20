@@ -1,13 +1,24 @@
 {
-  "HP": "3d4+6",
-  "AC": 12,
   "name": "Vargouille",
+  "alignment": "chaotic evil",
+  "AC": 12,
+  "HP": "3d4+6",
   "abilities": {
+    "Strength": 6,
     "Dexterity": 14,
     "Constitution": 14,
-    "Charisma": 2,
-    "Wisdom": 7,
     "Intelligence": 4,
-    "Strength": 6
-  }
+    "Wisdom": 7,
+    "Charisma": 2
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": "",
+  "immunities": "poison",
+  "condition immunities": "poisoned",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 8,
+  "language": "understands Abyssal, Infernal, and any languages it knew before becoming a vargouille but can't speak",
+  "CR": "1"
 }

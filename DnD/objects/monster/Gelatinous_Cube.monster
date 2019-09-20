@@ -1,13 +1,24 @@
 {
   "name": "Gelatinous Cube",
-  "HP": "8d10",
+  "alignment": "unaligned",
   "AC": 6,
+  "HP": "8d10+40",
   "abilities": {
-    "Charisma": 1,
     "Strength": 14,
-    "Constitution": 20,
-    "Wisdom": 6,
     "Dexterity": 3,
-    "Intelligence": 1
-  }
+    "Constitution": 20,
+    "Intelligence": 1,
+    "Wisdom": 6,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": "blinded, charmed, deafened, exhaustion, frightened, prone",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 8,
+  "language": null,
+  "CR": "2"
 }

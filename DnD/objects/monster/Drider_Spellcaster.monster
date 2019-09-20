@@ -1,0 +1,31 @@
+{
+  "name": "Drider Spellcaster",
+  "alignment": "chaotic evil",
+  "AC": 19,
+  "HP": "13d10+52",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 16,
+    "Constitution": 18,
+    "Intelligence": 13,
+    "Wisdom": 16,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 5
+    },
+    {
+      " Stealth": 9
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 15,
+  "language": "Elvish, Undercommon",
+  "CR": "6"
+}

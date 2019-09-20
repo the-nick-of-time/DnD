@@ -1,0 +1,28 @@
+{
+  "name": "Troglodyte",
+  "alignment": "chaotic evil",
+  "AC": 11,
+  "HP": "2d8+4",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 10,
+    "Constitution": 14,
+    "Intelligence": 6,
+    "Wisdom": 10,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Troglodyte",
+  "CR": "1/4"
+}

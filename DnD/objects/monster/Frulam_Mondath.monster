@@ -1,13 +1,41 @@
 {
-  "HP": "8d8+8",
   "name": "Frulam Mondath",
+  "alignment": "lawful evil",
   "AC": 16,
+  "HP": "8d8+8",
   "abilities": {
-    "Wisdom": 18,
-    "Charisma": 15,
-    "Dexterity": 10,
-    "Intelligence": 11,
     "Strength": 14,
-    "Constitution": 13
-  }
+    "Dexterity": 10,
+    "Constitution": 13,
+    "Intelligence": 11,
+    "Wisdom": 18,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 4
+    },
+    {
+      " History": 2
+    },
+    {
+      " Religion": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 14,
+  "language": "Common, Draconic, Infernal",
+  "CR": "2"
 }

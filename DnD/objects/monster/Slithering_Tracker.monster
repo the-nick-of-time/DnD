@@ -1,13 +1,28 @@
 {
-  "HP": "5d8+10",
-  "AC": 14,
   "name": "Slithering Tracker",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "5d8+10",
   "abilities": {
+    "Strength": 16,
     "Dexterity": 19,
     "Constitution": 15,
-    "Charisma": 11,
-    "Wisdom": 14,
     "Intelligence": 10,
-    "Strength": 16
-  }
+    "Wisdom": 14,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 8
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical attacks",
+  "vulnerabilities": "cold, fire",
+  "immunities": "",
+  "condition immunities": "blinded, deafened, exhaustion, grappled, paralyzed, petrified, prone, restrained, unconscious",
+  "senses": "blindsight 120 ft.",
+  "passive perception": 12,
+  "language": "understands languages it knew in its previous form but can't speak",
+  "CR": "3"
 }

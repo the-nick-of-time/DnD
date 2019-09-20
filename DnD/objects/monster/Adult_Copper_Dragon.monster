@@ -1,13 +1,47 @@
 {
   "name": "Adult Copper Dragon",
-  "HP": "16d12",
+  "alignment": "chaotic good",
   "AC": 18,
+  "HP": "16d12+80",
   "abilities": {
-    "Charisma": 17,
     "Strength": 23,
-    "Constitution": 21,
-    "Wisdom": 15,
     "Dexterity": 12,
-    "Intelligence": 18
-  }
+    "Constitution": 21,
+    "Intelligence": 18,
+    "Wisdom": 15,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      "Deception": 8
+    },
+    {
+      " Perception": 12
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 22,
+  "language": "Common, Draconic",
+  "CR": "14"
 }

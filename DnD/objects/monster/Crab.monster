@@ -1,13 +1,28 @@
 {
   "name": "Crab",
-  "HP": "1d4",
+  "alignment": "unaligned",
   "AC": 11,
+  "HP": "1d4",
   "abilities": {
-    "Charisma": 2,
     "Strength": 2,
-    "Constitution": 10,
-    "Wisdom": 8,
     "Dexterity": 11,
-    "Intelligence": 1
-  }
+    "Constitution": 10,
+    "Intelligence": 1,
+    "Wisdom": 8,
+    "Charisma": 2
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 30 ft.",
+  "passive perception": 9,
+  "language": null,
+  "CR": "0"
 }

@@ -1,13 +1,28 @@
 {
-  "HP": "7d8+14",
-  "AC": 13,
   "name": "Hobgoblin Devastator",
+  "alignment": "lawful evil",
+  "AC": 13,
+  "HP": "7d8+14",
   "abilities": {
+    "Strength": 13,
     "Dexterity": 12,
     "Constitution": 14,
-    "Charisma": 11,
-    "Wisdom": 13,
     "Intelligence": 16,
-    "Strength": 13
-  }
+    "Wisdom": 13,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 5
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Common, Goblin",
+  "CR": "4"
 }

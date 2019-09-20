@@ -1,13 +1,44 @@
 {
   "name": "Young Blue Dragon",
-  "HP": "16d10",
+  "alignment": "lawful evil",
   "AC": 18,
+  "HP": "16d10+64",
   "abilities": {
-    "Charisma": 17,
     "Strength": 21,
-    "Constitution": 19,
-    "Wisdom": 13,
     "Dexterity": 10,
-    "Intelligence": 14
-  }
+    "Constitution": 19,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 5
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      "Perception": 9
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 19,
+  "language": "Common, Draconic",
+  "CR": "9"
 }

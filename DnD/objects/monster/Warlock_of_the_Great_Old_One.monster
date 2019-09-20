@@ -1,13 +1,38 @@
 {
-  "HP": "14d8+28",
-  "AC": 12,
   "name": "Warlock of the Great Old One",
+  "alignment": "any alignment",
+  "AC": 12,
+  "HP": "14d8+28",
   "abilities": {
+    "Strength": 9,
     "Dexterity": 14,
     "Constitution": 15,
-    "Charisma": 18,
-    "Wisdom": 12,
     "Intelligence": 12,
-    "Strength": 9
-  }
+    "Wisdom": 12,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 4
+    },
+    {
+      " History": 4
+    }
+  ],
+  "resistances": "psychic",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "any two languages, telepathy 30 ft.",
+  "CR": "6"
 }

@@ -1,13 +1,40 @@
 {
+  "name": "Windharrow",
+  "alignment": "neutral evil",
   "AC": 15,
   "HP": "10d8+10",
-  "name": "Windharrow",
   "abilities": {
-    "Intelligence": 14,
-    "Charisma": 17,
-    "Constitution": 12,
-    "Dexterity": 16,
     "Strength": 10,
-    "Wisdom": 10
-  }
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 14,
+    "Wisdom": 10,
+    "Charisma": 17
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Acrobatics": 5
+    },
+    {
+      " Deception": 7
+    },
+    {
+      " Persuasion": 5
+    },
+    {
+      " Performance": 7
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Auran, Common, Elvish",
+  "CR": "3"
 }

@@ -1,13 +1,31 @@
 {
-  "HP": "9d8+18",
-  "AC": 16,
   "name": "Cave Fisher",
+  "alignment": "unaligned",
+  "AC": 16,
+  "HP": "9d8+18",
   "abilities": {
+    "Strength": 16,
     "Dexterity": 13,
     "Constitution": 14,
-    "Charisma": 3,
-    "Wisdom": 10,
     "Intelligence": 3,
-    "Strength": 16
-  }
+    "Wisdom": 10,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 2
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "blindsight 60 ft.",
+  "passive perception": 12,
+  "language": "",
+  "CR": "3"
 }

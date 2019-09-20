@@ -1,13 +1,24 @@
 {
+  "name": "Duergar Soulblade",
+  "alignment": "lawful evil",
   "AC": 14,
   "HP": "4d8",
-  "name": "Duergar Soulblade",
   "abilities": {
     "Strength": 11,
-    "Constitution": 10,
     "Dexterity": 16,
-    "Wisdom": 10,
+    "Constitution": 10,
     "Intelligence": 11,
+    "Wisdom": 10,
     "Charisma": 12
-  }
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": "Dwarvish, Undercommon",
+  "CR": "1"
 }

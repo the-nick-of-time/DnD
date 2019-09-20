@@ -1,13 +1,44 @@
 {
+  "name": "Tiamat",
+  "alignment": "chaotic evil",
+  "AC": 25,
   "HP": "30d20+300",
   "abilities": {
-    "Dexterity": 10,
-    "Wisdom": 26,
     "Strength": 30,
-    "Charisma": 28,
+    "Dexterity": 10,
     "Constitution": 30,
-    "Intelligence": 26
+    "Intelligence": 26,
+    "Wisdom": 26,
+    "Charisma": 28
   },
-  "name": "Tiamat",
-  "AC": 25
+  "saves": [
+    {
+      "Strength": 19
+    },
+    {
+      "Dexterity": 9
+    },
+    {
+      "Wisdom": 17
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 17
+    },
+    {
+      " Perception": 26
+    },
+    {
+      " Religion": 17
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": " acid, cold, fire, lightning, poison; bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "condition immunities": "blinded, charmed, deafened, frightened, poisoned, stunned",
+  "senses": "darkvision 240 ft., truesight 120 ft.",
+  "passive perception": 36,
+  "language": "Common, Draconic, Infernal",
+  "CR": "30"
 }

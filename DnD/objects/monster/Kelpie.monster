@@ -1,13 +1,31 @@
 {
-  "AC": 14,
   "name": "Kelpie",
+  "alignment": "neutral evil",
+  "AC": 14,
   "HP": "9d8+27",
   "abilities": {
+    "Strength": 14,
     "Dexterity": 14,
-    "Charisma": 10,
     "Constitution": 16,
     "Intelligence": 7,
-    "Strength": 14,
-    "Wisdom": 12
-  }
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "bludgeoning, fire, piercing",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "blinded, deafened, exhaustion",
+  "senses": "blindsight 60 ft.",
+  "passive perception": 13,
+  "language": "Common, Sylvan",
+  "CR": "4"
 }

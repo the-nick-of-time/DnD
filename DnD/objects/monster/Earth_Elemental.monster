@@ -1,13 +1,24 @@
 {
   "name": "Earth Elemental",
-  "HP": "12d10",
+  "alignment": "neutral",
   "AC": 17,
+  "HP": "12d10+60",
   "abilities": {
-    "Charisma": 5,
     "Strength": 20,
-    "Constitution": 20,
-    "Wisdom": 10,
     "Dexterity": 8,
-    "Intelligence": 5
-  }
+    "Constitution": 20,
+    "Intelligence": 5,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "thunder",
+  "immunities": "poison",
+  "condition immunities": "exhaustion, paralyzed, petrified, poisoned, unconscious",
+  "senses": "darkvision 60 ft., tremorsense 60 ft.",
+  "passive perception": 10,
+  "language": "Terran",
+  "CR": "5"
 }

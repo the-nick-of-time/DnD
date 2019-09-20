@@ -1,13 +1,41 @@
 {
-  "HP": "8d8+8",
-  "AC": 15,
   "name": "Bard",
+  "alignment": "any alignment",
+  "AC": 15,
+  "HP": "8d8+8",
   "abilities": {
+    "Strength": 11,
     "Dexterity": 14,
     "Constitution": 12,
-    "Charisma": 14,
-    "Wisdom": 13,
     "Intelligence": 10,
-    "Strength": 11
-  }
+    "Wisdom": 13,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Wisdom": 3
+    }
+  ],
+  "skills": [
+    {
+      "Acrobatics": 4
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Performance": 6
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 15,
+  "language": "any two languages",
+  "CR": "2"
 }

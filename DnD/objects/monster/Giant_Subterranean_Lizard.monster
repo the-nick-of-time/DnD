@@ -1,13 +1,28 @@
 {
-  "AC": 14,
   "name": "Giant Subterranean Lizard",
+  "alignment": "unaligned",
+  "AC": 14,
   "HP": "7d12+21",
   "abilities": {
+    "Strength": 21,
     "Dexterity": 9,
-    "Charisma": 7,
     "Constitution": 17,
     "Intelligence": 2,
-    "Strength": 21,
-    "Wisdom": 10
-  }
+    "Wisdom": 10,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 3
+    }
+  ],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "",
+  "senses": "",
+  "passive perception": 10,
+  "language": "",
+  "CR": "4"
 }

@@ -1,13 +1,24 @@
 {
   "name": "Tree Blight",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "13d12+65",
   "abilities": {
+    "Strength": 23,
+    "Dexterity": 10,
     "Constitution": 20,
     "Intelligence": 6,
-    "Charisma": 3,
     "Wisdom": 10,
-    "Dexterity": 10,
-    "Strength": 23
+    "Charisma": 3
   },
-  "HP": "13d12+65",
-  "AC": 15
+  "saves": [],
+  "skills": [],
+  "resistances": "",
+  "vulnerabilities": "",
+  "immunities": "",
+  "condition immunities": "blinded, deafened",
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 10,
+  "language": "understands Common and Druidic but doesn't speak",
+  "CR": "7"
 }

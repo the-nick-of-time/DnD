@@ -1,13 +1,28 @@
 {
   "name": "Minotaur",
-  "HP": "9d10",
+  "alignment": "chaotic evil",
   "AC": 14,
+  "HP": "9d10+27",
   "abilities": {
-    "Charisma": 9,
     "Strength": 18,
-    "Constitution": 16,
-    "Wisdom": 16,
     "Dexterity": 11,
-    "Intelligence": 6
-  }
+    "Constitution": 16,
+    "Intelligence": 6,
+    "Wisdom": 16,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 17,
+  "language": "Abyssal",
+  "CR": "3"
 }

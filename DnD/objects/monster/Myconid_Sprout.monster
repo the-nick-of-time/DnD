@@ -1,0 +1,24 @@
+{
+  "name": "Myconid Sprout",
+  "alignment": "lawful neutral",
+  "AC": 10,
+  "HP": "2d6",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 10,
+    "Constitution": 10,
+    "Intelligence": 8,
+    "Wisdom": 11,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "0"
+}

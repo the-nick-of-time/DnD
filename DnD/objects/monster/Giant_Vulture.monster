@@ -1,13 +1,28 @@
 {
   "name": "Giant Vulture",
-  "HP": "3d10",
+  "alignment": "neutral evil",
   "AC": 10,
+  "HP": "3d10+6",
   "abilities": {
-    "Charisma": 7,
     "Strength": 15,
-    "Constitution": 15,
-    "Wisdom": 12,
     "Dexterity": 10,
-    "Intelligence": 6
-  }
+    "Constitution": 15,
+    "Intelligence": 6,
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 13,
+  "language": "understands Common but can't speak",
+  "CR": "1"
 }

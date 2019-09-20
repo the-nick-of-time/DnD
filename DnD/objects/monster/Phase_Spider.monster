@@ -1,13 +1,28 @@
 {
   "name": "Phase Spider",
-  "HP": "5d10",
+  "alignment": "unaligned",
   "AC": 13,
+  "HP": "5d10+5",
   "abilities": {
-    "Charisma": 6,
     "Strength": 15,
-    "Constitution": 12,
-    "Wisdom": 10,
     "Dexterity": 15,
-    "Intelligence": 6
-  }
+    "Constitution": 12,
+    "Intelligence": 6,
+    "Wisdom": 10,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": null,
+  "CR": "3"
 }

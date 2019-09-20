@@ -1,0 +1,34 @@
+{
+  "name": "Kenku",
+  "alignment": "chaotic neutral",
+  "AC": 13,
+  "HP": "3d8",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 16,
+    "Constitution": 10,
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Deception": 4
+    },
+    {
+      " Perception": 2
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 12,
+  "language": "understands Auran and Common but speaks only through the use of its Mimicry trait",
+  "CR": "1/4"
+}

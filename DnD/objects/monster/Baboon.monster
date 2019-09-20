@@ -1,13 +1,24 @@
 {
   "name": "Baboon",
-  "HP": "1d6",
+  "alignment": "unaligned",
   "AC": 12,
+  "HP": "1d6",
   "abilities": {
-    "Charisma": 6,
     "Strength": 8,
-    "Constitution": 11,
-    "Wisdom": 12,
     "Dexterity": 14,
-    "Intelligence": 4
-  }
+    "Constitution": 11,
+    "Intelligence": 4,
+    "Wisdom": 12,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 11,
+  "language": null,
+  "CR": "0"
 }

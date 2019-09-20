@@ -1,0 +1,34 @@
+{
+  "name": "Faerie Dragon (Violet)",
+  "alignment": "chaotic good",
+  "AC": 15,
+  "HP": "4d4+4",
+  "abilities": {
+    "Strength": 3,
+    "Dexterity": 20,
+    "Constitution": 13,
+    "Intelligence": 14,
+    "Wisdom": 12,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Arcana": 4
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Draconic, Sylvan",
+  "CR": "2"
+}

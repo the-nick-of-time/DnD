@@ -1,0 +1,28 @@
+{
+  "name": "Peryton",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "6d8+6",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 12,
+    "Constitution": 13,
+    "Intelligence": 9,
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Perception": 5
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 15,
+  "language": "understands Common and Elvish but can't speak",
+  "CR": "2"
+}

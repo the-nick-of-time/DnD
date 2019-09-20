@@ -1,13 +1,24 @@
 {
   "name": "Water Elemental",
-  "HP": "12d10",
+  "alignment": "neutral",
   "AC": 14,
+  "HP": "12d10+48",
   "abilities": {
-    "Charisma": 8,
     "Strength": 18,
-    "Constitution": 18,
-    "Wisdom": 10,
     "Dexterity": 14,
-    "Intelligence": 5
-  }
+    "Constitution": 18,
+    "Intelligence": 5,
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "acid, bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious",
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "Aquan",
+  "CR": "5"
 }
