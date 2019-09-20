@@ -52,3 +52,15 @@ class NotARitualError(SpellError):
 
 class CharacterDead(DnDError):
     pass
+
+
+class InterfaceError(DnDError):
+    pass
+
+
+class ReadonlyError(InterfaceError):
+    pass
+
+
+class PathError(InterfaceError, ValueError):
+    pass

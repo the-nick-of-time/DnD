@@ -5,6 +5,7 @@ from typing import Dict, Any, Union
 
 import jsonpointer
 
+from . import exceptionsLib as ex
 from . import helpers as h
 
 
@@ -40,7 +41,7 @@ class DataInterface:
 
     def delete(self, path):
         if self.readonly:
-            raise ReadonlyError('{} is readonly'.format(self.data))
+            raise ex.ReadonlyError('{} is readonly'.format(self.data))
         if self.basepath + path == '/':
             self.data = {}
             return
@@ -52,7 +53,7 @@ class DataInterface:
 
     def set(self, path, value):
         if self.readonly:
-            raise ReadonlyError('{} is readonly'.format(self.data))
+            raise ex.ReadonlyError('{} is readonly'.format(self.data))
         if self.basepath + path == '/':
             self.data = value
             return
@@ -108,7 +109,7 @@ class JsonInterface(DataInterface):
 
     def write(self):
         if self.readonly:
-            return
+            raise ex.ReadonlyError("Trying to write a readonly file")
         with open(self.filename, 'w') as f:
             json.dump(self.data, f)
 
@@ -145,7 +146,7 @@ class LinkedInterface:
             filename = split[0]
             path = split[1]
         else:
-            raise PathError("Format should be filename:/path")
+            raise ex.PathError("Format should be filename:/path")
         if filename in self.searchpath:
             return self.searchpath[filename].get(path)
         elif filename == '*':
@@ -177,13 +178,5 @@ class LinkedInterface:
                     return rv
             return None
         else:
-            raise PathError('If you supply a filename, it must be one in this '
-                            'LinkedInterface or "*"')
-
-
-class ReadonlyError(Exception):
-    pass
-
-
-class PathError(ValueError):
-    pass
+            raise ex.PathError('If you supply a filename, it must be one in this '
+                               'LinkedInterface or "*"')
