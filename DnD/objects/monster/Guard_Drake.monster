@@ -17,10 +17,10 @@
       "Perception": 2
     }
   ],
-  "resistances": "",
-  "vulnerabilities": "",
-  "immunities": "",
-  "condition immunities": "",
+  "resistances": "lightning",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
   "senses": "darkvision 60 ft.",
   "passive perception": 12,
   "language": "understands Draconic but can't speak it",

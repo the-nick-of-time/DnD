@@ -78,3 +78,4 @@ if __name__ == '__main__':
     inputdir = Path('../../../DnDAppFiles/Bestiary')
     outputdir = Path('../../DnD/objects/monster')
     main(inputdir, outputdir)
+    main(Path('../../../DnDAppFiles/Homebrew & Third Party/Monsters'), outputdir)
