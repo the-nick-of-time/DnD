@@ -80,9 +80,8 @@ class Subclass:
 
 
 class Classes:
-    def __init__(self, jf: iface.JsonInterface, character: 'char.Character'):
+    def __init__(self, jf: iface.DataInterface):
         self.classes = [Class(spec) for spec in jf.get('/')]
-        self.owner = character
 
     def __getitem__(self, item):
         if isinstance(item, int):
@@ -99,13 +98,6 @@ class Classes:
     @property
     def features(self):
         pass
-
-    @property
-    def proficiency(self) -> Union[int, str]:
-        source = iface.JsonInterface('class/ALL.super.class')
-        if self.owner.settings.proficiencyDice:
-            return source.get('/proficiency/1/' + str(self.level))
-        return source.get('/proficiency/0/' + str(self.level))
 
     @property
     def casterLevel(self) -> int:
@@ -138,3 +130,16 @@ class Classes:
     def saveProficiencies(self):
         names = self.classes[0].interface.get('/proficiencies/saves')
         return [abil.AbilityName(name) for name in names]
+
+
+class OwnedClasses(Classes):
+    def __init__(self, jf: iface.DataInterface, character: 'char.Character'):
+        super().__init__(jf)
+        self.owner = character
+
+    @property
+    def proficiency(self) -> Union[int, str]:
+        source = iface.JsonInterface('class/ALL.super.class')
+        if self.owner.settings.proficiencyDice:
+            return source.get('/proficiency/1/' + str(self.level))
+        return source.get('/proficiency/0/' + str(self.level))

@@ -22,7 +22,7 @@ class Character:
         self.settings = settings.Settings(jf.cd('/SETTINGS'))
         self.abilities = abil.Abilities(jf.cd("/abilities"))
         self.race = race.Race(jf.cd("/race"))
-        self.classes = classes.Classes(jf.cd("/classes"), self)
+        self.classes = classes.OwnedClasses(jf.cd("/classes"), self)
         self.hp = hp.HP(jf.cd('/HP'), self)
         if self.settings.spellPoints:
             self.spellPower = casting.SpellPoints(self)
