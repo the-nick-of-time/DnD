@@ -69,33 +69,6 @@ def pull_from(*args):
     return decorator
 
 
-# def type_select(extension):
-#     """Find the class corresponding to a file's extension."""
-#     tree = {
-#         "apparel": {"magic": {"": c.MagicArmor},
-#                     "": c.Armor},
-#         "character": {"": c.Character},
-#         "class": {"": c.Class},
-#         "item": {"magic": {"": c.MagicItem},
-#                  "": c.Item},
-#         "spell": {"": c.Spell},
-#         "treasure": {"": c.Item},
-#         "weapon": {
-#             "magic": {"ranged": {"": c.MagicRangedWeapon},
-#                       "": c.MagicWeapon},
-#             "ranged": {"magic": {"": c.MagicRangedWeapon},
-#                        "": c.RangedWeapon},
-#             "": c.Weapon
-#         }
-#     }
-#     steps = extension.split('.')
-#     steps[0] = ''  # We don't care about the initial name, even if given
-#     location = tree
-#     for step in reversed(steps):
-#         location = location[step]
-#     return location
-
-
 def find_file(name, type_):
     from .interface import JsonInterface
     directory = '{direc}/{name}'
@@ -135,13 +108,13 @@ def path_follower(path, alltheway=False):
 
 
 def cache(f):
-    """Decorator that caches the result of a function without keyword arguments."""
+    """Decorator that caches the result of a function."""
     f.__cache = {}
 
     @functools.wraps(f)
-    def cached(*args):
-        ret = f(*args)
-        f.__cache[args] = ret
+    def cached(*args, **kwargs):
+        ret = f(*args, **kwargs)
+        f.__cache[(args, tuple(sorted(kwargs.items())))] = ret
         return ret
 
     return cached
@@ -152,3 +125,16 @@ def get_conditions():
     d = os.path.dirname(os.path.abspath(__file__))
     with open(d + '/conditions.json') as f:
         return json.load(f)
+
+
+def with_data(data):
+    def decorator(f):
+        f.__data = data
+
+        @functools.wraps(f)
+        def wrapped(*args, **kwargs):
+            return f(*args, **kwargs)
+
+        return wrapped
+
+    return decorator

@@ -133,7 +133,6 @@ class Module(HitPointDisplay):
 class Main(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
-        self.charactername = {}
         self.QUIT = tk.Button(self.f, command=self.write_quit, text='QUIT')
         self.buttons = tk.Frame(self.f)
         self.longrest = tk.Button(self.buttons, text='Long Rest',
@@ -143,11 +142,11 @@ class Main(gui.Section):
         self.startup_begin()
 
     def startup_begin(self):
-        gui.Query(self.charactername, self.startup_finish, 'Character Name?')
+        gui.Query(self.startup_finish, 'Character Name?')
         self.container.withdraw()
 
-    def startup_finish(self):
-        name = self.charactername['Character Name?']
+    def startup_finish(self, response):
+        name = response['Character Name?']
         path = iface.JsonInterface.OBJECTSPATH / 'character' / (name + '.character')
         if path.exists():
             self.record = iface.JsonInterface(path, isabsolute=True)

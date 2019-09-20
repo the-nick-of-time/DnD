@@ -1,9 +1,10 @@
 import enum
-import sys
+import glob
 import tkinter as tk
-from os.path import abspath, dirname
+from typing import Callable
 
-sys.path.insert(0, dirname(abspath(__file__)))
+from . import helpers as h
+from . import interface as iface
 
 
 class Direction(enum.Enum):
@@ -149,13 +150,13 @@ class EffectPane(Section):
 class Query:
     """Asks a series of questions of the user and writes into a given dict."""
 
-    def __init__(self, data, callbackfun, *questions):
+    def __init__(self, callbackfun: Callable[[dict], None], *questions):
         """Ask a series of questions of the user.
-        questions is made of strings that will label the entries and identify
-            outputs
-        data is an empty dictionary"""
-        # TODO: make callbackfun take one argument so it can take the data and remove the data parameter
-        self.data = data
+
+        :param callbackfun: The function to call with the entered data when done
+        :param questions: The list of questions to ask, either strings or
+            2-tuples with (question, [list of options])
+        """
         self.callback = callbackfun
         self.questions = questions
         self.answers = {}
@@ -184,12 +185,13 @@ class Query:
         self.accept.grid(row=i+1, column=1)
 
     def finish(self):
+        data = {}
         for q in self.questions:
             if isinstance(q, str):
-                self.data.update({q: self.answers[q].get()})
+                data.update({q: self.answers[q].get()})
             else:
-                self.data.update({q[0]: self.answers[q[0]].get()})
-        self.callback()
+                data.update({q[0]: self.answers[q[0]].get()})
+        self.callback(data)
         self.win.destroy()
 
 
@@ -310,14 +312,9 @@ class AskLine(Section):
 
 class CharacterQuery(Query):
     def __init__(self, data, callbackfun, *extraquestions):
-        import os
-        from . import interface as iface
-        import re
-        from . import helpers as h
         possibilities = []
-        for f in os.scandir(iface.JsonInterface.OBJECTSPATH / 'character'):
-            m = re.match(r'(.*)\.character', f.name)
-            name = m.group(1)
+        for f in glob.glob(iface.JsonInterface.OBJECTSPATH / 'character' / '*.character'):
+            name, extension = f.rsplit('.', 1)
             possibilities.append(h.readable_filename(name))
         Query.__init__(self, data, callbackfun,
                        ['Character Name?', sorted(possibilities)],
