@@ -28,6 +28,7 @@ class TestDataInterface(unittest.TestCase):
         self.assertEqual(inter.get('/dict/a'), 'A')
         self.assertEqual(inter.get('/list/3'), True)
         self.assertEqual(inter.get('/'), self.data)
+        self.assertIs(inter.get('/nonexistent'), None)
 
     def test_set(self):
         inter = interface.DataInterface(self.data)

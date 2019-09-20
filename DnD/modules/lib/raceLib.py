@@ -17,7 +17,15 @@ class Race:
     def get(self, path):
         return self.interface.get(path)
 
+    @property
+    def features(self):
+        pass
+
 
 class Subrace:
     def __init__(self, interface):
         self.interface = interface
+
+    @property
+    def features(self):
+        pass
