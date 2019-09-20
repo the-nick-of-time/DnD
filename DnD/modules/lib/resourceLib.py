@@ -6,14 +6,14 @@ from dndice import basic
 from . import characterLib as char
 from .exceptionsLib import LowOnResource
 from .interface import DataInterface
-from .settingsLib import RestLengths
+from .settingsLib import RestLength
 
 
 class Resource:
     def __init__(self, jf: Optional[DataInterface], definition: DataInterface = None):
         self.record = jf
         self.definition = definition or jf
-        self.recharge = RestLengths.from_string(self.definition.get('/recharge'))
+        self.recharge = RestLength.from_string(self.definition.get('/recharge'))
         self.value = self.definition.get('/value')
         self.name = self.definition.get('/name')
 

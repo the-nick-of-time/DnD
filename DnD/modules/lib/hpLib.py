@@ -7,7 +7,7 @@ from . import characterLib as char
 from . import resourceLib as res
 from .exceptionsLib import LowOnResource
 from .interface import DataInterface
-from .settingsLib import RestLengths, HealingMode
+from .settingsLib import RestLength, HealingMode
 
 
 class HP:
@@ -30,10 +30,14 @@ class HP:
 
     @property
     def max(self):
+        return self.baseMax + self.bonusMax
+
+    @property
+    def baseMax(self):
         return self.record.get('/max')
 
-    @max.setter
-    def max(self, value):
+    @baseMax.setter
+    def baseMax(self, value):
         self.record.set('/max', value)
 
     @property
@@ -43,6 +47,14 @@ class HP:
     @temp.setter
     def temp(self, value):
         self.record.set('/temp', value)
+
+    @property
+    def bonusMax(self):
+        return self.record.get('/bonusMax')
+
+    @bonusMax.setter
+    def bonusMax(self, value):
+        self.record.set('/bonusMax', value)
 
     def change(self, amount):
         """Change the HP
@@ -82,8 +94,8 @@ class HP:
             self.temp = delta
         return 0
 
-    def rest(self, length):
-        if length == RestLengths.LONG:
+    def rest(self, length: RestLength):
+        if length == RestLength.LONG:
             if self.owner.settings.healing in (HealingMode.VANILLA, HealingMode.FAST):
                 self.current = self.max
             self.temp = 0
@@ -96,7 +108,7 @@ class HD(res.OwnedResource):
         super().__init__(jf, character=character)
         self.name = 'Hit Die'
         self.value = size
-        self.recharge = RestLengths.LONG
+        self.recharge = RestLength.LONG
 
     @property
     def maxnumber(self):
@@ -111,11 +123,11 @@ class HD(res.OwnedResource):
         return roll + conmod if (roll + conmod > 1) else 1
 
     def rest(self, length):
-        if length == RestLengths.LONG:
+        if length == RestLength.LONG:
             if self.owner.settings.healing == HealingMode.FAST:
                 self.reset()
             else:
                 self.regain(ceil(self.maxnumber / 2))
-        if length == RestLengths.SHORT:
+        if length == RestLength.SHORT:
             if self.owner.settings.healing == HealingMode.FAST:
                 self.regain(ceil(self.maxnumber / 4))

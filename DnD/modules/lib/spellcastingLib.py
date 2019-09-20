@@ -2,7 +2,7 @@ from . import characterLib as char
 from .exceptionsLib import OverflowSpells, OutOfSpells
 from .helpers import sanitize_filename
 from .interface import JsonInterface
-from .settingsLib import RestLengths
+from .settingsLib import RestLength
 
 
 class SpellResource:
@@ -19,8 +19,8 @@ class SpellResource:
     def reset(self):
         raise NotImplementedError
 
-    def rest(self, length: RestLengths):
-        if length >= RestLengths.LONG:
+    def rest(self, length: RestLength):
+        if length >= RestLength.LONG:
             self.reset()
 
 
@@ -92,8 +92,8 @@ class WarlockSlots(SpellSlots):
         caster = JsonInterface('class/CASTER.super.class')
         self.max_slots = caster.get('/max_spell_slots/warlock')
 
-    def rest(self, length: RestLengths):
-        if length >= RestLengths.SHORT:
+    def rest(self, length: RestLength):
+        if length >= RestLength.SHORT:
             self.reset()
 
 

@@ -15,7 +15,7 @@ from . import spellcastingLib as casting
 
 
 class Character:
-    def __init__(self, jf: iface.JsonInterface):
+    def __init__(self, jf: 'iface.JsonInterface'):
         self.record = jf
         # settings initialization has to happen first, as several things
         # depend on it
@@ -37,7 +37,7 @@ class Character:
     def proficiency(self):
         return self.classes.proficiency
 
-    def ability_check(self, which: abil.AbilityName, skill='', adv=False, dis=False):
+    def ability_check(self, which: 'abil.AbilityName', skill='', adv=False, dis=False):
         roll = h.d20_roll(adv, dis, self.bonuses.get('lucky', False))
         roll += d.compile(self.abilities[which].modifier)
         if skill in self.skills:
@@ -52,7 +52,7 @@ class Character:
             roll += d.compile(self.parse_vars(abilityBonus))
         return d.verbose(roll)
 
-    def ability_save(self, which: abil.AbilityName, adv=False, dis=False):
+    def ability_save(self, which: 'abil.AbilityName', adv=False, dis=False):
         roll = h.d20_roll(adv, dis, self.bonuses.get('lucky', False))
         roll += d.compile(self.abilities[which].modifier)
         if which in self.saves:

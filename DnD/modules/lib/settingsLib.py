@@ -39,7 +39,7 @@ class HealingMode(enum.Enum):
     SLOW = 'slow'
 
 
-class RestLengths(enum.Enum):
+class RestLength(enum.Enum):
     LONG = 100
     SHORT = 10
     TURN = 1
@@ -48,10 +48,10 @@ class RestLengths(enum.Enum):
     @classmethod
     def from_string(cls, value):
         if value == 'long' or value == 'long rest':
-            return RestLengths.LONG
+            return RestLength.LONG
         elif value == 'short' or value == 'short rest':
-            return RestLengths.SHORT
+            return RestLength.SHORT
         elif value == 'turn':
-            return RestLengths.TURN
+            return RestLength.TURN
         else:
-            return RestLengths.NOTHING
+            return RestLength.NOTHING
