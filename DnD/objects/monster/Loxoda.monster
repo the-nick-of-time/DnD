@@ -1,0 +1,28 @@
+{
+  "name": "Loxoda",
+  "alignment": "neutral evil",
+  "AC": 13,
+  "HP": "14d12 + 56",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 12,
+    "Constitution": 19,
+    "Intelligence": 12,
+    "Wisdom": 14,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Survival": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 12,
+  "language": " Loxodan",
+  "CR": "6"
+}

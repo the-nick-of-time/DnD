@@ -1,0 +1,41 @@
+{
+  "name": "Derro Shadow Antipaladin",
+  "alignment": "chaotic evil",
+  "AC": 18,
+  "HP": "11d6 + 44",
+  "abilities": {
+    "Strength": 11,
+    "Dexterity": 18,
+    "Constitution": 18,
+    "Intelligence": 11,
+    "Wisdom": 5,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Strength": 3
+    },
+    {
+      "Wisdom": 0
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 0
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": " Derro, Undercommon",
+  "CR": "5"
+}

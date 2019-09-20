@@ -1,0 +1,32 @@
+{
+  "name": "Risen Reaver",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "16d10 + 80",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 16,
+    "Constitution": 20,
+    "Intelligence": 9,
+    "Wisdom": 7,
+    "Charisma": 6
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 1
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 11,
+  "language": " any languages it knew in life",
+  "CR": "7"
+}

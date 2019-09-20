@@ -1,0 +1,41 @@
+{
+  "name": "Ink Devil",
+  "alignment": "lawful evil",
+  "AC": 14,
+  "HP": "12d6 + 12",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 18,
+    "Constitution": 12,
+    "Intelligence": 20,
+    "Wisdom": 8,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 9
+    },
+    {
+      " Deception": 8
+    },
+    {
+      " History": 9
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": "cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 9,
+  "language": " Celestial, Common, Draconic, Infernal; telepathy (120 ft.)",
+  "CR": "2"
+}

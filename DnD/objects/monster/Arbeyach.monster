@@ -1,0 +1,50 @@
+{
+  "name": "Arbeyach",
+  "alignment": "lawful evil",
+  "AC": 17,
+  "HP": "22d10 + 154",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 20,
+    "Constitution": 25,
+    "Intelligence": 19,
+    "Wisdom": 21,
+    "Charisma": 25
+  },
+  "saves": [
+    {
+      "Dexterity": 12
+    },
+    {
+      "Constitution": 14
+    },
+    {
+      "Wisdom": 12
+    },
+    {
+      "Charisma": 14
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 14
+    },
+    {
+      " Insight": 12
+    },
+    {
+      " Perception": 12
+    },
+    {
+      " Stealth": 12
+    }
+  ],
+  "resistances": "acid, cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 22,
+  "language": " Celestial, Common, Draconic, Infernal, telepathy 120 ft.",
+  "CR": "21"
+}

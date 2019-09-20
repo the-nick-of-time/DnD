@@ -1,0 +1,35 @@
+{
+  "name": "Fear Smith",
+  "alignment": "chaotic neutral",
+  "AC": 17,
+  "HP": "19d8 + 38",
+  "abilities": {
+    "Strength": 11,
+    "Dexterity": 17,
+    "Constitution": 14,
+    "Intelligence": 11,
+    "Wisdom": 15,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Wisdom": 6
+    }
+  ],
+  "skills": [
+    {
+      " Intimidate": 6
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from weapons that aren't made of cold iron",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 30 ft.",
+  "passive perception": 12,
+  "language": " Common, Elvish, Sylvan",
+  "CR": "10"
+}

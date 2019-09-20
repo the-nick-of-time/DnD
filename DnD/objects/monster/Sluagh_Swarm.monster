@@ -1,0 +1,28 @@
+{
+  "name": "Sluagh Swarm",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "12d8",
+  "abilities": {
+    "Strength": 6,
+    "Dexterity": 16,
+    "Constitution": 11,
+    "Intelligence": 6,
+    "Wisdom": 13,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "cold; bludgeoning, piercing, and slashing",
+  "vulnerabilities": "fire",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common, Sylvan",
+  "CR": "3"
+}

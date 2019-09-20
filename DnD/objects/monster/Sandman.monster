@@ -1,0 +1,31 @@
+{
+  "name": "Sandman",
+  "alignment": "chaotic neutral",
+  "AC": 14,
+  "HP": "11d8 + 33",
+  "abilities": {
+    "Strength": 11,
+    "Dexterity": 19,
+    "Constitution": 16,
+    "Intelligence": 13,
+    "Wisdom": 14,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [],
+  "resistances": "cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison, psychic",
+  "condition immunities": null,
+  "senses": "truesight 60 ft.",
+  "passive perception": 12,
+  "language": " Common, Celestial, Giant, Infernal, Umbral",
+  "CR": "5"
+}

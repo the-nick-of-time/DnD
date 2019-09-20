@@ -1,0 +1,37 @@
+{
+  "name": "Elvish Veteran Archer",
+  "alignment": "chaotic good or chaotic neutral",
+  "AC": 15,
+  "HP": "14d8+14",
+  "abilities": {
+    "Strength": 11,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 11,
+    "Wisdom": 13,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Nature": 2
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 5
+    },
+    {
+      " Survival": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 15,
+  "language": "Common, Elvish",
+  "CR": "3"
+}

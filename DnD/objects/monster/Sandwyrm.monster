@@ -1,0 +1,31 @@
+{
+  "name": "Sandwyrm",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "15d10 + 60",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 12,
+    "Constitution": 18,
+    "Intelligence": 5,
+    "Wisdom": 13,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 7
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 120 ft.",
+  "passive perception": 17,
+  "language": null,
+  "CR": "6"
+}

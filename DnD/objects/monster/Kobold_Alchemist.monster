@@ -1,0 +1,35 @@
+{
+  "name": "Kobold Alchemist",
+  "alignment": "lawful neutral",
+  "AC": 15,
+  "HP": "8d6 + 16",
+  "abilities": {
+    "Strength": 7,
+    "Dexterity": 16,
+    "Constitution": 15,
+    "Intelligence": 16,
+    "Wisdom": 9,
+    "Charisma": 8
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 5
+    },
+    {
+      " Medicine": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": " Common, Draconic",
+  "CR": "2"
+}

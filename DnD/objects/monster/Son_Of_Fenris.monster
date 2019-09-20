@@ -1,0 +1,44 @@
+{
+  "name": "Son Of Fenris",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "14d12 + 84",
+  "abilities": {
+    "Strength": 26,
+    "Dexterity": 16,
+    "Constitution": 23,
+    "Intelligence": 16,
+    "Wisdom": 18,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 8
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 7
+    },
+    {
+      " Intimidation": 6
+    },
+    {
+      " Religion": 12
+    }
+  ],
+  "resistances": "psychic, radiant",
+  "vulnerabilities": null,
+  "immunities": "cold, lightning, poison; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "truesight 60 ft., tremorsense 100 ft.",
+  "passive perception": 14,
+  "language": " Common, Celestial, Draconic, Elvish, Dwarvish, Giant, Infernal, telepathy 60 ft.",
+  "CR": "12"
+}

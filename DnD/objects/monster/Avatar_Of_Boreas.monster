@@ -1,0 +1,47 @@
+{
+  "name": "Avatar Of Boreas",
+  "alignment": "chaotic evil",
+  "AC": 20,
+  "HP": "16d8 + 96",
+  "abilities": {
+    "Strength": 25,
+    "Dexterity": 22,
+    "Constitution": 22,
+    "Intelligence": 18,
+    "Wisdom": 19,
+    "Charisma": 21
+  },
+  "saves": [
+    {
+      "Dexterity": 12
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 11
+    },
+    {
+      " Nature": 10
+    },
+    {
+      " Perception": 10
+    },
+    {
+      " Stealth": 12
+    }
+  ],
+  "resistances": "acid",
+  "vulnerabilities": null,
+  "immunities": "cold, lightning, poison, thunder",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., truesight 120 ft.",
+  "passive perception": 20,
+  "language": " Common, Dwarvish, Giant, Infernal",
+  "CR": "17"
+}

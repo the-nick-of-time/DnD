@@ -1,0 +1,24 @@
+{
+  "name": "Night Scorpion",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "12d10 + 24",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Intelligence": 1,
+    "Wisdom": 9,
+    "Charisma": 3
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft.",
+  "passive perception": 9,
+  "language": "-",
+  "CR": "3"
+}

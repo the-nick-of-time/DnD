@@ -1,0 +1,24 @@
+{
+  "name": "Tusked Skyfish",
+  "alignment": "lawful good",
+  "AC": 14,
+  "HP": "12d10 + 36",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 12,
+    "Constitution": 17,
+    "Intelligence": 3,
+    "Wisdom": 14,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "-",
+  "CR": "4"
+}

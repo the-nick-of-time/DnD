@@ -1,0 +1,24 @@
+{
+  "name": "Chronalmental",
+  "alignment": "unaligned",
+  "AC": 17,
+  "HP": "16d10 + 64",
+  "abilities": {
+    "Strength": 1,
+    "Dexterity": 20,
+    "Constitution": 19,
+    "Intelligence": 9,
+    "Wisdom": 13,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Celestial, Infernal",
+  "CR": "8"
+}

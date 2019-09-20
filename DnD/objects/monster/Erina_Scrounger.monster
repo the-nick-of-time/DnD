@@ -1,0 +1,24 @@
+{
+  "name": "Erina Scrounger",
+  "alignment": "neutral",
+  "AC": 12,
+  "HP": "4d6 + 8",
+  "abilities": {
+    "Strength": 9,
+    "Dexterity": 12,
+    "Constitution": 14,
+    "Intelligence": 13,
+    "Wisdom": 10,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Common, Erina",
+  "CR": "1/4"
+}

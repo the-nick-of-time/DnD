@@ -1,0 +1,28 @@
+{
+  "name": "Imy-Ut Ushabti",
+  "alignment": "neutral",
+  "AC": 15,
+  "HP": "15d8 + 30",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 14,
+    "Constitution": 15,
+    "Intelligence": 6,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [
+    {
+      "Wisdom": 2
+    }
+  ],
+  "skills": [],
+  "resistances": "bludgeoning",
+  "vulnerabilities": "fire",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Common (Ancient Nurian)",
+  "CR": "3"
+}

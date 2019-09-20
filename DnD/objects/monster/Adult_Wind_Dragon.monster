@@ -1,0 +1,50 @@
+{
+  "name": "Adult Wind Dragon",
+  "alignment": "chaotic neutral",
+  "AC": 19,
+  "HP": "19d12 + 114",
+  "abilities": {
+    "Strength": 24,
+    "Dexterity": 19,
+    "Constitution": 22,
+    "Intelligence": 16,
+    "Wisdom": 15,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 10
+    },
+    {
+      "Constitution": 12
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 10
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 10
+    },
+    {
+      " Intimidation": 10
+    },
+    {
+      " Perception": 14
+    },
+    {
+      " Stealth": 10
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 24,
+  "language": " Common, Draconic, Primordial",
+  "CR": "17"
+}

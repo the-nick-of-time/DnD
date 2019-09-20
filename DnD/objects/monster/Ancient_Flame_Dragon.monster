@@ -1,0 +1,53 @@
+{
+  "name": "Ancient Flame Dragon",
+  "alignment": "chaotic evil",
+  "AC": 22,
+  "HP": "26d20 + 208",
+  "abilities": {
+    "Strength": 23,
+    "Dexterity": 14,
+    "Constitution": 27,
+    "Intelligence": 19,
+    "Wisdom": 16,
+    "Charisma": 22
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 15
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 13
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 13
+    },
+    {
+      " Insight": 10
+    },
+    {
+      " Perception": 17
+    },
+    {
+      " Persuasion": 13
+    },
+    {
+      " Stealth": 9
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 27,
+  "language": " Common, Draconic, Giant, Ignan, Infernal, Orc",
+  "CR": "24"
+}

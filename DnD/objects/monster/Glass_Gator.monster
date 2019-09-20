@@ -1,0 +1,31 @@
+{
+  "name": "Glass Gator",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "7d10 + 7",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Intelligence": 4,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 2
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "Blindsight 30 ft.",
+  "passive perception": 12,
+  "language": "-",
+  "CR": "1"
+}

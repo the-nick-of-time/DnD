@@ -1,0 +1,43 @@
+{
+  "name": "Mask Wight",
+  "alignment": "neutral evil",
+  "AC": 19,
+  "HP": "18d8 + 126",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 18,
+    "Constitution": 24,
+    "Intelligence": 15,
+    "Wisdom": 16,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Strength": 11
+    },
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 12
+    },
+    {
+      "Intelligence": 7
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [],
+  "resistances": "acid, fire, lightning, cold; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "radiant",
+  "immunities": "necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., truesight 30 ft.",
+  "passive perception": 13,
+  "language": " Common, Giant, Infernal",
+  "CR": "13"
+}

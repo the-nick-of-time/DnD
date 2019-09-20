@@ -1,0 +1,24 @@
+{
+  "name": "Angler Worm",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "14d12 + 42",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 5,
+    "Constitution": 16,
+    "Intelligence": 3,
+    "Wisdom": 14,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "tremorsense 60 ft.",
+  "passive perception": 12,
+  "language": "-",
+  "CR": "4"
+}

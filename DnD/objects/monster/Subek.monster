@@ -1,0 +1,31 @@
+{
+  "name": "Subek",
+  "alignment": "lawful neutral",
+  "AC": 17,
+  "HP": "8d10 + 32",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 10,
+    "Constitution": 18,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      " History": 5
+    },
+    {
+      " Investigation": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common",
+  "CR": "5"
+}

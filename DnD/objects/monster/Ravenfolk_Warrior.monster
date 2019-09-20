@@ -1,0 +1,41 @@
+{
+  "name": "Ravenfolk Warrior",
+  "alignment": "neutral",
+  "AC": 15,
+  "HP": "12d8 + 24",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 16,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 13,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 2
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 2
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 15,
+  "language": " Common, Feather Speech, Huginn",
+  "CR": "3"
+}

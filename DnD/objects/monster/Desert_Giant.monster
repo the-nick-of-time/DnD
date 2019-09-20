@@ -1,0 +1,41 @@
+{
+  "name": "Desert Giant",
+  "alignment": "neutral",
+  "AC": 17,
+  "HP": "14d12 + 84",
+  "abilities": {
+    "Strength": 27,
+    "Dexterity": 10,
+    "Constitution": 22,
+    "Intelligence": 13,
+    "Wisdom": 18,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Constitution": 10
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 8
+    },
+    {
+      " Stealth": 4
+    },
+    {
+      " Survival": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 18,
+  "language": " Common, Giant",
+  "CR": "9"
+}

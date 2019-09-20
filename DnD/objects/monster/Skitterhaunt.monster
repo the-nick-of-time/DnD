@@ -1,0 +1,24 @@
+{
+  "name": "Skitterhaunt",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "10d10 + 40",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 11,
+    "Constitution": 19,
+    "Intelligence": 1,
+    "Wisdom": 7,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 8,
+  "language": "-",
+  "CR": "4"
+}

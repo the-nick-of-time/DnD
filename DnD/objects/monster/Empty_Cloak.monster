@@ -1,0 +1,35 @@
+{
+  "name": "Empty Cloak",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "10d8",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 14,
+    "Constitution": 10,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 1
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 2
+    }
+  ],
+  "skills": [
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "bludgeoning",
+  "vulnerabilities": "fire",
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " understands Elvish and Umbral but can't speak",
+  "CR": "1/2"
+}

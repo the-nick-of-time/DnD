@@ -1,0 +1,24 @@
+{
+  "name": "Greater Death Butterfly Swarm",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "13d12",
+  "abilities": {
+    "Strength": 1,
+    "Dexterity": 16,
+    "Constitution": 10,
+    "Intelligence": 1,
+    "Wisdom": 15,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing",
+  "vulnerabilities": "cold, fire",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": null,
+  "CR": "6"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Lemurfolk",
+  "alignment": "neutral",
+  "AC": 13,
+  "HP": "4d6",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 15,
+    "Constitution": 11,
+    "Intelligence": 12,
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Acrobatics": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Common, Lemurfolk",
+  "CR": "1/4"
+}

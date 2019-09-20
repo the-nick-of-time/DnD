@@ -1,0 +1,38 @@
+{
+  "name": "Bukavac",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "21d10 + 84",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 17,
+    "Constitution": 18,
+    "Intelligence": 7,
+    "Wisdom": 15,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 8
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 10
+    },
+    {
+      " Stealth": 11
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "thunder",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 20,
+  "language": " Sylvan",
+  "CR": "9"
+}

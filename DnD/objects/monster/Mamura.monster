@@ -1,0 +1,44 @@
+{
+  "name": "Mamura",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "13d6 + 52",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 18,
+    "Constitution": 19,
+    "Intelligence": 17,
+    "Wisdom": 11,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 7
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Elvish, Goblin, Sylvan, Void Speech",
+  "CR": "6"
+}

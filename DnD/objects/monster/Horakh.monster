@@ -1,0 +1,38 @@
+{
+  "name": "Horakh",
+  "alignment": "neutral",
+  "AC": 17,
+  "HP": "19d8 + 76",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 19,
+    "Constitution": 19,
+    "Intelligence": 8,
+    "Wisdom": 15,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Dexterity": 12
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 8
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 30 ft.",
+  "passive perception": 20,
+  "language": " understands Undercommon",
+  "CR": "9"
+}

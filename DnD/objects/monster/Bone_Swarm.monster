@@ -1,0 +1,44 @@
+{
+  "name": "Bone Swarm",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "36d10",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 18,
+    "Constitution": 10,
+    "Intelligence": 9,
+    "Wisdom": 15,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 8
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": "piercing and slashing from nonmagical weapons",
+  "vulnerabilities": "bludgeoning",
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Void Speech",
+  "CR": "10"
+}

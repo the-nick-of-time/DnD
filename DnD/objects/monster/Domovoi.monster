@@ -1,0 +1,31 @@
+{
+  "name": "Domovoi",
+  "alignment": "chaotic neutral",
+  "AC": 15,
+  "HP": "11d8 + 44",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 13,
+    "Constitution": 18,
+    "Intelligence": 6,
+    "Wisdom": 10,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Intimidation": 5
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid, lightning",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " Common, Dwarvish, Elvish",
+  "CR": "4"
+}

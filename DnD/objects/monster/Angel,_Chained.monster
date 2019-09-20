@@ -1,0 +1,35 @@
+{
+  "name": "Angel, Chained",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "16d8 + 16",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 12,
+    "Wisdom": 18,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": "piercing",
+  "vulnerabilities": null,
+  "immunities": "fire, radiant",
+  "condition immunities": null,
+  "senses": "darkvision 200 ft.",
+  "passive perception": 17,
+  "language": " Common, Celestial, Infernal",
+  "CR": "8"
+}

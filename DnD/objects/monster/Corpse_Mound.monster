@@ -1,0 +1,34 @@
+{
+  "name": "Corpse Mound",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "18d12 + 90",
+  "abilities": {
+    "Strength": 24,
+    "Dexterity": 11,
+    "Constitution": 21,
+    "Intelligence": 8,
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [
+    {
+      "Constitution": 9
+    },
+    {
+      "Intelligence": 3
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [],
+  "resistances": "necrotic",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Understands Common but can't speak",
+  "CR": "11"
+}

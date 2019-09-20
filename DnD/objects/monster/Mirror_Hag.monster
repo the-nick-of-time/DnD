@@ -1,0 +1,24 @@
+{
+  "name": "Mirror Hag",
+  "alignment": "chaotic neutral",
+  "AC": 16,
+  "HP": "16d8 + 96",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 16,
+    "Constitution": 22,
+    "Intelligence": 12,
+    "Wisdom": 14,
+    "Charisma": 19
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "thunder",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " Common",
+  "CR": "6"
+}

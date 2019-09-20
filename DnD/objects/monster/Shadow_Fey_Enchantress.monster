@@ -1,0 +1,50 @@
+{
+  "name": "Shadow Fey Enchantress",
+  "alignment": "lawful evil",
+  "AC": 16,
+  "HP": "19d8 + 38",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Intelligence": 12,
+    "Wisdom": 17,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 4
+    },
+    {
+      " Deception": 7
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Persuasion": 7
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Elvish, Umbral",
+  "CR": "7"
+}

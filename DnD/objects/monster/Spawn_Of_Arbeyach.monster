@@ -1,0 +1,35 @@
+{
+  "name": "Spawn Of Arbeyach",
+  "alignment": "lawful evil",
+  "AC": 17,
+  "HP": "12d8 + 24",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 15,
+    "Constitution": 15,
+    "Intelligence": 10,
+    "Wisdom": 13,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 60 ft.",
+  "passive perception": 14,
+  "language": " Infernal",
+  "CR": "5"
+}

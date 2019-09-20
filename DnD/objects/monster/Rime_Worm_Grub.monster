@@ -1,0 +1,31 @@
+{
+  "name": "Rime Worm Grub",
+  "alignment": "neutral",
+  "AC": 13,
+  "HP": "6d8 + 18",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 12,
+    "Constitution": 16,
+    "Intelligence": 4,
+    "Wisdom": 12,
+    "Charisma": 3
+  },
+  "saves": [
+    {
+      "Strength": 5
+    },
+    {
+      "Constitution": 5
+    }
+  ],
+  "skills": [],
+  "resistances": "cold",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 200 ft.",
+  "passive perception": 11,
+  "language": "-",
+  "CR": "1"
+}

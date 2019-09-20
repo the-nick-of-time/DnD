@@ -1,0 +1,28 @@
+{
+  "name": "Nihilethic Zombie",
+  "alignment": "neutral evil",
+  "AC": 9,
+  "HP": "3d8 + 9",
+  "abilities": {
+    "Strength": 13,
+    "Dexterity": 6,
+    "Constitution": 16,
+    "Intelligence": 3,
+    "Wisdom": 6,
+    "Charisma": 5
+  },
+  "saves": [
+    {
+      "Wisdom": 0
+    }
+  ],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "cold, necrotic, poison; bludgeoning, piercing and slashing from nonmagical weapons (only when in ethereal form)",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 8,
+  "language": " understand Void Speech and the languages it knew in life but can't speak",
+  "CR": "1"
+}

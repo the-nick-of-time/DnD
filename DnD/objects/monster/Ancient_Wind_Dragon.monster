@@ -1,0 +1,53 @@
+{
+  "name": "Ancient Wind Dragon",
+  "alignment": "chaotic neutral",
+  "AC": 20,
+  "HP": "23d20 +184",
+  "abilities": {
+    "Strength": 28,
+    "Dexterity": 19,
+    "Constitution": 26,
+    "Intelligence": 18,
+    "Wisdom": 17,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Dexterity": 11
+    },
+    {
+      "Constitution": 15
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 12
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 11
+    },
+    {
+      " Arcana": 11
+    },
+    {
+      " Intimidation": 12
+    },
+    {
+      " Perception": 17
+    },
+    {
+      " Stealth": 11
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "lightning, ranged weapons",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 27,
+  "language": " Common, Draconic, Dwarvish, Elvish, Primordial",
+  "CR": "22"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Spire Walker",
+  "alignment": "chaotic neutral",
+  "AC": 16,
+  "HP": "11d4 + 22",
+  "abilities": {
+    "Strength": 3,
+    "Dexterity": 18,
+    "Constitution": 14,
+    "Intelligence": 11,
+    "Wisdom": 10,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    }
+  ],
+  "skills": [],
+  "resistances": "piercing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "lightning, thunder",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 10,
+  "language": " Common, Sylvan",
+  "CR": "3"
+}

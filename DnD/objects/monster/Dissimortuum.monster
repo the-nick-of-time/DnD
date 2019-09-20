@@ -1,0 +1,28 @@
+{
+  "name": "Dissimortuum",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "15d8 + 45",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 10,
+    "Constitution": 16,
+    "Intelligence": 8,
+    "Wisdom": 11,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Constitution": 6
+    }
+  ],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Common",
+  "CR": "7"
+}

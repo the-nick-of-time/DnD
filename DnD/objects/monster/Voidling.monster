@@ -1,0 +1,41 @@
+{
+  "name": "Voidling",
+  "alignment": "chaotic evil",
+  "AC": 16,
+  "HP": "20d10",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 22,
+    "Constitution": 10,
+    "Intelligence": 14,
+    "Wisdom": 16,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Constitution": 4
+    },
+    {
+      "Intelligence": 6
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      " Stealth": 10
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "necrotic",
+  "condition immunities": null,
+  "senses": "truesight 60 ft.",
+  "passive perception": 13,
+  "language": " telepathy 60 ft.",
+  "CR": "11"
+}

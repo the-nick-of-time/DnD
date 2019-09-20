@@ -1,0 +1,24 @@
+{
+  "name": "Ychen Bannog",
+  "alignment": "unaligned",
+  "AC": 17,
+  "HP": "14d20 + 84",
+  "abilities": {
+    "Strength": 28,
+    "Dexterity": 10,
+    "Constitution": 23,
+    "Intelligence": 3,
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 11,
+  "language": "-",
+  "CR": "11"
+}

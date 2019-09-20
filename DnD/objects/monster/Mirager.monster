@@ -1,0 +1,34 @@
+{
+  "name": "Mirager",
+  "alignment": "neutral evil",
+  "AC": 13,
+  "HP": "12d8 + 24",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 16,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 14,
+    "Charisma": 20
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Deception": 7
+    },
+    {
+      " Performance": 9
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " Common, Sylvan",
+  "CR": "3"
+}

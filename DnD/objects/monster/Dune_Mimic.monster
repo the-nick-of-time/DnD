@@ -1,0 +1,28 @@
+{
+  "name": "Dune Mimic",
+  "alignment": "neutral",
+  "AC": 13,
+  "HP": "16d12 + 64",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 8,
+    "Constitution": 18,
+    "Intelligence": 9,
+    "Wisdom": 13,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 30 ft.",
+  "passive perception": 14,
+  "language": "-",
+  "CR": "8"
+}

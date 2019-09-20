@@ -1,0 +1,28 @@
+{
+  "name": "Shadhavar",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "13d10 + 26",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Intelligence": 8,
+    "Wisdom": 10,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " understands Elvish and Umbral but can't speak",
+  "CR": "2"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Putrid Haunt",
+  "alignment": "neutral evil",
+  "AC": 13,
+  "HP": "8d8 + 8",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 8,
+    "Constitution": 13,
+    "Intelligence": 6,
+    "Wisdom": 11,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning and piercing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": "-",
+  "CR": "2"
+}

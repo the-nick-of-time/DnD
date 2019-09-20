@@ -1,0 +1,35 @@
+{
+  "name": "Derro Fetal Savant",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "4d4 - 8",
+  "abilities": {
+    "Strength": 1,
+    "Dexterity": 1,
+    "Constitution": 6,
+    "Intelligence": 6,
+    "Wisdom": 12,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "psychic",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "-",
+  "CR": "4"
+}

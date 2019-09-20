@@ -1,0 +1,47 @@
+{
+  "name": "Hraesvelgr The Corpse Swallower",
+  "alignment": "titan), neutral",
+  "AC": 19,
+  "HP": "21d12 + 105",
+  "abilities": {
+    "Strength": 25,
+    "Dexterity": 10,
+    "Constitution": 20,
+    "Intelligence": 16,
+    "Wisdom": 17,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Intelligence": 9
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 13
+    },
+    {
+      " Perception": 9
+    },
+    {
+      " Survival": 9
+    }
+  ],
+  "resistances": "lightning, thunder",
+  "vulnerabilities": null,
+  "immunities": "cold; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 19,
+  "language": " Auran, Common, Giant (can't speak in roc form)",
+  "CR": "19"
+}

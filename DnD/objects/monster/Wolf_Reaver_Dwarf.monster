@@ -1,0 +1,31 @@
+{
+  "name": "Wolf Reaver Dwarf",
+  "alignment": "any chaotic",
+  "AC": 16,
+  "HP": "9d8+36",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 12,
+    "Constitution": 19,
+    "Intelligence": 9,
+    "Wisdom": 11,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 6
+    },
+    {
+      " Intimidation": 1
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Common, Dwarvish",
+  "CR": "3"
+}

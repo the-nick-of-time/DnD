@@ -1,0 +1,53 @@
+{
+  "name": "Young Flame Dragon",
+  "alignment": "chaotic evil",
+  "AC": 18,
+  "HP": "17d10 + 68",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 14,
+    "Constitution": 19,
+    "Intelligence": 15,
+    "Wisdom": 13,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 5
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 8
+    },
+    {
+      " Insight": 5
+    },
+    {
+      " Perception": 9
+    },
+    {
+      " Persuasion": 8
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 19,
+  "language": " Common, Draconic, Ignan, Giant, Infernal, Orc",
+  "CR": "9"
+}

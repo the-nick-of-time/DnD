@@ -1,0 +1,37 @@
+{
+  "name": "Vaettir",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "16d8 + 48",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 14,
+    "Constitution": 16,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 5
+    },
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison",
+  "condition immunities": null,
+  "senses": "truesight 30 ft., darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " the languages it knew in life",
+  "CR": "4"
+}

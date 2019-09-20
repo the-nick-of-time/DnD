@@ -1,0 +1,41 @@
+{
+  "name": "Moonlit King",
+  "alignment": "neutral good",
+  "AC": 17,
+  "HP": "20d8 + 80",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 20,
+    "Constitution": 18,
+    "Intelligence": 20,
+    "Wisdom": 18,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 11
+    },
+    {
+      " Perception": 10
+    }
+  ],
+  "resistances": "acid; bludgeoning, piercing, and slashing from weapons that aren't made of cold iron.",
+  "vulnerabilities": null,
+  "immunities": "cold, fire, poison",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 20,
+  "language": " Abyssal, Celestial, Common, Draconic, Elvish, Infernal, Umbral; telepathy 100 ft.",
+  "CR": "17"
+}

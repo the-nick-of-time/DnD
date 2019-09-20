@@ -1,0 +1,41 @@
+{
+  "name": "Fate Eater",
+  "alignment": "neutral",
+  "AC": 16,
+  "HP": "28d8 + 56",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 12,
+    "Constitution": 14,
+    "Intelligence": 18,
+    "Wisdom": 16,
+    "Charisma": 9
+  },
+  "saves": [
+    {
+      "Constitution": 5
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 7
+    },
+    {
+      " History": 7
+    },
+    {
+      " Insight": 6
+    },
+    {
+      " Religion": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "truesight 60 ft.",
+  "passive perception": 13,
+  "language": " telepathy 100 ft.",
+  "CR": "6"
+}

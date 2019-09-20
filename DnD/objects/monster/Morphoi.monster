@@ -1,0 +1,24 @@
+{
+  "name": "Morphoi",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "6d8 + 6",
+  "abilities": {
+    "Strength": 11,
+    "Dexterity": 16,
+    "Constitution": 13,
+    "Intelligence": 14,
+    "Wisdom": 10,
+    "Charisma": 15
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Common",
+  "CR": "1/2"
+}

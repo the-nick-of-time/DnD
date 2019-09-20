@@ -1,0 +1,44 @@
+{
+  "name": "Emperor Of The Ghouls",
+  "alignment": "neutral evil",
+  "AC": 20,
+  "HP": "24d8 + 96",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 14,
+    "Constitution": 19,
+    "Intelligence": 20,
+    "Wisdom": 17,
+    "Charisma": 21
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Wisdom": 9
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 11
+    },
+    {
+      " Insight": 9
+    },
+    {
+      " Perception": 9
+    },
+    {
+      " Persuasion": 11
+    }
+  ],
+  "resistances": "cold, necrotic",
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, piercing, and slashing damage from nonmagical weapons.",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 19,
+  "language": " Common, Darakhul, Draconic, Gnoll, Undercommon",
+  "CR": "20"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Eel Hound",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "14d8 + 14",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 16,
+    "Constitution": 13,
+    "Intelligence": 6,
+    "Wisdom": 13,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Sylvan",
+  "CR": "2"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Eonic Drifter",
+  "alignment": "chaotic neutral",
+  "AC": 13,
+  "HP": "10d8 + 20",
+  "abilities": {
+    "Strength": 9,
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Intelligence": 18,
+    "Wisdom": 11,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Arcana": 6
+    },
+    {
+      " History": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 10,
+  "language": " Common, Eonic, Giant, Sylvan",
+  "CR": "1"
+}

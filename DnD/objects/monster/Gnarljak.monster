@@ -1,0 +1,35 @@
+{
+  "name": "Gnarljak",
+  "alignment": "unaligned",
+  "AC": 16,
+  "HP": "14d6 + 14",
+  "abilities": {
+    "Strength": 13,
+    "Dexterity": 22,
+    "Constitution": 11,
+    "Intelligence": 2,
+    "Wisdom": 14,
+    "Charisma": 1
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 9
+    }
+  ],
+  "resistances": "cold, acid, fire; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison, psychic",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft.",
+  "passive perception": 15,
+  "language": "-",
+  "CR": "6"
+}

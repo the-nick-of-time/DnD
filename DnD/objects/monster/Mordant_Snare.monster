@@ -1,0 +1,28 @@
+{
+  "name": "Mordant Snare",
+  "alignment": "chaotic evil",
+  "AC": 18,
+  "HP": "16d20 + 96",
+  "abilities": {
+    "Strength": 23,
+    "Dexterity": 16,
+    "Constitution": 22,
+    "Intelligence": 15,
+    "Wisdom": 14,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Deception": 8
+    }
+  ],
+  "resistances": "bludgeoning from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "acid",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 60 ft.",
+  "passive perception": 12,
+  "language": " Common, Primordial",
+  "CR": "15"
+}

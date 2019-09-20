@@ -1,0 +1,41 @@
+{
+  "name": "Folk Of Leng",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "8d8 + 32",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 15,
+    "Constitution": 18,
+    "Intelligence": 14,
+    "Wisdom": 16,
+    "Charisma": 22
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 4
+    },
+    {
+      " Deception": 8
+    },
+    {
+      " Perception": 5
+    }
+  ],
+  "resistances": "cold",
+  "vulnerabilities": null,
+  "immunities": "necrotic",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 15,
+  "language": " Common, Void Speech",
+  "CR": "2"
+}

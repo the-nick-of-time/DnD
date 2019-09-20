@@ -1,0 +1,32 @@
+{
+  "name": "Ash Drake",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "18d6 + 54",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 15,
+    "Constitution": 16,
+    "Intelligence": 9,
+    "Wisdom": 15,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    }
+  ],
+  "skills": [
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "fire",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " Common, Draconic",
+  "CR": "4"
+}

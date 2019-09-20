@@ -1,0 +1,47 @@
+{
+  "name": "River King",
+  "alignment": "chaotic neutral",
+  "AC": 18,
+  "HP": "16d8 + 80",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 17,
+    "Constitution": 20,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 6
+    }
+  ],
+  "skills": [
+    {
+      " Intimidation": 8
+    },
+    {
+      " Nature": 7
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": "fire, cold, thunder; bludgeoning, piercing, and slashing damage from weapons that aren't cold iron",
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Elemental, Elvish, Giant",
+  "CR": "16"
+}

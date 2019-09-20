@@ -1,0 +1,53 @@
+{
+  "name": "Vila",
+  "alignment": "lawful neutral",
+  "AC": 15,
+  "HP": "14d8 + 14",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 20,
+    "Constitution": 13,
+    "Intelligence": 11,
+    "Wisdom": 14,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 4
+    },
+    {
+      "Wisdom": 5
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Animal Handling": 8
+    },
+    {
+      " Insight": 5
+    },
+    {
+      " Intimidation": 6
+    },
+    {
+      " Perception": 8
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 18,
+  "language": " Common, Sylvan, telepathy 60 ft. (beasts only)",
+  "CR": "5"
+}

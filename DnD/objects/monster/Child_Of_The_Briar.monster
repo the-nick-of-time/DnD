@@ -1,0 +1,31 @@
+{
+  "name": "Child Of The Briar",
+  "alignment": "neutral evil",
+  "AC": 13,
+  "HP": "20d4",
+  "abilities": {
+    "Strength": 6,
+    "Dexterity": 17,
+    "Constitution": 11,
+    "Intelligence": 13,
+    "Wisdom": 10,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "fire",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " Briarclick, Common, Sylvan",
+  "CR": "1"
+}

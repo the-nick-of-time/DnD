@@ -1,0 +1,28 @@
+{
+  "name": "Kobold Trapsmith",
+  "alignment": "lawful neutral",
+  "AC": 14,
+  "HP": "8d6 + 8",
+  "abilities": {
+    "Strength": 7,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 16,
+    "Wisdom": 13,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common, Draconic",
+  "CR": "1"
+}

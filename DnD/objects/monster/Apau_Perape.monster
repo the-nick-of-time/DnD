@@ -1,0 +1,44 @@
+{
+  "name": "Apau Perape",
+  "alignment": "chaotic evil",
+  "AC": 16,
+  "HP": "10d10 + 40",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 18,
+    "Constitution": 19,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      " Intimidation": 5
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "fire, lightning, poison; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "cold",
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 14,
+  "language": " Ape, Infernal, telepathy 120 ft.",
+  "CR": "6"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Myling",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "10d6 + 10",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 10,
+    "Constitution": 12,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common",
+  "CR": "2"
+}

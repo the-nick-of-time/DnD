@@ -1,0 +1,44 @@
+{
+  "name": "Star Spawn Of Cthulhu",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "15d10 + 105",
+  "abilities": {
+    "Strength": 25,
+    "Dexterity": 15,
+    "Constitution": 24,
+    "Intelligence": 30,
+    "Wisdom": 18,
+    "Charisma": 23
+  },
+  "saves": [
+    {
+      "Strength": 12
+    },
+    {
+      "Constitution": 12
+    },
+    {
+      "Intelligence": 15
+    },
+    {
+      "Wisdom": 9
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 15
+    },
+    {
+      " Perception": 14
+    }
+  ],
+  "resistances": "bludgeoning, piercing, slashing",
+  "vulnerabilities": null,
+  "immunities": "cold, fire, lightning, poison, psychic",
+  "condition immunities": null,
+  "senses": "darkvision 300 ft.",
+  "passive perception": 24,
+  "language": " Common, Infernal, Void Speech",
+  "CR": "15"
+}

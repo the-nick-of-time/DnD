@@ -1,0 +1,38 @@
+{
+  "name": "Roachling Lord",
+  "alignment": "chaotic neutral",
+  "AC": 15,
+  "HP": "14d6 + 14",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 3
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 5
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 10 ft.",
+  "passive perception": 9,
+  "language": " Common",
+  "CR": "2"
+}

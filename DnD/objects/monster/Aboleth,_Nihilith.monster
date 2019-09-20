@@ -1,0 +1,41 @@
+{
+  "name": "Aboleth, Nihilith",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "18d10 + 36",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 9,
+    "Constitution": 15,
+    "Intelligence": 18,
+    "Wisdom": 15,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Constitution": 6
+    },
+    {
+      "Intelligence": 8
+    },
+    {
+      "Wisdom": 6
+    }
+  ],
+  "skills": [
+    {
+      " History": 12
+    },
+    {
+      " Perception": 10
+    }
+  ],
+  "resistances": "acid, fire, lightning, thunder (only when in ethereal form); bludgeoning, piercing and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "cold, necrotic, poison; bludgeoning, piercing and slashing from nonmagical weapons (only when in ethereal form)",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 20,
+  "language": " Void Speech, telepathy 120 ft.",
+  "CR": "12"
+}

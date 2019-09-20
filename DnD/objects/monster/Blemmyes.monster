@@ -1,0 +1,28 @@
+{
+  "name": "Blemmyes",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "16d10 + 80",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 13,
+    "Constitution": 20,
+    "Intelligence": 7,
+    "Wisdom": 12,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Intimidation": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Giant",
+  "CR": "8"
+}

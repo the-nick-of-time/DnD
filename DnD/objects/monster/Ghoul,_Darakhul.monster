@@ -1,0 +1,31 @@
+{
+  "name": "Ghoul, Darakhul",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "12d8 + 24",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 17,
+    "Constitution": 14,
+    "Intelligence": 14,
+    "Wisdom": 12,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Deception": 3
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "necrotic",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common, Darakhul",
+  "CR": "3"
+}

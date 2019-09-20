@@ -33,7 +33,7 @@ def parse_one(elem: Tag) -> dict:
         'immunities': elem.immune.text if elem.immune else None,
         'condition immunities': elem.conditionImmune.text if elem.conditionImmune else None,
         'senses': elem.senses.text if elem.senses else None,
-        'passive perception': int(elem.passive.text) if elem.passive else None,
+        'passive perception': int(elem.passive.text.split()[-1]) if elem.passive else None,
         'language': elem.languages.text if elem.languages else None,
         # On load this should be hooked into a fractions.Fraction
         'CR': elem.cr.text,
@@ -50,6 +50,12 @@ def parse_saves(text: str) -> list:
         'Int': 'Intelligence',
         'Wis': 'Wisdom',
         'Cha': 'Charisma',
+        'Strength': 'Strength',
+        'Dexterity': 'Dexterity',
+        'Constitution': 'Constitution',
+        'Intelligence': 'Intelligence',
+        'Wisdom': 'Wisdom',
+        'Charisma': 'Charisma',
     }
     return [{mapper[save[0]]: int(save[1])} for save in saves]
 
@@ -69,7 +75,7 @@ def main(inputdir: Path, outputdir: Path):
     for filename in inputdir.glob('*'):
         print('Processing ' + filename.name)
         with filename.open('r') as f:
-            document = BeautifulSoup(f, 'lxml-xml')
+            document = BeautifulSoup(f, 'lxml')
             for monster in document('monster'):
                 write_one(parse_one(monster), outputdir)
 
@@ -77,5 +83,5 @@ def main(inputdir: Path, outputdir: Path):
 if __name__ == '__main__':
     inputdir = Path('../../../DnDAppFiles/Bestiary')
     outputdir = Path('../../DnD/objects/monster')
-    main(inputdir, outputdir)
+    # main(inputdir, outputdir)
     main(Path('../../../DnDAppFiles/Homebrew & Third Party/Monsters'), outputdir)

@@ -1,0 +1,50 @@
+{
+  "name": "Mi-Go",
+  "alignment": "neutral evil",
+  "AC": 17,
+  "HP": "8d8 + 40",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 19,
+    "Constitution": 21,
+    "Intelligence": 25,
+    "Wisdom": 15,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Strength": 6
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 10
+    },
+    {
+      " Deception": 7
+    },
+    {
+      " Medicine": 5
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "radiant, cold",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 240 ft.",
+  "passive perception": 15,
+  "language": " Common, Mi-go, Void Speech",
+  "CR": "5"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Young Spinosaurus",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "10d12 + 40",
+  "abilities": {
+    "Strength": 23,
+    "Dexterity": 11,
+    "Constitution": 19,
+    "Intelligence": 2,
+    "Wisdom": 11,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 13,
+  "language": "-",
+  "CR": "5"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Crystalline Devil",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "12d8 + 48",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 12,
+    "Constitution": 18,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 8
+    },
+    {
+      " Insight": 4
+    }
+  ],
+  "resistances": "acid, cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 11,
+  "language": " Celestial, Common, Infernal, telepathy 120 ft.",
+  "CR": "6"
+}

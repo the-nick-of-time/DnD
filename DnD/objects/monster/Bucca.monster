@@ -1,0 +1,34 @@
+{
+  "name": "Bucca",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "5d4 + 15",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 16,
+    "Constitution": 17,
+    "Intelligence": 13,
+    "Wisdom": 9,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 1
+    },
+    {
+      " Sleight of Hand": 7
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Darakhul, Dwarvish",
+  "CR": "1/2"
+}

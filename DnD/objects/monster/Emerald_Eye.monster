@@ -1,0 +1,56 @@
+{
+  "name": "Emerald Eye",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "12d4 + 24",
+  "abilities": {
+    "Strength": 3,
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Intelligence": 15,
+    "Wisdom": 12,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 4
+    },
+    {
+      "Intelligence": 4
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 4
+    },
+    {
+      " Arcana": 4
+    },
+    {
+      " Deception": 5
+    },
+    {
+      " History": 4
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Persuasion": 5
+    },
+    {
+      " Religion": 4
+    }
+  ],
+  "resistances": "cold, fire; piercing damage",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 13,
+  "language": " Common, Draconic, telepathy 250 ft.",
+  "CR": "1"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Red-Banded Line Spider",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "1d4",
+  "abilities": {
+    "Strength": 4,
+    "Dexterity": 16,
+    "Constitution": 10,
+    "Intelligence": 1,
+    "Wisdom": 10,
+    "Charisma": 2
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 2
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "psychic",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "-",
+  "CR": "1/4"
+}

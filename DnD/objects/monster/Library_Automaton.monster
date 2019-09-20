@@ -1,0 +1,31 @@
+{
+  "name": "Library Automaton",
+  "alignment": "lawful neutral",
+  "AC": 13,
+  "HP": "2d6",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 13,
+    "Constitution": 10,
+    "Intelligence": 14,
+    "Wisdom": 12,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      " History": 4
+    },
+    {
+      " Investigation": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., truesight 10 ft.",
+  "passive perception": 11,
+  "language": " Common, Machine Speech",
+  "CR": "1/2"
+}

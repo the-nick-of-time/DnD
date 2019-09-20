@@ -1,0 +1,35 @@
+{
+  "name": "Clurichaun",
+  "alignment": "chaotic neutral",
+  "AC": 14,
+  "HP": "4d4 + 12",
+  "abilities": {
+    "Strength": 13,
+    "Dexterity": 12,
+    "Constitution": 16,
+    "Intelligence": 10,
+    "Wisdom": 8,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Constitution": 5
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 1
+    },
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60ft.",
+  "passive perception": 11,
+  "language": " Common, Elvish, Sylvan",
+  "CR": "1/4"
+}

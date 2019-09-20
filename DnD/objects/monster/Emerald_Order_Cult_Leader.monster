@@ -1,0 +1,47 @@
+{
+  "name": "Emerald Order Cult Leader",
+  "alignment": "lawful neutral or evil",
+  "AC": 14,
+  "HP": "18d8+36",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 10,
+    "Constitution": 14,
+    "Intelligence": 15,
+    "Wisdom": 20,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 5
+    },
+    {
+      " Deception": 5
+    },
+    {
+      " History": 5
+    },
+    {
+      " Religion": 5
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": "any three languages",
+  "CR": "8"
+}

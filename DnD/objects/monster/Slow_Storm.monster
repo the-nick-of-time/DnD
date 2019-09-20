@@ -1,0 +1,31 @@
+{
+  "name": "Slow Storm",
+  "alignment": "chaotic neutral",
+  "AC": 19,
+  "HP": "18d12 + 108",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 19,
+    "Constitution": 22,
+    "Intelligence": 11,
+    "Wisdom": 16,
+    "Charisma": 11
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 11
+    }
+  ],
+  "skills": [],
+  "resistances": "acid, cold, fire",
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 120 ft.",
+  "passive perception": 13,
+  "language": " Common, Primordial",
+  "CR": "15"
+}

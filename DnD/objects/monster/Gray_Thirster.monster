@@ -1,0 +1,28 @@
+{
+  "name": "Gray Thirster",
+  "alignment": "neutral evil",
+  "AC": 13,
+  "HP": "6d8 + 12",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 16,
+    "Constitution": 15,
+    "Intelligence": 6,
+    "Wisdom": 12,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "bludgeoning, necrotic",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " understands all languages it knew in life but can't speak",
+  "CR": "2"
+}

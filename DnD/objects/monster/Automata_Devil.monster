@@ -1,0 +1,47 @@
+{
+  "name": "Automata Devil",
+  "alignment": "lawful evil",
+  "AC": 17,
+  "HP": "16d10 + 80",
+  "abilities": {
+    "Strength": 24,
+    "Dexterity": 17,
+    "Constitution": 20,
+    "Intelligence": 11,
+    "Wisdom": 14,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Strength": 11
+    },
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 11
+    },
+    {
+      " Intimidation": 8
+    }
+  ],
+  "resistances": "cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 12,
+  "language": " Common, Infernal; telepathy 100 ft.",
+  "CR": "10"
+}

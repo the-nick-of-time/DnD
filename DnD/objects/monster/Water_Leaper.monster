@@ -1,0 +1,24 @@
+{
+  "name": "Water Leaper",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "13d10 + 26",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 14,
+    "Constitution": 15,
+    "Intelligence": 4,
+    "Wisdom": 12,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "-",
+  "CR": "4"
+}

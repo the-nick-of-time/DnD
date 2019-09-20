@@ -1,0 +1,34 @@
+{
+  "name": "Oculo Swarm",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "13d10 + 39",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 20,
+    "Constitution": 16,
+    "Intelligence": 8,
+    "Wisdom": 15,
+    "Charisma": 17
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Insight": 6
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "bludgeoning, piercing, slashing",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " understands Common but can't speak",
+  "CR": "4"
+}

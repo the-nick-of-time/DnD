@@ -1,0 +1,35 @@
+{
+  "name": "Crimson Drake",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "12d4 + 24",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Intelligence": 8,
+    "Wisdom": 9,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 4
+    },
+    {
+      " Perception": 1
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common, Draconic, telepathy 60 ft.",
+  "CR": "1"
+}

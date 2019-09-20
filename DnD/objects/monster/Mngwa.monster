@@ -1,0 +1,31 @@
+{
+  "name": "Mngwa",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "14d8 + 28",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 17,
+    "Constitution": 15,
+    "Intelligence": 11,
+    "Wisdom": 17,
+    "Charisma": 17
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": " Common, Sylvan, can speak with felines",
+  "CR": "4"
+}

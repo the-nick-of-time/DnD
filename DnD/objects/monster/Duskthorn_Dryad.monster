@@ -1,0 +1,50 @@
+{
+  "name": "Duskthorn Dryad",
+  "alignment": "chaotic",
+  "AC": 17,
+  "HP": "14d8 + 14",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 20,
+    "Constitution": 13,
+    "Intelligence": 14,
+    "Wisdom": 15,
+    "Charisma": 24
+  },
+  "saves": [
+    {
+      "Constitution": 3
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      " Animal Handling": 4
+    },
+    {
+      " Deception": 9
+    },
+    {
+      " Nature": 6
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Persuasion": 9
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": " Common, Elvish, Sylvan, Umbral",
+  "CR": "3"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Valkyrie",
+  "alignment": "neutral",
+  "AC": 16,
+  "HP": "15d8 + 45",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 18,
+    "Constitution": 16,
+    "Intelligence": 12,
+    "Wisdom": 19,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Strength": 12
+    },
+    {
+      "Dexterity": 12
+    },
+    {
+      "Constitution": 11
+    },
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 12
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 8
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning, thunder",
+  "vulnerabilities": null,
+  "immunities": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "truesight 60 ft.",
+  "passive perception": 18,
+  "language": " Common, Dwarvish, Giant, and see Gift of Tongues",
+  "CR": "11"
+}

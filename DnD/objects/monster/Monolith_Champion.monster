@@ -1,0 +1,24 @@
+{
+  "name": "Monolith Champion",
+  "alignment": "unaligned",
+  "AC": 17,
+  "HP": "12d10 + 36",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 12,
+    "Constitution": 16,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison, bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Elvish, Umbral",
+  "CR": "8"
+}

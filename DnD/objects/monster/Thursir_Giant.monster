@@ -1,0 +1,35 @@
+{
+  "name": "Thursir Giant",
+  "alignment": "neutral evil (50%) lawful evil (50%)",
+  "AC": 13,
+  "HP": "12d10 + 48",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 10,
+    "Constitution": 18,
+    "Intelligence": 13,
+    "Wisdom": 15,
+    "Charisma": 11
+  },
+  "saves": [
+    {
+      "Constitution": 6
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 6
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " Common, Dwarven, Giant",
+  "CR": "3"
+}

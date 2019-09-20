@@ -1,0 +1,50 @@
+{
+  "name": "Psoglav Demon",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "11d10 + 55",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 23,
+    "Constitution": 20,
+    "Intelligence": 16,
+    "Wisdom": 19,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 9
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Intimidation": 7
+    },
+    {
+      " Stealth": 9
+    }
+  ],
+  "resistances": "cold, lightning",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft., darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Infernal; telepathy 60 ft.",
+  "CR": "7"
+}

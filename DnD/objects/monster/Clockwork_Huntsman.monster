@@ -1,0 +1,38 @@
+{
+  "name": "Clockwork Huntsman",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "20d8 + 20",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Intelligence": 4,
+    "Wisdom": 10,
+    "Charisma": 1
+  },
+  "saves": [
+    {
+      "Strength": 5
+    },
+    {
+      "Dexterity": 4
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 4
+    },
+    {
+      " Survival": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison, psychic",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " understands Common",
+  "CR": "3"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Kobold Chieftain",
+  "alignment": "lawful evil",
+  "AC": 17,
+  "HP": "15d6 + 30",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 17,
+    "Constitution": 14,
+    "Intelligence": 11,
+    "Wisdom": 13,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      " Intimidation": 6
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common, Draconic",
+  "CR": "4"
+}

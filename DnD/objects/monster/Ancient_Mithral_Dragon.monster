@@ -1,0 +1,59 @@
+{
+  "name": "Ancient Mithral Dragon",
+  "alignment": "neutral",
+  "AC": 20,
+  "HP": "17d20 + 119",
+  "abilities": {
+    "Strength": 29,
+    "Dexterity": 16,
+    "Constitution": 25,
+    "Intelligence": 24,
+    "Wisdom": 25,
+    "Charisma": 24
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 13
+    },
+    {
+      "Intelligence": 13
+    },
+    {
+      "Wisdom": 13
+    },
+    {
+      "Charisma": 13
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 15
+    },
+    {
+      " History": 13
+    },
+    {
+      " Insight": 13
+    },
+    {
+      " Intimidation": 13
+    },
+    {
+      " Perception": 13
+    },
+    {
+      " Persuasion": 13
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from",
+  "vulnerabilities": null,
+  "immunities": "acid, thunder",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 23,
+  "language": " Celestial, Common, Draconic, Primordial",
+  "CR": "18"
+}

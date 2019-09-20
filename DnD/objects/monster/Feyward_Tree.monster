@@ -1,0 +1,38 @@
+{
+  "name": "Feyward Tree",
+  "alignment": "unaligned",
+  "AC": 17,
+  "HP": "9d12 + 36",
+  "abilities": {
+    "Strength": 26,
+    "Dexterity": 10,
+    "Constitution": 18,
+    "Intelligence": 2,
+    "Wisdom": 11,
+    "Charisma": 6
+  },
+  "saves": [
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 1
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "-",
+  "CR": "8"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Stuhac",
+  "alignment": "neutral evil",
+  "AC": 18,
+  "HP": "20d8 + 100",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 18,
+    "Constitution": 20,
+    "Intelligence": 12,
+    "Wisdom": 16,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Strength": 11
+    },
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 12
+    }
+  ],
+  "resistances": "acid, fire; bludgeoning and piercing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "cold, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common, Infernal; telepathy 100 ft.",
+  "CR": "13"
+}

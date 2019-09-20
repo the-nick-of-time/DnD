@@ -1,0 +1,31 @@
+{
+  "name": "Serpopard",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "10d10 + 30",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 16,
+    "Constitution": 16,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "-",
+  "CR": "4"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Orobas Devil",
+  "alignment": "lawful evil",
+  "AC": 19,
+  "HP": "14d10 + 126",
+  "abilities": {
+    "Strength": 26,
+    "Dexterity": 14,
+    "Constitution": 28,
+    "Intelligence": 23,
+    "Wisdom": 26,
+    "Charisma": 21
+  },
+  "saves": [
+    {
+      "Strength": 13
+    },
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 14
+    },
+    {
+      "Wisdom": 13
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 10
+    },
+    {
+      " History": 11
+    },
+    {
+      " Insight": 13
+    },
+    {
+      " Perception": 13
+    },
+    {
+      " Persuasion": 10
+    }
+  ],
+  "resistances": "acid, cold; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "truesight 90 ft.",
+  "passive perception": 23,
+  "language": " Celestial, Darakhul, Draconic, Giant, Infernal, Undercommon, Void Speech; telepathy 100 ft.",
+  "CR": "14"
+}

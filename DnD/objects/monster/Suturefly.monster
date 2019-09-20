@@ -1,0 +1,28 @@
+{
+  "name": "Suturefly",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "3d4",
+  "abilities": {
+    "Strength": 1,
+    "Dexterity": 19,
+    "Constitution": 10,
+    "Intelligence": 1,
+    "Wisdom": 12,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "-",
+  "CR": "1/4"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Abominable Beauty",
+  "alignment": "neutral evil",
+  "AC": 18,
+  "HP": "22d8 + 88",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 18,
+    "Constitution": 18,
+    "Intelligence": 17,
+    "Wisdom": 16,
+    "Charisma": 26
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Charisma": 12
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 12
+    },
+    {
+      " Perception": 7
+    },
+    {
+      " Performance": 12
+    },
+    {
+      " Persuasion": 12
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 17,
+  "language": " Common, Draconic, Elven, Sylvan",
+  "CR": "11"
+}

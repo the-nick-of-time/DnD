@@ -1,0 +1,32 @@
+{
+  "name": "Flab Giant",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "13d10 + 39",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 6,
+    "Constitution": 16,
+    "Intelligence": 9,
+    "Wisdom": 13,
+    "Charisma": 8
+  },
+  "saves": [
+    {
+      "Constitution": 5
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 13,
+  "language": " Dwarvish, Giant",
+  "CR": "4"
+}

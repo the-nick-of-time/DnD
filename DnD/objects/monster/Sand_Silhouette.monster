@@ -1,0 +1,24 @@
+{
+  "name": "Sand Silhouette",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "14d8 + 42",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 12,
+    "Constitution": 17,
+    "Intelligence": 7,
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 60 ft.",
+  "passive perception": 11,
+  "language": "all languages it knew in life",
+  "CR": "6"
+}

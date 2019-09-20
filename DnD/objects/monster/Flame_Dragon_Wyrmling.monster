@@ -1,0 +1,53 @@
+{
+  "name": "Flame Dragon Wyrmling",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "8d8 + 16",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 14,
+    "Constitution": 15,
+    "Intelligence": 13,
+    "Wisdom": 12,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 4
+    },
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 5
+    },
+    {
+      " Insight": 3
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Persuasion": 5
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 15,
+  "language": " Common, Draconic, Ignan",
+  "CR": "3"
+}

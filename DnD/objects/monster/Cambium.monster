@@ -1,0 +1,59 @@
+{
+  "name": "Cambium",
+  "alignment": "neutral evil",
+  "AC": 19,
+  "HP": "23d10 + 138",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 16,
+    "Constitution": 23,
+    "Intelligence": 17,
+    "Wisdom": 16,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 11
+    },
+    {
+      "Intelligence": 8
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 8
+    },
+    {
+      " Deception": 9
+    },
+    {
+      " Insight": 8
+    },
+    {
+      " Medicine": 8
+    },
+    {
+      " Perception": 8
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 18,
+  "language": " Common, Draconic, Infernal",
+  "CR": "14"
+}

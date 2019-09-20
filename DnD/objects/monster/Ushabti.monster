@@ -1,0 +1,41 @@
+{
+  "name": "Ushabti",
+  "alignment": "unaligned",
+  "AC": 18,
+  "HP": "10d10 + 50",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 17,
+    "Constitution": 20,
+    "Intelligence": 11,
+    "Wisdom": 19,
+    "Charisma": 9
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 4
+    },
+    {
+      " History": 4
+    },
+    {
+      " Perception": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 18,
+  "language": " Ancient language of DM's choice",
+  "CR": "9"
+}

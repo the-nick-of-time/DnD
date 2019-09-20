@@ -1,0 +1,41 @@
+{
+  "name": "Lorelei",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "9d8 + 36",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 21,
+    "Constitution": 18,
+    "Intelligence": 16,
+    "Wisdom": 16,
+    "Charisma": 23
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 9
+    },
+    {
+      " Performance": 9
+    },
+    {
+      " Persuasion": 9
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common, Sylvan",
+  "CR": "5"
+}

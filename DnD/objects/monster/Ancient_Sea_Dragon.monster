@@ -1,0 +1,44 @@
+{
+  "name": "Ancient Sea Dragon",
+  "alignment": "neutral evil",
+  "AC": 22,
+  "HP": "26d20 + 208",
+  "abilities": {
+    "Strength": 29,
+    "Dexterity": 10,
+    "Constitution": 27,
+    "Intelligence": 19,
+    "Wisdom": 17,
+    "Charisma": 21
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 15
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 12
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 17
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 27,
+  "language": " Common, Draconic, Infernal, Primordial",
+  "CR": "22"
+}

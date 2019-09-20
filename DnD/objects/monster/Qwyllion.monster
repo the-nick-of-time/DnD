@@ -1,0 +1,38 @@
+{
+  "name": "Qwyllion",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "13d8 + 52",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 20,
+    "Constitution": 19,
+    "Intelligence": 12,
+    "Wisdom": 13,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 11
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " Common, Goblin, Infernal, Sylvan, Void Speech",
+  "CR": "8"
+}

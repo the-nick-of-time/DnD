@@ -1,0 +1,31 @@
+{
+  "name": "Gearforged Templar",
+  "alignment": "lawful neutral",
+  "AC": 18,
+  "HP": "11d8 + 22",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 9,
+    "Constitution": 15,
+    "Intelligence": 12,
+    "Wisdom": 16,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Dexterity": 2
+    },
+    {
+      "Constitution": 5
+    }
+  ],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 13,
+  "language": " Common",
+  "CR": "6"
+}

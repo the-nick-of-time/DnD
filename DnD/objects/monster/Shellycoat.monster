@@ -1,0 +1,31 @@
+{
+  "name": "Shellycoat",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "10d8 + 30",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 15,
+    "Constitution": 16,
+    "Intelligence": 13,
+    "Wisdom": 9,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 1
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "Darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Giant, Sylvan",
+  "CR": "2"
+}

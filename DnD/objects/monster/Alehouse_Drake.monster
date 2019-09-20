@@ -1,0 +1,38 @@
+{
+  "name": "Alehouse Drake",
+  "alignment": "chaotic neutral",
+  "AC": 13,
+  "HP": "10d4 + 40",
+  "abilities": {
+    "Strength": 7,
+    "Dexterity": 16,
+    "Constitution": 19,
+    "Intelligence": 11,
+    "Wisdom": 12,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 5
+    },
+    {
+      " Insight": 3
+    },
+    {
+      " Persuasion": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common, Draconic",
+  "CR": "1/2"
+}

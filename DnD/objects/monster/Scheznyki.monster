@@ -1,0 +1,31 @@
+{
+  "name": "Scheznyki",
+  "alignment": "chaotic evil",
+  "AC": 16,
+  "HP": "18d6 + 72",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 15,
+    "Constitution": 18,
+    "Intelligence": 15,
+    "Wisdom": 16,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Strength": 10
+    },
+    {
+      "Constitution": 10
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common, Darakhul, Elvish",
+  "CR": "6"
+}

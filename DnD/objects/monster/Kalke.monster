@@ -1,0 +1,31 @@
+{
+  "name": "Kalke",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "2d6 + 2",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 17,
+    "Constitution": 12,
+    "Intelligence": 13,
+    "Wisdom": 7,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 0
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": " Abyssal, Common, Infernal",
+  "CR": "1/4"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Gypsosphinx",
+  "alignment": "neutral evil",
+  "AC": 17,
+  "HP": "18d10 + 72",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 14,
+    "Constitution": 18,
+    "Intelligence": 18,
+    "Wisdom": 18,
+    "Charisma": 18
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Arcana": 9
+    },
+    {
+      " History": 9
+    },
+    {
+      " Perception": 9
+    },
+    {
+      " Religion": 9
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "psychic, poison",
+  "condition immunities": null,
+  "senses": "truesight 90 ft.",
+  "passive perception": 19,
+  "language": " Abyssal, Common, Darakhul, Sphinx",
+  "CR": "14"
+}

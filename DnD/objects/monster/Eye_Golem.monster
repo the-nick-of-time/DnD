@@ -1,0 +1,28 @@
+{
+  "name": "Eye Golem",
+  "alignment": "unaligned",
+  "AC": 20,
+  "HP": "15d10 + 75",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 9,
+    "Constitution": 20,
+    "Intelligence": 5,
+    "Wisdom": 11,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire, poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 18,
+  "language": " understands the language of its creator, but can't speak",
+  "CR": "11"
+}

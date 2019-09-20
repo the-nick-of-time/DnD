@@ -1,0 +1,24 @@
+{
+  "name": "Rift Swine",
+  "alignment": "chaotic neutral",
+  "AC": 15,
+  "HP": "13d10 + 39",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 10,
+    "Constitution": 17,
+    "Intelligence": 4,
+    "Wisdom": 12,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "force, poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "-",
+  "CR": "5"
+}

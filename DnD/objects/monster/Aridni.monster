@@ -1,0 +1,38 @@
+{
+  "name": "Aridni",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "15d6 + 30",
+  "abilities": {
+    "Strength": 9,
+    "Dexterity": 21,
+    "Constitution": 14,
+    "Intelligence": 12,
+    "Wisdom": 11,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 11
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 11
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common, Gnoll, Sylvan, Void Speech",
+  "CR": "5"
+}

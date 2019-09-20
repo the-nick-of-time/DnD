@@ -1,0 +1,24 @@
+{
+  "name": "Zmey Headling",
+  "alignment": "chaotic evil",
+  "AC": 16,
+  "HP": "14d8 + 42",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 10,
+    "Constitution": 1,
+    "Intelligence": 8,
+    "Wisdom": 16,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "cold, fire",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common, Draconic, Sylvan",
+  "CR": "5"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Buraq",
+  "alignment": "lawful good",
+  "AC": 17,
+  "HP": "16d8 + 80",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 18,
+    "Constitution": 20,
+    "Intelligence": 18,
+    "Wisdom": 18,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      " History": 8
+    },
+    {
+      " Religion": 8
+    }
+  ],
+  "resistances": "radiant; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 14,
+  "language": " Celestial, Common, Primordial, telepathy 120 ft.",
+  "CR": "11"
+}

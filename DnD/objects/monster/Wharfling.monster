@@ -1,0 +1,31 @@
+{
+  "name": "Wharfling",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "4d4 . 4",
+  "abilities": {
+    "Strength": 4,
+    "Dexterity": 16,
+    "Constitution": 8,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    },
+    {
+      " Sleight of Hand": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "-",
+  "CR": "1/8"
+}

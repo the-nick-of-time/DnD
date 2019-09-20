@@ -1,0 +1,24 @@
+{
+  "name": "Swamp Adder",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "4d6 + 4",
+  "abilities": {
+    "Strength": 4,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 1,
+    "Wisdom": 10,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 10 ft.",
+  "passive perception": 10,
+  "language": "-",
+  "CR": "1/4"
+}

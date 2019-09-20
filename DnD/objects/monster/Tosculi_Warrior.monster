@@ -1,0 +1,24 @@
+{
+  "name": "Tosculi Warrior",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "9d6 + 27",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 20,
+    "Constitution": 16,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Tosculi",
+  "CR": "2"
+}

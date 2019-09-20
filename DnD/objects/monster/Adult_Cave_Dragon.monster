@@ -1,0 +1,41 @@
+{
+  "name": "Adult Cave Dragon",
+  "alignment": "neutral evil",
+  "AC": 18,
+  "HP": "18d12 + 126",
+  "abilities": {
+    "Strength": 26,
+    "Dexterity": 12,
+    "Constitution": 24,
+    "Intelligence": 12,
+    "Wisdom": 12,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 12
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 10
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 10
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid, poison, thunder",
+  "condition immunities": null,
+  "senses": "blindsight 120 ft.",
+  "passive perception": 20,
+  "language": " Common, Darakhul, Draconic, Dwarvish, Goblin",
+  "CR": "16"
+}

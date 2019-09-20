@@ -1,0 +1,44 @@
+{
+  "name": "Skein Witch",
+  "alignment": "neutral",
+  "AC": 20,
+  "HP": "25d8 +50",
+  "abilities": {
+    "Strength": 6,
+    "Dexterity": 12,
+    "Constitution": 14,
+    "Intelligence": 16,
+    "Wisdom": 20,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Intelligence": 8
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 10
+    }
+  ],
+  "skills": [
+    {
+      " History": 8
+    },
+    {
+      " Insight": 15
+    },
+    {
+      " Perception": 15
+    }
+  ],
+  "resistances": "radiant",
+  "vulnerabilities": null,
+  "immunities": "fire, lightning, psychic",
+  "condition immunities": null,
+  "senses": "truesight 60 ft.",
+  "passive perception": 25,
+  "language": " Celestial, telepathy (100 ft.)",
+  "CR": "12"
+}

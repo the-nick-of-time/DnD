@@ -1,0 +1,24 @@
+{
+  "name": "Xanka",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "4d6 + 4",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 15,
+    "Constitution": 12,
+    "Intelligence": 4,
+    "Wisdom": 10,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 120 ft.",
+  "passive perception": 10,
+  "language": " Understands the languages of its creator but can't",
+  "CR": "1/4"
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Urochar (Strangling Watcher)",
+  "alignment": "chaotic evil",
+  "AC": 19,
+  "HP": "19d12 + 133",
+  "abilities": {
+    "Strength": 24,
+    "Dexterity": 15,
+    "Constitution": 24,
+    "Intelligence": 14,
+    "Wisdom": 14,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 13
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 8
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": "cold, lightning; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "thunder",
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 19,
+  "language": " understands Darakhul and Void Speech",
+  "CR": "17"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Wolf Spirit Swarm",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "15d10 + 15",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 4,
+    "Wisdom": 10,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Strength": 5
+    },
+    {
+      "Dexterity": 6
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": "necrotic; bludgeoning, piercing, slashing",
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 13,
+  "language": " understands Common",
+  "CR": "6"
+}

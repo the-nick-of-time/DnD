@@ -1,0 +1,28 @@
+{
+  "name": "Shoggoth",
+  "alignment": "chaotic neutral",
+  "AC": 18,
+  "HP": "25d12 + 225",
+  "abilities": {
+    "Strength": 26,
+    "Dexterity": 14,
+    "Constitution": 28,
+    "Intelligence": 12,
+    "Wisdom": 16,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 9
+    }
+  ],
+  "resistances": "fire, bludgeoning, piercing",
+  "vulnerabilities": null,
+  "immunities": " cold, thunder, slashing",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft., tremorsense 60 ft.",
+  "passive perception": 19,
+  "language": " Void Speech",
+  "CR": "19"
+}

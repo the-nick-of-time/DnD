@@ -1,0 +1,50 @@
+{
+  "name": "Haugbui",
+  "alignment": "lawful neutral",
+  "AC": 18,
+  "HP": "16d8 + 64",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 17,
+    "Constitution": 18,
+    "Intelligence": 15,
+    "Wisdom": 20,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 10
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 7
+    },
+    {
+      " History": 7
+    },
+    {
+      " Intimidation": 8
+    },
+    {
+      " Perception": 10
+    },
+    {
+      " Religion": 12
+    }
+  ],
+  "resistances": "cold, lightning, necrotic",
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "truesight 60 ft.",
+  "passive perception": 20,
+  "language": " the languages it spoke in life; telepathy 120 ft.",
+  "CR": "13"
+}

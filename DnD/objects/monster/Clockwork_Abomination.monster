@@ -1,0 +1,41 @@
+{
+  "name": "Clockwork Abomination",
+  "alignment": "lawful evil",
+  "AC": 16,
+  "HP": "8d10 + 32",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 12,
+    "Constitution": 18,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 7
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 9
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "acid, cold, fire; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common, Infernal",
+  "CR": "5"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Herald Of Blood",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "10d12 + 50",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 12,
+    "Constitution": 20,
+    "Intelligence": 14,
+    "Wisdom": 17,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Strength": 10
+    },
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 7
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 6
+    },
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": "piercing, lightning",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "darkvision 240 ft.",
+  "passive perception": 17,
+  "language": " Common, Draconic, Infernal, Void Speech",
+  "CR": "12"
+}

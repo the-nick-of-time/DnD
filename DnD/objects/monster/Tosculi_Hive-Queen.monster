@@ -1,0 +1,41 @@
+{
+  "name": "Tosculi Hive-Queen",
+  "alignment": "lawful evil",
+  "AC": 17,
+  "HP": "15d10 + 75",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 24,
+    "Constitution": 20,
+    "Intelligence": 16,
+    "Wisdom": 16,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 12
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 18,
+  "language": " Common, Deep Speech, Gnoll, Infernal, Tosculi",
+  "CR": "12"
+}

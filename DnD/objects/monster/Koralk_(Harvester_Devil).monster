@@ -1,0 +1,34 @@
+{
+  "name": "Koralk (Harvester Devil)",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "16d10 + 48",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 13,
+    "Constitution": 17,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [],
+  "resistances": "cold; bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": " Infernal, telepathy 120 ft.",
+  "CR": "11"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Goat-Man",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "10d8 + 20",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 13,
+    "Charisma": 8
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 4
+    },
+    {
+      " Athletics": 6
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common, Giant, Trollkin, but cannot speak",
+  "CR": "3"
+}

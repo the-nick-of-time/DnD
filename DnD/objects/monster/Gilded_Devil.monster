@@ -1,0 +1,53 @@
+{
+  "name": "Gilded Devil",
+  "alignment": "lawful evil",
+  "AC": 16,
+  "HP": "15d8 + 45",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 15,
+    "Constitution": 17,
+    "Intelligence": 15,
+    "Wisdom": 18,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Strength": 6
+    },
+    {
+      "Constitution": 6
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 9
+    },
+    {
+      " History": 5
+    },
+    {
+      " Insight": 10
+    },
+    {
+      " Persuasion": 9
+    },
+    {
+      " Sleight of Hand": 8
+    }
+  ],
+  "resistances": "cold; bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 14,
+  "language": " Celestial, Common, Draconic, Infernal; telepathy (120 ft.)",
+  "CR": "7"
+}

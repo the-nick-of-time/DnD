@@ -1,0 +1,38 @@
+{
+  "name": "Thuellai",
+  "alignment": "chaotic neutral",
+  "AC": 17,
+  "HP": "13d12 + 65",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 24,
+    "Constitution": 20,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Intelligence": 4
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": "lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "fire",
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " Common, Dwarvish, Primordial",
+  "CR": "10"
+}

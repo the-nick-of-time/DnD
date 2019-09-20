@@ -1,0 +1,41 @@
+{
+  "name": "Lich Hound",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "14d8 + 56",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 18,
+    "Constitution": 18,
+    "Intelligence": 6,
+    "Wisdom": 10,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 4
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 6
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": "piercing and bludgeoning from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "blindsight 100 ft.",
+  "passive perception": 14,
+  "language": " understands Darakhul",
+  "CR": "4"
+}

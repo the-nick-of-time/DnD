@@ -1,0 +1,44 @@
+{
+  "name": "Void Dragon Wyrmling",
+  "alignment": "chaotic neutral",
+  "AC": 17,
+  "HP": "6d8 + 18",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 10,
+    "Constitution": 17,
+    "Intelligence": 12,
+    "Wisdom": 9,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 5
+    },
+    {
+      "Wisdom": 1
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 13,
+  "language": " Common, Draconic, Void Speech",
+  "CR": "2"
+}

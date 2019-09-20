@@ -1,0 +1,47 @@
+{
+  "name": "Queen Of Night And Magic",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "24d8 + 72",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 20,
+    "Constitution": 17,
+    "Intelligence": 20,
+    "Wisdom": 18,
+    "Charisma": 26
+  },
+  "saves": [
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 11
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 12
+    },
+    {
+      " Deception": 15
+    },
+    {
+      " Intimidation": 15
+    },
+    {
+      " Perception": 11
+    },
+    {
+      " Stealth": 12
+    }
+  ],
+  "resistances": "fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "cold; bludgeoning, piercing, and slashing from weapons that aren't made of cold iron",
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 21,
+  "language": " Celestial, Common, Elvish, Sylvan, Umbral; telepathy 120 ft.",
+  "CR": "21"
+}

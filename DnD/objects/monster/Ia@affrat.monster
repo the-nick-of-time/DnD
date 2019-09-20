@@ -1,0 +1,53 @@
+{
+  "name": "Ia'affrat",
+  "alignment": "lawful evil",
+  "AC": 17,
+  "HP": "20d10 + 60",
+  "abilities": {
+    "Strength": 3,
+    "Dexterity": 21,
+    "Constitution": 16,
+    "Intelligence": 20,
+    "Wisdom": 18,
+    "Charisma": 23
+  },
+  "saves": [
+    {
+      "Dexterity": 10
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 10
+    },
+    {
+      " Deception": 11
+    },
+    {
+      " Insight": 9
+    },
+    {
+      " Perception": 9
+    },
+    {
+      " Persuasion": 11
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "cold",
+  "immunities": "fire, poison; bludgeoning, piercing, slashing",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 120 ft.",
+  "passive perception": 19,
+  "language": " Common, Draconic, Infernal, Primordial",
+  "CR": "15"
+}

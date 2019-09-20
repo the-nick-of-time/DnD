@@ -1,0 +1,56 @@
+{
+  "name": "Camazotz, Demon Lord Of Bats And Fire",
+  "alignment": "chaotic evil",
+  "AC": 19,
+  "HP": "43d10 + 301",
+  "abilities": {
+    "Strength": 30,
+    "Dexterity": 22,
+    "Constitution": 25,
+    "Intelligence": 12,
+    "Wisdom": 22,
+    "Charisma": 25
+  },
+  "saves": [
+    {
+      "Dexterity": 13
+    },
+    {
+      "Constitution": 14
+    },
+    {
+      "Wisdom": 13
+    },
+    {
+      "Charisma": 14
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 13
+    },
+    {
+      " Athletics": 17
+    },
+    {
+      " Deception": 14
+    },
+    {
+      " Insight": 13
+    },
+    {
+      " Intimidation": 14
+    },
+    {
+      " Perception": 13
+    }
+  ],
+  "resistances": "acid, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "cold",
+  "immunities": "fire, poison, thunder",
+  "condition immunities": null,
+  "senses": "blindsight 120 ft., darkvision 40 ft.",
+  "passive perception": 23,
+  "language": " Common, Darakhul, Derro, Draconic, Dwarvish, Infernal, Nurian, Primordial, Void Speech; telepathy 300 ft.",
+  "CR": "22"
+}

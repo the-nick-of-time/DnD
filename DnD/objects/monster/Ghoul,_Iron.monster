@@ -1,0 +1,24 @@
+{
+  "name": "Ghoul, Iron",
+  "alignment": "lawful evil",
+  "AC": 16,
+  "HP": "22d8 + 44",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 16,
+    "Constitution": 14,
+    "Intelligence": 14,
+    "Wisdom": 14,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " Common, Darakhul, Undercommon",
+  "CR": "5"
+}

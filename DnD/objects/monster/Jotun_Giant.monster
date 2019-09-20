@@ -1,0 +1,47 @@
+{
+  "name": "Jotun Giant",
+  "alignment": "chaotic neutral",
+  "AC": 20,
+  "HP": "22d20 + 176",
+  "abilities": {
+    "Strength": 30,
+    "Dexterity": 8,
+    "Constitution": 26,
+    "Intelligence": 18,
+    "Wisdom": 20,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Constitution": 14
+    },
+    {
+      "Wisdom": 11
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 10
+    },
+    {
+      " History": 10
+    },
+    {
+      " Nature": 10
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 15,
+  "language": " Common, Giant",
+  "CR": "22"
+}

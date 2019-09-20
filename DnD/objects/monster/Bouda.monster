@@ -1,0 +1,50 @@
+{
+  "name": "Bouda",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "11d8 + 44",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 14,
+    "Constitution": 18,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 7
+    },
+    {
+      " Deception": 5
+    },
+    {
+      " Intimidation": 5
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "acid, lightning; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 14,
+  "language": " Common, Celestial, Infernal, Nurian; telepathy 100 ft.",
+  "CR": "5"
+}

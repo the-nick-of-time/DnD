@@ -1,0 +1,41 @@
+{
+  "name": "Ice Maiden",
+  "alignment": "lawful evil",
+  "AC": 16,
+  "HP": "13d8 + 26",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 17,
+    "Constitution": 15,
+    "Intelligence": 19,
+    "Wisdom": 13,
+    "Charisma": 23
+  },
+  "saves": [
+    {
+      "Constitution": 5
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 9
+    },
+    {
+      " Persuasion": 9
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "fire",
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common, Giant, Sylvan",
+  "CR": "6"
+}

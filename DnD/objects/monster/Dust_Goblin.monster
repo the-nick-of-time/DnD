@@ -1,0 +1,28 @@
+{
+  "name": "Dust Goblin",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "1d6 + 2",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 16,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 8,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 9,
+  "language": " Common, Goblin",
+  "CR": "1/4"
+}

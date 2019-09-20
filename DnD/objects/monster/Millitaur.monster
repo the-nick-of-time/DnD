@@ -1,0 +1,28 @@
+{
+  "name": "Millitaur",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "10d10 + 30",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 14,
+    "Constitution": 16,
+    "Intelligence": 8,
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Acrobatics": 4
+    }
+  ],
+  "resistances": "poison; bludgeoning and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 30 ft.",
+  "passive perception": 11,
+  "language": " Common",
+  "CR": "3"
+}

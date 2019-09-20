@@ -1,0 +1,35 @@
+{
+  "name": "Malakbel",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "12d8 + 48",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 17,
+    "Constitution": 19,
+    "Intelligence": 13,
+    "Wisdom": 16,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Wisdom": 7
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": "cold, lightning; bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "fire, radiant, poison",
+  "condition immunities": null,
+  "senses": "truesight 30 ft.",
+  "passive perception": 17,
+  "language": " Abyssal, telepathy 120 ft.",
+  "CR": "9"
+}

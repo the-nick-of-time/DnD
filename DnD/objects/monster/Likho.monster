@@ -1,0 +1,41 @@
+{
+  "name": "Likho",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "12d8 + 36",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 18,
+    "Constitution": 16,
+    "Intelligence": 13,
+    "Wisdom": 16,
+    "Charisma": 21
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 7
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 10
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Goblin, Void Speech",
+  "CR": "6"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Lindwurm",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "16d10 + 48",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 20,
+    "Constitution": 16,
+    "Intelligence": 6,
+    "Wisdom": 12,
+    "Charisma": 8
+  },
+  "saves": [
+    {
+      "Strength": 7
+    },
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 6
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 8
+    },
+    {
+      " Athletics": 8
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 9
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "fire",
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 120 ft. on ice",
+  "passive perception": 14,
+  "language": null,
+  "CR": "5"
+}

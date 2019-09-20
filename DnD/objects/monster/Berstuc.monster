@@ -1,0 +1,47 @@
+{
+  "name": "Berstuc",
+  "alignment": "chaotic evil",
+  "AC": 18,
+  "HP": "15d10 + 75",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 10,
+    "Constitution": 20,
+    "Intelligence": 12,
+    "Wisdom": 14,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Strength": 10
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 8
+    },
+    {
+      " Nature": 10
+    },
+    {
+      " Stealth": 4
+    },
+    {
+      " Survival": 6
+    }
+  ],
+  "resistances": "acid, fire; bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "lightning, poison",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 12,
+  "language": " Abyssal, Common, Sylvan; telepathy 120 ft.",
+  "CR": "11"
+}

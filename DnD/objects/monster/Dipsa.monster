@@ -1,0 +1,28 @@
+{
+  "name": "Dipsa",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "6d4 + 12",
+  "abilities": {
+    "Strength": 3,
+    "Dexterity": 17,
+    "Constitution": 14,
+    "Intelligence": 1,
+    "Wisdom": 6,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "acid",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 8,
+  "language": "-",
+  "CR": "1/4"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Ratfolk",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "2d6",
+  "abilities": {
+    "Strength": 7,
+    "Dexterity": 15,
+    "Constitution": 11,
+    "Intelligence": 14,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " Common",
+  "CR": "1/4"
+}

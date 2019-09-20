@@ -1,0 +1,31 @@
+{
+  "name": "Shadow Fey",
+  "alignment": "lawful evil",
+  "AC": 15,
+  "HP": "7d8",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
+    "Constitution": 10,
+    "Intelligence": 11,
+    "Wisdom": 11,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Arcana": 2
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " Common, Elvish, Umbral",
+  "CR": "1/4"
+}

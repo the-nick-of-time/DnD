@@ -1,0 +1,28 @@
+{
+  "name": "Rum Gremlin",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "5d4 + 10",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 16,
+    "Constitution": 14,
+    "Intelligence": 12,
+    "Wisdom": 9,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": " Common",
+  "CR": "1/2"
+}

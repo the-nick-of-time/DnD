@@ -1,0 +1,47 @@
+{
+  "name": "Fidele Angel",
+  "alignment": "lawful good",
+  "AC": 16,
+  "HP": "16d8 + 32",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 18,
+    "Constitution": 14,
+    "Intelligence": 14,
+    "Wisdom": 16,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 5
+    },
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Insight": 6
+    },
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": "fire, lightning, poison; bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "acid, cold",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Celestial, Infernal",
+  "CR": "5"
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Baba Yaga's Horsemen, Black Night",
+  "alignment": "lawful neutral",
+  "AC": 20,
+  "HP": "18d8 + 90",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 11,
+    "Constitution": 21,
+    "Intelligence": 16,
+    "Wisdom": 18,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Wisdom": 8
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 7
+    },
+    {
+      " Athletics": 10
+    },
+    {
+      " History": 7
+    },
+    {
+      " Perception": 8
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "cold, lightning, poison",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 18,
+  "language": " Celestial, Common, Infernal; telepathy 100 ft.",
+  "CR": "11"
+}

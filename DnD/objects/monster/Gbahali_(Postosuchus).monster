@@ -1,0 +1,31 @@
+{
+  "name": "Gbahali (Postosuchus)",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "12d12 + 48",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 14,
+    "Constitution": 19,
+    "Intelligence": 2,
+    "Wisdom": 13,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 14,
+  "language": "-",
+  "CR": "6"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Hulking Whelp",
+  "alignment": "chaotic neutral",
+  "AC": 15,
+  "HP": "9d12 + 36",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 10,
+    "Constitution": 18,
+    "Intelligence": 7,
+    "Wisdom": 14,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "impaired sight 30 ft.",
+  "passive perception": 12,
+  "language": "-",
+  "CR": "5"
+}

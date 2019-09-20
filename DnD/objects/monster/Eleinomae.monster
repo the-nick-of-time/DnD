@@ -1,0 +1,53 @@
+{
+  "name": "Eleinomae",
+  "alignment": "chaotic evil",
+  "AC": 18,
+  "HP": "15d8 + 45",
+  "abilities": {
+    "Strength": 13,
+    "Dexterity": 19,
+    "Constitution": 16,
+    "Intelligence": 14,
+    "Wisdom": 14,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Strength": 4
+    },
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 6
+    },
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 5
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 7
+    },
+    {
+      " Insight": 5
+    },
+    {
+      " Perception": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 15,
+  "language": " Aquan, Common, Elvish, Sylvan",
+  "CR": "5"
+}

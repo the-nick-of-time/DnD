@@ -1,0 +1,24 @@
+{
+  "name": "Weaving Spider",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "10d4",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 16,
+    "Constitution": 10,
+    "Intelligence": 9,
+    "Wisdom": 8,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " understands Common",
+  "CR": "1"
+}

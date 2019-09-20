@@ -1,0 +1,50 @@
+{
+  "name": "Liosalfar",
+  "alignment": "neutral",
+  "AC": 17,
+  "HP": "20d10",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 25,
+    "Constitution": 10,
+    "Intelligence": 18,
+    "Wisdom": 18,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 10
+    },
+    {
+      "Constitution": 3
+    },
+    {
+      "Intelligence": 7
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 7
+    },
+    {
+      " Insight": 7
+    },
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison, psychic, radiant",
+  "condition immunities": null,
+  "senses": "blindsight 120 ft., truesight 60 ft.",
+  "passive perception": 17,
+  "language": " Common, Celestial, Elemental, Elvish, Giant",
+  "CR": "8"
+}

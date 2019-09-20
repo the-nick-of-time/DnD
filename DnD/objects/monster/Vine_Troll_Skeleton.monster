@@ -1,0 +1,28 @@
+{
+  "name": "Vine Troll Skeleton",
+  "alignment": "unaligned",
+  "AC": 16,
+  "HP": "14d10 + 42",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 12,
+    "Constitution": 16,
+    "Intelligence": 6,
+    "Wisdom": 8,
+    "Charisma": 5
+  },
+  "saves": [
+    {
+      "Constitution": 12
+    }
+  ],
+  "skills": [],
+  "resistances": "bludgeoning,",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": "-",
+  "CR": "9"
+}

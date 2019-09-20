@@ -1,0 +1,38 @@
+{
+  "name": "Moss Lurker",
+  "alignment": "chaotic neutral",
+  "AC": 15,
+  "HP": "10d6 + 10",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Intelligence": 12,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Strength": 4
+    },
+    {
+      "Dexterity": 4
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 2
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft.",
+  "passive perception": 12,
+  "language": " Giant, Sylvan, Trollkin",
+  "CR": "1"
+}

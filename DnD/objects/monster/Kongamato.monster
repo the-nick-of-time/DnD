@@ -1,0 +1,28 @@
+{
+  "name": "Kongamato",
+  "alignment": "unaligned",
+  "AC": 16,
+  "HP": "15d10 + 30",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 18,
+    "Constitution": 14,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 13,
+  "language": "-",
+  "CR": "5"
+}

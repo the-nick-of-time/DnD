@@ -1,0 +1,37 @@
+{
+  "name": "Krake Spawn",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "12d12 + 72",
+  "abilities": {
+    "Strength": 24,
+    "Dexterity": 12,
+    "Constitution": 22,
+    "Intelligence": 17,
+    "Wisdom": 15,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Strength": 11
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Intelligence": 7
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold, poison, psychic",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " Common, Infernal, Primordial, Void Speech",
+  "CR": "9"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Shabti",
+  "alignment": "unaligned",
+  "AC": 17,
+  "HP": "12d8 + 48",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 20,
+    "Constitution": 18,
+    "Intelligence": 6,
+    "Wisdom": 11,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " understands the languages of its creator but can't speak",
+  "CR": "8"
+}

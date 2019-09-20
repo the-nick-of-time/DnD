@@ -1,0 +1,31 @@
+{
+  "name": "Manabane Scarab Swarm",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "10d8 + 30",
+  "abilities": {
+    "Strength": 3,
+    "Dexterity": 16,
+    "Constitution": 16,
+    "Intelligence": 1,
+    "Wisdom": 13,
+    "Charisma": 2
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "bludgeoning, piercing, slashing",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 30 ft., tremorsense 30 ft.",
+  "passive perception": 13,
+  "language": "-",
+  "CR": "4"
+}

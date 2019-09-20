@@ -1,0 +1,24 @@
+{
+  "name": "Dogmole",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "11d8 + 22",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 17,
+    "Constitution": 15,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 30 ft.",
+  "passive perception": 11,
+  "language": "-",
+  "CR": "1"
+}

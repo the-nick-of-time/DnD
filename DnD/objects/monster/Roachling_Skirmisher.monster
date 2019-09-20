@@ -1,0 +1,38 @@
+{
+  "name": "Roachling Skirmisher",
+  "alignment": "chaotic neutral",
+  "AC": 13,
+  "HP": "2d6",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
+    "Constitution": 11,
+    "Intelligence": 10,
+    "Wisdom": 9,
+    "Charisma": 8
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 2
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 4
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 10 ft.",
+  "passive perception": 9,
+  "language": " Common",
+  "CR": "1/4"
+}

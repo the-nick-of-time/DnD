@@ -1,0 +1,24 @@
+{
+  "name": "Death Butterfly Swarm",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "11d10",
+  "abilities": {
+    "Strength": 1,
+    "Dexterity": 13,
+    "Constitution": 10,
+    "Intelligence": 1,
+    "Wisdom": 12,
+    "Charisma": 15
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, slashing",
+  "vulnerabilities": "cold, fire",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": null,
+  "CR": "4"
+}

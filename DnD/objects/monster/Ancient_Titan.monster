@@ -1,0 +1,44 @@
+{
+  "name": "Ancient Titan",
+  "alignment": "neutral good",
+  "AC": 15,
+  "HP": "12d20 + 72",
+  "abilities": {
+    "Strength": 27,
+    "Dexterity": 13,
+    "Constitution": 22,
+    "Intelligence": 16,
+    "Wisdom": 16,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 14
+    },
+    {
+      " Intimidation": 9
+    },
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 17,
+  "language": " Common, Giant, Primordial, Titan, telepathy 120 ft.",
+  "CR": "12"
+}

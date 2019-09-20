@@ -1,0 +1,44 @@
+{
+  "name": "Hundun",
+  "alignment": "chaotic good",
+  "AC": 18,
+  "HP": "18d10 + 54",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 14,
+    "Constitution": 16,
+    "Intelligence": 4,
+    "Wisdom": 20,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 9
+    },
+    {
+      " Insight": 9
+    },
+    {
+      " Perception": 9
+    }
+  ],
+  "resistances": "lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "acid, psychic",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft.",
+  "passive perception": 20,
+  "language": " understands Celestial and Primordial, but cannot speak intelligibly",
+  "CR": "10"
+}

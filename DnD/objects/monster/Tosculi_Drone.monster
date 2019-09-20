@@ -1,0 +1,24 @@
+{
+  "name": "Tosculi Drone",
+  "alignment": "lawful evil",
+  "AC": 13,
+  "HP": "4d6 + 8",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 16,
+    "Constitution": 14,
+    "Intelligence": 8,
+    "Wisdom": 12,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Tosculi",
+  "CR": "1/2"
+}

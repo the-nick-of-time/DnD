@@ -1,0 +1,31 @@
+{
+  "name": "Tosculi Elite Bow Raider",
+  "alignment": "lawful evil",
+  "AC": 16,
+  "HP": "13d8 + 39",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 18,
+    "Constitution": 17,
+    "Intelligence": 12,
+    "Wisdom": 14,
+    "Charisma": 12
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Gnoll, Infernal, Tosculi",
+  "CR": "5"
+}

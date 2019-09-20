@@ -1,0 +1,31 @@
+{
+  "name": "Wharfling Swarm",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "14d10 . 14",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 16,
+    "Constitution": 8,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    },
+    {
+      " Sleight of Hand": 5
+    }
+  ],
+  "resistances": "bludgeoning, piercing, slashing",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "-",
+  "CR": "4"
+}

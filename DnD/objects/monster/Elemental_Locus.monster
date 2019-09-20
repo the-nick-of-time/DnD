@@ -1,0 +1,41 @@
+{
+  "name": "Elemental Locus",
+  "alignment": "neutral",
+  "AC": 16,
+  "HP": "20d20 + 80",
+  "abilities": {
+    "Strength": 28,
+    "Dexterity": 1,
+    "Constitution": 18,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 11
+  },
+  "saves": [
+    {
+      "Intelligence": 6
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Nature": 6
+    },
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing",
+  "vulnerabilities": null,
+  "immunities": "acid, cold, fire, lightning, poison, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft., tremorsense 120 ft.",
+  "passive perception": 16,
+  "language": " Primordial",
+  "CR": "17"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Skin Bat",
+  "alignment": "neutral evil",
+  "AC": 13,
+  "HP": "4d6",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 16,
+    "Constitution": 10,
+    "Intelligence": 2,
+    "Wisdom": 13,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": null,
+  "CR": "1/2"
+}

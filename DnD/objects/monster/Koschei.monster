@@ -1,0 +1,44 @@
+{
+  "name": "Koschei",
+  "alignment": "neutral evil",
+  "AC": 18,
+  "HP": "18d8 + 54",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 12,
+    "Constitution": 17,
+    "Intelligence": 17,
+    "Wisdom": 13,
+    "Charisma": 21
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 9
+    },
+    {
+      " Insight": 7
+    },
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": "cold, lightning",
+  "vulnerabilities": null,
+  "immunities": "necrotic; bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 17,
+  "language": " Abyssal, Common, Celestial, Dwarvish, Infernal",
+  "CR": "17"
+}

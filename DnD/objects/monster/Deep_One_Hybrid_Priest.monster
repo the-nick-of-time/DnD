@@ -1,0 +1,44 @@
+{
+  "name": "Deep One Hybrid Priest",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "16d8 + 48",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 14,
+    "Constitution": 16,
+    "Intelligence": 12,
+    "Wisdom": 12,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Constitution": 5
+    },
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 6
+    },
+    {
+      " Deception": 4
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": "cold",
+  "vulnerabilities": "fire",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 13,
+  "language": " Common, Void Speech",
+  "CR": "4"
+}

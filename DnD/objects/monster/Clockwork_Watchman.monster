@@ -1,0 +1,35 @@
+{
+  "name": "Clockwork Watchman",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "10d8 + 10",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 12,
+    "Constitution": 12,
+    "Intelligence": 5,
+    "Wisdom": 10,
+    "Charisma": 1
+  },
+  "saves": [
+    {
+      "Constitution": 3
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 4
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison, psychic",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " Common",
+  "CR": "1/2"
+}

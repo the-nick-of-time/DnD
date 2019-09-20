@@ -1,0 +1,53 @@
+{
+  "name": "Young Void Dragon",
+  "alignment": "chaotic neutral",
+  "AC": 18,
+  "HP": "15d10 + 75",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 10,
+    "Constitution": 21,
+    "Intelligence": 14,
+    "Wisdom": 11,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 10
+    },
+    {
+      " History": 10
+    },
+    {
+      " Perception": 8
+    },
+    {
+      " Persuasion": 8
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 18,
+  "language": " Common, Draconic, Void Speech",
+  "CR": "9"
+}

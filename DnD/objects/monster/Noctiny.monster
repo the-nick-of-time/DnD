@@ -1,0 +1,24 @@
+{
+  "name": "Noctiny",
+  "alignment": "neutral evil",
+  "AC": 13,
+  "HP": "8d8 + 16",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 13,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 10,
+  "language": " Common, plus the language spoken by the noctini's fext master",
+  "CR": "2"
+}

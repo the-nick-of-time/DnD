@@ -1,0 +1,44 @@
+{
+  "name": "Kishi Demon",
+  "alignment": "chaotic evil",
+  "AC": 18,
+  "HP": "14d8 + 56",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 20,
+    "Constitution": 19,
+    "Intelligence": 15,
+    "Wisdom": 11,
+    "Charisma": 22
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 3
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 9
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Performance": 9
+    }
+  ],
+  "resistances": "cold, fire, lightning, poison; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 13,
+  "language": " Celestial, Common, Draconic, Infernal, telepathy",
+  "CR": "8"
+}

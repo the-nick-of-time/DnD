@@ -1,0 +1,44 @@
+{
+  "name": "Alquam, Demon Lord Of Night",
+  "alignment": "chaotic evil",
+  "AC": 20,
+  "HP": "28d12 + 168",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 19,
+    "Constitution": 23,
+    "Intelligence": 16,
+    "Wisdom": 20,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 11
+    },
+    {
+      "Constitution": 13
+    },
+    {
+      "Wisdom": 12
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 10
+    },
+    {
+      " Perception": 12
+    },
+    {
+      " Stealth": 11
+    }
+  ],
+  "resistances": "fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "cold, poison; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 22,
+  "language": " all, telepathy 120 ft.",
+  "CR": "21"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Queen Of Witches",
+  "alignment": "neutral",
+  "AC": 18,
+  "HP": "13d10 + 52",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 10,
+    "Constitution": 19,
+    "Intelligence": 16,
+    "Wisdom": 18,
+    "Charisma": 22
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 12
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 9
+    },
+    {
+      " Deception": 12
+    },
+    {
+      " History": 9
+    },
+    {
+      " Insight": 10
+    },
+    {
+      " Perception": 10
+    }
+  ],
+  "resistances": "fire, cold; bludgeoning, piercing, and slashing damage from weapons that aren't cold iron",
+  "vulnerabilities": null,
+  "immunities": "radiant",
+  "condition immunities": null,
+  "senses": "truesight 60 ft.",
+  "passive perception": 19,
+  "language": " Celestial, Common, Draconic, Elvish, Sylvan, Umbral",
+  "CR": "17"
+}

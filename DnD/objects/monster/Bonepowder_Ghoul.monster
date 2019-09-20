@@ -1,0 +1,44 @@
+{
+  "name": "Bonepowder Ghoul",
+  "alignment": "neutral evil",
+  "AC": 18,
+  "HP": "26d6 + 104",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 20,
+    "Constitution": 18,
+    "Intelligence": 19,
+    "Wisdom": 15,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 9
+    }
+  ],
+  "resistances": "cold, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Darakhul, Draconic, Dwarvish",
+  "CR": "12"
+}

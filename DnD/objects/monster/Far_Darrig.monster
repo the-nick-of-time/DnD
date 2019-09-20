@@ -1,0 +1,50 @@
+{
+  "name": "Far Darrig",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "16d6 + 48",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 16,
+    "Constitution": 17,
+    "Intelligence": 11,
+    "Wisdom": 15,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Nature": 4
+    },
+    {
+      " Animal Handling": 6
+    },
+    {
+      " Medicine": 6
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Survival": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Elvish, Sylvan",
+  "CR": "3"
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Bandit Lord",
+  "alignment": "any non-lawful",
+  "AC": 16,
+  "HP": "14d8 + 28",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Intelligence": 14,
+    "Wisdom": 11,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Strength": 5
+    },
+    {
+      "Dexterity": 4
+    },
+    {
+      "Wisdom": 2
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 5
+    },
+    {
+      " Deception": 4
+    },
+    {
+      " Intimidation": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 10,
+  "language": " any two languages",
+  "CR": "4"
+}

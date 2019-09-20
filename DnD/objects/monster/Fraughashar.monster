@@ -1,0 +1,28 @@
+{
+  "name": "Fraughashar",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "4d6 + 4",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 10,
+  "language": " Sylvan",
+  "CR": "1/2"
+}

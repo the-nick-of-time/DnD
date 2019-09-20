@@ -1,0 +1,28 @@
+{
+  "name": "Ngobou",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "10d10 + 30",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 9,
+    "Constitution": 16,
+    "Intelligence": 2,
+    "Wisdom": 9,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 15,
+  "language": "-",
+  "CR": "5"
+}

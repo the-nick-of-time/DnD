@@ -1,0 +1,38 @@
+{
+  "name": "Shadow Fey Guardian",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "13d10 + 39",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 14,
+    "Constitution": 16,
+    "Intelligence": 6,
+    "Wisdom": 14,
+    "Charisma": 8
+  },
+  "saves": [
+    {
+      "Strength": 6
+    },
+    {
+      "Constitution": 5
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 6
+    },
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " Common, Elvish, Umbral",
+  "CR": "4"
+}

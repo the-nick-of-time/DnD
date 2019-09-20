@@ -1,0 +1,24 @@
+{
+  "name": "Cobbleswarm",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "8d8",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 11,
+    "Constitution": 11,
+    "Intelligence": 5,
+    "Wisdom": 12,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, slashing",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 11,
+  "language": "-",
+  "CR": "2"
+}

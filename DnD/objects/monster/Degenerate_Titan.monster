@@ -1,0 +1,31 @@
+{
+  "name": "Degenerate Titan",
+  "alignment": "chaotic evil",
+  "AC": 12,
+  "HP": "14d12 + 70",
+  "abilities": {
+    "Strength": 24,
+    "Dexterity": 6,
+    "Constitution": 20,
+    "Intelligence": 6,
+    "Wisdom": 9,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Intimidation": 1
+    },
+    {
+      " Perception": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " Titan",
+  "CR": "8"
+}

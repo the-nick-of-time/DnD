@@ -1,0 +1,28 @@
+{
+  "name": "Anubian",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "8d8 + 8",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 30 ft.",
+  "passive perception": 11,
+  "language": " Primordial",
+  "CR": "2"
+}

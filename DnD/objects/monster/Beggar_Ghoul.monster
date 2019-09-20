@@ -1,0 +1,24 @@
+{
+  "name": "Beggar Ghoul",
+  "alignment": "chaotic evil",
+  "AC": 12,
+  "HP": "3d8",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 15,
+    "Constitution": 10,
+    "Intelligence": 12,
+    "Wisdom": 11,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Undercommon",
+  "CR": "1/2"
+}

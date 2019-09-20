@@ -1,0 +1,35 @@
+{
+  "name": "Behtu",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "8d6 + 24",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 16,
+    "Constitution": 16,
+    "Intelligence": 12,
+    "Wisdom": 11,
+    "Charisma": 7
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 5
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Behtu, Common, Infernal",
+  "CR": "2"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Ala",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "15d8 + 60",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 16,
+    "Constitution": 18,
+    "Intelligence": 10,
+    "Wisdom": 16,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Athletics": 8
+    },
+    {
+      " Perception": 9
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning, poison, thunder",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 19,
+  "language": " Common, Draconic",
+  "CR": "8"
+}

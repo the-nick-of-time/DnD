@@ -1,0 +1,28 @@
+{
+  "name": "Treacle",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "4d4 + 12",
+  "abilities": {
+    "Strength": 4,
+    "Dexterity": 6,
+    "Constitution": 17,
+    "Intelligence": 1,
+    "Wisdom": 1,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Deception": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft.",
+  "passive perception": 10,
+  "language": "-",
+  "CR": "1/4"
+}

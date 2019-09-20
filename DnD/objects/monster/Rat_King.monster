@@ -1,0 +1,28 @@
+{
+  "name": "Rat King",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "9d8 + 36",
+  "abilities": {
+    "Strength": 6,
+    "Dexterity": 16,
+    "Constitution": 18,
+    "Intelligence": 11,
+    "Wisdom": 15,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": "bludgeoning, piercing, slashing",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " Common, Thieves' Cant",
+  "CR": "5"
+}

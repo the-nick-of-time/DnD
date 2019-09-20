@@ -1,0 +1,38 @@
+{
+  "name": "Ravenfolk Doom Croaker",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "16d8 + 16",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
+    "Constitution": 12,
+    "Intelligence": 12,
+    "Wisdom": 18,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Strength": 3
+    },
+    {
+      "Wisdom": 7
+    }
+  ],
+  "skills": [
+    {
+      " Intimidate": 5
+    },
+    {
+      " Perception": 10
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 20,
+  "language": " Common, Feather Speech, Huginn",
+  "CR": "5"
+}

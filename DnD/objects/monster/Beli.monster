@@ -1,0 +1,35 @@
+{
+  "name": "Beli",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "10d6 + 10",
+  "abilities": {
+    "Strength": 11,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 8,
+    "Wisdom": 11,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "fire",
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " Common, Dwarvish, Giant",
+  "CR": "2"
+}

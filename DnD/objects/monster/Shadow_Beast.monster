@@ -1,0 +1,35 @@
+{
+  "name": "Shadow Beast",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "18d8 + 54",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 18,
+    "Constitution": 17,
+    "Intelligence": 14,
+    "Wisdom": 14,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 6
+    }
+  ],
+  "skills": [
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " Common, Elvish, Umbral, Void Speech",
+  "CR": "7"
+}

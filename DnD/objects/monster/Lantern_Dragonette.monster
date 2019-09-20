@@ -1,0 +1,50 @@
+{
+  "name": "Lantern Dragonette",
+  "alignment": "lawful neutral",
+  "AC": 13,
+  "HP": "8d4 + 8",
+  "abilities": {
+    "Strength": 7,
+    "Dexterity": 12,
+    "Constitution": 13,
+    "Intelligence": 16,
+    "Wisdom": 13,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 3
+    },
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 5
+    },
+    {
+      " History": 5
+    },
+    {
+      " Nature": 5
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Religion": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common, Draconic, Elvish, Primordial; telepathy 60 ft.",
+  "CR": "1/2"
+}

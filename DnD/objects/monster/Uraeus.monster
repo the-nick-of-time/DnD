@@ -1,0 +1,28 @@
+{
+  "name": "Uraeus",
+  "alignment": "lawful neutral",
+  "AC": 14,
+  "HP": "9d4 + 18",
+  "abilities": {
+    "Strength": 6,
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 14,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": "fire; bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft.",
+  "passive perception": 14,
+  "language": " understands Celestial and Common but can't speak",
+  "CR": "2"
+}

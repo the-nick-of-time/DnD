@@ -1,0 +1,28 @@
+{
+  "name": "Kot Bayun",
+  "alignment": "neutral",
+  "AC": 15,
+  "HP": "8d8 + 8",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 16,
+    "Constitution": 13,
+    "Intelligence": 12,
+    "Wisdom": 16,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common, Sylvan",
+  "CR": "2"
+}

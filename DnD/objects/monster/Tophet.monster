@@ -1,0 +1,38 @@
+{
+  "name": "Tophet",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "16d12 + 80",
+  "abilities": {
+    "Strength": 24,
+    "Dexterity": 10,
+    "Constitution": 20,
+    "Intelligence": 6,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Strength": 10
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Dexterity": 3
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": "necrotic",
+  "vulnerabilities": null,
+  "immunities": "fire, cold, poison",
+  "condition immunities": null,
+  "senses": "darkvision 200 ft.",
+  "passive perception": 13,
+  "language": " Common",
+  "CR": "8"
+}

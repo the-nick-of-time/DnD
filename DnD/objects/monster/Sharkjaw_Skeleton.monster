@@ -1,0 +1,31 @@
+{
+  "name": "Sharkjaw Skeleton",
+  "alignment": "lawful evil",
+  "AC": 13,
+  "HP": "6d10 + 12",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 10,
+    "Constitution": 15,
+    "Intelligence": 6,
+    "Wisdom": 8,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 1
+    },
+    {
+      " Stealth": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "bludgeoning",
+  "immunities": "cold, necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., blindsense 30 ft.",
+  "passive perception": 11,
+  "language": " understands the languages of its creator but can't speak",
+  "CR": "1"
+}

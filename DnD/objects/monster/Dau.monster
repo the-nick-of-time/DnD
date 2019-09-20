@@ -1,0 +1,37 @@
+{
+  "name": "Dau",
+  "alignment": "chaotic neutral",
+  "AC": 13,
+  "HP": "9d6 + 18",
+  "abilities": {
+    "Strength": 7,
+    "Dexterity": 17,
+    "Constitution": 14,
+    "Intelligence": 14,
+    "Wisdom": 17,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Deception": 5
+    },
+    {
+      " Insight": 5
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": " Deep Speech, Primordial, Sylvan, telepathy 60 ft.",
+  "CR": "4"
+}

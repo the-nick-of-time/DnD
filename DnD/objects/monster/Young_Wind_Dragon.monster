@@ -1,0 +1,44 @@
+{
+  "name": "Young Wind Dragon",
+  "alignment": "chaotic neutral",
+  "AC": 17,
+  "HP": "16d10 + 62",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 19,
+    "Constitution": 18,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 7
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 17,
+  "language": " Common, Draconic, Primordial",
+  "CR": "6"
+}

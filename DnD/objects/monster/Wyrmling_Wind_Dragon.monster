@@ -1,0 +1,44 @@
+{
+  "name": "Wyrmling Wind Dragon",
+  "alignment": "chaotic neutral",
+  "AC": 14,
+  "HP": "7d8 + 14",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 19,
+    "Constitution": 14,
+    "Intelligence": 12,
+    "Wisdom": 11,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 4
+    },
+    {
+      "Wisdom": 2
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " Draconic, Primordial",
+  "CR": "1"
+}

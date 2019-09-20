@@ -1,0 +1,41 @@
+{
+  "name": "Black Knight Commander",
+  "alignment": "lawful evil",
+  "AC": 18,
+  "HP": "12d8 + 24",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 10,
+    "Constitution": 14,
+    "Intelligence": 12,
+    "Wisdom": 13,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Strength": 7
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 7
+    },
+    {
+      "  Intimidation": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": null,
+  "passive perception": 11,
+  "language": " any two languages",
+  "CR": "5"
+}

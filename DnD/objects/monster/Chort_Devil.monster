@@ -1,0 +1,53 @@
+{
+  "name": "Chort Devil",
+  "alignment": "lawful evil",
+  "AC": 18,
+  "HP": "15d8 + 120",
+  "abilities": {
+    "Strength": 24,
+    "Dexterity": 20,
+    "Constitution": 26,
+    "Intelligence": 18,
+    "Wisdom": 20,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Strength": 11
+    },
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 12
+    },
+    {
+      "Intelligence": 8
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 11
+    },
+    {
+      " Deception": 9
+    },
+    {
+      " Insight": 9
+    },
+    {
+      " Perception": 9
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "cold, fire, poison",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 19,
+  "language": " Celestial, Common, Draconic, Infernal, Primordial; telepathy (120 ft.)",
+  "CR": "12"
+}

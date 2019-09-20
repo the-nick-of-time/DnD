@@ -1,0 +1,41 @@
+{
+  "name": "Isonade",
+  "alignment": "chaotic neutral",
+  "AC": 18,
+  "HP": "12d20 + 96",
+  "abilities": {
+    "Strength": 30,
+    "Dexterity": 14,
+    "Constitution": 26,
+    "Intelligence": 6,
+    "Wisdom": 18,
+    "Charisma": 8
+  },
+  "saves": [
+    {
+      "Strength": 14
+    },
+    {
+      "Constitution": 12
+    },
+    {
+      "Wisdom": 8
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 14
+    },
+    {
+      " Perception": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "ability damage/drain",
+  "condition immunities": null,
+  "senses": "darkvision 90 ft.",
+  "passive perception": 18,
+  "language": " understands Aquan and Elvish, but cannot speak",
+  "CR": "14"
+}

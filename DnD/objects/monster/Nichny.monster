@@ -1,0 +1,38 @@
+{
+  "name": "Nichny",
+  "alignment": "neutral evil",
+  "AC": 17,
+  "HP": "15d8 + 45",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 19,
+    "Constitution": 17,
+    "Intelligence": 18,
+    "Wisdom": 18,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 7
+    },
+    {
+      " Insight": 7
+    },
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 17,
+  "language": " Elvish, Primordial, Sylvan, Void Speech",
+  "CR": "6"
+}

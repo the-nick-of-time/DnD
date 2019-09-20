@@ -1,0 +1,41 @@
+{
+  "name": "Deathwisp",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "11d8 + 33",
+  "abilities": {
+    "Strength": 6,
+    "Dexterity": 20,
+    "Constitution": 16,
+    "Intelligence": 18,
+    "Wisdom": 16,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 6
+    },
+    {
+      "Wisdom": 6
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " the languages it knew in life",
+  "CR": "7"
+}

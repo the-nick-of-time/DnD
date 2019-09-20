@@ -1,0 +1,41 @@
+{
+  "name": "Lunar Devil",
+  "alignment": "lawful evil",
+  "AC": 16,
+  "HP": "9d10 + 45",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 21,
+    "Constitution": 20,
+    "Intelligence": 16,
+    "Wisdom": 15,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Strength": 8
+    },
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 5
+    }
+  ],
+  "resistances": "cold; bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 15,
+  "language": " Celestial, Draconic, Elvish, Infernal, Sylvan, telepathy 120 ft.",
+  "CR": "8"
+}

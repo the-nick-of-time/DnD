@@ -1,0 +1,34 @@
+{
+  "name": "Miremal",
+  "alignment": "chaotic evil",
+  "AC": 13,
+  "HP": "5d6 + 5",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 5
+    },
+    {
+      " Survival": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Sylvan, Umbral",
+  "CR": "1/2"
+}

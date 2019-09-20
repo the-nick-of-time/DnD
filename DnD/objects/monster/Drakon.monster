@@ -1,0 +1,31 @@
+{
+  "name": "Drakon",
+  "alignment": "unaligned",
+  "AC": 16,
+  "HP": "14d10 + 28",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 19,
+    "Constitution": 15,
+    "Intelligence": 2,
+    "Wisdom": 12,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "acid",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "-",
+  "CR": "5"
+}

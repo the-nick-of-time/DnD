@@ -1,0 +1,41 @@
+{
+  "name": "Ratatosk",
+  "alignment": "chaotic neutral",
+  "AC": 14,
+  "HP": "12d4 + 12",
+  "abilities": {
+    "Strength": 4,
+    "Dexterity": 18,
+    "Constitution": 12,
+    "Intelligence": 17,
+    "Wisdom": 10,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 6
+    },
+    {
+      " Persuasion": 6
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Celestial, Common; telepathy 100 ft.",
+  "CR": "4"
+}

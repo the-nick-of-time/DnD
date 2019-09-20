@@ -1,0 +1,38 @@
+{
+  "name": "Zmey",
+  "alignment": "chaotic evil",
+  "AC": 18,
+  "HP": "18d12 + 72",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 13,
+    "Constitution": 19,
+    "Intelligence": 16,
+    "Wisdom": 16,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Constitution": 9
+    },
+    {
+      "Wisdom": 8
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 8
+    }
+  ],
+  "resistances": "cold, fire",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 90 ft.",
+  "passive perception": 18,
+  "language": " Common, Draconic, Elvish, Sylvan",
+  "CR": "14"
+}

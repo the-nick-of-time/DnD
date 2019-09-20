@@ -1,0 +1,53 @@
+{
+  "name": "Ancient Void Dragon",
+  "alignment": "chaotic neutral",
+  "AC": 22,
+  "HP": "23d20 + 207",
+  "abilities": {
+    "Strength": 28,
+    "Dexterity": 10,
+    "Constitution": 29,
+    "Intelligence": 18,
+    "Wisdom": 15,
+    "Charisma": 23
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 16
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 13
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 18
+    },
+    {
+      " History": 18
+    },
+    {
+      " Perception": 16
+    },
+    {
+      " Persuasion": 13
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 26,
+  "language": " Celestial, Common, Draconic, Infernal, Primordial, Void Speech",
+  "CR": "24"
+}

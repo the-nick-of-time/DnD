@@ -1,0 +1,41 @@
+{
+  "name": "Selang",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "9d8 + 36",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 15,
+    "Constitution": 18,
+    "Intelligence": 12,
+    "Wisdom": 14,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 6
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 6
+    },
+    {
+      " Performance": 8
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "acid, lightning",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Elvish, Sylvan, Void Speech",
+  "CR": "4"
+}

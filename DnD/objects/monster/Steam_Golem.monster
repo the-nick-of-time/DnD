@@ -1,0 +1,24 @@
+{
+  "name": "Steam Golem",
+  "alignment": "unaligned",
+  "AC": 18,
+  "HP": "18d10 + 72",
+  "abilities": {
+    "Strength": 26,
+    "Dexterity": 12,
+    "Constitution": 18,
+    "Intelligence": 3,
+    "Wisdom": 10,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire, poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": " understands its creator's languages but can't speak",
+  "CR": "13"
+}

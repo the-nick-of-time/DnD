@@ -1,0 +1,37 @@
+{
+  "name": "Leshy",
+  "alignment": "chaotic neutral",
+  "AC": 14,
+  "HP": "13d8 + 26",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 12,
+    "Constitution": 14,
+    "Intelligence": 14,
+    "Wisdom": 15,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Deception": 5
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 3
+    },
+    {
+      " Survival": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " Common, Elvish, Sylvan",
+  "CR": "1"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Ratfolk Rogue",
+  "alignment": "neutral",
+  "AC": 15,
+  "HP": "4d6 + 4",
+  "abilities": {
+    "Strength": 7,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 14,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Acrobatics": 5
+    },
+    {
+      " Perception": 2
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " Common, Thieves Cant",
+  "CR": "1"
+}

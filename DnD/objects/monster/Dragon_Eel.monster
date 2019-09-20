@@ -1,0 +1,53 @@
+{
+  "name": "Dragon Eel",
+  "alignment": "neutral",
+  "AC": 18,
+  "HP": "20d12 + 100",
+  "abilities": {
+    "Strength": 26,
+    "Dexterity": 12,
+    "Constitution": 20,
+    "Intelligence": 14,
+    "Wisdom": 13,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Strength": 12
+    },
+    {
+      "Dexterity": 5
+    },
+    {
+      "Intelligence": 6
+    },
+    {
+      "Wisdom": 5
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 5
+    },
+    {
+      " Athletics": 12
+    },
+    {
+      " Insight": 5
+    },
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Draconic, Primordial",
+  "CR": "12"
+}

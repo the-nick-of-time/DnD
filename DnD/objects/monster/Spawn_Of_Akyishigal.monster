@@ -1,0 +1,28 @@
+{
+  "name": "Spawn Of Akyishigal",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "14d8 + 56",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 13,
+    "Constitution": 19,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Infernal, Spawn of Akyishigal",
+  "CR": "5"
+}

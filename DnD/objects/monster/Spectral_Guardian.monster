@@ -1,0 +1,31 @@
+{
+  "name": "Spectral Guardian",
+  "alignment": "neutral evil",
+  "AC": 14,
+  "HP": "13d8 + 52",
+  "abilities": {
+    "Strength": 6,
+    "Dexterity": 18,
+    "Constitution": 18,
+    "Intelligence": 11,
+    "Wisdom": 16,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Wisdom": 6
+    }
+  ],
+  "skills": [],
+  "resistances": "acid, fire, lightning, thunder; bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "cold, necrotic, poison",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " understands the languages it knew in life but can't speak",
+  "CR": "6"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Savager",
+  "alignment": "neutral evil",
+  "AC": 17,
+  "HP": "1d10 + 60",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 14,
+    "Constitution": 22,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 9
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": null,
+  "CR": "8"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Elder Shadow Drake",
+  "alignment": "chaotic evil",
+  "AC": 16,
+  "HP": "12d10 + 48",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 13,
+    "Constitution": 18,
+    "Intelligence": 8,
+    "Wisdom": 9,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "radiant",
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 15,
+  "language": " Common, Draconic, Umbral",
+  "CR": "7"
+}

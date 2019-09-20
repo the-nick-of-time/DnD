@@ -1,0 +1,31 @@
+{
+  "name": "Accursed Defiler",
+  "alignment": "neutral evil",
+  "AC": 12,
+  "HP": "10d8 + 30",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 14,
+    "Constitution": 17,
+    "Intelligence": 6,
+    "Wisdom": 15,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " understands an ancient language, but can't speak",
+  "CR": "4"
+}

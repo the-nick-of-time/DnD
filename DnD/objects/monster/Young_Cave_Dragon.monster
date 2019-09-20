@@ -1,0 +1,44 @@
+{
+  "name": "Young Cave Dragon",
+  "alignment": "neutral evil",
+  "AC": 17,
+  "HP": "15d10 + 75",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 12,
+    "Constitution": 20,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid, poison, thunder",
+  "condition immunities": null,
+  "senses": "blindsight 120 ft.",
+  "passive perception": 14,
+  "language": " Common, Darakhul, Draconic",
+  "CR": "8"
+}

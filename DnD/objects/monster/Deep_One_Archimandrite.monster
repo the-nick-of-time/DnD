@@ -1,0 +1,41 @@
+{
+  "name": "Deep One Archimandrite",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "18d10 + 54",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 15,
+    "Constitution": 17,
+    "Intelligence": 12,
+    "Wisdom": 17,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 4
+    },
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": "cold, thunder",
+  "vulnerabilities": "fire",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 240 ft.",
+  "passive perception": 16,
+  "language": " Common, Void Speech",
+  "CR": "8"
+}

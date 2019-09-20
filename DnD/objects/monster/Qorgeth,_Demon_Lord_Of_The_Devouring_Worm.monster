@@ -1,0 +1,41 @@
+{
+  "name": "Qorgeth, Demon Lord Of The Devouring Worm",
+  "alignment": "chaotic evil",
+  "AC": 21,
+  "HP": "20d20 + 160",
+  "abilities": {
+    "Strength": 29,
+    "Dexterity": 6,
+    "Constitution": 26,
+    "Intelligence": 9,
+    "Wisdom": 19,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 15
+    },
+    {
+      "Wisdom": 11
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 11
+    }
+  ],
+  "resistances": "cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "blindsight 120 ft., tremorsense 120 ft.",
+  "passive perception": 21,
+  "language": " all, telepathy 120 ft.",
+  "CR": "23"
+}

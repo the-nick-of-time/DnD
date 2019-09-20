@@ -1,0 +1,28 @@
+{
+  "name": "Lake Troll",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "12d10 + 60",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 13,
+    "Constitution": 20,
+    "Intelligence": 8,
+    "Wisdom": 10,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common, Giant",
+  "CR": "7"
+}

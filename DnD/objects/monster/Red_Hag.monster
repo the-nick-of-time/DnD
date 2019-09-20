@@ -1,0 +1,37 @@
+{
+  "name": "Red Hag",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "14d8 + 56",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 16,
+    "Constitution": 18,
+    "Intelligence": 18,
+    "Wisdom": 22,
+    "Charisma": 15
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Arcana": 9
+    },
+    {
+      " Deception": 5
+    },
+    {
+      " Insight": 7
+    },
+    {
+      " Perception": 9
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blood sense 90 ft., darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Druidic, Giant",
+  "CR": "7"
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Young Sea Dragon",
+  "alignment": "neutral evil",
+  "AC": 18,
+  "HP": "16d10 + 64",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 10,
+    "Constitution": 19,
+    "Intelligence": 15,
+    "Wisdom": 13,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 5
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 9
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "blindsight 30 ft. darkvision 120 ft.",
+  "passive perception": 19,
+  "language": " Common, Draconic",
+  "CR": "9"
+}

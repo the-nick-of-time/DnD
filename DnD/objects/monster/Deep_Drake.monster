@@ -1,0 +1,41 @@
+{
+  "name": "Deep Drake",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "20d10 + 40",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 19,
+    "Constitution": 14,
+    "Intelligence": 11,
+    "Wisdom": 14,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 6
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 9
+    },
+    {
+      " Insight": 6
+    },
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "necrotic",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., darkvision 120 ft.",
+  "passive perception": 16,
+  "language": " Common, Darakhul, Draconic, Undercommon",
+  "CR": "9"
+}

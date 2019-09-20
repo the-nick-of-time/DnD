@@ -1,0 +1,35 @@
+{
+  "name": "Xhkarsh",
+  "alignment": "neutral evil",
+  "AC": 19,
+  "HP": "14d10 + 56",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 21,
+    "Constitution": 18,
+    "Intelligence": 15,
+    "Wisdom": 16,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Charisma": 5
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 120 ft.",
+  "passive perception": 16,
+  "language": " Common, Deep Speech, Undercommon",
+  "CR": "8"
+}

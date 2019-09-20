@@ -1,0 +1,28 @@
+{
+  "name": "Witchlight",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "4d4",
+  "abilities": {
+    "Strength": 1,
+    "Dexterity": 18,
+    "Constitution": 10,
+    "Intelligence": 10,
+    "Wisdom": 13,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison, radiant",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " understands the language of its creator but can't speak",
+  "CR": "1/4"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Snow Queen",
+  "alignment": "neutral evil",
+  "AC": 17,
+  "HP": "19d8 + 38",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 18,
+    "Constitution": 14,
+    "Intelligence": 18,
+    "Wisdom": 20,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Constitution": 7
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 10
+    },
+    {
+      " Stealth": 9
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't cold iron",
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 20,
+  "language": " Common, Elvish, Giant, Sylvan",
+  "CR": "16"
+}

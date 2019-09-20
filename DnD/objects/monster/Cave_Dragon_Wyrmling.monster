@@ -1,0 +1,41 @@
+{
+  "name": "Cave Dragon Wyrmling",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "10d8 + 30",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 12,
+    "Constitution": 17,
+    "Intelligence": 8,
+    "Wisdom": 10,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Dexterity": 3
+    },
+    {
+      "Constitution": 5
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 2
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid, poison, thunder",
+  "condition immunities": null,
+  "senses": "blindsight 120 ft.",
+  "passive perception": 12,
+  "language": " Draconic",
+  "CR": "2"
+}

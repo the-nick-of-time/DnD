@@ -1,0 +1,24 @@
+{
+  "name": "Dragonleaf Tree",
+  "alignment": "unaligned",
+  "AC": 16,
+  "HP": "16d10 + 64",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 10,
+    "Constitution": 19,
+    "Intelligence": 3,
+    "Wisdom": 12,
+    "Charisma": 17
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "A dragonleaf tree enjoys the same immunities as its progenitor. Black, copper, and green trees are immune to acid damage; blue and bronze trees are immune to lightning damage; brass, gold, and red trees are immune to fire damage; and silver and white trees are immune to cold damage.",
+  "condition immunities": null,
+  "senses": "blindsight 120 ft.",
+  "passive perception": 11,
+  "language": " can understand the language of its creator or designated master",
+  "CR": "8"
+}

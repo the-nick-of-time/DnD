@@ -1,0 +1,44 @@
+{
+  "name": "Bear King",
+  "alignment": "lawful neutral",
+  "AC": 18,
+  "HP": "14d8 + 70",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 10,
+    "Constitution": 20,
+    "Intelligence": 12,
+    "Wisdom": 17,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Strength": 9
+    },
+    {
+      "Dexterity": 4
+    },
+    {
+      "Wisdom": 7
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 9
+    },
+    {
+      " Intimidate": 7
+    },
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": "cold",
+  "vulnerabilities": null,
+  "immunities": "poison; bludgeoning, slashing, and piercing from nonmagical weapons that aren't made of cold iron",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 17,
+  "language": " Common, Elvish, Giant, Sylvan",
+  "CR": "12"
+}

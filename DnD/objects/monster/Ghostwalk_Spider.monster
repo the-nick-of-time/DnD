@@ -1,0 +1,35 @@
+{
+  "name": "Ghostwalk Spider",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "14d10 + 42",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 20,
+    "Constitution": 17,
+    "Intelligence": 9,
+    "Wisdom": 14,
+    "Charisma": 8
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 16,
+  "language": " understands Undercommon but can't speak",
+  "CR": "9"
+}

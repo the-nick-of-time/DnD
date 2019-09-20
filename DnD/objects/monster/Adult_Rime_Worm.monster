@@ -1,0 +1,31 @@
+{
+  "name": "Adult Rime Worm",
+  "alignment": "neutral",
+  "AC": 15,
+  "HP": "10d10 + 50",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 14,
+    "Constitution": 20,
+    "Intelligence": 6,
+    "Wisdom": 14,
+    "Charisma": 3
+  },
+  "saves": [
+    {
+      "Strength": 8
+    },
+    {
+      "Constitution": 8
+    }
+  ],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold, necrotic",
+  "condition immunities": null,
+  "senses": "darkvision 200 ft.",
+  "passive perception": 12,
+  "language": "-",
+  "CR": "6"
+}

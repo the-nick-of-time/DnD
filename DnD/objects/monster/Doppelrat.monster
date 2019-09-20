@@ -1,0 +1,32 @@
+{
+  "name": "Doppelrat",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "5d4 + 10",
+  "abilities": {
+    "Strength": 2,
+    "Dexterity": 17,
+    "Constitution": 14,
+    "Intelligence": 2,
+    "Wisdom": 13,
+    "Charisma": 2
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    }
+  ],
+  "skills": [
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "-",
+  "CR": "2"
+}

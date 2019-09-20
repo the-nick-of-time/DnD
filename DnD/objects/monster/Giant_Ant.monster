@@ -1,0 +1,24 @@
+{
+  "name": "Giant Ant",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "7d10 + 14",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 13,
+    "Constitution": 15,
+    "Intelligence": 1,
+    "Wisdom": 9,
+    "Charisma": 2
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft.",
+  "passive perception": 9,
+  "language": "-",
+  "CR": "2"
+}

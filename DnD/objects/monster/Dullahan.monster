@@ -1,0 +1,37 @@
+{
+  "name": "Dullahan",
+  "alignment": "lawful evil",
+  "AC": 17,
+  "HP": "17d10 + 85",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 18,
+    "Constitution": 20,
+    "Intelligence": 13,
+    "Wisdom": 15,
+    "Charisma": 17
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Intimidation": 7
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Persuasion": 7
+    },
+    {
+      " Survival": 6
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "necrotic",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft.",
+  "passive perception": 16,
+  "language": " Common, Elvish, Sylvan",
+  "CR": "11"
+}

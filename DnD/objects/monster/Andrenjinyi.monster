@@ -1,0 +1,44 @@
+{
+  "name": "Andrenjinyi",
+  "alignment": "neutral",
+  "AC": 18,
+  "HP": "13d20 + 91",
+  "abilities": {
+    "Strength": 30,
+    "Dexterity": 17,
+    "Constitution": 25,
+    "Intelligence": 10,
+    "Wisdom": 18,
+    "Charisma": 23
+  },
+  "saves": [
+    {
+      "Constitution": 12
+    },
+    {
+      "Wisdom": 9
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 5
+    },
+    {
+      " Perception": 9
+    },
+    {
+      " Religion": 5
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning",
+  "vulnerabilities": null,
+  "immunities": "psychic",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft., tremorsense 120 ft.",
+  "passive perception": 19,
+  "language": " Common, Celestial, Giant, Sylvan",
+  "CR": "15"
+}

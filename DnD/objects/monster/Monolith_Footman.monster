@@ -1,0 +1,24 @@
+{
+  "name": "Monolith Footman",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "8d10 + 16",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 12,
+    "Constitution": 14,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison, bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Elvish, Umbral",
+  "CR": "3"
+}

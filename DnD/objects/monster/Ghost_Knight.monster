@@ -1,0 +1,37 @@
+{
+  "name": "Ghost Knight",
+  "alignment": "lawful evil",
+  "AC": 17,
+  "HP": "15d8+30",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Intelligence": 8,
+    "Wisdom": 10,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      "Athletics": 6
+    },
+    {
+      " Animal Handling": 3
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "necrotic",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": "Common",
+  "CR": "6"
+}

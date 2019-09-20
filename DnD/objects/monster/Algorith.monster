@@ -1,0 +1,50 @@
+{
+  "name": "Algorith",
+  "alignment": "lawful neutral",
+  "AC": 18,
+  "HP": "16d8 + 64",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 14,
+    "Constitution": 19,
+    "Intelligence": 13,
+    "Wisdom": 16,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 9
+    },
+    {
+      " Insight": 7
+    },
+    {
+      " Investigation": 5
+    },
+    {
+      " Perception": 7
+    }
+  ],
+  "resistances": "acid, cold, lightning",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 17,
+  "language": " Common, Celestial, Draconic, Infernal",
+  "CR": "10"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Idolic Deity",
+  "alignment": "neutral evil",
+  "AC": 17,
+  "HP": "12d6 + 48",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 20,
+    "Constitution": 18,
+    "Intelligence": 10,
+    "Wisdom": 11,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Wisdom": 3
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 8
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": "cold; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "fire",
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " telepathy 60 ft.",
+  "CR": "8"
+}

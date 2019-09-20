@@ -1,0 +1,62 @@
+{
+  "name": "Firebird",
+  "alignment": "neutral good",
+  "AC": 16,
+  "HP": "18d6 + 36",
+  "abilities": {
+    "Strength": 12,
+    "Dexterity": 19,
+    "Constitution": 14,
+    "Intelligence": 16,
+    "Wisdom": 15,
+    "Charisma": 21
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 4
+    },
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 6
+    },
+    {
+      " Arcana": 5
+    },
+    {
+      " Insight": 4
+    },
+    {
+      " Medicine": 4
+    },
+    {
+      " Nature": 5
+    },
+    {
+      " Perception": 7
+    },
+    {
+      " Religion": 5
+    }
+  ],
+  "resistances": "lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "truesight 60 ft.",
+  "passive perception": 17,
+  "language": " Celestial, Common, Elvish, Primordial, Sylvan",
+  "CR": "4"
+}

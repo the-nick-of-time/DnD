@@ -1,0 +1,28 @@
+{
+  "name": "Corrupting Ooze",
+  "alignment": "neutral evil",
+  "AC": 12,
+  "HP": "10d10 + 60",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 10,
+    "Constitution": 22,
+    "Intelligence": 4,
+    "Wisdom": 2,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": "slashing, bludgeoning",
+  "vulnerabilities": null,
+  "immunities": "acid, fire, poison",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft., tremorsense 60 ft.",
+  "passive perception": 5,
+  "language": "-",
+  "CR": "5"
+}

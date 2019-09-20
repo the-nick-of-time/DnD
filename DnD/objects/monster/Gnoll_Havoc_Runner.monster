@@ -1,0 +1,31 @@
+{
+  "name": "Gnoll Havoc Runner",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "9d8 + 18",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Intelligence": 8,
+    "Wisdom": 12,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Athletics": 5
+    },
+    {
+      " Perception": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": " Gnoll",
+  "CR": "3"
+}

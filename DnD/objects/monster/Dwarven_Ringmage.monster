@@ -1,0 +1,41 @@
+{
+  "name": "Dwarven Ringmage",
+  "alignment": "any",
+  "AC": 16,
+  "HP": "15d8+15",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
+    "Constitution": 13,
+    "Intelligence": 18,
+    "Wisdom": 12,
+    "Charisma": 9
+  },
+  "saves": [
+    {
+      "Intelligence": 7
+    },
+    {
+      "Constitution": 4
+    },
+    {
+      "Wisdom": 4
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 7
+    },
+    {
+      " History": 7
+    }
+  ],
+  "resistances": "poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Common, Dwarvish",
+  "CR": "7"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Broodiken",
+  "alignment": "neutral",
+  "AC": 13,
+  "HP": "10d4 + 30",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 14,
+    "Constitution": 16,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 6
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "-",
+  "CR": "1"
+}

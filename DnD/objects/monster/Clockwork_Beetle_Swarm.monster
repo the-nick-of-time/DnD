@@ -1,0 +1,24 @@
+{
+  "name": "Clockwork Beetle Swarm",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "8d10 + 8",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 4,
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing",
+  "vulnerabilities": null,
+  "immunities": "fire, poison, psychic",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "-",
+  "CR": "3"
+}

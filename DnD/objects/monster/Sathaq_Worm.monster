@@ -1,0 +1,31 @@
+{
+  "name": "Sathaq Worm",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "15d12 + 75",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 6,
+    "Constitution": 20,
+    "Intelligence": 5,
+    "Wisdom": 12,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 2
+    }
+  ],
+  "resistances": "fire; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "thunder",
+  "immunities": "acid, poison",
+  "condition immunities": null,
+  "senses": "tremorsense 60 ft.",
+  "passive perception": 15,
+  "language": " understands Deep Speech and Terran, but can't speak",
+  "CR": "10"
+}

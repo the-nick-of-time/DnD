@@ -1,0 +1,28 @@
+{
+  "name": "Burrowling",
+  "alignment": "lawful neutral",
+  "AC": 13,
+  "HP": "6d6 + 6",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 16,
+    "Constitution": 12,
+    "Intelligence": 9,
+    "Wisdom": 12,
+    "Charisma": 13
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common",
+  "CR": "1/2"
+}

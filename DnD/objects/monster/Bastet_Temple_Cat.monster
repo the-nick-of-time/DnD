@@ -1,0 +1,31 @@
+{
+  "name": "Bastet Temple Cat",
+  "alignment": "chaotic neutral",
+  "AC": 14,
+  "HP": "9d6 + 9",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 19,
+    "Constitution": 12,
+    "Intelligence": 12,
+    "Wisdom": 16,
+    "Charisma": 18
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": " Common, Nurian, and Sylvan",
+  "CR": "1"
+}

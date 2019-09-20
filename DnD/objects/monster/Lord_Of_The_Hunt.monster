@@ -1,0 +1,44 @@
+{
+  "name": "Lord Of The Hunt",
+  "alignment": "lawful neutral",
+  "AC": 18,
+  "HP": "27d8 + 108",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 18,
+    "Constitution": 19,
+    "Intelligence": 14,
+    "Wisdom": 18,
+    "Charisma": 15
+  },
+  "saves": [
+    {
+      "Strength": 11
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 11
+    },
+    {
+      " Perception": 10
+    },
+    {
+      " Survival": 10
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from weapons that aren't made of cold iron",
+  "vulnerabilities": null,
+  "immunities": "cold, poison",
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 20,
+  "language": " Common, Draconic, Elvish, Sylvan",
+  "CR": "18"
+}

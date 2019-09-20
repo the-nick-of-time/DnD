@@ -1,0 +1,47 @@
+{
+  "name": "Oozasis",
+  "alignment": "unaligned",
+  "AC": 7,
+  "HP": "14d20 + 70",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 5,
+    "Constitution": 20,
+    "Intelligence": 12,
+    "Wisdom": 22,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Intelligence": 5
+    },
+    {
+      "Wisdom": 10
+    },
+    {
+      "Charisma": 8
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 8
+    },
+    {
+      " History": 5
+    },
+    {
+      " Insight": 10
+    },
+    {
+      " Perception": 10
+    }
+  ],
+  "resistances": "fire, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "thunder",
+  "immunities": "acid",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft. (blind beyond this radius), tremorsense 120 ft.",
+  "passive perception": 20,
+  "language": " understands all languages but can't speak, telepathy 120 ft.",
+  "CR": "9"
+}

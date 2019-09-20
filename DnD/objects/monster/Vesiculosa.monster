@@ -1,0 +1,28 @@
+{
+  "name": "Vesiculosa",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "14d20 + 56",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 10,
+    "Constitution": 19,
+    "Intelligence": 2,
+    "Wisdom": 14,
+    "Charisma": 2
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 6
+    }
+  ],
+  "resistances": "fire, bludgeoning, piercing",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "tremorsense 60 ft.",
+  "passive perception": 16,
+  "language": "-",
+  "CR": "11"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Jaculus",
+  "alignment": "neutral evil",
+  "AC": 18,
+  "HP": "10d6 + 30",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 18,
+    "Constitution": 17,
+    "Intelligence": 13,
+    "Wisdom": 13,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Strength": 4
+    },
+    {
+      "Dexterity": 6
+    },
+    {
+      "Constitution": 5
+    },
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 6
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": "acid, lightning",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 10 ft., darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common, Draconic",
+  "CR": "3"
+}

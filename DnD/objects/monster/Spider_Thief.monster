@@ -1,0 +1,28 @@
+{
+  "name": "Spider Thief",
+  "alignment": "unaligned",
+  "AC": 13,
+  "HP": "12d6 + 12",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 12,
+    "Constitution": 12,
+    "Intelligence": 3,
+    "Wisdom": 10,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": "fire",
+  "vulnerabilities": null,
+  "immunities": "poison, psychic",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " understands Common but can't speak",
+  "CR": "2"
+}

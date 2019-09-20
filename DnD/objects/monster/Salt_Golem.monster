@@ -1,0 +1,28 @@
+{
+  "name": "Salt Golem",
+  "alignment": "unaligned",
+  "AC": 17,
+  "HP": "11d10 + 55",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 9,
+    "Constitution": 20,
+    "Intelligence": 3,
+    "Wisdom": 11,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Athletics": 9
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire, poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": " understands the languages of its creator but can't speak",
+  "CR": "10"
+}

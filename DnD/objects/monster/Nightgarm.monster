@@ -1,0 +1,31 @@
+{
+  "name": "Nightgarm",
+  "alignment": "chaotic evil",
+  "AC": 15,
+  "HP": "12d10 + 48",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 14,
+    "Constitution": 18,
+    "Intelligence": 10,
+    "Wisdom": 15,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": "lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": "radiant; silvered weapons",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": " Common, Giant, Goblin, telepathy 200 ft. (with falsemen only)",
+  "CR": "6"
+}

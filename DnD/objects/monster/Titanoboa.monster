@@ -1,0 +1,35 @@
+{
+  "name": "Titanoboa",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "15d20 + 75",
+  "abilities": {
+    "Strength": 26,
+    "Dexterity": 10,
+    "Constitution": 20,
+    "Intelligence": 3,
+    "Wisdom": 10,
+    "Charisma": 3
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Wisdom": 5
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 10 ft.",
+  "passive perception": 15,
+  "language": "-",
+  "CR": "12"
+}

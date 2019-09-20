@@ -1,0 +1,24 @@
+{
+  "name": "Map Mimic",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "5d8 + 10",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 15,
+    "Constitution": 14,
+    "Intelligence": 13,
+    "Wisdom": 15,
+    "Charisma": 16
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "acid",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": "-",
+  "CR": "1/4"
+}

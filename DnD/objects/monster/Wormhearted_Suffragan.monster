@@ -1,0 +1,31 @@
+{
+  "name": "Wormhearted Suffragan",
+  "alignment": "chaotic evil",
+  "AC": 12,
+  "HP": "13d8 + 39",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
+    "Constitution": 16,
+    "Intelligence": 11,
+    "Wisdom": 16,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Medicine": 6
+    },
+    {
+      " Religion": 3
+    }
+  ],
+  "resistances": "necrotic; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "radiant",
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " the languages it knew in life",
+  "CR": "5"
+}

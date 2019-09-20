@@ -1,0 +1,41 @@
+{
+  "name": "Flutterflesh",
+  "alignment": "chaotic evil",
+  "AC": 16,
+  "HP": "22d10 + 66",
+  "abilities": {
+    "Strength": 11,
+    "Dexterity": 18,
+    "Constitution": 17,
+    "Intelligence": 12,
+    "Wisdom": 13,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Strength": 4
+    },
+    {
+      "Dexterity": 8
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 4
+    },
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": "cold, lightning; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "radiant",
+  "immunities": "necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 240 ft.",
+  "passive perception": 15,
+  "language": " Common, Darakhul",
+  "CR": "12"
+}

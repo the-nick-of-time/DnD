@@ -1,0 +1,53 @@
+{
+  "name": "Adult Void Dragon",
+  "alignment": "chaotic neutral",
+  "AC": 19,
+  "HP": "17d12 + 119",
+  "abilities": {
+    "Strength": 24,
+    "Dexterity": 10,
+    "Constitution": 25,
+    "Intelligence": 16,
+    "Wisdom": 13,
+    "Charisma": 21
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 12
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 10
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 13
+    },
+    {
+      " History": 13
+    },
+    {
+      " Perception": 11
+    },
+    {
+      " Persuasion": 10
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 21,
+  "language": " Common, Draconic, Void Speech",
+  "CR": "14"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Nkosi War Ostrich",
+  "alignment": "unaligned",
+  "AC": 11,
+  "HP": "5d10 + 15",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 12,
+    "Constitution": 16,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 5
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 10,
+  "language": "-",
+  "CR": "1/2"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Gerridae",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "9d10 + 27",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 15,
+    "Constitution": 17,
+    "Intelligence": 2,
+    "Wisdom": 13,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "-",
+  "CR": "1"
+}

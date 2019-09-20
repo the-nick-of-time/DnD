@@ -1,0 +1,38 @@
+{
+  "name": "Umbral Vampire",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "13d8 + 26",
+  "abilities": {
+    "Strength": 1,
+    "Dexterity": 18,
+    "Constitution": 15,
+    "Intelligence": 14,
+    "Wisdom": 14,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 5
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": "acid, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "cold, necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 15,
+  "language": " Common, Umbral, Void Speech",
+  "CR": "7"
+}

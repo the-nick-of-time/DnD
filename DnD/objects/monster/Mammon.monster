@@ -1,0 +1,50 @@
+{
+  "name": "Mammon",
+  "alignment": "lawful evil",
+  "AC": 20,
+  "HP": "28d12 + 196",
+  "abilities": {
+    "Strength": 22,
+    "Dexterity": 13,
+    "Constitution": 24,
+    "Intelligence": 23,
+    "Wisdom": 21,
+    "Charisma": 26
+  },
+  "saves": [
+    {
+      "Dexterity": 9
+    },
+    {
+      "Intelligence": 14
+    },
+    {
+      "Wisdom": 13
+    },
+    {
+      "Charisma": 16
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 16
+    },
+    {
+      " Insight": 13
+    },
+    {
+      " Perception": 13
+    },
+    {
+      " Persuasion": 16
+    }
+  ],
+  "resistances": "cold",
+  "vulnerabilities": null,
+  "immunities": "fire, poison; bludgeoning, piercing, and slashing from weapons that aren't silvered",
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 23,
+  "language": " all, telepathy 120 ft.",
+  "CR": "25"
+}

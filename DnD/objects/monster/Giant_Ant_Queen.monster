@@ -1,0 +1,24 @@
+{
+  "name": "Giant Ant Queen",
+  "alignment": "unaligned",
+  "AC": 15,
+  "HP": "10d10 + 30",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 13,
+    "Constitution": 16,
+    "Intelligence": 2,
+    "Wisdom": 11,
+    "Charisma": 4
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blindsight 60 ft.",
+  "passive perception": 10,
+  "language": "-",
+  "CR": "4"
+}

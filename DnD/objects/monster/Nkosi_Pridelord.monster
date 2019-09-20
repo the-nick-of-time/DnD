@@ -1,0 +1,28 @@
+{
+  "name": "Nkosi Pridelord",
+  "alignment": "nkosi), lawful neutral",
+  "AC": 16,
+  "HP": "17d8 + 17",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 18,
+    "Constitution": 12,
+    "Intelligence": 10,
+    "Wisdom": 10,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Survival": 2
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Common",
+  "CR": "4"
+}

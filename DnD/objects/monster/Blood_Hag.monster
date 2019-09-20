@@ -1,0 +1,47 @@
+{
+  "name": "Blood Hag",
+  "alignment": "chaotic evil",
+  "AC": 16,
+  "HP": "21d8 + 84",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 16,
+    "Constitution": 18,
+    "Intelligence": 19,
+    "Wisdom": 21,
+    "Charisma": 17
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 8
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 7
+    },
+    {
+      " Intimidation": 7
+    },
+    {
+      " Perception": 9
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "blood sense 90 ft., darkvision 60 ft.",
+  "passive perception": 19,
+  "language": " Common, Giant, Infernal, Sylvan, Trollkin",
+  "CR": "11"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Star Drake",
+  "alignment": "neutral",
+  "AC": 19,
+  "HP": "18d10 + 90",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 17,
+    "Constitution": 21,
+    "Intelligence": 16,
+    "Wisdom": 24,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Intelligence": 8
+    },
+    {
+      "Wisdom": 12
+    },
+    {
+      "Charisma": 10
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 8
+    },
+    {
+      " History": 8
+    },
+    {
+      " Insight": 12
+    },
+    {
+      " Perception": 12
+    },
+    {
+      " Religion": 8
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold, fire; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "truesight 120 ft.",
+  "passive perception": 22,
+  "language": " Celestial, Common, Draconic, Dwarvish, Elvish, Infernal, Primordial",
+  "CR": "15"
+}

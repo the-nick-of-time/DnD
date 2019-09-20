@@ -1,0 +1,41 @@
+{
+  "name": "Bone Collective",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "16d6 + 64",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 20,
+    "Constitution": 18,
+    "Intelligence": 14,
+    "Wisdom": 10,
+    "Charisma": 16
+  },
+  "saves": [
+    {
+      "Dexterity": 8
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 5
+    },
+    {
+      " Deception": 6
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 11
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 13,
+  "language": " Common, Darakhul",
+  "CR": "8"
+}

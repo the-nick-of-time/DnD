@@ -1,0 +1,31 @@
+{
+  "name": "Drowned Maiden",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "20d8",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 16,
+    "Constitution": 10,
+    "Intelligence": 10,
+    "Wisdom": 12,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common",
+  "CR": "5"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Totivillus, Scribe Of Hell",
+  "alignment": "lawful evil",
+  "AC": 19,
+  "HP": "26d8 + 182",
+  "abilities": {
+    "Strength": 18,
+    "Dexterity": 18,
+    "Constitution": 24,
+    "Intelligence": 26,
+    "Wisdom": 22,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 11
+    },
+    {
+      "Constitution": 14
+    },
+    {
+      "Intelligence": 15
+    },
+    {
+      "Wisdom": 13
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      " Arcana": 15
+    },
+    {
+      " History": 15
+    },
+    {
+      " Investigation": 15
+    },
+    {
+      " Perception": 13
+    },
+    {
+      " Religion": 15
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "fire, poison",
+  "condition immunities": null,
+  "senses": "truesight 30 ft., darkvision 60 ft.",
+  "passive perception": 23,
+  "language": " Common, Celestial, Draconic, Infernal, Void Speech; telepathy 120 ft.",
+  "CR": "24"
+}

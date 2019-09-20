@@ -1,0 +1,47 @@
+{
+  "name": "Gug",
+  "alignment": "neutral evil",
+  "AC": 17,
+  "HP": "20d12 + 140",
+  "abilities": {
+    "Strength": 24,
+    "Dexterity": 10,
+    "Constitution": 25,
+    "Intelligence": 10,
+    "Wisdom": 8,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Strength": 12
+    },
+    {
+      "Dexterity": 4
+    },
+    {
+      "Constitution": 11
+    },
+    {
+      "Charisma": 6
+    }
+  ],
+  "skills": [
+    {
+      " Athletics": 11
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 240 ft.",
+  "passive perception": 13,
+  "language": " Deep Speech, Giant, Undercommon",
+  "CR": "12"
+}

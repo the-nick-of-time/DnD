@@ -1,0 +1,34 @@
+{
+  "name": "Pombero",
+  "alignment": "chaotic neutral",
+  "AC": 15,
+  "HP": "12d8 + 36",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 16,
+    "Constitution": 16,
+    "Intelligence": 8,
+    "Wisdom": 10,
+    "Charisma": 14
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Athletics": 5
+    },
+    {
+      " Sleight of Hand": 5
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Sylvan",
+  "CR": "3"
+}

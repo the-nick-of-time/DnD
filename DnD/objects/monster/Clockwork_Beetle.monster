@@ -1,0 +1,32 @@
+{
+  "name": "Clockwork Beetle",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "6d4",
+  "abilities": {
+    "Strength": 8,
+    "Dexterity": 16,
+    "Constitution": 10,
+    "Intelligence": 4,
+    "Wisdom": 12,
+    "Charisma": 7
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    }
+  ],
+  "skills": [
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison, psychic",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " understands Common, telepathy 100 ft. (creator only)",
+  "CR": "1/2"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Zimwi",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "9d8 + 36",
+  "abilities": {
+    "Strength": 13,
+    "Dexterity": 18,
+    "Constitution": 19,
+    "Intelligence": 6,
+    "Wisdom": 9,
+    "Charisma": 7
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 1
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Giant",
+  "CR": "4"
+}

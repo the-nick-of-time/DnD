@@ -1,0 +1,24 @@
+{
+  "name": "Possessed Pillar",
+  "alignment": "unaligned",
+  "AC": 14,
+  "HP": "10d10 + 40",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 8,
+    "Constitution": 19,
+    "Intelligence": 3,
+    "Wisdom": 11,
+    "Charisma": 1
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "poison, psychic; bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 10,
+  "language": " understands the languages of its creator but can't speak",
+  "CR": "7"
+}

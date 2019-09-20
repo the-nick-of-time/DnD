@@ -1,0 +1,31 @@
+{
+  "name": "Erina Defender",
+  "alignment": "neutral",
+  "AC": 15,
+  "HP": "8d6 + 16",
+  "abilities": {
+    "Strength": 11,
+    "Dexterity": 14,
+    "Constitution": 14,
+    "Intelligence": 13,
+    "Wisdom": 12,
+    "Charisma": 11
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Athletics": 4
+    },
+    {
+      " Perception": 3
+    }
+  ],
+  "resistances": "poison",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common, Erina",
+  "CR": "1"
+}

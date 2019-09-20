@@ -1,0 +1,28 @@
+{
+  "name": "Venomous Mummy",
+  "alignment": "lawful evil",
+  "AC": 11,
+  "HP": "9d8 + 18",
+  "abilities": {
+    "Strength": 16,
+    "Dexterity": 8,
+    "Constitution": 15,
+    "Intelligence": 7,
+    "Wisdom": 10,
+    "Charisma": 14
+  },
+  "saves": [
+    {
+      "Wisdom": 2
+    }
+  ],
+  "skills": [],
+  "resistances": "bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": "fire",
+  "immunities": "necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " the languages it knew in life",
+  "CR": "3"
+}

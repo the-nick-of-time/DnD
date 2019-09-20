@@ -1,0 +1,47 @@
+{
+  "name": "Devilbound Gnomish Prince",
+  "alignment": "any evil",
+  "AC": 12,
+  "HP": "19d6 + 38",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
+    "Constitution": 15,
+    "Intelligence": 16,
+    "Wisdom": 12,
+    "Charisma": 22
+  },
+  "saves": [
+    {
+      "Constitution": 6
+    },
+    {
+      "Intelligence": 7
+    },
+    {
+      "Charisma": 10
+    }
+  ],
+  "skills": [
+    {
+      "Arcana": 7
+    },
+    {
+      " Deception": 10
+    },
+    {
+      " History": 7
+    },
+    {
+      " Persuasion": 10
+    }
+  ],
+  "resistances": "cold, fire, poison; bludgeoning, piercing, and slashing damage from nonmagical weapons that aren\u2019t silvered",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": "Common, Infernal, Gnomish",
+  "CR": "9"
+}

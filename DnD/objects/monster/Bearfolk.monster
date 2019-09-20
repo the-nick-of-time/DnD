@@ -1,0 +1,24 @@
+{
+  "name": "Bearfolk",
+  "alignment": "chaotic good",
+  "AC": 14,
+  "HP": "6d8 + 18",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 14,
+    "Constitution": 16,
+    "Intelligence": 8,
+    "Wisdom": 12,
+    "Charisma": 9
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common, Giant",
+  "CR": "3"
+}

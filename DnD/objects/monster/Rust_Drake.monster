@@ -1,0 +1,31 @@
+{
+  "name": "Rust Drake",
+  "alignment": "chaotic evil",
+  "AC": 17,
+  "HP": "19d8 + 76",
+  "abilities": {
+    "Strength": 20,
+    "Dexterity": 15,
+    "Constitution": 19,
+    "Intelligence": 12,
+    "Wisdom": 8,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": "acid",
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Common, Draconic",
+  "CR": "8"
+}

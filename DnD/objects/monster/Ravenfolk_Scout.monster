@@ -1,0 +1,44 @@
+{
+  "name": "Ravenfolk Scout",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "6d8 . 6",
+  "abilities": {
+    "Strength": 10,
+    "Dexterity": 14,
+    "Constitution": 8,
+    "Intelligence": 10,
+    "Wisdom": 15,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Constitution": 1
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 3
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 16,
+  "language": " Common, Feather Speech, Huginn",
+  "CR": "1/2"
+}

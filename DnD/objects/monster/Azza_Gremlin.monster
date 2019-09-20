@@ -1,0 +1,24 @@
+{
+  "name": "Azza Gremlin",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "2d6",
+  "abilities": {
+    "Strength": 5,
+    "Dexterity": 18,
+    "Constitution": 10,
+    "Intelligence": 12,
+    "Wisdom": 13,
+    "Charisma": 10
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "lightning, thunder",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 11,
+  "language": " Common, Primordial",
+  "CR": "1/4"
+}

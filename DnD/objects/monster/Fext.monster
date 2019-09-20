@@ -1,0 +1,38 @@
+{
+  "name": "Fext",
+  "alignment": "any alignment",
+  "AC": 17,
+  "HP": "11d8+11",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 16,
+    "Constitution": 1,
+    "Intelligence": 14,
+    "Wisdom": 12,
+    "Charisma": 18
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    },
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 7
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 4
+    }
+  ],
+  "resistances": "bludgeoning, piercing, and slashing damage with nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 14,
+  "language": " the languages spoken by its patron",
+  "CR": "6"
+}

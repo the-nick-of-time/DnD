@@ -1,0 +1,44 @@
+{
+  "name": "Adult Sea Dragon",
+  "alignment": "neutral evil",
+  "AC": 19,
+  "HP": "18d12 + 108",
+  "abilities": {
+    "Strength": 25,
+    "Dexterity": 10,
+    "Constitution": 23,
+    "Intelligence": 17,
+    "Wisdom": 15,
+    "Charisma": 19
+  },
+  "saves": [
+    {
+      "Dexterity": 5
+    },
+    {
+      "Constitution": 11
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 9
+    }
+  ],
+  "skills": [
+    {
+      " Perception": 12
+    },
+    {
+      " Stealth": 5
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "cold",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 22,
+  "language": " Common, Draconic",
+  "CR": "16"
+}

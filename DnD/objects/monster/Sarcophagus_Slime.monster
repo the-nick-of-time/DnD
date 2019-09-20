@@ -1,0 +1,35 @@
+{
+  "name": "Sarcophagus Slime",
+  "alignment": "neutral evil",
+  "AC": 11,
+  "HP": "14d8 + 42",
+  "abilities": {
+    "Strength": 14,
+    "Dexterity": 12,
+    "Constitution": 18,
+    "Intelligence": 3,
+    "Wisdom": 12,
+    "Charisma": 12
+  },
+  "saves": [
+    {
+      "Wisdom": 4
+    },
+    {
+      "Charisma": 4
+    }
+  ],
+  "skills": [
+    {
+      " Stealth": 4
+    }
+  ],
+  "resistances": "acid, necrotic",
+  "vulnerabilities": null,
+  "immunities": "poison",
+  "condition immunities": null,
+  "senses": "blindsight 60 ft. (blind beyond this radius)",
+  "passive perception": 11,
+  "language": " understands the languages of its creator but can't speak",
+  "CR": "5"
+}

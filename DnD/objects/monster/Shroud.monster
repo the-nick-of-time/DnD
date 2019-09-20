@@ -1,0 +1,28 @@
+{
+  "name": "Shroud",
+  "alignment": "neutral evil",
+  "AC": 13,
+  "HP": "2d8",
+  "abilities": {
+    "Strength": 4,
+    "Dexterity": 13,
+    "Constitution": 10,
+    "Intelligence": 2,
+    "Wisdom": 10,
+    "Charisma": 8
+  },
+  "saves": [],
+  "skills": [
+    {
+      " Stealth": 3
+    }
+  ],
+  "resistances": "acid, cold, fire, lightning, thunder; bludgeoning, piercing, and slashing from nonmagical weapons that aren't silvered",
+  "vulnerabilities": "radiant",
+  "immunities": "necrotic, poison",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 10,
+  "language": " Common",
+  "CR": "1/8"
+}

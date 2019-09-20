@@ -1,0 +1,53 @@
+{
+  "name": "Adult Flame Dragon",
+  "alignment": "chaotic evil",
+  "AC": 19,
+  "HP": "17d12 + 102",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 14,
+    "Constitution": 23,
+    "Intelligence": 17,
+    "Wisdom": 14,
+    "Charisma": 20
+  },
+  "saves": [
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 11
+    },
+    {
+      "Wisdom": 7
+    },
+    {
+      "Charisma": 10
+    }
+  ],
+  "skills": [
+    {
+      " Deception": 10
+    },
+    {
+      " Insight": 7
+    },
+    {
+      " Perception": 12
+    },
+    {
+      " Persuasion": 10
+    },
+    {
+      " Stealth": 7
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "fire",
+  "condition immunities": null,
+  "senses": "",
+  "passive perception": 22,
+  "language": " Common, Draconic, Giant, Ignan, Infernal, Orc",
+  "CR": "16"
+}

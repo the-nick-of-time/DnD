@@ -1,0 +1,41 @@
+{
+  "name": "Trollkin Reaver",
+  "alignment": "neutral",
+  "AC": 14,
+  "HP": "11d8 + 33",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 13,
+    "Constitution": 16,
+    "Intelligence": 11,
+    "Wisdom": 12,
+    "Charisma": 13
+  },
+  "saves": [
+    {
+      "Constitution": 5
+    },
+    {
+      "Wisdom": 3
+    },
+    {
+      "Charisma": 3
+    }
+  ],
+  "skills": [
+    {
+      " Intimidation": 5
+    },
+    {
+      " Survival": 3
+    }
+  ],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 11,
+  "language": " Common, Trollkin",
+  "CR": "4"
+}

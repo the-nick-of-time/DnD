@@ -1,0 +1,38 @@
+{
+  "name": "Dorreq",
+  "alignment": "neutral evil",
+  "AC": 15,
+  "HP": "17d8 + 17",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 19,
+    "Constitution": 13,
+    "Intelligence": 11,
+    "Wisdom": 8,
+    "Charisma": 6
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    }
+  ],
+  "skills": [
+    {
+      " Intimidate": 2
+    },
+    {
+      " Perception": 3
+    },
+    {
+      " Stealth": 8
+    }
+  ],
+  "resistances": "acid, cold, lightning",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 13,
+  "language": " Void Speech",
+  "CR": "4"
+}

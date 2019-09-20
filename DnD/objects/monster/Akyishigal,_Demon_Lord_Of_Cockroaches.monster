@@ -1,0 +1,53 @@
+{
+  "name": "Akyishigal, Demon Lord Of Cockroaches",
+  "alignment": "chaotic evil",
+  "AC": 18,
+  "HP": "12d10 + 72",
+  "abilities": {
+    "Strength": 21,
+    "Dexterity": 17,
+    "Constitution": 22,
+    "Intelligence": 19,
+    "Wisdom": 14,
+    "Charisma": 24
+  },
+  "saves": [
+    {
+      "Strength": 9
+    },
+    {
+      "Dexterity": 7
+    },
+    {
+      "Constitution": 10
+    },
+    {
+      "Wisdom": 6
+    },
+    {
+      "Charisma": 11
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 11
+    },
+    {
+      " Athletics": 9
+    },
+    {
+      " Perception": 6
+    },
+    {
+      " Stealth": 11
+    }
+  ],
+  "resistances": "acid, fire; bludgeoning, piercing, and slashing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "cold, lightning, poison",
+  "condition immunities": null,
+  "senses": "darkvision 120 ft., truesight 60 ft.",
+  "passive perception": 16,
+  "language": " Abyssal, Common, Draconic, Elvish, Infernal; telepathy 60 ft.",
+  "CR": "12"
+}

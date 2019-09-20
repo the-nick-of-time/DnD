@@ -1,0 +1,38 @@
+{
+  "name": "Coral Drake",
+  "alignment": "neutral evil",
+  "AC": 16,
+  "HP": "15d8 + 60",
+  "abilities": {
+    "Strength": 19,
+    "Dexterity": 1,
+    "Constitution": 18,
+    "Intelligence": 10,
+    "Wisdom": 13,
+    "Charisma": 10
+  },
+  "saves": [
+    {
+      "Dexterity": 6
+    }
+  ],
+  "skills": [
+    {
+      " Acrobatics": 6
+    },
+    {
+      " Perception": 4
+    },
+    {
+      " Stealth": 6
+    }
+  ],
+  "resistances": "cold",
+  "vulnerabilities": null,
+  "immunities": null,
+  "condition immunities": null,
+  "senses": "darkvision 120 ft.",
+  "passive perception": 17,
+  "language": " Draconic",
+  "CR": "7"
+}

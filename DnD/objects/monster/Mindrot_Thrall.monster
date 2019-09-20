@@ -1,0 +1,28 @@
+{
+  "name": "Mindrot Thrall",
+  "alignment": "neutral",
+  "AC": 15,
+  "HP": "11d8 + 33",
+  "abilities": {
+    "Strength": 15,
+    "Dexterity": 14,
+    "Constitution": 17,
+    "Intelligence": 11,
+    "Wisdom": 14,
+    "Charisma": 6
+  },
+  "saves": [
+    {
+      "Constitution": 5
+    }
+  ],
+  "skills": [],
+  "resistances": "bludgeoning and piercing from nonmagical weapons",
+  "vulnerabilities": null,
+  "immunities": "acid, poison",
+  "condition immunities": null,
+  "senses": "tremorsense 30 ft.",
+  "passive perception": 12,
+  "language": " understands Common but cannot speak",
+  "CR": "3"
+}

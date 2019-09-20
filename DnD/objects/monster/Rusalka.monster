@@ -1,0 +1,24 @@
+{
+  "name": "Rusalka",
+  "alignment": "chaotic evil",
+  "AC": 14,
+  "HP": "16d8 + 16",
+  "abilities": {
+    "Strength": 17,
+    "Dexterity": 13,
+    "Constitution": 12,
+    "Intelligence": 11,
+    "Wisdom": 15,
+    "Charisma": 18
+  },
+  "saves": [],
+  "skills": [],
+  "resistances": null,
+  "vulnerabilities": null,
+  "immunities": "necrotic, poison; piercing and slashing damage from nonmagical weapons",
+  "condition immunities": null,
+  "senses": "darkvision 60 ft.",
+  "passive perception": 12,
+  "language": " Common",
+  "CR": "6"
+}
