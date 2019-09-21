@@ -113,8 +113,9 @@
     "slots": [
       // Ordered list of spell slots, index = spell level
     ],
-    "points": 0
+    "points": 0,
     // Points are the optional rule that I like
+    "warlock_slots": []
   },
   // Transient storage
   "conditions": [

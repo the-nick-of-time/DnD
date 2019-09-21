@@ -52,9 +52,7 @@ class Class:
             return self.level // 2
         if typ == CasterType.THIRD:
             return self.level // 3
-        if typ == CasterType.WARLOCK:
-            # Return 0 instead? because warlocks are weird and different
-            return self.level
+        return 0
 
     @property
     def casterType(self) -> CasterType:
