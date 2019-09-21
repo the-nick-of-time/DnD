@@ -1,47 +1,54 @@
 {
   "name": "Ranger",
-  "parent": [
+  "superclass": [
     "ALL",
     "CASTER"
   ],
   "hit_dice": "1d10",
-  "armors": {
-    "types": [
-      "Light",
-      "Medium",
-      "Shield"
+  "proficiencies": {
+    "saves": [
+      "Strength",
+      "Dexterity"
     ],
-    "specific": []
+    "armors": {
+      "types": [
+        "Light",
+        "Medium",
+        "Shield"
+      ],
+      "specific": []
+    },
+    "weapons": {
+      "types": [
+        "Simple",
+        "Martial"
+      ],
+      "specific": []
+    },
+    "tools": [],
+    "skills": {
+      "number": 3,
+      "which": [
+        "Animal Handling",
+        "Athletics",
+        "Insight",
+        "Investigation",
+        "Nature",
+        "Perception",
+        "Stealth",
+        "Survival"
+      ]
+    }
   },
-  "weapons": {
-    "types": [
-      "Simple",
-      "Martial"
-    ],
-    "specific": []
-  },
-  "tools": [],
-  "skills": {
-    "number": 3,
-    "which": [
-      "Animal Handling",
-      "Athletics",
-      "Insight",
-      "Investigation",
-      "Nature",
-      "Perception",
-      "Stealth",
-      "Survival"
-    ]
-  },
-  "spell": {
+  "spellcasting": {
     "ability": "Wisdom",
     "slots": "half",
     "levels": "half",
     "known": "limited",
     "prepare": "known"
   },
-  "features": [ {},
+  "features": [
+    {},
     {
       "Favored Enemy": {
         "description": "You have significant experience studying, tracking, hunting, and even talking to a certain type of enemy. Choose a type of favored enemy: aberrations, beasts, celestiais, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can select two races of humanoid (such as gnolls and orcs) as favored enemies. You have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them. When you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at alI."

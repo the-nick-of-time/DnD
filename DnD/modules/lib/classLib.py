@@ -1,9 +1,11 @@
 import enum
+from pathlib import Path
 from typing import Union, Dict, List
 
 from . import abilitiesLib as abil
 from . import characterLib as char
 from . import featureLib as feature
+from . import helpers as h
 from . import interface as iface
 
 
@@ -12,7 +14,7 @@ class CasterType(enum.Enum):
     HALF = 'half'
     THIRD = 'third'
     WARLOCK = 'warlock'
-    NONCASTER = ''
+    NONCASTER = None
 
 
 class Class:
@@ -21,30 +23,37 @@ class Class:
     def __init__(self, spec):
         self.name = spec['class']
         self.level = spec['level']
-        base = iface.JsonInterface('class/{}.class'.format(self.name), readonly=True)
+        filename = Path('class') / h.sanitize_filename('{}.class'.format(self.name))
+        base = iface.JsonInterface(filename, readonly=True)
         supers = base.get('/superclass')
         self.superclasses = []
         for name in supers:
-            filename = 'class/{}.super.class'.format(name)
+            filename = Path('class') / h.sanitize_filename('{}.super.class'.format(name))
             file = iface.JsonInterface(filename, readonly=True)
             self.superclasses.append(Superclass(file))
         self.interface = iface.LinkedInterface(*map(lambda sc: sc.interface, self.superclasses), base)
         if 'subclass' in spec:
-            filename = 'class/{}.{}.sub.class'.format(self.name, spec['subclass'])
+            filename = Path('class') / h.sanitize_filename('{}.{}.sub.class'
+                                                           .format(self.name, spec['subclass']))
             file = iface.JsonInterface(filename, readonly=True)
             self.subclass = Subclass(spec['subclass'], file)
             self.interface += file
 
-    @property
-    def features(self) -> List[feature.Feature]:
+    def __str__(self):
+        name = self.name
+        if hasattr(self, 'subclass'):
+            name += ' ({})'.format(self.subclass.name)
+        return name
+
+    def features_at_level(self, level: int) -> List[feature.Feature]:
         pass
 
     @property
-    def HD(self):
+    def HD(self) -> str:
         return self.interface.get('/hit_dice')
 
     @property
-    def casterLevel(self):
+    def casterLevel(self) -> int:
         typ = CasterType(self.interface.get('/spellcasting/slots'))
         if typ == CasterType.FULL:
             return self.level
@@ -79,8 +88,7 @@ class Subclass:
         self.name = name
         self.interface = interface
 
-    @property
-    def features(self) -> List[feature.Feature]:
+    def features_at_level(self, level: int) -> List[feature.Feature]:
         pass
 
 
@@ -90,6 +98,7 @@ class Classes:
 
     def __getitem__(self, item) -> Class:
         if isinstance(item, int):
+            # Raises IndexError
             return self.classes[item]
         if isinstance(item, str):
             for cls in self.classes:
@@ -104,8 +113,10 @@ class Classes:
     def __len__(self):
         return len(self.classes)
 
-    @property
-    def features(self) -> List[feature.Feature]:
+    def __str__(self):
+        return ', '.join(str(c) for c in self.classes)
+
+    def features_at_level(self, level: int) -> List[feature.Feature]:
         pass
 
     @property
@@ -162,5 +173,5 @@ class OwnedClasses(Classes):
     def proficiency(self) -> Union[int, str]:
         source = iface.JsonInterface('class/ALL.super.class')
         if self.owner.settings.proficiencyDice:
-            return source.get('/proficiency/1/' + str(self.level))
-        return source.get('/proficiency/0/' + str(self.level))
+            return source.get('/proficiency/dice/' + str(self.level))
+        return source.get('/proficiency/bonus/' + str(self.level))

@@ -4,42 +4,45 @@
     "ALL"
   ],
   "hit_dice": "1d10",
-  "armors": {
-    "types": [
-      "Light",
-      "Medium",
-      "Heavy",
-      "Shield"
+  "proficiencies": {
+    "armors": {
+      "types": [
+        "Light",
+        "Medium",
+        "Heavy",
+        "Shield"
+      ],
+      "specific": []
+    },
+    "weapons": {
+      "types": [
+        "Simple",
+        "Martial"
+      ],
+      "specific": []
+    },
+    "tools": [],
+    "saves": [
+      "Strength",
+      "Constitution"
     ],
-    "specific": []
+    "skills": {
+      "number": 2,
+      "which": [
+        "Acrobatics",
+        "Animal Handling",
+        "Athletics",
+        "History",
+        "Insight",
+        "Intimidation",
+        "Perception",
+        "Survival"
+      ]
+    }
   },
-  "weapons": {
-    "types": [
-      "Simple",
-      "Martial"
-    ],
-    "specific": []
-  },
-  "tools": [],
-  "saves": [
-    "Strength",
-    "Constitution"
-  ],
-  "skills": {
-    "number": 2,
-    "which": [
-      "Acrobatics",
-      "Animal Handling",
-      "Athletics",
-      "History",
-      "Insight",
-      "Intimidation",
-      "Perception",
-      "Survival"
-    ]
-  },
-  "spell": {},
-  "features": [{},
+  "spellcasting": {},
+  "features": [
+    {},
     {
       "choose": {
         "number": 1,
