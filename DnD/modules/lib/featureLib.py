@@ -5,9 +5,9 @@ from . import resourceLib as res
 
 
 class OwnedFeatures:
-    def __init__(self, jf: iface.DataInterface, character: char.Character):
+    def __init__(self, jf: iface.DataInterface, character: 'char.Character'):
         self.record = jf
-        self.character = character
+        self.owner = character
         self.features = {name: OwnedFeature(name, filepath, character)
                          for name, filepath in self.record.get('/').items()}
 
@@ -29,12 +29,16 @@ class OwnedFeatures:
                 rv.append(bonus)
         return rv
 
+    def add(self, name: str, filepath: str):
+        self.record.set('/' + name, filepath)
+        self.features[name] = OwnedFeature(name, filepath, self.owner)
+
 
 class Feature:
     # Will be useful in character creator/level up
     def __init__(self, name: str, filepath: str):
         self.name = name
-        file, path = filepath.split(':', 1)
+        file, path = filepath.split(':', maxsplit=1)
         json = iface.JsonInterface(file, readonly=True)
         self.definition = json.cd(path)
         self.description = self.definition.get('/description')

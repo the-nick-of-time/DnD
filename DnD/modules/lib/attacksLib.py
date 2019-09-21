@@ -8,21 +8,32 @@ from . import interface as iface
 
 
 class Attack:
-    def __init__(self, jf: iface.JsonInterface, character: char.Character):
+    def __init__(self, jf: iface.DataInterface, character: char.Character):
         self.record = jf
-        self.character = character
+        self.owner = character
+        self.actions = [OneAttack(jf.cd('/actions/' + str(i)), self.owner)
+                        for i, att in enumerate(self.record.get('/actions'))]
 
 
 class OneAttack:
-    def __init__(self, jf: iface.JsonInterface, character: char.Character):
+    def __init__(self, jf: iface.DataInterface, character: char.Character):
         self.record = jf
-        self.character = character
+        self.owner = character
         self.onHit = Effect(self.record.cd('/on_hit'), character)
         self.onMiss = Effect(self.record.cd('/on_miss'), character)
+        typ = self.record.get("/to_hit/type")
+        if typ == 'SPELLSAVE':
+            self.toHit = SpellSave(self.record.cd('to_hit'), self.owner)
+        elif typ == 'ATTACKROLL':
+            self.toHit = AttackRoll(self.record.cd('/to_hit'), self.owner)
+        elif typ == 'AUTOHIT':
+            self.toHit = AutoHit(self.record.cd('/to_hit'), self.owner)
+        else:
+            self.toHit = CustomToHit(self.record.cd('/to_hit'), self.owner)
 
 
 class ToHit:
-    def __init__(self, jf: iface.JsonInterface, character: char.Character):
+    def __init__(self, jf: iface.DataInterface, character: char.Character):
         self.record = jf
         self.character = character
         self.modifiers = Modifiers(jf.get('/modifiers'), character)
@@ -33,7 +44,7 @@ class ToHit:
 
 
 class AttackRoll(ToHit):
-    def __init__(self, jf: iface.JsonInterface, character: char.Character):
+    def __init__(self, jf: iface.DataInterface, character: char.Character):
         super().__init__(jf, character)
         self.against = 'AC'
 
@@ -46,7 +57,7 @@ class AttackRoll(ToHit):
 
 
 class SavingThrow(ToHit):
-    def __init__(self, jf: iface.JsonInterface, character: char.Character):
+    def __init__(self, jf: iface.DataInterface, character: char.Character):
         super().__init__(jf, character)
         self.against = jf.get('/against')
 
@@ -56,7 +67,7 @@ class SpellSave(SavingThrow):
 
 
 class AutoHit(ToHit):
-    def __init__(self, jf: iface.JsonInterface, character: char.Character):
+    def __init__(self, jf: iface.DataInterface, character: char.Character):
         super().__init__(jf, character)
 
     def value(self, advantage=False, disadvantage=False) -> str:
@@ -68,14 +79,14 @@ class CustomToHit(ToHit):
 
 
 class Effect:
-    def __init__(self, jf: iface.JsonInterface, character: char.Character):
+    def __init__(self, jf: iface.DataInterface, character: char.Character):
         self.record = jf
         self.character = character
-        self.damage = Damage()
+        self.damage = Damage(jf.cd('/damage'), character)
 
 
 class Damage:
-    def __init__(self, jf: iface.JsonInterface, character: char.Character):
+    def __init__(self, jf: iface.DataInterface, character: char.Character):
         self.record = jf
         self.character = character
         self.baseRoll = jf.get('/base_roll')

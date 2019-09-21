@@ -23,7 +23,7 @@ class Abilities:
                        for name in AbilityName}
 
     def __getitem__(self, ability: AbilityName) -> 'Ability':
-        return self.values[ability].score
+        return self.values[ability]
 
     def __setitem__(self, key: AbilityName, value: int):
         if not isinstance(value, int):
