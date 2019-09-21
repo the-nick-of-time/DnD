@@ -5,17 +5,13 @@ from dndice import basic
 from . import abilitiesLib as abil
 from . import characterLib as char
 from . import resourceLib as res
-from .exceptionsLib import LowOnResource
 from .interface import DataInterface
 from .settingsLib import RestLength, HealingMode
 
 
 class HP:
-    def __init__(self, jf: DataInterface, character: 'char.Character'):
-        self.owner = character
+    def __init__(self, jf: DataInterface):
         self.record = jf
-        self.hd = {size: HD(self.record.cd('/' + size), size, character)
-                   for size in self.record.get('/HD')}
 
     @property
     def current(self):
@@ -71,6 +67,8 @@ class HP:
                 delta += self.temp
                 self.temp = 0
                 self.current += delta
+                if self.current < 0:
+                    self.current = 0
                 return delta
             else:
                 # Temp absorbs it all
@@ -94,6 +92,14 @@ class HP:
             self.temp = delta
         return 0
 
+
+class OwnedHP(HP):
+    def __init__(self, jf: DataInterface, character: 'char.Character'):
+        super().__init__(jf)
+        self.owner = character
+        self.hd = {size: OwnedHD(self.record.cd('/HD/' + size), size, character)
+                   for size in self.record.get('/HD')}
+
     def rest(self, length: RestLength):
         if length == RestLength.LONG:
             if self.owner.settings.healing in (HealingMode.VANILLA, HealingMode.FAST):
@@ -102,8 +108,12 @@ class HP:
         for size in self.hd.values():
             size.rest(length)
 
+    def use_HD(self, which: str):
+        value = self.hd[which].use()
+        self.change(value)
 
-class HD(res.OwnedResource):
+
+class OwnedHD(res.OwnedResource):
     def __init__(self, jf: DataInterface, size: str, character: 'char.Character'):
         super().__init__(jf, character=character)
         self.name = 'Hit Die'
@@ -114,11 +124,9 @@ class HD(res.OwnedResource):
     def maxnumber(self):
         return self.owner.classes.maxHD[self.value]
 
-    def use(self, _):
-        try:
-            roll = super().use(1)
-        except LowOnResource:
-            return 0
+    def use(self, number=1):
+        # Use the number argument?
+        roll = super().use(1)
         conmod = self.owner.abilities[abil.AbilityName.CON].modifier
         return roll + conmod if (roll + conmod > 1) else 1
 
@@ -128,6 +136,6 @@ class HD(res.OwnedResource):
                 self.reset()
             else:
                 self.regain(ceil(self.maxnumber / 2))
-        if length == RestLength.SHORT:
+        elif length == RestLength.SHORT:
             if self.owner.settings.healing == HealingMode.FAST:
-                self.regain(ceil(self.maxnumber / 4))
+                self.regain(self.maxnumber // 4 or 1)

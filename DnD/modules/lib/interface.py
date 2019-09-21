@@ -26,10 +26,11 @@ class DataInterface:
         self._cache = type(self).JsonPointerCache()
 
     def __iter__(self):
-        if isinstance(self.data, dict):
-            yield from self.data.items()
-        elif isinstance(self.data, list):
-            yield from self.data
+        obj = self.get('/')
+        if isinstance(obj, dict):
+            yield from obj.items()
+        elif isinstance(obj, list):
+            yield from obj
 
     def get(self, path: str):
         if self.basepath + path == '/':
