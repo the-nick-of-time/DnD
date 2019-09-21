@@ -61,3 +61,7 @@ class ReadonlyError(InterfaceError):
 
 class PathError(InterfaceError, ValueError):
     pass
+
+
+class EquipSlotsFull(DnDError):
+    pass

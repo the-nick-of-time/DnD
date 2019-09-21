@@ -9,6 +9,7 @@ from . import exceptionsLib as ex
 from . import helpers as h
 from . import hpLib as hp
 from . import interface as iface
+from . import inventoryLib as inv
 from . import raceLib as race
 from . import settingsLib as settings
 from . import spellcastingLib as casting
@@ -32,6 +33,7 @@ class Character:
         self.skills = set(jf.get('/skills'))
         self.saves = self.classes.saveProficiencies
         self.deathSaveFailures = 0
+        self.openEquipSlots = set(slot for slot in inv.EquipmentSlot)
 
     @property
     def proficiency(self):

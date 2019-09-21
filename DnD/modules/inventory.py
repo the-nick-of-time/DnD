@@ -95,7 +95,6 @@ class InventoryHandler(gui.Section):
         gui.Section.__init__(self, container)
         self.handler = handler
         self.character = character
-        self.newitemdata = {}
         self.frameframe = tk.Frame(self.f)
         self.framenames = ['item', 'treasure', 'weapon', 'apparel']
         self.coreframes = {n: tk.LabelFrame(self.frameframe,
@@ -145,14 +144,13 @@ class InventoryHandler(gui.Section):
         self.totalweight['text'] = 'Current load: {0:0.2f}'.format(self.total_weight())
 
     def new_item_start(self):
-        gui.Query(self.newitemdata, self.new_item_end, 'Name?', 'Quantity?', 'Type?', 'Equipped?')
+        gui.Query(self.new_item_end, 'Name?', 'Quantity?', 'Type?', 'Equipped?')
 
-    def new_item_end(self):
-        i = self.newitemdata
-        eq = i['Equipped?'].lower() not in ['false', 'no', 'n']
-        self.handler.newslot(i['Name?'], int(i['Quantity?']), i['Type?'], eq)
-        item = self.handler[i['Name?']]
-        t = i['Type?'].split()[-1]
+    def new_item_end(self, data):
+        eq = data['Equipped?'].lower() not in ['false', 'no', 'n']
+        self.handler.newslot(data['Name?'], int(data['Quantity?']), data['Type?'], eq)
+        item = self.handler[data['Name?']]
+        t = data['Type?'].split()[-1]
         self.objectblocks[t].append(ItemDisplay(self.coreframes[t], item, self.update_encumbrance))
         self.draw_dynamic()
 
@@ -209,18 +207,17 @@ class Module(gui.Section):
 class Main(gui.Section):
     def __init__(self, container):
         gui.Section.__init__(self, container)
-        self.characterdata = {}
         self.QUIT = tk.Button(self.f, text='QUIT', command=self.quit)
         self.QUIT.grid(row=1, column=1)
         self.load_character_start()
 
     def load_character_start(self):
-        gui.Query(self.characterdata, self.load_character_end,
+        gui.Query(self.load_character_end,
                   'Character name?')
         self.container.withdraw()
 
-    def load_character_end(self):
-        name = self.characterdata['Character name?']
+    def load_character_end(self, data):
+        name = data['Character name?']
         path = JsonInterface.OBJECTSPATH / 'character' / (name + '.character')
         if path.exists():
             character = JsonInterface(path, isabsolute=True)
