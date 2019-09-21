@@ -1,14 +1,13 @@
 from . import characterLib as char
 from .exceptionsLib import OverflowSpells, OutOfSpells
 from .helpers import sanitize_filename
-from .interface import JsonInterface
+from .interface import DataInterface, JsonInterface
 from .settingsLib import RestLength
 
 
 class SpellResource:
-    def __init__(self, character: 'char.Character'):
-        self.character = character
-        self.record = character.record.cd('/spellcasting')
+    def __init__(self, jf: DataInterface):
+        self.record = jf
 
     def cast(self, level: int):
         raise NotImplementedError
@@ -25,76 +24,89 @@ class SpellResource:
 
 
 class SpellSlots(SpellResource):
-    def __init__(self, character):
-        super().__init__(character)
-        caster = JsonInterface('class/CASTER.super.class')
-        cl = self.character.classes[0]
-        if len(self.character.classes) == 1:
-            t = cl.get('/spellcasting/slots')
-            if t is None:
-                self.max_spell_slots = []
-            lv = self.character.classes.level
-        else:
-            t = 'full'
-            lv = self.character.classes.caster_level
-        path = '/max_spell_slots/{}/{}'.format(t, lv)
-        self.max_spell_slots = caster.get(path)
+    def __init__(self, jf: DataInterface):
+        super().__init__(jf)
+        # ABSTRACT
+        self.max_spell_slots = None
 
     def cast(self, level: int):
         slots = self.record.get('/slots')
         if slots[level] < 1:
-            # TODO: genericize LowOnResource to accommodate spells
-            raise OutOfSpells(self.character, level)
+            raise OutOfSpells(level)
         # Does this actually mutate the list? or does it mutate a copy?
         slots[level] -= 1
 
     def regain(self, level: int):
         slots = self.record.get('/slots')
         if slots[level] >= self.max_spell_slots[level]:
-            raise OverflowSpells(self.character, level)
+            raise OverflowSpells(level)
         slots[level] += 1
 
     def reset(self):
         self.record.set('/slots', self.max_spell_slots)
 
 
-class SpellPoints(SpellResource):
-    def __init__(self, character):
-        super().__init__(character)
+class OwnedSpellSlots(SpellSlots):
+    def __init__(self, jf: DataInterface, character: 'char.Character'):
+        super().__init__(jf)
+        self.owner = character
         caster = JsonInterface('class/CASTER.super.class')
-        self.max_points = caster.get('/max_spell_points')
-        self.costs = caster.get('/spell_point_cost')
+        path = '/max_spell_slots/{}/{}'.format(self.owner.classes.casterType.value,
+                                               self.owner.classes.casterLevel)
+        self.max_spell_slots = caster.get(path)
+
+
+class SpellPoints(SpellResource):
+    def __init__(self, jf: DataInterface):
+        super().__init__(jf)
+        self.max_points = None
+        self.costs = None
 
     def cast(self, level: int):
         cost = self.costs[level]
         current = self.record.get('/points')
         if current < cost:
-            raise OutOfSpells(self.character, level)
+            raise OutOfSpells(level)
         self.record.set('/points', current - cost)
 
     def regain(self, level: int):
         points = self.costs[level]
         current = self.record.get('/points')
         if points + current > self.max_points:
-            raise OverflowSpells(self.character, level)
+            raise OverflowSpells(level)
         self.record.set('/points', points + current)
 
     def reset(self):
         self.record.set('/points', self.max_points)
 
 
-class WarlockSlots(SpellSlots):
-    def __init__(self, character):
-        SpellResource.__init__(self, character)
-        # Intentionally avoid SpellSlots initialization because that
-        # determines caster type by the character's classes which would
-        # conflict with the warlock's spell slots
+class OwnedSpellPoints(SpellPoints):
+    def __init__(self, jf: DataInterface, character: 'char.Character'):
+        super().__init__(jf)
+        self.owner = character
         caster = JsonInterface('class/CASTER.super.class')
-        self.max_slots = caster.get('/max_spell_slots/warlock')
+        path = '/max_spell_points/{}'.format(self.owner.classes.casterLevel)
+        self.max_points = caster.get(path)
+        self.costs = caster.get('/spell_point_cost')
+
+
+class WarlockSlots(SpellSlots):
+    def __init__(self, jf: DataInterface):
+        super().__init__(jf)
+        self.max_spell_slots = None
 
     def rest(self, length: RestLength):
         if length >= RestLength.SHORT:
             self.reset()
+
+
+class OwnedWarlockSlots(WarlockSlots):
+    def __init__(self, jf: DataInterface, character: 'char.Character'):
+        super().__init__(jf)
+        self.owner = character
+        caster = JsonInterface('class/CASTER.super.class')
+        path = '/max_spell_slots/warlock/{}'.format(self.owner.classes['Warlock'].level)
+        self.max_spell_slots = caster.get(path)
 
 
 class SpellsPrepared:
@@ -107,7 +119,7 @@ class SpellsPrepared:
             pass
 
     def prepare(self, name: str):
-        self.preparedToday
+        self.record.set('/prepared_today/-', name)
 
     def __open_spell(self, name: str):
         filename = f"spell/{sanitize_filename(name)}.spell"

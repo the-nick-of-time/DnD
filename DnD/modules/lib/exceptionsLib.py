@@ -25,25 +25,22 @@ class SpellError(DnDError):
 
 
 class OutOfSpells(SpellError):
-    def __init__(self, character, spell):
-        self.character = character
+    def __init__(self, spell):
         self.spell = spell
 
     def __str__(self):
-        formatstr = '{char} has no spell slots of level {lv} remaining.'
-        return formatstr.format(char=self.character.name,
-                                lv=(self.spell if isinstance(self.spell, int)
+        formatstr = 'You have no spell slots of level {lv} remaining.'
+        return formatstr.format(lv=(self.spell if isinstance(self.spell, int)
                                     else self.spell.level))
 
 
 class OverflowSpells(SpellError):
-    def __init__(self, character, spell):
-        self.character = character
+    def __init__(self, spell):
         self.spell = spell
 
     def __str__(self):
-        formatstr = '{char} has full spell slots of level {lv} already.'
-        return formatstr.format(char=self.character.name, lv=self.spell.level)
+        formatstr = 'You have full spell slots of level {lv} already.'
+        return formatstr.format(lv=self.spell.level)
 
 
 class NotARitualError(SpellError):

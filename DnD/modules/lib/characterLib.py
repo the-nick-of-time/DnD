@@ -25,10 +25,10 @@ class Character:
         self.classes = classes.OwnedClasses(jf.cd("/classes"), self)
         self.hp = hp.HP(jf.cd('/HP'), self)
         if self.settings.spellPoints:
-            self.spellPower = casting.SpellPoints(self)
+            self.spellPower = casting.OwnedSpellPoints(jf.cd("/spellcasting"), self)
         else:
-            self.spellPower = casting.SpellSlots(self)
-        self.bonuses = bonus.Bonuses()
+            self.spellPower = casting.OwnedSpellSlots(jf.cd("/spellcasting"), self)
+        self.bonuses = bonus.OwnedBonuses(self)
         self.skills = set(jf.get('/skills'))
         self.saves = self.classes.saveProficiencies
         self.deathSaveFailures = 0

@@ -3,6 +3,7 @@ from typing import Union, Dict, List
 
 from . import abilitiesLib as abil
 from . import characterLib as char
+from . import featureLib as feature
 from . import interface as iface
 
 
@@ -11,6 +12,7 @@ class CasterType(enum.Enum):
     HALF = 'half'
     THIRD = 'third'
     WARLOCK = 'warlock'
+    NONCASTER = ''
 
 
 class Class:
@@ -34,7 +36,7 @@ class Class:
             self.interface += file
 
     @property
-    def features(self):
+    def features(self) -> List[feature.Feature]:
         pass
 
     @property
@@ -43,15 +45,20 @@ class Class:
 
     @property
     def casterLevel(self):
-        typ = self.interface.get('/spellcasting/slots')
-        if typ == 'full':
+        typ = CasterType(self.interface.get('/spellcasting/slots'))
+        if typ == CasterType.FULL:
             return self.level
-        if typ == 'half':
+        if typ == CasterType.HALF:
             return self.level // 2
-        if typ == 'third':
+        if typ == CasterType.THIRD:
             return self.level // 3
-        if typ == 'warlock':
+        if typ == CasterType.WARLOCK:
+            # Return 0 instead? because warlocks are weird and different
             return self.level
+
+    @property
+    def casterType(self) -> CasterType:
+        return CasterType(self.interface.get('/spellcasting/slots'))
 
     @property
     def spellsAvailable(self) -> Dict[int, List[str]]:
@@ -75,7 +82,7 @@ class Subclass:
         self.interface = interface
 
     @property
-    def features(self):
+    def features(self) -> List[feature.Feature]:
         pass
 
 
@@ -83,7 +90,7 @@ class Classes:
     def __init__(self, jf: iface.DataInterface):
         self.classes = [Class(spec) for spec in jf.get('/')]
 
-    def __getitem__(self, item):
+    def __getitem__(self, item) -> Class:
         if isinstance(item, int):
             return self.classes[item]
         if isinstance(item, str):
@@ -91,17 +98,33 @@ class Classes:
                 if cls.name == item:
                     return cls
             raise KeyError('The named class was not found')
+        raise KeyError('Look up a class by name or index')
 
     def __iter__(self):
         yield from self.classes
 
+    def __len__(self):
+        return len(self.classes)
+
     @property
-    def features(self):
+    def features(self) -> List[feature.Feature]:
         pass
 
     @property
     def casterLevel(self) -> int:
         return sum(c.casterLevel for c in self.classes)
+
+    @property
+    def casterType(self) -> CasterType:
+        casterClasses = [c for c in self.classes
+                         if c.casterLevel > 0
+                         and c.casterType != CasterType.WARLOCK]
+        if len(casterClasses) == 0:
+            return CasterType.NONCASTER
+        if len(casterClasses) > 1:
+            return CasterType.FULL
+        # Only one caster class
+        return casterClasses[0].casterType
 
     @property
     def level(self) -> int:
