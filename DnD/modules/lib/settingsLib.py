@@ -39,7 +39,7 @@ class HealingMode(enum.Enum):
     SLOW = 'slow'
 
 
-class RestLength(enum.Enum):
+class RestLength(enum.IntEnum):
     LONG = 100
     SHORT = 10
     TURN = 1

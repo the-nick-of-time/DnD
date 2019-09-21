@@ -48,7 +48,7 @@ class Inventory:
 
 
 class OwnedInventory(Inventory):
-    def __init__(self, jf: JsonInterface, character: char.Character):
+    def __init__(self, jf: JsonInterface, character: 'char.Character'):
         super().__init__(jf)
         self.owner = character
 
@@ -134,8 +134,8 @@ class EquipmentType(enum.Enum):
 
 
 class ItemEntry:
-    __slots__ = ('quantity', 'equipped', 'record', 'item', 'inventory', 'name',
-                 'value', 'weight', 'consumes', 'effect', 'description')
+    __slots__ = ('record', 'item', 'inventory', 'name', 'value', 'weight',
+                 'consumes', 'effect', 'description')
 
     def __init__(self, name: str, jf: JsonInterface, parent: Inventory):
         self.record = jf

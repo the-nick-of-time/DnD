@@ -30,6 +30,9 @@ class SpellSlots(SpellResource):
         self.max_spell_slots = None
 
     def cast(self, level: int):
+        if level == 0:
+            # Cantrips don't consume any resources
+            return
         slots = self.record.get('/slots')
         if slots[level] < 1:
             raise OutOfSpells(level)
@@ -63,6 +66,9 @@ class SpellPoints(SpellResource):
         self.costs = None
 
     def cast(self, level: int):
+        if level == 0:
+            # Cantrips cost no resources
+            return
         cost = self.costs[level]
         current = self.record.get('/points')
         if current < cost:
