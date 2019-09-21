@@ -1,17 +1,21 @@
 {
-  "components": "V, S, M (burning incense, a small measure of brimstone and oil, a knotled string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp)",
-  "ritual": false,
-  "effect": "You create a ward that protects up to 2,500 square feet of floor space (an area 50 feet square, or one hundred 5-foot squares or twenty-five 10-foot squares). The warded area can be up to 20 feet tall, and shaped as you desire. You can ward several stories of a stronghold by dividing the area among them, as long as you can walk into each contiguous area while you are casting the spell.\nWhen you cast this spell, you can specify individuals that are unaffected by any or all of the effects that you choose. You can also specify a password that, when spoken aloud, makes the speaker immune to these effects.\n*Guards and wards* creates the following effects within the warded area.\n**Corridors.** Fog fills all the warded corridors, making them heavily obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you will believe it is going in the opposite direction from the one it chooses.\n**Doors.** All doors in the warded area are magically locked, as if sealed by an *[arcane lock](../arcane-lock/ \"arcane lock (lvl 2)\")* spell. In addition, you can cover up to ten doors with an illusion (equivalent to the illusory object function of the *[minor illusion](../minor-illusion/ \"minor illusion (cantrip)\")* spell) to make them appear as plain sections of wall.\n**Stairs.** Webs fill all stairs in the warded area from top to bottom, as the *[web](../web/ \"web (lvl 2)\")* spell. These strands regrow in 10 minutes if they are burned or torn away while guards and wars lasts.\n**Other Spell Effect.** You can place your choice of one of the following magical effects within the warded area of the stronghold.\n* Place *[dancing lights](../dancing-lights/ \"dancing lights (cantrip)\")* in four corridors. You can designate a simple program that the lights repeat as long as guards and wards lasts.\n* Place *[magic mouth](../magic-mouth/ \"magic mouth (lvl 2)\")* in two locations.\n* Place *[stinking cloud](../stinking-cloud/ \"stinking cloud (lvl 3)\")* in two locations. The vapors appear in the places you designate; They return within 10 minutes if dispersed by wind while *guards and wards* lasts.\n* Place a constant *[gust of wind](../gust-of-wind/ \"gust of wind (lvl 2)\")* in one corridor or room.\n* Place a *[suggestion](../suggestion/ \"suggestion (lvl 2)\")* in one location. You select an area of up to 5 feet square, and any creature that enters or passes through the area receives the suggestion mentally.\nThe whole warded area radiates magic. A *[dispel magic](../dispel-magic/ \"dispel magic (lvl 3)\")* cast on a specific effect, if successful, removes only that effect.\nYou can create a permanently guarded and warded structure by casting this spell there every day for one year.",
-  "range": "Touch",
-  "school": "Abjuration",
-  "class": [
-    "Wizard",
-    "Bard"
-  ],
-  "concentration": false,
-  "page": "phb 248",
-  "duration": "24 hours",
-  "level": 6,
   "name": "Guards and Wards",
-  "casting_time": "10 minutes"
+  "level": 6,
+  "school": "Abjuration",
+  "casting_time": "10 minutes",
+  "range": "Touch",
+  "components": "V, S, M (burning incense, a small measure of brimstone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp)",
+  "duration": "24 hours",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You create a ward that protects up to 2,500 square feet of floor space (an area 50 feet square, or one hundred 5-foot squares or twenty-five 10-foot squares). The warded area can be up to 20 feet tall, and shaped as you desire. You can ward several stories of a stronghold by dividing the area among them, as long as you can walk into each contiguous area while you are casting the spell.\n\nWhen you cast this spell, you can specify individuals that are unaffected by any or all of the effects that you choose. You can also specify a password that, when spoken aloud, makes the speaker immune to these effects.\n\nGuards and wards creates the following effects within the warded area.\n\nCorridors: Fog fills all the warded corridors, making them heavily obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you will believe it is going in the opposite direction from the one it chooses.\n\nDoors: All doors in the warded area are magically locked, as if sealed by an arcane lock spell. In addition, you can cover up to ten doors with an illusion (equivalent to the illusory object function of the minor illusion spell) to make them appear as plain sections of wall.\n\nStairs: Webs fill all stairs in the warded area from top to bottom, as the web spell. These strands regrow in 10 minutes if they are burned or torn away while guards and wards lasts.\n\nOther Spell Effect: You can place your choice of one of the following magical effects within the warded area of the stronghold.\n\n\u2022 Place dancing lights in four corridors. You can designate a simple program that the lights repeat as long as guards and wards lasts.\n\n\u2022 Place magic mouth in two locations.\n\n\u2022 Place stinking cloud in two locations. The vapors appear in the places you designate they return within 10 minutes if dispersed by wind while guards and wards lasts.\n\n\u2022 Place a constant gust of wind in one corridor or room. Place a suggestion in one location. You select an area of up to 5 feet square, and any creature that enters or passes through the area receives the suggestion mentally.\n\nThe whole warded area radiates magic. A dispel magic cast on a specific effect, if successful, removes only that effect.\n\nYou can create a permanently guarded and warded structure by casting this spell there every day for one year.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

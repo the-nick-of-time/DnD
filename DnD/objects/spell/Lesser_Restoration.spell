@@ -1,20 +1,41 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You touch a creature and can end either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned.",
-  "range": "Touch",
-  "school": "Abjuration",
-  "class": [
-    "Cleric",
-    "Ranger",
-    "Paladin",
-    "Druid",
-    "Bard"
-  ],
-  "concentration": false,
-  "page": "phb 255",
-  "duration": "Instantaneous",
-  "level": 2,
   "name": "Lesser Restoration",
-  "casting_time": "1 action"
+  "level": 2,
+  "school": "Abjuration",
+  "casting_time": "1 action",
+  "range": "Touch",
+  "components": "V, S",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Artificer"
+    },
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Life"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Paladin"
+    },
+    {
+      "class": "Paladin",
+      "subclass": "Devotion"
+    },
+    {
+      "class": "Ranger"
+    }
+  ],
+  "effect": "You touch a creature and can end either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

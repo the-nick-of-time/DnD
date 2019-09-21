@@ -1,19 +1,33 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "A flickering flame appears in your hand. The flame remains there for the duration and harms neither you nor your equipment. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The spell ends if you dismiss it as an action or if you cast it again.\nYou can also attack with the flame, although doing so ends the spell. When you cast this spell, or as an action on a later turn, you can hurl the flame at a creature within 30 feet of you. Make a ranged spell attack. On a hit, the target takes 1d8 fire damage.\nThis spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-  "range": "Self",
-  "school": "Conjuration",
-  "class": [
-    "Druid"
-  ],
-  "concentration": false,
-  "page": "phb 269",
-  "duration": "10 minutes",
-  "level": 0,
   "name": "Produce Flame",
+  "level": 0,
+  "school": "Conjuration",
   "casting_time": "1 action",
-  "attack_roll": true,
-  "damage": "1d8",
-  "damage_type": "fire"
+  "range": "Self",
+  "components": "V, S",
+  "duration": "10 minutes",
+  "class": [
+    {
+      "class": "Druid"
+    }
+  ],
+  "effect": "A flickering flame appears in your hand. The flame remains there for the duration and harms neither you nor your equipment. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The spell ends if you dismiss it as an action or if you cast it again.\n\nYou can also attack with the flame, although doing so ends the spell. When you cast this spell, or as an action on a later turn, you can hurl the flame at a creature within 30 feet of you. Make a ranged spell attack. On a hit, the target takes 1d8 fire damage.\n\nThis spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "Self",
+      "to_hit": {
+        "test": "ATTACKROLL",
+        "against": "AC"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "1d8",
+          "damage_type": "fire"
+        }
+      }
+    }
+  ]
 }

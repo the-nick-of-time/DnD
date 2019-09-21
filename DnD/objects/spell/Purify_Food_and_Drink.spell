@@ -1,18 +1,24 @@
 {
-  "components": "V, S",
-  "ritual": true,
-  "effect": "All nonmagical food and drink within a 5-foot radius sphere centered on a point of your choice within range is purified and rendered free of poison and disease.",
-  "range": "10 feet",
-  "school": "Transmutation",
-  "class": [
-    "Cleric",
-    "Paladin",
-    "Druid"
-  ],
-  "concentration": false,
-  "page": "phb 270",
-  "duration": "Instantaneous",
-  "level": 1,
   "name": "Purify Food and Drink",
-  "casting_time": "1 action"
+  "level": 1,
+  "school": "Transmutation",
+  "casting_time": "1 action",
+  "range": "10 feet",
+  "components": "V, S",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Paladin"
+    }
+  ],
+  "effect": "All nonmagical food and drink within a 5-foot-radius sphere centered on a point of your choice within range is purified and rendered free of poison and disease.",
+  "higher_levels": "",
+  "ritual": true,
+  "concentration": false
 }

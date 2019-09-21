@@ -1,18 +1,39 @@
 {
-  "components": "V, S, M (a drop of bitumen and a spider)",
-  "ritual": false,
-  "effect": "Until the spell ends, one willing creature you touch gains the ability to move up, down, and across vertical surfaces and upside down along ceilings, while leaving its hands free. The target also gains a climbing speed equal to its walking speed.",
-  "range": "Touch",
-  "school": "Transmutation",
-  "class": [
-    "Sorcerer",
-    "Warlock",
-    "Wizard"
-  ],
-  "concentration": true,
-  "page": "phb 277",
-  "duration": "up to 1 hour",
-  "level": 2,
   "name": "Spider Climb",
-  "casting_time": "1 action"
+  "level": 2,
+  "school": "Transmutation",
+  "casting_time": "1 action",
+  "range": "Touch",
+  "components": "V, S, M (a drop of bitumen and a spider)",
+  "duration": "Concentration, up to 1 hour",
+  "class": [
+    {
+      "class": "Artificer"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Forest"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Mountain"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Underdark"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "Until the spell ends, one willing creature you touch gains the ability to move up, down, and across vertical surfaces and upside down along ceilings, while leaving its hands free. The target also gains a climbing speed equal to its walking speed.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

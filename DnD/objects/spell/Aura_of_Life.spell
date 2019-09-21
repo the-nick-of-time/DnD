@@ -1,16 +1,22 @@
 {
-  "components": "V",
-  "ritual": false,
-  "effect": "Life-preserving energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) has resistance to necrotic damage, and its hit point maximum can't be reduced. In addition, a nonhostile, living creature regains 1 hit point when it starts its turn in the aura with 0 hit points.",
-  "range": "Self",
-  "school": "Abjuration",
-  "class": [
-    "Paladin"
-  ],
-  "concentration": true,
-  "page": "phb 216",
-  "duration": "up to 10 minutes",
-  "level": 4,
   "name": "Aura of Life",
-  "casting_time": "1 action"
+  "level": 4,
+  "school": "Abjuration",
+  "casting_time": "1 action",
+  "range": "Self (30-foot radius)",
+  "components": "V",
+  "duration": "Concentration, up to 10 minutes",
+  "class": [
+    {
+      "class": "Paladin"
+    },
+    {
+      "class": "Warlock",
+      "subclass": "Undying"
+    }
+  ],
+  "effect": "Life-preserving energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each non-hostile creature in the aura (including you) has resistance to necrotic damage, and its hit point maximum can't be reduced. In addition, a non-hostile, living creature regains 1 hit point when it starts its turn in the aura with 0 hit points.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

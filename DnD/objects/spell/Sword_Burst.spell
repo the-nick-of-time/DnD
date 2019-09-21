@@ -1,0 +1,39 @@
+{
+  "name": "Sword Burst",
+  "level": 0,
+  "school": "Conjuration",
+  "casting_time": "1 action",
+  "range": "5 feet",
+  "components": "V",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You create a momentary circle of spectral blades that sweep around you. Each creature within range, other than you, must succeed on a Dexterity saving throw or take 1d6 force damage.\n    The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "5 feet",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Dexterity"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "1d6",
+          "damage_type": "force"
+        }
+      }
+    }
+  ]
+}

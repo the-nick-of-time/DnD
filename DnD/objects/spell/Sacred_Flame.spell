@@ -1,33 +1,32 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "Flame-like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw.\nThe spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-  "range": "60 feet",
-  "school": "Evocation",
-  "class": [
-    "Cleric"
-  ],
-  "concentration": false,
-  "page": "phb 272",
-  "duration": "Instantaneous",
-  "level": 0,
   "name": "Sacred Flame",
+  "level": 0,
+  "school": "Evocation",
   "casting_time": "1 action",
+  "range": "60 feet",
+  "components": "V, S",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Cleric"
+    }
+  ],
+  "effect": "Flame-like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw.\n\nThe spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false,
   "attacks": [
     {
-      "attack_type": "SAVE",
-      "attack": {
-        "ability": "Dexterity",
-        "base_dc": 8,
-        "modifiers": [
-          "$spellcasting_mod"
-        ]
+      "range": "60 feet",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Dexterity"
       },
-      "damage": {
-        "roll": "1d8",
-        "type": "Radiant",
-        "roll_suffix": "",
-        "modifiers": []
+      "on_hit": {
+        "damage": {
+          "base_roll": "1d8",
+          "damage_type": "radiant"
+        }
       }
     }
   ]

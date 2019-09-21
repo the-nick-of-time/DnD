@@ -1,19 +1,30 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You touch a creature. If it is poisoned, you neutralize the poison. If more than one poison afflicts the target, you neutralize one poison that you know is present, or you neutralize one at random. For the duration, the target has advantage on saving throws against being poisoned, and it has resistance to poison damage.",
-  "range": "Touch",
-  "school": "Abjuration",
-  "class": [
-    "Cleric",
-    "Ranger",
-    "Paladin",
-    "Druid"
-  ],
-  "concentration": false,
-  "page": "phb 270",
-  "duration": "1 hour",
-  "level": 2,
   "name": "Protection from Poison",
-  "casting_time": "1 action"
+  "level": 2,
+  "school": "Abjuration",
+  "casting_time": "1 action",
+  "range": "Touch",
+  "components": "V, S",
+  "duration": "1 hour",
+  "class": [
+    {
+      "class": "Artificer"
+    },
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Paladin"
+    },
+    {
+      "class": "Ranger"
+    }
+  ],
+  "effect": "You touch a creature. If it is poisoned, you neutralize the poison. If more than one poison afflicts the target, you neutralize on poison that you know is present, or you neutralize one at random.\n\nFor the duration, the target has advantage on saving throws against being poisoned, and it has resistance to poison damage.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

@@ -1,22 +1,46 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You cause a tremor in the ground in a 10-foot radius. Each creature other than you in that area must make a Dexterity saving throw. On a failed save, a creature takes 1d6 bludgeoning damage and is knocked prone. If the ground in that area is loose earth or stone, it becomes difficult terrain until cleared.\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
-  "range": "Self",
-  "school": "Evocation",
-  "class": [
-    "Sorcerer",
-    "Wizard",
-    "Druid",
-    "Bard"
-  ],
-  "concentration": false,
-  "page": "ee 17",
-  "duration": "Instantaneous",
-  "level": 1,
   "name": "Earth Tremor",
+  "level": 1,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "save": "Dexterity",
-  "damage": "1d6",
-  "damage_type": "bludgeoning"
+  "range": "Self (10-foot radius)",
+  "components": "V, S",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "You cause a tremor in the ground in a 10-foot radius. Each creature other than you in that area must make a Dexterity saving throw. On a failed save, a creature takes 1d6 bludgeoning damage and is knocked prone. If the ground in that area is loose earth or stone, it becomes difficult terrain until cleared.\n\n\nThis spell can be found in the Elemental Evil Player's Companion",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "Self (10-foot radius)",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Dexterity"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "1d6",
+          "damage_type": "bludgeoning"
+        }
+      }
+    }
+  ]
 }

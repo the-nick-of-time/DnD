@@ -1,22 +1,50 @@
 {
-  "components": "V, S, M (a chip of mica)",
-  "ritual": false,
-  "effect": "A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.\nA nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area.\n**At Higher Levels.** When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
-  "range": "60 feet",
-  "school": "Evocation",
-  "class": [
-    "Sorcerer",
-    "Warlock",
-    "Wizard",
-    "Bard"
-  ],
-  "concentration": false,
-  "page": "phb 275",
-  "duration": "Instantaneous",
-  "level": 2,
   "name": "Shatter",
+  "level": 2,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "save": "Constitution",
-  "damage": "3d8",
-  "damage_type": "thunder"
+  "range": "60 feet",
+  "components": "V, S, M (a chip of mica)",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Tempest"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.\n\nA nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "60 feet",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Constitution"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "3d8",
+          "damage_type": "thunder"
+        }
+      }
+    }
+  ]
 }

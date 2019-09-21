@@ -1,22 +1,54 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. The spell has no effect on undead or constructs.\nIf you target a plant creature or a magical plant, it makes the saving throw with disadvantage, and the spell deals maximum damage to it.\nIf you target a nonmagical plant that isn't a creature, such as a tree or shrub, it doesn't make a saving throw; it simply withers and dies.\n**At Higher Levels.** When you cast this spell using a spell slot of 5th level of higher, the damage increases by 1d8 for each slot level above 4th.",
-  "range": "30 feet",
-  "school": "Necromancy",
-  "class": [
-    "Sorcerer",
-    "Warlock",
-    "Wizard",
-    "Druid"
-  ],
-  "concentration": false,
-  "page": "phb 219",
-  "duration": "Instantaneous",
-  "level": 4,
   "name": "Blight",
+  "level": 4,
+  "school": "Necromancy",
   "casting_time": "1 action",
-  "save": "Constitution",
-  "damage": "8d8",
-  "damage_type": "necrotic"
+  "range": "30 feet",
+  "components": "V, S",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Cleric",
+      "subclass": "Death"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Desert"
+    },
+    {
+      "class": "Paladin",
+      "subclass": "Oathbreaker"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. This spell has no effect on undead or constructs.\n\nIf you target a plant creature or a magical plant, it makes the saving throw with disadvantage, and the spell deals maximum damage to it.\n\nIf you target a nonmagical plant that isn't a creature, such as a tree or shrub, it doesn't make a saving throw, it simply withers and dies.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "30 feet",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Constitution"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "8d8",
+          "damage_type": "necrotic"
+        }
+      }
+    }
+  ]
 }

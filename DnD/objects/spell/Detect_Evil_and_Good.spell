@@ -1,17 +1,21 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "For the duration, you know if there is an aberration, celestial, elemental, fey, fiend, or undead within 30 feet of you, as well as where the creature is located. Similarly, you know if there is a place or object within 30 feet of you that has been magically consecrated or desecrated.\nThe spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
-  "range": "Self",
-  "school": "Divination",
-  "class": [
-    "Cleric",
-    "Paladin"
-  ],
-  "concentration": true,
-  "page": "phb 231",
-  "duration": "up to 10 minutes",
-  "level": 1,
   "name": "Detect Evil and Good",
-  "casting_time": "1 action"
+  "level": 1,
+  "school": "Divination",
+  "casting_time": "1 action",
+  "range": "Self",
+  "components": "V, S",
+  "duration": "Concentration, up to 10 minutes",
+  "class": [
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Paladin"
+    }
+  ],
+  "effect": "For the duration, you know if there is an aberration, celestial, elemental, fey, fiend, or undead within 30 feet of you, as well as where the creature is located. Similarly, you know if there is a place of object within 30 feet of you that has been magically consecrated or desecrated. The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

@@ -1,22 +1,50 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed. In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet.\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
-  "range": "Self (15-foot cube)",
-  "school": "Evocation",
-  "class": [
-    "Sorcerer",
-    "Wizard",
-    "Druid",
-    "Bard"
-  ],
-  "concentration": false,
-  "page": "phb 282",
-  "duration": "Instantaneous",
-  "level": 1,
   "name": "Thunderwave",
+  "level": 1,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "save": "Constitution",
-  "damage": "2d8",
-  "damage_type": "thunder"
+  "range": "Self (15-foot cube)",
+  "components": "V, S",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Tempest"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed.\n\nIn addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "Self (15-foot cube)",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Constitution"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "2d8",
+          "damage_type": "thunder"
+        }
+      }
+    }
+  ]
 }

@@ -1,23 +1,53 @@
 {
-  "components": "S",
-  "ritual": false,
-  "effect": "You create a burst of thunderous sound, which can be heard 100 feet away. Each creature other than you within 5 feet of you must make a Constitution saving throw. On a failed save, the creature takes 1d6 thunder damage.\nThe spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
-  "range": "Self",
-  "school": "Evocation",
-  "class": [
-    "Sorcerer",
-    "Warlock",
-    "Wizard",
-    "Druid",
-    "Bard"
-  ],
-  "concentration": false,
-  "page": "ee 22",
-  "duration": "Instantaneous",
-  "level": 0,
   "name": "Thunderclap",
+  "level": 0,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "save": "Constitution",
-  "damage": "1d6",
-  "damage_type": "thunder"
+  "range": "Self (5-foot radius)",
+  "components": "S",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Rogue",
+      "subclass": "Arcane Trickster"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "You create a burst of thunderous sound, which can be heard 100 feet away. Each creature other than you within 5 feet of you must make a Constitution saving throw. On a failed save, the creature takes 1d6 thunder damage.\n\nThe spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).\n\nThis spell can be found in the Elemental Evil Player's Companion",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "Self (5-foot radius)",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Constitution"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "1d6",
+          "damage_type": "thunder"
+        }
+      }
+    }
+  ]
 }

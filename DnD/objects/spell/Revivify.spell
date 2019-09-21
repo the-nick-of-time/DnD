@@ -1,17 +1,28 @@
 {
-  "components": "V, S, M (diamonds worth 300 gp, which the spell consumes)",
-  "ritual": false,
-  "effect": "You touch a creature that has died within the last minute. That creature returns to life with 1 hit point. This spell can't return to life a creature that has died of old age, nor can it restore any missing body parts.",
-  "range": "Touch",
-  "school": "Conjuration",
-  "class": [
-    "Cleric",
-    "Paladin"
-  ],
-  "concentration": false,
-  "page": "phb 272",
-  "duration": "Instantaneous",
-  "level": 3,
   "name": "Revivify",
-  "casting_time": "1 action"
+  "level": 3,
+  "school": "Necromancy",
+  "casting_time": "1 action",
+  "range": "Touch",
+  "components": "V, S, M (diamonds worth 300 gp, which the spell consumes)",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Artificer"
+    },
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Life"
+    },
+    {
+      "class": "Paladin"
+    }
+  ],
+  "effect": "You touch a creature that has died within the last minute. That creature returns to life with 1 hit point. This spell can't return to life a creature that has died of old age, nor can it restore any missing body parts.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

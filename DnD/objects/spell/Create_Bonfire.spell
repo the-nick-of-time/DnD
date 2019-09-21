@@ -1,22 +1,50 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You create a bonfire on ground that you can see within range. Until the spell ends, the bonfire fills a 5-foot cube. Any creature in the bonfire's space when you cast the spell must succeed on a Dexterity saving throw or take 1d8 fire damage. A creature must also make the saving throw when it enters the bonfire's space for the first time on a turn or ends its turn there.\nThe spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-  "range": "60 feet",
-  "school": "Conjuration",
-  "class": [
-    "Sorcerer",
-    "Warlock",
-    "Wizard",
-    "Druid"
-  ],
-  "concentration": true,
-  "page": "ee 16",
-  "duration": "1 minute",
-  "level": 0,
   "name": "Create Bonfire",
+  "level": 0,
+  "school": "Conjuration",
   "casting_time": "1 action",
-  "save": "Dexterity",
-  "damage": "1d8",
-  "damage_type": "fire"
+  "range": "60 feet",
+  "components": "V, S",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Rogue",
+      "subclass": "Arcane Trickster"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "You create a bonfire on ground that you can see within range. Until the spells ends, the bonfire fills a 5-foot cube. Any creature in the bonfire's space when you cast the spell must succeed on a Dexterity saving throw or take 1d8 fire damage. A creature must also make the saving throw when it enters the bonfire's space for the first time on a turn or ends its turn there.\n\nThe spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).\n\nThis spell can be found in the Elemental Evil Player's Companion",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true,
+  "attacks": [
+    {
+      "range": "60 feet",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Dexterity"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "1d8",
+          "damage_type": "fire"
+        }
+      }
+    }
+  ]
 }

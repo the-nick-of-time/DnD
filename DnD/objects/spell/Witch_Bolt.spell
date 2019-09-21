@@ -1,21 +1,43 @@
 {
-  "components": "V, S, M  (a twig from a tree that has been struck by lightning)",
-  "ritual": false,
-  "effect": "A beam of crackling, blue energy lances out toward a creature within range, forming a sustained arc of lightning between you and the target. Make a ranged spell attack against that creature. On a hit, the target takes 1d12 lightning damage, and on each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. The spell ends if you use your action to do anything else. The spell also ends if the target is ever outside the spell's range or if it has total cover from you.\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, the initial damage increases by 1d12 for each slot level above 1st.",
-  "range": "30 feet",
-  "school": "Evocation",
-  "class": [
-    "Sorcerer",
-    "Warlock",
-    "Wizard"
-  ],
-  "concentration": true,
-  "page": "phb 289",
-  "duration": "up to 1 minute",
-  "level": 1,
   "name": "Witch Bolt",
+  "level": 1,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "attack_roll": true,
-  "damage": "1d12",
-  "damage_type": "lightning"
+  "range": "30 feet",
+  "components": "V, S, M (a twig from a tree that has been struck by lightning)",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "A beam of crackling, blue energy lances out toward a creature within range, forming a sustained arc of lightning between you and the target. Make a ranged spell attack against that creature. On a hit, the target takes 1d12 lightning damage, and on each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. The spell ends if you use your action to do anything else. The spell also ends if the target is ever outside the spell's range or if it has total cover from you.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the initial damage increases by 1d12 for each slot level above 1st.",
+  "ritual": false,
+  "concentration": true,
+  "attacks": [
+    {
+      "range": "30 feet",
+      "to_hit": {
+        "test": "ATTACKROLL",
+        "against": "AC"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "1d12",
+          "damage_type": "lightning"
+        }
+      }
+    }
+  ]
 }

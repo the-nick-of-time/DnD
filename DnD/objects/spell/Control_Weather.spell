@@ -1,18 +1,24 @@
 {
-  "components": "V, S, M  (burning incense and bits of earth and wood mixed in water)",
-  "ritual": false,
-  "effect": "You take control of the weather within 5 miles of you for the duration. You must be outdoors to cast this spell. Moving to a place where you don't have a clear path to the sky ends the spell early.\nWhen you cast the spell, you change the current weather conditions, which are determined by the DM based on the climate and season. You can change precipitation, temperature, and wind. It takes 1d4 x 10 minutes for the new conditions to take effect. Once they do so, you can change the conditions again. When the spell ends, the weather gradually returns to normal.\nWhen you change the weather conditions, find a current condition on the following tables and change its stage by one, up or down. When changing the wind, you can change its direction.\n**Precipitation**\n|Stage|Condition|\n|-|-|\n| 1 | Clear |\n| 2 | Light clouds |\n| 3 | Overcast or ground fog |\n| 4 | Rain, hail, or snow |\n| 5 | Torrential rain, driving hail, or blizzard |\n**Temperature**\n|Stage|Condition|\n|-|-|\n| 1 | Unbearable heat |\n| 2 | Hot |\n| 3 | Warm |\n| 4 | Cool |\n| 5 | Cold |\n| 6 | Arctic cold |\n**Wind**\n|Stage|Condition|\n|-|-|\n| 1 | Calm |\n| 2 | Moderate wind |\n| 3 | Strong wind |\n| 4 | Gale |\n| 5 | Storm |",
-  "range": "Self",
-  "school": "Transmutation",
-  "class": [
-    "Cleric",
-    "Wizard",
-    "Druid"
-  ],
-  "concentration": true,
-  "page": "phb 228",
-  "duration": "up to 8 hours",
-  "level": 8,
   "name": "Control Weather",
-  "casting_time": "10 minutes"
+  "level": 8,
+  "school": "Transmutation",
+  "casting_time": "10 minutes",
+  "range": "Self (5-mile radius)",
+  "components": "V, S, M (burning incense and bits of earth and wood mixed in water)",
+  "duration": "Concentration, up to 8 hours",
+  "class": [
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You take control of the weather within 5 miles of you for the duration. You must be outdoors to cast this spell. Moving to a place where you don't have a clear path to the sky ends the spell early.\n\nWhen you cast the spell, you change the current weather conditions, which are determined by the DM based on the climate and season. You can change precipitation, temperature, and wind. It takes 1d4 x 10 minutes for the new conditions to take effect. Once they do so, you can change the conditions again. When the spell ends, the weather gradually returns to normal.\n\nWhen you change the weather conditions, find a current condition on the following tables and change its stage by one, up or down. When changing the wind, you can change its direction.\n\nPrecipitation:\nStage 1 - Clear\nStage 2 - Light clouds\nStage 3 - Overcast or ground fog\nStage 4 - Rain, hail or snow\nStage 5 - Torrential rain, driving hail or blizzard\n\nTemperature:\nStage 1 - Unbearable heat\nStage 2 - Hot\nStage 3 - Warm\nStage 4 - Cool\nStage 5 - Cold\nStage 6 - Arctic cold\n\nWind:\nStage 1 - Calm\nStage 2 - Moderate wind\nStage 3 - Strong wind\nStage 4 - Gale\nStage 5 - Storm",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

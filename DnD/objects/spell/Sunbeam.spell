@@ -1,21 +1,39 @@
 {
-  "components": "V, S, M (a magnifying glass)",
-  "ritual": false,
-  "effect": "A beam of brilliant light flashes out from your hand in a 5-foot-wide, 60-foot-long line. Each creature in the line must make a Constitution saving throw. On a failed save, a creature takes 6d8 radiant damage and is blinded until your next turn. On a successful save, it takes half as much damage and isn't blinded by this spell. Undead and oozes have disadvantage on this saving throw.\nYou can create a new line of radiance as your action on any turn until the spell ends.\nFor the duration, a mote of brilliant radiance shines in your hand. It sheds bright light in a 30-foot radius and dim light for an additional 30 feet. This light is sunlight.",
-  "range": "Self",
-  "school": "Evocation",
-  "class": [
-    "Sorcerer",
-    "Wizard",
-    "Druid"
-  ],
-  "concentration": true,
-  "page": "phb 279",
-  "duration": "up to 1 minute",
-  "level": 6,
   "name": "Sunbeam",
+  "level": 6,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "save": "Constitution",
-  "damage": "6d8",
-  "damage_type": "radiant"
+  "range": "Self (60-foot line)",
+  "components": "V, S, M (a magnifying glass)",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "A beam of brilliant light flashes out from your hand in a 5-foot-wide, 60-foot-line. Each creature in the line must make a Constitution saving throw. On a failed save, a creature takes 6d8 radiant damage and is blinded until your next turn. On a successful save, it takes half as much damage and isn't blinded by this spell. Undead and oozes have disadvantage on this saving throw.\n\nYou can create a new line of radiance as your action on any turn until the spell ends.\n\nFor the duration, a mote of brilliant radiance shines in your hand. It sheds bright light in a 30-foot radius and dim light for an additional 30 feet. The light is sunlight.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true,
+  "attacks": [
+    {
+      "range": "Self (60-foot line)",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Constitution"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "6d8",
+          "damage_type": "radiant"
+        }
+      }
+    }
+  ]
 }

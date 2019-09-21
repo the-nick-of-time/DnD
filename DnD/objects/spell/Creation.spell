@@ -1,17 +1,25 @@
 {
-  "components": "V, S, M  (a tiny piece of matter of the same type of the item you plan to create)",
-  "ritual": false,
-  "effect": "You pull wisps of shadow material from the Shadowfell to create a nonliving object of vegetable matter within range: soft goods, rope, wood, or something similar. You can also use this spell to create mineral objects such as stone, crystal, or metal. The object created must be no larger than a 5-foot cube, and the object must be of a form and material that you have seen before.\nThe duration depends on the object's material. If the object is composed of multiple materials, use the shortest duration.\n| Material              | Duration   |\n| --------------------- |:----------:|\n| Vegetable matter      | 1 day      |\n| Stone or crystal      | 12 hours   |\n| Precious metals       | 1 hour     |\n| Gems                  | 10 minutes |\n| Adamantine or mithral | 1 minute   |\nUsing any material created by this spell as another spell's material component causes that spell to fail.\n**At Higher Levels.** When you cast this spell using a spell slot of 6th level or higher, the cube increases by 5 feet for each slot level above 5th.",
-  "range": "30 feet",
-  "school": "Illusion",
-  "class": [
-    "Sorcerer",
-    "Wizard"
-  ],
-  "concentration": false,
-  "page": "phb 229",
-  "duration": "Special",
-  "level": 5,
   "name": "Creation",
-  "casting_time": "1 minute"
+  "level": 5,
+  "school": "Illusion",
+  "casting_time": "1 minute",
+  "range": "30 feet",
+  "components": "V, S, M (a tiny piece of matter of the same type of the item you plan to create)",
+  "duration": "Special",
+  "class": [
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Rogue",
+      "subclass": "Arcane Trickster"
+    }
+  ],
+  "effect": "You pull wisps of shadow material from the Shadowfell to create a nonliving object of vegetable matter within range - soft goods, rope, wood, or something similar. You can also use this spell to create mineral objects such as stone, crystal, or metal. The object created must be no larger than a 5-foot cube, and the object must be of a form and material that you have seen before.\n\nThe duration depends on the object's material. If the object is composed of multiple materials, use the shortest duration.\n\nMaterial - Duration: \nVegetable matter - 1 day\nStone/crystal - 12 hours\nPrecious metals - 1 hour\nGems - 10 minutes\nAdamantine/Mithral - 1 minute\n\nUsing any material created by this spell as another spell's material component causes that spell to fail.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 6th level or higher, the cube increases by 5 feet for each slot level above 5th.",
+  "ritual": false,
+  "concentration": false
 }

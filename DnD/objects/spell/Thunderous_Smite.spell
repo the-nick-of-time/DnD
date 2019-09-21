@@ -1,19 +1,33 @@
 {
-  "components": "V",
-  "ritual": false,
-  "effect": "The first time you hit with a melee weapon attack during this spell's duration, your weapon rings with thunder that is audible within 300 feet of you, and the attack deals an extra 2d6 thunder damage to the target. Additionally, if the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and knocked prone.",
-  "range": "Self",
-  "school": "Evocation",
-  "class": [
-    "Paladin"
-  ],
-  "concentration": true,
-  "page": "phb 282",
-  "duration": "up to 1 minute",
-  "level": 1,
   "name": "Thunderous Smite",
+  "level": 1,
+  "school": "Evocation",
   "casting_time": "1 bonus action",
-  "save": "Strength",
-  "damage": "2d6",
-  "damage_type": "thunder"
+  "range": "Self",
+  "components": "V",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Paladin"
+    }
+  ],
+  "effect": "The first time you hit with a melee weapon attack during this spell's duration, your weapon rings with thunder that is audible within 300 feet of you, and the attack deals an extra 2d6 thunder damage to the target. Additionally, if the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and knocked prone.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true,
+  "attacks": [
+    {
+      "range": "Self",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Strength"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "2d6",
+          "damage_type": "thunder"
+        }
+      }
+    }
+  ]
 }

@@ -1,19 +1,27 @@
 {
-  "components": "V, S, M (a hummingbird feather)",
-  "ritual": false,
-  "effect": "You touch a willing creature and bestow a limited ability to see into the immediate future. For the duration the target can't be surprised and has advantage on attack rolls, ability checks, and saving throws. Additionally, other creatures have disadvantage on attack rolls against the target for the duration.\nThis spell immediately ends if you cast it again before its duration ends.",
-  "range": "Touch",
-  "school": "Divination",
-  "class": [
-    "Warlock",
-    "Wizard",
-    "Druid",
-    "Bard"
-  ],
-  "concentration": false,
-  "page": "phb 244",
-  "duration": "8 hours",
-  "level": 9,
   "name": "Foresight",
-  "casting_time": "1 minute"
+  "level": 9,
+  "school": "Divination",
+  "casting_time": "1 minute",
+  "range": "Touch",
+  "components": "V, S, M (a hummingbird feather)",
+  "duration": "8 hours",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You touch a willing creature and bestow a limited ability to see into the immediate future. For the duration, the target can't be surprised and has advantage on attack rolls, ability checks, and saving throws. Additionally, other creatures have disadvantage on attack rolls against the target for the duration.\n\nThis spell immediately ends if you cast it again before its duration ends.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

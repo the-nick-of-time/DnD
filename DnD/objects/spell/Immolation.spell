@@ -1,20 +1,36 @@
 {
-  "components": "V",
-  "ritual": false,
-  "effect": "Flames wreathe one creature you can see within range. The target must make a Dexterity saving throw. It takes 7d6 fire damage on a failed save, or half as much damage on a successful one. On a failed save, the target also burns for the spell's duration. The burning target sheds bright light in a 30-foot radius and dim light for an additional 30 feet. At the end of each of its turns, the target repeats the saving throw. It takes 3d6 fire damage on a failed save, and the spell ends on a successful one. These magical flames can't be extinguished through nonmagical means.\nIf damage from this spell reduces a target to 0 hit points, the target is turned to ash.",
-  "range": "90 feet",
-  "school": "Evocation",
-  "class": [
-    "Sorcerer",
-    "Wizard"
-  ],
-  "concentration": true,
-  "page": "ee 19",
-  "duration": "1 minute",
-  "level": 5,
   "name": "Immolation",
+  "level": 5,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "save": "Dexterity",
-  "damage": "7d6",
-  "damage_type": "fire"
+  "range": "90 feet",
+  "components": "V",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "Flames wreathe one creature you can see within range. The target must make a Dexterity saving throw. It takes 7d6 fire damage on a failed save, or half as much damage on a successful one. On a failed save, the target also burns for the spell's duration. The burning target sheds bright light in a 30-foot radius and dim light for an additional 30 feet. At the end of each of its turns, the target repeats the saving throw. It takes 3d6 fire damage on a failed save, and the spell ends on a successful one. These magical flames can't be extinguished through nonmagical means.\n\nIf damage from this spell reduces a target to 0 hit points, the target is turned to ash.\n\nThis spell can be found in the Elemental Evil Player's Companion",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true,
+  "attacks": [
+    {
+      "range": "90 feet",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Dexterity"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "7d6",
+          "damage_type": "fire"
+        }
+      }
+    }
+  ]
 }

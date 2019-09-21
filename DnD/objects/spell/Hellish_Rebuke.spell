@@ -1,19 +1,37 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You point your finger, and the creature that damaged you is momentarily surrounded by hellish flames. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
-  "range": "60 feet",
-  "school": "Evocation",
-  "class": [
-    "Warlock"
-  ],
-  "concentration": false,
-  "page": "phb 250",
-  "duration": "Instantaneous",
-  "level": 1,
   "name": "Hellish Rebuke",
+  "level": 1,
+  "school": "Evocation",
   "casting_time": "1 reaction",
-  "save": "Dexterity",
-  "damage": "2d10",
-  "damage_type": "fire"
+  "range": "60 feet",
+  "components": "V, S",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Paladin",
+      "subclass": "Oathbreaker"
+    },
+    {
+      "class": "Warlock"
+    }
+  ],
+  "effect": "You point your finger, and the creature that damaged you is momentarily surrounded by hellish flames. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "60 feet",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Dexterity"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "2d10",
+          "damage_type": "fire"
+        }
+      }
+    }
+  ]
 }

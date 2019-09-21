@@ -1,21 +1,27 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You touch a quiver containing arrows or bolts. When a target is hit by a ranged weapon attack using a piece of ammunition drawn from the quiver, the target takes an extra 1d6 fire damage. The spell's magic ends on the piece of ammunition when it hits or misses, and the spell ends when twelve pieces of ammunition have been drawn from the quiver.\n**At Higher Levels.** When you cast this spell using a spell slot of 4th level or higher, the number of pieces of ammunition you can affect with this spell increases by two for each slot level above 3rd.",
-  "range": "Touch",
-  "school": "Transmutation",
-  "class": [
-    "Sorcerer",
-    "Ranger",
-    "Wizard",
-    "Druid"
-  ],
-  "concentration": true,
-  "page": "ee 18",
-  "duration": "1 hour",
-  "level": 3,
   "name": "Flame Arrows",
+  "level": 3,
+  "school": "Transmutation",
   "casting_time": "1 action",
-  "damage": "1d6",
-  "damage_type": "fire"
+  "range": "Touch",
+  "components": "V, S",
+  "duration": "Concentration, up to 1 hour",
+  "class": [
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Ranger"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You touch a quiver containing arrows or bolts. When a target is hit by a ranged weapon attack using a piece of ammunition drawn from the quiver, the target takes an extra 1d6 fire damage. The spell's magic ends on the piece of ammunition when it hits or misses, and the spell ends when twelve pieces of ammunition have been drawn from the quiver.\n\n\nThis spell can be found in the Elemental Evil Player's Companion",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the number of pieces of ammunition you can affect with this spell increases by two for each slot level above 3rd.",
+  "ritual": false,
+  "concentration": true
 }

@@ -1,33 +1,47 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You create three rays of fire and hurl them at targets within range. You can hurl them at one target or several.\nMake a ranged spell attack for each ray. On a hit, the target takes 2d6 fire damage.\n**At Higher Levels.** When you cast this spell using a spell slot of 3rd level or higher, you create one additional ray for each slot level above 2nd.",
-  "range": "120 feet",
-  "school": "Evocation",
-  "class": [
-    "Sorcerer",
-    "Wizard"
-  ],
-  "concentration": false,
-  "page": "phb 273",
-  "duration": "Instantaneous",
-  "level": 2,
   "name": "Scorching Ray",
+  "level": 2,
+  "school": "Evocation",
   "casting_time": "1 action",
+  "range": "120 feet",
+  "components": "V, S",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Cleric",
+      "subclass": "Light"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock",
+      "subclass": "Fiend"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "You create three rays of fire and hurl them at targets within range. You can hurl them at one target or several.\n\nMake a ranged spell attack for each ray. On a hit, the target takes 2d6 fire damage.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, you create one additional ray for each slot level above 2nd.",
+  "ritual": false,
+  "concentration": false,
   "attacks": [
     {
-      "toHit": {
-        "type": "ATTACKROLL",
-        "against": "AC",
-        "modifiers": [
-          "$spellcasting_mod"
-        ]
+      "range": "120 feet",
+      "to_hit": {
+        "test": "ATTACKROLL",
+        "against": "AC"
       },
-      "damage": {
-        "roll": "2d6",
-        "type": "Fire",
-        "roll_suffix": "",
-        "modifiers": []
+      "on_hit": {
+        "damage": {
+          "base_roll": "2d6",
+          "damage_type": "fire"
+        }
       }
     }
   ]

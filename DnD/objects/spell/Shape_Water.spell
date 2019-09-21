@@ -1,18 +1,32 @@
 {
-  "components": "S",
-  "ritual": false,
-  "effect": "You choose an area of water that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways:\n* You instantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. This movement doesn't have enough force to cause damage.\n* You cause the water to form into simple shapes and animate at your direction. This change lasts for 1 hour.\n* You change the water's color or opacity. The water must be changed in the same way throughout. This change lasts for 1 hour.\n* You freeze the water, provided that there are no creatures in it. The water unfreezes in 1 hour.\nIf you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.",
-  "range": "30 feet",
-  "school": "Transmutation",
-  "class": [
-    "Sorcerer",
-    "Wizard",
-    "Druid"
-  ],
-  "concentration": false,
-  "page": "ee 21",
-  "duration": "1 hour",
-  "level": 0,
   "name": "Shape Water",
-  "casting_time": "1 action"
+  "level": 0,
+  "school": "Transmutation",
+  "casting_time": "1 action",
+  "range": "30 feet",
+  "components": "S",
+  "duration": "Instantaneous or 1 hour (see below)",
+  "class": [
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Rogue",
+      "subclass": "Arcane Trickster"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "You choose an area of water that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways.\n\n\u2022 You instantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. This movement doesn't have enough force to cause damage.\n\n\u2022 You cause the water to form into simple shapes and animate at your direction. This change lasts for 1 hour.\n\n\u2022 You change the water's color or opacity. The water must be changed in the same way throughout. This change lasts for 1 hour.\n\n\u2022 You freeze the water, provided that there are no creatures in it. The water unfreezes in 1 hour.\n\nIf you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.\n\nThis spell can be found in the Elemental Evil Player's Companion",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

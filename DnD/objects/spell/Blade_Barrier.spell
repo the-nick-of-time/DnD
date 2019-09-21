@@ -1,19 +1,33 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You create a vertical wall of whirling, razor-sharp blades made of magical energy. The wall appears within range and lasts for the duration. You can make a straight wall up to 100 feet long, 20 feet high, and 5 feet thick, or a ringed wall up to 60 feet in diameter, 20 feet high, and 5 feet thick. The wall provides three-quarters cover to creatures behind it, and its space is difficult terrain.\nWhen a creature enters the wall's area for the first time on a turn or starts its turn there, the creature must make a Dexterity saving throw. On a failed save, the creature takes 6d10 slashing damage. On a successful save, the creature takes half as much damage.",
-  "range": "90 feet",
-  "school": "Evocation",
-  "class": [
-    "Cleric"
-  ],
-  "concentration": true,
-  "page": "phb 218",
-  "duration": "up to 10 minutes",
-  "level": 6,
   "name": "Blade Barrier",
+  "level": 6,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "save": "Dexterity",
-  "damage": "6d10",
-  "damage_type": "slashing"
+  "range": "90 feet",
+  "components": "V, S",
+  "duration": "Concentration, up to 10 minutes",
+  "class": [
+    {
+      "class": "Cleric"
+    }
+  ],
+  "effect": "You create a vertical wall of whirling, razor-sharp blades made of magical energy. The wall appears within range and lasts for the duration. You can make a straight wall up to 100 feet long, 20 feet high, and 5 feet thick, or a ringed wall up to 60 feet in diameter, 20 feet high, and 5 feet thick. The wall provides three-quarters cover to creatures behind it, and its space is difficult terrain.\n\nWhen a creature enters the wall's area for the first time on a turn or starts its turn there, the creature must make a Dexterity saving throw. On a failed save, the creature takes 6d10 slashing damage. On a successful save, the creature takes half as much damage.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true,
+  "attacks": [
+    {
+      "range": "90 feet",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Dexterity"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "6d10",
+          "damage_type": "slashing"
+        }
+      }
+    }
+  ]
 }

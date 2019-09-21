@@ -1,20 +1,40 @@
 {
-  "components": "V, S, M (a small crystal or glass cone)",
-  "ritual": false,
-  "effect": "A blast of cold air erupts from your hands. Each creature in a 60-foot cone must make a Constitution saving throw. A creature takes 8d8 cold damage on a failed save, or half as much damage on a successful one.\nA creature killed by this spell becomes a frozen statue until it thaws.\n**At Higher Levels.** When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th.",
-  "range": "Self (60-foot cone)",
-  "school": "Evocation",
-  "class": [
-    "Sorcerer",
-    "Wizard"
-  ],
-  "concentration": false,
-  "page": "phb 224",
-  "duration": "Instantaneous",
-  "level": 5,
   "name": "Cone of Cold",
+  "level": 5,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "save": "Constitution",
-  "damage": "8d8",
-  "damage_type": "cold"
+  "range": "Self (60-foot cone)",
+  "components": "V, S, M (a small crystal or glass cone)",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Druid",
+      "subclass": "Arctic"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "A blast of cold air erupts from your hands. Each creature in a 60-foot cone must make a Constitution saving throw. A creature takes 8d8 cold damage on a failed save, or half as much damage on a successful one.\n\nA creature killed by this spell becomes a frozen statue until it thaws.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d8 for each slot level above 5th.",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "Self (60-foot cone)",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Constitution"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "8d8",
+          "damage_type": "cold"
+        }
+      }
+    }
+  ]
 }

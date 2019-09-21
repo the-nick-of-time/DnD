@@ -1,19 +1,33 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 force damage.\nThe spell creates more than one beam when you reach higher levels: two beams at 5th level, three beams at 11th level, and four beams at 17th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.",
-  "range": "120 feet",
-  "school": "Evocation",
-  "class": [
-    "Warlock"
-  ],
-  "concentration": false,
-  "page": "phb 237",
-  "duration": "Instantaneous",
-  "level": 0,
   "name": "Eldritch Blast",
+  "level": 0,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "attack_roll": true,
-  "damage": "1d10",
-  "damage_type": "force"
+  "range": "120 feet",
+  "components": "V, S",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Warlock"
+    }
+  ],
+  "effect": "A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 force damage.\n\nThe spell creates more than one beam when you reach higher levels - two beams at 5th level, three beams at 11th level, and four beams at 17th level. you can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "120 feet",
+      "to_hit": {
+        "test": "ATTACKROLL",
+        "against": "AC"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "1d10",
+          "damage_type": "force"
+        }
+      }
+    }
+  ]
 }

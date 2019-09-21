@@ -1,17 +1,36 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You touch a creature and grant it a measure of protection from death.\nThe first time the target would drop to 0 hit points as a result of taking damage, the target instead drops to 1 hit point, and the spell ends.\nIf the spell is still in effect when the target is subjected to an effect that would kill it instantaneously without dealing damage, that effect is instead negated against the target, and the spell ends.",
-  "range": "Touch",
-  "school": "Abjuration",
-  "class": [
-    "Cleric",
-    "Paladin"
-  ],
-  "concentration": false,
-  "page": "phb 230",
-  "duration": "8 hours",
-  "level": 4,
   "name": "Death Ward",
-  "casting_time": "1 action"
+  "level": 4,
+  "school": "Abjuration",
+  "casting_time": "1 action",
+  "range": "Touch",
+  "components": "V, S",
+  "duration": "8 hours",
+  "class": [
+    {
+      "class": "Artificer"
+    },
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Death"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Life"
+    },
+    {
+      "class": "Paladin"
+    },
+    {
+      "class": "Warlock",
+      "subclass": "Undying"
+    }
+  ],
+  "effect": "You touch a creature and grant it a measure of protection from death. The first time the target would drop to 0 hit points as a result of taking damage, the target instead drops to 1 hit point, and the spell ends. If the spell is still in effect when the target is subjected to an effect that would kill it instantaneously without dealing damage, that effect is instead negated against the target, and the spells ends.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

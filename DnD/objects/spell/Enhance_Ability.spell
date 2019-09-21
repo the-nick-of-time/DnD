@@ -1,19 +1,30 @@
 {
-  "components": "V, S, M (fur ar a feather from a beast)",
-  "ritual": false,
-  "effect": "You touch a creature and bestow upon it a magical enhancement. Choose one of the following effects: the target gains the effect until the spell ends.\n**Bear's Endurance.** The target has advantage on Constitution checks. It also gains 2d6 temporary hit points, which are lost when the spell ends.\n**Bull's Strength.** The target has advantage on Strength checks, and his or her carrying capacity doubles.\n**Cat's Grace.** The target has advantage on Dexterity checks. It also doesn't take damage from falling 20 feet or less if it isn't incapacitated.\n**Eagle's Splendor.** The target has advantage on Charisma checks.\n**Fox's Cunning.** The target has advantage on Intelligence checks.\n**Owl's Wisdom.** The target has advantage on Wisdom checks.\n**At Higher Levels.** When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
-  "range": "Touch",
-  "school": "Transmutation",
-  "class": [
-    "Cleric",
-    "Sorcerer",
-    "Druid",
-    "Bard"
-  ],
-  "concentration": true,
-  "page": "phb 237",
-  "duration": "up to 1 hour",
-  "level": 2,
   "name": "Enhance Ability",
-  "casting_time": "1 action"
+  "level": 2,
+  "school": "Transmutation",
+  "casting_time": "1 action",
+  "range": "Touch",
+  "components": "V, S, M (fur or a feather from a beast)",
+  "duration": "Concentration, up to 1 hour",
+  "class": [
+    {
+      "class": "Artificer"
+    },
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Sorcerer"
+    }
+  ],
+  "effect": "You touch a creature and bestow upon it a magical enhancement. Choose one of the following effects - the target gains the effect until the spell ends.\n\nBear's Endurance: The target has advantage on Constitution checks. It also gains 2d6 temporary hit points, which are lost when the spell ends.\n\nBull's Strength: The target has advantage on Strength checks, and his or her carrying capacity doubles.\n\nCat's Grace: The target has advantage on Dexterity checks. It also doesn't take damage from falling 20 feet or less if it isn't incapacitated.\n\nEagle's Splendor: The target has advantage on Charisma checks.\n\nFox's Cunning: The target has advantage on Intelligence checks.\n\nOwl's Wisdom: The target has advantage on Wisdom checks.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+  "ritual": false,
+  "concentration": true
 }

@@ -1,21 +1,36 @@
 {
-  "components": "V, S, M  (a miniature platinum sword with a grip and pommel of copper and zinc, worth 250 gp)",
-  "ritual": false,
-  "effect": "You create a sword-shaped plane of force that hovers within range. It lasts for the duration.\nWhen the sword appears, you make a melee spell attack against a target of your choice within 5 feet of the sword. On a hit, the target takes 3d10 force damage. Until the spell ends, you can use a bonus action on each of your turns to move the sword up to 20 feet to a spot you can see and repeat this attack against the same target or a different one.",
-  "range": "60 feet",
-  "srd_name": "Arcane Sword",
-  "class": [
-    "Wizard",
-    "Bard"
-  ],
-  "school": "Evocation",
-  "concentration": true,
-  "page": "phb 262",
-  "duration": "up to 1 minute",
-  "level": 7,
   "name": "Mordenkainen's Sword",
+  "level": 7,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "attack_roll": true,
-  "damage": "3d10",
-  "damage_type": "force"
+  "range": "60 feet",
+  "components": "V, S, M (a miniature platinum sword with a grip and pommel of copper and zinc, worth 250 gp)",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You create a sword-shaped plane of force that hovers within range. It lasts for the duration.\n\nWhen the sword appears, you make a melee spell attack against a target of your choice within 5 feet of the sword. On a hit. the target takes 3d10 force damage. Until the spell ends, you can use a bonus action on each of your turns to move the sword up to 20 feet to a spot you can see and repeat this attack against the same target or a different one.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true,
+  "attacks": [
+    {
+      "range": "60 feet",
+      "to_hit": {
+        "test": "ATTACKROLL",
+        "against": "AC"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "3d10",
+          "damage_type": "force"
+        }
+      }
+    }
+  ]
 }

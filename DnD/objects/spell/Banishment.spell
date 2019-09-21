@@ -1,21 +1,42 @@
 {
-  "components": "V, S, M  (an item distasteful to the target)",
-  "ritual": false,
-  "effect": "You attempt to send one creature that you can see within range to another plane of existence. The target must succeed on a Charisma saving throw or be banished.\nIf the target is native to the plane of existence you're on, you banish the target to a harmless demiplane. While there, the target is incapacitated. The target remains there until the spell ends, at which point the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.\nIf the target is native to a different plane of existence than the one you're on, the target is banished with a faint popping noise, returning to its home plane. If the spell ends before 1 minute has passed, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied. Otherwise, the target doesn't return.\n**At Higher Levels.** When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th.",
-  "range": "60 feet",
-  "school": "Abjuration",
-  "class": [
-    "Cleric",
-    "Sorcerer",
-    "Warlock",
-    "Wizard",
-    "Paladin"
-  ],
-  "concentration": true,
-  "page": "phb 217",
-  "duration": "up to 1 minute",
-  "level": 4,
   "name": "Banishment",
+  "level": 4,
+  "school": "Abjuration",
   "casting_time": "1 action",
-  "save": "Charisma"
+  "range": "60 feet",
+  "components": "V, S, M (an item distasteful to the target)",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Paladin"
+    },
+    {
+      "class": "Paladin",
+      "subclass": "Crown"
+    },
+    {
+      "class": "Paladin",
+      "subclass": "Vengeance"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "You attempt to send one creature that you can see within range to another place of existence. The target must succeed on a Charisma saving throw or be banished.\n\nIf the target is native to the plane of existence you're on, you banish the target to a harmless demiplane. While there, the target is incapacitated. The target remains there until the spell ends, at which point the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.\n\nIf the target is native to a different plane of existence that the one you're on, the target is banished with a faint popping noise, returning to its home plane. If the spell ends before 1 minute has passed, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied. Otherwise, the target doesn't return.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th.",
+  "ritual": false,
+  "concentration": true
 }

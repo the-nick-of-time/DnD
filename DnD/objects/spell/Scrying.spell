@@ -1,21 +1,50 @@
 {
-  "components": "V, S, M (a focus worth at least 1,000 gp, such as a crystal ball, a silver mirror, or a font filled with holy water)",
-  "ritual": false,
-  "effect": "You can see and hear a particular creature you choose that is on the same plane of existence as you. The target must make a Wisdom saving throw, which is modified by how well you know the target and the sort of physical connection you have to it. If a target knows you're casting this spell, it can fail the saving throw voluntarily if it wants to be observed.\n|Knowledge|Save Modifier|\n|---------|:-----------:|\n|Secondhand (you have heard of the target)| +5|\n|Firsthand (you have met the target)| 0|\n|Familiar (you know the target well)| -5|\n|Connection|Save Modifier|\n|----------|:-----------:|\n|Likeness or picture| -2|\n|Possession or garment| -4|\n|Body part, lock of hair, bit of nail, or the like| -10|\nOn a successful save, the target isn't affected, and you can't use this spell against it again for 24 hours. On a failed save, the spell creates an invisible sensor within 10 feet of the target. You can see and hear through the sensor as if you were there. The sensor moves with the target, remaining within 10 feet of it for the duration. A creature that can see invisible objects sees the sensor as a luminous orb about the size of your fist.\nInstead of targeting a creature, you can choose a location you have seen before as the target of this spell. When you do, the sensor appears at that location and doesn't move.",
-  "range": "Self",
-  "school": "Divination",
-  "class": [
-    "Cleric",
-    "Warlock",
-    "Wizard",
-    "Druid",
-    "Bard"
-  ],
-  "concentration": true,
-  "page": "phb 273",
-  "duration": "up to 10 minutes",
-  "level": 5,
   "name": "Scrying",
+  "level": 5,
+  "school": "Divination",
   "casting_time": "10 minutes",
-  "save": "Wisdom"
+  "range": "Self",
+  "components": "V, S, M (a focus worth at least 1,000 gp, such as a crystal ball, a silver mirror, or a font filled with holy water)",
+  "duration": "Concentration, up to 10 minutes",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Knowledge"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Light"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Coast"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Swamp"
+    },
+    {
+      "class": "Paladin",
+      "subclass": "Vengeance"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You can see and hear a particular creature you choose that is on the same plane of existence as you. The target must make a Wisdom saving throw, which is modified by how well you know the target and the sort of physical connection you have to it. If a target knows you're casting this spell, it can fail the saving throw voluntarily if it wants to be observed.\n\nKnowledge - Save Modifier\n\nSecondhand (you have heard of the target) - +5\n\nFirsthand (you have met the target) +0\nFamiliar (you know the target well) - -5\n\nConnection - Save Modifier\n\nLikeness or picture - -2\n\nPossession or garment - -4\n\nBody part, lock of hair, bit of nail, or the like - -10\n\nOn a successful save, the target isn't affected, and you can't use this spell against it again for 24 hours.\n\nOn a failed save, the spell creates an invisible sensor within 10 feet of the target. You can see and hear through the sensor as if you were there. The sensor moves with the target, remaining within 10 feet of it for the duration. A creature that can see invisible objects sees the sensor as a luminous orb about the size of your fist.\n\nInstead of targeting a creature, you can choose a location you have seen before as the target of this spell. When you do, the sensor appears at that location and doesn't move.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

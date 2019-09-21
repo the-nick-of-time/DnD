@@ -1,20 +1,30 @@
 {
-  "components": "V, S, M (an ointment for the eyes that costs 25 gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell)",
-  "ritual": false,
-  "effect": "This spell gives the willing creature you touch the ability to see things as they actually are. For the duration, the creature has truesight, notices secret doors hidden by magic, and can see into the Ethereal Plane, all out to a range of 120 feet.",
-  "range": "Touch",
-  "school": "Divination",
-  "class": [
-    "Cleric",
-    "Sorcerer",
-    "Warlock",
-    "Wizard",
-    "Bard"
-  ],
-  "concentration": false,
-  "page": "phb 284",
-  "duration": "1 hour",
-  "level": 6,
   "name": "True Seeing",
-  "casting_time": "1 action"
+  "level": 6,
+  "school": "Divination",
+  "casting_time": "1 action",
+  "range": "Touch",
+  "components": "V, S, M (an ointment for the eyes that costs 25 gp, is made from mushroom powder, saffron, and fat, and is consumed by the spell)",
+  "duration": "1 hour",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "This spell gives the willing creature you touch the ability to see things as they actually are. For the duration, the creature has truesight, notices secret doors hidden by magic, and can see into the Ethereal Plane, all out to a range of 120 feet.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

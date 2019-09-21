@@ -1,19 +1,35 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.",
-  "range": "Self",
-  "school": "Abjuration",
-  "class": [
-    "Sorcerer",
-    "Warlock",
-    "Wizard",
-    "Bard"
-  ],
-  "concentration": false,
-  "page": "phb 218",
-  "duration": "1 round",
-  "level": 0,
   "name": "Blade Ward",
-  "casting_time": "1 action"
+  "level": 0,
+  "school": "Abjuration",
+  "casting_time": "1 action",
+  "range": "Self",
+  "components": "V, S",
+  "duration": "1 round",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    },
+    {
+      "class": "Rogue",
+      "subclass": "Arcane Trickster"
+    }
+  ],
+  "effect": "You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

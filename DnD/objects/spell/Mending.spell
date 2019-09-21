@@ -1,20 +1,30 @@
 {
-  "components": "V, S, M (two lodestones)",
-  "ritual": false,
-  "effect": "This spell repairs a single break or tear in an object you touch, such as a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no longer than 1 foot in any dimension, you mend it, leaving no trace of the former damage.\nThis spell can physically repair a magic item or construct, but the spell can't restore magic to such an object.",
-  "range": "Touch",
-  "school": "Transmutation",
-  "class": [
-    "Cleric",
-    "Sorcerer",
-    "Wizard",
-    "Druid",
-    "Bard"
-  ],
-  "concentration": false,
-  "page": "phb 259",
-  "duration": "Instantaneous",
-  "level": 0,
   "name": "Mending",
-  "casting_time": "1 minute"
+  "level": 0,
+  "school": "Transmutation",
+  "casting_time": "1 minute",
+  "range": "Touch",
+  "components": "V, S, M (two lodestones)",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "This spell repairs a single break or tear in an object you touch, such as broken chain link, two halves of a broken key, a torn clack, or a leaking wineskin. As long as the break or tear is no larger than 1 foot in any dimension, you mend it, leaving no trace of the former damage.\n\nThis spell can physically repair a magic item or construct, but the spell can't restore magic to such an object.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

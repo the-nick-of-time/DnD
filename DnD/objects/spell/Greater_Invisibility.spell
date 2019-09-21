@@ -1,18 +1,36 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You or a creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person.",
-  "range": "Touch",
-  "school": "Illusion",
-  "class": [
-    "Sorcerer",
-    "Wizard",
-    "Bard"
-  ],
-  "concentration": true,
-  "page": "phb 246",
-  "duration": "up to 1 minute",
-  "level": 4,
   "name": "Greater Invisibility",
-  "casting_time": "1 action"
+  "level": 4,
+  "school": "Illusion",
+  "casting_time": "1 action",
+  "range": "Touch",
+  "components": "V, S",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Underdark"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock",
+      "subclass": "Archfey"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Rogue",
+      "subclass": "Arcane Trickster"
+    }
+  ],
+  "effect": "You or a creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

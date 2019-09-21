@@ -1,20 +1,36 @@
 {
-  "components": "V, S, M (a miniature hand sculpted from clay)",
-  "ritual": false,
-  "effect": "You choose a 5-foot-square unoccupied space on the ground that you can see within range. A Medium hand made from compacted soil rises there and reaches for one creature you can see within 5 feet of it. The target must make a Strength saving throw. On a failed save, the target takes 2d6 bludgeoning damage and is restrained for the spell's duration. \nAs an action, you can cause the hand to crush the restrained target, who must make a Strength saving throw. It takes 2d6 bludgeoning damage on a failed save, or half as much damage on a successful one.\nTo break out, the restrained target can make a Strength check against your spell save DC. On a success, the target escapes and is no longer restrained by the hand.\nAs an action, you can cause the hand to reach for a different creature or to move to a different unoccupied space within range. The hand releases a restrained target if you do either.",
-  "range": "30 feet",
-  "school": "Transmutation",
-  "class": [
-    "Sorcerer",
-    "Wizard"
-  ],
-  "concentration": true,
-  "page": "ee 20",
-  "duration": "1 minute",
-  "level": 2,
   "name": "Maximilian's Earthen Grasp",
+  "level": 2,
+  "school": "Transmutation",
   "casting_time": "1 action",
-  "save": "Strength",
-  "damage": "2d6",
-  "damage_type": "bludgeoning"
+  "range": "30 feet",
+  "components": "V, S, M (a miniature hand sculpted from clay)",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You choose a 5-foot-square unoccupied space on the ground that you can see within range. A Medium hand made from compacted soil rises there and reaches for one creature you can see within 5 feet of it. The target must make a Strength saving throw. On a failed save, the target takes 2d6 bludgeoning damage and is restrained for the spell's duration.\n\nAs an action, you can cause the hand to crush the restrained target, who must make a Strength saving throw. It takes 2d6 bludgeoning damage on a failed save, or half as much damage on a successful one.\n\nTo break out, the restrained target can make a Strength check against your spell save DC. On a success, the target escapes and is no longer restrained by the hand.\n\nAs an action, you can cause the hand to reach for a different creature or to move to a different unoccupied space within range. The hand releases a restrained target if you do either.\n\nThis spell can be found in the Elemental Evil Player's Companion",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true,
+  "attacks": [
+    {
+      "range": "30 feet",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Strength"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "2d6",
+          "damage_type": "bludgeoning"
+        }
+      }
+    }
+  ]
 }

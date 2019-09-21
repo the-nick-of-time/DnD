@@ -1,19 +1,38 @@
 {
-  "components": "V, S, M (an eyelash encased in gum arabic)",
-  "ritual": false,
-  "effect": "A creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person. The spell ends for a target that attacks or casts a spell.\n**At Higher Levels.** When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
-  "range": "Touch",
-  "school": "Illusion",
-  "class": [
-    "Sorcerer",
-    "Warlock",
-    "Wizard",
-    "Bard"
-  ],
-  "concentration": true,
-  "page": "phb 254",
-  "duration": "up to 1 hour",
-  "level": 2,
   "name": "Invisibility",
-  "casting_time": "1 action"
+  "level": 2,
+  "school": "Illusion",
+  "casting_time": "1 action",
+  "range": "Touch",
+  "components": "V, S, M (an eyelash encased in gum arabic)",
+  "duration": "Concentration, up to 1 hour",
+  "class": [
+    {
+      "class": "Artificer"
+    },
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Grassland"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Rogue",
+      "subclass": "Arcane Trickster"
+    }
+  ],
+  "effect": "A creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person. The spell ends for a target that attacks or casts a spell.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+  "ritual": false,
+  "concentration": true
 }

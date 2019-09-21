@@ -1,18 +1,24 @@
 {
-  "components": "V",
-  "ritual": false,
-  "effect": "A strong wind (20 miles per hour) blows around you in a 10-foot radius and moves with you, remaining centered on you. The wind lasts for the spell's duration.\nThe wind has the following effects:\n* It deafens you and other creatures in its area.\n* It extinguishes unprotected flames in its area that are torch-sized or smaller.\n* The area is difficult terrain for creatures other than you.\n* The attack rolls of ranged weapon attacks have disadvantage if they pass in or out of the wind.\n* It hedges out vapor, gas, and fog that can be dispersed by strong wind.",
-  "range": "Self",
-  "school": "Evocation",
-  "class": [
-    "Sorcerer",
-    "Druid",
-    "Bard"
-  ],
-  "concentration": true,
-  "page": "ee 23",
-  "duration": "10 minutes",
-  "level": 2,
   "name": "Warding Wind",
-  "casting_time": "1 action"
+  "level": 2,
+  "school": "Evocation",
+  "casting_time": "1 action",
+  "range": "Self",
+  "components": "V",
+  "duration": "Concentration, up to 10 minutes",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Sorcerer"
+    }
+  ],
+  "effect": "A strong wind (20 miles per hour) blows around you in a 10-foot radius and moves with you, remaining centered on you. The wind lasts for the spell's duration.\n\nThe wind has the following effects.\n\n\u2022 It deafens you and other creatures in its area.\n\n\u2022 It extinguishes unprotected flames in its area that are torch-sized or smaller.\n\n\u2022 The area is difficult terrain for creatures other than you.\n\n\u2022 The attack rolls of ranged weapon attacks have disadvantage if they pass in or out of the wind.\n\n\u2022 It hedges out vapor, gas, and fog that can be dispersed by strong wind.\n\nThis spell can be found in the Elemental Evil Player's Companion",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

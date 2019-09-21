@@ -1,19 +1,33 @@
 {
-  "components": "V, S, M (leaf of sumac)",
-  "ritual": false,
-  "effect": "You evoke a fiery blade in your free hand. The blade is similar in size and shape to a scimitar, and it lasts for the duration. If you let go of the blade, it disappears, but you can evoke the blade again as a bonus action.\nYou can use your action to make a melee spell attack with the fiery blade. On a hit, the target takes 3d6 fire damage.\nThe flaming blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet.\n**At Higher Levels.** When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for every two slot levels above 2nd.",
-  "range": "Self",
-  "school": "Evocation",
-  "class": [
-    "Druid"
-  ],
-  "concentration": true,
-  "page": "phb 242",
-  "duration": "up to 10 minutes",
-  "level": 2,
   "name": "Flame Blade",
+  "level": 2,
+  "school": "Evocation",
   "casting_time": "1 bonus action",
-  "attack_roll": true,
-  "damage": "3d6",
-  "damage_type": "fire"
+  "range": "Self",
+  "components": "V, S, M (leaf of sumac)",
+  "duration": "Concentration, up to 10 minutes",
+  "class": [
+    {
+      "class": "Druid"
+    }
+  ],
+  "effect": "You evoke a fiery blade in your free hand. The blade is similar in size and shape to a scimitar, and it lasts for the duration. If you let go of the blade, it disappears, but you can evoke the blade again as a bonus action.\n\nYou can use your action to make a melee spell attack with the fiery blade. On a hit, the target takes 3d6 fire damage.\n\nThe flaming blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for every two slot levels above 2nd.",
+  "ritual": false,
+  "concentration": true,
+  "attacks": [
+    {
+      "range": "Self",
+      "to_hit": {
+        "test": "ATTACKROLL",
+        "against": "AC"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "3d6",
+          "damage_type": "fire"
+        }
+      }
+    }
+  ]
 }

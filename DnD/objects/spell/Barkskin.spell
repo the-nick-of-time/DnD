@@ -1,17 +1,29 @@
 {
-  "components": "V, S, M  (a handful of oak bark)",
-  "ritual": false,
-  "effect": "You touch a willing creature. Until the spell ends, the target's skin has a rough, bark-like appearance, and the target's AC can't be less than 16, regardless of what kind of armor it is wearing.",
-  "range": "Touch",
-  "school": "Transmutation",
-  "class": [
-    "Ranger",
-    "Druid"
-  ],
-  "concentration": true,
-  "page": "phb 217",
-  "duration": "up to 1 hour",
-  "level": 2,
   "name": "Barkskin",
-  "casting_time": "1 action"
+  "level": 2,
+  "school": "Transmutation",
+  "casting_time": "1 action",
+  "range": "Touch",
+  "components": "V, S, M (a handful of oak bark)",
+  "duration": "Concentration, up to 1 hour",
+  "class": [
+    {
+      "class": "Cleric",
+      "subclass": "Nature"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Forest"
+    },
+    {
+      "class": "Ranger"
+    }
+  ],
+  "effect": "You touch a willing creature. Until the spell ends, the target's skin has a rough, bark-like appearance, and the target's AC can't be less than 16, regardless of what kind of armor it is wearing.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

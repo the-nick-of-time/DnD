@@ -1,18 +1,32 @@
 {
-  "components": "V, S",
-  "ritual": true,
-  "effect": "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it.",
-  "range": "120 feet",
-  "school": "Illusion",
-  "class": [
-    "Cleric",
-    "Ranger",
-    "Bard"
-  ],
-  "concentration": true,
-  "page": "phb 275",
-  "duration": "up to 10 minutes",
-  "level": 2,
   "name": "Silence",
-  "casting_time": "1 action"
+  "level": 2,
+  "school": "Illusion",
+  "casting_time": "1 action",
+  "range": "120 feet",
+  "components": "V, S",
+  "duration": "Concentration, up to 10 minutes",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Desert"
+    },
+    {
+      "class": "Ranger"
+    },
+    {
+      "class": "Warlock",
+      "subclass": "Undying"
+    }
+  ],
+  "effect": "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a spell that includes a verbal component is impossible there.",
+  "higher_levels": "",
+  "ritual": true,
+  "concentration": true
 }

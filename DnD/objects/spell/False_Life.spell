@@ -1,17 +1,32 @@
 {
-  "components": "V, S, M (a small amount of alcohol or distilled spirits)",
-  "ritual": false,
-  "effect": "Bolstering yourself with a necromantic facsimile of life, you gain 1d4 + 4 temporary hit points for the duration.\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, you gain 5 additional temporary hit points for each slot level above 1st.",
-  "range": "Self",
-  "school": "Necromancy",
-  "class": [
-    "Sorcerer",
-    "Wizard"
-  ],
-  "concentration": false,
-  "page": "phb 239",
-  "duration": "1 hour",
-  "level": 1,
   "name": "False Life",
-  "casting_time": "1 action"
+  "level": 1,
+  "school": "Necromancy",
+  "casting_time": "1 action",
+  "range": "Self",
+  "components": "V, S, M (a small amount of alcohol or distilled spirits)",
+  "duration": "1 hour",
+  "class": [
+    {
+      "class": "Artificer"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Death"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock",
+      "subclass": "Undying"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "Bolstering yourself with a necromantic facsimile of life, you gain 1d4+4 temporary hit points for the duration.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you gain 5 additional temporary hit points for each slot level above 1st.",
+  "ritual": false,
+  "concentration": false
 }

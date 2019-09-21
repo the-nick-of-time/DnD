@@ -1,19 +1,33 @@
 {
-  "components": "V, S, M (paper or leaf in the shape of a funnel)",
-  "ritual": false,
-  "effect": "A mass of 5-foot-deep water appears and swirls in a 30-foot radius centered on a point you can see within range. The point must be on ground or in a body of water. Until the spell ends, that area is difficult terrain, and any creature that starts its turn there must succeed on a Strength saving throw or take 6d6 bludgeoning damage and be pulled 10 feet toward the center.",
-  "range": "120 feet",
-  "school": "Evocation",
-  "class": [
-    "Druid"
-  ],
-  "concentration": true,
-  "page": "ee 20",
-  "duration": "1 minute",
-  "level": 5,
   "name": "Maelstrom",
+  "level": 5,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "save": "Strength",
-  "damage": "6d6",
-  "damage_type": "bludgeoning"
+  "range": "120 feet",
+  "components": "V, S, M (paper or leaf in the shape of a funnel)",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Druid"
+    }
+  ],
+  "effect": "A mass of 5-foot-deep water appears and swirls in a 30-foot radius centered on a point you can see within range. The point must be on ground or in a body of water. Until the spell ends, that area is difficult terrain, and any creature that starts its turn there must succeed on a Strength saving throw or take 6d6 bludgeoning damage and be pulled 10 feet toward the center.\n\nThis spell can be found in the Elemental Evil Player's Companion",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true,
+  "attacks": [
+    {
+      "range": "120 feet",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Strength"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "6d6",
+          "damage_type": "bludgeoning"
+        }
+      }
+    }
+  ]
 }

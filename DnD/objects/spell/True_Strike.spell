@@ -1,19 +1,35 @@
 {
-  "components": "S",
-  "ritual": false,
-  "effect": "You extend your hand and point a finger at a target in range. Your magic grants you a brief insight into the target's defenses. On your next turn, you gain advantage on your first attack roll against the target, provided that this spell hasn't ended.",
-  "range": "30 feet",
-  "school": "Divination",
-  "class": [
-    "Sorcerer",
-    "Warlock",
-    "Wizard",
-    "Bard"
-  ],
-  "concentration": true,
-  "page": "phb 284",
-  "duration": "up to 1 round",
-  "level": 0,
   "name": "True Strike",
-  "casting_time": "1 action"
+  "level": 0,
+  "school": "Divination",
+  "casting_time": "1 action",
+  "range": "30 feet",
+  "components": "S",
+  "duration": "Concentration, up to 1 round",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    },
+    {
+      "class": "Rogue",
+      "subclass": "Arcane Trickster"
+    }
+  ],
+  "effect": "You extend your hand and point a finger at a target in range. Your magic grants you a brief insight into the target's defenses. On your next turn, you gain advantage on your first attack roll against the target, provided that this spell hasn't ended.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

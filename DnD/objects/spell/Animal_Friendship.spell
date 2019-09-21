@@ -1,19 +1,28 @@
 {
-  "components": "V, S, M (a morsel of food)",
-  "ritual": false,
-  "effect": "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the spell's duration. If you or one of your companions harms the target, the spell ends.\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional beast for each slot level above 1st.",
-  "range": "30 feet",
-  "school": "Enchantment",
-  "class": [
-    "Ranger",
-    "Druid",
-    "Bard"
-  ],
-  "concentration": false,
-  "page": "phb 212",
-  "duration": "24 hours",
-  "level": 1,
   "name": "Animal Friendship",
+  "level": 1,
+  "school": "Enchantment",
   "casting_time": "1 action",
-  "save": "Wisdom"
+  "range": "30 feet",
+  "components": "V, S, M (a morsel of food)",
+  "duration": "24 hours",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Nature"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Ranger"
+    }
+  ],
+  "effect": "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the spell's duration. If you or one of your companions harms the target, the spell ends.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a 2nd level spell slot or higher, you can affect one additional beast for each slot level above 1st.",
+  "ritual": false,
+  "concentration": false
 }

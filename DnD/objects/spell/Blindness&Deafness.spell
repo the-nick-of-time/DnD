@@ -1,20 +1,39 @@
 {
-  "components": "V",
-  "ritual": false,
-  "effect": "You can blind or deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is either blinded or deafened (your choice) for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.\n**At Higher Levels.** When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
-  "range": "30 feet",
-  "school": "Necromancy",
-  "class": [
-    "Cleric",
-    "Sorcerer",
-    "Wizard",
-    "Bard"
-  ],
-  "concentration": false,
-  "page": "phb 219",
-  "duration": "1 minute",
-  "level": 2,
   "name": "Blindness/Deafness",
+  "level": 2,
+  "school": "Necromancy",
   "casting_time": "1 action",
-  "save": "Constitution"
+  "range": "30 feet",
+  "components": "V",
+  "duration": "1 minute",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Death"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock",
+      "subclass": "Fiend"
+    },
+    {
+      "class": "Warlock",
+      "subclass": "Undying"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You can blind or deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is either blinded or deafened (your choice) for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+  "ritual": false,
+  "concentration": false
 }

@@ -1,18 +1,25 @@
 {
-  "components": "V, S, M (a small crystal bead)",
-  "ritual": true,
-  "effect": "A 10-foot-radius immobile dome of force springs into existence around and above you and remains stationary for the duration. The spell ends if you leave its area.\nNine creatures of Medium size or smaller can fit inside the dome with you. The spell fails if its area includes a larger creature or more than nine creatures. Creatures and objects within the dome when you cast this spell can move through it freely. All other creatures and objects are barred from passing through it. Spells and other magical effects can't extend through the dome or be cast through it. The atmosphere inside the space is comfortable and dry, regardless of the weather outside.\nUntil the spell ends, you can command the interior to become dimly lit or dark. The dome is opaque from the outside, of any color you choose, but it is transparent from the inside.",
-  "range": "Self",
-  "srd_name": "Tiny Hut",
-  "class": [
-    "Wizard",
-    "Bard"
-  ],
-  "school": "Evocation",
-  "concentration": false,
-  "page": "phb 255",
-  "duration": "8 hours",
-  "level": 3,
   "name": "Leomund's Tiny Hut",
-  "casting_time": "1 minute"
+  "level": 3,
+  "school": "Evocation",
+  "casting_time": "1 minute",
+  "range": "Self (10-foot-radius hemisphere)",
+  "components": "V, S, M (a small crystal bead)",
+  "duration": "8 hours",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "A 10-foot-radius immobile dome of force springs into existence around and above you and remains stationary for the duration. The spell ends if you leave its area.\n\nNine creatures of Medium size or smaller can fit inside the dome with you. The spell fails if its area includes a larger creature or more than nine creatures. Creatures and objects within the dome when you cast this spell can move through it freely. All other creatures and objects are barred from passing through it. Spells and other magical effects can't extend through the dome or be cast through it. The atmosphere inside the space is comfortable and dry, regardless of the weather outside.\n\nUntil the spell ends, you can command the interior to become dimly lit or dark. The dome is opaque from the outside, of any color you choose, but it is transparent from the inside.",
+  "higher_levels": "",
+  "ritual": true,
+  "concentration": false
 }

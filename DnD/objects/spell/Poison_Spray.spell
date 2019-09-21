@@ -1,22 +1,42 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You extend your hand toward a creature you can see within range and project a puff of noxious gas from your palm. The creature must succeed on a Constitution saving throw or take 1d12 poison damage.\nThis spell's damage increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), and 17th level (4d12).",
-  "range": "10 feet",
-  "school": "Conjuration",
-  "class": [
-    "Sorcerer",
-    "Warlock",
-    "Wizard",
-    "Druid"
-  ],
-  "concentration": false,
-  "page": "phb 266",
-  "duration": "Instantaneous",
-  "level": 0,
   "name": "Poison Spray",
+  "level": 0,
+  "school": "Conjuration",
   "casting_time": "1 action",
-  "save": "Constitution",
-  "damage": "1d12",
-  "damage_type": "poison"
+  "range": "10 feet",
+  "components": "V, S",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You extend your hand toward a creature you can see within range and project a puff of noxious gas from your palm. The creature must succeed on a Constitution saving throw or take 1d12 poison damage.\n\nThis spell's damage increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), and 17 level (4d12).",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "10 feet",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Constitution"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "1d12",
+          "damage_type": "poison"
+        }
+      }
+    }
+  ]
 }

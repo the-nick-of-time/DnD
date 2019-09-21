@@ -1,20 +1,48 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in a 15-foot cone must make a Dexterity saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one.\nThe fire ignites any flammable objects in the area that aren't being worn or carried.\n**At Higher Levels.** When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
-  "range": "Self (15-foot cone)",
-  "school": "Evocation",
-  "class": [
-    "Sorcerer",
-    "Wizard"
-  ],
-  "concentration": false,
-  "page": "phb 220",
-  "duration": "Instantaneous",
-  "level": 1,
   "name": "Burning Hands",
+  "level": 1,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "save": "Dexterity",
-  "damage": "3d6",
-  "damage_type": "fire"
+  "range": "Self (15-foot cone)",
+  "components": "V, S",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Cleric",
+      "subclass": "Light"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock",
+      "subclass": "Fiend"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in a 15-foot cone must make a Dexterity saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one.\n\nThe fire ignites any flammable objects in the area that aren't being worn or carried.\n",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "Self (15-foot cone)",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Dexterity"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "3d6",
+          "damage_type": "fire"
+        }
+      }
+    }
+  ]
 }

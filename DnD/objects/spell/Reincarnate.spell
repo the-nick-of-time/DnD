@@ -1,16 +1,18 @@
 {
-  "components": "V, S, M (rare oils and unguents worth at least 1,000 gp, which the spell consumes)",
-  "ritual": false,
-  "effect": "You touch a dead humanoid or a piece of a dead humanoid. Provided that the creature has been dead no longer than 10 days, the spell forms a new adult body for it and then calls the soul to enter that body. If the target's soul isn't free or willing to do so, the spell fails.\nThe magic fashions a new body for the creature to inhabit, which likely causes the creature's race to change. The DM rolls a d100 and consults the following table to determine what form the creature takes when restored to life, or the DM chooses a form.\n|d100|Race|\n|--------|---------|\n|01-04|Dragonborn|\n|05-13|Dwarf, hill|\n|14-21|Dwarf, mountain|\n|22-25|Elf, dark|\n|26-34|Elf, high|\n|35-42|Elf, wood|\n|43-46|Gnome, forest|\n|47-52|Gnome, rock|\n|53-56|Half-elf|\n|57-60|Half-orc|\n|61-68|Halfling, lightfoot|\n|69-76|Halfling, stout|\n|77-96|Human|\n|97-00|Tiefling|\nThe reincarnated creature recalls its former life and experiences. It retains the capabilities it had in its original form, except it exchanges its original race for the new one and changes its racial traits accordingly.",
-  "range": "Touch",
-  "school": "Transmutation",
-  "class": [
-    "Druid"
-  ],
-  "concentration": false,
-  "page": "phb 271",
-  "duration": "Instantaneous",
-  "level": 5,
   "name": "Reincarnate",
-  "casting_time": "1 hour"
+  "level": 5,
+  "school": "Transmutation",
+  "casting_time": "1 hour",
+  "range": "Touch",
+  "components": "V, S, M (rare oils and unguents worth at least 1,000 gp, which the spell consumes)",
+  "duration": "Instantaneous",
+  "class": [
+    {
+      "class": "Druid"
+    }
+  ],
+  "effect": "You touch a dead humanoid or a piece of a dead humanoid. Provided that the creature has been dead no longer than 10 days, the spell forms a new adult body for it and then calls the soul to enter that body. If the target's soul isn't free or willing to do so, the spell fails.\n\nThe magic fashions a new body for the creature to inhabit, which likely causes the creature's race to change. The DM rolls a d100 and consults the following table to determine what form the creature takes when restored to life, or the DM chooses a form.\n\nd100 - Race:\n01-04 Dragonborn\n05-13 Dwarf, hill\n14-21 Dwarf, mountain\n22-25 Elf, dark\n26-34 Elf, high\n35-42 Elf, wood\n43-46 Gnome, forest\n47-52 Gnome, rock\n53-56 Half-elf\n57-60 Half-orc\n61-68 Halfling, lightfoot\n69-76 Halfling, stout\n77-96 Human\n97-00 Tiefling\n\nThe reincarnated creature recalls its former life and experiences. It retains the capabilities it had in its original form, except it exchanges its original race for the new one and changes its racial traits accordingly.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

@@ -1,20 +1,24 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "Choose one creature you can see within range, and choose one of the following damage types: acid, cold, fire, lightning, or thunder. The target must succeed on a Constitution saving throw or be affected by the spell for its duration. The first time each turn the affected target takes damage of the chosen type, the target takes an extra 2d6 damage of that type. Moreover, the target loses any resistance to that damage type until the spell ends.\n**At Higher Levels.** When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th. The creatures must be within 30 feet of each other when you target them.",
-  "range": "90 feet",
-  "school": "Transmutation",
-  "class": [
-    "Warlock",
-    "Wizard",
-    "Druid"
-  ],
-  "concentration": true,
-  "page": "ee 17",
-  "duration": "1 minute",
-  "level": 4,
   "name": "Elemental Bane",
+  "level": 4,
+  "school": "Transmutation",
   "casting_time": "1 action",
-  "save": "Constitution",
-  "damage": "2d6"
+  "range": "90 feet",
+  "components": "V, S",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "Choose one creature you can see within range, and choose one of the following damage types - acid, cold, fire, lightning, or thunder. The target must succeed on a Constitution saving throw or be affected by the spell for its duration. The first time each turn the affected target takes damage of the chosen type, the target takes an extra 2d6 damage of that type. Moreover, the target loses any resistance to that damage type until the spell ends.\n\n\nThis spell can be found in the Elemental Evil Player's Companion",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th. The creatures must be within 30 feet of each other when you target them.",
+  "ritual": false,
+  "concentration": true
 }

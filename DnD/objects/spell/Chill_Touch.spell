@@ -1,21 +1,39 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "You create a ghostly, skeletal hand in the space of a creature within range. Make a ranged spell attack against the creature to assail it with the chill of the grave. On a hit, the target takes 1d8 necrotic damage, and it can't regain hit points until the start of your next turn. Until then, the hand clings to the target.\nIf you hit an undead target, it also has disadvantage on attack rolls against you until the end of your next turn.\nThis spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-  "range": "120 feet",
-  "school": "Necromancy",
-  "class": [
-    "Sorcerer",
-    "Warlock",
-    "Wizard"
-  ],
-  "concentration": false,
-  "page": "phb 221",
-  "duration": "1 round",
-  "level": 0,
   "name": "Chill Touch",
+  "level": 0,
+  "school": "Necromancy",
   "casting_time": "1 action",
-  "attack_roll": true,
-  "damage": "1d8",
-  "damage_type": "necrotic"
+  "range": "120 feet",
+  "components": "V, S",
+  "duration": "1 round",
+  "class": [
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You create a ghostly, skeletal hand in the space of a creature within range. Make a ranged spell attack against the creature to assail it with the chill of the grave. On a hit, the target takes 1d8 necrotic damage, and it can't regain hit points until the start of your next turn. Until then, the hand clings to the target.\n\nIf you hit an undead target, it also has disadvantage on attack rolls against you until the end of your next turn.\n\nThis spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false,
+  "attacks": [
+    {
+      "range": "120 feet",
+      "to_hit": {
+        "test": "ATTACKROLL",
+        "against": "AC"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "1d8",
+          "damage_type": "necrotic"
+        }
+      }
+    }
+  ]
 }

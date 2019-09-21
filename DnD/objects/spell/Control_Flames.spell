@@ -1,18 +1,32 @@
 {
-  "components": "S",
-  "ritual": false,
-  "effect": "You choose nonmagical flame that you can see within range and that fits within a 5-foot cube. You affect it in one of the following ways:\n* You instantaneously expand the flame 5 feet in one direction, provided that wood or other fuel is present in the new location.\n* You instantaneously extinguish the flames within the cube.\n* You double or halve the area of bright light and dim light cast by the flame, change its color, or both. The change lasts for 1 hour.\n* You cause simple shapes\u00e2\u20ac\u201dsuch as the vague form of a creature, an inanimate object, or a location\u00e2\u20ac\u201dto appear within the flames and animate as you like. The shapes last for 1 hour.\nIf you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.",
-  "range": "60 feet",
-  "school": "Transmutation",
-  "class": [
-    "Sorcerer",
-    "Wizard",
-    "Druid"
-  ],
-  "concentration": false,
-  "page": "ee 16",
-  "duration": "1 hour",
-  "level": 0,
   "name": "Control Flames",
-  "casting_time": "1 action"
+  "level": 0,
+  "school": "Transmutation",
+  "casting_time": "1 action",
+  "range": "60 feet",
+  "components": "S",
+  "duration": "Instantaneous or 1 hour (see below)",
+  "class": [
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Rogue",
+      "subclass": "Arcane Trickster"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "You choose nonmagical flame that you can see within range and that fits within a 5-foot cube. You affect it in one of the following ways.\n\nYou instantaneously expand the flame 5 feet in one direction, provided that wood or other fuel is present in the new location.\n\nYou instantaneously extinguish the flames within the cube.\n\nYou double or halve the area of bright light and dim light cast by the flame, change its color, or both. The change lasts for 1 hour.\n\nYou cause simple shapes-such as the vague form of a creature, an inanimate object, or a location-to appear within the flames and animate as you like. The shapes last for 1 hour.\n\nIf you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.\n\nThis spell can be found in the Elemental Evil Player's Companion",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

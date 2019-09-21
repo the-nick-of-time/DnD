@@ -1,19 +1,30 @@
 {
-  "components": "V, S, M (a grasshopper's hind leg)",
-  "ritual": false,
-  "effect": "You touch a creature. The creature's jump distance is tripled until the spell ends.",
-  "range": "Touch",
-  "school": "Transmutation",
-  "class": [
-    "Sorcerer",
-    "Ranger",
-    "Wizard",
-    "Druid"
-  ],
-  "concentration": false,
-  "page": "phb 254",
-  "duration": "1 minute",
-  "level": 1,
   "name": "Jump",
-  "casting_time": "1 action"
+  "level": 1,
+  "school": "Transmutation",
+  "casting_time": "1 action",
+  "range": "Touch",
+  "components": "V, S, M (a grasshopper's hind leg)",
+  "duration": "1 minute",
+  "class": [
+    {
+      "class": "Artificer"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Ranger"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You touch a creature. The creature's jump distance is tripled until the spell ends.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

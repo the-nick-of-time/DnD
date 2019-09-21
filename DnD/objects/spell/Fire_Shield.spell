@@ -1,18 +1,26 @@
 {
-  "components": "V, S, M (a bit of phosphorus or a firefly)",
-  "ritual": false,
-  "effect": "Thin and wispy flames wreathe your body for the duration, shedding bright light in a 10-foot radius and dim light for an additional 10 feet, You can end the spell early by using an action to dismiss it.\nThe flames provide you with a warm shield or a chill shield, as you choose. The warm shield grants you resistance to cold damage, and the chill shield grants you resistance to fire damage.\nIn addition, whenever a creature within 5 feet of you hits you with a melee attack, the shield erupts with flame. The attacker takes 2d8 fire damage from a warm shield, or 2d8 cold damage from a cold shield.",
-  "range": "Self",
-  "school": "Evocation",
-  "class": [
-    "Wizard"
-  ],
-  "concentration": false,
-  "page": "phb 242",
-  "duration": "10 minutes",
-  "level": 4,
   "name": "Fire Shield",
+  "level": 4,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "damage": "2d8",
-  "damage_type": "fire"
+  "range": "Self",
+  "components": "V, S, M (a bit of phosphorous or a firefly)",
+  "duration": "10 minutes",
+  "class": [
+    {
+      "class": "Warlock",
+      "subclass": "Fiend"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "Thin and wispy flames wreathe your body for the duration, shedding bright light in a 10-foot radius and dim light for an additional 10 feet. You can end the spell early by using an action to dismiss it.\n\nThe flames provide you with a warm shield or a chill shield, as you choose. The warm shield grants you resistance to cold damage, and the chill shield grants you resistance to fire damage.\n\nIn addition, whenever a creature within 5 feet of you hits you with a melee attack, the shield erupts with flame. The attacker takes 2d8 fire damage from a warm shield, or 2d8 cold damage from a cold shield.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

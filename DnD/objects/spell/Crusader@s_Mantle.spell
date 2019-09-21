@@ -1,18 +1,22 @@
 {
-  "components": "V",
-  "ritual": false,
-  "effect": "Holy power radiates from you in an aura with a 30-foot radius, awakening boldness in friendly creatures. Until the spell ends, the aura moves with you, centered on you. While in the aura, each nonhostile creature in the aura (including you) deals an extra 1d4 radiant damage when it hits with a weapon attack.",
-  "range": "Self",
-  "school": "Evocation",
-  "class": [
-    "Paladin"
-  ],
-  "concentration": true,
-  "page": "phb 230",
-  "duration": "up to 1 minute",
-  "level": 3,
   "name": "Crusader's Mantle",
+  "level": 3,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "damage": "1d4",
-  "damage_type": "radiant"
+  "range": "Self",
+  "components": "V",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Cleric",
+      "subclass": "War"
+    },
+    {
+      "class": "Paladin"
+    }
+  ],
+  "effect": "Holy power radiates from you in an aura with a 30-foot radius, awakening boldness in friendly creatures. Until the spell ends, the aura moves with you, centered on you. While in the aura, each non-hostile creature in the aura (including you) deals an extra 1d4 radiant damage when it hits with a weapon attack.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

@@ -1,18 +1,29 @@
 {
-  "components": "V",
-  "ritual": false,
-  "effect": "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius.\nAny attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.",
-  "range": "60 feet",
-  "school": "Evocation",
-  "class": [
-    "Druid",
-    "Bard"
-  ],
-  "concentration": true,
-  "page": "phb 239",
-  "duration": "up to 1 minute",
-  "level": 1,
   "name": "Faerie Fire",
+  "level": 1,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "save": "Dexterity"
+  "range": "60 feet",
+  "components": "V",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Light"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Warlock",
+      "subclass": "Archfey"
+    }
+  ],
+  "effect": "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius.\n\nAny attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

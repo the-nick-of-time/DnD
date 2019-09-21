@@ -1,17 +1,34 @@
 {
-  "components": "V",
-  "ritual": false,
-  "effect": "A Large spectral guardian appears and hovers for the duration in an unoccupied space of your choice that you can see within range. The guardian occupies that space and is indistinct except for a gleaming sword and shield emblazoned with the symbol of your deity.\nAny creature hostile to you that moves to a space within 10 feet of the guardian for the first time on a turn must succeed on a Dexterity saving throw. The creature takes 20 radiant damage on a failed save, or half as much damage on a successful one. The guardian vanishes when it has dealt a total of 60 damage.",
-  "range": "30 feet",
-  "school": "Conjuration",
-  "class": [
-    "Cleric"
-  ],
-  "concentration": false,
-  "page": "phb 246",
-  "duration": "8 hours",
-  "level": 4,
   "name": "Guardian of Faith",
+  "level": 4,
+  "school": "Conjuration",
   "casting_time": "1 action",
-  "save": "Dexterity"
+  "range": "30 feet",
+  "components": "V",
+  "duration": "8 hours",
+  "class": [
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Life"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Light"
+    },
+    {
+      "class": "Paladin",
+      "subclass": "Crown"
+    },
+    {
+      "class": "Paladin",
+      "subclass": "Devotion"
+    }
+  ],
+  "effect": "A Large spectral guardian appears and hovers for the duration in an unoccupied space of your choice that you can see within range. The guardian occupies that space and is indistinct except for a gleaming sword and shield emblazoned with the symbol of your deity.\n\nAny creature hostile to you that moves to a space within 10 feet of the guardian for the first time on a turn must succeed on a Dexterity saving throw. The creature takes 20 radiant damage on a failed save, or half as much damage on a successful one. The guardian vanishes when it has dealt a total of 60 damage.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

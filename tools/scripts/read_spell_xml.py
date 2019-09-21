@@ -1,7 +1,7 @@
 import json
 import re
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 
 from bs4 import BeautifulSoup, Tag
 
@@ -9,7 +9,7 @@ from DnD.modules.lib.helpers import sanitize_filename
 
 
 def parse_one(elem: Tag) -> dict:
-    return {
+    data = {
         'name': elem.find('name').text.rstrip('()ESCAG '),
         'level': int(elem.level.text),
         'school': parse_school(elem.school.text),
@@ -24,6 +24,10 @@ def parse_one(elem: Tag) -> dict:
         'ritual': elem.ritual.text == 'YES' if elem.ritual else False,
         'concentration': 'concentration' in elem.duration.text.lower(),
     }
+    attack = construct_attack(data['effect'], data['range'])
+    if attack:
+        data.update(attack)
+    return data
 
 
 def parse_classes(classes: str) -> list:
@@ -64,6 +68,32 @@ def parse_body(body: List[Tag]) -> Tuple[str, str]:
         else:
             effect.append(segment.text)
     return '\n'.join(effect), '\n'.join(variants)
+
+
+def construct_attack(body: str, range: str) -> Optional[dict]:
+    damage = re.search(r'(\d+d\d+(?:[+-]\d+)?) (\w+) damage', body)
+    save = re.search(r'(\w+) saving throw', body, re.IGNORECASE)
+    attack = 'spell attack' in body
+    if not ((attack or save) and damage):
+        return None
+    # Try it as the most basic kind of attack
+    return {
+        "attacks": [
+            {
+                "range": range,
+                "to_hit": {
+                    "test": "ATTACKROLL" if attack else "SAVE",
+                    "against": "AC" if attack else save.group(1).title(),
+                },
+                "on_hit": {
+                    "damage": {
+                        "base_roll": damage.group(1),
+                        "damage_type": damage.group(2)
+                    }
+                }
+            }
+        ]
+    }
 
 
 def write_one(data: dict, outputdir: Path):

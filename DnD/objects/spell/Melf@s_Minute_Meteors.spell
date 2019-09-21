@@ -1,20 +1,40 @@
 {
-  "components": "V, S, M (niter, sulfur, and pine tar formed into a bead)",
-  "ritual": false,
-  "effect": "You create six tiny meteors in your space. They float in the air and orbit you for the spell's duration. When you cast the spell\u00e2\u20ac\u201dand as a bonus action on each of your turns thereafter\u00e2\u20ac\u201dyou can expend one or two of the meteors, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.\n**At Higher Levels.** When you cast this spell using a spell slot of 4th level or higher, the number of meteors created increases by two for each slot level above 3rd.",
-  "range": "Self",
-  "school": "Evocation",
-  "class": [
-    "Sorcerer",
-    "Wizard"
-  ],
-  "concentration": true,
-  "page": "ee 20",
-  "duration": "10 minutes",
-  "level": 3,
   "name": "Melf's Minute Meteors",
+  "level": 3,
+  "school": "Evocation",
   "casting_time": "1 action",
-  "save": "Dexterity",
-  "damage": "2d6",
-  "damage_type": "fire"
+  "range": "Self",
+  "components": "V, S, M (niter, sulfur, and pine tar formed into a bead)",
+  "duration": "Concentration, up to 10 minutes",
+  "class": [
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Fighter",
+      "subclass": "Eldritch Knight"
+    }
+  ],
+  "effect": "You create six tiny meteors in your space. They float in the air and orbit you for the spell's duration. When you cast the spell-and as a bonus action on each of your turns thereafter-you can expend one or two of the meteors, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.\n\n\nThis spell can be found in the Elemental Evil Player's Companion",
+  "higher_levels": "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, the number of meteors created increases by two for each slot level above 3rd.",
+  "ritual": false,
+  "concentration": true,
+  "attacks": [
+    {
+      "range": "Self",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Dexterity"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "2d6",
+          "damage_type": "fire"
+        }
+      }
+    }
+  ]
 }

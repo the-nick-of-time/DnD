@@ -1,18 +1,22 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "Your prayer empowers you with divine radiance. Until the spell ends, your weapon attacks deal an extra 1d4 radiant damage on a hit.",
-  "range": "Self",
-  "school": "Evocation",
-  "class": [
-    "Paladin"
-  ],
-  "concentration": true,
-  "page": "phb 234",
-  "duration": "up to 1 minute",
-  "level": 1,
   "name": "Divine Favor",
+  "level": 1,
+  "school": "Evocation",
   "casting_time": "1 bonus action",
-  "damage": "1d4",
-  "damage_type": "radiant"
+  "range": "Self",
+  "components": "V, S",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Cleric",
+      "subclass": "War"
+    },
+    {
+      "class": "Paladin"
+    }
+  ],
+  "effect": "Your prayer empowers you with divine radiance. Until the spell ends, your weapon attacks deal and extra 1d4 radiant damage on a hit.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

@@ -1,19 +1,36 @@
 {
-  "components": "V, S, M (a rotten egg or several skunk cabbage leaves)",
-  "ritual": false,
-  "effect": "You create a 20-foot-radius sphere of yellow, nauseating gas centered on a point within range. The cloud spreads around corners, and its area is heavily obscured. The cloud lingers in the air for the duration.\nEach creature that is completely within the cloud at the start of its turn must make a Constitution saving throw against poison. On a failed save, the creature spends its action that turn retching and reeling. Creatures that don't need to breathe or are immune to poison automatically succeed on this saving throw.\nA moderate wind (at least 10 miles per hour) disperses the cloud after 4 rounds. A strong wind (at least 20 miles per hour) disperses it after 1 round.",
-  "range": "90 feet",
-  "school": "Conjuration",
-  "class": [
-    "Sorcerer",
-    "Wizard",
-    "Bard"
-  ],
-  "concentration": true,
-  "page": "phb 278",
-  "duration": "up to 1 minute",
-  "level": 3,
   "name": "Stinking Cloud",
+  "level": 3,
+  "school": "Conjuration",
   "casting_time": "1 action",
-  "save": "Constitution"
+  "range": "90 feet",
+  "components": "V, S, M (a rotten egg or several skunk cabbage leaves)",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Swamp"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Underdark"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock",
+      "subclass": "Fiend"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You create a 20-foot-radius sphere of yellow, nauseating gas centered on a point within range. The cloud spreads around corners, and its area is heavily obscured. The cloud lingers in the air for the duration.\n\nEach creature that is completely within the cloud at the start of its turn must make a Constitution saving throw against poison. On a failed save, the creature spends its action that turn retching and reeling. Creatures that don't need to breathe or are immune to poison automatically succeed on this saving throw.\n\nA moderate wind (at least 10 miles per hour) disperses the cloud after 4 rounds. A strong wind (at least 20 miles per hour) disperses it after 1 round.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }

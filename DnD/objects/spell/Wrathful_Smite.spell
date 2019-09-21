@@ -1,19 +1,33 @@
 {
-  "components": "V",
-  "ritual": false,
-  "effect": "The next time you hit with a melee weapon attack during this spell's duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is a creature, it must make a Wisdom saving throw or be frightened of you until the spell ends. As an action, the creature can make a Wisdom check against your spell save DC to steel its resolve and end this spell.",
-  "range": "Self",
-  "school": "Evocation",
-  "class": [
-    "Paladin"
-  ],
-  "concentration": true,
-  "page": "phb 289",
-  "duration": "up to 1 minute",
-  "level": 1,
   "name": "Wrathful Smite",
+  "level": 1,
+  "school": "Evocation",
   "casting_time": "1 bonus action",
-  "save": "Wisdom",
-  "damage": "1d6",
-  "damage_type": "psychic"
+  "range": "Self",
+  "components": "V, S, M",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Paladin"
+    }
+  ],
+  "effect": "The next time you hit with a melee weapon attack during this spell's duration, your attack deals an extra 1d6 psychic damage. Additionally, if the target is a creature, it must make a Wisdom saving throw or be frightened of you until the spell ends. As an action, the creature can make a Wisdom check against your spell save DC to steel its resolve and end this spell.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true,
+  "attacks": [
+    {
+      "range": "Self",
+      "to_hit": {
+        "test": "SAVE",
+        "against": "Wisdom"
+      },
+      "on_hit": {
+        "damage": {
+          "base_roll": "1d6",
+          "damage_type": "psychic"
+        }
+      }
+    }
+  ]
 }

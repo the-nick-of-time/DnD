@@ -1,20 +1,38 @@
 {
-  "components": "V, S",
-  "ritual": false,
-  "effect": "A 60-foot-radius sphere of light spreads out from a point you choose within range. The sphere is bright light and sheds dim light for an additional 60 feet.\nIf you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light.\nIf any of this spell's area overlaps with an area of darkness created by a spell of 3rd level or lower, the spell that created the darkness is dispelled.",
-  "range": "60 feet",
-  "school": "Evocation",
-  "class": [
-    "Cleric",
-    "Sorcerer",
-    "Ranger",
-    "Paladin",
-    "Druid"
-  ],
-  "concentration": false,
-  "page": "phb 230",
-  "duration": "1 hour",
-  "level": 3,
   "name": "Daylight",
-  "casting_time": "1 action"
+  "level": 3,
+  "school": "Evocation",
+  "casting_time": "1 action",
+  "range": "60 feet",
+  "components": "V, S",
+  "duration": "1 hour",
+  "class": [
+    {
+      "class": "Cleric"
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Light"
+    },
+    {
+      "class": "Druid"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Grassland"
+    },
+    {
+      "class": "Paladin"
+    },
+    {
+      "class": "Ranger"
+    },
+    {
+      "class": "Sorcerer"
+    }
+  ],
+  "effect": "A 60-foot-radius sphere of light spreads out from a point you choose within range. The sphere is bright light and sheds dim light for an additional 60 feet.\n\nIf you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object with and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light.\n\nIf any of this spell's area overlaps with an area of darkness created by a spell of 2nd level or lower, the spell that created the darkness is dispelled.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": false
 }

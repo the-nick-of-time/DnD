@@ -1,21 +1,27 @@
 {
-  "components": "V, S, M (a sliver of glass)",
-  "ritual": false,
-  "effect": "You fill the air with spinning daggers in a cube 5 feet on each side, centered on a point you choose within range. A creature takes 4d4 slashing damage when it enters the spell's area for the first time on a turn or starts its turn there. \n**At Higher Levels.** When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd.",
-  "range": "60 feet",
-  "school": "Conjuration",
-  "class": [
-    "Sorcerer",
-    "Warlock",
-    "Wizard",
-    "Bard"
-  ],
-  "concentration": true,
-  "page": "phb 222",
-  "duration": "up to 1 minute",
-  "level": 2,
   "name": "Cloud of Daggers",
+  "level": 2,
+  "school": "Conjuration",
   "casting_time": "1 action",
-  "damage": "4d4",
-  "damage_type": "slashing"
+  "range": "60 feet",
+  "components": "V, S, M (a sliver of glass)",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Bard"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Warlock"
+    },
+    {
+      "class": "Wizard"
+    }
+  ],
+  "effect": "You fill the air with spinning daggers in a cube 5 feet on each side, centered on a point you choose within range. A creature takes 4d4 slashing damage when it enters the spell's area for the first time on a turn or starts its turn there.\n",
+  "higher_levels": "At Higher Levels: when you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd.",
+  "ritual": false,
+  "concentration": true
 }

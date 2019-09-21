@@ -1,17 +1,32 @@
 {
-  "components": "V",
-  "ritual": false,
-  "effect": "Your body becomes blurred, shifting and wavering to all who can see you. For the duration, any creature has disadvantage on attack rolls against you. An attacker is immune to this effect if it doesn't rely on sight, as with blindsight, or can see through illusions, as with truesight.",
-  "range": "Self",
-  "school": "Illusion",
-  "class": [
-    "Sorcerer",
-    "Wizard"
-  ],
-  "concentration": true,
-  "page": "phb 219",
-  "duration": "up to 1 minute",
-  "level": 2,
   "name": "Blur",
-  "casting_time": "1 action"
+  "level": 2,
+  "school": "Illusion",
+  "casting_time": "1 action",
+  "range": "Self",
+  "components": "V",
+  "duration": "Concentration, up to 1 minute",
+  "class": [
+    {
+      "class": "Artificer"
+    },
+    {
+      "class": "Druid",
+      "subclass": "Desert"
+    },
+    {
+      "class": "Sorcerer"
+    },
+    {
+      "class": "Wizard"
+    },
+    {
+      "class": "Rogue",
+      "subclass": "Arcane Trickster"
+    }
+  ],
+  "effect": "Your body becomes blurred, shifting and wavering to all who can see you. For the duration, any creature has disadvantage on attack rolls against you. An attacker is immune to this effect if it doesn't rely on sight, as with blindsight, or can see through illusions, as with truesight.",
+  "higher_levels": "",
+  "ritual": false,
+  "concentration": true
 }
