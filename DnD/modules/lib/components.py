@@ -1,5 +1,4 @@
 import enum
-import glob
 import tkinter as tk
 from typing import Callable
 
@@ -313,9 +312,9 @@ class AskLine(Section):
 class CharacterQuery(Query):
     def __init__(self, data, callbackfun, *extraquestions):
         possibilities = []
-        for f in glob.glob(iface.JsonInterface.OBJECTSPATH / 'character' / '*.character'):
-            name, extension = f.rsplit('.', 1)
-            possibilities.append(h.readable_filename(name))
+        base = iface.JsonInterface.OBJECTSPATH / 'character'
+        for f in base.glob('*.character'):
+            possibilities.append(h.readable_filename(f.stem))
         Query.__init__(self, data, callbackfun,
                        ['Character Name?', sorted(possibilities)],
                        *extraquestions)

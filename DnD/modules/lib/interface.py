@@ -82,12 +82,12 @@ class JsonInterface(DataInterface):
             return obj
 
     def __init__(self, filename, readonly=False, isabsolute=False):
-        self.shortFilename = h.readable_filename(filename)
+        self.shortFilename = h.readable_filename(str(filename))
         if isabsolute:
-            self.filename = filename
+            self.filename = Path(filename)
         else:
             self.filename = self.OBJECTSPATH / filename
-        with open(self.filename, 'r') as f:
+        with self.filename.open('r') as f:
             data = json.load(f, object_pairs_hook=collections.OrderedDict)
             super().__init__(data, readonly)
         self.EXTANT[self.filename] = self
@@ -125,7 +125,7 @@ class LinkedInterface:
             self.searchpath.update(other.searchpath)
             return self
         elif isinstance(other, JsonInterface):
-            self.searchpath[other.filename] = other
+            self.searchpath[str(other.filename)] = other
             return self
         else:
             raise TypeError("You can only add a JsonInterface or a "

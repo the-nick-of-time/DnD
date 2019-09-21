@@ -5,6 +5,13 @@ import unittest
 from DnD.modules.lib import interface
 
 
+def linked_equal(a: interface.LinkedInterface, b: interface.LinkedInterface):
+    return a.searchpath == b.searchpath
+
+
+interface.LinkedInterface.__eq__ = linked_equal
+
+
 class TestDataInterface(unittest.TestCase):
     def setUp(self) -> None:
         # Sample data to be used in each method
@@ -155,6 +162,18 @@ class TestLinkedInterface(unittest.TestCase):
         inter2 = interface.JsonInterface(self.file2.name)
         linked = interface.LinkedInterface(inter1, inter2)
         self.assertEqual(linked.get(str(inter1.filename) + ':/string'), 'value')
+
+    def test_add(self):
+        inter1 = interface.JsonInterface(self.file1.name)
+        inter2 = interface.JsonInterface(self.file2.name)
+        added = inter1 + inter2
+        constructed = interface.LinkedInterface(inter1, inter2)
+        self.assertEqual(added, constructed)
+        iadded = interface.LinkedInterface(inter1)
+        iadded += inter2
+        self.assertEqual(iadded, constructed)
+        self.assertEqual(interface.LinkedInterface(inter1, inter2, inter1, inter2),
+                         added + constructed)
 
     def tearDown(self) -> None:
         self.file1.close()
