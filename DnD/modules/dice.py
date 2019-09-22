@@ -13,6 +13,7 @@ class DiceRoll(gui.Section):
         self.generalRoll = gui.LabeledEntry(self.f, 'Dice to roll?')
         self.generalRoll.grid(0, 0)
         self.generalRoll.bind("<Return>", lambda event: self.do_roll())
+        self.generalRoll.bind("<KP_Enter>", lambda event: self.do_roll())
         self.button = tk.Button(self.f, text="ROLL", command=self.do_roll)
         self.button.grid(row=1, column=1)
         self.result = tk.Label(self.f)
