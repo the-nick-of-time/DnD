@@ -28,7 +28,7 @@ class Spell:
         else:
             return False
 
-    def is_available(self, character: char.Character):
+    def is_available(self, character: 'char.Character'):
         available = character.classes.spells_available
         names = set(available[self.level])
         both = names & self.classes
@@ -36,7 +36,7 @@ class Spell:
 
 
 class OwnedSpell(Spell):
-    def __init__(self, jf: JsonInterface, owner: char.Character):
+    def __init__(self, jf: JsonInterface, owner: 'char.Character'):
         super().__init__(jf)
         self.owner = owner
 

@@ -24,11 +24,14 @@ class Character:
         self.abilities = abil.Abilities(jf.cd("/abilities"))
         self.race = race.Race(jf.cd("/race"))
         self.classes = classes.OwnedClasses(jf.cd("/classes"), self)
-        self.hp = hp.HP(jf.cd('/HP'), self)
-        if self.settings.spellPoints:
-            self.spellPower = casting.OwnedSpellPoints(jf.cd("/spellcasting"), self)
-        else:
-            self.spellPower = casting.OwnedSpellSlots(jf.cd("/spellcasting"), self)
+        self.hp = hp.OwnedHP(jf.cd('/HP'), self)
+        if self.classes.casterLevel > 0:
+            if self.settings.spellPoints:
+                self.spellPower = casting.OwnedSpellPoints(jf.cd("/spellcasting"), self)
+            else:
+                self.spellPower = casting.OwnedSpellSlots(jf.cd("/spellcasting"), self)
+        if 'Warlock' in self.classes:
+            self.warlockSlots = casting.OwnedWarlockSlots(jf.cd("/spellcasting"), self)
         self.bonuses = bonus.OwnedBonuses(self)
         self.skills = set(jf.get('/skills'))
         self.saves = self.classes.saveProficiencies

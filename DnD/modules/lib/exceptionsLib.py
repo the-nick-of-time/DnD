@@ -47,6 +47,10 @@ class NotARitualError(SpellError):
     pass
 
 
+class AlreadyPrepared(SpellError):
+    pass
+
+
 class CharacterDead(DnDError):
     pass
 
@@ -64,4 +68,8 @@ class PathError(InterfaceError, ValueError):
 
 
 class EquipSlotsFull(DnDError):
+    pass
+
+
+class GuiError(DnDError):
     pass

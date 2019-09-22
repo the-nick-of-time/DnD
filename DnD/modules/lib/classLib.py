@@ -116,6 +116,13 @@ class Classes:
     def __str__(self):
         return ', '.join(str(c) for c in self.classes)
 
+    def __contains__(self, item):
+        if isinstance(item, Class):
+            return item in self.classes
+        if isinstance(item, str):
+            return item in [c.name for c in self.classes]
+        return False
+
     def features_at_level(self, level: int) -> List[feature.Feature]:
         pass
 
