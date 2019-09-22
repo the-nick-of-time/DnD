@@ -76,21 +76,20 @@ class Attacks(gui.Section):
         disadvantage = self.dis.get()
         attack_bonus = self.character.parse_vars(self.atkbonus.get(), False)
         damage_bonus = self.character.parse_vars(self.dambonus.get(), False)
-        if (which is None):
+        if which is None:
             attack = h.d20_roll(advantage, disadvantage, self.character.bonuses.get('lucky', False))
             attack += d.compile(attack_bonus)
             attackRoll = attack.evaluate()
-            if (attack.is_critical()):
-                mode = d.Mode.CRIT
+            if attack.is_critical():
                 attackRoll = 'Critical Hit!'
-            elif (attack.is_fail()):
+                damageRoll = d.basic(damage_bonus, mode=d.Mode.CRIT)
+            elif attack.is_fail():
                 attackRoll = 'Critical Miss.'
-                # Make it return 0
+                damageRoll = 0
             else:
                 # mode = 'execute'
-                mode = d.Mode.NORMAL
                 attackRoll = attack.verbose_result()
-            damageRoll = d.basic(damage_bonus, mode=mode)
+                damageRoll = d.basic(damage_bonus)
             result = ('Attack Roll: ' + str(attackRoll), 'Damage Roll: ' + str(damageRoll), '')
             # result = ('Attack Roll: ' + str(atk), 'Damage Roll: ' + str(dam), '')
         else:

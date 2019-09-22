@@ -43,5 +43,5 @@ class Monster(Actor):
 
 
 class CharacterStub(Actor):
-    def __init__(self, initiative):
-        super().__init__(initiative)
+    def __init__(self, name, initiative):
+        super().__init__(name, initiative)

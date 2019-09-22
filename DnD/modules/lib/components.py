@@ -2,15 +2,16 @@ import enum
 import tkinter as tk
 from typing import Callable
 
+import dndice as d
+
+from . import exceptionsLib as ex
 from . import helpers as h
 from . import interface as iface
 
 
 class Direction(enum.Enum):
-    V = 'vertical'
-    VERTICAL = 'vertical'
-    H = 'horizontal'
-    HORIZONTAL = 'horizontal'
+    VERTICAL = V = 'vertical'
+    HORIZONTAL = H = 'horizontal'
 
 
 class Section:
@@ -40,31 +41,31 @@ class Section:
             self.f = tk.Frame(self.container, **kwargs)
 
     def grid(self, row, column, **kwargs):
-        try:
+        if hasattr(self, 'wrapper'):
             self.wrapper.grid(row=row, column=column, **kwargs)
             self.canvas.grid(row=0, column=0)
             self.vscroll.grid(row=0, column=1, sticky='ns')
             self.hscroll.grid(row=1, column=0, sticky='ew')
             self.canvas.create_window((0, 0), window=self.f, anchor='nw')
             self.f.bind("<Configure>", lambda event: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
-        except AttributeError:
+        else:
             self.f.grid(row=row, column=column, **kwargs)
 
     def pack(self, **kwargs):
-        try:
+        if hasattr(self, 'wrapper'):
             self.wrapper.pack(**kwargs)
             self.canvas.grid(row=0, column=0)
             self.vscroll.grid(row=0, column=1, sticky='ns')
             self.hscroll.grid(row=1, column=0, sticky='ew')
             self.canvas.create_window((0, 0), window=self.f, anchor='nw')
             self.f.bind("<Configure>", lambda event: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
-        except AttributeError:
+        else:
             self.f.pack(**kwargs)
 
     def destroy(self):
-        try:
+        if hasattr(self, 'wrapper'):
             self.wrapper.destroy()
-        except AttributeError:
+        else:
             self.f.destroy()
 
 
@@ -181,7 +182,7 @@ class Query:
                      else self.questions[0][0])
         self.answers[firstname].focus()
         self.answers[lastname].bind("<Return>", lambda e: self.finish())
-        self.accept.grid(row=i+1, column=1)
+        self.accept.grid(row=i + 1, column=1)
 
     def finish(self):
         data = {}
@@ -217,16 +218,16 @@ class ResourceDisplay(Section):
             self.mx = tk.Entry(self.numbers, textvariable=self.maxvalue,
                                width=5)
         v = self.resource.value
-        self.value = tk.Label(self.numbers, text='*' + v if isinstance(v, str)
-                              else '')
-        self.buttonframe = tk.Frame(self.f)
-        self.inc = tk.Button(self.buttonframe, text='+',
+        self.value = tk.Label(self.numbers,
+                              text='*' + v if isinstance(v, str) else '')
+        self.buttonFrame = tk.Frame(self.f)
+        self.inc = tk.Button(self.buttonFrame, text='+',
                              command=self.increment)
-        self.dec = tk.Button(self.buttonframe, text='-',
+        self.dec = tk.Button(self.buttonFrame, text='-',
                              command=self.decrement)
-        self.resetbutton = tk.Button(self.buttonframe, text='Reset',
+        self.resetbutton = tk.Button(self.buttonFrame, text='Reset',
                                      command=self.reset)
-        self.display = tk.Label(self.buttonframe, width=3)
+        self.display = tk.Label(self.buttonFrame, width=3)
         self.draw_static()
         self.draw_dynamic()
 
@@ -237,7 +238,7 @@ class ResourceDisplay(Section):
         self.slash.grid(row=0, column=1)
         self.mx.grid(row=0, column=2)
         self.value.grid(row=0, column=3)
-        self.buttonframe.grid(row=2, column=0)
+        self.buttonFrame.grid(row=2, column=0)
         self.display.grid(row=0, column=0)
         self.inc.grid(row=0, column=1)
         self.dec.grid(row=0, column=2)
@@ -362,6 +363,8 @@ class LabeledMenu(Section):
             self.menu.grid(row=1, column=0)
         elif orient == Direction.HORIZONTAL:
             self.menu.grid(row=0, column=1)
+        else:
+            raise ex.GuiError("Pass in a Direction value")
 
     def get(self):
         return self.value.get()
@@ -371,6 +374,65 @@ class LabeledMenu(Section):
 
     def bind(self, event, callback):
         self.menu.bind(event, callback)
+
+
+class AdvantageChooser(Section):
+    def __init__(self, container, orient=Direction.VERTICAL, **kwargs):
+        super().__init__(container, **kwargs)
+        self._adv = tk.BooleanVar()
+        self._dis = tk.BooleanVar()
+        advantageSelect = tk.Checkbutton(self.f, text="Advantage?",
+                                         variable=self._adv)
+        disadvantageSelect = tk.Checkbutton(self.f, text="Disadvantage?",
+                                            variable=self._dis)
+        advantageSelect.grid(row=0, column=0)
+        if orient == Direction.V:
+            disadvantageSelect.grid(row=1, column=0)
+        elif orient == Direction.HORIZONTAL:
+            disadvantageSelect.grid(row=0, column=1)
+        else:
+            raise ex.GuiError("Pass in a Direction value")
+
+    def d20_roll(self, lucky=False):
+        return h.d20_roll(self._adv.get(), self._dis.get(), lucky)
+
+    @property
+    def advantage(self) -> bool:
+        return self._adv.get()
+
+    @property
+    def disadvantage(self) -> bool:
+        return self._dis.get()
+
+
+class FreeformAttack(Section):
+    def __init__(self, container, attackResult=None, damageResult=None, **kwargs):
+        super().__init__(container, **kwargs)
+        self.attack = LabeledEntry(self.f, 'Attack Modifiers', orient=Direction.HORIZONTAL)
+        self.damage = LabeledEntry(self.f, 'Damage Roll', orient=Direction.HORIZONTAL)
+        self.adv = AdvantageChooser(self.f, orient=Direction.HORIZONTAL)
+        self.attackResult = attackResult or tk.Label(self.f)
+        self.damageResult = damageResult or tk.Label(self.f)
+        self.attack.grid(0, 0)
+        self.damage.grid(1, 0)
+        self.adv.grid(2, 0)
+        self.attackResult.grid(row=3, column=0)
+        self.damageResult.grid(row=4, column=0)
+
+    def do_attack(self, lucky=False):
+        attack = self.adv.d20_roll(lucky)
+        attack += d.compile(self.attack.get())
+        att = d.verbose(attack)
+        if attack.is_critical():
+            att = 'Critical Hit'
+            dam = d.verbose(self.damage.get(), d.Mode.CRIT)
+        elif attack.is_fail():
+            att = 'Critical Miss'
+            dam = '0'
+        else:
+            dam = d.verbose(self.damage.get())
+        self.attackResult['text'] = 'Attack roll: ' + att
+        self.damageResult['text'] = 'Damage roll: ' + dam
 
 
 class MainWindow(tk.Tk):
