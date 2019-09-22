@@ -127,16 +127,15 @@ class Module(AbilityDisplay):
 class Main(gui.Section):
     def __init__(self, window):
         gui.Section.__init__(self, window)
-        self.charactername = {}
         self.QUIT = tk.Button(self.f, text='QUIT', command=self.quit)
         self.startup_begin()
 
     def startup_begin(self):
-        gui.Query(self.charactername, self.startup_end, 'Character Name?')
+        gui.Query(self.startup_end, 'Character Name?')
         self.container.withdraw()
 
-    def startup_end(self):
-        name = self.charactername['Character Name?']
+    def startup_end(self, data):
+        name = data['Character Name?']
         path = (iface.JsonInterface.OBJECTSPATH
                 / 'character' / (name + '.character'))
         if path.exists():

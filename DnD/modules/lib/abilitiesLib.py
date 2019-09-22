@@ -38,7 +38,7 @@ class Ability:
     def __init__(self, name: AbilityName, score: int):
         self.name = name
         self.score = score
-        self.abbreviation = name[:3].upper()
+        self.abbreviation = name.value[:3].upper()
 
     @property
     def modifier(self):

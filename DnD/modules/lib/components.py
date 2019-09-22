@@ -1,9 +1,11 @@
 import enum
 import tkinter as tk
+from pathlib import Path
 from typing import Callable
 
 import dndice as d
 
+from . import characterLib as char
 from . import exceptionsLib as ex
 from . import helpers as h
 from . import interface as iface
@@ -311,14 +313,16 @@ class AskLine(Section):
 
 
 class CharacterQuery(Query):
-    def __init__(self, data, callbackfun, *extraquestions):
+    NAME_Q = 'Character Name?'
+
+    def __init__(self, callbackfun: Callable[[dict], None], *extraQuestions):
         possibilities = []
         base = iface.JsonInterface.OBJECTSPATH / 'character'
         for f in base.glob('*.character'):
             possibilities.append(h.readable_filename(f.stem))
-        Query.__init__(self, data, callbackfun,
-                       ['Character Name?', sorted(possibilities)],
-                       *extraquestions)
+        Query.__init__(self, callbackfun,
+                       [self.NAME_Q, sorted(possibilities)],
+                       *extraQuestions)
 
 
 class LabeledEntry(Section):
@@ -438,3 +442,39 @@ class FreeformAttack(Section):
 class MainWindow(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs, className='dndutils')
+
+
+class MainModule:
+    def __init__(self, window: tk.Tk, creator: 'Callable[[char.Character], Section]'):
+        self.window = window
+        self.creator = creator
+        self.component = None
+        iface.JsonInterface.OBJECTSPATH = Path(__file__).resolve() / '..' / '..' / 'objects'
+        self.QUIT = tk.Button(self.window, text='QUIT', fg='red', command=self.quit)
+
+        self.QUIT.grid(row=1, column=0)
+
+    def startup_begin(self):
+        CharacterQuery(self.startup_end)
+        self.window.withdraw()
+
+    def startup_end(self, data):
+        name = data[CharacterQuery.NAME_Q]
+        path = (iface.JsonInterface.OBJECTSPATH
+                / 'character' / (h.sanitize_filename(name) + '.character'))
+        if path.exists():
+            jf = iface.JsonInterface(path, isabsolute=True)
+        else:
+            # Should be unreachable since the list of names is
+            # determined by files that exist
+            raise FileNotFoundError("The named character doesn't exist")
+        character = char.Character(jf)
+        self.component = self.creator(character)
+
+        self.component.grid(0, 0)
+
+    def quit(self):
+        if hasattr(self.component, 'owner'):
+            # noinspection PyUnresolvedReferences
+            self.component.owner.write()
+        self.window.destroy()
