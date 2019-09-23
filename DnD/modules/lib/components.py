@@ -330,7 +330,8 @@ class LabeledEntry(Section):
         super().__init__(parent)
         self.label = tk.Label(self.f, text=name)
         self.label.grid(row=0, column=0)
-        self.entry = tk.Entry(self.f, width=width)
+        self.value = tk.StringVar()
+        self.entry = tk.Entry(self.f, textvariable=self.value, width=width)
         if orient == Direction.VERTICAL:
             self.entry.grid(row=1, column=0, sticky=pos)
         elif orient == Direction.HORIZONTAL:
@@ -349,8 +350,12 @@ class LabeledEntry(Section):
     def focus(self):
         self.entry.focus_set()
 
-    def bind(self, event, callback):
+    def bind(self, event, callback: Callable[[tk.Event], None]):
         self.entry.bind(event, callback)
+
+    def on_change(self, callback: Callable[[], None]):
+        # Ignore everything that the trace argument gives
+        self.value.trace_add('w', lambda name, index, op: callback())
 
     def get(self):
         return self.entry.get()

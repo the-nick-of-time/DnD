@@ -2,6 +2,7 @@ import functools
 import json
 import os
 import re
+import typing
 
 import dndice as r
 
@@ -138,3 +139,16 @@ def with_data(data):
         return wrapped
 
     return decorator
+
+
+class SortedList:
+    def __init__(self, start: typing.Sequence = tuple()):
+        self.data = list(start)
+        self.data.sort()
+
+    def append(self, value):
+        self.data.append(value)
+        self.data.sort()
+
+    def remove(self, value):
+        self.data.remove(value)

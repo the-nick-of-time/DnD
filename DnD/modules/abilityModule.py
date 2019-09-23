@@ -32,6 +32,8 @@ class AbilityDisplay(gui.LabeledEntry):
         self.entry['validate'] = 'key'
         self.entry['validatecommand'] = validate
 
+        self.update_view()
+
     def try_update_score(self, score: str):
         try:
             self.ability.score = int(score)
@@ -39,6 +41,10 @@ class AbilityDisplay(gui.LabeledEntry):
             return True
         except ValueError:
             return False
+
+    def update_view(self):
+        self.replace_text(str(self.ability.score))
+        self.modLabel['text'] = str(self.ability.modifier)
 
 
 class AbilitiesDisplay(gui.Section):
@@ -61,6 +67,10 @@ class AbilitiesDisplay(gui.Section):
 
         for i, display in enumerate(self.displays):
             display.grid(*calculate_pos(i))
+
+    def update_view(self):
+        for display in self.displays:
+            display.update_view()
 
 
 class Module(AbilitiesDisplay):

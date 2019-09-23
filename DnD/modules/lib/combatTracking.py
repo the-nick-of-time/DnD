@@ -2,6 +2,7 @@ from dndice import basic, Mode
 
 from . import abilitiesLib as abil
 from . import helpers as h
+from . import hpLib as hp
 from . import interface as iface
 
 
@@ -29,17 +30,15 @@ class Monster(Actor):
         self.record = iface.DataInterface(data)
         self.abilities = abil.Abilities(self.record.cd('/abilities'))
         self.initiative += self.abilities[abil.AbilityName.DEX].modifier
+        self.hpRoll = data['HP']
         mode = Mode.from_string('average' if data.get('average') else 'normal')
-        self.HP = basic(data['HP'], mode=mode)
-        self.maxHP = self.HP
+        maxHP = basic(self.hpRoll, mode=mode)
+        self.HP = hp.HP(iface.DataInterface({
+            "current": maxHP,
+            "max": maxHP,
+            "temp": 0,
+        }))
         self.AC = data['AC']
-
-    def alter_HP(self, amount):
-        self.HP += basic(amount)
-        if self.HP < 0:
-            self.HP = 0
-        elif self.HP > self.maxHP:
-            self.HP = self.maxHP
 
 
 class CharacterStub(Actor):

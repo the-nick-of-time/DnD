@@ -35,9 +35,8 @@ class Monster:
         self.maxHP = self.HP
         self.AC = data['AC']
         self.abilities = data['abilities']
-        # TODO: actually roll this thing
-        self.initiative = (h.d20_roll() +
-                           h.modifier(data['abilities']['Dexterity']))
+        self.initiative = d.basic(h.d20_roll(),
+                                  modifiers=h.modifier(data['abilities']['Dexterity']))
         self.saves = data.get('saves', {})
 
     def __lt__(self, other):
@@ -229,32 +228,32 @@ class Builder:
         self.av = tk.BooleanVar()
         self.average = tk.Checkbutton(self.mainframe, text="Take average?",
                                       variable=self.av)
-        self.average.grid(row=5, column=1)
+        self.average.grid(row=2, column=1, sticky='s')
 
         self.abil = tk.Frame(self.mainframe)
-        self.abil.grid(row=6, column=0)
+        self.abil.grid(row=3, column=0)
         abilities = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']
         self.abilities = []
         for (i, n) in enumerate(abilities):
-            self.abilities.append(gui.LabeledEntry(self.mainframe, n, width=4))
+            self.abilities.append(gui.LabeledEntry(self.abil, n, width=4))
             self.abilities[-1].grid(i // 3, i % 3)
 
         self.resolve = tk.Button(self.mainframe,
                                  text='Finish',
                                  command=lambda: self.finish())
-        self.resolve.grid(row=9, column=0)
+        self.resolve.grid(row=4, column=0)
 
         self.copy()
 
     def pick_file(self):
         self.mainframe.destroy()
-        d = os.path.abspath(iface.JsonInterface.OBJECTSPATH) / 'monster/'
-        self.filename = filedialog.askopenfilename(initialdir=d, filetypes=[('monster file', '*.monster')])
+        d = iface.JsonInterface.OBJECTSPATH.absolute() / 'monster/'
+        self.filename = filedialog.askopenfilename(initialdir=str(d), filetypes=[('monster file', '*.monster')])
         self.load_file()
 
     def load_file(self):
-        filename = self.filename
-        if os.path.isfile(filename):
+        filename = Path(self.filename)
+        if filename.exists():
             interface = iface.JsonInterface(filename, isabsolute=True)
             self.data.update(interface.get('/'))
             av = messagebox.askyesno(message='Take average HP?')
