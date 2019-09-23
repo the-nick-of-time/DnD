@@ -1,9 +1,5 @@
 import enum
 
-from dndice import verbose, compile
-
-from . import characterLib as char
-from . import helpers as h
 from . import interface as iface
 
 
@@ -30,9 +26,6 @@ class Abilities:
             raise TypeError('Ability scores are integers')
         self.values[key].score = value
 
-    def modifier(self, ability: AbilityName):
-        return self.values[ability].modifier
-
 
 class Ability:
     def __init__(self, name: AbilityName, score: int):
@@ -43,19 +36,3 @@ class Ability:
     @property
     def modifier(self):
         return int((self.score - 10) // 2)
-
-    def save(self, advantage=False, disadvantage=False, luck=False):
-        roll = h.d20_roll(advantage, disadvantage, luck)
-        return verbose(roll, modifiers=self.modifier)
-
-
-class OwnedAbility(Ability):
-    def __init__(self, name: AbilityName, score: int, character: 'char.Character'):
-        super().__init__(name, score)
-        self.owner = character
-
-    def save(self, advantage=False, disadvantage=False, luck=False):
-        roll = h.d20_roll(advantage, disadvantage, self.owner.bonuses.get('luck'))
-        roll += compile(self.owner.bonuses.get(self.name + '_save', 0))
-        roll += compile(self.modifier)
-        return verbose(roll)

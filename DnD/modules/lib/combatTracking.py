@@ -28,7 +28,7 @@ class Monster(Actor):
         super().__init__(data['name'])
         self.record = iface.DataInterface(data)
         self.abilities = abil.Abilities(self.record.cd('/abilities'))
-        self.initiative += self.abilities.modifier(abil.AbilityName.DEX)
+        self.initiative += self.abilities[abil.AbilityName.DEX].modifier
         mode = Mode.from_string('average' if data.get('average') else 'normal')
         self.HP = basic(data['HP'], mode=mode)
         self.maxHP = self.HP
