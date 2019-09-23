@@ -21,7 +21,7 @@ class AbilityDisplay(gui.LabeledEntry):
             orient = gui.Direction.HORIZONTAL
         else:
             orient = gui.Direction.VERTICAL
-        super().__init__(parent, ability.abbreviation, orient=orient)
+        super().__init__(parent, ability.abbreviation, orient=orient, width=4)
         self.modLabel = tk.Label(self.f)
         if orient == gui.Direction.VERTICAL:
             self.modLabel.grid(row=2, column=0)

@@ -15,7 +15,7 @@ class AbilityName(enum.Enum):
 class Abilities:
     def __init__(self, inter: iface.DataInterface):
         self.record = inter
-        self.values = {name: Ability(name, inter.get('/' + name.value))
+        self.values = {name: Ability(name, inter.cd('/' + name.value))
                        for name in AbilityName}
 
     def __getitem__(self, ability: AbilityName) -> 'Ability':
@@ -26,12 +26,23 @@ class Abilities:
             raise TypeError('Ability scores are integers')
         self.values[key].score = value
 
+    def __iter__(self):
+        yield from self.values.values()
+
 
 class Ability:
-    def __init__(self, name: AbilityName, score: int):
+    def __init__(self, name: AbilityName, inter: iface.DataInterface):
         self.name = name
-        self.score = score
+        self.record = inter
         self.abbreviation = name.value[:3].upper()
+
+    @property
+    def score(self):
+        return self.record.get('/')
+
+    @score.setter
+    def score(self, value: int):
+        self.record.set('/', value)
 
     @property
     def modifier(self):
