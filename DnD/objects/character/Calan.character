@@ -1,7 +1,20 @@
 {
   "name": "Calan",
   "level": "Paladin 2, Cleric (Light) 18",
-  "race": "Human",
+  "classes": [
+    {
+      "class": "Paladin",
+      "level": 2
+    },
+    {
+      "class": "Cleric",
+      "subclass": "Light",
+      "level": 18
+    }
+  ],
+  "race": {
+    "base": "Human"
+  },
   "HP": {
     "max": 211,
     "current": 211,

@@ -6,7 +6,6 @@ from math import ceil
 
 import dndice as r
 
-from . import classmap as cm
 from . import helpers as h
 from . import interface as iface
 from .exceptionsLib import OutOfSpells, OutOfItems, LowOnResource
@@ -278,16 +277,16 @@ class Character:
         self.abilities = jf.get('/abilities')
         self.skills = jf.get('/skills')
         self.saves = jf.get('/saves')
-        lv = jf.get('/level')
-        self.classes = cm.ClassMap(lv)
-        self.race = cm.RaceMap(jf.get('/race'))
+        # lv = jf.get('/level')
+        # self.classes = cm.ClassMap(lv)
+        # self.race = cm.RaceMap(jf.get('/race'))
         self.hp = HPHandler(self.record)
-        self.inventory = Inventory(self.record)
+        # self.inventory = Inventory(self.record)
         self.features = self.get_features()
-        self.bonuses = self.get_bonuses()
-        self.spells = SpellsPrepared(jf, self)
-        self.attacks = self.register_attacks()
-        self.resources = self.get_resources()
+        # self.bonuses = self.get_bonuses()
+        # self.spells = SpellsPrepared(jf, self)
+        # self.attacks = self.register_attacks()
+        # self.resources = self.get_resources()
         self.death_save_fails = 0
         self.conditions = set(self.record.get('/conditions') or [])
         self.settings = Settings(self.record.get('/SETTINGS'))
@@ -388,18 +387,18 @@ class Character:
                     self.record.set(path, num - 1)
                     return None
             # If it fails to find a spell slot, you're out of spells
-            raise (OutOfSpells(self, spell))
+            raise (OutOfSpells(spell))
 
     def item_consume(self, name):
         if name is not None:
             try:
                 obj = self.inventory[name]
             except KeyError:
-                raise OutOfItems(self, name)
+                raise OutOfItems(name)
             if obj.number > 0:
                 obj.number -= 1
             else:
-                raise OutOfItems(self, name)
+                raise OutOfItems(name)
 
     def ability_check(self, which, skill='', adv=False, dis=False):
         applySkill = skill in self.skills

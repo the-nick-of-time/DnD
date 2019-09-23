@@ -55,7 +55,13 @@ class MonsterBuilder(tk.Toplevel):
             raise FileNotFoundError("That file does not exist. Check your spelling.")
 
     def customize(self):
-        pass
+        self.choice.destroy()
+        creator = MonsterCreator(self, self.finish, self.last)
+        creator.grid(0, 0)
+
+    def finish(self, data: dict):
+        self.callback(data)
+        self.destroy()
 
 
 class MonsterCreator(gui.Section):
@@ -110,6 +116,22 @@ class MonsterCreator(gui.Section):
         self.callback(self.data)
 
 
+class CharacterBuilder(tk.Toplevel):
+    def __init__(self, callback: Callable[[dict], None], **kwargs):
+        super().__init__(**kwargs)
+        self.callback = callback
+        self.name = gui.LabeledEntry(self, 'Character name').grid(0, 0)
+        self.initiative = gui.LabeledEntry(self, 'Initiative roll').grid(1, 0)
+        self.resolve = tk.Button(self, text='Finish', command=self.finish)
+        self.resolve.grid(row=2, column=0)
+
+    def finish(self):
+        self.callback({
+            'name': self.name.get(),
+            'initiative': self.initiative.get()
+        })
+
+
 class Main(gui.Section):
     def __init__(self, window):
         super().__init__(window)
@@ -123,7 +145,7 @@ class Main(gui.Section):
         pass
 
     def new_monster_start(self):
-        pass
+        MonsterBuilder(self.lastMonster, self.new_monster_finish)
 
     def new_monster_finish(self, data):
         monster = track.Monster(data)

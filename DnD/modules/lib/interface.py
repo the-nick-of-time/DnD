@@ -64,11 +64,12 @@ class DataInterface:
         pointer.set(self.data, value)
 
     def cd(self, path, readonly=False):
-        return DataInterface(self.data, readonly=self.readonly or readonly, basepath=path)
+        return DataInterface(self.data, readonly=self.readonly or readonly,
+                             basepath=self.basepath + path)
 
 
 class JsonInterface(DataInterface):
-    OBJECTSPATH = Path('./tools/objects/')
+    OBJECTSPATH = Path('./objects/')
     EXTANT = {}
 
     def __new__(cls, filename, **kwargs):

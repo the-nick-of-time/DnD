@@ -1,9 +1,9 @@
 import enum
 import tkinter as tk
 
-from .lib import abilitiesLib as abil
-from .lib import characterLib as char
-from .lib import components as gui
+import lib.abilitiesLib as abil
+import lib.characterLib as char
+import lib.components as gui
 
 
 class DisplayMode(enum.Enum):
@@ -22,7 +22,9 @@ class AbilityDisplay(gui.LabeledEntry):
         else:
             orient = gui.Direction.VERTICAL
         super().__init__(parent, ability.abbreviation, orient=orient, width=4)
-        self.modLabel = tk.Label(self.f)
+        # Consistent width for alignment
+        self.label['width'] = 4
+        self.modLabel = tk.Label(self.f, width=2)
         if orient == gui.Direction.VERTICAL:
             self.modLabel.grid(row=2, column=0)
         elif orient == gui.Direction.HORIZONTAL:
@@ -47,12 +49,30 @@ class AbilityDisplay(gui.LabeledEntry):
         self.modLabel['text'] = str(self.ability.modifier)
 
 
+class StaticAbilityDisplay(gui.Section):
+    def __init__(self, container, ability: 'abil.Ability', mode: DisplayMode):
+        super().__init__(container)
+        self.ability = ability
+        self.name = tk.Label(self.f, text=self.ability.abbreviation)
+        self.name.grid(row=0, column=0)
+        numbers = '{s} ({m})'.format(s=ability.score, m=ability.modifier)
+        self.numbers = tk.Label(self.f, text=numbers)
+        if mode == DisplayMode.SIX_BY_ONE:
+            self.numbers.grid(row=0, column=1)
+        else:
+            self.numbers.grid(row=1, column=0)
+
+
 class AbilitiesDisplay(gui.Section):
-    def __init__(self, container, abilities: 'abil.Abilities', mode: DisplayMode, **kwargs):
+    def __init__(self, container, abilities: 'abil.Abilities', mode: DisplayMode, static=False, **kwargs):
         super().__init__(container, **kwargs)
         self.abilities = abilities
-        self.displays = [AbilityDisplay(self.f, self.abilities[name], mode)
-                         for name in abil.AbilityName]
+        if static:
+            self.displays = [StaticAbilityDisplay(self.f, self.abilities[name], mode)
+                             for name in abil.AbilityName]
+        else:
+            self.displays = [AbilityDisplay(self.f, self.abilities[name], mode)
+                             for name in abil.AbilityName]
 
         def calculate_pos(index):
             if mode == DisplayMode.SIX_BY_ONE:
@@ -84,3 +104,9 @@ class Main(gui.MainModule):
         def creator(character: 'char.Character'):
             return Module(window, character)
         super().__init__(window, creator)
+
+
+if __name__ == '__main__':
+    win = gui.MainWindow()
+    app = Main(win)
+    win.mainloop()

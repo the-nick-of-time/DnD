@@ -52,6 +52,7 @@ class Section:
             self.f.bind("<Configure>", lambda event: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
         else:
             self.f.grid(row=row, column=column, **kwargs)
+        return self
 
     def pack(self, **kwargs):
         if hasattr(self, 'wrapper'):
@@ -63,6 +64,7 @@ class Section:
             self.f.bind("<Configure>", lambda event: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
         else:
             self.f.pack(**kwargs)
+        return self
 
     def destroy(self):
         if hasattr(self, 'wrapper'):
@@ -329,7 +331,7 @@ class LabeledEntry(Section):
     def __init__(self, parent, name, orient=Direction.VERTICAL, width=20, pos=''):
         super().__init__(parent)
         self.label = tk.Label(self.f, text=name)
-        self.label.grid(row=0, column=0)
+        self.label.grid(row=0, column=0, sticky=pos)
         self.value = tk.StringVar()
         self.entry = tk.Entry(self.f, textvariable=self.value, width=width)
         if orient == Direction.VERTICAL:
@@ -367,7 +369,7 @@ class LabeledMenu(Section):
         self.label = tk.Label(self.f, text=name)
         self.label.grid(row=0, column=0)
         self.value = tk.StringVar()
-        self.menu = tk.OptionMenu(self.f, self.value, name, *values)
+        self.menu = tk.OptionMenu(self.f, self.value, *values)
         if orient == Direction.VERTICAL:
             self.menu.grid(row=1, column=0)
         elif orient == Direction.HORIZONTAL:
@@ -447,6 +449,7 @@ class FreeformAttack(Section):
 class MainWindow(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs, className='dndutils')
+        self.title('D&D')
 
 
 class MainModule:
@@ -454,29 +457,37 @@ class MainModule:
         self.window = window
         self.creator = creator
         self.component = None
-        iface.JsonInterface.OBJECTSPATH = Path(__file__).resolve() / '..' / '..' / 'objects'
+        iface.JsonInterface.OBJECTSPATH = (Path(__file__).parent / '..' / '..' / 'objects').resolve()
         self.QUIT = tk.Button(self.window, text='QUIT', fg='red', command=self.quit)
-
         self.QUIT.grid(row=1, column=0)
+
+        self.startup_begin()
 
     def startup_begin(self):
         CharacterQuery(self.startup_end)
         self.window.withdraw()
 
     def startup_end(self, data):
-        name = data[CharacterQuery.NAME_Q]
-        path = (iface.JsonInterface.OBJECTSPATH
-                / 'character' / (h.sanitize_filename(name) + '.character'))
-        if path.exists():
-            jf = iface.JsonInterface(path, isabsolute=True)
-        else:
-            # Should be unreachable since the list of names is
-            # determined by files that exist
-            raise FileNotFoundError("The named character doesn't exist")
-        character = char.Character(jf)
-        self.component = self.creator(character)
+        try:
+            name = data[CharacterQuery.NAME_Q]
+            path = (iface.JsonInterface.OBJECTSPATH
+                    / 'character' / (h.sanitize_filename(name) + '.character'))
+            if path.exists():
+                jf = iface.JsonInterface(path, isabsolute=True)
+            else:
+                # Should be unreachable since the list of names is
+                # determined by files that exist
+                raise FileNotFoundError("The named character doesn't exist")
+            character = char.Character(jf)
+            self.component = self.creator(character)
 
-        self.component.grid(0, 0)
+            self.component.grid(0, 0)
+            self.window.deiconify()
+        except:
+            # Otherwise it would continue running in the background,
+            # unable to be killed because it's hidden
+            self.window.destroy()
+            raise
 
     def quit(self):
         if hasattr(self.component, 'owner'):
