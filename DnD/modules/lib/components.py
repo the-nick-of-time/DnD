@@ -1,7 +1,7 @@
 import enum
 import tkinter as tk
 from pathlib import Path
-from typing import Callable
+from typing import Callable, Any
 
 import dndice as d
 
@@ -10,6 +10,9 @@ from . import exceptionsLib as ex
 from . import helpers as h
 from . import interface as iface
 
+Action = Callable[[], None]
+EventHandler = Callable[[tk.Event], None]
+Consumer = Callable[[Any], None]
 
 class Direction(enum.Enum):
     VERTICAL = V = 'vertical'
@@ -352,10 +355,10 @@ class LabeledEntry(Section):
     def focus(self):
         self.entry.focus_set()
 
-    def bind(self, event, callback: Callable[[tk.Event], None]):
+    def bind(self, event: str, callback: EventHandler):
         self.entry.bind(event, callback)
 
-    def on_change(self, callback: Callable[[], None]):
+    def on_change(self, callback: Action):
         # Ignore everything that the trace argument gives
         self.value.trace_add('w', lambda name, index, op: callback())
 
@@ -385,6 +388,46 @@ class LabeledMenu(Section):
 
     def bind(self, event, callback):
         self.menu.bind(event, callback)
+
+
+class NumericEntry(Section):
+    def __init__(self, container, width=20, **kwargs):
+        super().__init__(container, **kwargs)
+        self.value = tk.StringVar()
+        self.entry = tk.Entry(self.f, width=width, textvariable=self.value)
+        self.entry.grid(row=0, column=0)
+        validate = (self.entry.register(self.__try_update), '%P')
+        self.entry['validate'] = 'key'
+        self.entry['validatecommand'] = validate
+        self.callback = None
+
+    def __try_update(self, value: str):
+        try:
+            num = int(value)
+            if self.callback:
+                self.callback(num)
+            return True
+        except ValueError:
+            return False
+
+    def get(self):
+        return int(self.value.get() or 0)
+
+    def set(self, value: int):
+        self.value.set(str(value))
+
+    def clear(self):
+        self.value.set('')
+
+    def focus(self):
+        self.entry.focus_set()
+
+    def on_change(self, callback: Consumer):
+        self.callback = callback
+        self.value.trace_add('w', lambda name, index, op: callback(self.get()))
+
+    def bind(self, event: str, callback: EventHandler):
+        self.entry.bind(event, callback)
 
 
 class AdvantageChooser(Section):
@@ -444,6 +487,27 @@ class FreeformAttack(Section):
             dam = d.verbose(self.damage.get())
         self.attackResult['text'] = 'Attack roll: ' + att
         self.damageResult['text'] = 'Damage roll: ' + dam
+
+
+class RollDisplay(Section):
+    def __init__(self, container, **kwargs):
+        super().__init__(container, **kwargs)
+        self.display = tk.Label(self.f)
+        self.display.grid(row=0, column=0)
+
+    def set(self, expr: d.core.EvalTree):
+        text = expr.verbose_result()
+        if expr.is_critical():
+            color = 'green'
+        elif expr.is_fail():
+            color = 'red'
+        else:
+            color = 'black'
+        self.display['text'] = text
+        self.display['foreground'] = color
+
+    def clear(self):
+        self.display['text'] = ''
 
 
 class MainWindow(tk.Tk):

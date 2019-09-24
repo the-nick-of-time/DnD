@@ -16,11 +16,11 @@ class DiceRoll(gui.Section):
         self.generalRoll.bind("<KP_Enter>", lambda event: self.do_roll())
         self.button = tk.Button(self.f, text="ROLL", command=self.do_roll)
         self.button.grid(row=1, column=1)
-        self.result = tk.Label(self.f)
-        self.result.grid(row=1, column=0)
+        self.result = gui.RollDisplay(self.f)
+        self.result.grid(1, 0)
 
     def do_roll(self):
-        self.result["text"] = d.verbose(self.generalRoll.get())
+        self.result.set(d.compile(self.generalRoll.get()))
 
 
 class Module(DiceRoll):
@@ -31,7 +31,7 @@ class Module(DiceRoll):
     def do_roll(self):
         s = self.generalRoll.get()
         parsed = self.character.parse_vars(s, mathIt=False)
-        self.result["text"] = d.verbose(parsed)
+        self.result.set(d.compile(parsed))
 
 
 if __name__ == '__main__':
