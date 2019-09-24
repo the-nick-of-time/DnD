@@ -180,5 +180,5 @@ class OwnedClasses(Classes):
     def proficiency(self) -> Union[int, str]:
         source = iface.JsonInterface('class/ALL.super.class')
         if self.owner.settings.proficiencyDice:
-            return source.get('/proficiency/dice/' + str(self.level))
-        return source.get('/proficiency/bonus/' + str(self.level))
+            return source.get('/proficiency/dice/' + str(self.level - 1))
+        return source.get('/proficiency/bonus/' + str(self.level - 1))

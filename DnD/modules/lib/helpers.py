@@ -21,19 +21,19 @@ def modifier(score):
 def d20_roll(adv=False, dis=False, luck=False):
     if adv and not dis:
         if luck:
-            return ADV_LUCK
+            return ADV_LUCK.copy()
         else:
-            return ADV
+            return ADV.copy()
     elif dis and not adv:
         if luck:
-            return DIS_LUCK
+            return DIS_LUCK.copy()
         else:
-            return DIS
+            return DIS.copy()
     else:
         if luck:
-            return D20_LUCK
+            return D20_LUCK.copy()
         else:
-            return D20
+            return D20.copy()
 
 
 def shorten(effect):
@@ -142,13 +142,17 @@ def with_data(data):
 
 
 class SortedList:
-    def __init__(self, start: typing.Sequence = tuple()):
+    def __init__(self, start: typing.Sequence = tuple(), reverse=False):
         self.data = list(start)
-        self.data.sort()
+        self.reverse = reverse
+        self.data.sort(reverse=self.reverse)
 
     def append(self, value):
         self.data.append(value)
-        self.data.sort()
+        self.data.sort(reverse=self.reverse)
 
     def remove(self, value):
         self.data.remove(value)
+
+    def __iter__(self):
+        yield from self.data

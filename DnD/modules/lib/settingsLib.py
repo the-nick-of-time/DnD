@@ -6,21 +6,30 @@ from .interface import JsonInterface
 class Settings:
     def __init__(self, jf: JsonInterface):
         self.record = jf
-        self.healing = property(
-            lambda: self.record.get('/HEALING') or HealingMode.VANILLA,
-            lambda value: self.record.set('/HEALING', value),
-            lambda: self.record.delete('/HEALING')
-        )
-        self.spellPoints = property(
-            lambda: self.record.get('/SPELL_POINTS') or False,
-            lambda value: self.record.set('/SPELL_POINTS', value),
-            lambda: self.record.delete('/SPELL_POINTS')
-        )
-        self.proficiencyDice = property(
-            lambda: self.record.get('/PROFICIENCY_DICE') or False,
-            lambda value: self.record.set('/PROFICIENCY_DICE', value),
-            lambda: self.record.delete('/PROFICIENCY_DICE')
-        )
+
+    @property
+    def healing(self) -> 'HealingMode':
+        return self.record.get('/HEALING') or HealingMode.VANILLA
+
+    @healing.setter
+    def healing(self, value: 'HealingMode'):
+        self.record.set('/HEALING', value)
+
+    @property
+    def spellPoints(self) -> bool:
+        return self.record.get('/SPELL_POINTS') or False
+
+    @spellPoints.setter
+    def spellPoints(self, value: bool):
+        self.record.set('/SPELL_POINTS', value)
+
+    @property
+    def proficiencyDice(self) -> bool:
+        return self.record.get('/PROFICIENCY_DICE') or False
+
+    @proficiencyDice.setter
+    def proficiencyDice(self, value: bool):
+        self.record.set('/PROFICIENCY_DICE', value)
 
     def serialize(self):
         rv = {}

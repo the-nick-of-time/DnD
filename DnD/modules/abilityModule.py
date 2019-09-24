@@ -1,5 +1,6 @@
 import enum
 import tkinter as tk
+from typing import Optional
 
 import dndice as d
 
@@ -44,13 +45,41 @@ class AbilityDisplay(gui.Section):
         self.score.set(self.ability.score)
         self.modifier['text'] = '{:+d}'.format(self.ability.modifier)
 
-    def roll_check(self):
+    def roll(self, extra: Optional[d.core.EvalTree] = None):
         expr = self.advantage.d20_roll()
         expr += d.compile(self.ability.modifier)
+        if extra:
+            expr += extra
         self.display.set(expr)
 
+    def roll_check(self):
+        self.roll()
+
     def roll_save(self):
-        self.roll_check()
+        self.roll()
+
+
+class OwnedAbilityDisplay(AbilityDisplay):
+    def __init__(self, parent, character: 'char.Character', ability: 'abil.Ability', mode: DisplayMode,
+                 advantage: gui.AdvantageChooser,
+                 display: gui.RollDisplay, **kwargs):
+        super().__init__(parent, ability, mode, advantage, display, **kwargs)
+        self.owner = character
+        self.saveProficient = self.ability.name in self.owner.saves
+        if self.saveProficient:
+            self.save.config(bg='green', fg='white')
+
+    def roll_save(self):
+        value, roll = self.owner.ability_save(self.ability.name,
+                                              self.advantage.advantage,
+                                              self.advantage.disadvantage)
+        self.display.set(roll)
+
+    def roll_check(self):
+        value, roll = self.owner.ability_check(self.ability.name,
+                                               adv=self.advantage.advantage,
+                                               dis=self.advantage.disadvantage)
+        self.display.set(roll)
 
 
 class StaticAbilityDisplay(gui.Section):
@@ -66,6 +95,9 @@ class StaticAbilityDisplay(gui.Section):
         else:
             self.numbers.grid(row=1, column=0)
 
+    def update_view(self):
+        pass
+
 
 class AbilitiesDisplay(gui.Section):
     def __init__(self, container, abilities: 'abil.Abilities', mode: DisplayMode, static=False, **kwargs):
@@ -73,13 +105,7 @@ class AbilitiesDisplay(gui.Section):
         self.abilities = abilities
         self.advantage = gui.AdvantageChooser(self.f)
         self.rollDisplay = gui.RollDisplay(self.f)
-        if static:
-            self.displays = [StaticAbilityDisplay(self.f, self.abilities[name], mode)
-                             for name in abil.AbilityName]
-        else:
-            self.displays = [AbilityDisplay(self.f, self.abilities[name], mode,
-                                            self.advantage, self.rollDisplay)
-                             for name in abil.AbilityName]
+        self.displays = self._construct_displays(static, mode)
 
         def calculate_pos(index):
             if mode == DisplayMode.SIX_BY_ONE:
@@ -100,21 +126,49 @@ class AbilitiesDisplay(gui.Section):
         self.advantage.grid(6, 0)
         self.rollDisplay.grid(7, 0)
 
+    def _construct_displays(self, static, mode):
+        if static:
+            displays = [StaticAbilityDisplay(self.f, self.abilities[name], mode)
+                        for name in abil.AbilityName]
+        else:
+            displays = [AbilityDisplay(self.f, self.abilities[name], mode,
+                                       self.advantage, self.rollDisplay)
+                        for name in abil.AbilityName]
+        return displays
+
     def update_view(self):
         for display in self.displays:
             display.update_view()
 
 
-class Module(AbilitiesDisplay):
+class OwnedAbilitiesDisplay(AbilitiesDisplay):
+    def __init__(self, container, character: 'char.Character', abilities: 'abil.Abilities', mode: DisplayMode,
+                 **kwargs):
+        self.owner = character
+        super().__init__(container, abilities, mode, **kwargs)
+
+    def _construct_displays(self, static, mode):
+        if static:
+            displays = [StaticAbilityDisplay(self.f, self.abilities[name], mode)
+                        for name in abil.AbilityName]
+        else:
+            displays = [OwnedAbilityDisplay(self.f, self.owner, self.abilities[name], mode,
+                                            self.advantage, self.rollDisplay)
+                        for name in abil.AbilityName]
+        return displays
+
+
+class Module(OwnedAbilitiesDisplay):
     def __init__(self, container, character: 'char.Character'):
         self.owner = character
-        super().__init__(container, character.abilities, DisplayMode.SIX_BY_ONE, pady=5)
+        super().__init__(container, character, character.abilities, DisplayMode.SIX_BY_ONE, pady=5)
 
 
 class Main(gui.MainModule):
     def __init__(self, window: tk.Tk):
         def creator(character: 'char.Character'):
             return Module(window, character)
+
         super().__init__(window, creator)
 
 

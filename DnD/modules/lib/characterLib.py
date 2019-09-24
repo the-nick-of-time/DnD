@@ -55,7 +55,7 @@ class Character:
         abilityBonus = self.bonuses.get('check_' + which.value)
         if abilityBonus:
             roll += d.compile(self.parse_vars(abilityBonus))
-        return d.verbose(roll)
+        return roll.evaluate(), roll
 
     def ability_save(self, which: 'abil.AbilityName', adv=False, dis=False):
         roll = h.d20_roll(adv, dis, self.bonuses.get('lucky', False))
@@ -65,7 +65,7 @@ class Character:
         abilityBonus = self.bonuses.get('save_' + which.value)
         if abilityBonus:
             roll += d.compile(self.parse_vars(abilityBonus))
-        return d.verbose(roll)
+        return roll.evaluate(), roll
 
     def death_save(self):
         if self.hp.current > 0:
