@@ -4,13 +4,13 @@ from tkinter import filedialog
 from tkinter import messagebox
 from typing import Callable, Optional
 
-from . import abilityModule as abilMod
-from . import dice
-from .lib import abilitiesLib as abil
-from .lib import combatTracking as track
-from .lib import components as gui
-from .lib import helpers as h
-from .lib import interface as iface
+import abilityModule as abilMod
+import dice
+import lib.abilitiesLib as abil
+import lib.combatTracking as track
+import lib.components as gui
+import lib.helpers as h
+import lib.interface as iface
 
 Action = Callable[[], None]
 
@@ -19,6 +19,13 @@ class ActorDisplay(gui.Section):
     def __init__(self, container, actor: track.Actor, **kwargs):
         super().__init__(container, bd=2, relief='groove', pady=5, **kwargs)
         self.actor = actor
+        self.name = tk.Label(self.f, text=self.actor.name)
+        self.initiative = tk.Label(self.f, text=f'Initiative: {self.actor.initiative}')
+        self.draw()
+
+    def draw(self):
+        self.name.grid(row=0, column=0)
+        self.initiative.grid(row=1, column=0)
 
     def __lt__(self, other: 'ActorDisplay'):
         return self.actor < other.actor
@@ -138,11 +145,13 @@ class CharacterBuilder(tk.Toplevel):
             'name': self.name.get(),
             'initiative': self.initiative.get()
         })
+        self.destroy()
 
 
-class MetaDisplay(gui.Section):
+class MetaDisplay(ActorDisplay):
     def __init__(self, container, new_monster: Action, new_character: Action, close: Action, **kwargs):
-        super().__init__(container, **kwargs)
+        # sort to end
+        super().__init__(container, track.Actor('', 10000), **kwargs)
         self.roller = dice.DiceRoll(self.f)
         self.roller.grid(0, 0, columnspan=3)
         self.newMonster = tk.Button(self.f, text='New Monster', command=new_monster)
@@ -151,10 +160,6 @@ class MetaDisplay(gui.Section):
         self.newCharacter.grid(row=1, column=1)
         self.QUIT = tk.Button(self.f, text='Quit', command=close)
         self.QUIT.grid(row=1, column=2)
-
-    def __lt__(self, other):
-        # sort to bottom
-        return True
 
 
 class Main(gui.Section):
@@ -175,6 +180,7 @@ class Main(gui.Section):
 
     def new_character_finish(self, data: dict):
         self.frames.append(CharacterDisplay(self.f, track.CharacterStub(data['name'], data['initiative'])))
+        self.draw()
 
     def new_monster_start(self):
         MonsterBuilder(self.lastMonster, self.new_monster_finish)
