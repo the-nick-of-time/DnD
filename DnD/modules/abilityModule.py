@@ -26,8 +26,10 @@ class AbilityDisplay(gui.Section):
         self.display = display
         self.check = tk.Button(self.f, width=4, text=ability.abbreviation,
                                command=self.roll_check)
-        self.score = gui.NumericEntry(self.f, width=4)
+        self.score = gui.NumericEntry(self.f, width=4, callback=self.update,
+                                      start=self.ability.score)
         self.modifier = tk.Label(self.f, width=2)
+        self.modifier['text'] = '{:+d}'.format(self.ability.modifier)
         self.save = tk.Button(self.f, width=4, text='SAVE',
                               command=self.roll_save)
         self.check.grid(row=0, column=0)
@@ -39,10 +41,9 @@ class AbilityDisplay(gui.Section):
             self.score.grid(row=1, column=0)
             self.modifier.grid(row=2, column=0)
             self.save.grid(row=3, column=0)
-        self.update_view()
 
-    def update_view(self):
-        self.score.set(self.ability.score)
+    def update(self, score):
+        self.ability.score = score
         self.modifier['text'] = '{:+d}'.format(self.ability.modifier)
 
     def roll(self, extra: Optional[d.core.EvalTree] = None):
@@ -61,8 +62,7 @@ class AbilityDisplay(gui.Section):
 
 class OwnedAbilityDisplay(AbilityDisplay):
     def __init__(self, parent, character: 'char.Character', ability: 'abil.Ability', mode: DisplayMode,
-                 advantage: gui.AdvantageChooser,
-                 display: gui.RollDisplay, **kwargs):
+                 advantage: gui.AdvantageChooser, display: gui.RollDisplay, **kwargs):
         super().__init__(parent, ability, mode, advantage, display, **kwargs)
         self.owner = character
         self.saveProficient = self.ability.name in self.owner.saves

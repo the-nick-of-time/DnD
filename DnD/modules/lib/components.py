@@ -1,7 +1,7 @@
 import enum
 import tkinter as tk
 from pathlib import Path
-from typing import Callable, Any
+from typing import Callable, Any, Optional
 
 import dndice as d
 
@@ -13,6 +13,7 @@ from . import interface as iface
 Action = Callable[[], None]
 EventHandler = Callable[[tk.Event], None]
 Consumer = Callable[[Any], None]
+
 
 class Direction(enum.Enum):
     VERTICAL = V = 'vertical'
@@ -360,7 +361,7 @@ class LabeledEntry(Section):
 
     def on_change(self, callback: Action):
         # Ignore everything that the trace argument gives
-        self.value.trace_add('w', lambda name, index, op: callback())
+        self.value.trace_add('write', lambda name, index, op: callback())
 
     def get(self):
         return self.entry.get()
@@ -391,15 +392,17 @@ class LabeledMenu(Section):
 
 
 class NumericEntry(Section):
-    def __init__(self, container, width=20, **kwargs):
+    def __init__(self, container, start: int = 0, callback: Optional[Consumer] = None,
+                 width=20, **kwargs):
         super().__init__(container, **kwargs)
         self.value = tk.StringVar()
+        self.value.set(str(start))
         self.entry = tk.Entry(self.f, width=width, textvariable=self.value)
         self.entry.grid(row=0, column=0)
         validate = (self.entry.register(self.__try_update), '%P')
         self.entry['validate'] = 'key'
         self.entry['validatecommand'] = validate
-        self.callback = None
+        self.callback = callback
 
     def __try_update(self, value: str):
         try:
@@ -417,17 +420,28 @@ class NumericEntry(Section):
         self.value.set(str(value))
 
     def clear(self):
-        self.value.set('')
+        self.value.set('0')
 
     def focus(self):
         self.entry.focus_set()
 
-    def on_change(self, callback: Consumer):
-        self.callback = callback
-        self.value.trace_add('w', lambda name, index, op: callback(self.get()))
-
     def bind(self, event: str, callback: EventHandler):
         self.entry.bind(event, callback)
+
+
+class Counter(Section):
+    def __init__(self, container, start: int = 0, callback: Optional[Consumer] = None, **kwargs):
+        super().__init__(container, **kwargs)
+        self.minus = tk.Button(self.f, text='-', command=lambda: self.change(-1))
+        self.plus = tk.Button(self.f, text='+', command=lambda: self.change(1))
+        self.display = NumericEntry(self.f, start, callback, width=5)
+
+        self.minus.grid(row=0, column=0)
+        self.display.grid(0, 1)
+        self.plus.grid(row=0, column=2)
+
+    def change(self, number: int):
+        self.display.set(self.display.get() + number)
 
 
 class AdvantageChooser(Section):
@@ -547,7 +561,7 @@ class MainModule:
 
             self.component.grid(0, 0)
             self.window.deiconify()
-        except:
+        except Exception:
             # Otherwise it would continue running in the background,
             # unable to be killed because it's hidden
             self.window.destroy()

@@ -5,11 +5,14 @@ from tkinter import messagebox
 from typing import Callable, Optional
 
 from . import abilityModule as abilMod
+from . import dice
 from .lib import abilitiesLib as abil
 from .lib import combatTracking as track
 from .lib import components as gui
 from .lib import helpers as h
 from .lib import interface as iface
+
+Action = Callable[[], None]
 
 
 class ActorDisplay(gui.Section):
@@ -116,6 +119,11 @@ class MonsterCreator(gui.Section):
         self.callback(self.data)
 
 
+class CharacterDisplay(ActorDisplay):
+    def __init__(self, container, actor: track.Actor, **kwargs):
+        super().__init__(container, actor, **kwargs)
+
+
 class CharacterBuilder(tk.Toplevel):
     def __init__(self, callback: Callable[[dict], None], **kwargs):
         super().__init__(**kwargs)
@@ -132,17 +140,41 @@ class CharacterBuilder(tk.Toplevel):
         })
 
 
+class MetaDisplay(gui.Section):
+    def __init__(self, container, new_monster: Action, new_character: Action, close: Action, **kwargs):
+        super().__init__(container, **kwargs)
+        self.roller = dice.DiceRoll(self.f)
+        self.roller.grid(0, 0, columnspan=3)
+        self.newMonster = tk.Button(self.f, text='New Monster', command=new_monster)
+        self.newMonster.grid(row=1, column=0)
+        self.newCharacter = tk.Button(self.f, text='New Character', command=new_character)
+        self.newCharacter.grid(row=1, column=1)
+        self.QUIT = tk.Button(self.f, text='Quit', command=close)
+        self.QUIT.grid(row=1, column=2)
+
+    def __lt__(self, other):
+        # sort to bottom
+        return True
+
+
 class Main(gui.Section):
-    def __init__(self, window):
+    def __init__(self, window: tk.Tk):
         super().__init__(window)
         self.lastMonster = None
-        self.frames = h.SortedList()
+        self.meta = MetaDisplay(self.f, self.new_monster_start,
+                                self.new_character_start, window.destroy)
+        self.frames = h.SortedList([self.meta])
+        self.draw()
+
+    def draw(self):
+        for i, f in enumerate(self.frames):
+            f.grid(i % 3, i // 3)
 
     def new_character_start(self):
-        pass
+        CharacterBuilder(self.new_character_finish)
 
     def new_character_finish(self, data: dict):
-        pass
+        self.frames.append(CharacterDisplay(self.f, track.CharacterStub(data['name'], data['initiative'])))
 
     def new_monster_start(self):
         MonsterBuilder(self.lastMonster, self.new_monster_finish)
@@ -151,3 +183,11 @@ class Main(gui.Section):
         monster = track.Monster(data)
         self.lastMonster = monster
         self.frames.append(MonsterDisplay(self.f, monster))
+        self.draw()
+
+
+if __name__ == '__main__':
+    win = gui.MainWindow()
+    app = Main(win)
+    app.pack()
+    win.mainloop()
