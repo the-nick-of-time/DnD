@@ -30,8 +30,8 @@ class AbilityDisplay(gui.Section):
                                       start=self.ability.score)
         self.modifier = tk.Label(self.f, width=2)
         self.modifier['text'] = '{:+d}'.format(self.ability.modifier)
-        self.save = tk.Button(self.f, width=4, text='SAVE',
-                              command=self.roll_save)
+        self.save = gui.ProficientButton(self.f, 'SAVE', width=4,
+                                         command=self.roll_save)
         self.check.grid(row=0, column=0)
         if mode == DisplayMode.SIX_BY_ONE:
             self.score.grid(row=0, column=1)
@@ -65,9 +65,7 @@ class OwnedAbilityDisplay(AbilityDisplay):
                  advantage: gui.AdvantageChooser, display: gui.RollDisplay, **kwargs):
         super().__init__(parent, ability, mode, advantage, display, **kwargs)
         self.owner = character
-        self.saveProficient = self.ability.name in self.owner.saves
-        if self.saveProficient:
-            self.save.config(bg='green', fg='white')
+        self.save.proficient = self.ability.name in self.owner.saves
 
     def roll_save(self):
         value, roll = self.owner.ability_save(self.ability.name,

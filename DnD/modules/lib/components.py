@@ -101,6 +101,7 @@ class InfoButton:
 
     def grid(self, row, column):
         self.b.grid(row=row, column=column)
+        return self
 
 
 class ErrorMessage:
@@ -116,6 +117,28 @@ class ErrorMessage:
         close.pack()
 
 
+class ProficientButton(tk.Button):
+    def __init__(self, container, name: str, proficient: bool = False, **kw):
+        super().__init__(container, **kw)
+        self.defaultColor = self.cget('bg')
+        self.name = name
+        self['text'] = name
+        self.proficient = proficient
+
+    def __setattr__(self, key, value):
+        if key == 'proficient':
+            # Update color
+            if value:
+                self.config(background='green', foreground='white')
+            else:
+                self.config(background=self.defaultColor, foreground='black')
+        super().__setattr__(key, value)
+
+    def grid(self, row, column, **kwargs):
+        super().grid(row=row, column=column, **kwargs)
+        return self
+
+
 class EffectPane(Section):
     """Has a short label and an InfoButton with the full text.
     """
@@ -125,8 +148,6 @@ class EffectPane(Section):
 
         self.short = short
         self.long = long
-        # self.short = tk.StringVar(value=short)
-        # self.long = tk.StringVar(value=long)
 
         self.short_display = tk.Label(self.f, text=self.short, width=30,
                                       wraplength=200)
@@ -149,9 +170,6 @@ class EffectPane(Section):
     def update(self, short, long):
         self.short = short
         self.long = long
-        # self.long_display.poptext = long
-        # self.short = tk.StringVar(value=short)
-        # self.long = tk.StringVar(value=long)
         self.draw_dynamic()
 
 
