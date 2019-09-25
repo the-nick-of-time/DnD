@@ -113,7 +113,7 @@ class JsonInterface(DataInterface):
         if self.readonly:
             raise ex.ReadonlyError("Trying to write a readonly file")
         with open(self.filename, 'w') as f:
-            json.dump(self.data, f)
+            json.dump(self.data, f, indent=2)
 
 
 class LinkedInterface:

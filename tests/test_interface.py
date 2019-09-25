@@ -26,7 +26,12 @@ class TestDataInterface(unittest.TestCase):
                 1,
                 None,
                 True
-            ]
+            ],
+            "nesting": {
+                "multiple": {
+                    "levels": "here"
+                }
+            }
         }
 
     def test_get(self):
@@ -66,6 +71,9 @@ class TestDataInterface(unittest.TestCase):
         self.assertEqual(sub.get('/c'), 'C')
         sub.delete('/a')
         self.assertEqual(sub.get('/'), {'b': 'B', 'c': 'C'})
+        first = inter.cd('/nesting')
+        second = first.cd('/multiple')
+        self.assertEqual(second.get('/'), {'levels': 'here'})
 
 
 class TestJsonInterface(unittest.TestCase):
