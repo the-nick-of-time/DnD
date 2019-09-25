@@ -45,16 +45,21 @@ class Character:
     def ability_check(self, which: 'abil.AbilityName', skill='', adv=False, dis=False):
         roll = h.d20_roll(adv, dis, self.bonuses.get('lucky', False))
         roll += d.compile(self.abilities[which].modifier)
-        if skill in self.skills:
-            roll += d.compile(self.proficiency)
+        if skill == '':
+            # plain ability check
+            abilityBonus = self.bonuses.get('check_' + which.value)
+            if abilityBonus:
+                roll += d.compile(self.parse_vars(abilityBonus))
+            if self.bonuses.get('jack_of_all_trades', False):
+                roll += d.compile(self.proficiency // 2)
+        else:
+            if skill in self.skills:
+                roll += d.compile(self.proficiency)
+            elif self.bonuses.get('jack_of_all_trades', False):
+                roll += d.compile(self.proficiency // 2)
             skillBonus = self.bonuses.get('skill_' + skill)
             if skillBonus:
                 roll += d.compile(self.parse_vars(skillBonus))
-        elif self.bonuses.get('jack_of_all_trades', False):
-            roll += d.compile(self.proficiency // 2)
-        abilityBonus = self.bonuses.get('check_' + which.value)
-        if abilityBonus:
-            roll += d.compile(self.parse_vars(abilityBonus))
         return roll.evaluate(), roll
 
     def ability_save(self, which: 'abil.AbilityName', adv=False, dis=False):

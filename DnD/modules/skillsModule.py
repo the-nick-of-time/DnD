@@ -11,8 +11,8 @@ import lib.interface as iface
 class OwnedSkillsDisplay(gui.Section):
     def __init__(self, container, character: 'char.Character', **kwargs):
         super().__init__(container, **kwargs)
-        self.advantage = gui.AdvantageChooser(self.f).grid(10, 1)
-        self.display = gui.RollDisplay(self.f).grid(11, 1)
+        self.advantage = gui.AdvantageChooser(self.f).grid(7, 0, columnspan=3)
+        self.display = gui.RollDisplay(self.f).grid(8, 0, columnspan=3)
         self.owner = character
         skills = iface.JsonInterface('skill/SKILLS.skill')
         self.skillMap = skills.get('/')
