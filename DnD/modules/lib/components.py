@@ -555,7 +555,7 @@ class MainModule:
         self.component = None
         iface.JsonInterface.OBJECTSPATH = (Path(__file__).parent / '..' / '..' / 'objects').resolve()
         self.QUIT = tk.Button(self.window, text='QUIT', fg='red', command=self.quit)
-        self.QUIT.grid(row=1, column=0)
+        self.QUIT.grid(row=10, column=0)
 
         self.startup_begin()
 

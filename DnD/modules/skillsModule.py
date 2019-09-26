@@ -9,10 +9,11 @@ import lib.interface as iface
 
 
 class OwnedSkillsDisplay(gui.Section):
-    def __init__(self, container, character: 'char.Character', **kwargs):
+    def __init__(self, container, character: 'char.Character', adv: gui.AdvantageChooser,
+                 display: gui.RollDisplay, **kwargs):
         super().__init__(container, **kwargs)
-        self.advantage = gui.AdvantageChooser(self.f).grid(7, 0, columnspan=3)
-        self.display = gui.RollDisplay(self.f).grid(8, 0, columnspan=3)
+        self.advantage = adv
+        self.display = display
         self.owner = character
         skills = iface.JsonInterface('skill/SKILLS.skill')
         self.skillMap = skills.get('/')
@@ -35,16 +36,23 @@ class OwnedSkillsDisplay(gui.Section):
 
 
 class Module(OwnedSkillsDisplay):
-    def __init__(self, container, character: 'char.Character'):
-        super().__init__(container, character)
+    def __init__(self, container, character: 'char.Character', adv: gui.AdvantageChooser,
+                 display: gui.RollDisplay):
+        super().__init__(container, character, adv, display)
 
 
 class Main(gui.MainModule):
     def __init__(self, window: tk.Tk):
+        self.advantage = gui.AdvantageChooser(window)
+        self.display = gui.RollDisplay(window)
+
         def creator(character: 'char.Character'):
-            return Module(window, character)
+            return Module(window, character, self.advantage, self.display)
 
         super().__init__(window, creator)
+
+        self.advantage.grid(1, 0)
+        self.display.grid(2, 0)
 
 
 if __name__ == '__main__':
