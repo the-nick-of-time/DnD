@@ -76,6 +76,15 @@ class Section:
         else:
             self.f.destroy()
 
+    def all_children(self):
+        # Should this select `wrapper` if present? that would capture scroll bars, etc.
+        yield from self.__all_children_recursive(self.f)
+
+    def __all_children_recursive(self, current: tk.BaseWidget):
+        yield current
+        for child in current.winfo_children():
+            yield from self.__all_children_recursive(child)
+
 
 class InfoButton:
     """A small button that spawns a popup window with detailed information."""

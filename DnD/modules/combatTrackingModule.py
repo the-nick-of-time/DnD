@@ -13,12 +13,17 @@ import lib.helpers as h
 import lib.interface as iface
 
 Action = Callable[[], None]
+Deleter = Callable[['ActorDisplay'], None]
 
 
 class ActorDisplay(gui.Section):
-    def __init__(self, container, actor: track.Actor, **kwargs):
+    def __init__(self, container, actor: track.Actor, deleter: Deleter, **kwargs):
         super().__init__(container, bd=2, relief='groove', pady=5, **kwargs)
         self.actor = actor
+        image = Path(__file__).parent / 'assets' / 'close.png'
+        self.deleteMark = tk.PhotoImage(file=str(image))
+        self.delete = tk.Button(self.f, command=lambda: deleter(self),
+                                image=self.deleteMark)
         self.name = tk.Label(self.f, text=self.actor.name)
         self.initiative = tk.Label(self.f, text=f'Initiative: {self.actor.initiative}')
         self.draw()
@@ -26,14 +31,17 @@ class ActorDisplay(gui.Section):
     def draw(self):
         self.name.grid(row=0, column=0)
         self.initiative.grid(row=1, column=0)
+        self.delete.grid(row=0, column=999, sticky='ne')
 
     def __lt__(self, other: 'ActorDisplay'):
+        if isinstance(other, MetaDisplay):
+            return True
         return self.actor < other.actor
 
 
 class MonsterDisplay(ActorDisplay):
-    def __init__(self, container, actor: track.Monster, **kwargs):
-        super().__init__(container, actor, **kwargs)
+    def __init__(self, container, actor: track.Monster, deleter: Deleter, **kwargs):
+        super().__init__(container, actor, deleter, **kwargs)
 
 
 class MonsterBuilder(tk.Toplevel):
@@ -43,15 +51,21 @@ class MonsterBuilder(tk.Toplevel):
         self.callback = callback
         self.last = last
         self.choice = tk.Frame(self)
+        self.choice.grid(row=0, column=0)
         self.chooseFile = tk.Button(self.choice, text='Choose file', command=self.choose_file)
+        self.chooseFile.grid(row=0, column=0)
         self.chooseCustom = tk.Button(self.choice, text='Create custom', command=self.customize)
+        self.chooseCustom.grid(row=0, column=1)
         self.focus_set()
 
     def choose_file(self):
         directory = iface.JsonInterface.OBJECTSPATH / 'monster'
         filename = filedialog.askopenfilename(initialdir=str(directory),
                                               filetypes=[('monster file', '*.monster')])
-        self.load_file(Path(filename))
+        if filename:
+            self.load_file(Path(filename))
+        else:
+            self.destroy()
 
     def load_file(self, filename: Path):
         if filename.exists():
@@ -74,6 +88,7 @@ class MonsterBuilder(tk.Toplevel):
         self.destroy()
 
 
+# TODO: customize from gui.Query
 class MonsterCreator(gui.Section):
     def __init__(self, container, callback: Callable[[dict], None], last: Optional[track.Monster], **kwargs):
         super().__init__(container, **kwargs)
@@ -96,14 +111,16 @@ class MonsterCreator(gui.Section):
 
         self.average = tk.BooleanVar()
         self.av = tk.Checkbutton(self.f, text='Take average?',
-                                 variable=self.average, sticky='s')
-        self.av.grid(row=3, column=1)
+                                 variable=self.average)
+        self.av.grid(row=2, column=1, sticky='s')
 
         self.abilities = abil.Abilities(iface.DataInterface(self.data['abilities']))
         self.abil = abilMod.AbilitiesDisplay(self.f, self.abilities,
                                              abilMod.DisplayMode.TWO_BY_THREE)
-        self.abil.grid(4, 0)
+        self.abil.grid(3, 0)
         self.resolve = tk.Button(self.f, text='Finish', command=self.finish)
+        self.resolve.grid(row=4, column=0, columnspan=2)
+
         if last is not None:
             self.fill_from_last(last)
         self.fill_from_data()
@@ -120,38 +137,19 @@ class MonsterCreator(gui.Section):
         self.ac.replace_text(self.data['AC'])
         self.hp.replace_text(self.data['HP'])
         self.average.set(self.data['average'])
-        self.abil.update_view()
 
     def finish(self):
         self.callback(self.data)
 
 
 class CharacterDisplay(ActorDisplay):
-    def __init__(self, container, actor: track.Actor, **kwargs):
-        super().__init__(container, actor, **kwargs)
+    def __init__(self, container, actor: track.Actor, deleter: Deleter, **kwargs):
+        super().__init__(container, actor, deleter, **kwargs)
 
 
-class CharacterBuilder(tk.Toplevel):
-    def __init__(self, callback: Callable[[dict], None], **kwargs):
-        super().__init__(**kwargs)
-        self.callback = callback
-        self.name = gui.LabeledEntry(self, 'Character name').grid(0, 0)
-        self.initiative = gui.LabeledEntry(self, 'Initiative roll').grid(1, 0)
-        self.resolve = tk.Button(self, text='Finish', command=self.finish)
-        self.resolve.grid(row=2, column=0)
-
-    def finish(self):
-        self.callback({
-            'name': self.name.get(),
-            'initiative': self.initiative.get()
-        })
-        self.destroy()
-
-
-class MetaDisplay(ActorDisplay):
+class MetaDisplay(gui.Section):
     def __init__(self, container, new_monster: Action, new_character: Action, close: Action, **kwargs):
-        # sort to end
-        super().__init__(container, track.Actor('', 10000), **kwargs)
+        super().__init__(container, **kwargs)
         self.roller = dice.DiceRoll(self.f)
         self.roller.grid(0, 0, columnspan=3)
         self.newMonster = tk.Button(self.f, text='New Monster', command=new_monster)
@@ -176,10 +174,12 @@ class Main(gui.Section):
             f.grid(i % 3, i // 3)
 
     def new_character_start(self):
-        CharacterBuilder(self.new_character_finish)
+        gui.Query(self.new_character_finish, "Character name", "Initiative roll")
 
     def new_character_finish(self, data: dict):
-        self.frames.append(CharacterDisplay(self.f, track.CharacterStub(data['name'], data['initiative'])))
+        character = track.CharacterStub(data['Character name'], data['Initiative roll'])
+        display = CharacterDisplay(self.f, character, self.delete)
+        self.frames.append(display)
         self.draw()
 
     def new_monster_start(self):
@@ -188,7 +188,12 @@ class Main(gui.Section):
     def new_monster_finish(self, data):
         monster = track.Monster(data)
         self.lastMonster = monster
-        self.frames.append(MonsterDisplay(self.f, monster))
+        self.frames.append(MonsterDisplay(self.f, monster, self.delete))
+        self.draw()
+
+    def delete(self, frame: ActorDisplay):
+        frame.destroy()
+        self.frames.remove(frame)
         self.draw()
 
 
