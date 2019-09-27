@@ -1,7 +1,7 @@
 import enum
 import tkinter as tk
 from pathlib import Path
-from typing import Callable, Any, Optional
+from typing import Callable, Any, Optional, Union
 
 import dndice as d
 
@@ -13,6 +13,7 @@ from . import interface as iface
 Action = Callable[[], None]
 EventHandler = Callable[[tk.Event], None]
 Consumer = Callable[[Any], None]
+Initializer = Callable[[tk.Widget], 'Section']
 
 
 class Direction(enum.Enum):
@@ -22,10 +23,10 @@ class Direction(enum.Enum):
 
 class Section:
     """A placeable collection of widgets, that can have a scrollbar.
-    From the outside it acts like a frame, as its central portion is a frame
+    From the outside it acts like a frame, as its central portion is a frame.
     """
 
-    def __init__(self, container, **kwargs):
+    def __init__(self, container: Union[tk.BaseWidget, tk.Tk], **kwargs):
         self.container = container
         if 'height' in kwargs or 'width' in kwargs:
             # only intended for use with both arguments currently
@@ -53,7 +54,8 @@ class Section:
             self.vscroll.grid(row=0, column=1, sticky='ns')
             self.hscroll.grid(row=1, column=0, sticky='ew')
             self.canvas.create_window((0, 0), window=self.f, anchor='nw')
-            self.f.bind("<Configure>", lambda event: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
+            self.f.bind("<Configure>", lambda event: self.canvas.configure(
+                scrollregion=self.canvas.bbox("all")))
         else:
             self.f.grid(row=row, column=column, **kwargs)
         return self
@@ -65,7 +67,8 @@ class Section:
             self.vscroll.grid(row=0, column=1, sticky='ns')
             self.hscroll.grid(row=1, column=0, sticky='ew')
             self.canvas.create_window((0, 0), window=self.f, anchor='nw')
-            self.f.bind("<Configure>", lambda event: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
+            self.f.bind("<Configure>", lambda event: self.canvas.configure(
+                scrollregion=self.canvas.bbox("all")))
         else:
             self.f.pack(**kwargs)
         return self
@@ -77,6 +80,7 @@ class Section:
             self.f.destroy()
 
     def all_children(self):
+        """Iterate over everything contained in this Section."""
         # Should this select `wrapper` if present? that would capture scroll bars, etc.
         yield from self.__all_children_recursive(self.f)
 
@@ -84,6 +88,54 @@ class Section:
         yield current
         for child in current.winfo_children():
             yield from self.__all_children_recursive(child)
+
+
+class DynamicGrid:
+    """A collection of widgets which will wrap automatically."""
+
+    def __init__(self, container):
+        self.f = tk.Frame(container)
+        self.scrollbar = tk.Scrollbar(self.f)
+        self.container = tk.Text(self.f, wrap="char", borderwidth=0, highlightthickness=0,
+                                 state="disabled", background=self.f["background"],
+                                 cursor='arrow', yscrollcommand=self.scrollbar.set)
+        self.scrollbar.config(self.container.yview)
+        self.scrollbar.pack(fill=tk.Y, side=tk.RIGHT)
+        self.container.pack(fill=tk.BOTH, expand=True, side=tk.LEFT)
+
+    def add(self, creator: Initializer, index='end') -> Section:
+        """Add a component to the grid.
+
+        :param creator: A callable that takes one argument, the
+            container, and returns the component bound into that
+            container.
+        :param index: Either a number or 'end'; where to insert the new
+            component
+        :return: The created component.
+        """
+        component = creator(self.container)
+        self.container['state'] = 'normal'
+        self.container.window_create(index, window=component)
+        self.container['state'] = 'disabled'
+        return component
+
+    def remove(self, component):
+        """Remove a component from the grid.
+
+        :param component: The component to delete, as returned from
+            `add`.
+        """
+        self.container['state'] = 'normal'
+        self.container.delete(component)
+        self.container['state'] = 'disabled'
+
+    def grid(self, row, column, **kwargs):
+        self.f.grid(row=row, column=column, **kwargs)
+        return self
+
+    def pack(self, **kwargs):
+        self.f.pack(**kwargs)
+        return self
 
 
 class InfoButton:
@@ -127,6 +179,8 @@ class ErrorMessage:
 
 
 class ProficientButton(tk.Button):
+    """A button which shows whether you are proficient in an action."""
+
     def __init__(self, container, name: str, proficient: bool = False, **kw):
         super().__init__(container, **kw)
         self.defaultColor = self.cget('bg')
@@ -149,10 +203,9 @@ class ProficientButton(tk.Button):
 
 
 class EffectPane(Section):
-    """Has a short label and an InfoButton with the full text.
-    """
+    """Has a short label and an InfoButton with the full text."""
 
-    def __init__(self, container, short, long):
+    def __init__(self, container, short: str, long: str):
         Section.__init__(self, container)
 
         self.short = short
@@ -183,14 +236,17 @@ class EffectPane(Section):
 
 
 class Query:
-    """Asks a series of questions of the user and writes into a given dict."""
+    """Asks a series of questions of the user and uses the callback to
+    return the data.
+    """
 
     def __init__(self, callbackfun: Callable[[dict], None], *questions):
         """Ask a series of questions of the user.
 
-        :param callbackfun: The function to call with the entered data when done
-        :param questions: The list of questions to ask, either strings or
-            2-tuples with (question, [list of options])
+        :param callbackfun: The function to call with the entered data
+            when done
+        :param questions: The list of questions to ask, either strings
+            or 2-tuples with (question, [list of options])
         """
         self.callback = callbackfun
         self.questions = questions
@@ -200,6 +256,7 @@ class Query:
         self.draw()
 
     def draw(self):
+        """Create and place the widgets."""
         i = 0
         for i, q in enumerate(self.questions):
             if isinstance(q, (list, tuple)) and len(q) == 2:
@@ -220,6 +277,7 @@ class Query:
         self.accept.grid(row=i + 1, column=1)
 
     def finish(self):
+        """Call the callback function to give data back."""
         data = {}
         for q in self.questions:
             if isinstance(q, str):
@@ -418,18 +476,24 @@ class LabeledMenu(Section):
         self.menu.bind(event, callback)
 
 
+# This and Counter could be replaced with ttk.Spinbox?
 class NumericEntry(Section):
+    """An entry that only accepts integer values."""
     def __init__(self, container, start: int = 0, callback: Optional[Consumer] = None,
-                 width=20, **kwargs):
-        super().__init__(container, **kwargs)
+                 width=20, name='', orient=Direction.VERTICAL):
+        super().__init__(container)
+        if name:
+            self.label = tk.Label(self.f, text=name)
+        else:
+            self.label = None
         self.value = tk.StringVar()
         self.value.set(str(start))
         self.entry = tk.Entry(self.f, width=width, textvariable=self.value)
-        self.entry.grid(row=0, column=0)
         validate = (self.entry.register(self.__try_update), '%P')
         self.entry['validate'] = 'key'
         self.entry['validatecommand'] = validate
         self.callback = callback
+        self._draw(orient)
 
     def __try_update(self, value: str):
         try:
@@ -439,6 +503,13 @@ class NumericEntry(Section):
             return True
         except ValueError:
             return False
+
+    def _draw(self, orient):
+        self.label.grid(row=0, column=0)
+        if orient == Direction.V:
+            self.entry.grid(row=1, column=0)
+        else:
+            self.entry.grid(row=0, column=1)
 
     def get(self):
         return int(self.value.get() or 0)
@@ -456,22 +527,26 @@ class NumericEntry(Section):
         self.entry.bind(event, callback)
 
 
-class Counter(Section):
-    def __init__(self, container, start: int = 0, callback: Optional[Consumer] = None, **kwargs):
-        super().__init__(container, **kwargs)
+class Counter(NumericEntry):
+    """A number entry with + and - buttons to change the number."""
+
+    def __init__(self, container, start: int = 0, callback: Optional[Consumer] = None, name=''):
+        super().__init__(container, start, callback, width=5, name=name)
         self.minus = tk.Button(self.f, text='-', command=lambda: self.change(-1))
         self.plus = tk.Button(self.f, text='+', command=lambda: self.change(1))
-        self.display = NumericEntry(self.f, start, callback, width=5)
 
-        self.minus.grid(row=0, column=0)
-        self.display.grid(0, 1)
-        self.plus.grid(row=0, column=2)
+    def _draw(self, orient):
+        self.label.grid(row=0, column=1, columnspan=3)
+        self.minus.grid(row=1, column=0)
+        self.entry.grid(row=1, column=1)
+        self.plus.grid(row=1, column=2)
 
     def change(self, number: int):
-        self.display.set(self.display.get() + number)
+        self.set(self.get() + number)
 
 
 class AdvantageChooser(Section):
+    """Select advantage and disadvantage, and get the matching d20 roll."""
     def __init__(self, container, orient=Direction.VERTICAL, **kwargs):
         super().__init__(container, **kwargs)
         self._adv = tk.BooleanVar()
@@ -489,6 +564,7 @@ class AdvantageChooser(Section):
             raise ex.GuiError("Pass in a Direction value")
 
     def d20_roll(self, lucky=False):
+        """Return the correct d20 roll to make given the advantage"""
         return h.d20_roll(self._adv.get(), self._dis.get(), lucky)
 
     @property
@@ -501,18 +577,24 @@ class AdvantageChooser(Section):
 
 
 class FreeformAttack(Section):
-    def __init__(self, container, attackResult=None, damageResult=None, **kwargs):
+    """Allow arbitrary attack modifiers and damage roll"""
+
+    def __init__(self, container, attackResult: 'RollDisplay' = None,
+                 damageResult: 'RollDisplay' = None, **kwargs):
         super().__init__(container, **kwargs)
-        self.attack = LabeledEntry(self.f, 'Attack Modifiers', orient=Direction.HORIZONTAL)
-        self.damage = LabeledEntry(self.f, 'Damage Roll', orient=Direction.HORIZONTAL)
-        self.adv = AdvantageChooser(self.f, orient=Direction.HORIZONTAL)
-        self.attackResult = attackResult or tk.Label(self.f)
-        self.damageResult = damageResult or tk.Label(self.f)
+        self.attack = LabeledEntry(self.f, 'Attack Modifiers', orient=Direction.HORIZONTAL,
+                                   width=10)
+        self.damage = LabeledEntry(self.f, 'Damage Roll', orient=Direction.HORIZONTAL, width=10)
+        self.adv = AdvantageChooser(self.f)
+        self.doAttack = tk.Button(self.f, command=self.do_attack, text='Perform attack')
+        self.attackResult = attackResult or RollDisplay(self.f)
+        self.damageResult = damageResult or RollDisplay(self.f)
         self.attack.grid(0, 0)
+        self.adv.grid(0, 1)
         self.damage.grid(1, 0)
-        self.adv.grid(2, 0)
-        self.attackResult.grid(row=3, column=0)
-        self.damageResult.grid(row=4, column=0)
+        self.doAttack.grid(row=1, column=1)
+        self.attackResult.grid(2, 0, columnspan=2)
+        self.damageResult.grid(3, 0, columnspan=2)
 
     def do_attack(self, lucky=False):
         attack = self.adv.d20_roll(lucky)
@@ -531,12 +613,14 @@ class FreeformAttack(Section):
 
 
 class RollDisplay(Section):
+    """Displays a roll, color-coded to indicate if it's a critical hit."""
     def __init__(self, container, **kwargs):
         super().__init__(container, **kwargs)
         self.display = tk.Label(self.f)
         self.display.grid(row=0, column=0)
 
     def set(self, expr: d.core.EvalTree):
+        """Display the given expression."""
         text = expr.verbose_result()
         if expr.is_critical():
             color = 'green'
@@ -548,31 +632,41 @@ class RollDisplay(Section):
         self.display['foreground'] = color
 
     def clear(self):
+        """Clear the text field."""
         self.display['text'] = ''
 
 
 class MainWindow(tk.Tk):
+    """The main window, with the className set to play nice for taskbar merging."""
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs, className='dndutils')
         self.title('D&D')
 
 
 class MainModule:
+    """When a module is being called as the main program, invoke this.
+
+    Asks for the character name and loads it before creating the actual
+    component using the given function.
+    """
     def __init__(self, window: tk.Tk, creator: 'Callable[[char.Character], Section]'):
         self.window = window
         self.creator = creator
         self.component = None
-        iface.JsonInterface.OBJECTSPATH = (Path(__file__).parent / '..' / '..' / 'objects').resolve()
+        objects = (Path(__file__).parent / '..' / '..' / 'objects').resolve()
+        iface.JsonInterface.OBJECTSPATH = objects
         self.QUIT = tk.Button(self.window, text='QUIT', fg='red', command=self.quit)
         self.QUIT.grid(row=10, column=0)
 
         self.startup_begin()
 
     def startup_begin(self):
+        """Ask for the character name and wait for response."""
         CharacterQuery(self.startup_end)
         self.window.withdraw()
 
     def startup_end(self, data):
+        """Instantiate the selected character and create the component."""
         try:
             name = data[CharacterQuery.NAME_Q]
             path = (iface.JsonInterface.OBJECTSPATH
@@ -594,7 +688,12 @@ class MainModule:
             self.window.destroy()
             raise
 
+    def run(self):
+        """Run the application."""
+        self.window.mainloop()
+
     def quit(self):
+        """Ensure that the character data is written and quit."""
         if hasattr(self.component, 'owner'):
             # noinspection PyUnresolvedReferences
             self.component.owner.write()
