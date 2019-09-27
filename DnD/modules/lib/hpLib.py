@@ -20,7 +20,13 @@ class HP:
     @current.setter
     def current(self, value):
         if isinstance(value, int):
-            self.record.set('/current', value)
+            if value > 0:
+                if value < self.max:
+                    self.record.set('/current', value)
+                else:
+                    self.record.set('/current', self.max)
+            else:
+                self.record.set('/current', 0)
         else:
             raise TypeError('Trying to set HP to not a number')
 
@@ -67,8 +73,6 @@ class HP:
                 delta += self.temp
                 self.temp = 0
                 self.current += delta
-                if self.current < 0:
-                    self.current = 0
                 return delta
             else:
                 # Temp absorbs it all
