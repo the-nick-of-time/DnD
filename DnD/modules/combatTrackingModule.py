@@ -26,7 +26,6 @@ class ActorDisplay(gui.Section):
                                 image=self.deleteMark)
         self.name = tk.Label(self.f, text=self.actor.name)
         self.initiative = tk.Label(self.f, text=f'Initiative: {self.actor.initiative}')
-        self.draw()
 
     def draw(self):
         self.name.grid(row=0, column=0)
@@ -42,10 +41,12 @@ class ActorDisplay(gui.Section):
 class MonsterDisplay(ActorDisplay):
     def __init__(self, container, actor: track.Monster, deleter: Deleter, **kwargs):
         super().__init__(container, actor, deleter, **kwargs)
+        self.draw()
 
 
 class MonsterBuilder(tk.Toplevel):
-    def __init__(self, last: Optional[track.Monster], callback: Callable[[dict], None], **kwargs):
+    def __init__(self, last: Optional[track.Monster], callback: Callable[[dict], None],
+                 **kwargs):
         super().__init__(**kwargs)
         # Callback should store the data to be passed back in as `last`
         self.callback = callback
@@ -90,7 +91,8 @@ class MonsterBuilder(tk.Toplevel):
 
 # TODO: customize from gui.Query
 class MonsterCreator(gui.Section):
-    def __init__(self, container, callback: Callable[[dict], None], last: Optional[track.Monster], **kwargs):
+    def __init__(self, container, callback: Callable[[dict], None],
+                 last: Optional[track.Monster], **kwargs):
         super().__init__(container, **kwargs)
         self.callback = callback
         self.data = {
@@ -145,10 +147,12 @@ class MonsterCreator(gui.Section):
 class CharacterDisplay(ActorDisplay):
     def __init__(self, container, actor: track.Actor, deleter: Deleter, **kwargs):
         super().__init__(container, actor, deleter, **kwargs)
+        self.draw()
 
 
 class MetaDisplay(gui.Section):
-    def __init__(self, container, new_monster: Action, new_character: Action, close: Action, **kwargs):
+    def __init__(self, container, new_monster: Action, new_character: Action, close: Action,
+                 **kwargs):
         super().__init__(container, **kwargs)
         self.roller = dice.DiceRoll(self.f)
         self.roller.grid(0, 0, columnspan=3)
@@ -159,10 +163,14 @@ class MetaDisplay(gui.Section):
         self.QUIT = tk.Button(self.f, text='Quit', command=close)
         self.QUIT.grid(row=1, column=2)
 
+    def __lt__(self, other: ActorDisplay):
+        return False
+
 
 class Main(gui.Section):
     def __init__(self, window: tk.Tk):
         super().__init__(window)
+        iface.JsonInterface.OBJECTSPATH = (Path(__file__).parent / '..' / 'objects').resolve()
         self.lastMonster = None
         self.meta = MetaDisplay(self.f, self.new_monster_start,
                                 self.new_character_start, window.destroy)

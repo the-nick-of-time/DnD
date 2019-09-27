@@ -57,5 +57,4 @@ class Main(gui.MainModule):
 
 if __name__ == '__main__':
     win = gui.MainWindow()
-    app = Main(win)
-    win.mainloop()
+    Main(win).run()

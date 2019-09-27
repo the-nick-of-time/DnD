@@ -64,8 +64,9 @@ class AbilityDisplay(gui.Section):
 
 
 class OwnedAbilityDisplay(AbilityDisplay):
-    def __init__(self, parent, character: 'char.Character', ability: 'abil.Ability', mode: DisplayMode,
-                 advantage: gui.AdvantageChooser, display: gui.RollDisplay, **kwargs):
+    def __init__(self, parent, character: 'char.Character', ability: 'abil.Ability',
+                 mode: DisplayMode, advantage: gui.AdvantageChooser, display: gui.RollDisplay,
+                 **kwargs):
         super().__init__(parent, ability, mode, advantage, display, **kwargs)
         self.owner = character
         self.save.proficient = self.ability.name in self.owner.saves
@@ -171,8 +172,9 @@ class BasicAbilitiesDisplay(AbilitiesDisplay):
 
 
 class OwnedAbilitiesDisplay(AbilitiesDisplay):
-    def __init__(self, container, character: 'char.Character', abilities: 'abil.Abilities', mode: DisplayMode,
-                 adv: gui.AdvantageChooser, display: gui.RollDisplay, **kwargs):
+    def __init__(self, container, character: 'char.Character', abilities: 'abil.Abilities',
+                 mode: DisplayMode, adv: gui.AdvantageChooser, display: gui.RollDisplay,
+                 **kwargs):
         self.owner = character
         super().__init__(container, abilities, mode, adv, display, **kwargs)
 
@@ -183,9 +185,11 @@ class OwnedAbilitiesDisplay(AbilitiesDisplay):
 
 
 class Module(OwnedAbilitiesDisplay):
-    def __init__(self, container, character: 'char.Character', adv: gui.AdvantageChooser, output: gui.RollDisplay):
+    def __init__(self, container, character: 'char.Character', adv: gui.AdvantageChooser,
+                 output: gui.RollDisplay):
         self.owner = character
-        super().__init__(container, character, character.abilities, DisplayMode.SIX_BY_ONE, adv, output, pady=5)
+        super().__init__(container, character, character.abilities, DisplayMode.SIX_BY_ONE, adv,
+                         output, pady=5)
 
 
 class Main(gui.MainModule):
@@ -204,5 +208,4 @@ class Main(gui.MainModule):
 
 if __name__ == '__main__':
     win = gui.MainWindow()
-    app = Main(win)
-    win.mainloop()
+    Main(win).run()

@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 
-import os
 import tkinter as tk
 
 import dndice as d
@@ -114,11 +113,11 @@ class Main(gui.Section):
         self.QUIT.grid(row=1, column=1)
 
     def startup_begin(self):
-        gui.Query(self.charactername, self.startup_end, 'Character Name?')
+        gui.Query(self.startup_end, 'Character Name?')
         self.container.withdraw()
 
-    def startup_end(self):
-        name = self.charactername['Character Name?']
+    def startup_end(self, data):
+        name = data['Character Name?']
         path = iface.JsonInterface.OBJECTSPATH / 'character' / (name + '.character')
         if path.exists():
             jf = iface.JsonInterface('character/' + name + '.character')
@@ -137,7 +136,7 @@ class Main(gui.Section):
 if __name__ == '__main__':
     from pathlib import Path
 
-    iface.JsonInterface.OBJECTSPATH = Path(os.path.dirname(os.path.abspath(__file__)) + '/../objects/')
+    iface.JsonInterface.OBJECTSPATH = Path(__file__).parent / '..' / 'objects'
     win = tk.Tk(screenName='Attacks')
     app = Main(win)
     app.pack()
