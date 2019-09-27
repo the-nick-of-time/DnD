@@ -19,6 +19,7 @@ def modifier(score):
 
 
 def d20_roll(adv=False, dis=False, luck=False):
+    """Return the d20 roll to make under the given conditions."""
     if adv and not dis:
         if luck:
             return ADV_LUCK.copy()
@@ -59,12 +60,13 @@ def readable_filename(name: str) -> str:
 
 def pull_from(*args):
     """args is a tuple of tkinter widgets with .get() methods."""
-    data = tuple(widget.get() for widget in args)
 
-    def decorator(func):
-        @functools.wraps(func)
+    def decorator(f):
+        f.__sources = args
+
+        @functools.wraps(f)
         def decorated():
-            return func(*data)
+            return f(*[widget.get() for widget in f.__sources])
         return decorated
 
     return decorator

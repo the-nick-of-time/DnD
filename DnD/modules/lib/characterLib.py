@@ -108,15 +108,15 @@ class Character:
 
     def __match_variable(self, key: str):
         if re.match(r'str(ength)?_mod(ifier)?', key, flags=re.I):
-            return h.modifier(self.abilities[abil.AbilityName.STR])
+            return self.abilities[abil.AbilityName.STR].modifier
         if re.match(r'dex(terity)?_mod(ifier)?', key, flags=re.I):
-            return h.modifier(self.abilities[abil.AbilityName.DEX])
+            return self.abilities[abil.AbilityName.DEX].modifier
         if re.match(r'con(stitution)?_mod(ifier)?', key, flags=re.I):
-            return h.modifier(self.abilities[abil.AbilityName.CON])
+            return self.abilities[abil.AbilityName.CON].modifier
         if re.match(r'int(elligence)?_mod(ifier)?', key, flags=re.I):
-            return h.modifier(self.abilities[abil.AbilityName.INT])
+            return self.abilities[abil.AbilityName.INT].modifier
         if re.match(r'wis(dom)?_mod(ifier)?', key, flags=re.I):
-            return h.modifier(self.abilities[abil.AbilityName.WIS])
+            return self.abilities[abil.AbilityName.WIS].modifier
         if re.match(r'cha(risma)?_mod(ifier)?', key, flags=re.I):
             return self.abilities[abil.AbilityName.CHA].modifier
         if key.lower() == 'caster_level':
