@@ -20,13 +20,12 @@ class HP:
     @current.setter
     def current(self, value):
         if isinstance(value, int):
-            if value > 0:
-                if value < self.max:
-                    self.record.set('/current', value)
-                else:
-                    self.record.set('/current', self.max)
-            else:
+            if value < 0:
                 self.record.set('/current', 0)
+            elif value > self.max:
+                self.record.set('/current', self.max)
+            else:
+                self.record.set('/current', value)
         else:
             raise TypeError('Trying to set HP to not a number')
 

@@ -298,6 +298,7 @@ class Query:
         self.win.destroy()
 
 
+# TODO: deprecated
 class ResourceDisplay(Section):
     """Displays a resource like sorcery points or Hit Dice."""
 
@@ -537,6 +538,12 @@ class NumericEntry(Section):
     def bind(self, event: str, callback: EventHandler):
         self.entry.bind(event, callback)
 
+    def enable(self):
+        self.entry.configure(state=tk.NORMAL)
+
+    def disable(self):
+        self.entry.configure(state='readonly')
+
 
 class Counter(NumericEntry):
     """A number entry with + and - buttons to change the number."""
@@ -625,9 +632,10 @@ class FreeformAttack(Section):
 
 class RollDisplay(Section):
     """Displays a roll, color-coded to indicate if it's a critical hit."""
-    def __init__(self, container, **kwargs):
+
+    def __init__(self, container, width=20, **kwargs):
         super().__init__(container, **kwargs)
-        self.display = tk.Label(self.f)
+        self.display = tk.Label(self.f, width=width)
         self.display.grid(row=0, column=0)
 
     def set(self, expr: d.core.EvalTree, fmt='{}'):

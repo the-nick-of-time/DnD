@@ -1,19 +1,18 @@
 import tkinter as tk
-from typing import Union
+from typing import Union, Callable, List
 
 import dndice as d
 
 import lib.components as gui
 import lib.hpLib as hp
+import lib.resourceLib as res
+import resourceModule as resMod
 
 
 class HitPointDisplay(gui.Section):
     def __init__(self, container, handler: hp.HP, **kwargs):
         super().__init__(container, **kwargs)
-        # self.numbers = HitPointNumberDisplay(self.f, handler)
-        # self.changer = HitPointChanger(self.f, handler, self.numbers.update_view)
         self.numbers, self.changer = self._create_components(handler)
-        self.draw()
 
     def _create_components(self, handler):
         numbers = HitPointNumberDisplay(self.f, handler)
@@ -40,15 +39,37 @@ class HitPointDisplay(gui.Section):
 class BasicHitPointDisplay(HitPointDisplay):
     def __init__(self, container, handler: hp.HP, **kwargs):
         super().__init__(container, handler, **kwargs)
+        self.draw()
 
     def _create_components(self, handler):
         numbers = BaseHitPointNumberDisplay(self.f, handler)
         changer = BaseHitPointChanger(self.f, handler, numbers.update_view)
         return numbers, changer
 
+
+class OwnedHitPointDisplay(HitPointDisplay):
+    def __init__(self, container, handler: hp.OwnedHP, **kwargs):
+        super().__init__(container, handler, **kwargs)
+        self.owner = handler.owner
+        self.handler = handler
+        self.hd: List[HitDiceDisplay] = []
+        for obj in handler.hd.values():
+            self.hd.append(HitDiceDisplay(self.f, obj, self.use_HD))
+        self.draw()
+
+    def _create_components(self, handler):
+        numbers = OwnedHitPointNumberDisplay(self.f, handler)
+        changer = HitPointChanger(self.f, handler, numbers.update_view)
+        return numbers, changer
+
     def draw(self):
-        self.numbers.grid(0, 0)
-        self.changer.grid(1, 0)
+        super().draw()
+        for i, display in enumerate(self.hd):
+            display.grid(0, i + 1, rowspan=2)
+
+    def use_HD(self, which: str):
+        self.handler.use_HD(which)
+        self.numbers.update_view()
 
 
 class BaseHitPointNumberDisplay(gui.Section):
@@ -95,6 +116,16 @@ class HitPointNumberDisplay(BaseHitPointNumberDisplay):
         self.bonusMax.set(self.handler.bonusMax)
 
 
+class OwnedHitPointNumberDisplay(HitPointNumberDisplay):
+    def __init__(self, container, handler: hp.OwnedHP, **kwargs):
+        super().__init__(container, handler, **kwargs)
+
+    def use_HD(self, which: str):
+        self.handler: hp.OwnedHP
+        self.handler.use_HD(which)
+        self.update_view()
+
+
 class BaseHitPointChanger(gui.Section):
     def __init__(self, container: Union[tk.BaseWidget, tk.Tk], handler: hp.HP,
                  onChange: gui.Action, **kwargs):
@@ -132,3 +163,28 @@ class HitPointChanger(BaseHitPointChanger):
         self.handler.add_temp(value)
         self.amount.set(tree)
         self.onTemp()
+
+
+class HitDiceDisplay(resMod.ResourceDisplay):
+    def __init__(self, container: Union[tk.BaseWidget, tk.Tk], resource: res.Resource,
+                 use: Callable[[str], None], **kwargs):
+        super().__init__(container, resource, **kwargs)
+        self.useCallback = use
+
+    def decrement(self):
+        val = self.useCallback(self.resource.value)
+        self.display['text'] = str(val)
+        self.update_view()
+
+
+class Main(gui.MainModule):
+    def __init__(self, window: tk.Tk):
+        def creator(character):
+            return OwnedHitPointDisplay(window, character.hp)
+
+        super().__init__(window, creator)
+
+
+if __name__ == '__main__':
+    win = gui.MainWindow()
+    Main(win).run()
