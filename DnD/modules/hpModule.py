@@ -10,21 +10,41 @@ import lib.hpLib as hp
 class HitPointDisplay(gui.Section):
     def __init__(self, container, handler: hp.HP, **kwargs):
         super().__init__(container, **kwargs)
-        self.numbers = HitPointNumberDisplay(self.f, handler)
-        self.changer = HitPointChanger(self.f, handler, self.numbers.update_view)
+        # self.numbers = HitPointNumberDisplay(self.f, handler)
+        # self.changer = HitPointChanger(self.f, handler, self.numbers.update_view)
+        self.numbers, self.changer = self._create_components(handler)
         self.draw()
+
+    def _create_components(self, handler):
+        numbers = HitPointNumberDisplay(self.f, handler)
+        changer = HitPointChanger(self.f, handler, numbers.update_view)
+        return numbers, changer
 
     def draw(self):
         self.numbers.grid(0, 0)
         self.changer.grid(1, 0)
 
+    def on_change(self, callback: gui.Consumer):
+        if self.numbers.current.callback:
+            previous = self.numbers.current.callback
 
-class BasicHitPointDisplay(gui.Section):
+            def call(num):
+                previous(num)
+                callback(num)
+
+            self.numbers.current.callback = call
+        else:
+            self.numbers.current.callback = callback
+
+
+class BasicHitPointDisplay(HitPointDisplay):
     def __init__(self, container, handler: hp.HP, **kwargs):
-        super().__init__(container, **kwargs)
-        self.numbers = BaseHitPointNumberDisplay(self.f, handler)
-        self.changer = BaseHitPointChanger(self.f, handler, self.numbers.update_view)
-        self.draw()
+        super().__init__(container, handler, **kwargs)
+
+    def _create_components(self, handler):
+        numbers = BaseHitPointNumberDisplay(self.f, handler)
+        changer = BaseHitPointChanger(self.f, handler, numbers.update_view)
+        return numbers, changer
 
     def draw(self):
         self.numbers.grid(0, 0)

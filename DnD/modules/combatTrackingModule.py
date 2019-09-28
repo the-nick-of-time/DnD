@@ -13,7 +13,6 @@ import lib.components as gui
 import lib.helpers as h
 import lib.interface as iface
 
-Action = Callable[[], None]
 Deleter = Callable[['ActorDisplay'], None]
 
 
@@ -44,6 +43,7 @@ class MonsterDisplay(ActorDisplay):
     def __init__(self, container, monster: track.Monster, deleter: Deleter, **kwargs):
         super().__init__(container, monster, deleter, **kwargs)
         self.hp = hpMod.BasicHitPointDisplay(self.f, monster.HP)
+        self.hp.on_change(self.hp_change)
         self.abilities = abilMod.StaticAbilitiesDisplay(self.f, monster.abilities,
                                                         abilMod.DisplayMode.TWO_BY_THREE)
         self.attack = gui.FreeformAttack(self.f)
@@ -52,12 +52,18 @@ class MonsterDisplay(ActorDisplay):
 
     def draw(self):
         self.name.grid(row=0, column=0)
-        # These two intentionally overlap, delete button is small
-        self.initiative.grid(row=0, column=1)
+        # These two intentionally overlap, delete button is small so they fit
+        self.initiative.grid(row=0, column=1, sticky='w')
         self.delete.grid(row=0, column=1, sticky='ne')
         self.abilities.grid(1, 0)
         self.hp.grid(1, 1)
         self.attack.grid(2, 0, columnspan=2)
+
+    def hp_change(self, _):
+        self.actor: track.Monster
+        if self.actor.HP.current <= 0:
+            for widget in self.all_children():
+                widget.configure(gui.Style.DEAD.value)
 
 
 class MonsterBuilder(tk.Toplevel):
@@ -164,8 +170,8 @@ class CharacterDisplay(ActorDisplay):
 
 
 class MetaDisplay(gui.Section):
-    def __init__(self, container, new_monster: Action, new_character: Action, close: Action,
-                 **kwargs):
+    def __init__(self, container, new_monster: gui.Action, new_character: gui.Action,
+                 close: gui.Action, **kwargs):
         super().__init__(container, **kwargs)
         self.roller = dice.DiceRoll(self.f)
         self.roller.grid(0, 0, columnspan=3)
