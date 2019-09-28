@@ -32,7 +32,7 @@ class Monster(Actor):
         self.initiative += self.abilities[abil.AbilityName.DEX].modifier
         self.hpRoll = data['HP']
         mode = Mode.from_string('average' if data.get('average') else 'normal')
-        maxHP = basic(self.hpRoll, mode=mode)
+        maxHP = int(basic(self.hpRoll, mode=mode))
         self.HP = hp.HP(iface.DataInterface({
             "current": maxHP,
             "max": maxHP,

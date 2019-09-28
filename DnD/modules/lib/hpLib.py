@@ -15,7 +15,7 @@ class HP:
 
     @property
     def current(self):
-        return self.record.get('/current')
+        return self.record.get('/current') or 0
 
     @current.setter
     def current(self, value):
@@ -36,7 +36,7 @@ class HP:
 
     @property
     def baseMax(self):
-        return self.record.get('/max')
+        return self.record.get('/max') or 0
 
     @baseMax.setter
     def baseMax(self, value):
@@ -44,7 +44,7 @@ class HP:
 
     @property
     def temp(self):
-        return self.record.get('/temp')
+        return self.record.get('/temp') or 0
 
     @temp.setter
     def temp(self, value):
@@ -52,7 +52,7 @@ class HP:
 
     @property
     def bonusMax(self):
-        return self.record.get('/bonusMax')
+        return self.record.get('/bonusMax') or 0
 
     @bonusMax.setter
     def bonusMax(self, value):

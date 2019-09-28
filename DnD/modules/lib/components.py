@@ -21,6 +21,13 @@ class Direction(enum.Enum):
     HORIZONTAL = H = 'horizontal'
 
 
+class Style(enum.Enum):
+    TITLE = {'font': ('Ubuntu', 18, 'bold')}
+    SUBTITLE = {'font': ('Helvetica', 12, 'italic')}
+    NORMAL = {'font': ('Helvetica', 10)}
+    DEAD = {'background': '#AA0000'}
+
+
 class Section:
     """A placeable collection of widgets, that can have a scrollbar.
     From the outside it acts like a frame, as its central portion is a frame.
@@ -122,14 +129,14 @@ class DynamicGrid:
         self.container['state'] = 'disabled'
         return component
 
-    def remove(self, component):
+    def remove(self, component: Section):
         """Remove a component from the grid.
 
         :param component: The component to delete, as returned from
             `add`.
         """
         self.container['state'] = 'normal'
-        self.container.delete(component)
+        self.container.delete(component.f)
         self.container['state'] = 'disabled'
 
     def grid(self, row, column, **kwargs):
@@ -588,7 +595,9 @@ class FreeformAttack(Section):
         super().__init__(container, **kwargs)
         self.attack = LabeledEntry(self.f, 'Attack Modifiers', orient=Direction.HORIZONTAL,
                                    width=10)
+        self.attack.bind('<Return>', lambda event: self.do_attack())
         self.damage = LabeledEntry(self.f, 'Damage Roll', orient=Direction.HORIZONTAL, width=10)
+        self.damage.bind('<Return>', lambda event: self.do_attack())
         self.adv = AdvantageChooser(self.f)
         self.doAttack = tk.Button(self.f, command=self.do_attack, text='Perform attack')
         self.attackResult = attackResult or RollDisplay(self.f)
@@ -603,17 +612,12 @@ class FreeformAttack(Section):
     def do_attack(self, lucky=False):
         attack = self.adv.d20_roll(lucky)
         attack += d.compile(self.attack.get())
-        att = d.verbose(attack)
+        attack.evaluate()
+        damage = d.compile(self.damage.get())
         if attack.is_critical():
-            att = 'Critical Hit'
-            dam = d.verbose(self.damage.get(), d.Mode.CRIT)
-        elif attack.is_fail():
-            att = 'Critical Miss'
-            dam = '0'
-        else:
-            dam = d.verbose(self.damage.get())
-        self.attackResult['text'] = 'Attack roll: ' + att
-        self.damageResult['text'] = 'Damage roll: ' + dam
+            damage.critify()
+        self.attackResult.set(attack, 'Attack roll: {}')
+        self.damageResult.set(damage, 'Damage roll: {}')
 
 
 class RollDisplay(Section):
@@ -623,9 +627,9 @@ class RollDisplay(Section):
         self.display = tk.Label(self.f)
         self.display.grid(row=0, column=0)
 
-    def set(self, expr: d.core.EvalTree):
+    def set(self, expr: d.core.EvalTree, fmt='{}'):
         """Display the given expression."""
-        text = expr.verbose_result()
+        text = fmt.format(expr.verbose_result())
         if expr.is_critical():
             color = 'green'
         elif expr.is_fail():

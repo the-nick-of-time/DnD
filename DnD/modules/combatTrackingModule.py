@@ -6,6 +6,7 @@ from typing import Callable, Optional, Union
 
 import abilityModule as abilMod
 import dice
+import hpModule as hpMod
 import lib.abilitiesLib as abil
 import lib.combatTracking as track
 import lib.components as gui
@@ -24,8 +25,9 @@ class ActorDisplay(gui.Section):
         self.deleteMark = tk.PhotoImage(file=str(image))
         self.delete = tk.Button(self.f, command=lambda: deleter(self),
                                 image=self.deleteMark)
-        self.name = tk.Label(self.f, text=self.actor.name)
-        self.initiative = tk.Label(self.f, text=f'Initiative: {self.actor.initiative}')
+        self.name = tk.Label(self.f, text=self.actor.name, **gui.Style.TITLE.value)
+        self.initiative = tk.Label(self.f, text=f'Initiative: {self.actor.initiative}',
+                                   **gui.Style.SUBTITLE.value)
 
     def draw(self):
         self.name.grid(row=0, column=0)
@@ -41,7 +43,20 @@ class ActorDisplay(gui.Section):
 class MonsterDisplay(ActorDisplay):
     def __init__(self, container, actor: track.Monster, deleter: Deleter, **kwargs):
         super().__init__(container, actor, deleter, **kwargs)
+        self.hp = hpMod.HitPointDisplay(self.f, actor.HP)
+        self.abilities = abilMod.StaticAbilitiesDisplay(self.f, actor.abilities,
+                                                        abilMod.DisplayMode.TWO_BY_THREE)
+        self.attack = gui.FreeformAttack(self.f)
         self.draw()
+
+    def draw(self):
+        self.name.grid(row=0, column=0)
+        # These two intentionally overlap, delete button is small
+        self.initiative.grid(row=0, column=1)
+        self.delete.grid(row=0, column=1, sticky='ne')
+        self.abilities.grid(1, 0)
+        self.hp.grid(1, 1)
+        self.attack.grid(2, 0, columnspan=2)
 
 
 class MonsterBuilder(tk.Toplevel):
