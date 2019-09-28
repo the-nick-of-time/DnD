@@ -566,11 +566,11 @@ class AdvantageChooser(Section):
                                          variable=self._adv)
         disadvantageSelect = tk.Checkbutton(self.f, text="Disadvantage?",
                                             variable=self._dis)
-        advantageSelect.grid(row=0, column=0)
-        if orient == Direction.V:
-            disadvantageSelect.grid(row=1, column=0)
+        advantageSelect.grid(row=0, column=0, sticky='w')
+        if orient == Direction.VERTICAL:
+            disadvantageSelect.grid(row=1, column=0, sticky='w')
         elif orient == Direction.HORIZONTAL:
-            disadvantageSelect.grid(row=0, column=1)
+            disadvantageSelect.grid(row=0, column=1, sticky='w')
         else:
             raise ex.GuiError("Pass in a Direction value")
 
@@ -599,12 +599,15 @@ class FreeformAttack(Section):
         self.damage = LabeledEntry(self.f, 'Damage Roll', orient=Direction.HORIZONTAL, width=10)
         self.damage.bind('<Return>', lambda event: self.do_attack())
         self.adv = AdvantageChooser(self.f)
-        self.doAttack = tk.Button(self.f, command=self.do_attack, text='Perform attack')
+        self.doAttack = tk.Button(self.f, command=self.do_attack, text='Attack')
         self.attackResult = attackResult or RollDisplay(self.f)
         self.damageResult = damageResult or RollDisplay(self.f)
-        self.attack.grid(0, 0)
+        self.draw()
+
+    def draw(self):
+        self.attack.grid(0, 0, sticky='e')
         self.adv.grid(0, 1)
-        self.damage.grid(1, 0)
+        self.damage.grid(1, 0, sticky='e')
         self.doAttack.grid(row=1, column=1)
         self.attackResult.grid(2, 0, columnspan=2)
         self.damageResult.grid(3, 0, columnspan=2)

@@ -41,12 +41,13 @@ class ActorDisplay(gui.Section):
 
 
 class MonsterDisplay(ActorDisplay):
-    def __init__(self, container, actor: track.Monster, deleter: Deleter, **kwargs):
-        super().__init__(container, actor, deleter, **kwargs)
-        self.hp = hpMod.HitPointDisplay(self.f, actor.HP)
-        self.abilities = abilMod.StaticAbilitiesDisplay(self.f, actor.abilities,
+    def __init__(self, container, monster: track.Monster, deleter: Deleter, **kwargs):
+        super().__init__(container, monster, deleter, **kwargs)
+        self.hp = hpMod.HitPointDisplay(self.f, monster.HP)
+        self.abilities = abilMod.StaticAbilitiesDisplay(self.f, monster.abilities,
                                                         abilMod.DisplayMode.TWO_BY_THREE)
         self.attack = gui.FreeformAttack(self.f)
+        self.initiative['text'] = f'Initiative: {self.actor.initiative}, AC: {monster.AC}'
         self.draw()
 
     def draw(self):
@@ -66,12 +67,10 @@ class MonsterBuilder(tk.Toplevel):
         # Callback should store the data to be passed back in as `last`
         self.callback = callback
         self.last = last
-        self.choice = tk.Frame(self)
-        self.choice.grid(row=0, column=0)
-        self.chooseFile = tk.Button(self.choice, text='Choose file', command=self.choose_file)
+        self.chooseFile = tk.Button(self, text='Choose file', command=self.choose_file)
         self.chooseFile.grid(row=0, column=0)
-        self.chooseCustom = tk.Button(self.choice, text='Create custom', command=self.customize)
-        self.chooseCustom.grid(row=0, column=1)
+        self.custom = MonsterCreator(self, self.finish, self.last,
+                                     borderwidth=2, relief='groove').grid(1, 0)
         self.focus_set()
 
     def choose_file(self):
@@ -94,17 +93,11 @@ class MonsterBuilder(tk.Toplevel):
         else:
             raise FileNotFoundError("That file does not exist. Check your spelling.")
 
-    def customize(self):
-        self.choice.destroy()
-        creator = MonsterCreator(self, self.finish, self.last)
-        creator.grid(0, 0)
-
     def finish(self, data: dict):
         self.callback(data)
         self.destroy()
 
 
-# TODO: customize from gui.Query
 class MonsterCreator(gui.Section):
     def __init__(self, container, callback: Callable[[dict], None],
                  last: Optional[track.Monster], **kwargs):
