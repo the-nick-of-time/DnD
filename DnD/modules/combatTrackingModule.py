@@ -43,7 +43,7 @@ class ActorDisplay(gui.Section):
 class MonsterDisplay(ActorDisplay):
     def __init__(self, container, monster: track.Monster, deleter: Deleter, **kwargs):
         super().__init__(container, monster, deleter, **kwargs)
-        self.hp = hpMod.HitPointDisplay(self.f, monster.HP)
+        self.hp = hpMod.BasicHitPointDisplay(self.f, monster.HP)
         self.abilities = abilMod.StaticAbilitiesDisplay(self.f, monster.abilities,
                                                         abilMod.DisplayMode.TWO_BY_THREE)
         self.attack = gui.FreeformAttack(self.f)
