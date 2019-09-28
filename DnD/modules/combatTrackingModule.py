@@ -2,7 +2,7 @@ import tkinter as tk
 from pathlib import Path
 from tkinter import filedialog
 from tkinter import messagebox
-from typing import Callable, Optional
+from typing import Callable, Optional, Union
 
 import abilityModule as abilMod
 import dice
@@ -34,7 +34,7 @@ class ActorDisplay(gui.Section):
 
     def __lt__(self, other: 'ActorDisplay'):
         if isinstance(other, MetaDisplay):
-            return True
+            return False
         return self.actor < other.actor
 
 
@@ -97,7 +97,7 @@ class MonsterCreator(gui.Section):
         self.callback = callback
         self.data = {
             "name": '',
-            "abilities": {name.value: 0 for name in abil.AbilityName},
+            "abilities": {name.value: 10 for name in abil.AbilityName},
             "HP": '',
             "average": True,
             "AC": '',
@@ -117,8 +117,8 @@ class MonsterCreator(gui.Section):
         self.av.grid(row=2, column=1, sticky='s')
 
         self.abilities = abil.Abilities(iface.DataInterface(self.data['abilities']))
-        self.abil = abilMod.AbilitiesDisplay(self.f, self.abilities,
-                                             abilMod.DisplayMode.TWO_BY_THREE)
+        self.abil = abilMod.BasicAbilitiesDisplay(self.f, self.abilities,
+                                                  abilMod.DisplayMode.TWO_BY_THREE)
         self.abil.grid(3, 0)
         self.resolve = tk.Button(self.f, text='Finish', command=self.finish)
         self.resolve.grid(row=4, column=0, columnspan=2)
@@ -136,11 +136,16 @@ class MonsterCreator(gui.Section):
 
     def fill_from_data(self):
         self.name.replace_text(self.data['name'])
+        self.abil.update_view()
         self.ac.replace_text(self.data['AC'])
         self.hp.replace_text(self.data['HP'])
         self.average.set(self.data['average'])
 
     def finish(self):
+        self.data['name'] = self.name.get()
+        self.data['HP'] = self.hp.get()
+        self.data['AC'] = self.ac.get()
+        self.data['average'] = self.average.get()
         self.callback(self.data)
 
 
@@ -163,32 +168,33 @@ class MetaDisplay(gui.Section):
         self.QUIT = tk.Button(self.f, text='Quit', command=close)
         self.QUIT.grid(row=1, column=2)
 
-    def __lt__(self, other: ActorDisplay):
+    def __lt__(self, other: Union[ActorDisplay, track.Actor]):
+        return True
+
+    def __gt__(self, other: Union[ActorDisplay, track.Actor]):
         return False
 
 
-class Main(gui.Section):
+class Main(gui.DynamicGrid):
     def __init__(self, window: tk.Tk):
         super().__init__(window)
         iface.JsonInterface.OBJECTSPATH = (Path(__file__).parent / '..' / 'objects').resolve()
         self.lastMonster = None
-        self.meta = MetaDisplay(self.f, self.new_monster_start,
-                                self.new_character_start, window.destroy)
-        self.frames = h.SortedList([self.meta])
-        self.draw()
-
-    def draw(self):
-        for i, f in enumerate(self.frames):
-            f.grid(i % 3, i // 3)
+        self.meta = self.add(lambda f: MetaDisplay(f, self.new_monster_start,
+                                                   self.new_character_start, window.destroy))
+        self.actors = h.InsertionSortedList([self.meta], reverse=True)
 
     def new_character_start(self):
         gui.Query(self.new_character_finish, "Character name", "Initiative roll")
 
     def new_character_finish(self, data: dict):
         character = track.CharacterStub(data['Character name'], data['Initiative roll'])
-        display = CharacterDisplay(self.f, character, self.delete)
-        self.frames.append(display)
-        self.draw()
+
+        def creator(container):
+            return CharacterDisplay(container, character, self.delete)
+
+        index = self.actors.add(character)
+        self.add(creator, index)
 
     def new_monster_start(self):
         MonsterBuilder(self.lastMonster, self.new_monster_finish)
@@ -196,17 +202,21 @@ class Main(gui.Section):
     def new_monster_finish(self, data):
         monster = track.Monster(data)
         self.lastMonster = monster
-        self.frames.append(MonsterDisplay(self.f, monster, self.delete))
-        self.draw()
+
+        def creator(container):
+            return MonsterDisplay(container, monster, self.delete)
+
+        index = self.actors.add(monster)
+        self.add(creator, index)
 
     def delete(self, frame: ActorDisplay):
+        self.actors.remove(frame.actor)
+        self.remove(frame)
         frame.destroy()
-        self.frames.remove(frame)
-        self.draw()
 
 
 if __name__ == '__main__':
     win = gui.MainWindow()
     app = Main(win)
-    app.pack()
+    app.pack(expand=True, fill=tk.BOTH)
     win.mainloop()

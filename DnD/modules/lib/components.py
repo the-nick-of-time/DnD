@@ -99,7 +99,7 @@ class DynamicGrid:
         self.container = tk.Text(self.f, wrap="char", borderwidth=0, highlightthickness=0,
                                  state="disabled", background=self.f["background"],
                                  cursor='arrow', yscrollcommand=self.scrollbar.set)
-        self.scrollbar.config(self.container.yview)
+        self.scrollbar.config(command=self.container.yview)
         self.scrollbar.pack(fill=tk.Y, side=tk.RIGHT)
         self.container.pack(fill=tk.BOTH, expand=True, side=tk.LEFT)
 
@@ -115,7 +115,10 @@ class DynamicGrid:
         """
         component = creator(self.container)
         self.container['state'] = 'normal'
-        self.container.window_create(index, window=component)
+        if isinstance(index, int):
+            # indexes are line.column
+            index = '1.' + str(index)
+        self.container.window_create(index, window=component.f)
         self.container['state'] = 'disabled'
         return component
 
@@ -497,7 +500,7 @@ class NumericEntry(Section):
 
     def __try_update(self, value: str):
         try:
-            num = int(value)
+            num = int(value or 0)
             if self.callback:
                 self.callback(num)
             return True
@@ -505,7 +508,8 @@ class NumericEntry(Section):
             return False
 
     def _draw(self, orient):
-        self.label.grid(row=0, column=0)
+        if self.label:
+            self.label.grid(row=0, column=0)
         if orient == Direction.V:
             self.entry.grid(row=1, column=0)
         else:

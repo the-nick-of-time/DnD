@@ -3,6 +3,7 @@ import json
 import os
 import re
 import typing
+from operator import lt, gt
 
 import dndice as r
 
@@ -143,18 +144,45 @@ def with_data(data):
     return decorator
 
 
-class SortedList:
+T = typing.TypeVar('T')
+
+
+class InsertionSortedList(typing.Generic[T]):
     def __init__(self, start: typing.Sequence = tuple(), reverse=False):
         self.data = list(start)
         self.reverse = reverse
         self.data.sort(reverse=self.reverse)
 
-    def append(self, value):
-        self.data.append(value)
-        self.data.sort(reverse=self.reverse)
+    def add(self, value: T) -> int:
+        """Inserts a new item into the list and returns the new index.
 
-    def remove(self, value):
+        :param value: The item to insert.
+        :return: The index at which it was inserted.
+        """
+        if self.reverse:
+            cmp = gt
+        else:
+            cmp = lt
+        i = 0
+        while cmp(self.data[i], value):
+            i += 1
+        self.data.insert(i, value)
+        return i
+
+    def remove(self, value: T) -> None:
+        """Removes the given item from the list.
+
+        :param value: The item to remove.
+        """
         self.data.remove(value)
+
+    def pop(self, index: int) -> T:
+        """Remove an item at the given index and return it.
+
+        :param index: The index to insert at.
+        :return: The item that was formerly at that index.
+        """
+        return self.data.pop(index)
 
     def __iter__(self):
         yield from self.data

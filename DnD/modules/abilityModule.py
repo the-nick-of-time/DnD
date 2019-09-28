@@ -62,6 +62,10 @@ class AbilityDisplay(gui.Section):
     def roll_save(self):
         self.roll()
 
+    def update_view(self):
+        self.score.set(self.ability.score)
+        self._display_modifier()
+
 
 class OwnedAbilityDisplay(AbilityDisplay):
     def __init__(self, parent, character: 'char.Character', ability: 'abil.Ability',
@@ -90,12 +94,16 @@ class StaticAbilityDisplay(gui.Section):
         self.ability = ability
         self.name = tk.Label(self.f, text=self.ability.abbreviation)
         self.name.grid(row=0, column=0)
-        numbers = '{s} ({m})'.format(s=ability.score, m=ability.modifier)
-        self.numbers = tk.Label(self.f, text=numbers)
+        self.numbers = tk.Label(self.f)
         if mode == DisplayMode.SIX_BY_ONE:
             self.numbers.grid(row=0, column=1)
         else:
             self.numbers.grid(row=1, column=0)
+        self.update_view()
+
+    def update_view(self):
+        numbers = '{s} ({m:+d})'.format(s=self.ability.score, m=self.ability.modifier)
+        self.numbers['text'] = numbers
 
 
 class BasicAbilityDisplay(gui.Section):
@@ -106,6 +114,7 @@ class BasicAbilityDisplay(gui.Section):
         self.name.grid(row=0, column=0)
         self.entry = gui.NumericEntry(self.f, self.ability.score, self.update, 4)
         self.modifier = tk.Label(self.f, width=2)
+        self._display_modifier()
         if mode == DisplayMode.SIX_BY_ONE:
             self.entry.grid(0, 1)
             self.modifier.grid(row=0, column=2)
@@ -113,8 +122,12 @@ class BasicAbilityDisplay(gui.Section):
             self.entry.grid(1, 0)
             self.modifier.grid(row=2, column=0)
 
-    def update(self):
-        self.ability.score = self.entry.get()
+    def update(self, score):
+        self.ability.score = score
+        self._display_modifier()
+
+    def update_view(self):
+        self.entry.set(self.ability.score)
         self._display_modifier()
 
     def _display_modifier(self):
@@ -151,6 +164,10 @@ class AbilitiesDisplay(gui.Section):
         return [AbilityDisplay(self.f, self.abilities[name], mode,
                                self.advantage, self.rollDisplay)
                 for name in abil.AbilityName]
+
+    def update_view(self):
+        for display in self.displays:
+            display.update_view()
 
 
 class StaticAbilitiesDisplay(AbilitiesDisplay):
