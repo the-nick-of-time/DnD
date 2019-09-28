@@ -1,4 +1,3 @@
-import os
 import re
 from collections import OrderedDict
 from functools import wraps
@@ -784,11 +783,11 @@ class ItemEntry:
     def load_from_file(self):
         itemtype = self.record.get(self.path + '/type').replace(' ', '.')
         basetype = itemtype.split(sep='.')[-1]
-        itemclass = h.type_select('.' + itemtype)
+        # itemclass = h.type_select('.' + itemtype)
+        itemclass = Item
         name = h.sanitize_filename(self.path.split(sep='/')[-1])
         filename = '{b}/{n}.{t}'.format(b=basetype, t=itemtype, n=name)
-        if (os.path.exists(iface.JsonInterface.OBJECTSPATH
-                           + filename)):
+        if (iface.JsonInterface.OBJECTSPATH / filename).exists():
             jf = iface.JsonInterface(filename)
             self.obj = itemclass(jf)
         else:

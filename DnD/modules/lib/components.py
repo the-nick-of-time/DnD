@@ -19,6 +19,7 @@ Initializer = Callable[[tk.Widget], 'Section']
 class Direction(enum.Enum):
     VERTICAL = V = 'vertical'
     HORIZONTAL = H = 'horizontal'
+    BOTH = 'both'
 
 
 class Style(enum.Enum):
@@ -100,8 +101,8 @@ class Section:
 class DynamicGrid:
     """A collection of widgets which will wrap automatically."""
 
-    def __init__(self, container):
-        self.f = tk.Frame(container)
+    def __init__(self, container, **kwargs):
+        self.f = tk.Frame(container, **kwargs)
         self.scrollbar = tk.Scrollbar(self.f)
         self.container = tk.Text(self.f, wrap="char", borderwidth=0, highlightthickness=0,
                                  state="disabled", background=self.f["background"],
@@ -212,6 +213,7 @@ class ProficientButton(tk.Button):
         return self
 
 
+# TODO: Take one value and h.shorten() it for the short value
 class EffectPane(Section):
     """Has a short label and an InfoButton with the full text."""
 
@@ -223,7 +225,7 @@ class EffectPane(Section):
 
         self.short_display = tk.Label(self.f, text=self.short, width=30,
                                       wraplength=200)
-        self.long_display = InfoButton(self.f, self.long, self.short)
+        self.long_display = InfoButton(self.f, self.long)
 
         self.draw_static()
         self.draw_dynamic()
@@ -552,12 +554,16 @@ class Counter(NumericEntry):
         super().__init__(container, start, callback, width=5, name=name)
         self.minus = tk.Button(self.f, text='-', command=lambda: self.change(-1))
         self.plus = tk.Button(self.f, text='+', command=lambda: self.change(1))
+        self._draw()
 
-    def _draw(self, orient):
-        self.label.grid(row=0, column=1, columnspan=3)
-        self.minus.grid(row=1, column=0)
-        self.entry.grid(row=1, column=1)
-        self.plus.grid(row=1, column=2)
+    def _draw(self, orient=None):
+        if self.label:
+            self.label.grid(row=0, column=1, columnspan=3)
+        if hasattr(self, 'minus'):
+            # TODO: design better so that drawing works without this hack
+            self.minus.grid(row=1, column=0)
+            self.entry.grid(row=1, column=1)
+            self.plus.grid(row=1, column=2)
 
     def change(self, number: int):
         self.set(self.get() + number)
@@ -675,7 +681,6 @@ class MainModule:
         objects = (Path(__file__).parent / '..' / '..' / 'objects').resolve()
         iface.JsonInterface.OBJECTSPATH = objects
         self.QUIT = tk.Button(self.window, text='QUIT', fg='red', command=self.quit)
-        self.QUIT.grid(row=10, column=0)
 
         self.startup_begin()
 
@@ -698,8 +703,8 @@ class MainModule:
                 raise FileNotFoundError("The named character doesn't exist")
             character = char.Character(jf)
             self.component = self.creator(character)
-
-            self.component.grid(0, 0)
+            self.component.pack(expand=True, fill=tk.BOTH)
+            self.QUIT.pack()
             self.window.deiconify()
         except Exception:
             # Otherwise it would continue running in the background,

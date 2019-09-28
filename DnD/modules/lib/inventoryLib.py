@@ -5,12 +5,12 @@ from . import abilitiesLib as abil
 from . import characterLib as char
 from . import exceptionsLib as ex
 from .exceptionsLib import OutOfItems
-from .interface import JsonInterface
+from .interface import DataInterface
 from .itemLib import Item
 
 
 class Inventory:
-    def __init__(self, jf: JsonInterface):
+    def __init__(self, jf: DataInterface):
         self.record = jf
         self.entries = {name: ItemEntry(name, jf.cd('/' + name), self)
                         for name in jf.get('/')}
@@ -48,7 +48,7 @@ class Inventory:
 
 
 class OwnedInventory(Inventory):
-    def __init__(self, jf: JsonInterface, character: 'char.Character'):
+    def __init__(self, jf: DataInterface, character: 'char.Character'):
         super().__init__(jf)
         self.owner = character
 
@@ -137,7 +137,7 @@ class ItemEntry:
     __slots__ = ('record', 'item', 'inventory', 'name', 'value', 'weight',
                  'consumes', 'effect', 'description')
 
-    def __init__(self, name: str, jf: JsonInterface, parent: Inventory):
+    def __init__(self, name: str, jf: DataInterface, parent: Inventory):
         self.record = jf
         self.item = Item(name, jf.get('/'))
         self.inventory = parent
@@ -148,7 +148,7 @@ class ItemEntry:
 
     @property
     def quantity(self) -> int:
-        return self.record.get('/number')
+        return self.record.get('/quantity')
 
     @quantity.setter
     def quantity(self, value):
@@ -164,5 +164,6 @@ class ItemEntry:
         self.record.set('/equipped', value and value.value)
 
     def use(self):
-        self.inventory.consume_item(self.item.consumes)
+        if self.item.consumes:
+            self.inventory.consume_item(self.item.consumes)
         return self.item.effect

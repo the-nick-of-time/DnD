@@ -33,6 +33,7 @@ class Character:
         if 'Warlock' in self.classes:
             self.warlockSlots = casting.OwnedWarlockSlots(jf.cd("/spellcasting"), self)
         self.bonuses = bonus.OwnedBonuses(self)
+        self.inventory = inv.OwnedInventory(jf.cd("/inventory"), self)
         self.skills = set(jf.get('/skills'))
         self.saves = self.classes.saveProficiencies
         self.deathSaveFailures = 0
